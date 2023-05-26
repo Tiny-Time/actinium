@@ -56,9 +56,30 @@ Route::domain('m-admin.' . $domain)->group(function () use ($adminUserRoutes) {
 $genericUserRoutes = function () {
     // Define generic user routes here.
     Route::middleware('domain.redirect')->group(function () {
+        // Homepage
         Route::get('/', function () {
             return view('welcome');
         })->name('homePage');
+
+        // Social Login
+        Route::get('/social-login', function () {
+            return view('welcome'); // social-login
+        })->name('social-login');
+
+        // Terms and Conditions
+        Route::get('/terms', function () {
+            return view('terms');
+        })->name('terms');
+
+        // Privacy Policy
+        Route::get('/policy', function () {
+            return view('policy');
+        })->name('policy');
+
+        // Redirect routes
+        Route::get('/dashboard', function () {
+            return redirect()->route('dashboard');
+        });
     });
 };
 
@@ -78,10 +99,6 @@ Route::domain('m.' . $domain)->group(function () use ($genericUserRoutes) {
 $authUserRoutes = function () {
     // Define authenticated user route here.
     Route::middleware('domain.redirect')->group(function () {
-        Route::get('/', function () {
-            return redirect()->route('dashboard');
-        });
-
         Route::middleware([
             'auth:sanctum',
             config('jetstream.auth_session'),
@@ -90,6 +107,11 @@ $authUserRoutes = function () {
             Route::get('/dashboard', function () {
                 return view('dashboard');
             })->name('dashboard');
+        });
+
+        // Redirect routes
+        Route::get('/', function () {
+            return redirect()->route('dashboard');
         });
     });
 };
