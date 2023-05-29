@@ -30,10 +30,7 @@
             <div class="w-full mt-3">
                 <label for="remember_me" class="flex items-start">
                     <x-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm leading-tight text-gray-600 break-all dark:text-gray-400">Welcome to
-                        {{ env('APP_NAME') }}, by clicking on this checkbox you agree to our <a
-                            href="{{ route('terms') }}" class="font-semibold text-cyan-500">Terms and Conditions</a> and
-                        <a href="{{ route('policy') }}" class="font-semibold text-cyan-500">Privacy Policy</a>.</span>
+                    <span class="ml-2 text-sm leading-tight text-gray-600 break-all dark:text-gray-400">Remember me</span>
                 </label>
             </div>
 
@@ -66,7 +63,7 @@
                 <svg class="w-4 h-4" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18.5 10.2501H1M1 10.2501L9.75 19.0001M1 10.2501L9.75 1.50012" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span>Go back to Social Sign In</span>
+                <span>Go to Social Sign In</span>
             </a>
         </form>
     </x-authentication-card>
