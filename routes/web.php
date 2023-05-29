@@ -63,7 +63,7 @@ $genericUserRoutes = function () {
 
         // Social Login
         Route::get('/social-login', function () {
-            return view('welcome'); // social-login
+            return view('auth.social-login');
         })->name('social-login');
 
         // Terms and Conditions
