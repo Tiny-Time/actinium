@@ -14,6 +14,8 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        {{-- Google Recaptcha --}}
+        {!! NoCaptcha::renderJs() !!}
     </head>
     <body>
         <div class="font-sans antialiased text-gray-900 dark:text-gray-100">
