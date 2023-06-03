@@ -27,6 +27,10 @@
                     placeholder="Your password goes here..." />
             </div>
 
+            <div class="flex justify-center mt-3">
+                {!! NoCaptcha::display() !!}
+            </div>
+
             <div class="flex items-center justify-between w-full mt-3 text-sm leading-tight text-gray-600 dark:text-gray-400">
                 <label for="remember_me" class="flex items-start">
                     <x-checkbox id="remember_me" name="remember" />
