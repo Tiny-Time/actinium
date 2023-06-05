@@ -67,6 +67,11 @@ $genericUserRoutes = function () {
             return view('auth.social-login');
         })->name('social-login');
 
+        // Social Signup
+        Route::get('/social-signup', function () {
+            return view('auth.social-login'); // test case
+        })->name('social-signup');
+
         // Google
 
         Route::get('/auth/google', function(){
