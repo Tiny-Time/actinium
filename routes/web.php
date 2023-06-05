@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,8 +64,13 @@ $genericUserRoutes = function () {
 
         // Social Login
         Route::get('/social-login', function () {
-            return view('welcome'); // social-login
+            return view('auth.social-login');
         })->name('social-login');
+
+        // Social Signup
+        Route::get('/social-signup', function () {
+            return view('auth.social-login'); // test case
+        })->name('social-signup');
 
         // Google
 
