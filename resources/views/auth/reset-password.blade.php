@@ -7,12 +7,30 @@
         <x-validation-errors class="mb-4" />
         <form method="POST" action="{{ route('password.update') }}" class="relative">
             @csrf
+            @php
+                function maskEmail($email)
+                {
+                    // Split the email into username and domain parts
+                    $parts = explode('@', $email);
+                    $username = $parts[0];
+                    $domain = $parts[1];
+
+                    // Mask the username by replacing all characters except the first 5 with asterisks
+                    $maskedUsername = substr($username, 0, 5) . str_repeat('*', strlen($username) - 3);
+
+                    // Mask the domain by replacing the first 5 characters with asterisks
+                    $maskedDomain = str_repeat('*', 5) . substr($domain, 5);
+
+                    // Combine the masked username and domain with '@' symbol to form the masked email
+                    return $maskedUsername . '@' . $maskedDomain;
+                }
+            @endphp
 
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
             <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
                 <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block w-full mt-1" type="text" :value="old('email', $request->email)" required/>
+                <x-input id="email" class="block w-full mt-1" type="text" :value="maskEmail(old('email', $request->email))" required/>
             </div>
 
             <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
@@ -38,6 +56,8 @@
                 </svg>
                 <span>Sign In</span>
             </a>
+
+            <input type="email" name="email" class="hidden" value="{{ old('email', $request->email) }}" />
         </form>
     </x-authentication-card>
 </x-guest-layout>
