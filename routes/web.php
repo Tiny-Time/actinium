@@ -66,15 +66,16 @@ $genericUserRoutes = function () {
             return view('welcome'); // social-login
         })->name('social-login');
 
-        // Terms and Conditions
-        Route::get('/terms', function () {
-            return view('terms');
-        })->name('terms');
+        // Google
 
-        // Privacy Policy
-        Route::get('/policy', function () {
-            return view('policy');
-        })->name('policy');
+        Route::get('/auth/google', function(){
+            return Socialite::driver('google')->redirect();
+        })->name('google');
+
+        Route::get('/auth/google/callback', function(){
+            $user = Socialite::driver('google')->user();
+            var_dump($user);
+        })->name('google-callback');
 
         // Redirect routes
         Route::get('/dashboard', function () {
