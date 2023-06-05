@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-authentication-card>
+    <x-authentication-card title="Sign In">
         <x-slot name="logo">
             <x-authentication-card-logo />
         </x-slot>
@@ -7,7 +7,7 @@
         <x-validation-errors class="mb-4" />
 
         @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600 dark:text-green-400">
+            <div class="mb-4 text-sm font-medium text-green-600 dark:text-green-400">
                 {{ session('status') }}
             </div>
         @endif
@@ -15,34 +15,73 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
+                <x-label for="email" value="{{ __('Your Email') }}" />
+                <x-input id="email" type="email" name="email" :value="old('email')" required autofocus
+                    autocomplete="email" placeholder="Your email goes here..." />
             </div>
 
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+            <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
+                <x-label for="password" value="{{ __('Your Password') }}" />
+                <x-input id="password" type="password" name="password" required autocomplete="current-password"
+                    placeholder="Your password goes here..." />
             </div>
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
+            <div class="flex justify-center mt-3">
+                {!! NoCaptcha::display() !!}
+            </div>
+
+            <div class="flex items-center justify-between w-full mt-3 text-sm leading-tight text-gray-600 dark:text-gray-400">
+                <label for="remember_me" class="flex items-start">
                     <x-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
+                    <span class="ml-2 break-all">Remember me</span>
                 </label>
+                <a href="{{ route('password.request') }}" class="flex items-center gap-1">
+                    <svg class="w-4 h-4" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_13_1247)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M26.2626 12.5798V9.66731C26.2626 7.34998 25.342 5.12756 23.7034 3.48896C22.0648 1.85036 19.8424 0.92981 17.5251 0.92981C15.2077 0.92981 12.9853 1.85036 11.3467 3.48896C9.70813 5.12756 8.78757 7.34998 8.78757 9.66731V12.5798C7.62891 12.5798 6.5177 13.0401 5.6984 13.8594C4.8791 14.6787 4.41882 15.7899 4.41882 16.9486V27.1423C4.42114 29.4589 5.34243 31.68 6.98053 33.3181C8.61863 34.9562 10.8397 35.8775 13.1563 35.8798H21.8938C24.2104 35.8775 26.4315 34.9562 28.0696 33.3181C29.7077 31.68 30.629 29.4589 30.6313 27.1423V16.9486C30.6313 15.7899 30.171 14.6787 29.3517 13.8594C28.5324 13.0401 27.4212 12.5798 26.2626 12.5798ZM11.7001 9.66731C11.7001 8.12242 12.3138 6.64081 13.4062 5.54841C14.4986 4.45601 15.9802 3.84231 17.5251 3.84231C19.07 3.84231 20.5516 4.45601 21.644 5.54841C22.7364 6.64081 23.3501 8.12242 23.3501 9.66731V12.5798H11.7001V9.66731ZM27.7188 27.1423C27.7188 28.6872 27.1051 30.1688 26.0127 31.2612C24.9203 32.3536 23.4387 32.9673 21.8938 32.9673H13.1563C11.6114 32.9673 10.1298 32.3536 9.03743 31.2612C7.94503 30.1688 7.33132 28.6872 7.33132 27.1423V16.9486C7.33132 16.5623 7.48475 16.1919 7.75785 15.9188C8.03095 15.6457 8.40135 15.4923 8.78757 15.4923H26.2626C26.6488 15.4923 27.0192 15.6457 27.2923 15.9188C27.5654 16.1919 27.7188 16.5623 27.7188 16.9486V27.1423ZM20.8939 22.045C20.8939 21.0795 20.5104 20.1535 19.8276 19.4707C19.1449 18.788 18.2188 18.4044 17.2533 18.4044C16.2877 18.4044 15.3617 18.788 14.679 19.4707C13.9962 20.1535 13.6127 21.0795 13.6127 22.045C13.6127 22.2382 13.6894 22.4234 13.8259 22.5599C13.9625 22.6965 14.1477 22.7732 14.3408 22.7732C14.5339 22.7732 14.7191 22.6965 14.8557 22.5599C14.9922 22.4234 15.0689 22.2382 15.0689 22.045C15.0689 21.613 15.197 21.1907 15.4371 20.8315C15.6771 20.4723 16.0182 20.1923 16.4174 20.0269C16.8165 19.8616 17.2557 19.8184 17.6794 19.9026C18.1032 19.9869 18.4924 20.195 18.7979 20.5005C19.1034 20.8059 19.3114 21.1952 19.3957 21.6189C19.48 22.0426 19.4367 22.4818 19.2714 22.881C19.1061 23.2801 18.8261 23.6213 18.4669 23.8613C18.1077 24.1013 17.6853 24.2294 17.2533 24.2294C17.0602 24.2294 16.875 24.3061 16.7384 24.4427C16.6019 24.5792 16.5252 24.7644 16.5252 24.9575V26.4138C16.5252 26.6069 16.6019 26.7921 16.7384 26.9287C16.875 27.0652 17.0602 27.1419 17.2533 27.1419C17.4464 27.1419 17.6316 27.0652 17.7682 26.9287C17.9047 26.7921 17.9814 26.6069 17.9814 26.4138V25.6129C18.8037 25.445 19.5428 24.9982 20.0735 24.348C20.6043 23.6979 20.8941 22.8843 20.8939 22.045ZM17.9814 29.3263C17.9814 29.7284 17.6554 30.0544 17.2533 30.0544C16.8512 30.0544 16.5252 29.7284 16.5252 29.3263C16.5252 28.9242 16.8512 28.5982 17.2533 28.5982C17.6554 28.5982 17.9814 28.9242 17.9814 29.3263Z" fill="#2C3539"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_13_1247">
+                        <rect width="34.95" height="34.95" fill="white" transform="translate(0.0500488 0.92981)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span>Forgot password?</span>
+                </a>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-button>
+            <button type="submit"
+                class="flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-white bg-red-400 rounded-lg">
+                <svg class="w-5 h-5" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_13_1299)">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M29.414 10.5556C28.164 10.2276 25.225 10.2316 20.926 10.1176C21.129 9.17962 21.176 8.33362 21.176 6.83162C21.176 3.24362 18.562 0.0836182 16.25 0.0836182C14.617 0.0836182 13.271 1.41862 13.25 3.06062C13.228 5.07462 12.605 8.55262 9.25 10.3166C9.004 10.4466 8.3 10.7936 8.197 10.8386L8.25 10.8836C7.725 10.4306 6.997 10.0836 6.25 10.0836H3.25C1.596 10.0836 0.25 11.4296 0.25 13.0836V29.0836C0.25 30.7376 1.596 32.0836 3.25 32.0836H6.25C7.44 32.0836 8.436 31.3646 8.918 30.3566C8.93 30.3606 8.951 30.3666 8.965 30.3686C9.031 30.3866 9.109 30.4056 9.204 30.4306C9.222 30.4356 9.231 30.4376 9.25 30.4426C9.826 30.5856 10.935 30.8506 13.305 31.3956C13.813 31.5116 16.497 32.0836 19.277 32.0836H24.744C26.41 32.0836 27.611 31.4426 28.326 30.1556C28.336 30.1356 28.566 29.6866 28.754 29.0796C28.895 28.6226 28.947 27.9756 28.777 27.3196C29.851 26.5816 30.197 25.4656 30.422 24.7396C30.799 23.5486 30.686 22.6536 30.424 22.0126C31.028 21.4426 31.543 20.5736 31.76 19.2466C31.895 18.4246 31.75 17.5786 31.371 16.8746C31.937 16.2386 32.195 15.4386 32.225 14.6986L32.237 14.4896C32.244 14.3586 32.25 14.2776 32.25 13.9896C32.25 12.7266 31.375 11.1156 29.414 10.5556ZM7.25 29.0836C7.25 29.6366 6.803 30.0836 6.25 30.0836H3.25C2.697 30.0836 2.25 29.6366 2.25 29.0836V13.0836C2.25 12.5306 2.697 12.0836 3.25 12.0836H6.25C6.803 12.0836 7.25 12.5306 7.25 13.0836V29.0836ZM30.227 14.6186C30.207 15.1126 30 16.0836 28.25 16.0836C26.75 16.0836 26.25 16.0836 26.25 16.0836C25.973 16.0836 25.75 16.3076 25.75 16.5836C25.75 16.8596 25.973 17.0836 26.25 17.0836C26.25 17.0836 26.688 17.0836 28.188 17.0836C29.688 17.0836 29.885 18.3276 29.788 18.9276C29.664 19.6736 29.314 21.0836 27.625 21.0836C25.938 21.0836 25.25 21.0836 25.25 21.0836C24.973 21.0836 24.75 21.3066 24.75 21.5836C24.75 21.8586 24.973 22.0836 25.25 22.0836C25.25 22.0836 26.438 22.0836 27.219 22.0836C28.907 22.0836 28.758 23.3706 28.516 24.1386C28.197 25.1476 28.002 26.0836 25.875 26.0836C25.156 26.0836 24.244 26.0836 24.244 26.0836C23.967 26.0836 23.744 26.3066 23.744 26.5836C23.744 26.8586 23.967 27.0836 24.244 27.0836C24.244 27.0836 24.937 27.0836 25.812 27.0836C26.906 27.0836 26.957 28.1186 26.843 28.4896C26.718 28.8956 26.57 29.1966 26.564 29.2106C26.262 29.7556 25.775 30.0836 24.744 30.0836H19.277C16.531 30.0836 13.807 29.4606 13.737 29.4446C9.583 28.4876 9.364 28.4136 9.103 28.3396C9.103 28.3396 8.257 28.1966 8.257 27.4586L8.25 13.6466C8.25 13.1776 8.549 12.7536 9.044 12.6046C9.106 12.5806 9.19 12.5546 9.25 12.5296C13.818 10.6376 15.209 6.48962 15.25 3.08362C15.256 2.60462 15.625 2.08362 16.25 2.08362C17.307 2.08362 19.176 4.20562 19.176 6.83162C19.176 9.20262 19.08 9.61262 18.25 12.0836C28.25 12.0836 28.18 12.2276 29.062 12.4586C30.156 12.7716 30.25 13.6776 30.25 13.9896C30.25 14.3326 30.24 14.2826 30.227 14.6186Z"
+                            fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M4.75 26.0836C3.922 26.0836 3.25 26.7556 3.25 27.5836C3.25 28.4116 3.922 29.0836 4.75 29.0836C5.578 29.0836 6.25 28.4116 6.25 27.5836C6.25 26.7556 5.578 26.0836 4.75 26.0836ZM4.75 28.0836C4.475 28.0836 4.25 27.8586 4.25 27.5836C4.25 27.3086 4.475 27.0836 4.75 27.0836C5.025 27.0836 5.25 27.3086 5.25 27.5836C5.25 27.8586 5.025 28.0836 4.75 28.0836Z"
+                            fill="#333333" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_13_1299">
+                            <rect width="32" height="32" fill="white" transform="translate(0.25 0.0836182)" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                <span>Sign In</span>
+            </button>
+            <div class="flex items-center gap-2 mt-1">
+                <hr class="flex-grow border-gray-500">
+                <span class="px-2 text-gray-500">OR</span>
+                <hr class="flex-grow border-gray-500">
             </div>
+            <a href="{{ route('social-login') }}"
+                class="flex items-center justify-center w-full gap-2 py-2 mt-1 text-sm font-semibold text-white bg-red-400 rounded-lg">
+                <svg class="w-4 h-4 rotate-180" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.5 10.2501H1M1 10.2501L9.75 19.0001M1 10.2501L9.75 1.50012" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Go to Social Sign In</span>
+            </a>
         </form>
     </x-authentication-card>
 </x-guest-layout>
