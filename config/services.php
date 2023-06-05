@@ -31,4 +31,12 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    // /* -------------------------- Social Signup/login -------------------------- */
+
+    // Google
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => "m.".substr(env('APP_DOMAIN'), -1) === "/" ? env('APP_DOMAIN').'google-callback' : env('APP_DOMAIN').'/google-callback',
+    ],
 ];

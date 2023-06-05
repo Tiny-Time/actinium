@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,15 +67,21 @@ $genericUserRoutes = function () {
             return view('auth.social-login');
         })->name('social-login');
 
-        // Terms and Conditions
-        Route::get('/terms', function () {
-            return view('terms');
-        })->name('terms');
+        // Social Signup
+        Route::get('/social-signup', function () {
+            return view('auth.social-login'); // test case
+        })->name('social-signup');
 
-        // Privacy Policy
-        Route::get('/policy', function () {
-            return view('policy');
-        })->name('policy');
+        // Google
+
+        Route::get('/auth/google', function(){
+            return Socialite::driver('google')->redirect();
+        })->name('google');
+
+        Route::get('/auth/google/callback', function(){
+            $user = Socialite::driver('google')->user();
+            var_dump($user);
+        })->name('google-callback');
 
         // Redirect routes
         Route::get('/dashboard', function () {
