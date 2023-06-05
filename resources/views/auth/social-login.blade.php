@@ -12,7 +12,7 @@
             </div>
         @endif
 
-        <button type="button"
+        <a href="{{ route('google') }}"
             class="flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-gray-500 border-[1.7px] rounded-lg">
             <svg class="w-5 h-5" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_13_1205)">
@@ -28,7 +28,7 @@
                 </defs>
             </svg>
             <span>Continue with Google</span>
-        </button>
+        </a>
 
         <button type="button"
             class="flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-white bg-blue-500 rounded-lg">
