@@ -78,16 +78,6 @@ $genericUserRoutes = function () {
             var_dump($user);
         })->name('google-callback');
 
-        // Terms and Conditions
-        Route::get('/terms', function () {
-            return view('terms');
-        })->name('terms');
-
-        // Privacy Policy
-        Route::get('/policy', function () {
-            return view('policy');
-        })->name('policy');
-
         // Redirect routes
         Route::get('/dashboard', function () {
             return redirect()->route('dashboard');
