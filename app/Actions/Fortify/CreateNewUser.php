@@ -22,7 +22,10 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'email' => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:users', 'not_regex:/\bmailinator\.com\b/i'],
             'password' => $this->passwordRules(),
+            'g-recaptcha-response' => 'required|captcha',
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
+        ],[
+            'g-recaptcha-response' => 'Please complete the reCAPTCHA verification.',
         ])->validate();
 
 

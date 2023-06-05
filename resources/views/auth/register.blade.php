@@ -27,6 +27,10 @@
                     name="password_confirmation" required autocomplete="new-password" placeholder="Confirm your password..." />
             </div>
 
+            <div class="flex justify-center mt-3">
+                {!! NoCaptcha::display() !!}
+            </div>
+
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="w-full mt-3">
                     <label for="terms" class="flex items-start">
