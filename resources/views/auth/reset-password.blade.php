@@ -15,14 +15,11 @@
                     $username = $parts[0];
                     $domain = $parts[1];
 
-                    // Mask the username by replacing all characters except the first 5 with asterisks
-                    $maskedUsername = substr($username, 0, 5) . str_repeat('*', strlen($username) - 3);
+                    // Mask the username by replacing all characters except the first two and the last two with asterisks
+                    $maskedUsername = substr($username, 0, 2) . str_repeat('*', strlen($username) - 4) . substr($username, -2);
 
-                    // Mask the domain by replacing the first 5 characters with asterisks
-                    $maskedDomain = str_repeat('*', 5) . substr($domain, 5);
-
-                    // Combine the masked username and domain with '@' symbol to form the masked email
-                    return $maskedUsername . '@' . $maskedDomain;
+                    // Combine the masked username with the domain with '@' symbol to form the masked email
+                    return $maskedUsername . '@' . $domain;
                 }
             @endphp
 
