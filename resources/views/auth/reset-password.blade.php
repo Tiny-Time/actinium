@@ -43,6 +43,10 @@
                     placeholder="Confirm your password..." />
             </div>
 
+            <div class="flex justify-center mt-3">
+                {!! NoCaptcha::display() !!}
+            </div>
+
             <x-button>
                 {{ __('Reset Password') }}
             </x-button>
