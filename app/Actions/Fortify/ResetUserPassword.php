@@ -3,8 +3,6 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
-use Illuminate\Mail\Message;
-use Illuminate\Mail\Markdown;
 use App\Mail\PasswordResetSuccess;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
