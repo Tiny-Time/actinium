@@ -21,7 +21,7 @@
 
             <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
                 <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="Your password goes here..."/>
+                <x-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="Your email goes here..."/>
             </div>
 
             <x-button>
