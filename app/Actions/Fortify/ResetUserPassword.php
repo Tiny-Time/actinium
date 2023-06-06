@@ -3,7 +3,11 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
+use Illuminate\Mail\Message;
+use Illuminate\Mail\Markdown;
+use App\Mail\PasswordResetSuccess;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\ResetsUserPasswords;
 
@@ -25,5 +29,8 @@ class ResetUserPassword implements ResetsUserPasswords
         $user->forceFill([
             'password' => Hash::make($input['password']),
         ])->save();
+
+        // Send notification email for reset password success.
+        Mail::to($user->email)->send(new PasswordResetSuccess($user->name));
     }
 }
