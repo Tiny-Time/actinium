@@ -16,21 +16,23 @@ use Laravel\Socialite\Facades\Socialite;
 |
 */
 
-/* ---------------------------- General variables ---------------------------- */
+/* --------------------------------- Routes with middleware. --------------------------------- */
 
-// Get app domain from env
-$domain = env('APP_DOMAIN');
+Route::middleware('domain.redirect')->group(function () {
 
-/* ------------------------ Admin user website routes ----------------------- */
+    /* ---------------------------- General variables from env. ---------------------------- */
 
-// Admin user website funtion
-$adminUserRoutes = function () {
-    Route::middleware('domain.redirect')->group(function () {
-        // Define admin user route here.
-        Route::get('/', function () {
-            return redirect()->route('dashboard');
-        });
+    $prodDomain = env('PROD_DOMAIN');
+    $mProdDomain = env('MPROD_DOMAIN');
+    $uAppDomain = env('UAPP_DOMAIN');
+    $uMAppDomain = env('UMAPP_DOMAIN');
+    $aaDomain = env('AA_DOMAIN');
+    $mAAppDomain = env('MAAPP_DOMAIN');
 
+    /* ------------------------------- All routes. ------------------------------- */
+
+    $routes = function(){
+        // Fortify.
         Route::middleware([
             'auth:sanctum',
             config('jetstream.auth_session'),
@@ -40,41 +42,23 @@ $adminUserRoutes = function () {
                 return view('dashboard');
             })->name('dashboard');
         });
-    });
-};
 
-// Website admin (desktop version)
-Route::domain('admin.' . $domain)->group(function () use ($adminUserRoutes) {
-    $adminUserRoutes();
-});
-
-// Website admin (mobile version)
-Route::domain('m-admin.' . $domain)->group(function () use ($adminUserRoutes) {
-    $adminUserRoutes();
-});
-
-/* ----------------------- Generic user website routes ---------------------- */
-
-// Generic user website funtion
-$genericUserRoutes = function () {
-    // Define generic user routes here.
-    Route::middleware('domain.redirect')->group(function () {
-        // Homepage
+        // Homepage.
         Route::get('/', function () {
             return view('welcome');
         })->name('homePage');
 
-        // Social Login
+        // Social Login.
         Route::get('/social-login', function () {
             return view('auth.social-login');
         })->name('social-login');
 
-        // Social Signup
+        // Social Signup.
         Route::get('/social-signup', function () {
             return view('auth.social-login'); // test case
         })->name('social-signup');
 
-        // Google
+        // Google.
 
         Route::get('/auth/google', function(){
             return Socialite::driver('google')->redirect();
@@ -85,76 +69,63 @@ $genericUserRoutes = function () {
             var_dump($user);
         })->name('google-callback');
 
-        // Redirect routes
-        Route::get('/dashboard', function () {
-            return redirect()->route('dashboard');
-        });
+        /* ---------------  Override Fortify forgot password backend. -------------- */
+
+        Route::post('/forgot-password-p', function (Request $request) {
+            $validator = Validator::make($request->all(), [
+                'email' => 'required|email',
+                'g-recaptcha-response' => 'required|captcha',
+            ],[
+                'g-recaptcha-response' => 'Please complete the reCAPTCHA verification.',
+            ]);
+
+            if ($validator->fails()) {
+                return back()->withErrors($validator)->withInput();
+            }
+
+            $status = Password::sendResetLink(
+                $request->only('email')
+            );
+
+            return $status === Password::RESET_LINK_SENT
+                        ? back()->with(['status' => __($status)])
+                        : back()->withErrors(['email' => __($status)]);
+        })->name('custom_password.email');
+    };
+
+    /* ----------------------- Generic user website routes. ---------------------- */
+
+    // Generic user website (desktop version).
+    Route::domain($prodDomain)->group(function () use ($routes) {
+        $routes();
     });
-};
 
-// Generic user website (desktop version)
-Route::domain($domain)->group(function () use ($genericUserRoutes) {
-    $genericUserRoutes();
-});
-
-// Generic user website (mobile version)
-Route::domain('m.' . $domain)->group(function () use ($genericUserRoutes) {
-    $genericUserRoutes();
-});
-
-/* -------------------- Authenticated user website routes ------------------- */
-
-// Auth user website funtion
-$authUserRoutes = function () {
-    // Define authenticated user route here.
-    Route::middleware('domain.redirect')->group(function () {
-        Route::middleware([
-            'auth:sanctum',
-            config('jetstream.auth_session'),
-            'verified'
-        ])->group(function () {
-            Route::get('/dashboard', function () {
-                return view('dashboard');
-            })->name('dashboard');
-        });
-
-        // Redirect routes
-        Route::get('/', function () {
-            return redirect()->route('dashboard');
-        });
+    // Generic user website (mobile version).
+    Route::domain($mProdDomain)->group(function () use ($routes) {
+        $routes();
     });
-};
 
-// Authenticated user website (desktop version)
-Route::domain('app.' . $domain)->group(function () use ($authUserRoutes) {
-    $authUserRoutes();
+    /* -------------------- Authenticated user website routes. ------------------- */
+
+    // Authenticated user website (desktop version).
+    Route::domain($uAppDomain)->group(function () use ($routes) {
+        $routes();
+    });
+
+    // Authenticated user website (mobile version).
+    Route::domain($uMAppDomain)->group(function () use ($routes) {
+        $routes();
+    });
+
+    /* ------------------------ Admin user website routes. ----------------------- */
+
+    // Website admin (desktop version).
+    Route::domain($aaDomain)->group(function () use ($routes) {
+        $routes();
+    });
+
+    // Website admin (mobile version).
+    Route::domain($mAAppDomain)->group(function () use ($routes) {
+        $routes();
+    });
 });
-
-// Authenticated user website (mobile version)
-Route::domain('m-app.' . $domain)->group(function () use ($authUserRoutes) {
-    $authUserRoutes();
-});
-
-
-/* ---------------  Override Fortify forgot password backend -------------- */
-
-Route::post('/forgot-password-p', function (Request $request) {
-    $validator = Validator::make($request->all(), [
-        'email' => 'required|email',
-        'g-recaptcha-response' => 'required|captcha',
-    ],[
-        'g-recaptcha-response' => 'Please complete the reCAPTCHA verification.',
-    ]);
-
-    if ($validator->fails()) {
-        return back()->withErrors($validator)->withInput();
-    }
-
-    $status = Password::sendResetLink(
-        $request->only('email')
-    );
-
-    return $status === Password::RESET_LINK_SENT
-                ? back()->with(['status' => __($status)])
-                : back()->withErrors(['email' => __($status)]);
-})->name('custom_password.email');

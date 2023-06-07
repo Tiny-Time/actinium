@@ -37,6 +37,6 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => "m.".substr(env('APP_DOMAIN'), -1) === "/" ? env('APP_DOMAIN').'google-callback' : env('APP_DOMAIN').'/google-callback',
+        'redirect' => substr(env('MPROD_DOMAIN'), -1) === "/" ? env('MPROD_DOMAIN').'google-callback' : env('MPROD_DOMAIN').'/google-callback',
     ],
 ];

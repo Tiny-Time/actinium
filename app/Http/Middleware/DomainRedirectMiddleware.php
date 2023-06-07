@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Auth;
 use Closure;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -18,49 +17,76 @@ class DomainRedirectMiddleware
 
     public function handle(Request $request, Closure $next): Response
     {
-        // Get the env domain.
-        $domain = env('APP_DOMAIN');
-        // Get the current domain.
-        $currentDomain = $request->getHost();
+        // Get app domain from env.
+        $prodDomain = env('PROD_DOMAIN');
+        $mProdDomain = env('MPROD_DOMAIN');
+        $uAppDomain = env('UAPP_DOMAIN');
+        $uMAppDomain = env('UMAPP_DOMAIN');
+        $aaDomain = env('AA_DOMAIN');
+        $mAAppDomain = env('MAAPP_DOMAIN');
+
+        // Get the current domain with http or https.
+        $currentDomain = $request->getSchemeAndHttpHost();
+
         // Check if the user is on a mobile device.
         $isMobile = $this->isMobile();
+
         // Check if the user is authenticated.
         $isAuthenticated = Auth::check();
 
-        // Define the redirection logic based on the current domain, device, and authentication status.
-        if (!$isAuthenticated && $currentDomain === $domain && $isMobile) {
-            // Generic user website (desktop version) - Redirect to mobile version.
-            return redirect()->to('http://m.' . $domain . $request->getRequestUri());
-        } elseif (!$isAuthenticated && $currentDomain === 'm.' . $domain && !$isMobile) {
-            // Generic user website (mobile version) - Redirect to desktop version.
-            return redirect()->to('http://' . $domain . $request->getRequestUri());
-        } elseif ($isAuthenticated) {
-            // User is authenticated and user role is admin
-            $userRole = false; // for test case
-            if($userRole){
-                if ($currentDomain === 'admin.' . $domain && $isMobile) {
+        /* Define the redirection logic based on the current domain, device, and authentication status. */
+
+        if($isAuthenticated){
+
+            /* ------------------------------ Authenticated ----------------------------- */
+
+            $isAdmin = false; // test case.
+            if($isAdmin){
+                // Admin redirect.
+                if ($isMobile && $currentDomain === $aaDomain) {
                     // Admin user website (desktop version) - Redirect to mobile version.
-                    return redirect()->to('http://m-admin.' . $domain . $request->getRequestUri());
-                } elseif ($currentDomain === 'm-admin.' . $domain && !$isMobile) {
+                    return redirect()->to($mAAppDomain . $request->getRequestUri());
+                } elseif (!$isMobile && $currentDomain === $mAAppDomain) {
                     // Admin user website (mobile version) - Redirect to desktop version.
-                    return redirect()->to('http://admin.' . $domain . $request->getRequestUri());
+                    return redirect()->to($aaDomain . $request->getRequestUri());
                 }
             }else{
-                if ($currentDomain === 'app.' . $domain && $isMobile) {
+                // User
+                if ($isMobile && $currentDomain === $uAppDomain) {
                     // Authenticated user website (desktop version) - Redirect to mobile version.
-                    return redirect()->to('http://m-app.' . $domain . $request->getRequestUri());
-                } elseif ($currentDomain === 'm-app.' . $domain && !$isMobile) {
+                    return redirect()->to($uMAppDomain . $request->getRequestUri());
+                } elseif (!$isMobile && $currentDomain === $uMAppDomain) {
                     // Authenticated user website (mobile version) - Redirect to desktop version.
-                    return redirect()->to('http://app.' . $domain . $request->getRequestUri());
-                }elseif($currentDomain !== 'app.' . $domain && $currentDomain !== 'm-app.' . $domain){
+                    return redirect()->to($uAppDomain . $request->getRequestUri());
+                }elseif($currentDomain !==  $uAppDomain && $currentDomain !== $uMAppDomain){
                     // If the current domain is not app or m-app but the user is authenticated, use device for redirect
                     if($isMobile){
                         // Authenticated user website (desktop version) - Redirect to mobile version.
-                        return redirect()->to('http://m-app.' . $domain . $request->getRequestUri());
+                        return redirect()->to($uMAppDomain . $request->getRequestUri());
                     }else{
                         // Authenticated user website (mobile version) - Redirect to desktop version.
-                        return redirect()->to('http://app.' . $domain . $request->getRequestUri());
+                        return redirect()->to($uAppDomain . $request->getRequestUri());
                     }
+                }
+            }
+        }else{
+
+            /* ------------------------------------ Generic ----------------------------------- */
+
+            if($isMobile && $currentDomain === $prodDomain){
+                // Generic user website (desktop version) - Redirect to mobile version.
+                return redirect()->to($mProdDomain . $request->getRequestUri());
+            }elseif(!$isMobile && $currentDomain === $mProdDomain){
+                // Generic user website (mobile version) - Redirect to desktop version.
+                return redirect()->to($prodDomain . $request->getRequestUri());
+            }elseif($currentDomain !== $prodDomain && $currentDomain !== $mProdDomain){
+                // If the current domain is not prodDomain or mProdDomain and the user is not authenticated, use device for redirect.
+                if($isMobile){
+                     // Generic user website (desktop version) - Redirect to mobile version.
+                    return redirect()->to($mProdDomain . $request->getRequestUri());
+                }else{
+                   // Generic user website (mobile version) - Redirect to desktop version.
+                    return redirect()->to($prodDomain . $request->getRequestUri());
                 }
             }
         }
