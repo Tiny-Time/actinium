@@ -1,15 +1,17 @@
 <?php
 
+use App\Mail\AccountVerifiedSuccess;
 use Illuminate\Http\Request;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\RoutePath;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Password;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Fortify\Http\Controllers\PasswordController;
 use Laravel\Fortify\Http\Controllers\NewPasswordController;
-use Laravel\Fortify\Http\Controllers\VerifyEmailController;
+use Laravel\Fortify\Contracts\VerifyEmailResponse;
 use Laravel\Fortify\Http\Controllers\RecoveryCodeController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use Laravel\Fortify\Http\Controllers\TwoFactorQrCodeController;
@@ -18,14 +20,14 @@ use Laravel\Fortify\Http\Controllers\ProfileInformationController;
 use Laravel\Fortify\Http\Controllers\TwoFactorSecretKeyController;
 use Laravel\Fortify\Http\Controllers\ConfirmablePasswordController;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
+use Laravel\Fortify\Contracts\FailedPasswordResetLinkRequestResponse;
 use Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController;
 use Laravel\Fortify\Http\Controllers\EmailVerificationPromptController;
 use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticationController;
+use Laravel\Fortify\Contracts\SuccessfulPasswordResetLinkRequestResponse;
 use Laravel\Fortify\Http\Controllers\EmailVerificationNotificationController;
 use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticatedSessionController;
 use Laravel\Fortify\Http\Controllers\ConfirmedTwoFactorAuthenticationController;
-use Laravel\Fortify\Contracts\FailedPasswordResetLinkRequestResponse;
-use Laravel\Fortify\Contracts\SuccessfulPasswordResetLinkRequestResponse;
 
 /*
 |--------------------------------------------------------------------------
@@ -133,8 +135,19 @@ Route::middleware('domain.redirect')->group(function () {
                     ->name('verification.notice');
             }
 
-            Route::get(RoutePath::for ('verification.verify', '/email/verify/{id}/{hash}'), [VerifyEmailController::class, '__invoke'])
-                ->middleware([config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard'), 'signed', 'throttle:' . $verificationLimiter])
+            Route::get(RoutePath::for ('verification.verify', '/email/verify/{id}/{hash}'), function(Request $request){
+                if ($request->user()->hasVerifiedEmail()) {
+                    return app(VerifyEmailResponse::class);
+                }
+
+                if ($request->user()->markEmailAsVerified()) {
+                    event(new Verified($request->user()));
+                    Mail::to($request->user())->send(new AccountVerifiedSuccess($request->user()));
+                }
+
+                return app(VerifyEmailResponse::class);
+            })
+                ->middleware([config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard'), 'throttle:' . $verificationLimiter])
                 ->name('verification.verify');
 
             Route::post(RoutePath::for ('verification.send', '/email/verification-notification'), [EmailVerificationNotificationController::class, 'store'])
