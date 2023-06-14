@@ -16,7 +16,7 @@
 
         <x-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('custom_password.email') }}" class="relative">
+        <form method="POST" action="{{ route('password.request') }}" class="relative">
             @csrf
 
             <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
