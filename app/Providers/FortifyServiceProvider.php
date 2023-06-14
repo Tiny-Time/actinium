@@ -46,6 +46,11 @@ class FortifyServiceProvider extends ServiceProvider
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
 
+        RateLimiter::for('verification', function (Request $request) {
+            $email = (string) $request->email;
+            return Limit::perMinute(1)->by($email.$request->ip());
+        });
+
         /* ------------------------ Validate Google Recaptcha ----------------------- */
 
         Fortify::authenticateUsing(function (Request $request) {

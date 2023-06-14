@@ -1,17 +1,18 @@
 <?php
 
-use App\Mail\AccountVerifiedSuccess;
 use Illuminate\Http\Request;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\RoutePath;
+use Illuminate\Http\JsonResponse;
+use App\Mail\AccountVerifiedSuccess;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Password;
 use Laravel\Socialite\Facades\Socialite;
+use Laravel\Fortify\Contracts\VerifyEmailResponse;
 use Laravel\Fortify\Http\Controllers\PasswordController;
 use Laravel\Fortify\Http\Controllers\NewPasswordController;
-use Laravel\Fortify\Contracts\VerifyEmailResponse;
 use Laravel\Fortify\Http\Controllers\RecoveryCodeController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use Laravel\Fortify\Http\Controllers\TwoFactorQrCodeController;
@@ -150,7 +151,27 @@ Route::middleware('domain.redirect')->group(function () {
                 ->middleware([config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard'), 'throttle:' . $verificationLimiter])
                 ->name('verification.verify');
 
-            Route::post(RoutePath::for ('verification.send', '/email/verification-notification'), [EmailVerificationNotificationController::class, 'store'])
+            Route::post(RoutePath::for ('verification.send', '/email/verification-notification'), function(Request $request)
+            {
+                Validator::make($request->all(), [
+                    'g-recaptcha-response' => 'required|captcha'
+                ],
+                [
+                    'g-recaptcha-response' => 'Please complete the reCAPTCHA verification.',
+                ])->validate();
+
+                if ($request->user()->hasVerifiedEmail()) {
+                    return $request->wantsJson()
+                                ? new JsonResponse('', 204)
+                                : redirect()->intended(Fortify::redirects('email-verification'));
+                }
+
+                $request->user()->sendEmailVerificationNotification();
+
+                return $request->wantsJson()
+                            ? new JsonResponse('', 202)
+                            : back()->with('status', Fortify::VERIFICATION_LINK_SENT);
+            })
                 ->middleware([config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard'), 'throttle:' . $verificationLimiter])
                 ->name('verification.send');
         }
