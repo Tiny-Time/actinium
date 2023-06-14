@@ -4,6 +4,8 @@
             <x-authentication-card-logo />
         </x-slot>
 
+        <x-validation-errors class="mb-4" />
+
         @php
             function maskEmail($email)
             {
@@ -35,6 +37,10 @@
 
         <form method="POST" action="{{ route('verification.send') }}">
             @csrf
+
+            <div class="flex justify-center mt-3">
+                {!! NoCaptcha::display() !!}
+            </div>
 
             <div>
                 <x-button type="submit">
