@@ -37,35 +37,52 @@ class DomainRedirectMiddleware
         /* Define the redirection logic based on the current domain, device, and authentication status. */
 
         if($isAuthenticated){
-
             /* ------------------------------ Authenticated ----------------------------- */
 
             $isAdmin = false; // test case.
             if($isAdmin){
                 // Admin redirect.
                 if ($isMobile && $currentDomain === $aaDomain) {
-                    // Admin user website (desktop version) - Redirect to mobile version.
-                    return redirect()->to($mAAppDomain . $request->getRequestUri());
+                    $needRedirect = $this->needRedirect($aaDomain, $currentDomain);
+                    if(!$needRedirect){
+                        // Admin user website (desktop version) - Redirect to mobile version.
+                        return redirect()->to($mAAppDomain . $request->getRequestUri());
+                    }
                 } elseif (!$isMobile && $currentDomain === $mAAppDomain) {
-                    // Admin user website (mobile version) - Redirect to desktop version.
-                    return redirect()->to($aaDomain . $request->getRequestUri());
+                    $needRedirect = $this->needRedirect($mAAppDomain, $currentDomain);
+                    if(!$needRedirect){
+                        // Admin user website (mobile version) - Redirect to desktop version.
+                        return redirect()->to($aaDomain . $request->getRequestUri());
+                    }
                 }
             }else{
                 // User
                 if ($isMobile && $currentDomain === $uAppDomain) {
-                    // Authenticated user website (desktop version) - Redirect to mobile version.
-                    return redirect()->to($uMAppDomain . $request->getRequestUri());
+                    $needRedirect = $this->needRedirect($uMAppDomain, $currentDomain);
+                    if(!$needRedirect){
+                        // Authenticated user website (desktop version) - Redirect to mobile version.
+                        return redirect()->to($uMAppDomain . $request->getRequestUri());
+                    }
                 } elseif (!$isMobile && $currentDomain === $uMAppDomain) {
-                    // Authenticated user website (mobile version) - Redirect to desktop version.
-                    return redirect()->to($uAppDomain . $request->getRequestUri());
+                    $needRedirect = $this->needRedirect($uAppDomain, $currentDomain);
+                    if(!$needRedirect){
+                        // Authenticated user website (mobile version) - Redirect to desktop version.
+                        return redirect()->to($uAppDomain . $request->getRequestUri());
+                    }
                 }elseif($currentDomain !==  $uAppDomain && $currentDomain !== $uMAppDomain){
                     // If the current domain is not app or m-app but the user is authenticated, use device for redirect
                     if($isMobile){
-                        // Authenticated user website (desktop version) - Redirect to mobile version.
-                        return redirect()->to($uMAppDomain . $request->getRequestUri());
+                        $needRedirect = $this->needRedirect($uMAppDomain, $currentDomain);
+                        if(!$needRedirect){
+                            // Authenticated user website (desktop version) - Redirect to mobile version.
+                            return redirect()->to($uMAppDomain . $request->getRequestUri());
+                        }
                     }else{
-                        // Authenticated user website (mobile version) - Redirect to desktop version.
-                        return redirect()->to($uAppDomain . $request->getRequestUri());
+                        $needRedirect = $this->needRedirect($uAppDomain, $currentDomain);
+                        if(!$needRedirect){
+                            // Authenticated user website (mobile version) - Redirect to desktop version.
+                            return redirect()->to($uAppDomain . $request->getRequestUri());
+                        }
                     }
                 }
             }
@@ -74,19 +91,31 @@ class DomainRedirectMiddleware
             /* ------------------------------------ Generic ----------------------------------- */
 
             if($isMobile && $currentDomain === $prodDomain){
-                // Generic user website (desktop version) - Redirect to mobile version.
-                return redirect()->to($mProdDomain . $request->getRequestUri());
+                $needRedirect = $this->needRedirect($mProdDomain, $currentDomain);
+                if(!$needRedirect){
+                    // Generic user website (desktop version) - Redirect to mobile version.
+                    return redirect()->to($mProdDomain . $request->getRequestUri());
+                }
             }elseif(!$isMobile && $currentDomain === $mProdDomain){
-                // Generic user website (mobile version) - Redirect to desktop version.
-                return redirect()->to($prodDomain . $request->getRequestUri());
+                $needRedirect = $this->needRedirect($prodDomain, $currentDomain);
+                if(!$needRedirect){
+                    // Generic user website (mobile version) - Redirect to desktop version.
+                    return redirect()->to($prodDomain . $request->getRequestUri());
+                }
             }elseif($currentDomain !== $prodDomain && $currentDomain !== $mProdDomain){
                 // If the current domain is not prodDomain or mProdDomain and the user is not authenticated, use device for redirect.
                 if($isMobile){
-                     // Generic user website (desktop version) - Redirect to mobile version.
-                    return redirect()->to($mProdDomain . $request->getRequestUri());
+                    $needRedirect = $this->needRedirect($mProdDomain, $currentDomain);
+                    if(!$needRedirect){
+                        // Generic user website (desktop version) - Redirect to mobile version.
+                       return redirect()->to($mProdDomain . $request->getRequestUri());
+                    }
                 }else{
-                   // Generic user website (mobile version) - Redirect to desktop version.
-                    return redirect()->to($prodDomain . $request->getRequestUri());
+                    $needRedirect = $this->needRedirect($prodDomain, $currentDomain);
+                    if(!$needRedirect){
+                        // Generic user website (mobile version) - Redirect to desktop version.
+                         return redirect()->to($prodDomain . $request->getRequestUri());
+                    }
                 }
             }
         }
@@ -104,5 +133,9 @@ class DomainRedirectMiddleware
         $userAgent = $_SERVER['HTTP_USER_AGENT'];
 
         return preg_match('/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i', $userAgent);
+    }
+
+    public function needRedirect($domain, $currentDomain){
+        return ($currentDomain === $domain);
     }
 }
