@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Features;
@@ -258,15 +260,11 @@ Route::middleware('domain.redirect')->group(function () {
         return view('welcome');
     })->name('homePage');
 
-    // Social Login.
-    Route::get('/social-login', function () {
-        return view('auth.social-login');
-    })->name('social-login');
+    /* ----------------------------  Social SignIn/SignUp. --------------------------- */
 
-    // Social Signup.
-    Route::get('/social-signup', function () {
-        return view('auth.social-login'); // test case
-    })->name('social-signup');
+    Route::get('/social-auth', function () {
+        return view('auth.social-auth');
+    })->name('socialAuth');
 
     // Google.
 
@@ -274,8 +272,62 @@ Route::middleware('domain.redirect')->group(function () {
         return Socialite::driver('google')->redirect();
     })->name('google');
 
-    Route::get('/auth/google/callback', function () {
-        $user = Socialite::driver('google')->user();
-        var_dump($user);
-    })->name('google-callback');
+    Route::get('/auth/google-callback', function (Request $request) {
+        $response = Socialite::driver('google')->user();
+
+        $user = User::where('email', $response->user['email'])->first();
+
+        if($user){
+            Auth::login($user);
+
+            $request->session()->regenerate();
+
+            return redirect()->route('dashboard');
+        }else{
+            $newUser = new User();
+            $newUser->name = $response->user['name'];
+            $newUser->email = $response->user['email'];
+            $newUser->password = bcrypt(Str::random(16));
+            $newUser->email_verified_at = now();
+            $newUser->save();
+
+            Auth::login($newUser);
+
+            $request->session()->regenerate();
+
+            return redirect()->route('dashboard');
+        }
+    })->name('googleCallback');
+
+    // Facebook.
+
+    Route::get('/auth/facebook', function () {
+        return Socialite::driver('facebook')->redirect();
+    })->name('facebook');
+
+    Route::get('/auth/facebook-callback', function (Request $request) {
+        $response_user = Socialite::driver('facebook')->user();
+        $user = User::where('email',  $response_user->email)->first();
+
+        if($user){
+            Auth::login($user);
+
+            $request->session()->regenerate();
+
+            return redirect()->route('dashboard');
+        }else{
+            $newUser = new User();
+            $newUser->name = $response_user->name;
+            $newUser->email = $response_user->email;
+            $newUser->password = bcrypt(Str::random(16));
+            $newUser->email_verified_at = now();
+            $newUser->save();
+
+            Auth::login($newUser);
+
+            $request->session()->regenerate();
+
+            return redirect()->route('dashboard');
+        }
+    })->name('facebookCallback');
 });
