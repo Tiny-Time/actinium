@@ -65,13 +65,13 @@
                 <hr class="flex-grow border-gray-500">
             </div>
 
-            <a href="{{ route('social-login') }}"
+            <a href="{{ route('socialAuth') }}"
                 class="flex items-center justify-center w-full gap-2 py-2 mt-1 text-sm font-semibold text-white bg-red-400 rounded-lg">
                 <svg class="w-4 h-4 rotate-180" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18.5 10.2501H1M1 10.2501L9.75 19.0001M1 10.2501L9.75 1.50012" stroke="white"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <span>Go to Social Sign In</span>
+                <span>Go to Social SignIn/SignUp</span>
             </a>
 
             <a href="{{ route('register') }}"

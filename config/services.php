@@ -31,12 +31,19 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    // /* -------------------------- Social Signup/login -------------------------- */
+    /* -------------------------- Social Signin/SignIn -------------------------- */
 
     // Google
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => substr(env('MPROD_DOMAIN'), -1) === "/" ? env('MPROD_DOMAIN').'google-callback' : env('MPROD_DOMAIN').'/google-callback',
+        'redirect' => '/auth/google-callback'
+    ],
+
+    // Facebook
+    'facebook' => [
+        'client_id' => env('FACEBOOK_APP_ID'),
+        'client_secret' => env('FACEBOOK_APP_SECRET'),
+        'redirect' => '/auth/facebook-callback',
     ],
 ];
