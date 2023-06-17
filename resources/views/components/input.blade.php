@@ -1,7 +1,7 @@
 @props([
     'disabled' => false,
     'type' => 'text',
-    'id'
+    'id' => \Str::random(10)
     ])
 
 <input {{ $disabled ? 'disabled' : '' }} type="{{ $type }}" {!! $attributes->merge(['class' => 'w-full bg-transparent border-none focus:outline-none focus:ring-0 text-sm rounded-lg']) !!}>
