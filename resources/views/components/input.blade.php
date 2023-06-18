@@ -4,7 +4,7 @@
     'id' => \Str::random(10)
     ])
 
-<input {{ $disabled ? 'disabled' : '' }} type="{{ $type }}" {!! $attributes->merge(['class' => 'w-full bg-transparent border-none focus:outline-none focus:ring-0 text-sm rounded-lg']) !!}>
+<input {{ $disabled ? 'disabled' : '' }} id="{{ $id }}" type="{{ $type }}" {!! $attributes->merge(['class' => 'w-full bg-transparent border-none focus:outline-none focus:ring-0 text-sm rounded-lg']) !!}>
 
 @if ($id === 'password')
     <div x-data="showPasswordDiv">
@@ -27,12 +27,24 @@
                     this.showPassword = !this.showPassword;
                     const password = document.querySelector('[name="password"]');
                     const confirm_password = document.querySelector('[name="password_confirmation"]');
+
+                    // Profile variables.
+                    const profilePassword = document.getElementById('password');
+                    const currentPassword = document.getElementById('current_password');
+                    const confirmPassword = document.getElementById('password_confirmation');
+
                     if(this.showPassword){
                         password && password.setAttribute('type', 'text');
                         confirm_password && confirm_password.setAttribute('type', 'text');
+                        profilePassword && profilePassword.setAttribute('type', 'text');
+                        currentPassword && currentPassword.setAttribute('type', 'text');
+                        confirmPassword && confirmPassword.setAttribute('type', 'text');
                     }else{
                         password && password.setAttribute('type', 'password');
                         confirm_password && confirm_password.setAttribute('type', 'password');
+                        profilePassword && profilePassword.setAttribute('type', 'password');
+                        currentPassword && currentPassword.setAttribute('type', 'password');
+                        confirmPassword && confirmPassword.setAttribute('type', 'password');
                     }
                 }
             }))
