@@ -140,7 +140,7 @@ Route::middleware('domain.redirect')->group(function () {
 
             Route::get(RoutePath::for ('verification.verify', '/email/verify/{id}/{hash}'), function(Request $request){
                 if ($request->user()->hasVerifiedEmail()) {
-                    return app(VerifyEmailResponse::class);
+                    return redirect()->route('verified');
                 }
 
                 if ($request->user()->markEmailAsVerified()) {
@@ -148,7 +148,7 @@ Route::middleware('domain.redirect')->group(function () {
                     Mail::to($request->user())->send(new AccountVerifiedSuccess($request->user()));
                 }
 
-                return app(VerifyEmailResponse::class);
+                return redirect()->route('verified');
             })
                 ->middleware([config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard'), 'throttle:' . $verificationLimiter])
                 ->name('verification.verify');
@@ -330,4 +330,6 @@ Route::middleware('domain.redirect')->group(function () {
             return redirect()->route('dashboard');
         }
     })->name('facebookCallback');
+
+    Route::view('/verified', 'profile.response')->name('verified');
 });
