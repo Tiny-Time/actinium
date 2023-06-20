@@ -27,16 +27,17 @@
             <x-slot name="content">
                 {{ __('Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
 
-                <div class="mt-4" x-data="{}" x-on:confirming-delete-user.window="setTimeout(() => $refs.password.focus(), 250)">
-                    <x-input type="password" class="mt-1 block w-3/4"
+                <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500" x-data="{}" x-on:confirming-delete-user.window="setTimeout(() => $refs.password.focus(), 250)">
+                    <x-label for="password" value="{{ __('Password') }}" class="!bg-white"/>
+                    <x-input type="password" class=""
                                 autocomplete="current-password"
                                 placeholder="{{ __('Password') }}"
                                 x-ref="password"
                                 wire:model.defer="password"
                                 wire:keydown.enter="deleteUser" />
-
+                    </div>
                     <x-input-error for="password" class="mt-2" />
-                </div>
+                    <p class="mt-1 font-bold">Don't remember your password? <span class="font-normal">Click <a href="{{ route('password.request') }}" class="font-bold text-indigo-500">Forgot Password</a> to reset.</span></p>
             </x-slot>
 
             <x-slot name="footer">
