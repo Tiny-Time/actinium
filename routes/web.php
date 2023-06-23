@@ -86,7 +86,6 @@ Route::middleware('domain.redirect')->group(function () {
         if (Features::enabled(Features::resetPasswords())) {
             if ($enableViews) {
                 Route::get(RoutePath::for ('password.request', '/forgot-password'), [PasswordResetLinkController::class, 'create'])
-                    ->middleware(['guest:' . config('fortify.guard')])
                     ->name('password.request');
 
                 Route::get(RoutePath::for ('password.reset', '/reset-password/{token}'), [NewPasswordController::class, 'create'])

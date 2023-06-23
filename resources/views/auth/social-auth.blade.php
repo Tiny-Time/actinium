@@ -13,7 +13,7 @@
         @endif
 
         <a href="{{ route('google') }}"
-            class="flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-gray-500 border-[1.7px] rounded-lg">
+            class="flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-gray-500 border-[1.7px] rounded-lg bg-white">
             <svg class="w-5 h-5" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_13_1205)">
                     <path
@@ -88,7 +88,7 @@
         </a>
 
         <a href="{{ route('password.request') }}"
-            class="float-right flex items-center gap-1 text-sm mt-3 leading-tight text-gray-600 dark:text-gray-400">
+            class="flex items-center float-right gap-1 mt-3 text-sm leading-tight text-gray-600 dark:text-gray-400">
             <svg class="w-4 h-4" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_13_1247)">
                     <path fill-rule="evenodd" clip-rule="evenodd"
