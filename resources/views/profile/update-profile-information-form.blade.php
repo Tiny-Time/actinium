@@ -1,4 +1,4 @@
-<x-form-section submit="updateProfileInformation">
+<x-form-section submit="ExtendUpdateProfileInformation">
     <x-slot name="title">
         {{ __('Profile Information') }}
     </x-slot>
@@ -94,9 +94,13 @@
         <x-action-message class="mr-3" on="saved">
             {{ __('Saved.') }}
         </x-action-message>
-
-        <x-button wire:loading.attr="disabled" wire:target="photo">
-            {{ __('Save') }}
-        </x-button>
+        <div class="w-full">
+            <x-confirms-password wire:then="ExtendUpdateProfileInformation">
+                <x-button type="button" wire:loading.attr="disabled" wire:target="photo">
+                    {{ __('Save') }}
+                </x-button>
+            </x-confirms-password>
+        </div>
     </x-slot>
+
 </x-form-section>

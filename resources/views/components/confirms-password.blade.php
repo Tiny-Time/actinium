@@ -23,18 +23,19 @@
     <x-slot name="content">
         {{ $content }}
 
-        <div class="mt-4" x-data="{}" x-on:confirming-password.window="setTimeout(() => $refs.confirmable_password.focus(), 250)">
-            <x-input type="password" class="mt-1 block w-3/4" placeholder="{{ __('Password') }}" autocomplete="current-password"
+        <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500" x-data="{}" x-on:confirming-password.window="setTimeout(() => $refs.confirmable_password.focus(), 250)">
+            <x-label for="password" value="{{ __('Password') }}" class="!bg-white"/>
+            <x-input type="password" placeholder="{{ __('Password') }}" autocomplete="current-password"
                         x-ref="confirmable_password"
                         wire:model.defer="confirmablePassword"
                         wire:keydown.enter="confirmPassword" />
-
-            <x-input-error for="confirmable_password" class="mt-2" />
         </div>
+        <x-input-error for="confirmable_password" class="mt-2" />
+        <p class="mt-1 font-bold">Don't remember your password? <span class="font-normal">Click <a href="{{ route('password.request') }}" class="font-bold text-indigo-500">Forgot Password</a> to reset.</span></p>
     </x-slot>
 
     <x-slot name="footer">
-        <x-secondary-button wire:click="stopConfirmingPassword" wire:loading.attr="disabled">
+        <x-secondary-button wire:click="stopConfirmingPassword" wire:loading.attr="disabled" class="w-full">
             {{ __('Cancel') }}
         </x-secondary-button>
 
