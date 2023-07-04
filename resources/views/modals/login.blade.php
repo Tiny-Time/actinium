@@ -59,7 +59,7 @@
                             <!-- Content -->
                             <div class="w-full max-w-sm px-6 py-4 mt-2">
                                 <h3 class="text-2xl font-bold text-center">Sign In</h3>
-                                {{-- @livewire('modals.login-form') --}}
+                                @livewire('modals.signin-form')
                             </div>
                         </div>
                     </div>
