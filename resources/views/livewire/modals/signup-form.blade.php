@@ -76,7 +76,7 @@
         <span>Go back to Social Sign Up</span>
     </button>
 
-    <button type="button" @click="openSignUpModal = !openSignUpModal"
+    <button type="button" @click="toggle"
         class="flex items-center justify-center w-full gap-2 py-2 mt-2 text-sm font-semibold text-white bg-blue-400 rounded-lg">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path

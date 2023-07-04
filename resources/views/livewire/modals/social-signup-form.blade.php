@@ -48,8 +48,8 @@
 
     @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
         <div class="w-full mt-3">
-            <label for="terms" class="flex items-start">
-                <x-checkbox id="terms" name="terms" wire:model.lazy="terms" />
+            <label for="socialTerms" class="flex items-start">
+                <x-checkbox id="socialTerms" name="terms" wire:model.lazy="terms" />
                 <span class="ml-2 text-sm leading-tight text-gray-600 break-all dark:text-gray-400">Welcome to
                     {{ env('APP_NAME') }}, by clicking on this checkbox you agree to our <a
                         href="{{ route('terms.show') }}" class="font-semibold text-cyan-500">Terms and
@@ -82,7 +82,7 @@
         <span>Continue with email</span>
     </button>
 
-    <button type="button" @click="openSignUpModal = !openSignUpModal"
+    <button type="button" @click="toggle"
         class="flex items-center justify-center w-full gap-2 py-2 mt-2 text-sm font-semibold text-white bg-blue-400 rounded-lg">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">

@@ -25,7 +25,7 @@
      @livewireStyles
 </head>
 
-<body class="font-sans antialiased" x-data="{ openSignUpModal: true, openLoginModal: true }" @keydown.window.escape="{ openSignUpModal = false, openLoginModal: false }">
+<body class="font-sans antialiased" x-data="authModal" @keydown.window.escape="{ openSignUpModal: false, openLoginModal: false }">
     <!-- Page Heading -->
     @if (isset($header))
         <header class="bg-white shadow dark:bg-gray-800">
@@ -59,6 +59,19 @@
     @include('modals.login')
     @include('modals.signup')
     @livewireScripts
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('authModal', () => ({
+                openLoginModal: false,
+                openSignUpModal: false,
+
+                toggle() {
+                    this.openLoginModal = !this.openLoginModal;
+                    this.openSignUpModal = !this.openSignUpModal;
+                }
+            }))
+        })
+    </script>
 </body>
 
 </html>
