@@ -6,7 +6,6 @@ use Livewire\Component;
 
 class SocialSignupForm extends Component
 {
-
     /**
      * public variables
      *
@@ -19,8 +18,9 @@ class SocialSignupForm extends Component
      *
      * @var array
      */
+
     protected $rules = [
-        'terms' => 'required'
+        'terms' => 'accepted',
     ];
 
     /**
@@ -29,7 +29,7 @@ class SocialSignupForm extends Component
      * @var array
      */
     protected $messages = [
-        'terms.required' => 'You must agree to our Terms and Conditions and Privacy Policy to proceed.',
+        'terms.accepted' => 'You must accept our Terms and Conditions and Privacy Policy to proceed.',
     ];
 
     /**

@@ -51,7 +51,7 @@ class FortifyServiceProvider extends ServiceProvider
             return Limit::perMinute(5)->by($email.$request->ip());
         });
 
-        /* ------------------------ Validate Google Recaptcha ----------------------- */
+        /* ------------------------ Validate Google Recaptcha - Login ----------------------- */
 
         Fortify::authenticateUsing(function (Request $request) {
             $validator = Validator::make($request->all(), [
