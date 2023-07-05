@@ -16,7 +16,7 @@
                 x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 @click.away="openForgotPasswordModal = !openForgotPasswordModal">
                 <div class="grid bg-gray-100 lg:grid-cols-2 dark:bg-gray-900">
-                    <!-- Social Login -->
+                    <!-- Forgot Password -->
                     <div class="relative flex flex-col items-center justify-center w-full py-6 transition-all"
                         x-transition:enter="transform duration-300 ease-out"
                         x-transition:enter-start="transform translate-x-full"
@@ -30,7 +30,7 @@
                         </div>
                         <!-- Content -->
                         <div class="w-full max-w-sm px-6 py-4 mt-2">
-                            <h3 class="text-2xl font-bold text-center">Sign In</h3>
+                            <h3 class="text-2xl font-bold text-center">Forgot Password</h3>
                             @livewire('modals.forgot-password')
                         </div>
                     </div>
