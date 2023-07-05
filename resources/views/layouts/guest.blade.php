@@ -21,11 +21,12 @@
     {{-- Google Recaptcha --}}
     {!! NoCaptcha::renderJs() !!}
 
-     <!-- Styles -->
-     @livewireStyles
+    <!-- Styles -->
+    @livewireStyles
 </head>
 
-<body class="font-sans antialiased" x-data="authModal" @keydown.window.escape="{ openSignUpModal: false, openLoginModal: false }">
+<body class="font-sans antialiased" x-data="authModal"
+    @keydown.window.escape="{ openSignUpModal: false, openLoginModal: false, openForgotPasswordModal: false }">
     <!-- Page Heading -->
     @if (isset($header))
         <header class="bg-white shadow dark:bg-gray-800">
@@ -33,7 +34,8 @@
                 {{-- {{ $header }} --}}
                 <div class="flex items-center justify-between">
                     <x-authentication-card-logo />
-                    <form method="POST" action="#" class="h-10 w-[400px] flex rounded-full items-center bg-[#8D8D8D] overflow-clip">
+                    <form method="POST" action="#"
+                        class="h-10 w-[400px] flex rounded-full items-center bg-[#8D8D8D] overflow-clip">
                         <div class="px-3">
                             <svg class="w-5 h-5" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -41,10 +43,14 @@
                                     fill="#F1F5F9" />
                             </svg>
                         </div>
-                        <input type="search" placeholder="Search for an event near you..." name="find" id="find-event" class="flex-grow p-0 mr-2 text-sm text-white bg-transparent border-none placeholder:text-white focus:ring-0 focus:outline-none">
-                        <button class="block h-full px-3 text-lg font-semibold text-white bg-red-400">Find Event</button>
+                        <input type="search" placeholder="Search for an event near you..." name="find"
+                            id="find-event"
+                            class="flex-grow p-0 mr-2 text-sm text-white bg-transparent border-none placeholder:text-white focus:ring-0 focus:outline-none">
+                        <button class="block h-full px-3 text-lg font-semibold text-white bg-red-400">Find
+                            Event</button>
                     </form>
-                    <button @click="openSignUpModal = !openSignUpModal" class="px-6 py-2 font-semibold text-white uppercase bg-red-400 rounded">Login/sign-up</button>
+                    <button @click="openSignUpModal = !openSignUpModal"
+                        class="px-6 py-2 font-semibold text-white uppercase bg-red-400 rounded">Login/sign-up</button>
                 </div>
             </div>
         </header>
@@ -58,16 +64,27 @@
     <!-- Modals -->
     @include('modals.login')
     @include('modals.signup')
+    @include('modals.forgot-password')
     @livewireScripts
+
     <script>
         document.addEventListener('alpine:init', () => {
             Alpine.data('authModal', () => ({
                 openLoginModal: false,
                 openSignUpModal: false,
+                openForgotPasswordModal: false,
 
                 toggle() {
                     this.openLoginModal = !this.openLoginModal;
                     this.openSignUpModal = !this.openSignUpModal;
+                },
+                forgotPassword(){
+                    this.openLoginModal = !this.openLoginModal;
+                    this.openForgotPasswordModal = !this.openForgotPasswordModal;
+                },
+                signIn(){
+                    this.openForgotPasswordModal = !this.openForgotPasswordModal;
+                    this.openLoginModal = !this.openLoginModal;
                 }
             }))
         })

@@ -1,7 +1,7 @@
 <form wire:submit.prevent="submit" method="post">
     <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
-        <x-label for="email" value="{{ __('Your Email') }}" />
-        <x-input id="email" type="email" name="email" wire:model.lazy="email" :value="old('email')" required autofocus autocomplete="email"
+        <x-label for="s_email" value="{{ __('Your Email') }}" />
+        <x-input id="s_email" type="email" name="email" wire:model.lazy="email" :value="old('email')" required autofocus autocomplete="email"
             placeholder="Your email goes here..." />
     </div>
     @error('email')
@@ -9,8 +9,8 @@
     @enderror
 
     <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
-        <x-label for="password" value="{{ __('Password') }}" />
-        <x-input id="password" class="block w-full mt-1" type="password" name="password" wire:model.lazy="password" required
+        <x-label for="s_password" value="{{ __('Password') }}" />
+        <x-input id="s_password" class="block w-full mt-1" type="password" name="password" wire:model.lazy="password" required
             autocomplete="new-password" placeholder="Your password goes here..." />
     </div>
     @error('password')
