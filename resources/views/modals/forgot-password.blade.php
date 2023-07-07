@@ -31,7 +31,7 @@
                         <!-- Content -->
                         <div class="w-full max-w-sm px-6 py-4 mt-2">
                             <h3 class="text-2xl font-bold text-center">Forgot Password</h3>
-                            @livewire('modals.forgot-password')
+                            @livewire('modals.forgot-password-form')
                         </div>
                     </div>
                     <div

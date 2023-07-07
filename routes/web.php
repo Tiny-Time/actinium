@@ -259,7 +259,7 @@ Route::middleware('domain.redirect')->group(function () {
         // Check if the device is mobile or desktop
         $isMobile = (new \App\Http\Middleware\DomainRedirectMiddleware)->isMobile();
         return view('welcome', compact('isMobile'));
-    })->name('homePage');
+    })->middleware('guest')->name('homePage');
 
     /* ----------------------------  Social SignIn/SignUp. --------------------------- */
 

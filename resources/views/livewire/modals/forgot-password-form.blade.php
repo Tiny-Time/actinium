@@ -1,26 +1,43 @@
-<div>
+<div id="forgotPasswordForm">
     <div class="mt-2 mb-4 text-sm text-center text-gray-600 dark:text-gray-400">
         {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
     </div>
 
-    @if (session('status'))
+    @if (session('success'))
         <div class="mb-4 text-sm font-medium text-green-600 dark:text-green-400">
-            {{ session('status') }}
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="mb-4 text-sm font-medium text-pink-600 dark:text-pink-400">
+            {{ session('error') }}
         </div>
     @endif
 
     <form method="POST" wire:submit.prevent="submit" class="relative">
 
-        <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
-            <x-label for="f_email" value="{{ __('Email') }}" />
-            <x-input id="f_email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required
-                autofocus autocomplete="username" placeholder="Your email goes here..." wire:model="email" />
+        <div>
+            <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
+                <x-label for="f_email" value="{{ __('Email') }}" />
+                <x-input id="f_email" class="mt-1" type="email" name="email" :value="old('email')" required
+                    autofocus autocomplete="username" placeholder="Your email goes here..." wire:model.lazy="email" />
+            </div>
+            @error('email')
+                <span class="text-sm text-pink-500">{{ $message }}</span>
+            @enderror
         </div>
-        @error('email')
-            <span class="text-sm text-pink-500">{{ $message }}</span>
-        @enderror
 
-        <x-button>
+        <div>
+            <div class="flex justify-center mt-3" wire:ignore>
+                {!! NoCaptcha::display(['data-callback' => 'onCallback']) !!}
+            </div>
+            @error('recaptcha')
+                <span class="text-sm text-pink-500">{{ $message }}</span>
+            @enderror
+        </div>
+
+        <x-button class="disabled:opacity-50" wire:loading.attr="disabled">
             {{ __('Email Password Reset Link') }}
         </x-button>
 
@@ -35,4 +52,13 @@
         </button>
 
     </form>
+    @push('js')
+        <script type="text/javascript">
+            var onCallback = function(response) {
+                const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+                const forgotPasswordFormElem = window.livewire.find(forgotPasswordForm.getAttribute("wire:id"))
+                forgotPasswordFormElem.recaptcha = response;
+            };
+        </script>
+    @endpush
 </div>
