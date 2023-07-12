@@ -23,6 +23,16 @@
 
     <!-- Styles -->
     @livewireStyles
+
+    <style>
+        .g-recaptcha > div {
+            width: 100% !important;
+        }
+
+        .g-recaptcha iframe {
+            width: 100% !important;
+        }
+    </style>
 </head>
 
 <body class="font-sans antialiased" x-data="authModal"
@@ -67,7 +77,7 @@
     @include('modals.forgot-password')
     @livewireScripts
 
-    <script>
+    <script type="text/javascript">
         document.addEventListener('alpine:init', () => {
             Alpine.data('authModal', () => ({
                 openLoginModal: false,
@@ -89,6 +99,7 @@
             }))
         })
     </script>
+    @stack('js')
 </body>
 
 </html>

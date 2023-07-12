@@ -3,18 +3,17 @@
 namespace App\Http\Livewire\Modals;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Password;
-use Laravel\Fortify\Contracts\SuccessfulPasswordResetLinkRequestResponse;
-use Laravel\Fortify\Contracts\FailedPasswordResetLinkRequestResponse;
 
-class ForgotPassword extends Component
+class ForgotPasswordForm extends Component
 {
     /**
      * public variables
      *
      * @var mixed
      */
-    public $email;
+    public $email, $recaptcha, $status;
 
     /**
      * Validation rules
@@ -24,6 +23,15 @@ class ForgotPassword extends Component
 
     protected $rules = [
         'email' => 'required|string|email:rfc,dns|exists:users|max:255|not_regex:/\bmailinator\.com\b/i',
+    ];
+
+    /**
+     * Custom Error messages for Validation
+     *
+     * @var array
+     */
+    protected $messages = [
+        'recaptcha' => 'Please complete the reCAPTCHA verification.',
     ];
 
     /**
@@ -38,21 +46,29 @@ class ForgotPassword extends Component
     }
 
     /**
-     * Email SignIn submit
+     * Forgot Password submit
      *
      * @return void
      */
     public function submit()
     {
-        $this->validate();
+        // Second validation with Google recaptcha
+        $this->validate([
+            'email' => 'required|string|email:rfc,dns|exists:users|max:255|not_regex:/\bmailinator\.com\b/i',
+            'recaptcha' => 'required|captcha',
+        ]);
 
         $status = (Password::broker(config('fortify.passwords')))->sendResetLink(
             ['email' => $this->email]
         );
 
-        return $status == Password::RESET_LINK_SENT
-            ? app(SuccessfulPasswordResetLinkRequestResponse::class, ['status' => $status])
-            : app(FailedPasswordResetLinkRequestResponse::class, ['status' => $status]);
+        $this->reset('recaptcha');
+
+        if ($status === Password::RESET_LINK_SENT) {
+            session()->flash('success', 'Password reset link sent successfully!');
+        } else {
+            session()->flash('error', Lang::get($status));
+        }
     }
 
     /**
@@ -62,6 +78,6 @@ class ForgotPassword extends Component
      */
     public function render()
     {
-        return view('livewire.modals.forgot-password');
+        return view('livewire.modals.forgot-password-form');
     }
 }

@@ -13,7 +13,7 @@ class SigninForm extends Component
      *
      * @var mixed
      */
-    public $email, $password, $remember;
+    public $email, $password, $remember, $signInRecaptcha;
 
     /**
      * Validation rules
@@ -33,9 +33,18 @@ class SigninForm extends Component
                     ->requireNumeric()
                     ->requireSpecialCharacter()
                     ->requireUppercase(),
-            ]
+            ],
         ];
     }
+
+    /**
+     * Custom Error messages for Validation
+     *
+     * @var array
+     */
+    protected $messages = [
+        'signInRecaptcha' => 'Please complete the reCAPTCHA verification.',
+    ];
 
     /**
      * updated (Realtime Validation)
@@ -55,7 +64,9 @@ class SigninForm extends Component
      */
     public function submit()
     {
-        $this->validate();
+        $this->validate([
+            'signInRecaptcha' => 'required|captcha',
+        ]);
 
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
             return redirect()->route('dashboard');

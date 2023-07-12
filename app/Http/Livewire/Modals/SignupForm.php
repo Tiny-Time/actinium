@@ -18,7 +18,7 @@ class SignupForm extends Component
      *
      * @var mixed
      */
-    public $email, $password, $password_confirmation, $terms;
+    public $email, $password, $password_confirmation, $terms, $signUpRecaptcha;
 
     /**
      * Validation rules
@@ -42,6 +42,7 @@ class SignupForm extends Component
      */
     protected $messages = [
         'terms.accepted' => 'You must accept our Terms and Conditions and Privacy Policy to proceed.',
+        'signUpRecaptcha' => 'Please complete the reCAPTCHA verification.',
     ];
 
     /**
@@ -61,7 +62,12 @@ class SignupForm extends Component
      * @return void
      */
     public function submit(){
-        $this->validate();
+        $this->validate([
+            'email' =>  ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:users', 'not_regex:/\bmailinator\.com\b/i'],
+            'password' => $this->passwordRules(),
+            'terms' => 'accepted',
+            'signUpRecaptcha' => 'required|captcha',
+        ]);
 
         $user = User::create([
             'name' => (new CreateNewUser)->userName(),

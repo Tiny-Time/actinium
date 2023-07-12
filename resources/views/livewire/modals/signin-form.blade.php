@@ -1,26 +1,39 @@
-<form wire:submit.prevent="submit" method="post">
-    <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
-        <x-label for="s_email" value="{{ __('Your Email') }}" />
-        <x-input id="s_email" type="email" name="email" wire:model.lazy="email" :value="old('email')" required autofocus autocomplete="email"
-            placeholder="Your email goes here..." />
+<form wire:submit.prevent="submit" method="post" id="signInForm">
+    <div>
+        <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
+            <x-label for="s_email" value="{{ __('Your Email') }}" />
+            <x-input id="s_email" type="email" name="email" wire:model.lazy="email" :value="old('email')" required autofocus autocomplete="email"
+                placeholder="Your email goes here..." />
+        </div>
+        @error('email')
+            <span class="text-sm text-pink-500">{{ $message }}</span>
+        @enderror
     </div>
-    @error('email')
-        <span class="text-sm text-pink-500">{{ $message }}</span>
-    @enderror
 
-    <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
-        <x-label for="s_password" value="{{ __('Password') }}" />
-        <x-input id="s_password" class="block w-full mt-1" type="password" name="password" wire:model.lazy="password" required
-            autocomplete="new-password" placeholder="Your password goes here..." />
+    <div>
+        <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
+            <x-label for="s_password" value="{{ __('Password') }}" />
+            <x-input id="s_password" class="block w-full mt-1" type="password" name="password" wire:model.lazy="password" required
+                autocomplete="new-password" placeholder="Your password goes here..." />
+        </div>
+        @error('password')
+            <span class="text-sm text-pink-500">{{ $message }}</span>
+        @enderror
     </div>
-    @error('password')
-        <span class="text-sm text-pink-500">{{ $message }}</span>
-    @enderror
 
     <label for="remember_me" class="flex items-center mt-2">
         <x-checkbox id="remember_me" name="remember" wire:model.lazy="remember" />
         <span class="ml-2 break-all">Remember me</span>
     </label>
+
+    <div>
+        <div class="flex justify-center mt-3" wire:ignore>
+            {!! NoCaptcha::display(['data-callback' => 'signInRecaptchaCallback']) !!}
+        </div>
+        @error('signInRecaptcha')
+            <span class="text-sm text-pink-500">{{ $message }}</span>
+        @enderror
+    </div>
 
     <button type="submit"
         class="flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-white bg-red-400 rounded-lg disabled:opacity-50" wire:loading.attr="disabled">
@@ -67,4 +80,13 @@
         </svg>
         <span>Sign Up</span>
     </button>
+    @push('js')
+        <script>
+            var signInRecaptchaCallback = function(response) {
+                const signInForm = document.getElementById('signInForm');
+                const signInFormElem = window.livewire.find(signInForm.getAttribute("wire:id"))
+                signInFormElem.signInRecaptcha = response;
+            };
+        </script>
+    @endpush
 </form>
