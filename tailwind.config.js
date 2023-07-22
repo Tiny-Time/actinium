@@ -14,8 +14,12 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
+                sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
             },
+            colors:{
+                'olivine':'#A2C376',
+                'gm':'#2C3539',
+            }
         },
     },
 

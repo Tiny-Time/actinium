@@ -5,3 +5,29 @@
 [x-cloak] {
     display: none;
 }
+
+@layer components {
+    /* Width, height, and color of the scrollbar handle */
+    ::-webkit-scrollbar {
+        @apply w-1 h-1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-red-400 rounded-lg;
+    }
+
+    /* Track color */
+    ::-webkit-scrollbar-track {
+        @apply bg-red-200;
+    }
+
+    .testimonials::after {
+        content: '';
+        @apply bg-gradient-to-r from-rose-400 to-red-800 backdrop-blur-[38px] opacity-90 absolute top-0 right-0 left-0 bottom-0 -z-10 rounded-xl;
+
+    }
+}
+
+.splide__arrows {
+    display: none;
+}
