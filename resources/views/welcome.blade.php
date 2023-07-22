@@ -446,15 +446,13 @@
         </div>
     </div>
     {{-- Testimonials --}}
-    <div class="relative z-40 px-4 mx-auto mt-8 max-w-7xl sm:px-6 lg:px-8">
+    <div class="relative z-10 px-4 mx-auto mt-8 max-w-7xl sm:px-6 lg:px-8">
         <div class="bg-[url('../images/testimonials-bg.png')] rounded-xl relative -z-20">
             <div class="p-3 md:p-10 testimonials">
-                <div class="z-10">
+                <div class="">
                     <p class="text-xl font-semibold text-center text-gray-100 uppercase md:text-2xl">testimonials</p>
                     <h2 class="mt-3 text-2xl font-bold text-center md:text-4xl text-gm">What Our Customers Say</h2>
-                    <p class="mt-3 text-sm text-center text-gray-100 md:text-base">Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
-                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                    <p class="mt-3 text-sm text-center text-gray-100 md:text-base max-w-md mx-auto">Experience the Power of Customer Satisfaction: Explore Heartwarming Testimonials and Reviews from Our Delighted Clients! Discover Why They Trust and Love Our Services.</p>
                     {{-- Testimonial Cards --}}
                     <section class="pb-8 mt-6 splide" aria-label="Testimonials Cards">
                         <div class="splide__track">
