@@ -50,7 +50,7 @@
         <div class="w-full mt-3">
             <label for="socialSigninTerms" class="flex items-start">
                 <x-checkbox id="socialSigninTerms" name="terms" wire:model.lazy="terms" />
-                <span class="ml-2 text-sm leading-tight text-gray-600 break-all dark:text-gray-400">Welcome to
+                <span class="ml-2 text-sm leading-tight text-gray-600 dark:text-gray-400">Welcome to
                     {{ env('APP_NAME') }}, by clicking on this checkbox you agree to our <a
                         href="{{ route('terms.show') }}" class="font-semibold text-cyan-500">Terms and
                         Conditions</a> and
