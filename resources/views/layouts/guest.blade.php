@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Trochut:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -33,7 +34,7 @@
     </style>
 </head>
 
-<body class="font-sans antialiased relative" x-data="authModal"
+<body class="relative font-sans antialiased" x-data="authModal"
     @keydown.window.escape="{ openSignUpModal: false, openLoginModal: false, openForgotPasswordModal: false }">
     <!-- Page Heading -->
     @if (isset($header))
@@ -43,7 +44,7 @@
     @endif
 
     <!-- Page Content -->
-    <main class="font-sans antialiased text-gray-900 dark:text-gray-100 mx-auto max-w-7xl">
+    <main class="mx-auto font-sans antialiased text-gray-900 dark:text-gray-100 max-w-7xl">
         {{ $slot }}
     </main>
 

@@ -54,7 +54,7 @@
                 x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="translate-x-0"
                 x-transition:leave-end="-translate-x-full">
                 <div class="flex items-center justify-between mt-3">
-                    <h3 class="text-2xl font-bold uppercase">Menu</h3>
+                    <h3 class="text-2xl font-bold uppercase font-trochut">Menu</h3>
                     <button @click="menuOverlay = false">
                         <svg width="19" height="18" class="cursor-pointer" viewBox="0 0 19 18" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
