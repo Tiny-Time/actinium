@@ -223,19 +223,19 @@
                 <div class="grid gap-1">
                     <h3 class="text-xl font-semibold">Quick Links</h3>
                     <a href="/">Home</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Contact</a>
-                    <a href="#">Create Timer</a>
-                    <a href="#">Create Counter</a>
-                    <a href="#">Blog</a>
+                    <a href="#" class="w-max">About Us</a>
+                    <a href="#" class="w-max">Contact</a>
+                    <a href="#" class="w-max">Create Timer</a>
+                    <a href="#" class="w-max">Create Counter</a>
+                    <a href="#" class="w-max">Blog</a>
                 </div>
                 {{-- Column 3: Legal Links --}}
                 <div class="grid gap-1">
                     <h3 class="text-xl font-semibold">Legal Links</h3>
-                    <a href="#">GDPR Compliance</a>
-                    <a href="#">DMCA</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms and Conditions</a>
+                    <a href="{{ route('gdpr.show') }}" class="w-max">GDPR Compliance</a>
+                    <a href="{{ route('dmca.show') }}" class="w-max">DMCA</a>
+                    <a href="{{ route('policy.show') }}" class="w-max">Privacy Policy</a>
+                    <a href="{{ route('terms.show') }}" class="w-max">Terms and Conditions</a>
                 </div>
                 {{-- Column 4: Subscription form --}}
                 <div class="">
