@@ -349,4 +349,12 @@ Route::middleware('domain.redirect')->group(function () {
             'dmca' => Str::markdown(file_get_contents($dmcaFile)),
         ]);
     })->name('dmca.show');
+
+    Route::get('gdpr', function(){
+        $gdprFile = Jetstream::localizedMarkdownPath('gdpr.md');
+
+        return view('gdpr', [
+            'gdpr' => Str::markdown(file_get_contents($gdprFile)),
+        ]);
+    })->name('gdpr.show');
 });
