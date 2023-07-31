@@ -12,7 +12,6 @@ use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Password;
 use Laravel\Socialite\Facades\Socialite;
-use Laravel\Fortify\Contracts\VerifyEmailResponse;
 use Laravel\Fortify\Http\Controllers\PasswordController;
 use Laravel\Fortify\Http\Controllers\NewPasswordController;
 use Laravel\Fortify\Http\Controllers\RecoveryCodeController;
@@ -27,8 +26,9 @@ use Laravel\Fortify\Contracts\FailedPasswordResetLinkRequestResponse;
 use Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController;
 use Laravel\Fortify\Http\Controllers\EmailVerificationPromptController;
 use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticationController;
+use Laravel\Jetstream\Http\Controllers\Livewire\PrivacyPolicyController;
 use Laravel\Fortify\Contracts\SuccessfulPasswordResetLinkRequestResponse;
-use Laravel\Fortify\Http\Controllers\EmailVerificationNotificationController;
+use Laravel\Jetstream\Http\Controllers\Livewire\TermsOfServiceController;
 use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticatedSessionController;
 use Laravel\Fortify\Http\Controllers\ConfirmedTwoFactorAuthenticationController;
 
@@ -256,9 +256,7 @@ Route::middleware('domain.redirect')->group(function () {
 
     // Homepage.
     Route::get('/', function () {
-        // Check if the device is mobile or desktop
-        $isMobile = (new \App\Http\Middleware\DomainRedirectMiddleware)->isMobile();
-        return view('welcome', compact('isMobile'));
+        return view('welcome');
     })->middleware('guest')->name('homePage');
 
     /* ----------------------------  Social SignIn/SignUp. --------------------------- */
@@ -332,5 +330,13 @@ Route::middleware('domain.redirect')->group(function () {
         }
     })->name('facebookCallback');
 
+
+    /* ------------------------ Account verified notice. ------------------------ */
+
     Route::view('/verified', 'profile.response')->name('verified');
+
+    /* ------------------------------- Legal Links. ------------------------------ */
+
+    Route::get('terms-and-conditions', [TermsOfServiceController::class, 'show'])->name('terms.show');
+    Route::get('privacy-policy', [PrivacyPolicyController::class, 'show'])->name('policy.show');
 });
