@@ -55,4 +55,3 @@
     Any disputes arising out of or relating to these Terms and Conditions or the use of the **TinyTime** shall be resolved amicably through good-faith negotiations. If no resolution can be reached, the matter shall be referred to arbitration in accordance with [Arbitration Rules].
 
 By using the **TinyTime**, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.
-

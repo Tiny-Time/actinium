@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\RoutePath;
+use Laravel\Jetstream\Jetstream;
 use Illuminate\Http\JsonResponse;
 use App\Mail\AccountVerifiedSuccess;
 use Illuminate\Auth\Events\Verified;
@@ -338,5 +339,14 @@ Route::middleware('domain.redirect')->group(function () {
     /* ------------------------------- Legal Links. ------------------------------ */
 
     Route::get('terms-and-conditions', [TermsOfServiceController::class, 'show'])->name('terms.show');
+
     Route::get('privacy-policy', [PrivacyPolicyController::class, 'show'])->name('policy.show');
+
+    Route::get('dmca', function(){
+        $dmcaFile = Jetstream::localizedMarkdownPath('dmca.md');
+
+        return view('dmca', [
+            'dmca' => Str::markdown(file_get_contents($dmcaFile)),
+        ]);
+    })->name('dmca.show');
 });
