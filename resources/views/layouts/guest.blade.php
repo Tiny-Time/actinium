@@ -232,10 +232,10 @@
                 {{-- Column 3: Legal Links --}}
                 <div class="grid gap-1">
                     <h3 class="text-xl font-semibold">Legal Links</h3>
-                    <a href="#" class="w-max">GDPR Compliance</a>
-                    <a href="#" class="w-max">DMCA</a>
-                    <a href="#" class="w-max">Privacy Policy</a>
-                    <a href="#" class="w-max">Terms and Conditions</a>
+                    <a href="{{ route('gdpr.show') }}" class="w-max">GDPR Compliance</a>
+                    <a href="{{ route('dmca.show') }}" class="w-max">DMCA</a>
+                    <a href="{{ route('policy.show') }}" class="w-max">Privacy Policy</a>
+                    <a href="{{ route('terms.show') }}" class="w-max">Terms and Conditions</a>
                 </div>
                 {{-- Column 4: Subscription form --}}
                 <div class="">
