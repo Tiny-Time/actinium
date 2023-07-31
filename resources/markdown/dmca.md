@@ -19,7 +19,7 @@ Effective Date: July 7, 2023
     
     d. Location of the infringing material: [Provide URLs or specific links where the copyrighted material is being infringed]
 
-3. Contact Information:
+3. **Contact Information:**
 
     Please provide your contact information to enable us to communicate with you regarding this matter:
 
@@ -32,23 +32,23 @@ Effective Date: July 7, 2023
     
     d. Phone number: [Your Phone Number]
 
-4. Statement of Good Faith:
+4. **Statement of Good Faith:**
 
     In your DMCA Notice, you must include the following statement:
 
     "I have a good faith belief that the use of the copyrighted materials described above is not authorized by the copyright owner, its agent, or the law."
 
-5. Statement of Accuracy:
+5. **Statement of Accuracy:**
     
     You must also include the following statement:
 
     "I declare under penalty of perjury that the information provided in this DMCA Notice is accurate and that I am the copyright owner or authorized to act on behalf of the copyright owner."
 
-6. Signature:
+6. **Signature:**
    
    Please provide your electronic or physical signature to complete the DMCA Notice.
 
-7. Sending the DMCA Notice:
+7. **Sending the DMCA Notice:**
 
    Send the completed DMCA Notice to the following designated Copyright Agent:
 
@@ -60,15 +60,15 @@ Effective Date: July 7, 2023
 
     [Copyright Agent's Email Address]
     
-8. Action Taken:
+8. **Action Taken:**
 
     Upon receiving a valid DMCA Notice, we will promptly investigate the reported infringement. If we find that the material in question is indeed infringing, we will take appropriate actions, including removing or disabling access to the infringing content.
 
-9. Counter-Notification:
+9. **Counter-Notification:**
 
     If you believe that your content was mistakenly removed or disabled and that you have the right to use the copyrighted material, you may send a Counter-Notification to the Copyright Agent at the above address.
 
-10. Contact Us:  
+10. **Contact Us:**
     
     If you have any questions or concerns about this DMCA Notice or the website's copyright practices, please contact us at assit@tinyti.me.
 
