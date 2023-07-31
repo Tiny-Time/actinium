@@ -24,10 +24,29 @@
     .testimonials::after {
         content: '';
         @apply bg-gradient-to-r from-rose-400 to-red-800 backdrop-blur-[38px] opacity-90 absolute top-0 right-0 left-0 bottom-0 -z-10 rounded-xl;
+    }
 
+    .timer-template::after{
+        content: '';
+        @apply absolute top-0 bottom-0 left-0 right-0 bg-lime-950 bg-opacity-10 backdrop-blur-sm -z-10;
     }
 }
 
 .splide__arrows {
     display: none;
+}
+
+.timer-title-shadow{
+    text-shadow: 0 3px 3px #013801, 3px 0 3px rgba(1, 56, 1, 0.25), 0 9px 3px rgba(1, 56, 1, 0.25), -6px 0 3px rgba(1, 56, 1, 0.25), 0 -6px 3px rgba(1, 56, 1, 0.25);
+}
+
+.timer-text{
+    background: linear-gradient(180deg, #89f256 0%, #EAE8E9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.timer-text-bg{
+    background: linear-gradient(133deg, rgba(250, 226, 218, 0.11) 0%, rgba(217, 154, 114, 0.11) 100%);
 }

@@ -15,7 +15,8 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
-                'trochut':['Trochut', 'cursive', ...defaultTheme.fontFamily.sans]
+                'trochut':['Trochut', 'cursive', ...defaultTheme.fontFamily.sans],
+                'rokkitt':['Rokkitt', ...defaultTheme.fontFamily.sans],
             },
             colors:{
                 'olivine':'#A2C376',
