@@ -1,13 +1,7 @@
 <x-guest-layout>
-    <div class="pt-4 bg-gray-100 dark:bg-gray-900">
-        <div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0">
-            <div>
-                <x-authentication-card-logo />
-            </div>
-
-            <div class="w-full sm:max-w-2xl mt-6 p-6 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg prose dark:prose-invert">
-                {!! $terms !!}
-            </div>
-        </div>
+    <x-slot name="header"></x-slot>
+    <div class="w-full px-4 mt-6 mx-auto max-w-7xl sm:px-6 lg:px-8 prose dark:prose-invert">
+        {!! $terms !!}
     </div>
+    <x-slot name="footer"></x-slot>
 </x-guest-layout>
