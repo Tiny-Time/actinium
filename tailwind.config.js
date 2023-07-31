@@ -14,8 +14,14 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
+                sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
+                'trochut':['Trochut', 'cursive', ...defaultTheme.fontFamily.sans],
+                'rokkitt':['Rokkitt', ...defaultTheme.fontFamily.sans],
             },
+            colors:{
+                'olivine':'#A2C376',
+                'gm':'#2C3539',
+            }
         },
     },
 
