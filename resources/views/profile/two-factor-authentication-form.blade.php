@@ -53,7 +53,7 @@
                         <x-label for="code" value="{{ __('Code') }}" class="!bg-white" />
 
                         <x-input id="code" type="text" name="code" class="block w-1/2 mt-1" inputmode="numeric" autofocus autocomplete="one-time-code"
-                            wire:model.defer="code"
+                            wire:model="code"
                             wire:keydown.enter="confirmTwoFactorAuthentication" />
 
                     </div>

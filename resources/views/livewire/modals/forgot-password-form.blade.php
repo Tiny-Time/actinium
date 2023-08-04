@@ -15,13 +15,13 @@
         </div>
     @endif
 
-    <form method="POST" wire:submit.prevent="submit" class="relative">
+    <form method="POST" wire:submit="submit" class="relative">
 
         <div>
             <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
                 <x-label for="f_email" value="{{ __('Email') }}" />
                 <x-input id="f_email" class="mt-1" type="email" name="email" :value="old('email')" required
-                    autofocus autocomplete="username" placeholder="Your email goes here..." wire:model.lazy="email" />
+                    autofocus autocomplete="username" placeholder="Your email goes here..." wire:model.blur="email" />
             </div>
             @error('email')
                 <span class="text-sm text-pink-500">{{ $message }}</span>

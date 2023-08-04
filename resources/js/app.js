@@ -1,8 +1,5 @@
 import './bootstrap';
 
-import Alpine from 'alpinejs';
-import focus from '@alpinejs/focus';
-
 import '@splidejs/splide/css';
 import Splide from '@splidejs/splide';
 
@@ -25,9 +22,3 @@ if($('.splide').length > 0){
 
     splide.mount();
 }
-
-window.Alpine = Alpine;
-
-Alpine.plugin(focus);
-
-Alpine.start();

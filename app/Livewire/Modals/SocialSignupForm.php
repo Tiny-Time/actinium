@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Modals;
+namespace App\Livewire\Modals;
 
 use Livewire\Component;
 

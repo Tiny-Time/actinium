@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Laravel\Jetstream\ConfirmsPasswords;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;

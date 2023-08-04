@@ -15,7 +15,7 @@
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     <div x-data="{ photoName: null, photoPreview: null }" class="col-span-6 sm:col-span-4">
                         <!-- Profile Photo File Input -->
-                        <input type="file" class="hidden" wire:model="photo" x-ref="photo"
+                        <input type="file" class="hidden" wire:model.live="photo" x-ref="photo"
                             x-on:change="
                                     photoName = $refs.photo.files[0].name;
                                     const reader = new FileReader();
@@ -57,14 +57,14 @@
                 <!-- Name -->
                 <div class="rounded-lg border-[1.7px] bg-white relative mt-4 w-full focus-within:border-indigo-500">
                     <x-label for="name" value="{{ __('Name') }}" class="bg-red-400 rounded-b" />
-                    <x-input id="name" type="text" wire:model.defer="state.name" autocomplete="name" />
+                    <x-input id="name" type="text" wire:model="state.name" autocomplete="name" />
                 </div>
                 <x-input-error for="name" class="mt-2" />
 
                 <!-- Email -->
                 <div class="rounded-lg border-[1.7px] bg-white relative mt-4 w-full focus-within:border-indigo-500">
                     <x-label for="email" value="{{ __('Email') }}" class="bg-red-400 rounded-b" />
-                    <x-input id="email" type="email" wire:model.defer="state.email" autocomplete="username" />
+                    <x-input id="email" type="email" wire:model="state.email" autocomplete="username" />
                 </div>
                 <x-input-error for="email" class="mt-2" />
                 @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::emailVerification()) &&
