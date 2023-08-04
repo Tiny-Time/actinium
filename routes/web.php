@@ -357,4 +357,14 @@ Route::middleware('domain.redirect')->group(function () {
             'gdpr' => Str::markdown(file_get_contents($gdprFile)),
         ]);
     })->name('gdpr.show');
+
+    /* ---------------------------------- Blogs ---------------------------------- */
+
+    Route::get('blogs', function(){
+        return view('blogs.listings');
+    });
+
+    Route::get('blogs/{post_id}/{post_title}', function(){
+        return view('blogs.show');
+    });
 });
