@@ -9,8 +9,8 @@
 
     <x-slot name="form">
         <div
-            class="px-4 py-5 bg-red-400 dark:bg-gray-800 sm:p-6 shadow {{ isset($actions) ? 'sm:rounded-tl-md sm:rounded-tr-md' : 'sm:rounded-t-md' }}">
-            <div class="">
+            class="px-4 py-5 bg-red-400 sm:p-6 shadow {{ isset($actions) ? 'rounded-tl-md rounded-tr-md' : 'rounded-t-md' }}">
+            <div class="dark:text-gray-700">
                 <!-- Profile Photo -->
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     <div x-data="{ photoName: null, photoPreview: null }" class="col-span-6 sm:col-span-4">
@@ -56,20 +56,20 @@
 
                 <!-- Name -->
                 <div class="rounded-lg border-[1.7px] bg-white relative mt-4 w-full focus-within:border-indigo-500">
-                    <x-label for="name" value="{{ __('Name') }}" class="bg-red-400 rounded-b" />
+                    <x-label for="name" value="{{ __('Name') }}" class="!bg-red-400 rounded-b" />
                     <x-input id="name" type="text" wire:model="state.name" autocomplete="name" />
                 </div>
                 <x-input-error for="name" class="mt-2" />
 
                 <!-- Email -->
                 <div class="rounded-lg border-[1.7px] bg-white relative mt-4 w-full focus-within:border-indigo-500">
-                    <x-label for="email" value="{{ __('Email') }}" class="bg-red-400 rounded-b" />
+                    <x-label for="email" value="{{ __('Email') }}" class="!bg-red-400 rounded-b" />
                     <x-input id="email" type="email" wire:model="state.email" autocomplete="username" />
                 </div>
                 <x-input-error for="email" class="mt-2" />
                 @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::emailVerification()) &&
                         !$this->user->hasVerifiedEmail())
-                    <p class="mt-2 text-sm dark:text-white">
+                    <p class="mt-2 text-sm dark:text-gray-50">
                         {{ __('Your email address is unverified.') }}
 
                         <button type="button"

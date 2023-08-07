@@ -9,8 +9,8 @@
 
     <x-slot name="form">
         <div
-            class="px-4 py-5 bg-cyan-500 dark:bg-gray-800 sm:p-6 shadow {{ isset($actions) ? 'sm:rounded-tl-md sm:rounded-tr-md' : 'sm:rounded-t-md' }}">
-            <div class="">
+            class="px-4 py-5 bg-cyan-500 sm:p-6 shadow {{ isset($actions) ? 'rounded-tl-md rounded-tr-md' : 'rounded-t-md' }}">
+            <div class="dark:text-gray-700">
                 <div class="rounded-lg border-[1.7px] bg-white relative mt-4 w-full focus-within:border-indigo-500">
                     <x-label class="rounded-b !bg-cyan-500" for="current_password" value="{{ __('Current Password') }}" />
                     <x-input id="current_password" type="password" wire:model="state.current_password"
