@@ -3,7 +3,7 @@
         <div>
             <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
                 <x-label for="email" value="{{ __('Your Email') }}" />
-                <x-input id="email" type="email" name="email" wire:model.blur="email" :value="old('email')" required autofocus autocomplete="email"
+                <x-input id="email" type="email" name="email" wire:model.live="email" :value="old('email')" required autofocus autocomplete="email"
                     placeholder="Your email goes here..." />
             </div>
             @error('email')
@@ -14,7 +14,7 @@
         <div>
             <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
                 <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block w-full mt-1" type="password" name="password" wire:model.blur="password" required
+                <x-input id="password" class="block w-full mt-1" type="password" name="password" wire:model.live="password" required
                     autocomplete="new-password" placeholder="Your password goes here..." />
             </div>
             @error('password')
@@ -24,7 +24,7 @@
 
         <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
             <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-            <x-input id="password_confirmation" class="block w-full mt-1" type="password" name="password_confirmation" wire:model.blur="password_confirmation"
+            <x-input id="password_confirmation" class="block w-full mt-1" type="password" name="password_confirmation" wire:model.live="password_confirmation"
                 required autocomplete="new-password" placeholder="Confirm your password..." />
         </div>
 
@@ -37,22 +37,20 @@
             @enderror
         </div>
 
-        @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-            <div class="w-full mt-3">
-                <label for="terms" class="flex items-start">
-                    <x-checkbox id="terms" name="terms" wire:model.blur="terms" />
-                    <span class="ml-2 text-sm leading-tight text-gray-600 dark:text-gray-400">Welcome to
-                        {{ env('APP_NAME') }}, by clicking on this checkbox you agree to our <a
-                            href="{{ route('terms.show') }}" class="font-semibold text-cyan-500">Terms and
-                            Conditions</a> and
-                        <a href="{{ route('policy.show') }}" class="font-semibold text-cyan-500">Privacy
-                            Policy</a>.</span>
-                </label>
-                @error('terms')
-                    <span class="text-sm text-pink-500">{{ $message }}</span>
-                @enderror
-            </div>
-        @endif
+        <div class="w-full mt-3">
+            <label for="terms" class="flex items-start">
+                <x-checkbox id="terms" name="terms" wire:model.live="terms" />
+                <span class="ml-2 text-sm leading-tight text-gray-600 dark:text-gray-400">Welcome to
+                    {{ env('APP_NAME') }}, by clicking on this checkbox you agree to our <a
+                        href="{{ route('terms.show') }}" class="font-semibold text-cyan-500">Terms and
+                        Conditions</a> and
+                    <a href="{{ route('policy.show') }}" class="font-semibold text-cyan-500">Privacy
+                        Policy</a>.</span>
+            </label>
+            @error('terms')
+                <span class="text-sm text-pink-500">{{ $message }}</span>
+            @enderror
+        </div>
 
         <button type="submit"
             class="flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-white bg-red-400 rounded-lg disabled:opacity-50" wire:loading.attr="disabled">

@@ -282,7 +282,7 @@ Route::middleware('domain.redirect')->group(function () {
 
             $request->session()->regenerate();
 
-            return redirect()->route('dashboard');
+            return redirect()->route('filament.user.pages.dashboard');
         }else{
             $newUser = new User();
             $newUser->name = $response->user['name'];
@@ -295,7 +295,7 @@ Route::middleware('domain.redirect')->group(function () {
 
             $request->session()->regenerate();
 
-            return redirect()->route('dashboard');
+            return redirect()->route('filament.user.pages.dashboard');
         }
     })->name('googleCallback');
 
@@ -314,7 +314,7 @@ Route::middleware('domain.redirect')->group(function () {
 
             $request->session()->regenerate();
 
-            return redirect()->route('dashboard');
+            return redirect()->route('filament.user.pages.dashboard');
         }else{
             $newUser = new User();
             $newUser->name = $response_user->name;
@@ -327,7 +327,7 @@ Route::middleware('domain.redirect')->group(function () {
 
             $request->session()->regenerate();
 
-            return redirect()->route('dashboard');
+            return redirect()->route('filament.user.pages.dashboard');
         }
     })->name('facebookCallback');
 
@@ -367,4 +367,11 @@ Route::middleware('domain.redirect')->group(function () {
     Route::get('blogs/{post_id}/{post_title}', function(){
         return view('blogs.show');
     });
+
+    /* ---------------------------------- Timer --------------------------------- */
+
+    // Preview
+    Route::get('timer/preview/{hash_id}', function(){
+        return 'Test';
+    })->name('timer.preview');
 });
