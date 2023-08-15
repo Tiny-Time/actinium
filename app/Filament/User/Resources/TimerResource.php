@@ -141,4 +141,11 @@ class TimerResource extends Resource
                 ]),
             ];
     }
+
+    public static function getWidgets(): array
+    {
+        return [
+            TimerResource\Widgets\TimerOverview::class,
+        ];
+    }
 }
