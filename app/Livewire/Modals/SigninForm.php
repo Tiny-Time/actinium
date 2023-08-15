@@ -3,6 +3,7 @@
 namespace App\Livewire\Modals;
 
 use Livewire\Component;
+use Livewire\Attributes\On;
 use Laravel\Fortify\Rules\Password;
 use Illuminate\Support\Facades\Auth;
 
