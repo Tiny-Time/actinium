@@ -2,10 +2,11 @@
 
 namespace App\Livewire\Modals;
 
-use App\Actions\Fortify\CreateNewUser;
 use App\Models\User;
 use Livewire\Component;
+use Livewire\Attributes\On;
 use Illuminate\Support\Facades\Hash;
+use App\Actions\Fortify\CreateNewUser;
 use Illuminate\Auth\Events\Registered;
 use App\Actions\Fortify\PasswordValidationRules;
 
@@ -19,6 +20,19 @@ class SignupForm extends Component
      * @var mixed
      */
     public $email, $password, $password_confirmation, $terms, $signUpRecaptcha;
+
+    /**
+     * handleRecaptchaResponse
+     *
+     * @param  mixed $response
+     * @return void
+     */
+
+    #[On('signUpRecaptchaResponse')]
+    public function handleRecaptchaResponse($response)
+    {
+        $this->signUpRecaptcha = $response;
+    }
 
     /**
      * Validation rules

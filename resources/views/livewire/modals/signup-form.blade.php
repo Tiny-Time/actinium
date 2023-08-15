@@ -100,10 +100,8 @@
     </form>
     @push('js')
         <script type="text/javascript">
-            var signUpRecaptchaCallback = function(response) {
-                const signUpForm = document.getElementById('signUpForm');
-                const signUpFormElem = window.livewire.find(signUpForm.getAttribute("wire:id"))
-                signUpFormElem.signUpRecaptcha = response;
+            window.signUpRecaptchaCallback = function(response) {
+                Livewire.dispatch('signUpRecaptchaResponse', {response: response});
             };
         </script>
     @endpush
