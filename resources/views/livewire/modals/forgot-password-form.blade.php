@@ -54,10 +54,8 @@
     </form>
     @push('js')
         <script type="text/javascript">
-            var onCallback = function(response) {
-                const forgotPasswordForm = document.getElementById('forgotPasswordForm');
-                const forgotPasswordFormElem = window.livewire.find(forgotPasswordForm.getAttribute("wire:id"))
-                forgotPasswordFormElem.recaptcha = response;
+            window.onCallback = function(response) {
+                Livewire.dispatch('onResponse', {response: response});
             };
         </script>
     @endpush

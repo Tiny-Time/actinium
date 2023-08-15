@@ -3,6 +3,7 @@
 namespace App\Livewire\Modals;
 
 use Livewire\Component;
+use Livewire\Attributes\On;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Password;
 
@@ -14,6 +15,19 @@ class ForgotPasswordForm extends Component
      * @var mixed
      */
     public $email, $recaptcha, $status;
+
+    /**
+     * handleRecaptchaResponse
+     *
+     * @param  mixed $response
+     * @return void
+     */
+
+    #[On('onResponse')]
+    public function handleRecaptchaResponse($response)
+    {
+        $this->recaptcha = $response;
+    }
 
     /**
      * Validation rules
