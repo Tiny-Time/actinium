@@ -16,6 +16,19 @@ class SigninForm extends Component
     public $email, $password, $remember, $signInRecaptcha;
 
     /**
+     * handleRecaptchaResponse
+     *
+     * @param  mixed $response
+     * @return void
+     */
+
+    #[On('signInRecaptchaResponse')]
+    public function handleRecaptchaResponse($response)
+    {
+        $this->signInRecaptcha = $response;
+    }
+
+    /**
      * Validation rules
      *
      * @var array

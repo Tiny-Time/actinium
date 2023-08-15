@@ -82,10 +82,8 @@
     </button>
     @push('js')
         <script>
-            var signInRecaptchaCallback = function(response) {
-                const signInForm = document.getElementById('signInForm');
-                const signInFormElem = window.livewire.find(signInForm.getAttribute("wire:id"))
-                signInFormElem.signInRecaptcha = response;
+            window.signInRecaptchaCallback = function(response) {
+                Livewire.dispatch('signInRecaptchaResponse', {response: response});
             };
         </script>
     @endpush
