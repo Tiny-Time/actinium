@@ -15,7 +15,7 @@ class RecentTimers extends BaseWidget
     {
         return $table
             ->query(
-                fn (Timer $query) => $query->where('user_id', auth()->user()->id)
+                fn (Timer $query) => $query->where('user_id', auth()->user()->id)->take(3)
             )
             ->columns([
                 Tables\Columns\TextColumn::make('title')
@@ -49,6 +49,6 @@ class RecentTimers extends BaseWidget
                     ->modalWidth('md')
                     ->label('')
                     ->tooltip('Delete'),
-            ]);
+            ])->paginated(false);
     }
 }
