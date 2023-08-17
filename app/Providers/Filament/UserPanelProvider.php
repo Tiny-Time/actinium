@@ -7,8 +7,6 @@ use Filament\Panel;
 use Filament\Widgets;
 use Filament\PanelProvider;
 use Filament\Navigation\MenuItem;
-use Filament\Support\Colors\Color;
-use App\Filament\User\Widgets\PageViews;
 use Filament\Http\Middleware\Authenticate;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -37,7 +35,6 @@ class UserPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/User/Widgets'), for: 'App\\Filament\\User\\Widgets')
             ->widgets([
                 TimerOverview::class,
-                PageViews::class,
                 Widgets\AccountWidget::class,
             ])
             ->middleware([

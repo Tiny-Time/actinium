@@ -91,7 +91,7 @@ class TimerResource extends Resource
                 Tables\Actions\CreateAction::make()
                     ->steps((new self)->formSteps())
                     ->modalWidth('3xl'),
-            ])->modifyQueryUsing(fn (Builder $query) => $query->where('user_id', auth()->user()->id));;
+            ])->modifyQueryUsing(fn (Builder $query) => $query->where('user_id', auth()->user()->id));
     }
 
     public static function getPages(): array
@@ -127,6 +127,7 @@ class TimerResource extends Resource
                 // ->description('Select a template for the timer.')
                 ->schema([
                     Forms\Components\TextInput::make('template_id')
+                    ->label('Template')
                     ->required()
                     ->numeric()
                     ->columnSpanFull(),
