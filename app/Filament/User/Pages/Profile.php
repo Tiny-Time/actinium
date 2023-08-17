@@ -6,7 +6,7 @@ use Filament\Pages\Page;
 
 class Profile extends Page
 {
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-user-circle';
 
     protected static ?int $navigationSort = 5;
 
