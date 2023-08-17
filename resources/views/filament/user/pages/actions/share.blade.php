@@ -1,6 +1,6 @@
 <div class="">
     {{-- Social icons --}}
-    <div class="flex gap-4 justify-center">
+    <div class="flex flex-wrap gap-4 justify-center">
         {{-- Facebook --}}
         <div>
             <div class="rounded-full w-16 h-16 bg-gray-50 cursor-pointer text-blue-500 flex items-center justify-center">

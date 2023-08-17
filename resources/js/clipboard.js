@@ -3,19 +3,20 @@ document.addEventListener('alpine:init', () => {
         if (typeof navigator !== 'undefined' && navigator.clipboard) {
             navigator.clipboard.writeText(subject)
                 .then(() => {
-                    console.log('Text copied to clipboard:', subject);
+                    alert('Text copied to clipboard');
                 })
                 .catch(error => {
                     console.error('Error copying to clipboard:', error);
                 });
         } else {
+            const input = document.getElementById('shareUrl');
+            input.select();
+
             try {
                 document.execCommand('copy');
-                console.log('Text copied to clipboard:', subject);
+                alert('Text copied to clipboard');
             } catch (error) {
                 console.error(error);
-            } finally {
-                textarea.remove();
             }
         }
     });
