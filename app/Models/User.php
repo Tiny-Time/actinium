@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Filament\Panel;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Jetstream\HasProfilePhoto;
@@ -82,5 +83,14 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
     public function getFilamentAvatarUrl(): ?string
     {
         return $this->avatar_url;
+    }
+
+    /**
+     * timer
+     *
+     * @return HasMany
+     */
+    public function timer(): HasMany{
+        return $this->hasMany(Timer::class);
     }
 }

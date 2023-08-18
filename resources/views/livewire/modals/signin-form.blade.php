@@ -2,7 +2,7 @@
     <div>
         <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
             <x-label for="s_email" value="{{ __('Your Email') }}" />
-            <x-input id="s_email" type="email" name="email" wire:model.blur="email" :value="old('email')" required autofocus autocomplete="email"
+            <x-input id="s_email" type="email" name="email" wire:model.live="email" :value="old('email')" required autofocus autocomplete="email"
                 placeholder="Your email goes here..." />
         </div>
         @error('email')
@@ -13,7 +13,7 @@
     <div>
         <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
             <x-label for="s_password" value="{{ __('Password') }}" />
-            <x-input id="s_password" class="block w-full mt-1" type="password" name="password" wire:model.blur="password" required
+            <x-input id="s_password" class="block w-full mt-1" type="password" name="password" wire:model.live="password" required
                 autocomplete="new-password" placeholder="Your password goes here..." />
         </div>
         @error('password')
@@ -22,7 +22,7 @@
     </div>
 
     <label for="remember_me" class="flex items-center mt-2">
-        <x-checkbox id="remember_me" name="remember" wire:model.blur="remember" />
+        <x-checkbox id="remember_me" name="remember" wire:model.live="remember" />
         <span class="ml-2 break-all">Remember me</span>
     </label>
 
@@ -82,10 +82,8 @@
     </button>
     @push('js')
         <script>
-            var signInRecaptchaCallback = function(response) {
-                const signInForm = document.getElementById('signInForm');
-                const signInFormElem = window.livewire.find(signInForm.getAttribute("wire:id"))
-                signInFormElem.signInRecaptcha = response;
+            window.signInRecaptchaCallback = function(response) {
+                Livewire.dispatch('signInRecaptchaResponse', {response: response});
             };
         </script>
     @endpush

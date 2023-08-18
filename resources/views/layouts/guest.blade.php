@@ -252,9 +252,11 @@
     @endif
 
     <!-- Modals -->
-    @include('modals.login')
-    @include('modals.signup')
-    @include('modals.forgot-password')
+    @if (!request()->routeIs('login') && !request()->routeIs('register'))
+        @include('modals.login')
+        @include('modals.signup')
+        @include('modals.forgot-password')
+    @endif
     @livewireScripts
 
     <script type="text/javascript">

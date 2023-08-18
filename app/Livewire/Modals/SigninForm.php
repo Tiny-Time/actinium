@@ -3,6 +3,7 @@
 namespace App\Livewire\Modals;
 
 use Livewire\Component;
+use Livewire\Attributes\On;
 use Laravel\Fortify\Rules\Password;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,6 +15,19 @@ class SigninForm extends Component
      * @var mixed
      */
     public $email, $password, $remember, $signInRecaptcha;
+
+    /**
+     * handleRecaptchaResponse
+     *
+     * @param  mixed $response
+     * @return void
+     */
+
+    #[On('signInRecaptchaResponse')]
+    public function handleRecaptchaResponse($response)
+    {
+        $this->signInRecaptcha = $response;
+    }
 
     /**
      * Validation rules
