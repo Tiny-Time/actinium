@@ -58,7 +58,8 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])->plugins([
                 FilamentSpatieLaravelHealthPlugin::make(),
-                VersionsPlugin::make()
+                VersionsPlugin::make(),
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
             ])->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js']);
     }
 }
