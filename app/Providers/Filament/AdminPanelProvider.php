@@ -8,6 +8,8 @@ use Filament\Widgets;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Http\Middleware\Authenticate;
+use Awcodes\FilamentVersions\VersionsPlugin;
+use Awcodes\FilamentVersions\VersionsWidget;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Routing\Middleware\SubstituteBindings;
@@ -38,7 +40,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
+                VersionsWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -54,6 +56,9 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarCollapsibleOnDesktop()
             ->authMiddleware([
                 Authenticate::class,
-            ])->plugin(FilamentSpatieLaravelHealthPlugin::make());
+            ])->plugins([
+                FilamentSpatieLaravelHealthPlugin::make(),
+                VersionsPlugin::make()
+            ])->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js']);
     }
 }
