@@ -5,6 +5,11 @@ import Splide from '@splidejs/splide';
 
 import $ from 'jquery';
 
+import.meta.glob([
+  '../images/**',
+  '../fonts/**',
+]);
+
 if($('.splide').length > 0){
     var splide = new Splide( '.splide', {
         perPage: 3,
