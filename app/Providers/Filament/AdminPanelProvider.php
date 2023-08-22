@@ -2,21 +2,28 @@
 
 namespace App\Providers\Filament;
 
-use Filament\Http\Middleware\Authenticate;
-use Filament\Http\Middleware\DisableBladeIconComponents;
-use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
 use Filament\Panel;
-use Filament\PanelProvider;
-use Filament\Support\Colors\Color;
 use Filament\Widgets;
-use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Filament\PanelProvider;
+use LaraZeus\Sky\SkyPlugin;
+use Filament\Support\Colors\Color;
+use LaraZeus\Sky\Editors\TipTapEditor;
+use Filament\Http\Middleware\Authenticate;
+use Awcodes\FilamentVersions\VersionsPlugin;
+use Awcodes\FilamentVersions\VersionsWidget;
+use Filament\SpatieLaravelTranslatablePlugin;
+use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
-use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use App\Http\Middleware\DomainRedirectMiddleware;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
-use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Filament\Http\Middleware\DisableBladeIconComponents;
+use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -37,7 +44,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
+                VersionsWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -49,10 +56,55 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                DomainRedirectMiddleware::class,
             ])
             ->sidebarCollapsibleOnDesktop()
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])->plugins([
+                FilamentSpatieLaravelHealthPlugin::make(),
+                VersionsPlugin::make(),
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+                SpatieLaravelTranslatablePlugin::make()
+                    ->defaultLocales(['en']),
+                SkyPlugin::make()
+                    ->skyPrefix('')
+                    ->skyMiddleware(['web'])
+                    ->uriPrefix([
+                        'post' => 'post',
+                        'page' => 'page',
+                        'library' => 'library',
+                        'faq' => 'faqs',
+                    ])
+
+                    ->libraryResource(false)
+
+                    ->navigationGroupLabel('Content Manager')
+
+                    // the default models
+                    ->faqModel(\LaraZeus\Sky\Models\Faq::class)
+                    ->postModel(\LaraZeus\Sky\Models\Post::class)
+                    ->postStatusModel(\LaraZeus\Sky\Models\PostStatus::class)
+                    ->tagModel(\LaraZeus\Sky\Models\Tag::class)
+                    ->libraryModel(\LaraZeus\Sky\Models\Library::class)
+
+                    ->editor(TipTapEditor::class)
+                    ->parsers([\LaraZeus\Sky\Classes\BoltParser::class])
+                    ->recentPostsLimit(5)
+                    ->searchResultHighlightCssClass('highlight')
+                    ->skipHighlightingTerms(['iframe'])
+                    ->defaultFeaturedImage('url/to/image')
+                    ->libraryTypes([
+                        'FILE' => 'File',
+                        'IMAGE' => 'Image',
+                        'VIDEO' => 'Video',
+                    ])
+                    ->tagTypes([
+                        'tag' => 'Tag',
+                        'category' => 'Category',
+                        'library' => 'Library',
+                        'faq' => 'Faq',
+                    ]),
+            ])->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js']);
     }
 }

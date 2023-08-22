@@ -47,6 +47,7 @@ class UserPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                DomainRedirectMiddleware::class,
             ])
             ->sidebarCollapsibleOnDesktop()
             ->userMenuItems([

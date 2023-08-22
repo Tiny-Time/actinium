@@ -30,6 +30,10 @@
         content: '';
         @apply absolute top-0 bottom-0 left-0 right-0 bg-lime-950 bg-opacity-10 backdrop-blur-sm -z-10;
     }
+
+    dl.flex.flex-wrap.items-center.text-center.gap-y-4{
+        @apply justify-between;
+    }
 }
 
 .splide__arrows {
