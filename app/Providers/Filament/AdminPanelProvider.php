@@ -6,10 +6,13 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
 use Filament\PanelProvider;
+use LaraZeus\Sky\SkyPlugin;
 use Filament\Support\Colors\Color;
+use LaraZeus\Sky\Editors\TipTapEditor;
 use Filament\Http\Middleware\Authenticate;
 use Awcodes\FilamentVersions\VersionsPlugin;
 use Awcodes\FilamentVersions\VersionsWidget;
+use Filament\SpatieLaravelTranslatablePlugin;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use App\Http\Middleware\DomainRedirectMiddleware;
@@ -61,7 +64,47 @@ class AdminPanelProvider extends PanelProvider
             ])->plugins([
                 FilamentSpatieLaravelHealthPlugin::make(),
                 VersionsPlugin::make(),
-                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+                SpatieLaravelTranslatablePlugin::make()
+                    ->defaultLocales(['en']),
+                SkyPlugin::make()
+                    ->skyPrefix('')
+                    ->skyMiddleware(['web'])
+                    ->uriPrefix([
+                        'post' => 'post',
+                        'page' => 'page',
+                        'library' => 'library',
+                        'faq' => 'faqs',
+                    ])
+
+                    ->libraryResource(false)
+
+                    ->navigationGroupLabel('Content Manager')
+
+                    // the default models
+                    ->faqModel(\LaraZeus\Sky\Models\Faq::class)
+                    ->postModel(\LaraZeus\Sky\Models\Post::class)
+                    ->postStatusModel(\LaraZeus\Sky\Models\PostStatus::class)
+                    ->tagModel(\LaraZeus\Sky\Models\Tag::class)
+                    ->libraryModel(\LaraZeus\Sky\Models\Library::class)
+
+                    ->editor(TipTapEditor::class)
+                    ->parsers([\LaraZeus\Sky\Classes\BoltParser::class])
+                    ->recentPostsLimit(5)
+                    ->searchResultHighlightCssClass('highlight')
+                    ->skipHighlightingTerms(['iframe'])
+                    ->defaultFeaturedImage('url/to/image')
+                    ->libraryTypes([
+                        'FILE' => 'File',
+                        'IMAGE' => 'Image',
+                        'VIDEO' => 'Video',
+                    ])
+                    ->tagTypes([
+                        'tag' => 'Tag',
+                        'category' => 'Category',
+                        'library' => 'Library',
+                        'faq' => 'Faq',
+                    ]),
             ])->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js']);
     }
 }
