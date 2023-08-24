@@ -68,7 +68,7 @@ class AdminPanelProvider extends PanelProvider
                 SpatieLaravelTranslatablePlugin::make()
                     ->defaultLocales(['en']),
                 SkyPlugin::make()
-                    ->skyPrefix('')
+                    ->skyPrefix('a')
                     ->skyMiddleware(['web'])
                     ->uriPrefix([
                         'post' => 'post',
