@@ -53,7 +53,7 @@ class TemplateResource extends Resource
                     ->image()
                     ->getUploadedFileNameForStorageUsing(
                         fn (TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
-                            ->prepend('template-'),
+                            ->prepend('template-'.time().'-'),
                     )
                     ->required()
                     ->columnSpanFull(),
