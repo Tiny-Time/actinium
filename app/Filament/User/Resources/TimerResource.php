@@ -10,6 +10,7 @@ use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Illuminate\Contracts\View\View;
 use Filament\Forms\Components\Wizard;
+use App\Forms\Components\TemplatePicker;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\User\Resources\TimerResource\Pages;
@@ -126,11 +127,10 @@ class TimerResource extends Resource
             Wizard\Step::make('Template')
                 // ->description('Select a template for the timer.')
                 ->schema([
-                    Forms\Components\TextInput::make('template_id')
-                    ->label('Template')
-                    ->required()
-                    ->numeric()
-                    ->columnSpanFull(),
+                    TemplatePicker::make('template_id')
+                        ->label('Template')
+                        ->required()
+                        ->columnSpanFull(),
                 ]),
             Wizard\Step::make('Visibility')
                 // ->description('Control the status of timer.')

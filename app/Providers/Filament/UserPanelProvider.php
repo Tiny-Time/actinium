@@ -59,6 +59,6 @@ class UserPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
                 DomainRedirectMiddleware::class,
-            ])->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js']);
+            ])->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js', 'resources/js/template-picker.js']);
     }
 }
