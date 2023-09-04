@@ -3093,16 +3093,16 @@
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",
-            "version": "3.2.2",
+            "version": "3.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirschbaum-development/eloquent-power-joins.git",
-                "reference": "23650f7707e25190511ab15b22a95e3a32ad277b"
+                "reference": "e9d936e0071d47796735b40ed6cce5dfd0a4305d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirschbaum-development/eloquent-power-joins/zipball/23650f7707e25190511ab15b22a95e3a32ad277b",
-                "reference": "23650f7707e25190511ab15b22a95e3a32ad277b",
+                "url": "https://api.github.com/repos/kirschbaum-development/eloquent-power-joins/zipball/e9d936e0071d47796735b40ed6cce5dfd0a4305d",
+                "reference": "e9d936e0071d47796735b40ed6cce5dfd0a4305d",
                 "shasum": ""
             },
             "require": {
@@ -3149,9 +3149,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirschbaum-development/eloquent-power-joins/issues",
-                "source": "https://github.com/kirschbaum-development/eloquent-power-joins/tree/3.2.2"
+                "source": "https://github.com/kirschbaum-development/eloquent-power-joins/tree/3.2.3"
             },
-            "time": "2023-08-28T10:27:02+00:00"
+            "time": "2023-09-04T10:21:44+00:00"
         },
         {
             "name": "lab404/laravel-impersonate",
@@ -3223,16 +3223,16 @@
         },
         {
             "name": "lara-zeus/core",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lara-zeus/core.git",
-                "reference": "06cca2264e8ac4f1b9412f04272fe07151b5d451"
+                "reference": "2b2e1e5db36e5c79bf107dc60edfe4b7203ef761"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lara-zeus/core/zipball/06cca2264e8ac4f1b9412f04272fe07151b5d451",
-                "reference": "06cca2264e8ac4f1b9412f04272fe07151b5d451",
+                "url": "https://api.github.com/repos/lara-zeus/core/zipball/2b2e1e5db36e5c79bf107dc60edfe4b7203ef761",
+                "reference": "2b2e1e5db36e5c79bf107dc60edfe4b7203ef761",
                 "shasum": ""
             },
             "require": {
@@ -3302,20 +3302,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-19T19:55:32+00:00"
+            "time": "2023-09-04T12:11:21+00:00"
         },
         {
             "name": "lara-zeus/sky",
-            "version": "v3.0.0-beta26",
+            "version": "v3.0.0-beta27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lara-zeus/sky.git",
-                "reference": "edd33fa27fce1e2770e9653dc4f87c47148108ed"
+                "reference": "a998ada4393fcd0ce0cd943a941a28366c6054f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lara-zeus/sky/zipball/edd33fa27fce1e2770e9653dc4f87c47148108ed",
-                "reference": "edd33fa27fce1e2770e9653dc4f87c47148108ed",
+                "url": "https://api.github.com/repos/lara-zeus/sky/zipball/a998ada4393fcd0ce0cd943a941a28366c6054f7",
+                "reference": "a998ada4393fcd0ce0cd943a941a28366c6054f7",
                 "shasum": ""
             },
             "require": {
@@ -3395,7 +3395,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-09-01T18:30:22+00:00"
+            "time": "2023-09-02T20:48:10+00:00"
         },
         {
             "name": "laravel/fortify",
@@ -3463,16 +3463,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.21.0",
+            "version": "v10.21.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "96b15c7ac382a9adb4a56d40c640e782d669a112"
+                "reference": "ae93199f5349fd8a02364424249aad2a90185a95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/96b15c7ac382a9adb4a56d40c640e782d669a112",
-                "reference": "96b15c7ac382a9adb4a56d40c640e782d669a112",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ae93199f5349fd8a02364424249aad2a90185a95",
+                "reference": "ae93199f5349fd8a02364424249aad2a90185a95",
                 "shasum": ""
             },
             "require": {
@@ -3659,7 +3659,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-08-29T13:55:56+00:00"
+            "time": "2023-09-04T14:34:36+00:00"
         },
         {
             "name": "laravel/jetstream",
@@ -3780,16 +3780,16 @@
         },
         {
             "name": "laravel/sanctum",
-            "version": "v3.2.6",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sanctum.git",
-                "reference": "217e8a2bc5aa6a827ced97fcb76504029d3115d7"
+                "reference": "95a0181900019e2d79acbd3e2ee7d57e3d0a086b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/217e8a2bc5aa6a827ced97fcb76504029d3115d7",
-                "reference": "217e8a2bc5aa6a827ced97fcb76504029d3115d7",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/95a0181900019e2d79acbd3e2ee7d57e3d0a086b",
+                "reference": "95a0181900019e2d79acbd3e2ee7d57e3d0a086b",
                 "shasum": ""
             },
             "require": {
@@ -3842,7 +3842,7 @@
                 "issues": "https://github.com/laravel/sanctum/issues",
                 "source": "https://github.com/laravel/sanctum"
             },
-            "time": "2023-08-22T13:21:11+00:00"
+            "time": "2023-09-04T14:26:54+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -7342,16 +7342,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "10.11.4",
+            "version": "10.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "54d240975662a3d971466434e84625876a0d8b46"
+                "reference": "0e97c0f8b8ad1f1601669cedc456e72436fe67db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/54d240975662a3d971466434e84625876a0d8b46",
-                "reference": "54d240975662a3d971466434e84625876a0d8b46",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/0e97c0f8b8ad1f1601669cedc456e72436fe67db",
+                "reference": "0e97c0f8b8ad1f1601669cedc456e72436fe67db",
                 "shasum": ""
             },
             "require": {
@@ -7434,7 +7434,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-medialibrary/issues",
-                "source": "https://github.com/spatie/laravel-medialibrary/tree/10.11.4"
+                "source": "https://github.com/spatie/laravel-medialibrary/tree/10.12.1"
             },
             "funding": [
                 {
@@ -7446,7 +7446,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-25T08:54:08+00:00"
+            "time": "2023-09-04T07:56:53+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
