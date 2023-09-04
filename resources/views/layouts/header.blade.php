@@ -12,14 +12,18 @@
                             fill="#F1F5F9" />
                     </svg>
                 </div>
-                <input type="search" placeholder="Search for an event near you..." name="find"
-                    id="find-event"
+                <input type="search" placeholder="Search for an event near you..." name="find" id="find-event"
                     class="flex-grow p-0 mr-2 text-sm text-gray-100 bg-transparent border-none placeholder:text-gray-100 focus:ring-0 focus:outline-none">
                 <button class="block h-full px-3 text-lg font-semibold text-gray-100 bg-red-400">Find
                     Event</button>
             </form>
-            <button @click="openSignUpModal = !openSignUpModal"
-                class="px-6 py-2 font-semibold text-gray-100 uppercase bg-red-400 rounded">Login/sign-up</button>
+            @auth
+                <a href="{{ route('filament.user.pages.dashboard') }}"
+                    class="px-6 py-2 font-semibold text-gray-100 uppercase bg-red-400 rounded">Dashboard</a>
+            @else
+                <button @click="openSignUpModal = !openSignUpModal"
+                    class="px-6 py-2 font-semibold text-gray-100 uppercase bg-red-400 rounded">Login/sign-up</button>
+            @endauth
         </div>
     </div>
     {{-- Mobile Nav --}}
@@ -51,8 +55,8 @@
         <div class="absolute top-0 bottom-0 left-0 right-0 z-20 px-4 bg-gray-100" x-cloak
             x-show.transition="menuOverlay" x-transition:enter="transition ease-out duration-300 transform"
             x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
-            x-transition:leave="transition ease-in duration-300 transform"
-            x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full">
+            x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="translate-x-0"
+            x-transition:leave-end="-translate-x-full">
             <div class="flex items-center justify-between mt-3">
                 <h3 class="text-2xl font-bold uppercase font-trochut">Menu</h3>
                 <button @click="menuOverlay = false">
@@ -66,7 +70,7 @@
             </div>
             <div class="auth-links">
                 @auth
-                    <a href="{{ url('/dashboard') }}"
+                    <a href="{{ route('filament.user.pages.dashboard') }}"
                         class="block mt-3 font-semibold text-red-400 hover:text-gray-900">Dashboard</a>
                 @else
                     <a href="{{ route('login') }}"
@@ -80,8 +84,7 @@
                 <a href="{{ route('terms.show') }}" class="block mt-3 text-gray-600 hover:text-gray-900">Terms
                     and
                     Conditions</a>
-                <a href="{{ route('policy.show') }}"
-                    class="block mt-3 text-gray-600 hover:text-gray-900">Privacy
+                <a href="{{ route('policy.show') }}" class="block mt-3 text-gray-600 hover:text-gray-900">Privacy
                     Policy</a>
                 <a href="#" class="block mt-3 text-gray-600 hover:text-gray-900">GDPR Compliance</a>
                 <a href="#" class="block mt-3 text-gray-600 hover:text-gray-900">DMCA</a>
@@ -92,8 +95,8 @@
         <div class="absolute top-0 bottom-0 left-0 right-0 z-20 px-4 bg-gray-100" x-cloak
             x-show.transition="searchOverlay" x-transition:enter="transition ease-out duration-300 transform"
             x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
-            x-transition:leave="transition ease-in duration-300 transform"
-            x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full">
+            x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="translate-x-0"
+            x-transition:leave-end="translate-x-full">
             <div class="flex items-center gap-3 mt-3">
                 <div class="flex items-center flex-grow gap-2 p-2 bg-white rounded-lg">
                     <svg width="19" height="18" viewBox="0 0 19 18" fill="none"
@@ -107,8 +110,8 @@
                         class="w-full p-0 bg-transparent border-none focus:outline-none focus:ring-0">
                 </div>
                 <button @click="searchOverlay = false">
-                    <svg width="19" height="18" class="cursor-pointer" viewBox="0 0 19 18"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="19" height="18" class="cursor-pointer" viewBox="0 0 19 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M11.1145 8.99872L17.5592 2.56902C17.8414 2.2868 18 1.90402 18 1.5049C18 1.10577 17.8414 0.722997 17.5592 0.440774C17.277 0.158551 16.8942 0 16.4951 0C16.096 0 15.7132 0.158551 15.431 0.440774L9.00128 6.88546L2.57158 0.440774C2.28936 0.158551 1.90658 -2.9737e-09 1.50746 0C1.10833 2.9737e-09 0.725555 0.158551 0.443332 0.440774C0.161109 0.722997 0.0025578 1.10577 0.00255779 1.5049C0.00255779 1.90402 0.161109 2.2868 0.443332 2.56902L6.88802 8.99872L0.443332 15.4284C0.302855 15.5678 0.191356 15.7335 0.115266 15.9162C0.0391754 16.0988 0 16.2947 0 16.4925C0 16.6904 0.0391754 16.8863 0.115266 17.0689C0.191356 17.2516 0.302855 17.4173 0.443332 17.5567C0.582662 17.6971 0.748427 17.8086 0.931065 17.8847C1.1137 17.9608 1.3096 18 1.50746 18C1.70531 18 1.90121 17.9608 2.08385 17.8847C2.26648 17.8086 2.43225 17.6971 2.57158 17.5567L9.00128 11.112L15.431 17.5567C15.5703 17.6971 15.7361 17.8086 15.9187 17.8847C16.1014 17.9608 16.2972 18 16.4951 18C16.693 18 16.8889 17.9608 17.0715 17.8847C17.2541 17.8086 17.4199 17.6971 17.5592 17.5567C17.6997 17.4173 17.8112 17.2516 17.8873 17.0689C17.9634 16.8863 18.0026 16.6904 18.0026 16.4925C18.0026 16.2947 17.9634 16.0988 17.8873 15.9162C17.8112 15.7335 17.6997 15.5678 17.5592 15.4284L11.1145 8.99872Z"
                             fill="black" />

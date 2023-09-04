@@ -8,6 +8,8 @@ class PageViews extends ChartWidget
 {
     protected static ?string $heading = 'Page Views';
 
+    protected int | string | array $columnSpan = 2;
+
     protected function getData(): array
     {
         return [

@@ -55,6 +55,15 @@ class UserPanelProvider extends PanelProvider
                     ->label('Profile')
                     ->url('/dashboard/profile')
                     ->icon('heroicon-o-cog-6-tooth'),
+                MenuItem::make()
+                    ->label('FAQs')
+                    ->url('/a/faqs')
+                    ->icon('heroicon-o-question-mark-circle'),
+                MenuItem::make()
+                    ->label('Admin Panel')
+                    ->url('/admin')
+                    ->visible(fn (): bool => auth()->user()->hasRole('super_admin'))
+                    ->icon('heroicon-o-user-plus'),
             ])
             ->authMiddleware([
                 Authenticate::class,

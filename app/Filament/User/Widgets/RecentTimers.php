@@ -11,11 +11,13 @@ use Filament\Widgets\TableWidget as BaseWidget;
 
 class RecentTimers extends BaseWidget
 {
+    protected int | string | array $columnSpan = 2;
+
     public function table(Table $table): Table
     {
         return $table
             ->query(
-                fn (Timer $query) => $query->where('user_id', auth()->user()->id)->take(3)
+                fn (Timer $query) => $query->where('user_id', auth()->user()->id)->take(5)
             )
             ->columns([
                 Tables\Columns\TextColumn::make('title')
