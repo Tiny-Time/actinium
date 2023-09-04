@@ -7,6 +7,7 @@ use Filament\Panel;
 use Filament\Widgets;
 use Filament\PanelProvider;
 use Filament\Navigation\MenuItem;
+use Filament\Navigation\NavigationItem;
 use Filament\Http\Middleware\Authenticate;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -56,14 +57,26 @@ class UserPanelProvider extends PanelProvider
                     ->url('/dashboard/profile')
                     ->icon('heroicon-o-cog-6-tooth'),
                 MenuItem::make()
-                    ->label('FAQs')
-                    ->url('/a/faqs')
-                    ->icon('heroicon-o-question-mark-circle'),
-                MenuItem::make()
-                    ->label('Admin Panel')
+                    ->label('Admin Dashboard')
                     ->url('/admin')
                     ->visible(fn (): bool => auth()->user()->hasRole('super_admin'))
                     ->icon('heroicon-o-user-plus'),
+                MenuItem::make()
+                    ->label('FAQs')
+                    ->url('/a/faqs')
+                    ->icon('heroicon-o-question-mark-circle'),
+            ])
+            ->navigationItems([
+                NavigationItem::make()
+                    ->label('Admin Dashboard')
+                    ->url('/admin', shouldOpenInNewTab: true)
+                    ->visible(fn (): bool => auth()->user()->hasRole('super_admin'))
+                    ->icon('heroicon-o-user-plus'),
+                NavigationItem::make()
+                    ->label('FAQs')
+                    ->url('/a/faqs')
+                    ->icon('heroicon-o-question-mark-circle')
+                    ->sort(10),
             ])
             ->authMiddleware([
                 Authenticate::class,

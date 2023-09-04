@@ -7,8 +7,10 @@ use Filament\Panel;
 use Filament\Widgets;
 use Filament\PanelProvider;
 use LaraZeus\Sky\SkyPlugin;
+use Filament\Navigation\MenuItem;
 use Filament\Support\Colors\Color;
 use LaraZeus\Sky\Editors\TipTapEditor;
+use Filament\Navigation\NavigationItem;
 use Filament\Http\Middleware\Authenticate;
 use Awcodes\FilamentVersions\VersionsPlugin;
 use Awcodes\FilamentVersions\VersionsWidget;
@@ -105,6 +107,20 @@ class AdminPanelProvider extends PanelProvider
                         'library' => 'Library',
                         'faq' => 'Faq',
                     ]),
-            ])->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js']);
+            ])
+            ->userMenuItems([
+                MenuItem::make()
+                    ->label('User Dashboard')
+                    ->url('/dashboard')
+                    ->icon('heroicon-o-user')
+                    ->sort(9),
+            ])
+            ->navigationItems([
+                NavigationItem::make()
+                    ->label('User Dashboard')
+                    ->url('/dashboard', shouldOpenInNewTab: true)
+                    ->icon('heroicon-o-user'),
+            ])
+            ->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js']);
     }
 }
