@@ -76,7 +76,8 @@ class UserPanelProvider extends PanelProvider
                     ->label('FAQs')
                     ->url('/a/faqs')
                     ->icon('heroicon-o-question-mark-circle')
-                    ->sort(10),
+                    ->sort(10)
+                    ->openUrlInNewTab(true),
             ])
             ->authMiddleware([
                 Authenticate::class,
