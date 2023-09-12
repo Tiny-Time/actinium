@@ -1,17 +1,21 @@
 @unless($recent->isEmpty())
     <div class="my-4">
-        <h4 class="mb-4 text-xl font-bold text-gray-700 dark:text-gray-200">{{ __('Recent Post') }}</h4>
-        <div class="flex flex-col max-w-sm px-4 py-6 mx-auto bg-white dark:bg-gray-800 rounded-[2rem] ltr:rounded-br-none rtl:rounded-bl-none shadow-md">
-            @foreach($recent as $post)
-                <a href="{{ route('post',$post->slug) }}" class="border-b border-t border-white hover:border-primary-600 transition duration-300 px-1 py-4">
-                    <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                        @if($post->image() !== null)
-                            <img alt="{{ $post->title }}" src="{{ $post->image() }}" class="h-6 w-6 shadow-md rounded-[2rem] rounded-bl-none z-0 object-cover"/>
-                        @endif
-                        <div class="w-full text-lg">{{ $post->title ?? '' }}</div>
+        <div class="text-xl font-bold flex gap-2 items-center">
+            <h3>Latest Posts</h3>
+            <div class="h-[2px] grow bg-black"></div>
+        </div>
+        @foreach($recent as $post)
+            {{-- Blog Post --}}
+            <div class="flex flex-col items-center gap-2 mt-2">
+                <a href="{{ route('post',$post->slug) }}" class="grid grid-cols-3 gap-2">
+                    <img class="h-48 w-full object-cover md:h-full md:w-48"
+                    src="{{ !empty($post->image()) ? $post->image() : Vite::asset('resources/images/bg.jpg') }}" alt="{!! $post->title !!}">
+                    <div class="col-span-2 flex flex-col justify-center">
+                        <h3 class="text-xl font-semibold line-clamp-1">{{ $post->title ?? '' }}</h3>
+                        <p class="text-sm line-clamp-3">{{ $post->description ?? '' }}</p>
                     </div>
                 </a>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
     </div>
 @endunless

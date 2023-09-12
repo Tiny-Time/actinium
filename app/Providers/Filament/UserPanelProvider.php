@@ -59,7 +59,7 @@ class UserPanelProvider extends PanelProvider
                 MenuItem::make()
                     ->label('Admin Dashboard')
                     ->url('/admin')
-                    ->visible(fn (): bool => auth()->user()->hasRole('super_admin'))
+                    ->visible(fn () => auth()->user()?->hasRole('super_admin'))
                     ->icon('heroicon-o-user-plus'),
                 MenuItem::make()
                     ->label('FAQs')
@@ -70,7 +70,7 @@ class UserPanelProvider extends PanelProvider
                 NavigationItem::make()
                     ->label('Admin Dashboard')
                     ->url('/admin', shouldOpenInNewTab: true)
-                    ->visible(fn (): bool => auth()->user()->hasRole('super_admin'))
+                    ->visible(fn () => auth()->user()?->hasRole('super_admin'))
                     ->icon('heroicon-o-user-plus'),
                 NavigationItem::make()
                     ->label('FAQs')

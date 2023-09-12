@@ -84,11 +84,11 @@ class AdminPanelProvider extends PanelProvider
                     ->navigationGroupLabel('Content Manager')
 
                     // the default models
-                    ->faqModel(\LaraZeus\Sky\Models\Faq::class)
-                    ->postModel(\LaraZeus\Sky\Models\Post::class)
-                    ->postStatusModel(\LaraZeus\Sky\Models\PostStatus::class)
-                    ->tagModel(\LaraZeus\Sky\Models\Tag::class)
-                    ->libraryModel(\LaraZeus\Sky\Models\Library::class)
+                    // ->faqModel(\LaraZeus\Sky\Models\Faq::class)
+                    // ->postModel(\LaraZeus\Sky\Models\Post::class)
+                    // ->postStatusModel(\LaraZeus\Sky\Models\PostStatus::class)
+                    // ->tagModel(\LaraZeus\Sky\Models\Tag::class)
+                    // ->libraryModel(\LaraZeus\Sky\Models\Library::class)
 
                     ->editor(TipTapEditor::class)
                     ->parsers([\LaraZeus\Sky\Classes\BoltParser::class])
