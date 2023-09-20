@@ -73,10 +73,16 @@ class UserPanelProvider extends PanelProvider
                     ->visible(fn () => auth()->user()?->hasRole('super_admin'))
                     ->icon('heroicon-o-user-plus'),
                 NavigationItem::make()
+                    ->label('Blogs')
+                    ->url('/a')
+                    ->icon('heroicon-o-document-text')
+                    ->sort(10)
+                    ->openUrlInNewTab(true),
+                NavigationItem::make()
                     ->label('FAQs')
                     ->url('/a/faqs')
                     ->icon('heroicon-o-question-mark-circle')
-                    ->sort(10)
+                    ->sort(11)
                     ->openUrlInNewTab(true),
             ])
             ->authMiddleware([
