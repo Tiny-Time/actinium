@@ -52,7 +52,8 @@
             <a href="#" class="w-max">Contact</a>
             <a href="#" class="w-max">Create Timer</a>
             <a href="#" class="w-max">Create Counter</a>
-            <a href="#" class="w-max">Blog</a>
+            <a href="{{ route('blogs') }}" class="w-max">Blogs</a>
+            <a href="{{ route('faq') }}" class="w-max">FAQs</a>
         </div>
         {{-- Column 3: Legal Links --}}
         <div class="grid gap-1">
@@ -64,13 +65,9 @@
         </div>
         {{-- Column 4: Subscription form --}}
         <div class="">
-            <h3 class="text-xl uppercase">GET UPDATES ABOUT OUT NEW FEATURES</h3>
-            <form method="post" action="#" class="flex p-1 mt-3 bg-white rounded">
-                <input type="email" name="email" id="subscriptionEmail" placeholder="Type email here..."
-                    class="flex-shrink w-full border-none text-gm focus:ring-0 focus:outline-none text-b">
-                <button type="submit" class="px-4 py-2 uppercase bg-red-400 rounded">subscribe</button>
-            </form>
+            <h3 class="text-xl uppercase">GET UPDATES ABOUT OUR NEW FEATURES</h3>
+            @livewire('email-subscription')
         </div>
     </div>
-    <p class="py-2 text-center bg-gray-100">Copyright &copy; 2023 TinyTime.</p>
+    <p class="py-2 text-center bg-gray-100">Copyright &copy; 2023 {{ env('APP_NAME') }}.</p>
 </footer>

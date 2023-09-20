@@ -1,7 +1,7 @@
 <x-filament-widgets::widget>
     <h3 class="text-xl font-bold">Timers</h3>
     <div class="grid gap-4 mt-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        <div class="bg-white shadow rounded-xl overflow-clip">
+        <div class="bg-white shadow rounded-xl overflow-clip dark:bg-gray-900 dark:ring-white/10">
             <div class="px-4 py-4 content">
                 <div class="flex">
                     <div class="p-2 bg-indigo-500 rounded-md h-max w-max">
@@ -11,15 +11,15 @@
                     </div>
                     <div class="ml-3">
                         <p class="font-semibold text-gray-600">Total</p>
-                        <h3 class="text-3xl font-bold break-all">53</h3>
+                        <h3 class="text-3xl font-bold break-all">{{ \App\Models\Timer::where('user_id', auth()->user()->id)->count() }}</h3>
                     </div>
                 </div>
             </div>
-            <div class="px-4 py-1 bg-gray-50 footer">
-                <a href="#" class="font-semibold text-indigo-500">View all</a>
+            <div class="px-4 py-1 bg-gray-50 footer dark:bg-gray-900 dark:ring-white/10 dark:border-t dark:border-gray-50">
+                <a href="/dashboard/timers" class="font-semibold text-indigo-500">View all</a>
             </div>
         </div>
-        <div class="bg-white shadow rounded-xl overflow-clip">
+        <div class="bg-white shadow rounded-xl overflow-clip dark:bg-gray-900 dark:ring-white/10">
             <div class="px-4 py-4 content">
                 <div class="flex">
                     <div class="p-2 bg-green-500 rounded-md h-max w-max">
@@ -29,15 +29,15 @@
                     </div>
                     <div class="ml-3">
                         <p class="font-semibold text-gray-600">Active</p>
-                        <h3 class="text-3xl font-bold break-all">25</h3>
+                        <h3 class="text-3xl font-bold break-all">{{ \App\Models\Timer::where('user_id', auth()->user()->id)->where('status', 1)->count() }}</h3>
                     </div>
                 </div>
             </div>
-            <div class="px-4 py-1 bg-gray-50 footer">
-                <a href="#" class="font-semibold text-indigo-500">View all</a>
+            <div class="px-4 py-1 bg-gray-50 footer dark:bg-gray-900 dark:ring-white/10 dark:border-t dark:border-gray-50">
+                <a href="/dashboard/timers?tableFilters[status][isActive]=true" class="font-semibold text-indigo-500">View all</a>
             </div>
         </div>
-        <div class="bg-white shadow rounded-xl overflow-clip">
+        <div class="bg-white shadow rounded-xl overflow-clip dark:bg-gray-900 dark:ring-white/10">
             <div class="px-4 py-4 content">
                 <div class="flex">
                     <div class="p-2 bg-yellow-500 rounded-md h-max w-max">
@@ -48,15 +48,15 @@
                     </div>
                     <div class="ml-3">
                         <p class="font-semibold text-gray-600">Paused</p>
-                        <h3 class="text-3xl font-bold break-all">18</h3>
+                        <h3 class="text-3xl font-bold break-all">{{ \App\Models\Timer::where('user_id', auth()->user()->id)->where('status', 0)->count() }}</h3>
                     </div>
                 </div>
             </div>
-            <div class="px-4 py-1 bg-gray-50 footer">
-                <a href="#" class="font-semibold text-indigo-500">View all</a>
+            <div class="px-4 py-1 bg-gray-50 footer dark:bg-gray-900 dark:ring-white/10 dark:border-t dark:border-gray-50">
+                <a href="/dashboard/timers?tableFilters[status][isActive]=false" class="font-semibold text-indigo-500">View all</a>
             </div>
         </div>
-        <div class="bg-white shadow rounded-xl overflow-clip">
+        <div class="bg-white shadow rounded-xl overflow-clip dark:bg-gray-900 dark:ring-white/10">
             <div class="px-4 py-4 content">
                 <div class="flex">
                     <div class="p-2 bg-pink-600 rounded-md h-max w-max">
@@ -66,12 +66,13 @@
                     </div>
                     <div class="ml-3">
                         <p class="font-semibold text-gray-600">Expired</p>
-                        <h3 class="text-3xl font-bold break-all">10</h3>
+                        <h3 class="text-3xl font-bold break-all">{{ \App\Models\Timer::where('user_id', auth()->user()->id)->where('date_time', '<', now()->toDateTimeString())->count() }}
+                        </h3>
                     </div>
                 </div>
             </div>
-            <div class="px-4 py-1 bg-gray-50 footer">
-                <a href="#" class="font-semibold text-indigo-500">View all</a>
+            <div class="px-4 py-1 bg-gray-50 footer dark:bg-gray-900 dark:ring-white/10 dark:border-t dark:border-gray-50">
+                <a href="/dashboard/timers?tableFilters[status][isActive]=false&tableFilters[expired][isActive]=true" class="font-semibold text-indigo-500">View all</a>
             </div>
         </div>
     </div>

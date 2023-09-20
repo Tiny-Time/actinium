@@ -1,4 +1,3 @@
-<div class="px-4 py-4 bg-gradient-to-br from-white via-white to-custom-50 shadow-lg rounded-3xl hover:shadow-xl transition ease-in-out duration-300 flex gap-2 items-center justify-center w-full h-72 border border-gray-100">
-    @svg('iconpark-wavesleft-o','h-10 w-10 text-custom-600')
-    <span class="underline decoration-wavy underline-offset-4 decoration-primary-600">{{ __('No posts found') }}!</span>
+<div class="flex-grow py-16 sm:px-12 dark:text-gray-100">
+    <p class="mt-3 text-3xl font-bold text-center text-gray-300 md:text-5xl">No items to display.</p>
 </div>

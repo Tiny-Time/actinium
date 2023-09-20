@@ -8,6 +8,7 @@ use App\Models\Timer;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
+use Filament\Tables\Filters\Filter;
 use Illuminate\Contracts\View\View;
 use Filament\Forms\Components\Wizard;
 use App\Forms\Components\TemplatePicker;
@@ -54,7 +55,10 @@ class TimerResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                Filter::make('status')
+                    ->toggle(),
+                Filter::make('expired')
+                    ->query(fn (Builder $query): Builder => $query->where('date_time', '<', now()->toDateTimeString()))
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
