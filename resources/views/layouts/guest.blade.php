@@ -28,6 +28,7 @@
 
     <!-- Styles -->
     @livewireStyles
+    @filamentStyles
 
     <style>
         .g-recaptcha>div {
@@ -42,6 +43,9 @@
 
 <body class="relative font-sans antialiased" x-data="authModal"
     @keydown.window.escape="{ openSignUpModal: false, openLoginModal: false, openForgotPasswordModal: false }">
+
+    @livewire('preloader')
+
     <!-- Page Heading -->
     @if (isset($header))
         @include('layouts.header')
@@ -64,6 +68,7 @@
         @include('modals.forgot-password')
     @endif
     @livewireScripts
+    @filamentScripts
 
     <script type="text/javascript">
         document.addEventListener('alpine:init', () => {

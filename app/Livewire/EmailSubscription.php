@@ -9,7 +9,11 @@ use Filament\Notifications\Notification;
 
 class EmailSubscription extends Component
 {
-    #[Rule('required|email:rfc,dns|max:255|not_regex:/\bmailinator\.com\b/i|unique:email_subscribers', message: 'This email address is already subscribed.')]
+    #[Rule([
+        'email' => 'required|email:rfc,dns|max:255|not_regex:/\bmailinator\.com\b/i|unique:email_subscribers'
+    ], message: [
+        'email.unique' => 'This email address is already subscribed.',
+    ])]
     public $email = '';
 
     /**

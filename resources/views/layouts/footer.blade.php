@@ -1,4 +1,4 @@
-<footer class="mt-8 bg-gm">
+<footer class="mt-8 bg-gm dark:bg-gray-800">
     <div
         class="grid gap-3 px-4 py-6 mx-auto text-gray-100 md:grid-cols-2 lg:grid-cols-4 max-w-7xl sm:px-6 lg:px-8">
         {{-- Column 1: About website --}}
@@ -69,5 +69,5 @@
             @livewire('email-subscription')
         </div>
     </div>
-    <p class="py-2 text-center bg-gray-100">Copyright &copy; 2023 {{ env('APP_NAME') }}.</p>
+    <p class="py-2 text-center bg-gray-100 dark:text-gray-100 dark:bg-gray-900">Copyright &copy; 2023 {{ env('APP_NAME') }}.</p>
 </footer>
