@@ -19,8 +19,11 @@
 
         <!-- Styles -->
         @livewireStyles
+        @filamentStyles
     </head>
     <body class="font-sans antialiased">
+        @livewire('preloader')
+
         <x-banner />
 
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -44,5 +47,6 @@
         @stack('modals')
 
         @livewireScripts
+        @filamentScripts
     </body>
 </html>

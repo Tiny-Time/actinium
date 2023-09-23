@@ -9,7 +9,7 @@
             </div>
         @endunless
         {{-- Section 2: Subscription --}}
-        <div class="flex flex-col items-center justify-between px-3 py-5 mt-8 bg-slate-100 md:flex-row md:px-10">
+        <div class="flex flex-col items-center justify-between px-3 py-5 mt-8 dark:bg-gray-800 bg-slate-100 md:flex-row md:px-10">
             <div>
                 <h3 class="text-2xl font-bold uppercase">subscribe</h3>
                 <p class="">Be the first to get updates about our new features</p>
@@ -28,10 +28,10 @@
             </div>
         @endif
         {{-- Section 4: Listings --}}
-        <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div class="grid gap-6 mt-8 md:grid-cols-3">
             {{-- Subsection 1: Blog Listings --}}
             <div class="md:col-span-2">
-                <div class="grid sm:grid-cols-2 md:flex md:flex-col gap-6 lg:gap-8">
+                <div class="grid gap-6 sm:grid-cols-2 md:flex md:flex-col lg:gap-8">
                     {{-- Blog Post --}}
                     @unless ($posts->isEmpty())
                         @each($skyTheme . '.partial.post', $posts, 'post')
