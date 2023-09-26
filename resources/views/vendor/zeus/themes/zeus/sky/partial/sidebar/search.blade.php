@@ -3,7 +3,7 @@
         <h3>Search</h3>
         <div class="h-[2px] grow bg-black"></div>
     </div>
-    <form method="GET" action="{{ route('blogs') }}" class="flex p-1 mt-3 bg-white rounded">
+    <form method="GET" action="{{ route('blogs') }}" class="flex p-1 mt-3 bg-white rounded dark:bg-[#8D8D8D]">
         <label for="search" class="sr-only">Search</label>
         <input type="text" id="search" name="search" placeholder="Type search keyword here..."
             class="flex-shrink w-full border-none text-gm focus:ring-0 focus:outline-none text-b">
