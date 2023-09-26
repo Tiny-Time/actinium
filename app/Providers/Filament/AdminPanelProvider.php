@@ -84,9 +84,6 @@ class AdminPanelProvider extends PanelProvider
 
                     ->navigationGroupLabel('Content Manager')
 
-                    ->uploadDisk('public')
-                    ->uploadDirectory('pages')
-
                     // the default models
                     ->skyModels([
                         'Faq' => \LaraZeus\Sky\Models\Faq::class,
