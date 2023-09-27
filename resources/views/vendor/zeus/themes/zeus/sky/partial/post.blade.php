@@ -1,10 +1,16 @@
 <article>
+    @php
+        // Define the regular expression pattern to match the <span> tags
+        $pattern = '/<span class=["\']highlight["\']><\/span>/i';
+        // Use preg_replace to remove the matched <span> tags
+        $alt = preg_replace($pattern, '', $post->title);
+    @endphp
     <div class="mx-auto overflow-hidden shadow bg-slate-100 dark:bg-gray-800 rounded-xl">
         <div class="md:flex">
             <div class="md:shrink-0">
                 <img class="object-cover w-full h-48 md:h-full md:w-48"
                     src="{{ !empty($post->image()) ? $post->image() : Vite::asset('resources/images/bg.jpg') }}"
-                    alt="{{ $post->title ?? '' }}">
+                    alt="{{ $alt ?? '' }}">
             </div>
             <div class="p-3 md:p-8">
                 @unless ($post->tags->isEmpty())
