@@ -1,16 +1,20 @@
 <?php
 
 use App\Models\User;
+use App\Mail\Subscribed;
+use App\Mail\Unsubscribed;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\RoutePath;
+use App\Models\EmailSubscriber;
 use Laravel\Jetstream\Jetstream;
 use Illuminate\Http\JsonResponse;
 use App\Mail\AccountVerifiedSuccess;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Route;
+use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Password;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Fortify\Http\Controllers\PasswordController;
@@ -65,7 +69,7 @@ Route::middleware('domain.redirect')->group(function () {
 
         // Authentication...
         if ($enableViews) {
-            Route::get(RoutePath::for ('login', '/login'), [AuthenticatedSessionController::class, 'create'])
+            Route::get(RoutePath::for('login', '/login'), [AuthenticatedSessionController::class, 'create'])
                 ->middleware(['guest:' . config('fortify.guard')])
                 ->name('login');
         }
@@ -74,33 +78,33 @@ Route::middleware('domain.redirect')->group(function () {
         $twoFactorLimiter = config('fortify.limiters.two-factor');
         $verificationLimiter = config('fortify.limiters.verification', '6,1');
 
-        Route::post(RoutePath::for ('login', '/login'), [AuthenticatedSessionController::class, 'store'])
+        Route::post(RoutePath::for('login', '/login'), [AuthenticatedSessionController::class, 'store'])
             ->middleware(array_filter([
                 'guest:' . config('fortify.guard'),
                 $limiter ? 'throttle:' . $limiter : null,
             ]));
 
-        Route::post(RoutePath::for ('logout', '/logout'), [AuthenticatedSessionController::class, 'destroy'])
+        Route::post(RoutePath::for('logout', '/logout'), [AuthenticatedSessionController::class, 'destroy'])
             ->name('logout');
 
         // Password Reset...
         if (Features::enabled(Features::resetPasswords())) {
             if ($enableViews) {
-                Route::get(RoutePath::for ('password.request', '/forgot-password'), [PasswordResetLinkController::class, 'create'])
+                Route::get(RoutePath::for('password.request', '/forgot-password'), [PasswordResetLinkController::class, 'create'])
                     ->name('password.request');
 
-                Route::get(RoutePath::for ('password.reset', '/reset-password/{token}'), [NewPasswordController::class, 'create'])
+                Route::get(RoutePath::for('password.reset', '/reset-password/{token}'), [NewPasswordController::class, 'create'])
                     ->middleware(['guest:' . config('fortify.guard')])
                     ->name('password.reset');
             }
 
-            Route::post(RoutePath::for ('password.email', '/forgot-password'), function (Request $request) {
+            Route::post(RoutePath::for('password.email', '/forgot-password'), function (Request $request) {
                 Validator::make($request->all(), [
                     'email' => 'required|email',
                     'g-recaptcha-response' => 'required|captcha',
                 ], [
-                        'g-recaptcha-response' => 'Please complete the reCAPTCHA verification.',
-                    ])->validate();
+                    'g-recaptcha-response' => 'Please complete the reCAPTCHA verification.',
+                ])->validate();
 
                 $status = (Password::broker(config('fortify.passwords')))->sendResetLink(
                     $request->only(Fortify::email())
@@ -113,7 +117,7 @@ Route::middleware('domain.redirect')->group(function () {
                 ->middleware(['guest:' . config('fortify.guard')])
                 ->name('password.email');
 
-            Route::post(RoutePath::for ('password.update', '/reset-password'), [NewPasswordController::class, 'store'])
+            Route::post(RoutePath::for('password.update', '/reset-password'), [NewPasswordController::class, 'store'])
                 ->middleware(['guest:' . config('fortify.guard')])
                 ->name('password.update');
         }
@@ -121,24 +125,24 @@ Route::middleware('domain.redirect')->group(function () {
         // Registration...
         if (Features::enabled(Features::registration())) {
             if ($enableViews) {
-                Route::get(RoutePath::for ('register', '/register'), [RegisteredUserController::class, 'create'])
+                Route::get(RoutePath::for('register', '/register'), [RegisteredUserController::class, 'create'])
                     ->middleware(['guest:' . config('fortify.guard')])
                     ->name('register');
             }
 
-            Route::post(RoutePath::for ('register', '/register'), [RegisteredUserController::class, 'store'])
+            Route::post(RoutePath::for('register', '/register'), [RegisteredUserController::class, 'store'])
                 ->middleware(['guest:' . config('fortify.guard')]);
         }
 
         // Email Verification...
         if (Features::enabled(Features::emailVerification())) {
             if ($enableViews) {
-                Route::get(RoutePath::for ('verification.notice', '/email/verify'), [EmailVerificationPromptController::class, '__invoke'])
+                Route::get(RoutePath::for('verification.notice', '/email/verify'), [EmailVerificationPromptController::class, '__invoke'])
                     ->middleware([config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard')])
                     ->name('verification.notice');
             }
 
-            Route::get(RoutePath::for ('verification.verify', '/email/verify/{id}/{hash}'), function(Request $request){
+            Route::get(RoutePath::for('verification.verify', '/email/verify/{id}/{hash}'), function (Request $request) {
                 if ($request->user()->hasVerifiedEmail()) {
                     return redirect()->route('verified');
                 }
@@ -153,26 +157,28 @@ Route::middleware('domain.redirect')->group(function () {
                 ->middleware([config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard'), 'throttle:' . $verificationLimiter])
                 ->name('verification.verify');
 
-            Route::post(RoutePath::for ('verification.send', '/email/verification-notification'), function(Request $request)
-            {
-                Validator::make($request->all(), [
-                    'g-recaptcha-response' => 'required|captcha'
-                ],
-                [
-                    'g-recaptcha-response' => 'Please complete the reCAPTCHA verification.',
-                ])->validate();
+            Route::post(RoutePath::for('verification.send', '/email/verification-notification'), function (Request $request) {
+                Validator::make(
+                    $request->all(),
+                    [
+                        'g-recaptcha-response' => 'required|captcha'
+                    ],
+                    [
+                        'g-recaptcha-response' => 'Please complete the reCAPTCHA verification.',
+                    ]
+                )->validate();
 
                 if ($request->user()->hasVerifiedEmail()) {
                     return $request->wantsJson()
-                                ? new JsonResponse('', 204)
-                                : redirect()->intended(Fortify::redirects('email-verification'));
+                        ? new JsonResponse('', 204)
+                        : redirect()->intended(Fortify::redirects('email-verification'));
                 }
 
                 $request->user()->sendEmailVerificationNotification();
 
                 return $request->wantsJson()
-                            ? new JsonResponse('', 202)
-                            : back()->with('status', Fortify::VERIFICATION_LINK_SENT);
+                    ? new JsonResponse('', 202)
+                    : back()->with('status', Fortify::VERIFICATION_LINK_SENT);
             })
                 ->middleware([config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard'), 'throttle:' . $verificationLimiter])
                 ->name('verification.send');
@@ -180,41 +186,41 @@ Route::middleware('domain.redirect')->group(function () {
 
         // Profile Information...
         if (Features::enabled(Features::updateProfileInformation())) {
-            Route::put(RoutePath::for ('user-profile-information.update', '/user/profile-information'), [ProfileInformationController::class, 'update'])
+            Route::put(RoutePath::for('user-profile-information.update', '/user/profile-information'), [ProfileInformationController::class, 'update'])
                 ->middleware([config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard')])
                 ->name('user-profile-information.update');
         }
 
         // Passwords...
         if (Features::enabled(Features::updatePasswords())) {
-            Route::put(RoutePath::for ('user-password.update', '/user/password'), [PasswordController::class, 'update'])
+            Route::put(RoutePath::for('user-password.update', '/user/password'), [PasswordController::class, 'update'])
                 ->middleware([config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard')])
                 ->name('user-password.update');
         }
 
         // Password Confirmation...
         if ($enableViews) {
-            Route::get(RoutePath::for ('password.confirm', '/user/confirm-password'), [ConfirmablePasswordController::class, 'show'])
+            Route::get(RoutePath::for('password.confirm', '/user/confirm-password'), [ConfirmablePasswordController::class, 'show'])
                 ->middleware([config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard')]);
         }
 
-        Route::get(RoutePath::for ('password.confirmation', '/user/confirmed-password-status'), [ConfirmedPasswordStatusController::class, 'show'])
+        Route::get(RoutePath::for('password.confirmation', '/user/confirmed-password-status'), [ConfirmedPasswordStatusController::class, 'show'])
             ->middleware([config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard')])
             ->name('password.confirmation');
 
-        Route::post(RoutePath::for ('password.confirm', '/user/confirm-password'), [ConfirmablePasswordController::class, 'store'])
+        Route::post(RoutePath::for('password.confirm', '/user/confirm-password'), [ConfirmablePasswordController::class, 'store'])
             ->middleware([config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard')])
             ->name('password.confirm');
 
         // Two Factor Authentication...
         if (Features::enabled(Features::twoFactorAuthentication())) {
             if ($enableViews) {
-                Route::get(RoutePath::for ('two-factor.login', '/two-factor-challenge'), [TwoFactorAuthenticatedSessionController::class, 'create'])
+                Route::get(RoutePath::for('two-factor.login', '/two-factor-challenge'), [TwoFactorAuthenticatedSessionController::class, 'create'])
                     ->middleware(['guest:' . config('fortify.guard')])
                     ->name('two-factor.login');
             }
 
-            Route::post(RoutePath::for ('two-factor.login', '/two-factor-challenge'), [TwoFactorAuthenticatedSessionController::class, 'store'])
+            Route::post(RoutePath::for('two-factor.login', '/two-factor-challenge'), [TwoFactorAuthenticatedSessionController::class, 'store'])
                 ->middleware(array_filter([
                     'guest:' . config('fortify.guard'),
                     $twoFactorLimiter ? 'throttle:' . $twoFactorLimiter : null,
@@ -224,31 +230,31 @@ Route::middleware('domain.redirect')->group(function () {
                 ? [config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard'), 'password.confirm']
                 : [config('fortify.auth_middleware', 'auth') . ':' . config('fortify.guard')];
 
-            Route::post(RoutePath::for ('two-factor.enable', '/user/two-factor-authentication'), [TwoFactorAuthenticationController::class, 'store'])
+            Route::post(RoutePath::for('two-factor.enable', '/user/two-factor-authentication'), [TwoFactorAuthenticationController::class, 'store'])
                 ->middleware($twoFactorMiddleware)
                 ->name('two-factor.enable');
 
-            Route::post(RoutePath::for ('two-factor.confirm', '/user/confirmed-two-factor-authentication'), [ConfirmedTwoFactorAuthenticationController::class, 'store'])
+            Route::post(RoutePath::for('two-factor.confirm', '/user/confirmed-two-factor-authentication'), [ConfirmedTwoFactorAuthenticationController::class, 'store'])
                 ->middleware($twoFactorMiddleware)
                 ->name('two-factor.confirm');
 
-            Route::delete(RoutePath::for ('two-factor.disable', '/user/two-factor-authentication'), [TwoFactorAuthenticationController::class, 'destroy'])
+            Route::delete(RoutePath::for('two-factor.disable', '/user/two-factor-authentication'), [TwoFactorAuthenticationController::class, 'destroy'])
                 ->middleware($twoFactorMiddleware)
                 ->name('two-factor.disable');
 
-            Route::get(RoutePath::for ('two-factor.qr-code', '/user/two-factor-qr-code'), [TwoFactorQrCodeController::class, 'show'])
+            Route::get(RoutePath::for('two-factor.qr-code', '/user/two-factor-qr-code'), [TwoFactorQrCodeController::class, 'show'])
                 ->middleware($twoFactorMiddleware)
                 ->name('two-factor.qr-code');
 
-            Route::get(RoutePath::for ('two-factor.secret-key', '/user/two-factor-secret-key'), [TwoFactorSecretKeyController::class, 'show'])
+            Route::get(RoutePath::for('two-factor.secret-key', '/user/two-factor-secret-key'), [TwoFactorSecretKeyController::class, 'show'])
                 ->middleware($twoFactorMiddleware)
                 ->name('two-factor.secret-key');
 
-            Route::get(RoutePath::for ('two-factor.recovery-codes', '/user/two-factor-recovery-codes'), [RecoveryCodeController::class, 'index'])
+            Route::get(RoutePath::for('two-factor.recovery-codes', '/user/two-factor-recovery-codes'), [RecoveryCodeController::class, 'index'])
                 ->middleware($twoFactorMiddleware)
                 ->name('two-factor.recovery-codes');
 
-            Route::post(RoutePath::for ('two-factor.recovery-codes', '/user/two-factor-recovery-codes'), [RecoveryCodeController::class, 'store'])
+            Route::post(RoutePath::for('two-factor.recovery-codes', '/user/two-factor-recovery-codes'), [RecoveryCodeController::class, 'store'])
                 ->middleware($twoFactorMiddleware);
         }
     });
@@ -277,13 +283,13 @@ Route::middleware('domain.redirect')->group(function () {
 
         $user = User::where('email', $response->user['email'])->first();
 
-        if($user){
+        if ($user) {
             Auth::login($user);
 
             $request->session()->regenerate();
 
             return redirect()->route('filament.user.pages.dashboard');
-        }else{
+        } else {
             $newUser = new User();
             $newUser->name = $response->user['name'];
             $newUser->email = $response->user['email'];
@@ -307,15 +313,15 @@ Route::middleware('domain.redirect')->group(function () {
 
     Route::get('/auth/facebook-callback', function (Request $request) {
         $response_user = Socialite::driver('facebook')->user();
-        $user = User::where('email',  $response_user->email)->first();
+        $user = User::where('email', $response_user->email)->first();
 
-        if($user){
+        if ($user) {
             Auth::login($user);
 
             $request->session()->regenerate();
 
             return redirect()->route('filament.user.pages.dashboard');
-        }else{
+        } else {
             $newUser = new User();
             $newUser->name = $response_user->name;
             $newUser->email = $response_user->email;
@@ -342,7 +348,7 @@ Route::middleware('domain.redirect')->group(function () {
 
     Route::get('privacy-policy', [PrivacyPolicyController::class, 'show'])->name('policy.show');
 
-    Route::get('dmca', function(){
+    Route::get('dmca', function () {
         $dmcaFile = Jetstream::localizedMarkdownPath('dmca.md');
 
         return view('dmca', [
@@ -350,7 +356,7 @@ Route::middleware('domain.redirect')->group(function () {
         ]);
     })->name('dmca.show');
 
-    Route::get('gdpr', function(){
+    Route::get('gdpr', function () {
         $gdprFile = Jetstream::localizedMarkdownPath('gdpr.md');
 
         return view('gdpr', [
@@ -360,18 +366,90 @@ Route::middleware('domain.redirect')->group(function () {
 
     /* ---------------------------------- Blogs ---------------------------------- */
 
-    Route::get('blogs', function(){
+    Route::get('blogs', function () {
         return view('blogs.listings');
     });
 
-    Route::get('blogs/{post_id}/{post_title}', function(){
+    Route::get('blogs/{post_id}/{post_title}', function () {
         return view('blogs.show');
     });
 
     /* ---------------------------------- Timer --------------------------------- */
 
     // Preview
-    Route::get('timer/preview/{hash_id}', function(){
+    Route::get('timer/preview/{hash_id}', function () {
         return 'Test';
     })->name('timer.preview');
+
+    /* ---------------------------------- Unsubscribe --------------------------------- */
+
+    Route::get('unsubscribe/{hash_id}', function ($hash_id) {
+        $subscribers = EmailSubscriber::where('subscribed', 1)->get();
+
+        $unsubscribed = false;
+
+        foreach ($subscribers as $subscriber) {
+            if (Hash::check($subscriber->email, urldecode($hash_id))) {
+                EmailSubscriber::where('email', $subscriber->email)->update([
+                    'subscribed' => 0
+                ]);
+
+                $unsubscribed = true;
+
+                // Send notification email for subscription success.
+                Mail::to($this->email)->send(new Unsubscribed($subscriber->email));
+            }
+        }
+
+        if ($unsubscribed) {
+            Notification::make()
+                ->title('You have successfully unsubscribed from ' . env('APP_NAME'))
+                ->success()
+                ->send();
+        } else {
+            Notification::make()
+                ->title('Unable to unsubscribe from ' . env('APP_NAME'))
+                ->body('Possible reason: The email is not subscribed.')
+                ->danger()
+                ->send();
+        }
+
+        return redirect()->route('homePage');
+    })->name('unsubscribe');
+
+    /* ---------------------------------- Subscribe --------------------------------- */
+
+    Route::get('subscribe/{hash_id}', function ($hash_id) {
+        $unSubscriber = EmailSubscriber::where('subscribed', 0)->get();
+
+        $subscribed = false;
+
+        foreach ($unSubscriber as $unSubscriber) {
+            if (Hash::check($unSubscriber->email, urldecode($hash_id))) {
+                EmailSubscriber::where('email', $unSubscriber->email)->update([
+                    'subscribed' => 1
+                ]);
+
+                $subscribed = true;
+
+                // Send notification email for subscription success.
+                Mail::to($this->email)->send(new Subscribed($unSubscriber->email));
+            }
+        }
+
+        if ($subscribed) {
+            Notification::make()
+                ->title('You have successfully subscribed to ' . env('APP_NAME'))
+                ->success()
+                ->send();
+        } else {
+            Notification::make()
+                ->title('Unable to subscribe to ' . env('APP_NAME'))
+                ->body('Possible reason: The email address is already subscribed.')
+                ->danger()
+                ->send();
+        }
+
+        return redirect()->route('homePage');
+    })->name('subscribe');
 });
