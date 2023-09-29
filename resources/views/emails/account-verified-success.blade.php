@@ -15,6 +15,6 @@ If you have any questions or need further assistance, please feel free to contac
     Click here to login
 </x-mail::button>
 
-Thanks,<br>
+Best regards,<br>
 {{ config('app.name') }}
 </x-mail::message>

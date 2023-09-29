@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('email_subscribers', function (Blueprint $table) {
             $table->id();
             $table->string('email');
+            $table->boolean('subscribed');
             $table->timestamps();
         });
     }
