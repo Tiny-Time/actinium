@@ -383,35 +383,27 @@ Route::middleware('domain.redirect')->group(function () {
 
     /* ---------------------------------- Unsubscribe --------------------------------- */
 
-    Route::get('unsubscribe/{hash_id}', function ($hash_id) {
-        $subscribers = EmailSubscriber::where('subscribed', 1)->get();
+    Route::get('unsubscribe/{token}', function ($token) {
+        $subscriber = EmailSubscriber::where('token', $token)->where('subscribed', 1)->first();
 
-        $unsubscribed = false;
-
-        foreach ($subscribers as $subscriber) {
-            if (Hash::check($subscriber->email, urldecode($hash_id))) {
-                EmailSubscriber::where('email', $subscriber->email)->update([
-                    'subscribed' => 0
-                ]);
-
-                $unsubscribed = true;
-
-                // Send notification email for subscription success.
-                Mail::to($this->email)->send(new Unsubscribed($subscriber->email));
-            }
-        }
-
-        if ($unsubscribed) {
-            Notification::make()
-                ->title('You have successfully unsubscribed from ' . env('APP_NAME'))
-                ->success()
-                ->send();
-        } else {
+        if(empty($subscriber)){
             Notification::make()
                 ->title('Unable to unsubscribe from ' . env('APP_NAME'))
                 ->body('Possible reason: The email is not subscribed.')
                 ->danger()
                 ->send();
+        }else{
+            EmailSubscriber::where('email', $subscriber->email)->update([
+                'subscribed' => 0
+            ]);
+
+            Notification::make()
+                ->title('You have successfully unsubscribed from ' . env('APP_NAME'))
+                ->success()
+                ->send();
+
+            // Send notification email for unsubscribe success.
+            Mail::to($subscriber->email)->send(new Unsubscribed($subscriber->token));
         }
 
         return redirect()->route('homePage');
@@ -419,35 +411,27 @@ Route::middleware('domain.redirect')->group(function () {
 
     /* ---------------------------------- Subscribe --------------------------------- */
 
-    Route::get('subscribe/{hash_id}', function ($hash_id) {
-        $unSubscriber = EmailSubscriber::where('subscribed', 0)->get();
+    Route::get('subscribe/{token}', function ($token) {
+        $subscriber = EmailSubscriber::where('token', $token)->where('subscribed', 0)->first();
 
-        $subscribed = false;
-
-        foreach ($unSubscriber as $unSubscriber) {
-            if (Hash::check($unSubscriber->email, urldecode($hash_id))) {
-                EmailSubscriber::where('email', $unSubscriber->email)->update([
-                    'subscribed' => 1
-                ]);
-
-                $subscribed = true;
-
-                // Send notification email for subscription success.
-                Mail::to($this->email)->send(new Subscribed($unSubscriber->email));
-            }
-        }
-
-        if ($subscribed) {
-            Notification::make()
-                ->title('You have successfully subscribed to ' . env('APP_NAME'))
-                ->success()
-                ->send();
-        } else {
+        if(empty($subscriber)){
             Notification::make()
                 ->title('Unable to subscribe to ' . env('APP_NAME'))
                 ->body('Possible reason: The email address is already subscribed.')
                 ->danger()
                 ->send();
+        }else{
+            EmailSubscriber::where('email', $subscriber->email)->update([
+                'subscribed' => 1
+            ]);
+
+            Notification::make()
+                ->title('You have successfully subscribed to ' . env('APP_NAME'))
+                ->success()
+                ->send();
+
+            // Send notification email for subscription success.
+            Mail::to($subscriber->email)->send(new Subscribed($subscriber->token));
         }
 
         return redirect()->route('homePage');

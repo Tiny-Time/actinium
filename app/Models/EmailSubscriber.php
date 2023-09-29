@@ -27,5 +27,6 @@ class EmailSubscriber extends Model
     protected $fillable = [
         'email',
         'subscribed',
+        'token',
     ];
 }

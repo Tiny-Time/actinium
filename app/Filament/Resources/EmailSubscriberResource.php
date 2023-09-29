@@ -2,16 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\EmailSubscriberResource\Pages;
-use App\Filament\Resources\EmailSubscriberResource\RelationManagers;
-use App\Models\EmailSubscriber;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
+use App\Models\EmailSubscriber;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\EmailSubscriberResource\Pages;
+use App\Filament\Resources\EmailSubscriberResource\RelationManagers;
 
 class EmailSubscriberResource extends Resource
 {
@@ -30,7 +31,9 @@ class EmailSubscriberResource extends Resource
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->required()
-                    ->maxLength(191)->columnSpanFull(),
+                    ->maxLength(191)
+                    ->unique(ignoreRecord: true)
+                    ->columnSpanFull(),
                 Forms\Components\Toggle::make('subscribed')
                     ->required(),
             ]);
@@ -64,7 +67,12 @@ class EmailSubscriberResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ])
             ->emptyStateActions([
-                Tables\Actions\CreateAction::make()->modalWidth('sm'),
+                Tables\Actions\CreateAction::make()
+                    ->mutateFormDataUsing(function (array $data): array {
+                        $data['token'] = Str::random(16);
+                        return $data;
+                    })
+                    ->modalWidth('sm'),
             ]);
     }
 

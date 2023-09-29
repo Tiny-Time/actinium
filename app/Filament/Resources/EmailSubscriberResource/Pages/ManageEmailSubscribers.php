@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\EmailSubscriberResource\Pages;
 
-use App\Filament\Resources\EmailSubscriberResource;
 use Filament\Actions;
+use Illuminate\Support\Str;
 use Filament\Resources\Pages\ManageRecords;
+use App\Filament\Resources\EmailSubscriberResource;
 
 class ManageEmailSubscribers extends ManageRecords
 {
@@ -13,7 +14,12 @@ class ManageEmailSubscribers extends ManageRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make()->modalWidth('sm'),
+            Actions\CreateAction::make()
+                ->mutateFormDataUsing(function (array $data): array {
+                    $data['token'] = Str::random(16);
+                    return $data;
+                })
+                ->modalWidth('sm'),
         ];
     }
 
