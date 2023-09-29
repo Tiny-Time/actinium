@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use Illuminate\Support\Str;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Support\Facades\Hash;
@@ -19,10 +20,9 @@ class Unsubscribed extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct($user_email)
+    public function __construct($token)
     {
-        $hash_email = urlencode(Hash::make($user_email));
-        $this->subscribe_link = route('subscribe', ['hash_id' => $hash_email]);
+        $this->subscribe_link = route('subscribe', ['token' => $token]);
     }
 
     /**

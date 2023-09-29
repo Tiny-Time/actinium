@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('email');
             $table->boolean('subscribed');
+            $table->string('token');
             $table->timestamps();
         });
     }

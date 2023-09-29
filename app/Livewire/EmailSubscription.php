@@ -2,8 +2,9 @@
 
 namespace App\Livewire;
 
-use App\Mail\Subscribed;
 use Livewire\Component;
+use App\Mail\Subscribed;
+use Illuminate\Support\Str;
 use Livewire\Attributes\Rule;
 use App\Models\EmailSubscriber;
 use Illuminate\Support\Facades\Mail;
@@ -32,9 +33,12 @@ class EmailSubscription extends Component
             // Email already subscribed
             $this->addError('email', 'This email address is already subscribed.');
         } else {
+            $token = Str::random(16);
+
             EmailSubscriber::updateOrCreate([
                 'email' => $this->email,
                 'subscribed' => 1,
+                'token' => $token,
             ]);
 
             Notification::make()
@@ -43,7 +47,10 @@ class EmailSubscription extends Component
                 ->send();
 
             // Send notification email for subscription success.
-            Mail::to($this->email)->send(new Subscribed($this->email));
+            Mail::to($this->email)->send(new Subscribed($token));
+
+            // Empty email box
+            $this->email = '';
         }
     }
 
