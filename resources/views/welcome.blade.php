@@ -21,8 +21,8 @@
                                 </div>
                                 {{-- Divider --}}
                                 <div class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-8"
-                                        viewBox="0 0 15 45" fill="none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-8" viewBox="0 0 15 45"
+                                        fill="none">
                                         <circle cx="7.1329" cy="7.87687" r="6.69951" fill="#152A0B"
                                             stroke="url(#paint0_linear_1_4082)" stroke-width="0.788177" />
                                         <circle cx="7.1329" cy="37.8276" r="6.69951" fill="#EAE8E9"
@@ -48,8 +48,8 @@
                                 </div>
                                 {{-- Divider --}}
                                 <div class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-8"
-                                        viewBox="0 0 15 45" fill="none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-8" viewBox="0 0 15 45"
+                                        fill="none">
                                         <circle cx="7.1329" cy="7.87687" r="6.69951" fill="#152A0B"
                                             stroke="url(#paint0_linear_1_4082)" stroke-width="0.788177" />
                                         <circle cx="7.1329" cy="37.8276" r="6.69951" fill="#EAE8E9"
@@ -75,8 +75,8 @@
                                 </div>
                                 {{-- Divider --}}
                                 <div class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-8"
-                                        viewBox="0 0 15 45" fill="none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-8" viewBox="0 0 15 45"
+                                        fill="none">
                                         <circle cx="7.1329" cy="7.87687" r="6.69951" fill="#152A0B"
                                             stroke="url(#paint0_linear_1_4082)" stroke-width="0.788177" />
                                         <circle cx="7.1329" cy="37.8276" r="6.69951" fill="#EAE8E9"
@@ -181,7 +181,8 @@
                     </div>
                     {{-- Main Timer Mobile --}}
                     <div class="max-w-3xl px-4 my-4 md:hidden w-max">
-                        <div class="w-full p-2 sm:p-7 bg-lime-950 bg-opacity-50 rounded-xl border border-gray-200 backdrop-blur-[20.36px] flex justify-between items-center gap-4">
+                        <div
+                            class="w-full p-2 sm:p-7 bg-lime-950 bg-opacity-50 rounded-xl border border-gray-200 backdrop-blur-[20.36px] flex justify-between items-center gap-4">
                             <div class="flex flex-col items-start justify-start gap-4">
                                 {{-- Play --}}
                                 <div class="p-2 bg-gray-200 rounded w-max">
@@ -221,19 +222,23 @@
                                 </div>
                             </div>
                             <div class="grid justify-between grid-cols-2 grid-rows-2 gap-1 sm:gap-4">
-                                <div class="min-w-[80px] bg-black bg-opacity-20 rounded-tl-md border border-white backdrop-blur-[268.24px] p-4 font-medium text-center text-white">
+                                <div
+                                    class="min-w-[80px] bg-black bg-opacity-20 rounded-tl-md border border-white backdrop-blur-[268.24px] p-4 font-medium text-center text-white">
                                     <h2 class="text-2xl sm:text-4xl">307</h2>
                                     <p class="text-xs sm:text-sm">Days</p>
                                 </div>
-                                <div class="min-w-[80px] bg-black bg-opacity-20 rounded-tr-md border border-white backdrop-blur-[268.24px] p-4 font-medium text-center text-white">
+                                <div
+                                    class="min-w-[80px] bg-black bg-opacity-20 rounded-tr-md border border-white backdrop-blur-[268.24px] p-4 font-medium text-center text-white">
                                     <h2 class="text-2xl sm:text-4xl">24</h2>
                                     <p class="text-xs sm:text-sm">Hours</p>
                                 </div>
-                                <div class="min-w-[80px] bg-black bg-opacity-20 rounded-bl-md border border-white backdrop-blur-[268.24px] p-4 font-medium text-center text-white">
+                                <div
+                                    class="min-w-[80px] bg-black bg-opacity-20 rounded-bl-md border border-white backdrop-blur-[268.24px] p-4 font-medium text-center text-white">
                                     <h2 class="text-2xl sm:text-4xl">60</h2>
                                     <p class="text-xs sm:text-sm">Minutes</p>
                                 </div>
-                                <div class="min-w-[80px] bg-black bg-opacity-20 rounded-br-md border border-white backdrop-blur-[268.24px] p-4 font-medium text-center text-white">
+                                <div
+                                    class="min-w-[80px] bg-black bg-opacity-20 rounded-br-md border border-white backdrop-blur-[268.24px] p-4 font-medium text-center text-white">
                                     <h2 class="text-2xl sm:text-4xl">60</h2>
                                     <p class="text-xs sm:text-sm">Seconds</p>
                                 </div>
@@ -810,136 +815,178 @@
                     <section class="pb-8 mt-6 splide" aria-label="Testimonials Cards">
                         <div class="splide__track">
                             <ul class="splide__list">
-                                <li class="splide__slide">
-                                    {{-- Card 1 --}}
-                                    <div class="relative min-w-[260px]">
-                                        <div class="absolute left-0 w-10 h-1 -top-1 bg-gm"></div>
-                                        <div class="px-3 bg-white min-h-[200px] flex flex-col">
-                                            <div class="flex items-center justify-between pt-3 max-h-max">
-                                                {{-- Star Rating --}}
-                                                <div class="flex gap-1 rating">
-                                                    @for ($i = 0; $i < 5; $i++)
-                                                        <svg width="19" height="19" viewBox="0 0 19 19"
+                                @empty($testimonials)
+                                    <li class="splide__slide">
+                                        {{-- Card 1 --}}
+                                        <div class="relative min-w-[260px]">
+                                            <div class="absolute left-0 w-10 h-1 -top-1 bg-gm"></div>
+                                            <div class="px-3 bg-white min-h-[200px] flex flex-col">
+                                                <div class="flex items-center justify-between pt-3 max-h-max">
+                                                    {{-- Star Rating --}}
+                                                    <div class="flex gap-1 rating">
+                                                        @for ($i = 0; $i < 5; $i++)
+                                                            <svg width="19" height="19" viewBox="0 0 19 19"
+                                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M9.17765 2.33521C9.36708 1.75219 10.1919 1.75218 10.3813 2.33521L11.6265 6.1674C11.7112 6.42814 11.9542 6.60467 12.2283 6.60467H16.2578C16.8708 6.60467 17.1257 7.38913 16.6297 7.74946L13.3699 10.1179C13.1481 10.279 13.0553 10.5647 13.14 10.8254L14.3851 14.6576C14.5746 15.2406 13.9073 15.7254 13.4113 15.3651L10.1515 12.9967C9.92966 12.8355 9.62933 12.8355 9.40753 12.9967L6.14767 15.3651C5.65172 15.7254 4.98443 15.2406 5.17386 14.6576L6.41902 10.8254C6.50374 10.5647 6.41093 10.279 6.18913 10.1179L2.92927 7.74946C2.43332 7.38913 2.68821 6.60467 3.30124 6.60467H7.33064C7.6048 6.60467 7.84777 6.42814 7.93249 6.1674L9.17765 2.33521Z"
+                                                                    fill="#FDCC0D" />
+                                                            </svg>
+                                                        @endfor
+                                                    </div>
+                                                    <div class="flex items-center gap-1">
+                                                        <svg width="16" height="15" viewBox="0 0 16 15"
                                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path
-                                                                d="M9.17765 2.33521C9.36708 1.75219 10.1919 1.75218 10.3813 2.33521L11.6265 6.1674C11.7112 6.42814 11.9542 6.60467 12.2283 6.60467H16.2578C16.8708 6.60467 17.1257 7.38913 16.6297 7.74946L13.3699 10.1179C13.1481 10.279 13.0553 10.5647 13.14 10.8254L14.3851 14.6576C14.5746 15.2406 13.9073 15.7254 13.4113 15.3651L10.1515 12.9967C9.92966 12.8355 9.62933 12.8355 9.40753 12.9967L6.14767 15.3651C5.65172 15.7254 4.98443 15.2406 5.17386 14.6576L6.41902 10.8254C6.50374 10.5647 6.41093 10.279 6.18913 10.1179L2.92927 7.74946C2.43332 7.38913 2.68821 6.60467 3.30124 6.60467H7.33064C7.6048 6.60467 7.84777 6.42814 7.93249 6.1674L9.17765 2.33521Z"
-                                                                fill="#FDCC0D" />
+                                                                d="M8.2379 0.10376C4.23512 0.10376 0.99054 3.34896 0.99054 7.35112C0.99054 11.3539 4.23512 14.5985 8.2379 14.5985C12.2401 14.5985 15.4853 11.3533 15.4853 7.35112C15.4853 3.34896 12.2401 0.10376 8.2379 0.10376ZM6.46243 9.29725C6.46243 9.68894 6.14504 10.0057 5.75397 10.0057C5.36228 10.0057 5.0455 9.68894 5.0455 9.29725V6.27675C5.0455 5.88507 5.36228 5.56767 5.75397 5.56767C6.14504 5.56767 6.46243 5.88507 6.46243 6.27675V9.29725ZM11.4671 9.2463C11.4671 9.80006 11.1436 9.99835 10.5898 9.99835H8.04206C7.4883 9.99835 7.03952 9.54958 7.03952 8.99582V6.48979C7.03952 6.48979 6.98979 6.07293 7.45146 5.68125C7.71238 5.45962 8.09977 5.03663 8.37051 4.52339C8.9083 3.50366 9.23 3.20653 9.47495 3.28634C10.3823 3.5804 9.92864 4.92551 9.6358 5.48725H10.4646C11.0177 5.48725 11.4671 5.93603 11.4671 6.48979V9.2463Z"
+                                                                fill="#2C3539" />
                                                         </svg>
-                                                    @endfor
+                                                        <span class="text-sm font-bold">Testimonial</span>
+                                                    </div>
                                                 </div>
-                                                <div class="flex items-center gap-1">
-                                                    <svg width="16" height="15" viewBox="0 0 16 15"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M8.2379 0.10376C4.23512 0.10376 0.99054 3.34896 0.99054 7.35112C0.99054 11.3539 4.23512 14.5985 8.2379 14.5985C12.2401 14.5985 15.4853 11.3533 15.4853 7.35112C15.4853 3.34896 12.2401 0.10376 8.2379 0.10376ZM6.46243 9.29725C6.46243 9.68894 6.14504 10.0057 5.75397 10.0057C5.36228 10.0057 5.0455 9.68894 5.0455 9.29725V6.27675C5.0455 5.88507 5.36228 5.56767 5.75397 5.56767C6.14504 5.56767 6.46243 5.88507 6.46243 6.27675V9.29725ZM11.4671 9.2463C11.4671 9.80006 11.1436 9.99835 10.5898 9.99835H8.04206C7.4883 9.99835 7.03952 9.54958 7.03952 8.99582V6.48979C7.03952 6.48979 6.98979 6.07293 7.45146 5.68125C7.71238 5.45962 8.09977 5.03663 8.37051 4.52339C8.9083 3.50366 9.23 3.20653 9.47495 3.28634C10.3823 3.5804 9.92864 4.92551 9.6358 5.48725H10.4646C11.0177 5.48725 11.4671 5.93603 11.4671 6.48979V9.2463Z"
-                                                            fill="#2C3539" />
-                                                    </svg>
-                                                    <span class="text-sm font-bold">Testimonial</span>
+                                                <div class="flex items-center flex-grow">
+                                                    <p>I have been using Adidas shoes for over a year now and I love it! I
+                                                        can't
+                                                        imagine life without it. It's so easy to use, and the customer
+                                                        service is
+                                                        great.</p>
                                                 </div>
                                             </div>
-                                            <div class="flex items-center flex-grow">
-                                                <p>I have been using Adidas shoes for over a year now and I love it! I
-                                                    can't
-                                                    imagine life without it. It's so easy to use, and the customer
-                                                    service is
-                                                    great.</p>
+                                            <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
+                                                <img src="{{ Vite::asset('resources/images/profile image.png') }}"
+                                                    alt="Profile" class="flex-shrink rounded-full max-w-[70px]">
+                                                <div>
+                                                    <h4 class="text-xl font-bold">Kristin Watson</h4>
+                                                    <p class="text-sm font-light">Marketing Coordinator</p>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
-                                            <img src="{{ Vite::asset('resources/images/profile image.png') }}"
-                                                alt="Profile" class="flex-shrink rounded-full max-w-[70px]">
-                                            <div>
-                                                <h4 class="text-xl font-bold">Kristin Watson</h4>
-                                                <p class="text-sm font-light">Marketing Coordinator</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    {{-- Card 2 --}}
-                                    <div class="relative min-w-[260px]">
-                                        <div class="absolute left-0 w-10 h-1 -top-1 bg-gm"></div>
-                                        <div class="px-3 bg-white min-h-[200px] flex flex-col">
-                                            <div class="flex items-center justify-between pt-3 max-h-max">
-                                                {{-- Star Rating --}}
-                                                <div class="flex gap-1 rating">
-                                                    @for ($i = 0; $i < 5; $i++)
-                                                        <svg width="19" height="19" viewBox="0 0 19 19"
+                                    </li>
+                                    <li class="splide__slide">
+                                        {{-- Card 2 --}}
+                                        <div class="relative min-w-[260px]">
+                                            <div class="absolute left-0 w-10 h-1 -top-1 bg-gm"></div>
+                                            <div class="px-3 bg-white min-h-[200px] flex flex-col">
+                                                <div class="flex items-center justify-between pt-3 max-h-max">
+                                                    {{-- Star Rating --}}
+                                                    <div class="flex gap-1 rating">
+                                                        @for ($i = 0; $i < 5; $i++)
+                                                            <svg width="19" height="19" viewBox="0 0 19 19"
+                                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M9.17765 2.33521C9.36708 1.75219 10.1919 1.75218 10.3813 2.33521L11.6265 6.1674C11.7112 6.42814 11.9542 6.60467 12.2283 6.60467H16.2578C16.8708 6.60467 17.1257 7.38913 16.6297 7.74946L13.3699 10.1179C13.1481 10.279 13.0553 10.5647 13.14 10.8254L14.3851 14.6576C14.5746 15.2406 13.9073 15.7254 13.4113 15.3651L10.1515 12.9967C9.92966 12.8355 9.62933 12.8355 9.40753 12.9967L6.14767 15.3651C5.65172 15.7254 4.98443 15.2406 5.17386 14.6576L6.41902 10.8254C6.50374 10.5647 6.41093 10.279 6.18913 10.1179L2.92927 7.74946C2.43332 7.38913 2.68821 6.60467 3.30124 6.60467H7.33064C7.6048 6.60467 7.84777 6.42814 7.93249 6.1674L9.17765 2.33521Z"
+                                                                    fill="#FDCC0D" />
+                                                            </svg>
+                                                        @endfor
+                                                    </div>
+                                                    <div class="flex items-center gap-1">
+                                                        <svg width="16" height="15" viewBox="0 0 16 15"
                                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path
-                                                                d="M9.17765 2.33521C9.36708 1.75219 10.1919 1.75218 10.3813 2.33521L11.6265 6.1674C11.7112 6.42814 11.9542 6.60467 12.2283 6.60467H16.2578C16.8708 6.60467 17.1257 7.38913 16.6297 7.74946L13.3699 10.1179C13.1481 10.279 13.0553 10.5647 13.14 10.8254L14.3851 14.6576C14.5746 15.2406 13.9073 15.7254 13.4113 15.3651L10.1515 12.9967C9.92966 12.8355 9.62933 12.8355 9.40753 12.9967L6.14767 15.3651C5.65172 15.7254 4.98443 15.2406 5.17386 14.6576L6.41902 10.8254C6.50374 10.5647 6.41093 10.279 6.18913 10.1179L2.92927 7.74946C2.43332 7.38913 2.68821 6.60467 3.30124 6.60467H7.33064C7.6048 6.60467 7.84777 6.42814 7.93249 6.1674L9.17765 2.33521Z"
-                                                                fill="#FDCC0D" />
+                                                                d="M8.2379 0.10376C4.23512 0.10376 0.99054 3.34896 0.99054 7.35112C0.99054 11.3539 4.23512 14.5985 8.2379 14.5985C12.2401 14.5985 15.4853 11.3533 15.4853 7.35112C15.4853 3.34896 12.2401 0.10376 8.2379 0.10376ZM6.46243 9.29725C6.46243 9.68894 6.14504 10.0057 5.75397 10.0057C5.36228 10.0057 5.0455 9.68894 5.0455 9.29725V6.27675C5.0455 5.88507 5.36228 5.56767 5.75397 5.56767C6.14504 5.56767 6.46243 5.88507 6.46243 6.27675V9.29725ZM11.4671 9.2463C11.4671 9.80006 11.1436 9.99835 10.5898 9.99835H8.04206C7.4883 9.99835 7.03952 9.54958 7.03952 8.99582V6.48979C7.03952 6.48979 6.98979 6.07293 7.45146 5.68125C7.71238 5.45962 8.09977 5.03663 8.37051 4.52339C8.9083 3.50366 9.23 3.20653 9.47495 3.28634C10.3823 3.5804 9.92864 4.92551 9.6358 5.48725H10.4646C11.0177 5.48725 11.4671 5.93603 11.4671 6.48979V9.2463Z"
+                                                                fill="#2C3539" />
                                                         </svg>
-                                                    @endfor
+                                                        <span class="text-sm font-bold">Testimonial</span>
+                                                    </div>
                                                 </div>
-                                                <div class="flex items-center gap-1">
-                                                    <svg width="16" height="15" viewBox="0 0 16 15"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M8.2379 0.10376C4.23512 0.10376 0.99054 3.34896 0.99054 7.35112C0.99054 11.3539 4.23512 14.5985 8.2379 14.5985C12.2401 14.5985 15.4853 11.3533 15.4853 7.35112C15.4853 3.34896 12.2401 0.10376 8.2379 0.10376ZM6.46243 9.29725C6.46243 9.68894 6.14504 10.0057 5.75397 10.0057C5.36228 10.0057 5.0455 9.68894 5.0455 9.29725V6.27675C5.0455 5.88507 5.36228 5.56767 5.75397 5.56767C6.14504 5.56767 6.46243 5.88507 6.46243 6.27675V9.29725ZM11.4671 9.2463C11.4671 9.80006 11.1436 9.99835 10.5898 9.99835H8.04206C7.4883 9.99835 7.03952 9.54958 7.03952 8.99582V6.48979C7.03952 6.48979 6.98979 6.07293 7.45146 5.68125C7.71238 5.45962 8.09977 5.03663 8.37051 4.52339C8.9083 3.50366 9.23 3.20653 9.47495 3.28634C10.3823 3.5804 9.92864 4.92551 9.6358 5.48725H10.4646C11.0177 5.48725 11.4671 5.93603 11.4671 6.48979V9.2463Z"
-                                                            fill="#2C3539" />
-                                                    </svg>
-                                                    <span class="text-sm font-bold">Testimonial</span>
+                                                <div class="flex items-center flex-grow">
+                                                    <p>I have tried a lot of similar products and Adidas shoes is the best!
+                                                    </p>
                                                 </div>
                                             </div>
-                                            <div class="flex items-center flex-grow">
-                                                <p>I have tried a lot of similar products and Adidas shoes is the best!
-                                                </p>
+                                            <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
+                                                <img src="{{ Vite::asset('resources/images/profile image 2.png') }}"
+                                                    alt="Profile" class="flex-shrink rounded-full max-w-[70px]">
+                                                <div>
+                                                    <h4 class="text-xl font-bold">Jerome Bell</h4>
+                                                    <p class="text-sm font-light">Dog Trainer</p>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
-                                            <img src="{{ Vite::asset('resources/images/profile image 2.png') }}"
-                                                alt="Profile" class="flex-shrink rounded-full max-w-[70px]">
-                                            <div>
-                                                <h4 class="text-xl font-bold">Jerome Bell</h4>
-                                                <p class="text-sm font-light">Dog Trainer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    {{-- Card 3 --}}
-                                    <div class="relative min-w-[260px]">
-                                        <div class="absolute left-0 w-10 h-1 -top-1 bg-gm"></div>
-                                        <div class="px-3 bg-white min-h-[200px] flex flex-col">
-                                            <div class="flex items-center justify-between pt-3 max-h-max">
-                                                {{-- Star Rating --}}
-                                                <div class="flex gap-1 rating">
-                                                    @for ($i = 0; $i < 5; $i++)
-                                                        <svg width="19" height="19" viewBox="0 0 19 19"
+                                    </li>
+                                    <li class="splide__slide">
+                                        {{-- Card 3 --}}
+                                        <div class="relative min-w-[260px]">
+                                            <div class="absolute left-0 w-10 h-1 -top-1 bg-gm"></div>
+                                            <div class="px-3 bg-white min-h-[200px] flex flex-col">
+                                                <div class="flex items-center justify-between pt-3 max-h-max">
+                                                    {{-- Star Rating --}}
+                                                    <div class="flex gap-1 rating">
+                                                        @for ($i = 0; $i < 5; $i++)
+                                                            <svg width="19" height="19" viewBox="0 0 19 19"
+                                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M9.17765 2.33521C9.36708 1.75219 10.1919 1.75218 10.3813 2.33521L11.6265 6.1674C11.7112 6.42814 11.9542 6.60467 12.2283 6.60467H16.2578C16.8708 6.60467 17.1257 7.38913 16.6297 7.74946L13.3699 10.1179C13.1481 10.279 13.0553 10.5647 13.14 10.8254L14.3851 14.6576C14.5746 15.2406 13.9073 15.7254 13.4113 15.3651L10.1515 12.9967C9.92966 12.8355 9.62933 12.8355 9.40753 12.9967L6.14767 15.3651C5.65172 15.7254 4.98443 15.2406 5.17386 14.6576L6.41902 10.8254C6.50374 10.5647 6.41093 10.279 6.18913 10.1179L2.92927 7.74946C2.43332 7.38913 2.68821 6.60467 3.30124 6.60467H7.33064C7.6048 6.60467 7.84777 6.42814 7.93249 6.1674L9.17765 2.33521Z"
+                                                                    fill="#FDCC0D" />
+                                                            </svg>
+                                                        @endfor
+                                                    </div>
+                                                    <div class="flex items-center gap-1">
+                                                        <svg width="16" height="15" viewBox="0 0 16 15"
                                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path
-                                                                d="M9.17765 2.33521C9.36708 1.75219 10.1919 1.75218 10.3813 2.33521L11.6265 6.1674C11.7112 6.42814 11.9542 6.60467 12.2283 6.60467H16.2578C16.8708 6.60467 17.1257 7.38913 16.6297 7.74946L13.3699 10.1179C13.1481 10.279 13.0553 10.5647 13.14 10.8254L14.3851 14.6576C14.5746 15.2406 13.9073 15.7254 13.4113 15.3651L10.1515 12.9967C9.92966 12.8355 9.62933 12.8355 9.40753 12.9967L6.14767 15.3651C5.65172 15.7254 4.98443 15.2406 5.17386 14.6576L6.41902 10.8254C6.50374 10.5647 6.41093 10.279 6.18913 10.1179L2.92927 7.74946C2.43332 7.38913 2.68821 6.60467 3.30124 6.60467H7.33064C7.6048 6.60467 7.84777 6.42814 7.93249 6.1674L9.17765 2.33521Z"
-                                                                fill="#FDCC0D" />
+                                                                d="M8.2379 0.10376C4.23512 0.10376 0.99054 3.34896 0.99054 7.35112C0.99054 11.3539 4.23512 14.5985 8.2379 14.5985C12.2401 14.5985 15.4853 11.3533 15.4853 7.35112C15.4853 3.34896 12.2401 0.10376 8.2379 0.10376ZM6.46243 9.29725C6.46243 9.68894 6.14504 10.0057 5.75397 10.0057C5.36228 10.0057 5.0455 9.68894 5.0455 9.29725V6.27675C5.0455 5.88507 5.36228 5.56767 5.75397 5.56767C6.14504 5.56767 6.46243 5.88507 6.46243 6.27675V9.29725ZM11.4671 9.2463C11.4671 9.80006 11.1436 9.99835 10.5898 9.99835H8.04206C7.4883 9.99835 7.03952 9.54958 7.03952 8.99582V6.48979C7.03952 6.48979 6.98979 6.07293 7.45146 5.68125C7.71238 5.45962 8.09977 5.03663 8.37051 4.52339C8.9083 3.50366 9.23 3.20653 9.47495 3.28634C10.3823 3.5804 9.92864 4.92551 9.6358 5.48725H10.4646C11.0177 5.48725 11.4671 5.93603 11.4671 6.48979V9.2463Z"
+                                                                fill="#2C3539" />
                                                         </svg>
-                                                    @endfor
+                                                        <span class="text-sm font-bold">Testimonial</span>
+                                                    </div>
                                                 </div>
-                                                <div class="flex items-center gap-1">
-                                                    <svg width="16" height="15" viewBox="0 0 16 15"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M8.2379 0.10376C4.23512 0.10376 0.99054 3.34896 0.99054 7.35112C0.99054 11.3539 4.23512 14.5985 8.2379 14.5985C12.2401 14.5985 15.4853 11.3533 15.4853 7.35112C15.4853 3.34896 12.2401 0.10376 8.2379 0.10376ZM6.46243 9.29725C6.46243 9.68894 6.14504 10.0057 5.75397 10.0057C5.36228 10.0057 5.0455 9.68894 5.0455 9.29725V6.27675C5.0455 5.88507 5.36228 5.56767 5.75397 5.56767C6.14504 5.56767 6.46243 5.88507 6.46243 6.27675V9.29725ZM11.4671 9.2463C11.4671 9.80006 11.1436 9.99835 10.5898 9.99835H8.04206C7.4883 9.99835 7.03952 9.54958 7.03952 8.99582V6.48979C7.03952 6.48979 6.98979 6.07293 7.45146 5.68125C7.71238 5.45962 8.09977 5.03663 8.37051 4.52339C8.9083 3.50366 9.23 3.20653 9.47495 3.28634C10.3823 3.5804 9.92864 4.92551 9.6358 5.48725H10.4646C11.0177 5.48725 11.4671 5.93603 11.4671 6.48979V9.2463Z"
-                                                            fill="#2C3539" />
-                                                    </svg>
-                                                    <span class="text-sm font-bold">Testimonial</span>
+                                                <div class="flex items-center flex-grow">
+                                                    <p>Would definitely recommend Adidas shoes and will definitely be
+                                                        ordering
+                                                        again.</p>
                                                 </div>
                                             </div>
-                                            <div class="flex items-center flex-grow">
-                                                <p>Would definitely recommend Adidas shoes and will definitely be
-                                                    ordering
-                                                    again.</p>
+                                            <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
+                                                <img src="{{ Vite::asset('resources/images/profile image 3.png') }}"
+                                                    alt="Profile" class="flex-shrink rounded-full max-w-[70px]">
+                                                <div>
+                                                    <h4 class="text-xl font-bold">Jane Cooper</h4>
+                                                    <p class="text-sm font-light">President of Sales</p>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
-                                            <img src="{{ Vite::asset('resources/images/profile image 3.png') }}"
-                                                alt="Profile" class="flex-shrink rounded-full max-w-[70px]">
-                                            <div>
-                                                <h4 class="text-xl font-bold">Jane Cooper</h4>
-                                                <p class="text-sm font-light">President of Sales</p>
+                                    </li>
+                                @endempty
+                                @foreach ($testimonials as $testimonial)
+                                    <li class="splide__slide">
+                                        {{-- Card 1 --}}
+                                        <div class="relative min-w-[260px]">
+                                            <div class="absolute left-0 w-10 h-1 -top-1 bg-gm"></div>
+                                            <div class="px-3 bg-white min-h-[200px] flex flex-col">
+                                                <div class="flex items-center justify-between pt-3 max-h-max">
+                                                    {{-- Star Rating --}}
+                                                    <div class="flex gap-1 rating">
+                                                        @for ($i = 0; $i < 5; $i++)
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 {{ ($i < $testimonial->rating) ? 'text-[#FDCC0D]' : 'text-gray-300'}}">
+                                                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                                                            </svg>
+                                                        @endfor
+                                                    </div>
+                                                    <div class="flex items-center gap-1">
+                                                        <svg width="16" height="15" viewBox="0 0 16 15"
+                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M8.2379 0.10376C4.23512 0.10376 0.99054 3.34896 0.99054 7.35112C0.99054 11.3539 4.23512 14.5985 8.2379 14.5985C12.2401 14.5985 15.4853 11.3533 15.4853 7.35112C15.4853 3.34896 12.2401 0.10376 8.2379 0.10376ZM6.46243 9.29725C6.46243 9.68894 6.14504 10.0057 5.75397 10.0057C5.36228 10.0057 5.0455 9.68894 5.0455 9.29725V6.27675C5.0455 5.88507 5.36228 5.56767 5.75397 5.56767C6.14504 5.56767 6.46243 5.88507 6.46243 6.27675V9.29725ZM11.4671 9.2463C11.4671 9.80006 11.1436 9.99835 10.5898 9.99835H8.04206C7.4883 9.99835 7.03952 9.54958 7.03952 8.99582V6.48979C7.03952 6.48979 6.98979 6.07293 7.45146 5.68125C7.71238 5.45962 8.09977 5.03663 8.37051 4.52339C8.9083 3.50366 9.23 3.20653 9.47495 3.28634C10.3823 3.5804 9.92864 4.92551 9.6358 5.48725H10.4646C11.0177 5.48725 11.4671 5.93603 11.4671 6.48979V9.2463Z"
+                                                                fill="#2C3539" />
+                                                        </svg>
+                                                        <span class="text-sm font-bold">Testimonial</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-center flex-grow">
+                                                    <p>{{ $testimonial->content }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
+                                                <img src="{{ $testimonial->image ? '/uploads/'.$testimonial->image : 'https://ui-avatars.com/api/?name='.$testimonial->name.'&background=A2C376&color=fff&bold=true' }}"
+                                                    alt="Profile" class="flex-shrink rounded-full max-w-[70px] h-[50px]">
+                                                <div>
+                                                    <h4 class="text-xl font-bold">{{ $testimonial->name }}</h4>
+                                                    <p class="text-sm font-light">{{ $testimonial->profession }}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                         <ul class="splide__pagination"></ul>

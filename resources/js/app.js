@@ -11,6 +11,7 @@ if ($(".splide").length > 0) {
     var splide = new Splide(".splide", {
         perPage: 3,
         focus: 0,
+        omitEnd: true,
         breakpoints: {
             913: {
                 perPage: 2,
