@@ -2,33 +2,49 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\SponsoredPostResource\Pages;
-use App\Filament\Resources\SponsoredPostResource\RelationManagers;
-use App\Models\SponsoredPost;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Models\Testimonial;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\TestimonialResource\Pages;
+use IbrahimBougaoua\FilamentRatingStar\Actions\RatingStar;
+use App\Filament\Resources\TestimonialResource\RelationManagers;
+use IbrahimBougaoua\FilamentRatingStar\Columns\RatingStarColumn;
 
-class SponsoredPostResource extends Resource
+class TestimonialResource extends Resource
 {
-    protected static ?string $model = SponsoredPost::class;
+    protected static ?string $model = Testimonial::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-plus';
+    protected static ?string $navigationIcon = 'heroicon-o-star';
 
     protected static ?string $navigationGroup = 'Content Manager';
 
-    protected static ?int $navigationSort = 10;
+    protected static ?int $navigationSort = 9;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(191)
+                    ->columnSpanFull(),
+                Forms\Components\TextInput::make('profession')
+                    ->required()
+                    ->maxLength(191)
+                    ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
                     ->image()
+                    ->columnSpanFull(),
+                Forms\Components\Textarea::make('content')
+                    ->required()
+                    ->columnSpanFull(),
+                RatingStar::make('rating')
+                    ->label('Rating')
                     ->required()
                     ->columnSpanFull(),
             ]);
@@ -38,7 +54,13 @@ class SponsoredPostResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('profession')
+                    ->searchable(),
                 Tables\Columns\ImageColumn::make('image'),
+                RatingStarColumn::make('rating')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -52,7 +74,8 @@ class SponsoredPostResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make()->modalWidth('sm'),
+                Tables\Actions\EditAction::make()
+                    ->modalWidth('sm'),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
@@ -69,7 +92,7 @@ class SponsoredPostResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageSponsoredPosts::route('/'),
+            'index' => Pages\ManageTestimonials::route('/'),
         ];
     }
 }

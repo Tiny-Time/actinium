@@ -3,6 +3,7 @@
 use App\Models\User;
 use App\Mail\Subscribed;
 use App\Mail\Unsubscribed;
+use App\Models\Testimonial;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Laravel\Fortify\Fortify;
@@ -13,10 +14,13 @@ use Laravel\Jetstream\Jetstream;
 use Illuminate\Http\JsonResponse;
 use App\Mail\AccountVerifiedSuccess;
 use Illuminate\Auth\Events\Verified;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Password;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Http\Controllers\PasswordController;
 use Laravel\Fortify\Http\Controllers\NewPasswordController;
 use Laravel\Fortify\Http\Controllers\RecoveryCodeController;
@@ -263,7 +267,8 @@ Route::middleware('domain.redirect')->group(function () {
 
     // Homepage.
     Route::get('/', function () {
-        return view('welcome');
+        $testimonials = Testimonial::get();
+        return view('welcome', compact('testimonials'));
     })->middleware('guest')->name('homePage');
 
     /* ----------------------------  Social SignIn/SignUp. --------------------------- */
@@ -386,13 +391,13 @@ Route::middleware('domain.redirect')->group(function () {
     Route::get('unsubscribe/{token}', function ($token) {
         $subscriber = EmailSubscriber::where('token', $token)->where('subscribed', 1)->first();
 
-        if(empty($subscriber)){
+        if (empty($subscriber)) {
             Notification::make()
                 ->title('Unable to unsubscribe from ' . env('APP_NAME'))
                 ->body('Possible reason: The email is not subscribed.')
                 ->danger()
                 ->send();
-        }else{
+        } else {
             EmailSubscriber::where('email', $subscriber->email)->update([
                 'subscribed' => 0
             ]);
@@ -414,13 +419,13 @@ Route::middleware('domain.redirect')->group(function () {
     Route::get('subscribe/{token}', function ($token) {
         $subscriber = EmailSubscriber::where('token', $token)->where('subscribed', 0)->first();
 
-        if(empty($subscriber)){
+        if (empty($subscriber)) {
             Notification::make()
                 ->title('Unable to subscribe to ' . env('APP_NAME'))
                 ->body('Possible reason: The email address is already subscribed.')
                 ->danger()
                 ->send();
-        }else{
+        } else {
             EmailSubscriber::where('email', $subscriber->email)->update([
                 'subscribed' => 1
             ]);
