@@ -50,7 +50,7 @@ class EmailSubscription extends Component
             Mail::to($this->email)->send(new Subscribed($token));
 
             // Empty email box
-            $this->email = '';
+            $this->reset();
         }
     }
 
