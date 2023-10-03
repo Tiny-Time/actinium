@@ -27,7 +27,7 @@
         <span>Continue with Google</span>
     </button>
 
-    <button wire:click.prevent="Facebook"
+    {{-- <button wire:click.prevent="Facebook"
         class="flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-white bg-blue-500 rounded-lg">
         <svg class="w-5 h-5" viewBox="0 0 36 36" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +44,7 @@
             </defs>
         </svg>
         <span>Continue with Facebook</span>
-    </button>
+    </button> --}}
 
     <div class="w-full mt-3">
         <label for="socialSigninTerms" class="flex items-start">

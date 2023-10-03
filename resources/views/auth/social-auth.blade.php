@@ -38,7 +38,7 @@
             <span>Continue with Google</span>
         </a>
 
-        <a href="{{ route('facebook') }}"
+        {{-- <a href="{{ route('facebook') }}"
             class="flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-white bg-blue-500 rounded-lg">
             <svg class="w-5 h-5" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_13_1212)">
@@ -53,7 +53,7 @@
                 </defs>
             </svg>
             <span>Continue with Facebook</span>
-        </a>
+        </a> --}}
 
         <div class="flex items-center gap-2 mt-1">
             <hr class="flex-grow border-gray-500">
