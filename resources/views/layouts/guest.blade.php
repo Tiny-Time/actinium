@@ -70,7 +70,7 @@
         @include('modals.signup')
         @include('modals.forgot-password')
     @endif
-    @livewireScripts
+    @livewireScriptConfig
     @filamentScripts
 
     <script type="text/javascript">
