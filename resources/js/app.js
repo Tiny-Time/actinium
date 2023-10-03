@@ -14,19 +14,13 @@ Livewire.start()
 
 document.addEventListener('alpine:init', () => {
     Alpine.directive('tooltip', (el, value, { name }) => {
-        // The 'el' parameter is the element to which the directive is applied.
-        // The 'value' parameter contains the tooltip text.
 
-        // Parse the directive name to extract the placement information
-        const placement = name.split('.')[2]; // Extract the placement (e.g., 'top')
+        const placement = name.split('.')[2];
 
-        // Set the 'title' attribute with the tooltip text
         el.setAttribute('title', value);
 
-        // Initialize the tooltip with Tippy.js, specifying the placement
         tippy(el, {
-            placement: placement, // Use the specified placement
-            // Add more Tippy.js options as needed
+            placement: placement,
         });
     });
 });
