@@ -19,6 +19,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "@splidejs/splide": "^4.1.4"
+        "@splidejs/splide": "^4.1.4",
+        "tippy.js": "^6.3.7"
     }
 }
