@@ -8,6 +8,7 @@
     <meta name="application-name" content="{{ config('app.name', 'TinyTime') }}">
 
     <title>{{ config('app.name', 'TinyTime') }}</title>
+    <link rel="icon" href="{{ Vite::asset('resources/images/stopwatch.png') }}">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,15 +22,16 @@
         href="https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
         rel="stylesheet">
 
+    <!-- Styles -->
+    @filamentStyles
+    @livewireStyles
+
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css','resources/js/main.js', 'resources/js/app.js'])
 
     {{-- Google Recaptcha --}}
     {!! NoCaptcha::renderJs() !!}
 
-    <!-- Styles -->
-    @livewireStyles
-    @filamentStyles
 
     <style>
         .g-recaptcha>div {
@@ -70,31 +72,12 @@
         @include('modals.signup')
         @include('modals.forgot-password')
     @endif
+
+    @include('modals.create-timer')
+    @include('modals.create-shareable-timer')
+
     @livewireScriptConfig
     @filamentScripts
-
-    <script type="text/javascript">
-        document.addEventListener('alpine:init', () => {
-            Alpine.data('authModal', () => ({
-                openLoginModal: false,
-                openSignUpModal: false,
-                openForgotPasswordModal: false,
-
-                toggle() {
-                    this.openLoginModal = !this.openLoginModal;
-                    this.openSignUpModal = !this.openSignUpModal;
-                },
-                forgotPassword() {
-                    this.openLoginModal = !this.openLoginModal;
-                    this.openForgotPasswordModal = !this.openForgotPasswordModal;
-                },
-                signIn() {
-                    this.openForgotPasswordModal = !this.openForgotPasswordModal;
-                    this.openLoginModal = !this.openLoginModal;
-                }
-            }))
-        })
-    </script>
     @stack('js')
 </body>
 
