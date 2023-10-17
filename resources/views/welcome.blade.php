@@ -1,22 +1,26 @@
 <x-guest-layout>
     <x-slot name="header"></x-slot>
     {{-- Timer Template --}}
-    <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-7xl" x-data="{ days: 0, hours: 0, mins: 5, secs: 0 }">
         <div class="bg-[url('../images/timer-bg.png')] bg-no-repeat bg-cover relative z-10">
-            <div class="timer-template">
+            <div class="timer-template" x-data="{ playBtn: true, counter: false }">
                 <div class="flex items-center justify-between min-h-[300px] py-4 md:py-8 flex-col">
-                    {{-- Timer Title --}}
-                    <h1 class="text-5xl font-bold md:text-7xl font-trochut text-olivine timer-title-shadow">Timer Title
+                    {{-- Event Title --}}
+                    <h1 class="text-5xl font-bold md:text-7xl font-trochut text-olivine timer-title-shadow eventTitle"
+                        contenteditable="true">
+                        Event Title
                     </h1>
                     {{-- Main Timer Desktop --}}
-                    <div class="hidden w-full px-6 lg:px-28 my-3 min-h-[300px] relative md:flex flex-col justify-end">
+                    <div
+                        class="hidden w-full px-6 max-w-[60rem] my-3 min-h-[300px] relative md:flex flex-col justify-end">
                         <div
                             class="relative w-full px-8 py-6 rounded-lg bg-lime-950 min-h-[180px] flex flex-col justify-end">
                             <div
                                 class="absolute transform -translate-x-1/2 translate-y-[12%] lg:translate-y-[1%] -top-1/2 left-1/2 min-h-[148px] font-rokkitt flex gap-2 w-max">
                                 {{-- Timer Days --}}
                                 <div class="px-8 py-6 text-center border-[1.3px] rounded-l-3xl timer-text-bg w-max">
-                                    <h2 class="timer-text text-6xl lg:text-[100px] font-bold leading-none">365</h2>
+                                    <h2 class="timer-text text-6xl lg:text-[100px] font-bold leading-none days"
+                                        contenteditable="true" x-text="days" id="days"></h2>
                                     <p class="text-xl timer-text">Days</p>
                                 </div>
                                 {{-- Divider --}}
@@ -43,7 +47,8 @@
                                 </div>
                                 {{-- Timer Hours --}}
                                 <div class="px-8 py-6 text-center border-[1.3px] timer-text-bg w-max">
-                                    <h2 class="timer-text text-6xl lg:text-[100px] font-bold leading-none">60</h2>
+                                    <h2 class="timer-text text-6xl lg:text-[100px] font-bold leading-none hours"
+                                        contenteditable="true" x-text="hours" id="hours"></h2>
                                     <p class="text-xl timer-text">Hours</p>
                                 </div>
                                 {{-- Divider --}}
@@ -70,8 +75,9 @@
                                 </div>
                                 {{-- Timer Mins --}}
                                 <div class="px-8 py-6 text-center border-[1.3px] timer-text-bg w-max">
-                                    <h2 class="timer-text text-6xl lg:text-[100px] font-bold leading-none">365</h2>
-                                    <p class="text-xl timer-text">Mins</p>
+                                    <h2 class="timer-text text-6xl lg:text-[100px] font-bold leading-none mins"
+                                        contenteditable="true" x-text="mins" id="mins"></h2>
+                                    <p class="text-xl timer-text">Minutes</p>
                                 </div>
                                 {{-- Divider --}}
                                 <div class="flex items-center">
@@ -96,13 +102,16 @@
                                     </svg>
                                 </div>
                                 <div class="px-8 py-6 text-center border-[1.3px] rounded-r-3xl timer-text-bg w-max">
-                                    <h2 class="timer-text text-6xl lg:text-[100px] font-bold leading-none">365</h2>
-                                    <p class="text-xl timer-text">Mins</p>
+                                    <h2 class="timer-text text-6xl lg:text-[100px] font-bold leading-none secs"
+                                        contenteditable="true" x-text="secs" id="secs"></h2>
+                                    <p class="text-xl timer-text">Seconds</p>
                                 </div>
                             </div>
-                            <div class="flex justify-center items-center gap-8">
+                            <div class="flex items-center justify-center gap-8">
                                 {{-- Play --}}
-                                <div x-data x-tooltip.placement.left.raw="Play" class="p-2 bg-gray-200 rounded w-max">
+                                <div x-show="$store.playBtn.on" @click="$store.playBtn.toggle(); e.play()" x-data
+                                    x-tooltip.placement.left.raw="Play"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -111,7 +120,9 @@
                                     </svg>
                                 </div>
                                 {{-- Pause --}}
-                                <div x-data x-tooltip.placement.bottom.raw="Pause" class="p-2 bg-gray-200 rounded w-max">
+                                <div x-show="!$store.playBtn.on" @click="$store.playBtn.toggle(); e.pause()" x-data
+                                    x-tooltip.placement.left.raw="Pause"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -120,22 +131,20 @@
                                     </svg>
                                 </div>
                                 {{-- Reset --}}
-                                <div x-data x-tooltip.placement.bottom.raw="Reset" class="p-2 bg-gray-200 rounded w-max">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-[#266CE8]">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                <div @click="e.reset(); $store.playBtn.on = true;" x-data
+                                    x-tooltip.placement.bottom.raw="Reset"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-[#266CE8]">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                                     </svg>
                                 </div>
-                                {{-- Stop --}}
-                                <div x-data x-tooltip.placement.bottom.raw="Stop" class="p-2 bg-gray-200 rounded w-max">
-                                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12.1639 0.35762C5.4868 0.35762 0.0732117 5.7712 0.0732117 12.4483C0.0732117 19.1253 5.4868 24.5389 12.1639 24.5389C18.8409 24.5389 24.2545 19.1253 24.2545 12.4483C24.2545 5.7712 18.8409 0.35762 12.1639 0.35762ZM16.6978 15.4709C16.6978 15.8717 16.5386 16.2562 16.2552 16.5396C15.9718 16.823 15.5873 16.9823 15.1865 16.9823H9.14119C8.74036 16.9823 8.35595 16.823 8.07252 16.5396C7.78909 16.2562 7.62986 15.8717 7.62986 15.4709V9.4256C7.62986 9.02477 7.78909 8.64036 8.07252 8.35693C8.35595 8.0735 8.74036 7.91427 9.14119 7.91427H15.1865C15.5873 7.91427 15.9718 8.0735 16.2552 8.35693C16.5386 8.64036 16.6978 9.02477 16.6978 9.4256V15.4709Z"
-                                            fill="#C84655" />
-                                    </svg>
-                                </div>
-                                {{-- Counter --}}
-                                <div x-data x-tooltip.placement.bottom.raw="Counter" class="p-2 bg-gray-200 rounded w-max">
+                                {{-- Switch to Counter --}}
+                                <div x-show="!$store.counter.on"
+                                    @click="$store.counter.toggle(); $store.playBtn.on = true; e.pause();" x-data
+                                    x-tooltip.placement.bottom.raw="Switch to Counter"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg width="27" height="25" viewBox="0 0 27 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -143,8 +152,11 @@
                                             fill="#152A0B" />
                                     </svg>
                                 </div>
-                                {{-- Timer --}}
-                                <div x-data x-tooltip.placement.bottom.raw="Timer" class="p-2 bg-gray-200 rounded w-max">
+                                {{-- Switch to Timer --}}
+                                <div x-show="$store.counter.on"
+                                    @click="$store.counter.toggle(); $store.playBtn.on = true; e.pause();" x-data
+                                    x-tooltip.placement.bottom.raw="Switch to Timer"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -152,10 +164,12 @@
                                             fill="#266CE8" />
                                     </svg>
                                 </div>
-                                {{-- Create timer --}}
-                                <div x-data x-tooltip.placement.bottom.raw="Create timer" class="p-2 bg-gray-200 rounded w-max">
-                                    <svg class="fill-lime-900" width="26" height="25" viewBox="0 0 26 25" fill="fillCurent"
-                                        xmlns="http://www.w3.org/2000/svg">
+                                {{-- Create Event --}}
+                                <div @click="$store.openCreateTimerModal.toggle()" x-data
+                                    x-tooltip.placement.bottom.raw="Create Event"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
+                                    <svg class="fill-lime-900" width="26" height="25" viewBox="0 0 26 25"
+                                        fill="fillCurent" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M12.9141 0.357559C10.5228 0.357559 8.18517 1.06666 6.19687 2.3952C4.20858 3.72374 2.65889 5.61204 1.74378 7.82131C0.828664 10.0306 0.589229 12.4616 1.05575 14.807C1.52227 17.1523 2.67379 19.3067 4.3647 20.9976C6.0556 22.6885 8.20995 23.84 10.5553 24.3065C12.9007 24.773 15.3317 24.5336 17.541 23.6185C19.7502 22.7034 21.6385 21.1537 22.9671 19.1654C24.2956 17.1771 25.0047 14.8395 25.0047 12.4482C25.0047 9.24156 23.7309 6.16626 21.4634 3.89883C19.196 1.63139 16.1207 0.357559 12.9141 0.357559V0.357559ZM12.9141 22.5237C10.9213 22.5237 8.97332 21.9328 7.3164 20.8257C5.65949 19.7186 4.36809 18.145 3.60549 16.3039C2.8429 14.4629 2.64337 12.437 3.03214 10.4826C3.4209 8.5281 4.3805 6.73281 5.78959 5.32372C7.19868 3.91463 8.99397 2.95503 10.9484 2.56626C12.9029 2.1775 14.9287 2.37703 16.7698 3.13962C18.6109 3.90221 20.1845 5.19362 21.2916 6.85053C22.3987 8.50745 22.9896 10.4554 22.9896 12.4482C22.9896 15.1204 21.9281 17.6831 20.0385 19.5727C18.149 21.4622 15.5863 22.5237 12.9141 22.5237Z"
                                             fill="fillCurrent" />
@@ -164,8 +178,9 @@
                                             fill="fillCurrent" />
                                     </svg>
                                 </div>
-                                {{-- Share Timer --}}
-                                <div x-data x-tooltip.placement.right.raw="Share timer" class="p-2 bg-gray-200 rounded w-max">
+                                {{-- Create Shareable Event --}}
+                                <div x-data x-tooltip.placement.right.raw="Create Shareable Event"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -182,7 +197,9 @@
                             class="w-full p-2 sm:p-7 bg-lime-950 bg-opacity-50 rounded-xl border border-gray-200 backdrop-blur-[20.36px] flex justify-between items-center gap-4">
                             <div class="flex flex-col items-start justify-start gap-4">
                                 {{-- Play --}}
-                                <div x-data x-tooltip.placement.right.raw="Play" class="p-2 bg-gray-200 rounded w-max">
+                                <div @click="$store.playBtn.toggle(); e.play(true)" x-data
+                                    x-tooltip.placement.right.raw="Play"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg class="w-5 h-5" viewBox="0 0 24 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -191,7 +208,9 @@
                                     </svg>
                                 </div>
                                 {{-- Pause --}}
-                                <div x-data x-tooltip.placement.right.raw="Pause" class="p-2 bg-gray-200 rounded w-max">
+                                <div @click="$store.playBtn.toggle(); e.pause()" x-data
+                                    x-tooltip.placement.right.raw="Pause"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg class="w-5 h-5" viewBox="0 0 25 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -200,56 +219,73 @@
                                     </svg>
                                 </div>
                                 {{-- Reset --}}
-                                <div x-data x-tooltip.placement.right.raw="Reset" class="p-2 bg-gray-200 rounded w-max">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-[#266CE8]">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-                                    </svg>
-                                </div>
-                                {{-- Stop --}}
-                                <div x-data x-tooltip.placement.right.raw="Stop" class="p-2 bg-gray-200 rounded w-max">
-                                    <svg class="w-5 h-5" viewBox="0 0 25 25" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12.1639 0.35762C5.4868 0.35762 0.0732117 5.7712 0.0732117 12.4483C0.0732117 19.1253 5.4868 24.5389 12.1639 24.5389C18.8409 24.5389 24.2545 19.1253 24.2545 12.4483C24.2545 5.7712 18.8409 0.35762 12.1639 0.35762ZM16.6978 15.4709C16.6978 15.8717 16.5386 16.2562 16.2552 16.5396C15.9718 16.823 15.5873 16.9823 15.1865 16.9823H9.14119C8.74036 16.9823 8.35595 16.823 8.07252 16.5396C7.78909 16.2562 7.62986 15.8717 7.62986 15.4709V9.4256C7.62986 9.02477 7.78909 8.64036 8.07252 8.35693C8.35595 8.0735 8.74036 7.91427 9.14119 7.91427H15.1865C15.5873 7.91427 15.9718 8.0735 16.2552 8.35693C16.5386 8.64036 16.6978 9.02477 16.6978 9.4256V15.4709Z"
-                                            fill="#C84655" />
+                                <div @click="e.reset(); $store.playBtn.on = true;" x-data
+                                    x-tooltip.placement.right.raw="Reset"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-[#266CE8]">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                                     </svg>
                                 </div>
                             </div>
                             <div class="grid justify-between grid-cols-2 grid-rows-2 gap-1 sm:gap-4">
                                 <div
                                     class="min-w-[80px] bg-black bg-opacity-20 rounded-tl-md border border-white backdrop-blur-[268.24px] p-4 font-medium text-center text-white">
-                                    <h2 class="text-2xl sm:text-4xl">307</h2>
+                                    <h2 class="text-2xl timer-text sm:text-4xl days" id="mDays"
+                                        contenteditable="true" x-text="days"></h2>
                                     <p class="text-xs sm:text-sm">Days</p>
                                 </div>
                                 <div
                                     class="min-w-[80px] bg-black bg-opacity-20 rounded-tr-md border border-white backdrop-blur-[268.24px] p-4 font-medium text-center text-white">
-                                    <h2 class="text-2xl sm:text-4xl">24</h2>
+                                    <h2 class="text-2xl timer-text sm:text-4xl hours" id="mHours"
+                                        contenteditable="true" x-text="hours"></h2>
                                     <p class="text-xs sm:text-sm">Hours</p>
                                 </div>
                                 <div
                                     class="min-w-[80px] bg-black bg-opacity-20 rounded-bl-md border border-white backdrop-blur-[268.24px] p-4 font-medium text-center text-white">
-                                    <h2 class="text-2xl sm:text-4xl">60</h2>
+                                    <h2 class="text-2xl timer-text sm:text-4xl mins" id="mMins"
+                                        contenteditable="true" x-text="mins"></h2>
                                     <p class="text-xs sm:text-sm">Minutes</p>
                                 </div>
                                 <div
                                     class="min-w-[80px] bg-black bg-opacity-20 rounded-br-md border border-white backdrop-blur-[268.24px] p-4 font-medium text-center text-white">
-                                    <h2 class="text-2xl sm:text-4xl">60</h2>
+                                    <h2 class="text-2xl timer-text sm:text-4xl secs" id="mSecs"
+                                        contenteditable="true" x-text="secs"></h2>
                                     <p class="text-xs sm:text-sm">Seconds</p>
                                 </div>
                             </div>
                             <div class="flex flex-col items-start justify-start gap-4">
-                                {{-- Counter --}}
-                                <div x-data x-tooltip.placement.left.raw="Counter" class="p-2 bg-gray-200 rounded w-max">
-                                    <svg width="27" height="25" viewBox="0 0 27 25" fill="none"
+                                {{-- Swap tooltip Counter/Timer --}}
+                                {{-- Switch to Counter --}}
+                                <div x-show="!$store.counter.on" x-show="counter"
+                                    @click="$store.counter.toggle(); $store.playBtn.on = true; e.pause();" x-data
+                                    x-tooltip.placement.left.raw="Switch to Timer"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
+                                    <svg class="w-5 h-5" viewBox="0 0 27 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M26.5728 12.4269C26.5729 14.9769 25.7682 17.4619 24.2733 19.5278C22.7783 21.5936 20.6695 23.1349 18.2472 23.932C15.825 24.7291 13.2129 24.7413 10.7833 23.9669C8.35375 23.1925 6.23057 21.671 4.71638 19.6192L6.21633 18.5105C7.58476 20.3691 9.54048 21.7113 11.7668 22.3198C13.9931 22.9283 16.3596 22.7675 18.4832 21.8634C20.6067 20.9594 22.3629 19.3649 23.4673 17.3384C24.5718 15.3118 24.9598 12.9718 24.5686 10.6972C24.1774 8.42266 23.0299 6.34673 21.3118 4.80562C19.5938 3.2645 17.4058 2.34843 15.1023 2.20577C12.7987 2.0631 10.5144 2.70218 8.61936 4.01952C6.72428 5.33687 5.32936 7.25533 4.66048 9.46425L5.59213 8.85868L6.63557 10.4052L3.84063 12.2685C3.67595 12.3795 3.48009 12.435 3.28164 12.4269C3.12904 12.4271 2.97871 12.3899 2.84388 12.3184C2.70904 12.2469 2.59383 12.1434 2.50837 12.017L0.645081 9.22202L2.19161 8.17858L2.82513 9.11022C3.63345 6.30988 5.42453 3.89496 7.86969 2.30862C10.3149 0.72227 13.2501 0.0709114 16.1367 0.474069C19.0234 0.877227 21.6678 2.30786 23.5848 4.50343C25.5018 6.699 26.5627 9.51224 26.5728 12.4269ZM13.5298 5.90536V12.4269C13.5291 12.5495 13.5526 12.671 13.5989 12.7846C13.6453 12.8981 13.7136 13.0013 13.7999 13.0884L16.5949 15.8833L17.9178 14.5604L15.3931 12.0449V5.90536H13.5298Z"
                                             fill="#152A0B" />
                                     </svg>
                                 </div>
-                                {{-- Create Timer --}}
-                                <div x-data x-tooltip.placement.left.raw="Create timer" class="p-2 bg-gray-200 rounded w-max">
-                                    <svg class="fill-lime-900 w-5 h-5" viewBox="0 0 26 25" fill="fillCurent"
+                                {{-- Switch to Timer --}}
+                                <div x-show="$store.counter.on" x-show="!counter"
+                                    @click="$store.counter.toggle(); $store.playBtn.on = true; e.pause();" x-data
+                                    x-tooltip.placement.left.raw="Switch to Counter"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
+                                    <svg class="w-5 h-5" viewBox="0 0 25 25" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M19.8037 5.38166C18.799 4.36723 17.5594 3.55602 16.1289 3.04159C10.9651 1.18453 5.25895 3.89413 3.39239 9.08439C1.52589 14.2746 4.1994 19.9978 9.36327 21.8548C12.8695 23.1157 16.6263 22.2705 19.2609 19.974C19.8528 19.458 20.3881 18.8687 20.8511 18.2135C21.3623 17.49 21.7854 16.6862 22.0998 15.812C22.2957 15.2671 22.8973 14.9838 23.4422 15.1798C23.9871 15.3757 24.2704 15.9772 24.0744 16.5221C23.6945 17.5787 23.1827 18.5501 22.5649 19.4245C22.0043 20.2178 21.3563 20.9312 20.6398 21.5558C17.4494 24.3369 12.8992 25.3564 8.65316 23.8294C2.40225 21.5814 -0.841664 14.6571 1.41777 8.37423C3.67726 2.09142 10.5882 -1.18097 16.839 1.06697C18.857 1.79266 20.5613 3.00561 21.8684 4.52671L24.0969 3.60397L23.597 10.6245L18.2805 6.01234L19.8037 5.38166ZM11.6969 8.90624L11.6235 15.9683C11.6175 16.5474 12.0827 17.0223 12.6617 17.0284C13.2408 17.0344 13.7158 16.5692 13.7218 15.9901L13.7953 8.92811C13.8013 8.34905 13.3361 7.87402 12.757 7.86804C12.1779 7.86201 11.703 8.32723 11.6969 8.90624Z"
+                                            fill="#266CE8" />
+                                    </svg>
+                                </div>
+                                {{-- Create Event --}}
+                                <div @click="$store.openCreateTimerModal.toggle()" x-data
+                                    x-tooltip.placement.left.raw="Create Event"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
+                                    <svg class="w-5 h-5 fill-lime-900" viewBox="0 0 26 25" fill="fillCurent"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M12.9141 0.357559C10.5228 0.357559 8.18517 1.06666 6.19687 2.3952C4.20858 3.72374 2.65889 5.61204 1.74378 7.82131C0.828664 10.0306 0.589229 12.4616 1.05575 14.807C1.52227 17.1523 2.67379 19.3067 4.3647 20.9976C6.0556 22.6885 8.20995 23.84 10.5553 24.3065C12.9007 24.773 15.3317 24.5336 17.541 23.6185C19.7502 22.7034 21.6385 21.1537 22.9671 19.1654C24.2956 17.1771 25.0047 14.8395 25.0047 12.4482C25.0047 9.24156 23.7309 6.16626 21.4634 3.89883C19.196 1.63139 16.1207 0.357559 12.9141 0.357559V0.357559ZM12.9141 22.5237C10.9213 22.5237 8.97332 21.9328 7.3164 20.8257C5.65949 19.7186 4.36809 18.145 3.60549 16.3039C2.8429 14.4629 2.64337 12.437 3.03214 10.4826C3.4209 8.5281 4.3805 6.73281 5.78959 5.32372C7.19868 3.91463 8.99397 2.95503 10.9484 2.56626C12.9029 2.1775 14.9287 2.37703 16.7698 3.13962C18.6109 3.90221 20.1845 5.19362 21.2916 6.85053C22.3987 8.50745 22.9896 10.4554 22.9896 12.4482C22.9896 15.1204 21.9281 17.6831 20.0385 19.5727C18.149 21.4622 15.5863 22.5237 12.9141 22.5237Z"
@@ -259,22 +295,14 @@
                                             fill="fillCurrent" />
                                     </svg>
                                 </div>
-                                {{-- Share Timer --}}
-                                <div x-data x-tooltip.placement.left.raw="Share timer" class="p-2 bg-gray-200 rounded w-max">
+                                {{-- Create Shareable Event --}}
+                                <div x-data x-tooltip.placement.left.raw="Create Shareable Event"
+                                    class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg class="w-5 h-5" viewBox="0 0 25 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M24.0432 8.67525L14.9756 0.615179C14.8308 0.485056 14.6513 0.399776 14.459 0.369695C14.2666 0.339614 14.0696 0.366024 13.892 0.44572C13.7144 0.525416 13.5637 0.654969 13.4583 0.818649C13.3528 0.982329 13.2972 1.1731 13.2981 1.36779V4.59887C10.2716 5.41092 0.2005 9.19109 0.2005 23.533C0.200869 23.7669 0.282608 23.9934 0.431699 24.1736C0.58079 24.3538 0.787942 24.4765 1.01763 24.5207C1.24731 24.5649 1.48522 24.5278 1.69055 24.4158C1.89588 24.3038 2.05583 24.1238 2.14298 23.9068C5.13024 16.4381 10.9536 14.8795 13.2971 14.5541V17.4879C13.2969 17.6824 13.353 17.8728 13.4586 18.0362C13.5643 18.1995 13.7149 18.3287 13.8924 18.4083C14.0699 18.4879 14.2666 18.5144 14.4588 18.4846C14.651 18.4548 14.8305 18.3701 14.9756 18.2405L24.0432 10.1805C24.1494 10.0859 24.2344 9.97002 24.2926 9.84031C24.3508 9.71059 24.3809 9.57003 24.3809 9.42786C24.3809 9.28568 24.3508 9.14512 24.2926 9.01541C24.2344 8.88569 24.1494 8.76977 24.0432 8.67525Z"
                                             fill="#C84655" />
-                                    </svg>
-                                </div>
-                                {{-- Timer --}}
-                                <div x-data x-tooltip.placement.left.raw="Timer" class="p-2 bg-gray-200 rounded w-max">
-                                    <svg class="w-5 h-5" viewBox="0 0 25 25" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M19.8037 5.38166C18.799 4.36723 17.5594 3.55602 16.1289 3.04159C10.9651 1.18453 5.25895 3.89413 3.39239 9.08439C1.52589 14.2746 4.1994 19.9978 9.36327 21.8548C12.8695 23.1157 16.6263 22.2705 19.2609 19.974C19.8528 19.458 20.3881 18.8687 20.8511 18.2135C21.3623 17.49 21.7854 16.6862 22.0998 15.812C22.2957 15.2671 22.8973 14.9838 23.4422 15.1798C23.9871 15.3757 24.2704 15.9772 24.0744 16.5221C23.6945 17.5787 23.1827 18.5501 22.5649 19.4245C22.0043 20.2178 21.3563 20.9312 20.6398 21.5558C17.4494 24.3369 12.8992 25.3564 8.65316 23.8294C2.40225 21.5814 -0.841664 14.6571 1.41777 8.37423C3.67726 2.09142 10.5882 -1.18097 16.839 1.06697C18.857 1.79266 20.5613 3.00561 21.8684 4.52671L24.0969 3.60397L23.597 10.6245L18.2805 6.01234L19.8037 5.38166ZM11.6969 8.90624L11.6235 15.9683C11.6175 16.5474 12.0827 17.0223 12.6617 17.0284C13.2408 17.0344 13.7158 16.5692 13.7218 15.9901L13.7953 8.92811C13.8013 8.34905 13.3361 7.87402 12.757 7.86804C12.1779 7.86201 11.703 8.32723 11.6969 8.90624Z"
-                                            fill="#266CE8" />
                                     </svg>
                                 </div>
                             </div>

@@ -1,3 +1,7 @@
+@props([
+    'autostart' => false
+])
+
 <button
     {{ $attributes->merge(['type' => 'submit', 'class' => 'flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-white bg-red-400 rounded-lg']) }}>
     <svg class="w-5 h-5" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,5 +19,5 @@
             </clipPath>
         </defs>
     </svg>
-    <span>{{ $slot }}</span>
+    <span @if($autostart) x-text="autostart ? 'Start': 'Set'" @endif>{{ $slot }}</span>
 </button>
