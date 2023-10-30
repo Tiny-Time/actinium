@@ -155,11 +155,11 @@ const e = {
     },
     setTitle(days, hours, minutes, seconds) {
         if (days > 0) {
-            document.title = `${days} : ${hours} : ${minutes} : ${seconds} - {{ config('app.name') }}`;
+            document.title = `${days} : ${hours} : ${minutes} : ${seconds} - TinyTime`;
         } else if (hours > 0) {
-            document.title = `${hours} : ${minutes} : ${seconds} - {{ config('app.name') }}`;
+            document.title = `${hours} : ${minutes} : ${seconds} - TinyTime`;
         } else {
-            document.title = `${minutes} : ${seconds} - {{ config('app.name') }}`;
+            document.title = `${minutes} : ${seconds} - TinyTime`;
         }
     }
 }
