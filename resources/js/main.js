@@ -6,7 +6,7 @@ document.addEventListener('alpine:init', () => {
         openLoginModal: false,
         openSignUpModal: false,
         openForgotPasswordModal: false,
-        openCreateTimerModal: false,
+        openCreateEventModal: false,
 
         toggle() {
             this.openLoginModal = !this.openLoginModal;
@@ -22,7 +22,7 @@ document.addEventListener('alpine:init', () => {
         }
     }));
 
-    Alpine.store('openCreateTimerModal', {
+    Alpine.store('openCreateEventModal', {
         on: false,
 
         toggle() {

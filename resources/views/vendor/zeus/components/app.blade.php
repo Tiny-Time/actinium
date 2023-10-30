@@ -44,7 +44,7 @@
 <body
     class="relative font-sans antialiased bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-gray-900 @if (app()->isLocal()) @endif"
     x-data="authModal"
-    @keydown.window.escape="{ openSignUpModal: false, openLoginModal: false, openForgotPasswordModal: false, openCreateTimerModal: false }">
+    @keydown.window.escape="{ openSignUpModal: false, openLoginModal: false, openForgotPasswordModal: false, openCreateEventModal: false }">
     @livewire('preloader')
     @include('layouts.header')
 
@@ -71,7 +71,7 @@
                 openLoginModal: false,
                 openSignUpModal: false,
                 openForgotPasswordModal: false,
-                openCreateTimerModal: false,
+                openCreateEventModal: false,
 
                 toggle() {
                     this.openLoginModal = !this.openLoginModal;

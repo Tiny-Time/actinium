@@ -165,7 +165,7 @@
                                     </svg>
                                 </div>
                                 {{-- Create Event --}}
-                                <div @click="$store.openCreateTimerModal.toggle()" x-data
+                                <div @click="$store.openCreateEventModal.toggle()" x-data
                                     x-tooltip.placement.bottom.raw="Create Event"
                                     class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg class="fill-lime-900" width="26" height="25" viewBox="0 0 26 25"
@@ -282,7 +282,7 @@
                                     </svg>
                                 </div>
                                 {{-- Create Event --}}
-                                <div @click="$store.openCreateTimerModal.toggle()" x-data
+                                <div @click="$store.openCreateEventModal.toggle()" x-data
                                     x-tooltip.placement.left.raw="Create Event"
                                     class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg class="w-5 h-5 fill-lime-900" viewBox="0 0 26 25" fill="fillCurent"

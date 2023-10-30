@@ -34,7 +34,7 @@ const e = {
         // Close modal
         const alpineInstance = Alpine;
         if (alpineInstance) {
-            Alpine.store('openCreateTimerModal').toggle()
+            Alpine.store('openCreateEventModal').toggle()
         }
 
         // Start the event timer or counter.
