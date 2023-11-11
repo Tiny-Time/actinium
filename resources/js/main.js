@@ -7,6 +7,7 @@ document.addEventListener('alpine:init', () => {
         openSignUpModal: false,
         openForgotPasswordModal: false,
         openCreateEventModal: false,
+        openCreateShareableEventModal: false,
 
         toggle() {
             this.openLoginModal = !this.openLoginModal;
@@ -23,6 +24,14 @@ document.addEventListener('alpine:init', () => {
     }));
 
     Alpine.store('openCreateEventModal', {
+        on: false,
+
+        toggle() {
+            this.on = !this.on
+        }
+    });
+
+    Alpine.store('openCreateShareableEventModal', {
         on: false,
 
         toggle() {

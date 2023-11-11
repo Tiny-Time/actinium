@@ -44,7 +44,7 @@
 <body
     class="relative font-sans antialiased bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-gray-900 @if (app()->isLocal()) @endif"
     x-data="authModal"
-    @keydown.window.escape="{ openSignUpModal: false, openLoginModal: false, openForgotPasswordModal: false, openCreateEventModal: false }">
+    @keydown.window.escape="{ openSignUpModal: false, openLoginModal: false, openForgotPasswordModal: false, openCreateEventModal: false, openCreateShareableEventModal: false }">
     @livewire('preloader')
     @include('layouts.header')
 
@@ -98,6 +98,7 @@
         }
     </script>
 
+    @include('layouts.clipboard')
 </body>
 
 </html>

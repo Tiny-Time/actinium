@@ -179,7 +179,7 @@
                                     </svg>
                                 </div>
                                 {{-- Create Shareable Event --}}
-                                <div x-data x-tooltip.placement.right.raw="Create Shareable Event"
+                                <div @click="$store.openCreateShareableEventModal.toggle()" x-data x-tooltip.placement.right.raw="Create Shareable Event"
                                     class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -296,7 +296,7 @@
                                     </svg>
                                 </div>
                                 {{-- Create Shareable Event --}}
-                                <div x-data x-tooltip.placement.left.raw="Create Shareable Event"
+                                <div @click="$store.openCreateShareableEventModal.toggle()" x-data x-tooltip.placement.left.raw="Create Shareable Event"
                                     class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg class="w-5 h-5" viewBox="0 0 25 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">

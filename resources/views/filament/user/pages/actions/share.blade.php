@@ -57,6 +57,7 @@
     </div>
     <p class="text-sm text-center text-gray-400 my-2">Or share with link</p>
     <div class="bg-gray-100 rounded-lg flex items-center" x-data="{ shareUrl: 'Hello, world!' }">
+        <label for="shareUrl" class="sr-only">Share URL</label>
         <input type="url" name="shareUrl" id="shareUrl" x-model="shareUrl" class="w-full border-none bg-transparent focus:outline-none focus:ring-0">
         <button type="button" x-on:click="$clipboard(shareUrl)" class="px-3">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,4 +65,5 @@
             </svg>
         </button>
     </div>
+    <p class="text-sm text-green-500 mt-2 hidden" id="copied">Text copied to clipboard.</p>
 </div>

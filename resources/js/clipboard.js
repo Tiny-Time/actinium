@@ -3,7 +3,7 @@ document.addEventListener('alpine:init', () => {
         if (typeof navigator !== 'undefined' && navigator.clipboard) {
             navigator.clipboard.writeText(subject)
                 .then(() => {
-                    alert('Text copied to clipboard');
+                    // alert('Text copied to clipboard v1');
                 })
                 .catch(error => {
                     console.error('Error copying to clipboard:', error);
@@ -14,7 +14,7 @@ document.addEventListener('alpine:init', () => {
 
             try {
                 document.execCommand('copy');
-                alert('Text copied to clipboard');
+                // alert('Text copied to clipboard v2');
             } catch (error) {
                 console.error(error);
             }

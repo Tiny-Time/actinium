@@ -4,7 +4,7 @@
     'id' => \Str::random(10)
     ])
 
-<input {{ $disabled ? 'disabled' : '' }} id="{{ $id }}" type="{{ $type }}" {!! $attributes->merge(['class' => 'w-full bg-transparent border-none focus:outline-none focus:ring-0 text-sm rounded-lg']) !!}>
+<input {{ $disabled ? 'disabled' : '' }} id="{{ $id }}" type="{{ $type }}" {!! $attributes->merge(['class' => 'w-full bg-transparent border-none focus:outline-none focus:ring-0 text-sm rounded-lg']) !!} />
 
 @if ($id === 'password')
     <div x-data="showPasswordDiv">
