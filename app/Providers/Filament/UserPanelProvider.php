@@ -63,7 +63,7 @@ class UserPanelProvider extends PanelProvider
                     ->icon('heroicon-o-user-plus'),
                 MenuItem::make()
                     ->label('FAQs')
-                    ->url('/a/faqs')
+                    ->url('/a/faq')
                     ->icon('heroicon-o-question-mark-circle'),
             ])
             ->navigationItems([
@@ -80,7 +80,7 @@ class UserPanelProvider extends PanelProvider
                     ->openUrlInNewTab(true),
                 NavigationItem::make()
                     ->label('FAQs')
-                    ->url('/a/faqs')
+                    ->url('/a/faq')
                     ->icon('heroicon-o-question-mark-circle')
                     ->sort(11)
                     ->openUrlInNewTab(true),
