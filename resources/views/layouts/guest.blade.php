@@ -27,7 +27,7 @@
     @livewireStyles
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css','resources/js/main.js', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/main.js', 'resources/js/app.js'])
 
     {{-- Google Recaptcha --}}
     {!! NoCaptcha::renderJs() !!}
@@ -73,12 +73,13 @@
         @include('modals.forgot-password')
     @endif
 
-    @include('modals.create-timer')
-    @include('modals.create-shareable-timer')
+    @include('modals.create-event')
+    @include('modals.create-shareable-event')
 
     @livewireScriptConfig
     @filamentScripts
     @stack('js')
+    @include('layouts.clipboard')
 </body>
 
 </html>
