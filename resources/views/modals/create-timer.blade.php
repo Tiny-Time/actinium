@@ -44,7 +44,7 @@
                                         class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
                                         <x-label for="ce_date" value="{{ __('Date') }}" />
                                         <x-input id="ce_date" class="mt-1" type="date" name="ceDate"
-                                            min="{{ date('Y-m-d') }}" value="{{ date('Y-m-d') }}" required autofocus
+                                            min="{{ date('Y-m-d') }}" value="{{ date('Y-m-d') }}" required
                                             placeholder="Your date goes here..." />
                                     </div>
                                     <div class="flex justify-between gap-3 mt-4">
@@ -52,21 +52,21 @@
                                             class="rounded-lg border-[1.7px] border-gray-300 relative w-full focus-within:border-indigo-500">
                                             <x-label for="ce_hour" value="{{ __('Hour') }}" />
                                             <x-input id="ce_hour" class="mt-1" type="number" name="ceHour"
-                                                min="0" max="24" value="0" required autofocus
+                                                min="0" value="0" required
                                                 placeholder="Your hour goes here..." />
                                         </div>
                                         <div
                                             class="rounded-lg border-[1.7px] border-gray-300 relative w-full focus-within:border-indigo-500">
                                             <x-label for="ce_min" value="{{ __('Min') }}" />
                                             <x-input id="ce_min" class="mt-1" type="number" name="ceMin"
-                                                min="0" max="60" value="0" required autofocus
+                                                min="0" value="5" required
                                                 placeholder="Your minutes goes here..." />
                                         </div>
                                         <div
                                             class="rounded-lg border-[1.7px] border-gray-300 relative w-full focus-within:border-indigo-500">
                                             <x-label for="ce_sec" value="{{ __('Sec') }}" />
                                             <x-input id="ce_sec" class="mt-1" type="number" name="ceSec"
-                                                min="0" max="60" value="0" required autofocus
+                                                min="0" value="0" required
                                                 placeholder="Your seconds goes here..." />
                                         </div>
                                     </div>
