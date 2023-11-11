@@ -379,12 +379,12 @@ Route::middleware('domain.redirect')->group(function () {
         return view('blogs.show');
     });
 
-    /* ---------------------------------- Timer --------------------------------- */
+    /* ---------------------------------- Event --------------------------------- */
 
     // Preview
-    Route::get('timer/preview/{hash_id}', function () {
+    Route::get('event/preview/{hash_id}', function () {
         return 'Test';
-    })->name('timer.preview');
+    })->name('event.preview');
 
     /* ---------------------------------- Unsubscribe --------------------------------- */
 

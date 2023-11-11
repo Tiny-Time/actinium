@@ -19,7 +19,7 @@ use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
-use App\Filament\User\Resources\TimerResource\Widgets\TimerOverview;
+use App\Filament\User\Resources\EventResource\Widgets\EventOverview;
 
 class UserPanelProvider extends PanelProvider
 {
@@ -35,7 +35,7 @@ class UserPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/User/Widgets'), for: 'App\\Filament\\User\\Widgets')
             ->widgets([
-                TimerOverview::class,
+                EventOverview::class,
                 Widgets\AccountWidget::class,
             ])
             ->middleware([
