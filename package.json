@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "@splidejs/splide": "^4.1.4",
+        "luxon": "^3.4.4",
         "tippy.js": "^6.3.7"
     }
 }

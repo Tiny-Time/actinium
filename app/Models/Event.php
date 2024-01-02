@@ -19,12 +19,11 @@ class Event extends Model
         'title',
         'description',
         'date_time',
-        'event_type',
-        'auto_start',
         'event_id',
         'template_id',
         'user_id',
         'status',
+        'public',
     ];
 
     /**

@@ -4,49 +4,49 @@ const e = {
 
     // Start Event Timer or Counter.
     startEvent() { // Get all the form values.
-        const ce_title = $('#ce_title').val();
-        const ce_date = $('#ce_date').val();
-        const ce_hour = $('#ce_hour').val();
-        const ce_min = $('#ce_min').val();
-        const ce_sec = $('#ce_sec').val();
-        const ce_type = $('#ce_type').val();
+        const ct_title = $('#ct_title').val();
+        const ct_date = $('#ct_date').val();
+        const ct_hour = $('#ct_hour').val();
+        const ct_min = $('#ct_min').val();
+        const ct_sec = $('#ct_sec').val();
+        const ct_type = $('#ct_type').val();
         const autostart = $('#autostart').is(':checked');
 
         // Get the current date
         const currentDate = new Date();
 
         // Get the event date
-        const eventDate = new Date(ce_date);
+        const eventDate = new Date(ct_date);
 
         // Calculate the time difference in milliseconds
         const timeDifference = eventDate - currentDate;
 
         // Convert the time difference to days
-        const ce_day = Math.floor(timeDifference / (1000 * 60 * 60 * 24)) + 1;
+        const ct_day = Math.floor(timeDifference / (1000 * 60 * 60 * 24)) + 1;
 
         // Set the event value.
-        $('.eventTitle').text(ce_title);
-        $('.days').text(ce_day);
-        $('.hours').text(ce_hour);
-        $('.mins').text(ce_min);
-        $('.secs').text(ce_sec);
+        $('.eventTitle').text(ct_title);
+        $('.days').text(ct_day);
+        $('.hours').text(ct_hour);
+        $('.mins').text(ct_min);
+        $('.secs').text(ct_sec);
 
         // Close modal
         const alpineInstance = Alpine;
         if (alpineInstance) {
-            Alpine.store('openCreateEventModal').toggle()
+            Alpine.store('openCreateTimerModal').toggle()
         }
 
         // Start the event timer or counter.
-        let d = parseInt(ce_day, 10);
-        let h = parseInt(ce_hour, 10);
-        let m = parseInt(ce_min, 10);
-        let s = parseInt(ce_sec, 10);
+        let d = parseInt(ct_day, 10);
+        let h = parseInt(ct_hour, 10);
+        let m = parseInt(ct_min, 10);
+        let s = parseInt(ct_sec, 10);
 
         clearInterval(e.timerInterval);
         clearInterval(e.counterInterval);
 
-        if (ce_type == 'timer') {
+        if (ct_type == 'timer') {
             autostart ? e.startTimer(d, h, m, s) : e.setVal(d, h, m, s);
             Alpine.store('counter').on = false;
         } else {

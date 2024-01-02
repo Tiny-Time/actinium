@@ -16,11 +16,10 @@ return new class extends Migration
             $table->string('title');
             $table->longText('description')->nullable();
             $table->dateTime('date_time');
-            $table->string('event_type')->default('timer');
-            $table->boolean('auto_start')->default(1);
             $table->string('event_id');
             $table->integer('template_id');
             $table->foreignId('user_id')->nullable();
+            $table->boolean('public')->default(1);
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

@@ -1,12 +1,20 @@
 @props([
     'autostart' => false,
-    'cse_next' => false,
-    'cse_prev' => false,
+    'ce_next' => false,
+    'ce_prev' => false,
+    'close' => false,
 ])
 
 <button
     {{ $attributes->merge(['type' => 'submit', 'class' => 'flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-white bg-red-400 rounded-lg']) }}>
-    @if (!$cse_next && !$cse_prev)
+    @if ($close)
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+    @endif
+    @if (!$ce_next && !$ce_prev && !$close)
         <svg class="w-5 h-5" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_13_1299)">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -23,14 +31,14 @@
             </defs>
         </svg>
     @endif
-    @if ($cse_prev)
+    @if ($ce_prev)
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
         </svg>
     @endif
     <span @if ($autostart) x-text="autostart ? 'Start': 'Set'" @endif>{{ $slot }}</span>
-    @if ($cse_next)
+    @if ($ce_next)
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />

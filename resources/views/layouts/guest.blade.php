@@ -7,7 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="application-name" content="{{ config('app.name', 'TinyTime') }}">
 
-    <title>{{ config('app.name', 'TinyTime') }}</title>
+    {{-- <title>{{ config('app.name', 'TinyTime') }}</title> --}}
+    <title>{{ $title ?? config('app.name', 'TinyTime') }}</title>
     <link rel="icon" href="{{ Vite::asset('resources/images/stopwatch.png') }}">
 
     <!-- Fonts -->
@@ -42,6 +43,7 @@
             width: 100% !important;
         }
     </style>
+    @stack('css')
 </head>
 
 <body class="relative font-sans antialiased" x-data="authModal"
@@ -73,8 +75,8 @@
         @include('modals.forgot-password')
     @endif
 
+    @include('modals.create-timer')
     @include('modals.create-event')
-    @include('modals.create-shareable-event')
 
     @livewireScriptConfig
     @filamentScripts

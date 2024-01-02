@@ -164,9 +164,9 @@
                                             fill="#266CE8" />
                                     </svg>
                                 </div>
-                                {{-- Create Event --}}
-                                <div @click="$store.openCreateEventModal.toggle()" x-data
-                                    x-tooltip.placement.bottom.raw="Create Event"
+                                {{-- Create Timer --}}
+                                <div @click="$store.openCreateTimerModal.toggle()" x-data
+                                    x-tooltip.placement.bottom.raw="Create Timer"
                                     class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg class="fill-lime-900" width="26" height="25" viewBox="0 0 26 25"
                                         fill="fillCurent" xmlns="http://www.w3.org/2000/svg">
@@ -178,8 +178,8 @@
                                             fill="fillCurrent" />
                                     </svg>
                                 </div>
-                                {{-- Create Shareable Event --}}
-                                <div @click="$store.openCreateShareableEventModal.toggle()" x-data x-tooltip.placement.right.raw="Create Shareable Event"
+                                {{-- Create Event --}}
+                                <div @click="$store.openCreateEventModal.toggle()" x-data x-tooltip.placement.right.raw="Create Event"
                                     class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -281,9 +281,9 @@
                                             fill="#266CE8" />
                                     </svg>
                                 </div>
-                                {{-- Create Event --}}
-                                <div @click="$store.openCreateEventModal.toggle()" x-data
-                                    x-tooltip.placement.left.raw="Create Event"
+                                {{-- Create Timer --}}
+                                <div @click="$store.openCreateTimerModal.toggle()" x-data
+                                    x-tooltip.placement.left.raw="Create Timer"
                                     class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg class="w-5 h-5 fill-lime-900" viewBox="0 0 26 25" fill="fillCurent"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -295,8 +295,8 @@
                                             fill="fillCurrent" />
                                     </svg>
                                 </div>
-                                {{-- Create Shareable Event --}}
-                                <div @click="$store.openCreateShareableEventModal.toggle()" x-data x-tooltip.placement.left.raw="Create Shareable Event"
+                                {{-- Create Event --}}
+                                <div @click="$store.openCreateEventModal.toggle()" x-data x-tooltip.placement.left.raw="Create Event"
                                     class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg class="w-5 h-5" viewBox="0 0 25 25" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -1005,7 +1005,7 @@
                                                 <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
                                                     <img src="{{ $testimonial->image ? '/uploads/' . $testimonial->image : 'https://ui-avatars.com/api/?name=' . $testimonial->name . '&background=A2C376&color=fff&bold=true' }}"
                                                         alt="Profile"
-                                                        class="flex-shrink rounded-full max-w-[70px] h-[50px]">
+                                                        class="flex-shrink rounded-full max-w-[70px] h-[70px]">
                                                     <div>
                                                         <h4 class="text-xl font-bold">{{ $testimonial->name }}</h4>
                                                         <p class="text-sm font-light">{{ $testimonial->profession }}</p>
@@ -1024,7 +1024,7 @@
         </div>
     </div>
     {{-- Pricing Plans --}}
-    <div class="px-4 mx-auto mt-10 max-w-7xl sm:px-6 lg:px-8">
+    <div class="px-4 mx-auto mt-10 mb-8 max-w-7xl sm:px-6 lg:px-8">
         <div class="lg:border-2 lg:border-gm lg:p-8 rounded-2xl">
             <h3 class="text-3xl font-semibold text-center">Pricing Plans</h3>
             <p class="mt-2 text-center">Choose the plan that best suits your needs.</p>

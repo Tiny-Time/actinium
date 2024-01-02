@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Password;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Http\Controllers\PasswordController;
 use Laravel\Fortify\Http\Controllers\NewPasswordController;
@@ -58,15 +59,15 @@ Route::middleware('domain.redirect')->group(function () {
 
     /* -------------------------------- Fortify Starts -------------------------------- */
 
-    Route::middleware([
-        'auth:sanctum',
-        config('jetstream.auth_session'),
-        'verified'
-    ])->group(function () {
-        // Route::get('/dashboard', function () {
-        //     return view('dashboard');
-        // })->name('dashboard');
-    });
+    // Route::middleware([
+    //     'auth:sanctum',
+    //     config('jetstream.auth_session'),
+    //     'verified'
+    // ])->group(function () {
+    //     Route::get('/dashboard', function () {
+    //         return view('dashboard');
+    //     })->name('dashboard');
+    // });
 
     Route::group(['middleware' => config('fortify.middleware', ['web'])], function () {
         $enableViews = config('fortify.views', true);
@@ -381,10 +382,14 @@ Route::middleware('domain.redirect')->group(function () {
 
     /* ---------------------------------- Event --------------------------------- */
 
-    // Preview
-    Route::get('event/preview/{hash_id}', function () {
-        return 'Test';
-    })->name('event.preview');
+    // Create Shareable Event
+    Route::post('event/create-shareable-event', [EventController::class, 'store'])->name('event.create');
+
+    // Preview & Share
+    Route::get('event/{event_id}', [EventController::class, 'show'])->name('event.preview');
+
+    // Embed
+    Route::get('event/embed/{event_id}', [EventController::class, 'index'])->name('event.embed');
 
     /* ---------------------------------- Unsubscribe --------------------------------- */
 
@@ -441,4 +446,34 @@ Route::middleware('domain.redirect')->group(function () {
 
         return redirect()->route('homePage');
     })->name('subscribe');
+
+    // Themes/Templates Subscription
+
+    Route::post('subscribe', function (Request $request) {
+
+        $request->validate([
+            'email' => 'required|email:rfc,dns|max:255|not_regex:/\bmailinator\.com\b/i'
+        ]);
+
+        // Check if the email already exists with subscribed status
+        $existingSubscriber = EmailSubscriber::where('email', $request->email)->where('subscribed', 1)->first();
+
+        if ($existingSubscriber) {
+            // Email already subscribed
+            return response()->json(['error' => 'This email address is already subscribed.'], 422);
+        } else {
+            $token = Str::random(16);
+
+            EmailSubscriber::updateOrCreate([
+                'email' => $request->email,
+                'subscribed' => 1,
+                'token' => $token,
+            ]);
+
+            // Send notification email for subscription success.
+            Mail::to($request->email)->send(new Subscribed($token));
+
+            return response()->json(['message' => 'Subscription successful.']);
+        }
+    })->name('tsubscribe');
 });

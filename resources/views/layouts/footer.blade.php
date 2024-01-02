@@ -1,4 +1,4 @@
-<footer class="mt-8 bg-gm dark:bg-gray-800">
+<footer class="bg-gm dark:bg-gray-800">
     @php
         $socialPages = \App\Models\SocialPage::get();
     @endphp
@@ -123,6 +123,11 @@
             @livewire('email-subscription')
         </div>
     </div>
-    <p class="py-2 text-center bg-gray-100 dark:text-gray-100 dark:bg-gray-900">Copyright &copy; 2023
+    <p class="py-2 text-center bg-gray-100 dark:text-gray-100 dark:bg-gray-900">Copyright &copy;
+        @if (now()->year == 2023)
+            2023
+        @else
+            2023 - {{ now()->year }}
+        @endif
         {{ env('APP_NAME') }}.</p>
 </footer>
