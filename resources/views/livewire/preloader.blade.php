@@ -122,7 +122,7 @@
     </div>
     <script>
         window.addEventListener("load", function() {
-            const loader = document.querySelector(".loader-wrapper");
+            var loader = document.querySelector(".loader-wrapper");
             loader.style.display = "none";
         });
     </script>

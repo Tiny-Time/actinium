@@ -4,7 +4,7 @@ namespace App\Filament\User\Resources;
 
 use Filament\Forms;
 use Filament\Tables;
-use App\Models\Timer;
+use App\Models\Event;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
@@ -14,16 +14,16 @@ use Filament\Forms\Components\Wizard;
 use App\Forms\Components\TemplatePicker;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\User\Resources\TimerResource\Pages;
-use App\Filament\User\Resources\TimerResource\RelationManagers;
+use App\Filament\User\Resources\EventResource\Pages;
+use App\Filament\User\Resources\EventResource\RelationManagers;
 
-class TimerResource extends Resource
+class EventResource extends Resource
 {
-    protected static ?string $model = Timer::class;
+    protected static ?string $model = Event::class;
 
     protected static ?string $navigationIcon = 'icon-hour-glass';
 
-    protected static ?string $navigationLabel = 'Timer Manager';
+    protected static ?string $navigationLabel = 'Event Manager';
 
     protected static ?int $navigationSort = 1;
 
@@ -67,7 +67,7 @@ class TimerResource extends Resource
                     ->label('')
                     ->tooltip('Edit'),
                 Tables\Actions\Action::make('share')
-                    ->modalContent(fn (Timer $record): View => view(
+                    ->modalContent(fn (Event $record): View => view(
                         'filament.user.pages.actions.share',
                         ['record' => $record],
                     ))
@@ -77,7 +77,7 @@ class TimerResource extends Resource
                     ->label('')
                     ->tooltip('Share'),
                 Tables\Actions\Action::make('preview')
-                    ->url(fn (Timer $record): string => route('timer.preview', $record->id))
+                    ->url(fn (Event $record): string => route('event.preview', $record->id))
                     ->openUrlInNewTab()
                     ->icon('heroicon-m-magnifying-glass-plus')
                     ->label('')
@@ -102,14 +102,14 @@ class TimerResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageTimers::route('/'),
+            'index' => Pages\ManageEvents::route('/'),
         ];
     }
 
     public function formSteps(){
         return [
             Wizard\Step::make('Information')
-                // ->description('Provide some information about your timer.')
+                // ->description('Provide some information about your event.')
                 ->schema([
                     Forms\Components\TextInput::make('title')
                         ->required()
@@ -129,7 +129,7 @@ class TimerResource extends Resource
                 ])
                 ->columns(2),
             Wizard\Step::make('Template')
-                // ->description('Select a template for the timer.')
+                // ->description('Select a template for the event.')
                 ->schema([
                     TemplatePicker::make('template_id')
                         ->label('Template')
@@ -137,7 +137,7 @@ class TimerResource extends Resource
                         ->columnSpanFull(),
                 ]),
             Wizard\Step::make('Visibility')
-                // ->description('Control the status of timer.')
+                // ->description('Control the status of event.')
                 ->schema([
                     Forms\Components\Toggle::make('status')
                         ->default(1)
@@ -150,7 +150,7 @@ class TimerResource extends Resource
     public static function getWidgets(): array
     {
         return [
-            TimerResource\Widgets\TimerOverview::class,
+            EventResource\Widgets\EventOverview::class,
         ];
     }
 }

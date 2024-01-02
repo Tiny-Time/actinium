@@ -17,7 +17,7 @@
                 x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 @click.away="$store.openCreateTimerModal.toggle()">
                 <div class="relative bg-gray-100 dark:bg-gray-900">
-                    <!-- Forgot Password -->
+                    <!-- Create Timer -->
                     <div class="relative flex flex-col items-center justify-center w-full py-6">
                         <!-- Logo -->
                         <div>
@@ -25,55 +25,55 @@
                         </div>
                         <!-- Content -->
                         <div class="w-full px-6 py-4 mt-2">
-                            <h3 class="text-2xl font-bold text-center">Create Event</h3>
+                            <h3 class="text-2xl font-bold text-center">Create Timer</h3>
                             <div>
-                                <form @submit.prevent="e.startEvent()" method="POST" x-data="{ ce_title: '', autostart: false }">
+                                <form @submit.prevent="e.startEvent()" method="POST" x-data="{ ct_title: '', autostart: false }">
                                     <div>
-                                        <div :class="(ce_title.length > 30) ? 'focus-within:border-pink-500' :
+                                        <div :class="(ct_title.length > 30) ? 'focus-within:border-pink-500' :
                                         'focus-within:border-indigo-500'"
                                             class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full">
-                                            <x-label for="ce_title" value="{{ __('Title') }}" />
-                                            <x-input x-model="ce_title" id="ce_title" class="mt-1" type="text"
+                                            <x-label for="ct_title" value="{{ __('Title') }}" />
+                                            <x-input x-model="ct_title" id="ct_title" class="mt-1" type="text"
                                                 name="ceTitle" required autofocus
                                                 placeholder="Your title goes here..." />
                                         </div>
-                                        <span x-show="ce_title.length > 30" class="text-sm text-pink-500">The title is
+                                        <span x-show="ct_title.length > 30" class="text-sm text-pink-500">The title is
                                             too long.</span>
                                     </div>
                                     <div
                                         class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
-                                        <x-label for="ce_date" value="{{ __('Date') }}" />
-                                        <x-input id="ce_date" class="mt-1" type="date" name="ceDate"
-                                            min="{{ date('Y-m-d') }}" value="{{ date('Y-m-d') }}" required autofocus
+                                        <x-label for="ct_date" value="{{ __('Date') }}" />
+                                        <x-input id="ct_date" class="mt-1" type="date" name="ceDate"
+                                            min="{{ date('Y-m-d') }}" value="{{ date('Y-m-d') }}" required
                                             placeholder="Your date goes here..." />
                                     </div>
                                     <div class="flex justify-between gap-3 mt-4">
                                         <div
                                             class="rounded-lg border-[1.7px] border-gray-300 relative w-full focus-within:border-indigo-500">
-                                            <x-label for="ce_hour" value="{{ __('Hour') }}" />
-                                            <x-input id="ce_hour" class="mt-1" type="number" name="ceHour"
-                                                min="0" max="24" value="0" required autofocus
+                                            <x-label for="ct_hour" value="{{ __('Hour') }}" />
+                                            <x-input id="ct_hour" class="mt-1" type="number" name="ceHour"
+                                                min="0" value="0" required
                                                 placeholder="Your hour goes here..." />
                                         </div>
                                         <div
                                             class="rounded-lg border-[1.7px] border-gray-300 relative w-full focus-within:border-indigo-500">
-                                            <x-label for="ce_min" value="{{ __('Min') }}" />
-                                            <x-input id="ce_min" class="mt-1" type="number" name="ceMin"
-                                                min="0" max="60" value="0" required autofocus
+                                            <x-label for="ct_min" value="{{ __('Min') }}" />
+                                            <x-input id="ct_min" class="mt-1" type="number" name="ceMin"
+                                                min="0" value="5" required
                                                 placeholder="Your minutes goes here..." />
                                         </div>
                                         <div
                                             class="rounded-lg border-[1.7px] border-gray-300 relative w-full focus-within:border-indigo-500">
-                                            <x-label for="ce_sec" value="{{ __('Sec') }}" />
-                                            <x-input id="ce_sec" class="mt-1" type="number" name="ceSec"
-                                                min="0" max="60" value="0" required autofocus
+                                            <x-label for="ct_sec" value="{{ __('Sec') }}" />
+                                            <x-input id="ct_sec" class="mt-1" type="number" name="ceSec"
+                                                min="0" value="0" required
                                                 placeholder="Your seconds goes here..." />
                                         </div>
                                     </div>
                                     <div
                                         class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
-                                        <x-label for="ce_type" value="{{ __('Event Type') }}" />
-                                        <select name="ce_type" id="ce_type"
+                                        <x-label for="ct_type" value="{{ __('Timer Type') }}" />
+                                        <select name="ct_type" id="ct_type"
                                             class="w-full text-sm bg-transparent border-none rounded-lg focus:outline-none focus:ring-0">
                                             <option value="timer">Timer</option>
                                             <option value="counter">Counter</option>
@@ -89,7 +89,7 @@
                                             <span class="ml-2">Autostart</span>
                                         </label>
                                     </div>
-                                    <x-button class="disabled:opacity-50" x-bind:disabled="ce_title.length > 30"
+                                    <x-button class="disabled:opacity-50" x-bind:disabled="ct_title.length > 30"
                                         wire:loading.attr="disabled" :autostart="true">
                                         {{ __('Set') }}
                                     </x-button>

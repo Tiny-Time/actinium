@@ -7,7 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="application-name" content="{{ config('app.name', 'TinyTime') }}">
 
-    <title>{{ config('app.name', 'TinyTime') }}</title>
+    {{-- <title>{{ config('app.name', 'TinyTime') }}</title> --}}
+    <title>{{ $title ?? config('app.name', 'TinyTime') }}</title>
     <link rel="icon" href="{{ Vite::asset('resources/images/stopwatch.png') }}">
 
     <!-- Fonts -->
@@ -27,7 +28,7 @@
     @livewireStyles
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css','resources/js/main.js', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/main.js', 'resources/js/app.js'])
 
     {{-- Google Recaptcha --}}
     {!! NoCaptcha::renderJs() !!}
@@ -42,6 +43,7 @@
             width: 100% !important;
         }
     </style>
+    @stack('css')
 </head>
 
 <body class="relative font-sans antialiased" x-data="authModal"
@@ -74,11 +76,12 @@
     @endif
 
     @include('modals.create-timer')
-    @include('modals.create-shareable-timer')
+    @include('modals.create-event')
 
     @livewireScriptConfig
     @filamentScripts
     @stack('js')
+    @include('layouts.clipboard')
 </body>
 
 </html>

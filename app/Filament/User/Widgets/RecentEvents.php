@@ -3,13 +3,13 @@
 namespace App\Filament\User\Widgets;
 
 use Filament\Tables;
-use App\Models\Timer;
+use App\Models\Event;
 use Filament\Tables\Table;
 use Illuminate\Contracts\View\View;
-use App\Filament\User\Resources\TimerResource;
+use App\Filament\User\Resources\EventResource;
 use Filament\Widgets\TableWidget as BaseWidget;
 
-class RecentTimers extends BaseWidget
+class RecentEvents extends BaseWidget
 {
     protected int | string | array $columnSpan = 2;
 
@@ -17,7 +17,7 @@ class RecentTimers extends BaseWidget
     {
         return $table
             ->query(
-                fn (Timer $query) => $query->where('user_id', auth()->user()->id)->take(5)
+                fn (Event $query) => $query->where('user_id', auth()->user()->id)->take(5)
             )
             ->columns([
                 Tables\Columns\TextColumn::make('title')
@@ -27,12 +27,12 @@ class RecentTimers extends BaseWidget
                     ->sortable(),
             ])->actions([
                 Tables\Actions\EditAction::make()
-                    ->steps((new TimerResource)->formSteps())
+                    ->steps((new EventResource)->formSteps())
                     ->modalWidth('3xl')
                     ->label('')
                     ->tooltip('Edit'),
                 Tables\Actions\Action::make('share')
-                    ->modalContent(fn (Timer $record): View => view(
+                    ->modalContent(fn (Event $record): View => view(
                         'filament.user.pages.actions.share',
                         ['record' => $record],
                     ))
@@ -42,7 +42,7 @@ class RecentTimers extends BaseWidget
                     ->label('')
                     ->tooltip('Share'),
                 Tables\Actions\Action::make('preview')
-                    ->url(fn (Timer $record): string => route('timer.preview', $record->id))
+                    ->url(fn (Event $record): string => route('event.preview', $record->id))
                     ->openUrlInNewTab()
                     ->icon('heroicon-m-magnifying-glass-plus')
                     ->label('')

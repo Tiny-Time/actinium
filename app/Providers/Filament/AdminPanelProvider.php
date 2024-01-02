@@ -65,52 +65,34 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])->plugins([
-                FilamentSpatieLaravelHealthPlugin::make(),
-                VersionsPlugin::make(),
-                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
-                SpatieLaravelTranslatablePlugin::make()
-                    ->defaultLocales(['en']),
-                SkyPlugin::make()
-                    ->skyPrefix('a')
-                    ->skyMiddleware(['web'])
-                    ->uriPrefix([
-                        'post' => 'post',
-                        'page' => 'page',
-                        'library' => 'library',
-                        'faq' => 'faqs',
-                    ])
-
-                    ->libraryResource(false)
-
-                    ->navigationGroupLabel('Content Manager')
-
-                    // the default models
-                    ->skyModels([
-                        'Faq' => \LaraZeus\Sky\Models\Faq::class,
-                        'Post' => \LaraZeus\Sky\Models\Post::class,
-                        'PostStatus' => \LaraZeus\Sky\Models\PostStatus::class,
-                        'Tag' => \LaraZeus\Sky\Models\Tag::class,
-                        'Library' => \LaraZeus\Sky\Models\Library::class,
-                    ])
-
-                    ->editor(TipTapEditor::class)
-                    ->parsers([\LaraZeus\Sky\Classes\BoltParser::class])
-                    ->recentPostsLimit(5)
-                    ->searchResultHighlightCssClass('highlight')
-                    ->skipHighlightingTerms(['iframe'])
-                    ->defaultFeaturedImage(Vite::asset('resources/images/bg.jpg'))
-                    ->libraryTypes([
-                        'FILE' => 'File',
-                        'IMAGE' => 'Image',
-                        'VIDEO' => 'Video',
-                    ])
-                    ->tagTypes([
-                        'tag' => 'Tag',
-                        'category' => 'Category',
-                        // 'library' => 'Library',
-                        'faq' => 'Faq',
-                    ]),
-            ])
+                    FilamentSpatieLaravelHealthPlugin::make(),
+                    VersionsPlugin::make(),
+                    \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+                    SpatieLaravelTranslatablePlugin::make()
+                        ->defaultLocales(['en']),
+                    SkyPlugin::make()
+                        ->libraryResource(false)
+                        ->navigationGroupLabel('Content Manager')
+                        // the default models
+                        ->skyModels([
+                            'Faq' => \LaraZeus\Sky\Models\Faq::class,
+                            'Post' => \LaraZeus\Sky\Models\Post::class,
+                            'PostStatus' => \LaraZeus\Sky\Models\PostStatus::class,
+                            'Tag' => \LaraZeus\Sky\Models\Tag::class,
+                            'Library' => \LaraZeus\Sky\Models\Library::class,
+                        ])
+                        ->libraryTypes([
+                            'FILE' => 'File',
+                            'IMAGE' => 'Image',
+                            'VIDEO' => 'Video',
+                        ])
+                        ->tagTypes([
+                            'tag' => 'Tag',
+                            'category' => 'Category',
+                            // 'library' => 'Library',
+                            'faq' => 'Faq',
+                        ]),
+                ])
             ->userMenuItems([
                 MenuItem::make()
                     ->label('User Dashboard')

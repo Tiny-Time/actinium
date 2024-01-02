@@ -7,6 +7,7 @@ document.addEventListener('alpine:init', () => {
         openSignUpModal: false,
         openForgotPasswordModal: false,
         openCreateTimerModal: false,
+        openCreateEventModal: false,
 
         toggle() {
             this.openLoginModal = !this.openLoginModal;
@@ -30,6 +31,14 @@ document.addEventListener('alpine:init', () => {
         }
     });
 
+    Alpine.store('openCreateEventModal', {
+        on: false,
+
+        toggle() {
+            this.on = !this.on
+        }
+    });
+
     Alpine.store('counter', {
         on: false,
 
@@ -44,6 +53,30 @@ document.addEventListener('alpine:init', () => {
         toggle() {
             this.on = !this.on
         }
+    });
+
+    Alpine.store("openCreateRSVPModal", {
+        on: false,
+
+        toggle() {
+            this.on = !this.on;
+        },
+    });
+
+    Alpine.store("openSubscriptionModal", {
+        on: false,
+
+        toggle() {
+            this.on = !this.on;
+        },
+    });
+
+    Alpine.store("openShareModal", {
+        on: false,
+
+        toggle() {
+            this.on = !this.on;
+        },
     });
 });
 

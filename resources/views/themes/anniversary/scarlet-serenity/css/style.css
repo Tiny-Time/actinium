@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0 auto;
+}
+
+.toz {
+    background-image: url("../../scarlet-serenity/images/bg.png");
+    background-position: bottom;
+    font-family: "EB Garamond";
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.toz-subscription {
+    border-radius: 16px;
+    border: 1.816px solid #950d11;
+    background: rgba(149, 13, 17, 0.25);
+}
+
+/* social links */
+
+.toz-social-link {
+    color: #950d11;
+    transition: background-color 0.3s;
+}
+
+.toz-ec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.toz-ec-d {
+    width: 180px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+    color: #950d11;
+    font-size: 54px;
+    font-family: "EB Garamond";
+    font-weight: 700;
+    border-radius: 15px;
+    position: relative;
+}
+
+.toz-unit {
+    font-size: 30px;
+}
+
+.toz-ec-d svg {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+.toz-ec-d>svg>circle {
+    fill: transparent;
+    stroke: rgba(0, 0, 0, 0.33);
+    stroke-width: 10px;
+}
+
+.toz-ec-d>svg>circle:nth-child(2) {
+    stroke: #950d11;
+    stroke-dasharray: 471;
+    stroke-linecap: round;
+}
+
+/* Mobile/Tablets */
+
+@media (max-width: 767px) {
+    .toz-main {
+        padding: 10px 20px;
+    }
+
+    .toz-ec-d {
+        width: 150px;
+        height: 150px;
+        font-size: 40px;
+    }
+
+    .toz-ec-d svg {
+        width: 140px;
+        height: 130px;
+        top: auto;
+        left: auto;
+    }
+
+    .toz-ec-d>svg>circle {
+        r: 60px;
+        cx: 65px;
+        cy: 65px;
+        stroke-width: 8px;
+    }
+
+    .toz-ec-d>svg>circle:nth-child(2) {
+        stroke: #950d11;
+        stroke-dasharray: 377;
+        stroke-linecap: round;
+    }
+
+    .toz-tcb svg {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (min-width: 381px) {
+    .toz-time-divide:nth-child(4) {
+        display: block;
+    }
+}

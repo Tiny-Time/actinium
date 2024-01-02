@@ -51,5 +51,6 @@
 
         @livewireScripts
         @filamentScripts
+        @include('layouts.clipboard')
     </body>
 </html>

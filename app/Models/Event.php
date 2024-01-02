@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Timer extends Model
+class Event extends Model
 {
     use HasFactory;
 
@@ -19,9 +19,11 @@ class Timer extends Model
         'title',
         'description',
         'date_time',
-        'status',
+        'event_id',
         'template_id',
         'user_id',
+        'status',
+        'public',
     ];
 
     /**
