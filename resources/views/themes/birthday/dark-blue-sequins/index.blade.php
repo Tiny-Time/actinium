@@ -7,7 +7,7 @@
         <script src="{{ Vite::asset('resources/views/themes/general/js/main.js') }}"></script>
         <script>
             const timerInterval = setInterval(function() {
-                updateCountdown('{{ $event->date_time }}')
+                window.uC('{{ $event->date_time }}')
             }, 1000);
         </script>
     @endpush
