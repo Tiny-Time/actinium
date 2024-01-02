@@ -74,3 +74,5 @@ function updateCountdown(datetime) {
         tozSecs.innerText = countdown.seconds;
     }
 }
+
+window.uC = updateCountdown;
