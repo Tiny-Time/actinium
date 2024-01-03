@@ -1,8 +1,12 @@
 <script>
     document.addEventListener('alpine:init', () => {
+        const input = document.getElementById('shareUrl');
+
         window.Alpine.magic('clipboard', () => subject => {
+            const textToCopy = input.val();
+
             if (typeof navigator !== 'undefined' && navigator.clipboard) {
-                navigator.clipboard.writeText(subject)
+                navigator.clipboard.writeText(textToCopy)
                     .then(() => {
                         $('#copied').removeClass('hidden');
                         setTimeout(() => {
@@ -13,7 +17,6 @@
                         console.error('Error copying to clipboard:', error);
                     });
             } else {
-                const input = document.getElementById('shareUrl');
                 input.select();
 
                 try {
