@@ -16,7 +16,6 @@ export default defineConfig({
                 "resources/views/themes/anniversary/scarlet-serenity/css/style.css",
                 "resources/views/themes/general/js/subscribe.js",
                 "resources/views/themes/general/js/main.js",
-                'resources/views/themes/birthday/dark-blue-sequins/images/Flying Butterfly.png',
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
