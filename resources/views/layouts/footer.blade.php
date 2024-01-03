@@ -104,8 +104,8 @@
             <a href="/">Home</a>
             <a href="#" class="w-max">About Us</a>
             <a href="#" class="w-max">Contact</a>
-            <a href="#" class="w-max">Create Timer</a>
-            <a href="#" class="w-max">Create Counter</a>
+            <button type="button" class="w-max" @click="$store.openCreateTimerModal.toggle()">Create Your Timer</button>
+            <button type="button" class="w-max" @click="$store.openCreateEventModal.toggle()">Create Your Event</button>
             <a href="{{ route('blogs') }}" class="w-max">Blogs</a>
             <a href="{{ route('faq') }}" class="w-max">FAQs</a>
         </div>
