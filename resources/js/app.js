@@ -25,7 +25,7 @@ document.addEventListener('alpine:init', () => {
 });
 
 /* Import images and fonts. */
-import.meta.glob(["../images/**", "../fonts/**"]);
+import.meta.glob(["../images/**", "../fonts/**", "../views/**"]);
 
 /* Splide Slider */
 
