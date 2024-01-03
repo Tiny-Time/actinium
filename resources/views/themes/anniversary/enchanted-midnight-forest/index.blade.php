@@ -27,7 +27,7 @@
             </div>
 
             <!-- Event timer/counter -->
-            <div class="flex flex-col sm:flex-row items-center gap-4 p-4 toz-bg-timer rounded-xl">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 p-4 toz-bg-timer rounded-xl">
                 <div class="flex items-center gap-4">
                     <!-- Days -->
                     <div class="toz-days">
