@@ -164,9 +164,9 @@
                                             fill="#266CE8" />
                                     </svg>
                                 </div>
-                                {{-- Create Timer --}}
+                                {{-- Create Your Timer --}}
                                 <div @click="$store.openCreateTimerModal.toggle()" x-data
-                                    x-tooltip.placement.bottom.raw="Create Timer"
+                                    x-tooltip.placement.bottom.raw="Create Your Timer"
                                     class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg class="fill-lime-900" width="26" height="25" viewBox="0 0 26 25"
                                         fill="fillCurent" xmlns="http://www.w3.org/2000/svg">
@@ -281,9 +281,9 @@
                                             fill="#266CE8" />
                                     </svg>
                                 </div>
-                                {{-- Create Timer --}}
+                                {{-- Create Your Timer --}}
                                 <div @click="$store.openCreateTimerModal.toggle()" x-data
-                                    x-tooltip.placement.left.raw="Create Timer"
+                                    x-tooltip.placement.left.raw="Create Your Timer"
                                     class="p-2 bg-gray-200 rounded cursor-pointer w-max">
                                     <svg class="w-5 h-5 fill-lime-900" viewBox="0 0 26 25" fill="fillCurent"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -629,8 +629,8 @@
                     build a website that captivates your audience's attention and reflects your unique brand identity.
                 </p>
                 <div>
-                    <a href="#" class="px-6 py-2 font-bold text-gray-100 uppercase rounded bg-cyan-500">Create
-                        New Timer</a>
+                    <button type="button" @click="$store.openCreateEventModal.toggle()" class="px-6 py-2 font-bold text-gray-100 uppercase rounded bg-cyan-500">Create
+                        Your Event</button>
                 </div>
             </div>
         </div>
@@ -647,8 +647,8 @@
                 <p>With our seamless website integration, you can easily add timers and counters to your website and
                     captivate your audience's attention.</p>
                 <div>
-                    <a href="#" class="px-6 py-2 font-bold text-gray-100 uppercase bg-red-400 rounded">Create
-                        New Timer</a>
+                    <button type="button" @click="$store.openCreateEventModal.toggle()" class="px-6 py-2 font-bold text-gray-100 uppercase bg-red-400 rounded">Create
+                        Your Event</button>
                 </div>
             </div>
             <img src="{{ Vite::asset('resources/images/feature image 2.png') }}" alt="Website Integration"
@@ -668,8 +668,8 @@
                     create timers and counters that resonate with your brand and captivate your audience's attention.
                 </p>
                 <div>
-                    <a href="#" class="px-6 py-2 font-bold text-gray-100 uppercase rounded bg-olivine">Create
-                        New Timer</a>
+                    <button type="button" @click="$store.openCreateEventModal.toggle()" class="px-6 py-2 font-bold text-gray-100 uppercase rounded bg-olivine">Create
+                        Your Event</button>
                 </div>
             </div>
         </div>

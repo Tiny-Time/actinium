@@ -55,7 +55,7 @@
             <p class="text-sm mt-1 text-center">Email</p>
         </div>
     </div>
-    <p class="text-sm text-center text-gray-400 my-2">Or share with link</p>
+    <p class="text-sm text-center text-gray-400 my-2">Or share the link</p>
     <div class="bg-gray-100 rounded-lg flex items-center" x-data="{ shareUrl: 'Hello, world!' }">
         <label for="shareUrl" class="sr-only">Share URL</label>
         <input type="url" name="shareUrl" id="shareUrl" x-model="shareUrl" class="w-full border-none bg-transparent focus:outline-none focus:ring-0">

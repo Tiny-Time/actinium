@@ -248,7 +248,7 @@
                                                 <p class="mt-1 text-sm text-center">Email</p>
                                             </a>
                                         </div>
-                                        <p class="my-2 text-sm text-center text-gray-400">Or share with link</p>
+                                        <p class="my-2 text-sm text-center text-gray-400">Or share the link</p>
                                         <div class="flex items-center bg-white rounded-lg">
                                             <label for="shareUrl" class="sr-only">Share URL</label>
                                             <input type="url" name="shareUrl" id="shareUrl" x-model="shareUrl"
