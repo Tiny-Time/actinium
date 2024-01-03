@@ -33,7 +33,7 @@
             <img class="absolute top-[-63px] -z-10 right-[-54px] hidden sm:block"
                 src="{{ Vite::asset('resources/views/themes/birthday/dark-blue-sequins/images/Flying Butterfly.png') }}"
                 alt="Butterfly">
-            <div class="flex flex-col sm:flex-row items-center gap-4">
+            <div class="flex flex-col sm:flex-row items-center gap-4 justify-center">
                 <div class="flex items-center gap-4">
                     <!-- Days -->
                     <div class="toz-days">
