@@ -1,20 +1,21 @@
-document.addEventListener('alpine:init', () => {
-    window.Alpine.magic('clipboard', () => subject => {
-        if (typeof navigator !== 'undefined' && navigator.clipboard) {
-            navigator.clipboard.writeText(subject)
-                .then(() => {
-                    // alert('Text copied to clipboard v1');
-                })
-                .catch(error => {
-                    console.error('Error copying to clipboard:', error);
+document.addEventListener("alpine:init", () => {
+    window.Alpine.magic("clipboard", () => (subject) => {
+        const input = document.getElementById("shareUrl");
+
+        if (typeof navigator !== "undefined" && navigator.clipboard) {
+            const textToCopy = input.val();
+
+            navigator.clipboard
+                .writeText(textToCopy)
+                .then(() => {})
+                .catch((error) => {
+                    console.error("Error copying to clipboard:", error);
                 });
         } else {
-            const input = document.getElementById('shareUrl');
             input.select();
 
             try {
-                document.execCommand('copy');
-                // alert('Text copied to clipboard v2');
+                document.execCommand("copy");
             } catch (error) {
                 console.error(error);
             }
