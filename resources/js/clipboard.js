@@ -3,7 +3,7 @@ document.addEventListener("alpine:init", () => {
         const input = document.getElementById("shareUrl");
 
         if (typeof navigator !== "undefined" && navigator.clipboard) {
-            const textToCopy = input.val();
+            const textToCopy = input.value;
 
             navigator.clipboard
                 .writeText(textToCopy)
