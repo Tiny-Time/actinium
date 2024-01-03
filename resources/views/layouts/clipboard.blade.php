@@ -3,7 +3,7 @@
         const input = document.getElementById('shareUrl');
 
         window.Alpine.magic('clipboard', () => subject => {
-            const textToCopy = input.val();
+            const textToCopy = input.value;
 
             if (typeof navigator !== 'undefined' && navigator.clipboard) {
                 navigator.clipboard.writeText(textToCopy)
