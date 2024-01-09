@@ -30,7 +30,7 @@ class TemplateResource extends Resource
 
     public static function form(Form $form): Form
     {
-        $viewsPath = resource_path('views/templates');
+        $viewsPath = resource_path('views/themes');
         $viewOptions = [];
 
         (new TemplateResource)->getViewsFromDirectory($viewsPath, $viewOptions);
