@@ -93,7 +93,7 @@ class SignupForm extends Component
 
         auth()->login($user);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('filament.user.pages.dashboard');
     }
 
     /**

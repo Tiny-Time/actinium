@@ -83,7 +83,7 @@ class SigninForm extends Component
         ]);
 
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
-            return redirect()->route('dashboard');
+            return redirect()->route('filament.user.pages.dashboard');
         }
 
         $this->addError('email', 'Invalid credentials.');
