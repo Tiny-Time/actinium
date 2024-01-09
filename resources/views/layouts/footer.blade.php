@@ -99,18 +99,20 @@
             </div>
         </div>
         {{-- Column 2: Quick Links --}}
-        <div class="grid gap-1">
+        <div class="flex flex-col gap-2">
             <h3 class="text-xl font-semibold">Quick Links</h3>
             <a href="/">Home</a>
             <a href="#" class="w-max">About Us</a>
             <a href="#" class="w-max">Contact</a>
-            <button type="button" class="w-max" @click="$store.openCreateTimerModal.toggle()">Create Your Timer</button>
-            <button type="button" class="w-max" @click="$store.openCreateEventModal.toggle()">Create Your Event</button>
+            <button type="button" class="w-max" @click="$store.openCreateTimerModal.toggle()">Create Your
+                Timer</button>
+            <button type="button" class="w-max" @click="$store.openCreateEventModal.toggle()">Create Your
+                Event</button>
             <a href="{{ route('blogs') }}" class="w-max">Blogs</a>
             <a href="{{ route('faq') }}" class="w-max">FAQs</a>
         </div>
         {{-- Column 3: Legal Links --}}
-        <div class="grid gap-1">
+        <div class="flex flex-col gap-2">
             <h3 class="text-xl font-semibold">Legal Links</h3>
             <a href="{{ route('gdpr.show') }}" class="w-max">GDPR Compliance</a>
             <a href="{{ route('dmca.show') }}" class="w-max">DMCA</a>
@@ -124,10 +126,6 @@
         </div>
     </div>
     <p class="py-2 text-center bg-gray-100 dark:text-gray-100 dark:bg-gray-900">Copyright &copy;
-        @if (now()->year == 2023)
-            2023
-        @else
-            2023 - {{ now()->year }}
-        @endif
+        2023 - {{ now()->year }}
         {{ env('APP_NAME') }}.</p>
 </footer>

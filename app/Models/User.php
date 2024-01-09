@@ -93,6 +93,6 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
      * @return HasMany
      */
     public function timer(): HasMany{
-        return $this->hasMany(Timer::class);
+        return $this->hasMany(Event::class);
     }
 }

@@ -52,7 +52,7 @@
 
     <div class="w-full mt-3">
         <label for="socialTerms" class="flex items-start">
-            <x-checkbox id="socialTerms" name="terms" wire:model.live="terms" />
+            <x-checkbox id="socialTerms" name="terms" wire:model="terms" />
             <span class="ml-2 text-sm leading-tight text-gray-600 dark:text-gray-400">Welcome to
                 {{ env('APP_NAME') }}, by clicking on this checkbox you agree to our <a
                     href="{{ route('terms.show') }}" class="font-semibold text-cyan-500">Terms and
