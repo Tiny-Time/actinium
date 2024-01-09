@@ -43,19 +43,19 @@ class SocialPages extends Page implements HasForms
             $form->schema([
                 TextInput::make('facebook_url')
                     ->placeholder('Enter the Facebook page URL.')
-                    ->url()
+                    ->label('Facebook URL')
                     ->suffixIcon('icon-facebook'),
                 TextInput::make('linkedin_url')
                     ->placeholder('Enter the LinkedIn page URL.')
-                    ->url()
+                    ->label('LinkedIn URL')
                     ->suffixIcon('icon-linkedin'),
                 TextInput::make('twitter_url')
-                    ->placeholder('Enter the Twitter page URL.')
-                    ->url()
+                    ->placeholder('Enter the X page URL.')
+                    ->label('X URL')
                     ->suffixIcon('icon-twitter'),
                 TextInput::make('instagram_url')
                     ->placeholder('Enter the Instagram page URL.')
-                    ->url()
+                    ->label('Instagram URL')
                     ->suffixIcon('icon-instagram'),
             ])->statePath('links');
     }
