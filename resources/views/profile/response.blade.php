@@ -9,7 +9,7 @@
         <p class="text-center">Thank you for verifying your email. <br>
             Your account is now fully activated.</p>
             <div class="flex">
-                <a href="{{ route('dashboard') }}" class="px-16 py-2 mx-auto mt-3 font-semibold text-white bg-red-400 rounded-md">Go to Dashboard</a>
+                <a href="{{ route('filament.user.pages.dashboard') }}" class="px-16 py-2 mx-auto mt-3 font-semibold text-white bg-red-400 rounded-md">Go to Dashboard</a>
             </div>
         </x-authentication-card>
 </x-guest-layout>
