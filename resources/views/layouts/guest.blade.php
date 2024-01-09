@@ -59,7 +59,7 @@
     @endif
 
     <!-- Page Content -->
-    <main class="mx-auto font-sans antialiased text-gray-900 dark:text-gray-100 max-w-7xl">
+    <main class="mx-auto font-sans antialiased text-gray-900 dark:text-gray-100 max-w-7xl mb-6">
         {{ $slot }}
     </main>
 
