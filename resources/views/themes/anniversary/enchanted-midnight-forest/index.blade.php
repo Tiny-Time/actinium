@@ -15,8 +15,8 @@
     <x-slot name="title">{{ ucfirst($event->title) . ' - ' . config('app.name', 'TinyTime') }}</x-slot>
     <x-slot name="header"></x-slot>
     <!-- Main timer template -->
-    <section class="toz">
-        <div class="toz-main gap-4">
+    <section class="-mb-6 toz">
+        <div class="gap-4 toz-main">
             <div class="toz-text-wrapper">
                 <h1 class="text-2xl capitalize toz-title md:text-5xl">{{ $event->title }}</h1>
                 @if ($event->description)
@@ -27,7 +27,7 @@
             </div>
 
             <!-- Event timer/counter -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 p-4 toz-bg-timer rounded-xl">
+            <div class="flex flex-col items-center justify-center gap-4 p-4 sm:flex-row toz-bg-timer rounded-xl">
                 <div class="flex items-center gap-4">
                     <!-- Days -->
                     <div class="toz-days">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <!-- Divider -->
-                <div class="toz-divider hidden sm:block">
+                <div class="hidden toz-divider sm:block">
                     <svg width="9" height="80" viewBox="0 0 9 97" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <rect x="0.313232" y="0.449463" width="7.71596" height="96.4495" rx="3.85798"

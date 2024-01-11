@@ -15,19 +15,19 @@
     <x-slot name="title">{{ ucfirst($event->title) . ' - ' . config('app.name', 'TinyTime') }}</x-slot>
     <x-slot name="header"></x-slot>
     <!-- Main timer template -->
-    <section class="toz p-4">
-        <div class="toz-main text-white flex flex-col gap-4 items-center">
-            <div class="toz-text-wrapper text-center">
+    <section class="p-4 -mb-6 toz">
+        <div class="flex flex-col items-center gap-4 text-white toz-main">
+            <div class="text-center toz-text-wrapper">
                 <h1 class="text-3xl capitalize toz-title md:text-5xl">{{ $event->title }}</h1>
                 @if ($event->description)
-                    <h2 class="text-lg toz-subtitle md:text-3xl text-gray-200">
+                    <h2 class="text-lg text-gray-200 toz-subtitle md:text-3xl">
                         {{ $event->description }}
                     </h2>
                 @endif
             </div>
 
             <!-- Event timer/counter -->
-            <div class="toz-timer flex flex-col md:flex-row">
+            <div class="flex flex-col toz-timer md:flex-row">
                 <div class="flex">
                     <!-- Days -->
                     <div class="toz-ec-d">
@@ -99,7 +99,7 @@
         </div>
 
         <!-- Subscription form -->
-        <div class="p-4 mx-auto rounded-lg toz-subscription toz-bg-timer max-w-max mt-4 text-gray-200">
+        <div class="p-4 mx-auto mt-4 text-gray-200 rounded-lg toz-subscription toz-bg-timer max-w-max">
             <h4 class="text-lg text-center toz-subtitle md:text-xl">
                 Subscribe for exclusive holiday timer notifications!
             </h4>

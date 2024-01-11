@@ -14,7 +14,7 @@
     <x-slot name="title">{{ ucfirst($event->title) . ' - ' . config('app.name', 'TinyTime') }}</x-slot>
     <x-slot name="header"></x-slot>
     <!-- Main timer template -->
-    <section class="flex flex-col items-center gap-5 p-4 text-white toz toz-main">
+    <section class="flex flex-col items-center gap-5 p-4 -mb-6 text-white toz toz-main">
 
         <img src="{{ Vite::asset('resources/views/themes/birthday/dark-blue-sequins/images/Butterfly.png') }}"
             alt="Butterfly">
@@ -33,7 +33,7 @@
             <img class="absolute top-[-63px] -z-10 right-[-54px] hidden sm:block"
                 src="{{ Vite::asset('resources/views/themes/birthday/dark-blue-sequins/images/Flying Butterfly.png') }}"
                 alt="Butterfly">
-            <div class="flex flex-col sm:flex-row items-center gap-4 justify-center">
+            <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <div class="flex items-center gap-4">
                     <!-- Days -->
                     <div class="toz-days">
