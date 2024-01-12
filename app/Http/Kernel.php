@@ -30,14 +30,15 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \App\Http\Middleware\EncryptCookies::class,
-            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            /* ---------------------------- Custom Middleware --------------------------- */
+            \App\Http\Middleware\DomainRedirectMiddleware::class,
+            /* ------------------------- Custom Middleware Ends ------------------------- */
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            // Custom Middleware
-            \App\Http\Middleware\DomainRedirectMiddleware::class,
         ],
 
         'api' => [
