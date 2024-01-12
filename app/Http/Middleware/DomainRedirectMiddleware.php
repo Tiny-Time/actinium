@@ -44,9 +44,14 @@ class DomainRedirectMiddleware
         // Request URI
         $uri = $request->getRequestUri();
 
+        // Log users out on forgot password page
+        if ($request->is('forgot-password')) {
+            Auth::logout();
+        }
+
         /* Define the redirection logic based on the current domain, device, and authentication status. */
 
-        if($isAuthenticated){
+        if($isAuthenticated && !$request->is('forgot-password')){
             /* ------------------------------ Authenticated ----------------------------- */
 
             $isAdmin = auth()->user()->hasRole('super_admin');
