@@ -7,11 +7,12 @@ use Filament\Tables;
 use App\Models\Event;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Tables\Filters\Filter;
 use Illuminate\Contracts\View\View;
+use App\Forms\Components\ThemePicker;
 use Filament\Forms\Components\Wizard;
-use App\Forms\Components\TemplatePicker;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\User\Resources\EventResource\Pages;
@@ -69,7 +70,7 @@ class EventResource extends Resource
                 Tables\Actions\Action::make('share')
                     ->modalContent(fn (Event $record): View => view(
                         'filament.user.pages.actions.share',
-                        ['record' => $record],
+                        ['event' => $record],
                     ))
                     ->modalSubmitAction(false)
                     ->modalWidth('md')
@@ -77,7 +78,7 @@ class EventResource extends Resource
                     ->label('')
                     ->tooltip('Share'),
                 Tables\Actions\Action::make('preview')
-                    ->url(fn (Event $record): string => route('event.preview', $record->id))
+                    ->url(fn (Event $record): string => route('event.preview', $record->event_id))
                     ->openUrlInNewTab()
                     ->icon('heroicon-m-magnifying-glass-plus')
                     ->label('')
@@ -88,9 +89,9 @@ class EventResource extends Resource
                     ->tooltip('Delete'),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make()->modalWidth('md'),
-                ]),
+                // Tables\Actions\BulkActionGroup::make([
+                //     Tables\Actions\DeleteBulkAction::make()->modalWidth('md'),
+                // ]),
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make()
@@ -119,6 +120,12 @@ class EventResource extends Resource
                     Forms\Components\Hidden::make('user_id')
                         ->required()
                         ->default(auth()->user()->id),
+                    Forms\Components\Hidden::make('event_id')
+                        ->required()
+                        ->default(Str::random(16)),
+                    Forms\Components\Hidden::make('public')
+                        ->required()
+                        ->default(1),
                     Forms\Components\Textarea::make('description')
                         ->string()
                         ->columnSpanFull(),
@@ -131,9 +138,10 @@ class EventResource extends Resource
             Wizard\Step::make('Template')
                 // ->description('Select a template for the event.')
                 ->schema([
-                    TemplatePicker::make('template_id')
+                    ThemePicker::make('template_id')
                         ->label('Template')
                         ->required()
+                        ->default(1)
                         ->columnSpanFull(),
                 ]),
             Wizard\Step::make('Visibility')

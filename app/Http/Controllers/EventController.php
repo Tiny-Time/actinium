@@ -56,15 +56,9 @@ class EventController extends Controller
      */
     public function show(string $event_id)
     {
-        $event = Event::where('event_id', $event_id)->first();
+        $event = Event::where('event_id', $event_id)->where('status', 1)->first();
 
-        if ($event && $event->status == 1) {
-            // $id = $event->id;
-            // $title = $event->title;
-            // $description = $event->description;
-            // $date_time = $event->date_time;
-            // $event_id = $event->event_id;
-            // $autostart = $event->autostart;
+        if ($event) {
             $template_id = $event->template_id;
 
             if ($template_id == 1) {
