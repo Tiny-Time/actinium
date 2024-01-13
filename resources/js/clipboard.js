@@ -1,11 +1,11 @@
-document.addEventListener('alpine:init', () => {
-    const input = document.getElementById('shareUrl');
+import $ from "jquery";
+window.jQuery = window.$ = $;
 
+document.addEventListener('alpine:init', () => {
     window.Alpine.magic('clipboard', () => subject => {
-        const textToCopy = input.value;
 
         if (typeof navigator !== 'undefined' && navigator.clipboard) {
-            navigator.clipboard.writeText(textToCopy)
+            navigator.clipboard.writeText(subject)
                 .then(() => {
                     $('#copied').removeClass('hidden');
                     setTimeout(() => {
