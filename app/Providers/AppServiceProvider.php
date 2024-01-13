@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         Health::checks([
-            OptimizedAppCheck::new(),
+            // OptimizedAppCheck::new(),
             DebugModeCheck::new(),
             EnvironmentCheck::new(),
             UsedDiskSpaceCheck::new(),
