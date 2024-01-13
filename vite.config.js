@@ -10,7 +10,6 @@ export default defineConfig({
                 "resources/js/embed.js",
                 "resources/js/main.js",
                 "resources/js/clipboard.js",
-                "resources/js/template-picker.js",
                 "resources/views/themes/anniversary/enchanted-midnight-forest/css/style.css",
                 "resources/views/themes/birthday/dark-blue-sequins/css/style.css",
                 "resources/views/themes/anniversary/scarlet-serenity/css/style.css",
