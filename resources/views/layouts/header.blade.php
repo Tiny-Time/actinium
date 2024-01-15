@@ -2,8 +2,8 @@
     {{-- Desktop Nav --}}
     <div class="hidden px-4 py-2 mx-auto max-w-7xl sm:px-6 lg:px-8 md:block">
         <div class="flex items-center justify-between">
-            <x-authentication-card-logo />
-            <form method="POST" action="#"
+            <x-application-logo />
+            {{-- <form method="POST" action="#"
                 class="h-10 md:w-[350px] lg:w-[400px] flex rounded-full items-center bg-[#8D8D8D] overflow-clip">
                 <div class="px-3">
                     <svg class="w-5 h-5" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@
                     class="flex-grow p-0 mr-2 text-sm text-gray-100 bg-transparent border-none placeholder:text-gray-100 focus:ring-0 focus:outline-none">
                 <button class="block h-full px-3 text-lg font-semibold text-gray-100 bg-red-400">Find
                     Event</button>
-            </form>
+            </form> --}}
             @auth
                 <a href="{{ route('filament.user.pages.dashboard') }}"
                     class="px-6 py-2 font-semibold text-gray-100 uppercase bg-red-400 rounded">Dashboard</a>
@@ -28,7 +28,7 @@
     </div>
     {{-- Mobile Nav --}}
     <div class="px-4 py-2 mx-auto max-w-7xl sm:px-6 lg:px-8 md:hidden" x-data="{ menuOverlay: false, searchOverlay: false }">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-start">
             <button class="relative group" @click="menuOverlay = true">
                 <div
                     class="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden">
@@ -43,13 +43,13 @@
                     </div>
                 </div>
             </button>
-            <x-authentication-card-logo />
-            <svg class="w-5 h-5 cursor-pointer" @click="searchOverlay = true" viewBox="0 0 19 18" fill="none"
+            <x-application-logo class="mx-auto"/>
+            {{-- <svg class="w-5 h-5 cursor-pointer" @click="searchOverlay = true" viewBox="0 0 19 18" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M18.7042 16.2848L15.3049 12.8958C16.4017 11.4988 16.9968 9.77351 16.9946 7.99743C16.9946 6.41569 16.5255 4.86947 15.6466 3.5543C14.7677 2.23913 13.5186 1.21408 12.0571 0.608771C10.5956 0.00346513 8.98738 -0.15491 7.43585 0.153672C5.88433 0.462254 4.45917 1.22393 3.34058 2.34239C2.222 3.46085 1.46023 4.88586 1.15161 6.43721C0.842997 7.98855 1.00139 9.59657 1.60676 11.0579C2.21214 12.5192 3.2373 13.7683 4.55262 14.647C5.86794 15.5258 7.41433 15.9948 8.99625 15.9948C10.7725 15.9971 12.498 15.402 13.8952 14.3054L17.2845 17.7043C17.3775 17.798 17.488 17.8724 17.6099 17.9231C17.7317 17.9739 17.8624 18 17.9944 18C18.1263 18 18.257 17.9739 18.3789 17.9231C18.5007 17.8724 18.6113 17.798 18.7042 17.7043C18.7979 17.6114 18.8723 17.5008 18.9231 17.379C18.9738 17.2572 18.9999 17.1265 18.9999 16.9945C18.9999 16.8626 18.9738 16.7319 18.9231 16.6101C18.8723 16.4883 18.7979 16.3777 18.7042 16.2848ZM2.99751 7.99743C2.99751 6.81112 3.34933 5.65146 4.00848 4.66508C4.66763 3.6787 5.6045 2.90991 6.70063 2.45593C7.79676 2.00196 9.0029 1.88317 10.1665 2.11461C11.3302 2.34605 12.3991 2.91731 13.238 3.75615C14.0769 4.595 14.6483 5.66375 14.8797 6.82726C15.1112 7.99077 14.9924 9.19678 14.5384 10.2928C14.0843 11.3888 13.3155 12.3256 12.329 12.9846C11.3425 13.6437 10.1827 13.9955 8.99625 13.9955C7.40528 13.9955 5.87948 13.3636 4.7545 12.2387C3.62952 11.1138 2.99751 9.58821 2.99751 7.99743Z"
                     fill="black" />
-            </svg>
+            </svg> --}}
         </div>
         {{-- Menu Overlay --}}
         <div class="absolute top-0 bottom-0 left-0 right-0 z-20 px-4 bg-gray-100" x-cloak
@@ -92,7 +92,7 @@
             </div>
         </div>
         {{-- Search Overlay --}}
-        <div class="absolute top-0 bottom-0 left-0 right-0 z-20 px-4 bg-gray-100" x-cloak
+        {{-- <div class="absolute top-0 bottom-0 left-0 right-0 z-20 px-4 bg-gray-100" x-cloak
             x-show.transition="searchOverlay" x-transition:enter="transition ease-out duration-300 transform"
             x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
             x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="translate-x-0"
@@ -118,6 +118,6 @@
                     </svg>
                 </button>
             </div>
-        </div>
+        </div> --}}
     </div>
 </header>

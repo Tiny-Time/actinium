@@ -1024,12 +1024,12 @@
         </div>
     </div>
     {{-- Pricing Plans --}}
-    <div class="px-4 mx-auto mt-10 mb-8 max-w-7xl sm:px-6 lg:px-8">
+    {{-- <div class="px-4 mx-auto mt-10 mb-8 max-w-7xl sm:px-6 lg:px-8">
         <div class="lg:border-2 lg:border-gm lg:p-8 rounded-2xl">
             <h3 class="text-3xl font-semibold text-center">Pricing Plans</h3>
             <p class="mt-2 text-center">Choose the plan that best suits your needs.</p>
             <div class="grid gap-10 mt-6 lg:grid-cols-3">
-                {{-- Plans: Basic Plan --}}
+                <!-- Plans: Basic Plan -->
                 <div class="max-w-xs p-6 mx-auto border-2 border-gm rounded-2xl">
                     <h4 class="text-xl font-bold">Basic Plan</h4>
                     <p class="mt-3">Egestas purus viverra accumsan in nisl nisi
@@ -1073,7 +1073,7 @@
                         <span>Basic support</span>
                     </div>
                 </div>
-                {{-- Plans: Pro Plan --}}
+                <!-- Plans: Pro Plan -->
                 <div class="max-w-xs p-6 mx-auto border-2 border-gm rounded-2xl">
                     <h4 class="text-xl font-bold">Pro Plan</h4>
                     <p class="mt-3">Egestas purus viverra accumsan in nisl nisi
@@ -1126,7 +1126,7 @@
                         <span>Priority access to new features</span>
                     </div>
                 </div>
-                {{-- Plans: Enterprise Plan --}}
+                <!-- Plans: Enterprise Plan -->
                 <div class="max-w-xs p-6 mx-auto border-2 border-gm rounded-2xl">
                     <h4 class="text-xl font-bold">Enterprise Plan</h4>
                     <p class="mt-3">Egestas purus viverra accumsan in nisl nisi
@@ -1190,7 +1190,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     {{-- Footer --}}
     <x-slot name="footer"></x-slot>
 </x-guest-layout>
