@@ -106,6 +106,7 @@ class AdminPanelProvider extends PanelProvider
                     ->url('/dashboard', shouldOpenInNewTab: true)
                     ->icon('heroicon-o-user'),
             ])
+            ->favicon(asset('/favicon.ico'))
             ->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js', 'resources/css/custom.css']);
     }
 }
