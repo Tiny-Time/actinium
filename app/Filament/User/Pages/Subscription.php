@@ -11,4 +11,10 @@ class Subscription extends Page
     protected static ?int $navigationSort = 4;
 
     protected static string $view = 'filament.user.pages.subscription';
+
+    // Hide page
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
 }
