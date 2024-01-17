@@ -2,21 +2,18 @@
 
 namespace App\Filament\User\Resources\EventResource\Pages;
 
-use Filament\Actions;
-use Filament\Resources\Pages\ManageRecords;
 use App\Filament\User\Resources\EventResource;
+use Filament\Actions;
+use Filament\Resources\Pages\ListRecords;
 
-class ManageEvents extends ManageRecords
+class ListEvents extends ListRecords
 {
     protected static string $resource = EventResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make()
-                ->steps((new EventResource)->formSteps())
-                ->label('Quick Event')
-                ->modalWidth('3xl'),
+            Actions\CreateAction::make(),
             Actions\Action::make('advance_event')
                 ->label('Advance Event')
                 ->color('danger')

@@ -6,7 +6,6 @@ use Filament\Tables;
 use App\Models\Event;
 use Filament\Tables\Table;
 use Illuminate\Contracts\View\View;
-use App\Filament\User\Resources\EventResource;
 use Filament\Widgets\TableWidget as BaseWidget;
 
 class RecentEvents extends BaseWidget
@@ -22,19 +21,22 @@ class RecentEvents extends BaseWidget
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('date_time')
+                    ->dateTime()
+                    ->sortable(),
                 Tables\Columns\IconColumn::make('status')
                     ->boolean()
                     ->sortable(),
             ])->actions([
                 Tables\Actions\EditAction::make()
-                    ->steps((new EventResource)->formSteps())
-                    ->modalWidth('3xl')
+                    ->url(fn (Event $record): string => route('filament.user.resources.events.edit', $record->id))
+                    ->openUrlInNewTab()
                     ->label('')
                     ->tooltip('Edit'),
                 Tables\Actions\Action::make('share')
                     ->modalContent(fn (Event $record): View => view(
                         'filament.user.pages.actions.share',
-                        ['record' => $record],
+                        ['event' => $record],
                     ))
                     ->modalSubmitAction(false)
                     ->modalWidth('md')
@@ -42,7 +44,7 @@ class RecentEvents extends BaseWidget
                     ->label('')
                     ->tooltip('Share'),
                 Tables\Actions\Action::make('preview')
-                    ->url(fn (Event $record): string => route('event.preview', $record->id))
+                    ->url(fn (Event $record): string => route('event.preview', $record->event_id))
                     ->openUrlInNewTab()
                     ->icon('heroicon-m-magnifying-glass-plus')
                     ->label('')

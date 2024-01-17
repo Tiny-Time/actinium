@@ -12,11 +12,9 @@ use Filament\Resources\Resource;
 use Filament\Tables\Filters\Filter;
 use Illuminate\Contracts\View\View;
 use App\Forms\Components\ThemePicker;
-use Filament\Forms\Components\Wizard;
+use Filament\Forms\Components\Section;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\User\Resources\EventResource\Pages;
-use App\Filament\User\Resources\EventResource\RelationManagers;
 
 class EventResource extends Resource
 {
@@ -31,7 +29,41 @@ class EventResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([]);
+            ->schema([
+                Section::make('Quick Event')
+                    ->schema([
+                        Forms\Components\TextInput::make('title')
+                            ->required()
+                            ->maxLength(191)
+                            ->string()
+                            ->columnSpanFull(),
+                        Forms\Components\Hidden::make('user_id')
+                            ->required()
+                            ->default(auth()->user()->id),
+                        Forms\Components\Hidden::make('event_id')
+                            ->required()
+                            ->default(Str::random(16)),
+                        Forms\Components\Hidden::make('public')
+                            ->required()
+                            ->default(1),
+                        Forms\Components\Textarea::make('description')
+                            ->string()
+                            ->columnSpanFull(),
+                        Forms\Components\DateTimePicker::make('date_time')
+                            ->minDate(now())
+                            ->required()
+                            ->columnSpanFull(),
+                        ThemePicker::make('template_id')
+                            ->label('Template')
+                            ->required()
+                            ->default(1)
+                            ->columnSpanFull(),
+                        Forms\Components\Toggle::make('status')
+                            ->default(1)
+                            ->required()
+                            ->columnSpanFull(),
+                    ])
+            ]);
     }
 
     public static function table(Table $table): Table
@@ -39,6 +71,8 @@ class EventResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('description')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('date_time')
                     ->dateTime()
@@ -59,26 +93,26 @@ class EventResource extends Resource
                 Filter::make('status')
                     ->toggle(),
                 Filter::make('expired')
-                    ->query(fn (Builder $query): Builder => $query->where('date_time', '<', now()->toDateTimeString()))
+                    ->query(fn(Builder $query): Builder => $query->where('date_time', '<', now()->toDateTimeString()))
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                    ->steps((new self)->formSteps())
-                    ->modalWidth('3xl')
                     ->label('')
                     ->tooltip('Edit'),
                 Tables\Actions\Action::make('share')
-                    ->modalContent(fn (Event $record): View => view(
-                        'filament.user.pages.actions.share',
-                        ['event' => $record],
-                    ))
+                    ->modalContent(
+                        fn(Event $record): View => view(
+                            'filament.user.pages.actions.share',
+                            ['event' => $record],
+                        )
+                    )
                     ->modalSubmitAction(false)
                     ->modalWidth('md')
                     ->icon('heroicon-m-share')
                     ->label('')
                     ->tooltip('Share'),
                 Tables\Actions\Action::make('preview')
-                    ->url(fn (Event $record): string => route('event.preview', $record->event_id))
+                    ->url(fn(Event $record): string => route('event.preview', $record->event_id))
                     ->openUrlInNewTab()
                     ->icon('heroicon-m-magnifying-glass-plus')
                     ->label('')
@@ -90,75 +124,35 @@ class EventResource extends Resource
             ])
             ->bulkActions([
                 // Tables\Actions\BulkActionGroup::make([
-                //     Tables\Actions\DeleteBulkAction::make()->modalWidth('md'),
+                //     Tables\Actions\DeleteBulkAction::make(),
                 // ]),
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make()
-                    ->steps((new self)->formSteps())
                     ->modalWidth('3xl'),
-            ])->modifyQueryUsing(fn (Builder $query) => $query->where('user_id', auth()->user()->id));
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index' => Pages\ManageEvents::route('/'),
-        ];
-    }
-
-    public function formSteps(){
-        return [
-            Wizard\Step::make('Information')
-                // ->description('Provide some information about your event.')
-                ->schema([
-                    Forms\Components\TextInput::make('title')
-                        ->required()
-                        ->maxLength(191)
-                        ->string()
-                        ->columnSpanFull(),
-                    Forms\Components\Hidden::make('user_id')
-                        ->required()
-                        ->default(auth()->user()->id),
-                    Forms\Components\Hidden::make('event_id')
-                        ->required()
-                        ->default(Str::random(16)),
-                    Forms\Components\Hidden::make('public')
-                        ->required()
-                        ->default(1),
-                    Forms\Components\Textarea::make('description')
-                        ->string()
-                        ->columnSpanFull(),
-                    Forms\Components\DateTimePicker::make('date_time')
-                        ->minDate(now())
-                        ->required()
-                        ->columnSpanFull(),
-                ])
-                ->columns(2),
-            Wizard\Step::make('Template')
-                // ->description('Select a template for the event.')
-                ->schema([
-                    ThemePicker::make('template_id')
-                        ->label('Template')
-                        ->required()
-                        ->default(1)
-                        ->columnSpanFull(),
-                ]),
-            Wizard\Step::make('Visibility')
-                // ->description('Control the status of event.')
-                ->schema([
-                    Forms\Components\Toggle::make('status')
-                        ->default(1)
-                        ->required()
-                        ->columnSpanFull(),
-                ]),
-            ];
+            ])->modifyQueryUsing(fn(Builder $query) => $query->where('user_id', auth()->user()->id));
     }
 
     public static function getWidgets(): array
     {
         return [
             EventResource\Widgets\EventOverview::class,
+        ];
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListEvents::route('/'),
+            'create' => Pages\CreateEvent::route('/create'),
+            'edit' => Pages\EditEvent::route('/{record}/edit'),
         ];
     }
 }
