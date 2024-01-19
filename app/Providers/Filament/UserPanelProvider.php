@@ -89,7 +89,7 @@ class UserPanelProvider extends PanelProvider
                 Authenticate::class,
                 DomainRedirectMiddleware::class,
             ])
-            ->favicon(asset('/favicon.ico'))
+            ->favicon(asset('/favicon.png'))
             ->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js', 'resources/css/custom.css']);
     }
 }
