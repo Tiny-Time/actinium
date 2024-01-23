@@ -2,7 +2,7 @@
     @php
         $socialPages = \App\Models\SocialPage::whereNot('link', '#')->get();
     @endphp
-    <div class="grid gap-3 px-4 py-6 mx-auto text-gray-100 md:grid-cols-2 lg:grid-cols-4 max-w-7xl sm:px-6 lg:px-8">
+    <div class="grid gap-6 px-4 py-6 mx-auto text-gray-100 md:gap-3 md:grid-cols-2 lg:grid-cols-4 max-w-7xl sm:px-6 lg:px-8">
         {{-- Column 1: About website --}}
         <div class="">
             <x-authentication-card-logo />
@@ -64,8 +64,8 @@
         <div class="flex flex-col gap-2">
             <h3 class="text-xl font-semibold">Quick Links</h3>
             <a href="/">Home</a>
-            <a href="#" class="w-max">About Us</a>
-            <a href="#" class="w-max">Contact</a>
+            {{-- <a href="#" class="w-max">About Us</a>
+            <a href="#" class="w-max">Contact</a> --}}
             @if (request()->routeIs('homePage'))
                 <button type="button" class="w-max" @click="$store.openCreateTimerModal.toggle()">Create Your
                     Timer</button>
@@ -85,7 +85,7 @@
         </div>
         {{-- Column 4: Subscription form --}}
         <div class="">
-            <h3 class="text-xl uppercase">GET UPDATES ABOUT OUR NEW FEATURES</h3>
+            <h3 class="text-xl font-semibold capitalize">Get updates about our new features</h3>
             @livewire('email-subscription')
         </div>
     </div>

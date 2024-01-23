@@ -31,7 +31,7 @@
                         wire:keydown.enter="confirmPassword" />
         </div>
         <x-input-error for="confirmable_password" class="mt-2" />
-        <p class="mt-1 font-bold">Don't remember your password? <span class="font-normal">Click <a href="{{ route('password.request') }}" class="font-bold text-indigo-500">Forgot Password</a> to reset.</span></p>
+        <p class="mt-1 font-bold">Don't know or remember your password? <span class="font-normal">Click <a href="{{ route('password.request') }}" class="font-bold text-indigo-500">Forgot Password</a> to reset or set a new password.</span></p>
     </x-slot>
 
     <x-slot name="footer">
