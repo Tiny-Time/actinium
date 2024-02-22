@@ -48,7 +48,7 @@
     @livewire('preloader')
     @include('layouts.header')
 
-    <main class="mx-auto font-sans antialiased text-gray-900 dark:text-gray-100 max-w-7xl">
+    <main class="mx-auto mb-6 font-sans antialiased text-gray-900 dark:text-gray-100 max-w-7xl">
         {{ $slot }}
     </main>
 
