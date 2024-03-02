@@ -45,7 +45,9 @@ return [
 
     'skipHighlightingTerms' => ['iframe'],
 
-    'defaultFeaturedImage' => '../../resources/images/bg.jpg',
+    'getSkipHighlightingTerms' => ['iframe'],
+
+    'defaultFeaturedImage' => '/images/bg.jpg',
 
     /**
      * the default editor for pages and posts, Available:

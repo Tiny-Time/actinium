@@ -12,6 +12,7 @@
     <x-seo::meta />
     <!-- Seo Tags -->
 
+    <link rel="shortcut icon" href="{{ Vite::asset('resources/images/stopwatch.png') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link

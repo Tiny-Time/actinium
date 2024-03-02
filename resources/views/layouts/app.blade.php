@@ -7,7 +7,7 @@
         <meta name="application-name" content="{{ config('app.name', 'TinyTime') }}">
 
         <title>{{ config('app.name', 'TinyTime') }}</title>
-        <link rel="icon" href="{{ Vite::asset('resources/images/stopwatch.png') }}">
+        <link rel="shortcut icon" href="{{ Vite::asset('resources/images/stopwatch.png') }}" type="image/x-icon">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
