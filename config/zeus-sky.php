@@ -33,6 +33,7 @@ return [
         'PostStatus' => \LaraZeus\Sky\Models\PostStatus::class,
         'Tag' => \LaraZeus\Sky\Models\Tag::class,
         'Library' => \LaraZeus\Sky\Models\Library::class,
+        'Navigation' => \LaraZeus\Sky\Models\Navigation::class,
     ],
 
     'parsers' => [
@@ -45,7 +46,9 @@ return [
 
     'skipHighlightingTerms' => ['iframe'],
 
-    'defaultFeaturedImage' => '../../resources/images/bg.jpg',
+    'getSkipHighlightingTerms' => ['iframe'],
+
+    'defaultFeaturedImage' => '/images/bg.jpg',
 
     /**
      * the default editor for pages and posts, Available:

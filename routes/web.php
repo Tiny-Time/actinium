@@ -391,6 +391,12 @@ Route::middleware('domain.redirect')->group(function () {
     // Embed
     Route::get('event/embed/{event_id}', [EventController::class, 'index'])->name('event.embed');
 
+    /* ----------------------------- Advanced Event ----------------------------- */
+
+    Route::get('advanced-event', function(){
+        return view('advanced-event');
+    })->name('advanced-event');
+
     /* ---------------------------------- Unsubscribe --------------------------------- */
 
     Route::get('unsubscribe/{token}', function ($token) {
@@ -476,4 +482,9 @@ Route::middleware('domain.redirect')->group(function () {
             return response()->json(['message' => 'Subscription successful.']);
         }
     })->name('tsubscribe');
+
+    // Redirect
+    Route::get('/user/profile', function(){
+        return redirect()->route('filament.user.pages.profile');
+    });
 });

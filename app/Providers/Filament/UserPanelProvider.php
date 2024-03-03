@@ -6,9 +6,13 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
 use Filament\PanelProvider;
+use LaraZeus\Sky\SkyPlugin;
 use Filament\Navigation\MenuItem;
 use Filament\Navigation\NavigationItem;
+use App\Filament\Pages\HealthCheckResults;
 use Filament\Http\Middleware\Authenticate;
+use Awcodes\FilamentVersions\VersionsPlugin;
+use Filament\SpatieLaravelTranslatablePlugin;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use App\Http\Middleware\DomainRedirectMiddleware;
@@ -20,6 +24,7 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use App\Filament\User\Resources\EventResource\Widgets\EventOverview;
+use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
 
 class UserPanelProvider extends PanelProvider
 {
@@ -30,6 +35,8 @@ class UserPanelProvider extends PanelProvider
             ->path('dashboard')
             ->discoverResources(in: app_path('Filament/User/Resources'), for: 'App\\Filament\\User\\Resources')
             ->discoverPages(in: app_path('Filament/User/Pages'), for: 'App\\Filament\\User\\Pages')
+            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
+            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
@@ -88,6 +95,32 @@ class UserPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
                 DomainRedirectMiddleware::class,
+            ])->plugins([
+                SpatieLaravelTranslatablePlugin::make()
+                    ->defaultLocales(['en']),
+                SkyPlugin::make()
+                    ->libraryResource(false)
+                    ->navigationGroupLabel('Content Manager')
+                    // the default models
+                    ->skyModels([
+                        'Faq' => \LaraZeus\Sky\Models\Faq::class,
+                        'Post' => \LaraZeus\Sky\Models\Post::class,
+                        'PostStatus' => \LaraZeus\Sky\Models\PostStatus::class,
+                        'Tag' => \LaraZeus\Sky\Models\Tag::class,
+                        'Library' => \LaraZeus\Sky\Models\Library::class,
+                    ])
+                    ->navigationResource(false)
+                    ->libraryTypes([
+                        'FILE' => 'File',
+                        'IMAGE' => 'Image',
+                        'VIDEO' => 'Video',
+                    ])
+                    ->tagTypes([
+                        'tag' => 'Tag',
+                        'category' => 'Category',
+                        // 'library' => 'Library',
+                        'faq' => 'Faq',
+                    ]),
             ])
             ->favicon(asset('/favicon.png'))
             ->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js', 'resources/css/custom.css']);

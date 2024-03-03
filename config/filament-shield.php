@@ -66,10 +66,15 @@ return [
         ],
 
         'widgets' => [
-            'AccountWidget', 'FilamentInfoWidget',
+            'AccountWidget',
+            'FilamentInfoWidget',
+            'VersionsWidget',
         ],
 
-        'resources' => [],
+        'resources' => [
+            'PageResource',
+            'RoleResource',
+        ],
     ],
 
     'register_role_policy' => [

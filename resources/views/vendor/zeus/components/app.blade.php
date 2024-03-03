@@ -12,6 +12,7 @@
     <x-seo::meta />
     <!-- Seo Tags -->
 
+    <link rel="shortcut icon" href="{{ Vite::asset('resources/images/stopwatch.png') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -48,7 +49,7 @@
     @livewire('preloader')
     @include('layouts.header')
 
-    <main class="mx-auto font-sans antialiased text-gray-900 dark:text-gray-100 max-w-7xl">
+    <main class="mx-auto mb-6 font-sans antialiased text-gray-900 dark:text-gray-100 max-w-7xl">
         {{ $slot }}
     </main>
 
