@@ -96,6 +96,22 @@ class UserPanelProvider extends PanelProvider
                 Authenticate::class,
                 DomainRedirectMiddleware::class,
             ])->plugins([
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
+                ->gridColumns([
+                    'default' => 1,
+                    'sm' => 2,
+                    'lg' => 3
+                ])
+                ->sectionColumnSpan(1)
+                ->checkboxListColumns([
+                    'default' => 1,
+                    'sm' => 2,
+                    'lg' => 2,
+                ])
+                ->resourceCheckboxListColumns([
+                    'default' => 1,
+                    'sm' => 2,
+                ]),
                 SpatieLaravelTranslatablePlugin::make()
                     ->defaultLocales(['en']),
                 SkyPlugin::make()
