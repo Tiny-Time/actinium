@@ -73,7 +73,6 @@ return [
 
         'resources' => [
             'PageResource',
-            'RoleResource',
         ],
     ],
 
