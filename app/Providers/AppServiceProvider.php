@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Livewire\Livewire;
 use Spatie\Health\Facades\Health;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Health\Checks\Checks\CacheCheck;
@@ -36,5 +38,9 @@ class AppServiceProvider extends ServiceProvider
             DatabaseConnectionCountCheck::new(),
             CacheCheck::new(),
         ]);
+
+        Livewire::setScriptRoute(function ($handle) {
+            return Route::get('/vendor/livewire/livewire.js', $handle);
+        });
     }
 }

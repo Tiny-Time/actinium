@@ -2,19 +2,22 @@
 
 namespace App\Filament\Pages;
 
-use App\Models\SocialPage;
-use Filament\Actions\Action;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Pages\Page;
-use Filament\Forms\Contracts\HasForms;
-use Filament\Forms\Concerns\InteractsWithForms;
-use Filament\Notifications\Notification;
+use App\Models\SocialPage;
+use Filament\Actions\Action;
 use Filament\Support\Exceptions\Halt;
+use Filament\Forms\Contracts\HasForms;
+use Filament\Forms\Components\TextInput;
+use Filament\Notifications\Notification;
+use Filament\Forms\Concerns\InteractsWithForms;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 
 class SocialPages extends Page implements HasForms
 {
     use InteractsWithForms;
+    use HasPageShield;
+
     protected static ?string $navigationIcon = 'heroicon-o-at-symbol';
 
     protected static ?string $navigationGroup = 'Settings';

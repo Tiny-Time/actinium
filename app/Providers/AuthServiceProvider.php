@@ -13,7 +13,13 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //
+        'Spatie\Permission\Models\Role' => 'App\Policies\RolePolicy',
+        \LaraZeus\Sky\Models\Faq::class => 'App\Policies\FaqPolicy',
+        \LaraZeus\Sky\Models\Post::class => 'App\Policies\PostPolicy',
+        // \LaraZeus\Sky\Models\PostStatus::class => 'App\Policies\PostStatusPolicy',
+        \LaraZeus\Sky\Models\Tag::class => 'App\Policies\TagPolicy',
+        // \LaraZeus\Sky\Models\Library::class => 'App\Policies\LibraryPolicy',
+        // \LaraZeus\Sky\Models\Navigation::class => 'App\Policies\NavigationPolicy',
     ];
 
     /**

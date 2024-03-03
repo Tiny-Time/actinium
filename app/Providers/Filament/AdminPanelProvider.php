@@ -12,6 +12,7 @@ use Filament\Support\Colors\Color;
 use Illuminate\Support\Facades\Vite;
 use LaraZeus\Sky\Editors\TipTapEditor;
 use Filament\Navigation\NavigationItem;
+use App\Filament\Pages\HealthCheckResults;
 use Filament\Http\Middleware\Authenticate;
 use Awcodes\FilamentVersions\VersionsPlugin;
 use Awcodes\FilamentVersions\VersionsWidget;
@@ -65,9 +66,25 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])->plugins([
-                    FilamentSpatieLaravelHealthPlugin::make(),
+                    FilamentSpatieLaravelHealthPlugin::make()
+                        ->usingPage(HealthCheckResults::class),
                     VersionsPlugin::make(),
-                    \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+                    \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
+                        ->gridColumns([
+                            'default' => 1,
+                            'sm' => 2,
+                            'lg' => 3
+                        ])
+                        ->sectionColumnSpan(1)
+                        ->checkboxListColumns([
+                            'default' => 1,
+                            'sm' => 2,
+                            'lg' => 2,
+                        ])
+                        ->resourceCheckboxListColumns([
+                            'default' => 1,
+                            'sm' => 2,
+                        ]),
                     SpatieLaravelTranslatablePlugin::make()
                         ->defaultLocales(['en']),
                     SkyPlugin::make()
@@ -81,6 +98,7 @@ class AdminPanelProvider extends PanelProvider
                             'Tag' => \LaraZeus\Sky\Models\Tag::class,
                             'Library' => \LaraZeus\Sky\Models\Library::class,
                         ])
+                        ->navigationResource(false)
                         ->libraryTypes([
                             'FILE' => 'File',
                             'IMAGE' => 'Image',
