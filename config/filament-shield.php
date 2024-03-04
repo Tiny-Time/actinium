@@ -77,4 +77,9 @@ return [
     'register_role_policy' => [
         'enabled' => true,
     ],
+
+    'panel_user' => [
+        'enabled' => true,
+        'name' => 'default_user',
+    ],
 ];

@@ -13,6 +13,7 @@ use Filament\Models\Contracts\FilamentUser;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use BezhanSalleh\FilamentShield\Traits\HasPanelShield;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -24,6 +25,7 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
     use Notifiable;
     use TwoFactorAuthenticatable;
     use HasRoles;
+    use HasPanelShield;
 
     /**
      * The attributes that are mass assignable.
