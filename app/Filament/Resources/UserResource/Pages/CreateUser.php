@@ -13,4 +13,9 @@ class CreateUser extends CreateRecord
     {
         return trans('filament-user::user.resource.title.create');
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

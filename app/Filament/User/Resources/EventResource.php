@@ -13,6 +13,7 @@ use Filament\Tables\Filters\Filter;
 use Illuminate\Contracts\View\View;
 use App\Forms\Components\ThemePicker;
 use Filament\Forms\Components\Section;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\User\Resources\EventResource\Pages;
 
@@ -71,8 +72,28 @@ class EventResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->limit(20)
+                    ->tooltip(function (TextColumn $column): ?string {
+                        $state = $column->getState();
+
+                        if (strlen($state) <= $column->getCharacterLimit()) {
+                            return null;
+                        }
+
+                        return $state;
+                    })
                     ->searchable(),
                 Tables\Columns\TextColumn::make('description')
+                    ->limit(40)
+                    ->tooltip(function (TextColumn $column): ?string {
+                        $state = $column->getState();
+
+                        if (strlen($state) <= $column->getCharacterLimit()) {
+                            return null;
+                        }
+
+                        return $state;
+                    })
                     ->searchable(),
                 Tables\Columns\TextColumn::make('date_time')
                     ->dateTime()
@@ -154,5 +175,10 @@ class EventResource extends Resource
             'create' => Pages\CreateEvent::route('/create'),
             'edit' => Pages\EditEvent::route('/{record}/edit'),
         ];
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
     }
 }

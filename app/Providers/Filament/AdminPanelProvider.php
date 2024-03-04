@@ -9,8 +9,6 @@ use Filament\PanelProvider;
 use LaraZeus\Sky\SkyPlugin;
 use Filament\Navigation\MenuItem;
 use Filament\Support\Colors\Color;
-use Illuminate\Support\Facades\Vite;
-use LaraZeus\Sky\Editors\TipTapEditor;
 use Filament\Navigation\NavigationItem;
 use App\Filament\Pages\HealthCheckResults;
 use Filament\Http\Middleware\Authenticate;
@@ -90,14 +88,6 @@ class AdminPanelProvider extends PanelProvider
                     SkyPlugin::make()
                         ->libraryResource(false)
                         ->navigationGroupLabel('Content Manager')
-                        // the default models
-                        ->skyModels([
-                            'Faq' => \LaraZeus\Sky\Models\Faq::class,
-                            'Post' => \LaraZeus\Sky\Models\Post::class,
-                            'PostStatus' => \LaraZeus\Sky\Models\PostStatus::class,
-                            'Tag' => \LaraZeus\Sky\Models\Tag::class,
-                            'Library' => \LaraZeus\Sky\Models\Library::class,
-                        ])
                         ->navigationResource(false)
                         ->libraryTypes([
                             'FILE' => 'File',
@@ -107,7 +97,6 @@ class AdminPanelProvider extends PanelProvider
                         ->tagTypes([
                             'tag' => 'Tag',
                             'category' => 'Category',
-                            // 'library' => 'Library',
                             'faq' => 'Faq',
                         ]),
                 ])

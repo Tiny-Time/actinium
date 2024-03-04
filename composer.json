@@ -15,7 +15,7 @@
         "google/recaptcha": "^1.3",
         "guzzlehttp/guzzle": "^7.2",
         "ibrahimbougaoua/filament-rating-star": "^0.0.1",
-        "lara-zeus/sky": "^3.4",
+        "custom-lara-zeus/sky": "*",
         "laravel/framework": "^10.10",
         "laravel/jetstream": "^4.0",
         "laravel/sanctum": "^3.2",
@@ -76,5 +76,11 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/custom-lara-zeus/sky"
+        }
+    ]
 }

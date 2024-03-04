@@ -9,10 +9,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use App\Models\EmailSubscriber;
 use Filament\Resources\Resource;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\EmailSubscriberResource\Pages;
-use App\Filament\Resources\EmailSubscriberResource\RelationManagers;
 
 class EmailSubscriberResource extends Resource
 {
@@ -88,5 +85,10 @@ class EmailSubscriberResource extends Resource
         return [
             EmailSubscriberResource\Widgets\EmailSubscriberOverview::class,
         ];
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
     }
 }

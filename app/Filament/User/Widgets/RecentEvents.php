@@ -7,9 +7,12 @@ use App\Models\Event;
 use Filament\Tables\Table;
 use Illuminate\Contracts\View\View;
 use Filament\Widgets\TableWidget as BaseWidget;
+use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 
 class RecentEvents extends BaseWidget
 {
+    use HasWidgetShield;
+
     protected int | string | array $columnSpan = 2;
 
     public function table(Table $table): Table
