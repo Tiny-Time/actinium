@@ -4,14 +4,11 @@ namespace App\Providers\Filament;
 
 use Filament\Pages;
 use Filament\Panel;
-use Filament\Widgets;
 use Filament\PanelProvider;
 use LaraZeus\Sky\SkyPlugin;
 use Filament\Navigation\MenuItem;
 use Filament\Navigation\NavigationItem;
-use App\Filament\Pages\HealthCheckResults;
 use Filament\Http\Middleware\Authenticate;
-use Awcodes\FilamentVersions\VersionsPlugin;
 use Filament\SpatieLaravelTranslatablePlugin;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -24,7 +21,6 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use App\Filament\User\Resources\EventResource\Widgets\EventOverview;
-use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
 
 class UserPanelProvider extends PanelProvider
 {
@@ -43,7 +39,6 @@ class UserPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/User/Widgets'), for: 'App\\Filament\\User\\Widgets')
             ->widgets([
                 EventOverview::class,
-                // Widgets\AccountWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -117,14 +112,6 @@ class UserPanelProvider extends PanelProvider
                 SkyPlugin::make()
                     ->libraryResource(false)
                     ->navigationGroupLabel('Content Manager')
-                    // the default models
-                    ->skyModels([
-                        'Faq' => \LaraZeus\Sky\Models\Faq::class,
-                        'Post' => \LaraZeus\Sky\Models\Post::class,
-                        'PostStatus' => \LaraZeus\Sky\Models\PostStatus::class,
-                        'Tag' => \LaraZeus\Sky\Models\Tag::class,
-                        'Library' => \LaraZeus\Sky\Models\Library::class,
-                    ])
                     ->navigationResource(false)
                     ->libraryTypes([
                         'FILE' => 'File',
@@ -134,7 +121,6 @@ class UserPanelProvider extends PanelProvider
                     ->tagTypes([
                         'tag' => 'Tag',
                         'category' => 'Category',
-                        // 'library' => 'Library',
                         'faq' => 'Faq',
                     ]),
             ])

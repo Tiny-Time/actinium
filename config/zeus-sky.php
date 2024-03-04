@@ -29,7 +29,8 @@ return [
      */
     'models' => [
         'Faq' => \LaraZeus\Sky\Models\Faq::class,
-        'Post' => \LaraZeus\Sky\Models\Post::class,
+        'Post' => \LaraZeus\Sky\Models\BlogPost::class,
+        'Page' => \LaraZeus\Sky\Models\Page::class,
         'PostStatus' => \LaraZeus\Sky\Models\PostStatus::class,
         'Tag' => \LaraZeus\Sky\Models\Tag::class,
         'Library' => \LaraZeus\Sky\Models\Library::class,

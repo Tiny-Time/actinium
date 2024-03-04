@@ -68,7 +68,7 @@ class UserResource extends Resource
                 ->password()
                 ->maxLength(255)
                 ->dehydrateStateUsing(static function ($state) use ($form) {
-                    return !empty($state) ? Hash::make($state) : null;
+                    return !empty ($state) ? Hash::make($state) : null;
                     // $user = User::find($form->getColumns());
                     // return $user ? $user->password : null;
                 }),
@@ -101,18 +101,26 @@ class UserResource extends Resource
                     ->sortable()
                     ->searchable()
                     ->label(trans('filament-user::user.resource.email')),
+                TextColumn::make('roles.name')
+                    ->badge()
+                    ->sortable()
+                    ->toggleable()
+                    ->searchable(),
                 IconColumn::make('email_verified_at')
                     ->boolean()
                     ->sortable()
                     ->searchable()
+                    ->toggleable()
                     ->label(trans('filament-user::user.resource.email_verified_at')),
                 TextColumn::make('created_at')
                     ->label(trans('filament-user::user.resource.created_at'))
                     ->dateTime('M j, Y')
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable(),
                 TextColumn::make('updated_at')
                     ->label(trans('filament-user::user.resource.updated_at'))
                     ->dateTime('M j, Y')
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable(),
             ])
             ->filters([
@@ -131,7 +139,7 @@ class UserResource extends Resource
                 ]),
             ]);
 
-        if(config('filament-user.impersonate')){
+        if (config('filament-user.impersonate')) {
             $table->actions([
                 Impersonate::make('impersonate'),
             ]);
@@ -147,5 +155,10 @@ class UserResource extends Resource
             'create' => Pages\CreateUser::route('/create'),
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
     }
 }

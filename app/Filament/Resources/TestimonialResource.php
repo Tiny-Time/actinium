@@ -8,11 +8,8 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use App\Models\Testimonial;
 use Filament\Resources\Resource;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\TestimonialResource\Pages;
 use IbrahimBougaoua\FilamentRatingStar\Actions\RatingStar;
-use App\Filament\Resources\TestimonialResource\RelationManagers;
 use IbrahimBougaoua\FilamentRatingStar\Columns\RatingStarColumn;
 
 class TestimonialResource extends Resource
@@ -94,5 +91,10 @@ class TestimonialResource extends Resource
         return [
             'index' => Pages\ManageTestimonials::route('/'),
         ];
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
     }
 }

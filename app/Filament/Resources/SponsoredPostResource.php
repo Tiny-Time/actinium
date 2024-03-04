@@ -3,15 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\SponsoredPostResource\Pages;
-use App\Filament\Resources\SponsoredPostResource\RelationManagers;
 use App\Models\SponsoredPost;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class SponsoredPostResource extends Resource
 {
@@ -71,5 +68,10 @@ class SponsoredPostResource extends Resource
         return [
             'index' => Pages\ManageSponsoredPosts::route('/'),
         ];
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
     }
 }

@@ -71,9 +71,7 @@ return [
             'VersionsWidget',
         ],
 
-        'resources' => [
-            'PageResource',
-        ],
+        'resources' => [],
     ],
 
     'register_role_policy' => [

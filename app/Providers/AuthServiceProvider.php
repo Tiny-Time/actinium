@@ -15,7 +15,9 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         'Spatie\Permission\Models\Role' => 'App\Policies\RolePolicy',
         \LaraZeus\Sky\Models\Faq::class => 'App\Policies\FaqPolicy',
-        \LaraZeus\Sky\Models\Post::class => 'App\Policies\PostPolicy',
+        \LaraZeus\Sky\Models\BlogPost::class => 'App\Policies\BlogPostPolicy',
+        \LaraZeus\Sky\Models\Page::class => 'App\Policies\PagePolicy',
+        \App\Models\Event::class => 'App\Policies\EventPolicy',
         // \LaraZeus\Sky\Models\PostStatus::class => 'App\Policies\PostStatusPolicy',
         \LaraZeus\Sky\Models\Tag::class => 'App\Policies\TagPolicy',
         // \LaraZeus\Sky\Models\Library::class => 'App\Policies\LibraryPolicy',

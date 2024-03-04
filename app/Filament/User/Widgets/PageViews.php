@@ -3,9 +3,12 @@
 namespace App\Filament\User\Widgets;
 
 use Filament\Widgets\ChartWidget;
+use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 
 class PageViews extends ChartWidget
 {
+    use HasWidgetShield;
+
     protected static ?string $heading = 'Page Views';
 
     protected int | string | array $columnSpan = 2;
