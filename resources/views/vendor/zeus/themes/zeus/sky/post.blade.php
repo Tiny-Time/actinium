@@ -31,9 +31,11 @@
                         <p>{{ optional($post->published_at)->diffForHumans() ?? '' }}</p>
                     </div>
                     @unless ($post->tags->isEmpty())
+                        <span>Tags: </span>
                         {{-- @each($skyTheme.'.partial.category', $post->tags->where('type','category'), 'category') --}}
-                        @foreach ($post->tags->where('type', 'category')->get() as $item)
-                            <div class="flex gap-[2px] items-center">
+                        @foreach ($post->tags->where('type', 'tag')->all() as $item)
+                            <a href="{{ route('tags', [$item->type, $item->slug]) }}"
+                                class="flex gap-[2px] items-center hover:text-olivine">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -41,7 +43,23 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" />
                                 </svg>
                                 <p>{{ $item->name }}</p>
-                            </div>
+                            </a>
+                        @endforeach
+                    @endunless
+                </div>
+                <div class="flex flex-wrap gap-3 items-center justify-center mt-3 text-xs font-semibold uppercase">
+                    <span>Categories: </span>
+                    @unless ($post->tags->isEmpty())
+                        @foreach ($post->tags->where('type', 'category')->all() as $item)
+                            <a href="{{ route('tags', [$item->type, $item->slug]) }}"
+                                class="flex gap-[2px] items-center hover:text-olivine">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 0 1-1.125-1.125v-3.75ZM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-8.25ZM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-2.25Z" />
+                                </svg>
+                                <p>{{ $item->name }}</p>
+                            </a>
                         @endforeach
                     @endunless
                 </div>
