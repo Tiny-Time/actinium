@@ -31,7 +31,7 @@
                         <p>{{ optional($post->published_at)->diffForHumans() ?? '' }}</p>
                     </div>
                     @unless ($post->tags->isEmpty())
-                        <span>Tags: </span>
+                        <span class="font-bold">Tags: </span>
                         {{-- @each($skyTheme.'.partial.category', $post->tags->where('type','category'), 'category') --}}
                         @foreach ($post->tags->where('type', 'tag')->all() as $item)
                             <a href="{{ route('tags', [$item->type, $item->slug]) }}"
@@ -48,8 +48,8 @@
                     @endunless
                 </div>
                 <div class="flex flex-wrap gap-3 items-center justify-center mt-3 text-xs font-semibold uppercase">
-                    <span>Categories: </span>
                     @unless ($post->tags->isEmpty())
+                        <span class="font-bold">Categories: </span>
                         @foreach ($post->tags->where('type', 'category')->all() as $item)
                             <a href="{{ route('tags', [$item->type, $item->slug]) }}"
                                 class="flex gap-[2px] items-center hover:text-olivine">
