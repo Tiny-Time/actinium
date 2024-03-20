@@ -8,7 +8,7 @@
                     {{-- Event Title --}}
                     <h1 class="text-5xl font-bold md:text-7xl font-trochut text-olivine timer-title-shadow eventTitle"
                         contenteditable="true">
-                        Event Title
+                        Create and Customize an Event
                     </h1>
                     {{-- Main Timer Desktop --}}
                     <div
