@@ -7,9 +7,23 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="application-name" content="{{ config('app.name', 'TinyTime') }}">
 
-    {{-- <title>{{ config('app.name', 'TinyTime') }}</title> --}}
-    <title>{{ $title ?? config('app.name', 'TinyTime') }}</title>
+    <title>{{ $title ?? env('META_TITLE', 'TinyTime') }}</title>
+    <meta name="description" content="{{ env('META_DESCRIPTION', 'TinyTime') }}">
     <link rel="icon" href="{{ Vite::asset('resources/images/stopwatch.png') }}">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PL2TQE6L2R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PL2TQE6L2R');
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +73,7 @@
     @endif
 
     <!-- Page Content -->
-    <main class="mx-auto font-sans antialiased text-gray-900 dark:text-gray-100 max-w-7xl mb-6">
+    <main class="mx-auto mb-6 font-sans antialiased text-gray-900 dark:text-gray-100 max-w-7xl">
         {{ $slot }}
     </main>
 
