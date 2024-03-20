@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable();
             $table->boolean('public')->default(1);
             $table->boolean('status')->default(1);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

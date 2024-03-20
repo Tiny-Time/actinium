@@ -38,15 +38,13 @@ class EventResource extends Resource
                             ->maxLength(191)
                             ->string()
                             ->columnSpanFull(),
-                        Forms\Components\Hidden::make('user_id')
-                            ->required()
-                            ->default(auth()->user()->id),
+                        Forms\Components\Select::make('user_id')
+                            ->relationship('user', 'name')
+                            ->default(auth()->user()->id)
+                            ->hidden(!auth()->user()?->hasRole('super_admin')),
                         Forms\Components\Hidden::make('event_id')
                             ->required()
                             ->default(Str::random(16)),
-                        Forms\Components\Hidden::make('public')
-                            ->required()
-                            ->default(1),
                         Forms\Components\Textarea::make('description')
                             ->string()
                             ->columnSpanFull(),
@@ -60,9 +58,16 @@ class EventResource extends Resource
                             ->default(1)
                             ->columnSpanFull(),
                         Forms\Components\Toggle::make('status')
+                            ->hint('This control determines whether the event is active or not.')
+                            ->hintColor('danger')
                             ->default(1)
                             ->required()
                             ->columnSpanFull(),
+                        Forms\Components\Toggle::make('public')
+                            ->hint('This control determines whether the event should be included in search results.')
+                            ->hintColor('danger')
+                            ->required()
+                            ->default(1),
                     ])
             ]);
     }
@@ -95,17 +100,29 @@ class EventResource extends Resource
                         return $state;
                     })
                     ->searchable(),
+                Tables\Columns\TextColumn::make('user.name')
+                    ->sortable()
+                    ->visible(auth()->user()?->hasRole('super_admin')),
                 Tables\Columns\TextColumn::make('date_time')
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\IconColumn::make('status')
                     ->boolean()
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable(),
+                Tables\Columns\IconColumn::make('public')
+                    ->boolean()
+                    ->sortable()
+                    ->toggleable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -151,7 +168,12 @@ class EventResource extends Resource
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make()
                     ->modalWidth('3xl'),
-            ])->modifyQueryUsing(fn(Builder $query) => $query->where('user_id', auth()->user()->id));
+            ])->modifyQueryUsing(function(Builder $query) {
+                if(auth()->user()?->hasRole('super_admin')){
+                    return $query;
+                }
+                return $query->where('user_id', auth()->user()->id);
+            });
     }
 
     public static function getWidgets(): array
@@ -179,6 +201,10 @@ class EventResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return static::getModel()::count();
+        if(auth()->user()?->hasRole('super_admin')){
+            return static::getModel()::count();
+        }
+
+        return static::getModel()::where('user_id', auth()->user()->id)->count();
     }
 }

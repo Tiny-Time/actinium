@@ -6,6 +6,7 @@ use Filament\Tables;
 use App\Models\Event;
 use Filament\Tables\Table;
 use Illuminate\Contracts\View\View;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Widgets\TableWidget as BaseWidget;
 use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 
@@ -23,6 +24,16 @@ class RecentEvents extends BaseWidget
             )
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->limit(20)
+                    ->tooltip(function (TextColumn $column): ?string {
+                        $state = $column->getState();
+
+                        if (strlen($state) <= $column->getCharacterLimit()) {
+                            return null;
+                        }
+
+                        return $state;
+                    })
                     ->searchable(),
                 Tables\Columns\TextColumn::make('date_time')
                     ->dateTime()
