@@ -12,6 +12,7 @@ use Filament\Support\Colors\Color;
 use Filament\Navigation\NavigationItem;
 use App\Filament\Pages\HealthCheckResults;
 use Filament\Http\Middleware\Authenticate;
+use App\Filament\Widgets\AdminEventOverview;
 use Awcodes\FilamentVersions\VersionsPlugin;
 use Awcodes\FilamentVersions\VersionsWidget;
 use Filament\SpatieLaravelTranslatablePlugin;
@@ -40,11 +41,14 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->discoverResources(in: app_path('Filament/User/Resources'), for: 'App\\Filament\\User\\Resources')
+            ->discoverPages(in: app_path('Filament/User/Pages'), for: 'App\\Filament\\User\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
+                AdminEventOverview::class,
                 Widgets\AccountWidget::class,
                 VersionsWidget::class,
             ])

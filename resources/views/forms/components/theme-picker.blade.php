@@ -5,7 +5,7 @@
             <div>
                 <div class="relative flex items-center justify-center">
                     <!-- Left arrow -->
-                    <div class="rounded-full p-1 bg-gray-50 cursor-pointer absolute top-[45%] left-2"
+                    <div class="rounded-full p-1 md:p-3 bg-gray-300 cursor-pointer absolute top-[45%] left-2"
                         @click="(state > 1) ? state = state - 1 : ''">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
@@ -19,7 +19,7 @@
                         <label for="template1">
                             <img alt="template1"
                                 src="{{ Vite::asset('resources/images/Anniversary_ Enchanted_Midnight_Forest.png') }}"
-                                class="w-full rounded-lg shadow-md h-96">
+                                class="w-full h-64 max-w-xl mx-auto rounded-lg shadow-md md:h-96">
                         </label>
                         <input type="radio" name="template_id" value="1"
                             x-model="state" class="hidden" id="template1" checked>
@@ -29,7 +29,7 @@
                         <label for="template2">
                             <img alt="template2"
                                 src="{{ Vite::asset('resources/images/Anniversary_ Scarlet_Serenity.png') }}"
-                                class="w-full rounded-lg shadow-md h-96">
+                                class="w-full h-64 max-w-xl mx-auto rounded-lg shadow-md md:h-96">
                         </label>
                         <input type="radio" name="template_id" value="2"
                             x-model="state" class="hidden" id="template2">
@@ -39,13 +39,13 @@
                         <label for="template3">
                             <img alt="template3"
                                 src="{{ Vite::asset('resources/images/Birthday_ Dark_Blue_Sequins.png') }}"
-                                class="w-full rounded-lg shadow-md h-96">
+                                class="w-full h-64 max-w-xl mx-auto rounded-lg shadow-md md:h-96">
                         </label>
                         <input type="radio" name="template_id" value="3"
                             x-model="state" class="hidden" id="template3">
                     </div>
                     <!-- Right arrow -->
-                    <div class="rounded-full p-1 bg-gray-50 cursor-pointer absolute top-[45%] right-2"
+                    <div class="rounded-full p-1 md:p-3 bg-gray-300 cursor-pointer absolute top-[45%] right-2"
                         @click="(state < 3) ? state = state + 1 : ''">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
