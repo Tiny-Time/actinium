@@ -31,7 +31,6 @@ import.meta.glob([
     "../images/**",
     "../fonts/**",
     "../views/themes/birthday/dark-blue-sequins/images/**",
-
 ]);
 
 /* Splide Slider */

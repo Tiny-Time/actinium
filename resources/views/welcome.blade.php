@@ -6,7 +6,7 @@
             <div class="timer-template" x-data="{ playBtn: true, counter: false }">
                 <div class="flex items-center justify-between min-h-[300px] py-4 md:py-8 flex-col">
                     {{-- Event Title --}}
-                    <h1 class="text-5xl font-bold md:text-7xl font-trochut text-olivine timer-title-shadow eventTitle"
+                    <h1 class="text-xl font-bold text-center md:text-5xl font-trochut text-olivine timer-title-shadow eventTitle"
                         contenteditable="true">
                         Create and Customize an Event
                     </h1>
