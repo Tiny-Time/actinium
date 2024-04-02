@@ -2,13 +2,14 @@
 
 namespace LaraZeus\Sky\Filament\Resources\PostResource\Pages;
 
+use LaraZeus\Sky\SkyPlugin;
 use Filament\Actions\CreateAction;
 use Filament\Actions\LocaleSwitcher;
 use Filament\Resources\Pages\ListRecords;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use LaraZeus\Sky\Filament\Resources\PostResource;
-use LaraZeus\Sky\SkyPlugin;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\PostResource\Widgets\BlogsOverview;
 
 class ListPosts extends ListRecords
 {
@@ -31,5 +32,12 @@ class ListPosts extends ListRecords
             ->withoutGlobalScopes([
                 SoftDeletingScope::class,
             ]);
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            BlogsOverview::class
+        ];
     }
 }
