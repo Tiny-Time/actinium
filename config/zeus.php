@@ -29,7 +29,7 @@ return [
     /**
      * this will be setup the default seo site description. read more about it in 'laravel-seo'.
      */
-    'site_description' => 'All about ' . config('app.name', 'Laravel'),
+    'site_description' => env('META_DESCRIPTION', 'TinyTime is a user-friendly platform that enables individuals and organizations to effortlessly plan and personalize their events. Creat events, birthday events, wedding events, concerts, work events, product launch, holiday party, religious events.'),
 
     /**
      * this will be setup the default seo site color theme. read more about it in 'laravel-seo'.

@@ -42,21 +42,8 @@
     @livewireStyles
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/main.js', 'resources/js/app.js'])
+    @vite(['resources/css/app.css'])
 
-    {{-- Google Recaptcha --}}
-    {!! NoCaptcha::renderJs() !!}
-
-
-    <style>
-        .g-recaptcha>div {
-            width: 100% !important;
-        }
-
-        .g-recaptcha iframe {
-            width: 100% !important;
-        }
-    </style>
     @stack('css')
 </head>
 
@@ -96,6 +83,10 @@
     @filamentScripts
     @stack('js')
     @include('layouts.clipboard')
+    {{-- Google Recaptcha --}}
+    {!! NoCaptcha::renderJs() !!}
+
+    @vite(['resources/js/main.js', 'resources/js/app.js'])
 </body>
 
 </html>
