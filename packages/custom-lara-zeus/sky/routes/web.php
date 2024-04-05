@@ -15,9 +15,7 @@ $filament = app('filament');
 
 Route::domain(config('zeus-sky.domain'))
     ->middleware(config('zeus-sky.middleware'))
-    ->prefix(config('zeus-sky.prefix'))
     ->group(function () {
-
         if (in_array('faq', config('zeus-sky.uri'))) {
             Route::get(config('zeus-sky.uri.faq'), Faq::class)
                 ->name('faq');
@@ -32,25 +30,12 @@ Route::domain(config('zeus-sky.domain'))
                 });
         }
 
-        /*Route::post('passwordConfirmation/{slug}', function ($slug) {
-            // convert to LW todo
-            $post = SkyPlugin::get()->getModel('Post')::query()
-                ->where('slug', $slug)
-                ->where('password', request('password'))
-                ->first();
+        Route::prefix(config('zeus-sky.prefix'))
+            ->group(function () {
+                Route::get('/', Posts::class)->name('blogs');
+                Route::get('{type}/{slug}', Tags::class)->name('tags');
+            });
 
-            if ($post !== null) {
-                request()->session()->put($slug.'-'.request('password'), request('password'));
-
-                return redirect()->route($post->post_type, ['slug' => $post->slug]);
-            }
-
-            return redirect()->back()->with('status', __('sorry, the password incorrect!'));
-        })
-            ->name('passwordConfirmation');*/
-
-        Route::get('/', Posts::class)->name('blogs');
         Route::get(config('zeus-sky.uri.post') . '/{slug}', Post::class)->name('post');
         Route::get(config('zeus-sky.uri.page') . '/{slug}', Page::class)->name('page');
-        Route::get('{type}/{slug}', Tags::class)->name('tags');
     });
