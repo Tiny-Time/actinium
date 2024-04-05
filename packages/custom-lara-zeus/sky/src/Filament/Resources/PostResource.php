@@ -34,6 +34,7 @@ use Filament\Tables\Actions\ForceDeleteAction;
 use Filament\Tables\Actions\RestoreBulkAction;
 use Filament\Tables\Actions\ForceDeleteBulkAction;
 use LaraZeus\Sky\Filament\Resources\PostResource\Pages;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 // @mixin Builder<PostScope>
@@ -163,6 +164,10 @@ class PostResource extends SkyResource
     {
         return $table
             ->columns([
+                SpatieMediaLibraryImageColumn::make('featured_image_upload')
+                    ->label('Post Image')
+                    ->collection('posts'),
+
                 ViewColumn::make('title_card')
                     ->label(__('Title'))
                     ->sortable(['title'])
