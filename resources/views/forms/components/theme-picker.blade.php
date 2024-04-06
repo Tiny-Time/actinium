@@ -1,5 +1,5 @@
 <x-dynamic-component :component="$getFieldWrapperView()" :field="$field">
-    <div x-data="{ state: $wire.entangle('{{ $getStatePath() }}') }">
+    <div x-data="{ state: {{ empty($getRecord()?->template_id) ? 1 : $getRecord()?->template_id }} }" >
         <div class="mt-3">
             <!-- Templates slide -->
             <div>
