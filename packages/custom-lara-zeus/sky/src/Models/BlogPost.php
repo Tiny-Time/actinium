@@ -107,7 +107,7 @@ class BlogPost extends Model implements HasMedia
         return $this->belongsTo(self::class, 'parent_id', 'id');
     }
 
-    public function image(string $collection = 'posts'): Collection | string | null
+    public function image(string $collection = 'blogs'): Collection | string | null
     {
         if (! $this->getMedia($collection)->isEmpty()) {
             return $this->getFirstMediaUrl($collection);
