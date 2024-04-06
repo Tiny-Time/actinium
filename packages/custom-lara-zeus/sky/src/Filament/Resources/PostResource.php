@@ -173,7 +173,7 @@ class PostResource extends SkyResource
             ->columns([
                 SpatieMediaLibraryImageColumn::make('featured_image_upload')
                     ->label('Post Image')
-                    ->collection('posts'),
+                    ->collection('blogs'),
 
                 ViewColumn::make('title_card')
                     ->label(__('Title'))
