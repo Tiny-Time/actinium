@@ -2,39 +2,40 @@
 
 namespace LaraZeus\Sky\Filament\Resources;
 
-use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Forms\Components\Tabs;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\ToggleButtons;
-use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
-use Filament\Tables\Actions\Action;
-use Filament\Tables\Actions\ActionGroup;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\DeleteBulkAction;
-use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Actions\ForceDeleteAction;
-use Filament\Tables\Actions\ForceDeleteBulkAction;
-use Filament\Tables\Actions\RestoreAction;
-use Filament\Tables\Actions\RestoreBulkAction;
-use Filament\Tables\Columns\ViewColumn;
-use Filament\Tables\Filters\Filter;
-use Filament\Tables\Filters\SelectFilter;
-use Filament\Tables\Filters\TrashedFilter;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
-use LaraZeus\Sky\Filament\Resources\PageResource\Pages;
+use LaraZeus\Sky\SkyPlugin;
 use LaraZeus\Sky\Models\Page;
 use LaraZeus\Sky\Models\BlogPost;
-use LaraZeus\Sky\SkyPlugin;
+use Filament\Forms\Components\Tabs;
+use Filament\Tables\Actions\Action;
+use Filament\Tables\Filters\Filter;
+use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\ViewColumn;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Actions\ActionGroup;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Filters\SelectFilter;
+use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\Placeholder;
+use Filament\Tables\Actions\RestoreAction;
+use Filament\Tables\Filters\TrashedFilter;
+use Filament\Forms\Components\ToggleButtons;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\ForceDeleteAction;
+use Filament\Tables\Actions\RestoreBulkAction;
+use Filament\Tables\Actions\ForceDeleteBulkAction;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use LaraZeus\Sky\Filament\Resources\PageResource\Pages;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class PageResource extends SkyResource
 {
@@ -142,10 +143,16 @@ class PageResource extends SkyResource
                         ->default('upload'),
                     SpatieMediaLibraryFileUpload::make('featured_image_upload')
                         ->collection('pages')
-                        ->disk(SkyPlugin::get()->getUploadDisk())
-                        ->directory(SkyPlugin::get()->getUploadDirectory())
                         ->visible(fn (Get $get) => $get('featured_image_type') === 'upload')
-                        ->label(''),
+                        ->label('')
+                        ->getUploadedFileNameForStorageUsing(
+                            function (TemporaryUploadedFile $file): string {
+                                $fileNameWithoutExtension = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                                $extension = '.'.$file->guessExtension();
+
+                                return str($fileNameWithoutExtension)->append('-'.str()->random(8).$extension);
+                            }
+                        ),
                     TextInput::make('featured_image')
                         ->label(__('featured image url'))
                         ->visible(fn (Get $get) => $get('featured_image_type') === 'url')

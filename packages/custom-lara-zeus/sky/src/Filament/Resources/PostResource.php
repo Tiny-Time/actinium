@@ -36,6 +36,7 @@ use Filament\Tables\Actions\ForceDeleteBulkAction;
 use LaraZeus\Sky\Filament\Resources\PostResource\Pages;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 // @mixin Builder<PostScope>
 class PostResource extends SkyResource
@@ -145,11 +146,17 @@ class PostResource extends SkyResource
                         ])
                         ->default('upload'),
                     SpatieMediaLibraryFileUpload::make('featured_image_upload')
-                        ->collection('posts')
-                        ->disk(SkyPlugin::get()->getUploadDisk())
-                        ->directory(SkyPlugin::get()->getUploadDirectory())
+                        ->collection('blogs')
                         ->visible(fn (Get $get) => $get('featured_image_type') === 'upload')
-                        ->label(''),
+                        ->label('')
+                        ->getUploadedFileNameForStorageUsing(
+                            function (TemporaryUploadedFile $file): string {
+                                $fileNameWithoutExtension = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                                $extension = '.'.$file->guessExtension();
+
+                                return str($fileNameWithoutExtension)->append('-'.str()->random(8).$extension);
+                            }
+                        ),
 
                     TextInput::make('featured_image')
                         ->label(__('featured image url'))
