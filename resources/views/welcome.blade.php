@@ -998,14 +998,14 @@
                                                             <span class="text-sm font-bold">Testimonial</span>
                                                         </div>
                                                     </div>
-                                                    <div class="flex items-center flex-grow">
+                                                    <div class="flex items-center flex-grow py-2">
                                                         <p>{{ $testimonial->content }}</p>
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
-                                                    <img src="{{ $testimonial->image ? '/uploads/' . $testimonial->image : 'https://ui-avatars.com/api/?name=' . $testimonial->name . '&background=A2C376&color=fff&bold=true' }}"
-                                                        alt="Profile"
-                                                        class="flex-shrink rounded-full max-w-[70px] h-[70px]">
+                                                    <img src="{{ $testimonial->image ? '/storage/' . $testimonial->image : 'https://ui-avatars.com/api/?name=' . $testimonial->name . '&background=A2C376&color=fff&bold=true' }}"
+                                                        alt="Testimonial Profile"
+                                                        class="flex-shrink rounded-full h-[70px] w-[70px]">
                                                     <div>
                                                         <h4 class="text-xl font-bold">{{ $testimonial->name }}</h4>
                                                         <p class="text-sm font-light">{{ $testimonial->profession }}</p>

@@ -9,6 +9,7 @@ use LaraZeus\Sky\SkyPlugin;
 use Filament\Navigation\MenuItem;
 use Filament\Navigation\NavigationItem;
 use Filament\Http\Middleware\Authenticate;
+use App\Filament\User\Widgets\RecentEvents;
 use Filament\SpatieLaravelTranslatablePlugin;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -36,9 +37,10 @@ class UserPanelProvider extends PanelProvider
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/User/Widgets'), for: 'App\\Filament\\User\\Widgets')
+            // ->discoverWidgets(in: app_path('Filament/User/Widgets'), for: 'App\\Filament\\User\\Widgets')
             ->widgets([
                 EventOverview::class,
+                RecentEvents::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -65,7 +67,7 @@ class UserPanelProvider extends PanelProvider
                     ->icon('heroicon-o-user-plus'),
                 MenuItem::make()
                     ->label('FAQs')
-                    ->url('/blog/faq')
+                    ->url('/faq')
                     ->icon('heroicon-o-question-mark-circle'),
             ])
             ->navigationItems([
@@ -82,7 +84,7 @@ class UserPanelProvider extends PanelProvider
                     ->openUrlInNewTab(true),
                 NavigationItem::make()
                     ->label('FAQs')
-                    ->url('/blog/faq')
+                    ->url('/faq')
                     ->icon('heroicon-o-question-mark-circle')
                     ->sort(11)
                     ->openUrlInNewTab(true),
