@@ -10,7 +10,7 @@
                     @foreach ($faqs as $faq)
                         <li class="relative border-b border-gray-200" x-data="{ selected: null }">
 
-                            <button type="button" class="w-full px-8 py-6 text-left"
+                            <button type="button" class="w-full px-8 py-6 text-left font-bold text-lg"
                                 @click="selected !== {{ $faq->id }} ? selected = {{ $faq->id }} : selected = null">
                                 <div class="flex items-center justify-between">
                                     <span>{{ $faq->question }} </span>
