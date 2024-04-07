@@ -60,6 +60,10 @@ class SocialPages extends Page implements HasForms
                     ->placeholder('Enter the Instagram page URL.')
                     ->label('Instagram URL')
                     ->suffixIcon('icon-instagram'),
+                TextInput::make('pinterest_url')
+                    ->placeholder('Enter the Pinterest page URL.')
+                    ->label('Pinterest URL')
+                    ->suffixIcon('icon-pinterest'),
             ])->statePath('links');
     }
 
