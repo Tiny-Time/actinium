@@ -3,10 +3,12 @@
 namespace App\Providers;
 
 use Livewire\Livewire;
+use Filament\Support\Assets\Js;
 use Spatie\Health\Facades\Health;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Filament\Support\Facades\FilamentAsset;
 use Spatie\Health\Checks\Checks\CacheCheck;
 use Spatie\Health\Checks\Checks\DebugModeCheck;
 use Spatie\Health\Checks\Checks\EnvironmentCheck;
@@ -42,5 +44,16 @@ class AppServiceProvider extends ServiceProvider
         Livewire::setScriptRoute(function ($handle) {
             return Route::get('/vendor/livewire/livewire.js', $handle);
         });
+
+        FilamentAsset::registerScriptData([
+            'data' => [
+                'userID' => auth()->user()?->id,
+                'dateNow' => now(),
+            ],
+        ]);
+
+        FilamentAsset::register([
+            Js::make('Produktly', __DIR__ . '/../../resources/js/Produktly.js'),
+        ]);
     }
 }
