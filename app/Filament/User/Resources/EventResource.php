@@ -9,12 +9,14 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
+use App\Forms\Components\TimeZone;
 use Filament\Tables\Filters\Filter;
 use Illuminate\Contracts\View\View;
 use App\Forms\Components\ThemePicker;
 use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
+use App\Forms\Components\CustomDateTimePicker;
 use App\Filament\User\Resources\EventResource\Pages;
 
 class EventResource extends Resource
@@ -31,7 +33,7 @@ class EventResource extends Resource
     {
         return $form
             ->schema([
-                Section::make('Quick Event')
+                Section::make('Event')
                     ->schema([
                         Forms\Components\TextInput::make('title')
                             ->required()
@@ -42,16 +44,19 @@ class EventResource extends Resource
                             ->relationship('user', 'name')
                             ->default(auth()->user()->id)
                             ->hidden(!auth()->user()?->hasRole('super_admin')),
+                        Forms\Components\Hidden::make('user_id')
+                            ->default(auth()->user()->id)
+                            ->hidden(auth()->user()?->hasRole('super_admin')),
                         Forms\Components\Hidden::make('event_id')
                             ->required()
                             ->default(Str::random(16)),
                         Forms\Components\Textarea::make('description')
                             ->string()
                             ->columnSpanFull(),
-                        Forms\Components\DateTimePicker::make('date_time')
-                            ->minDate(now())
-                            ->required()
-                            ->columnSpanFull(),
+                        CustomDateTimePicker::make('date_time')
+                            ->required(),
+                        TimeZone::make('timezone')
+                            ->required(),
                         ThemePicker::make('template_id')
                             ->label('Template')
                             ->required()
@@ -68,7 +73,51 @@ class EventResource extends Resource
                             ->hintColor('danger')
                             ->required()
                             ->default(1),
-                    ])
+                    ]),
+                // Section::make('Advanced Features')
+                //     ->schema([
+                //         Forms\Components\TimePicker::make('start_time')
+                //             ->columnSpanFull(),
+                //         Forms\Components\TimePicker::make('end_time')
+                //             ->columnSpanFull(),
+                //         Forms\Components\TextInput::make('location')
+                //             ->maxLength(191)
+                //             ->string()
+                //             ->columnSpanFull(),
+                //         Forms\Components\TextInput::make('contact_name')
+                //             ->string()
+                //             ->hint('The contact name will be visible to users.')
+                //             ->hintColor('danger')
+                //             ->columnSpanFull(),
+                //         Forms\Components\TextInput::make('contact_email_address')
+                //             ->string()
+                //             ->hint('The contact email address will be visible to users.')
+                //             ->hintColor('danger')
+                //             ->columnSpanFull(),
+                //         Forms\Components\TextInput::make('contact_phone_number')
+                //             ->string()
+                //             ->hint('The contact phone number will be visible to users.')
+                //             ->hintColor('danger')
+                //             ->columnSpanFull(),
+                //         Forms\Components\Toggle::make('guestbook')
+                //             ->hint('This control determines whether guestbook should be available or not.')
+                //             ->hintColor('danger')
+                //             ->default(0),
+                //         Forms\Components\Toggle::make('rsvp')
+                //             ->hint('This control determines whether RSVP should be available or not.')
+                //             ->hintColor('danger')
+                //             ->default(0),
+                //         Forms\Components\TextInput::make('pre_event_massage')
+                //             ->string()
+                //             ->hint('Show a message before the timer starts.')
+                //             ->hintColor('danger')
+                //             ->columnSpanFull(),
+                //         Forms\Components\TextInput::make('post_event_massage')
+                //             ->string()
+                //             ->hint('Show a message when the timer stops.')
+                //             ->hintColor('danger')
+                //             ->columnSpanFull(),
+                //     ])
             ]);
     }
 
@@ -101,7 +150,6 @@ class EventResource extends Resource
                     })
                     ->searchable(),
                 Tables\Columns\TextColumn::make('user.name')
-                    ->sortable()
                     ->visible(auth()->user()?->hasRole('super_admin')),
                 Tables\Columns\TextColumn::make('date_time')
                     ->dateTime()
@@ -168,11 +216,11 @@ class EventResource extends Resource
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make()
                     ->modalWidth('3xl'),
-            ])->modifyQueryUsing(function(Builder $query) {
-                if(auth()->user()?->hasRole('super_admin')){
-                    return $query;
+            ])->modifyQueryUsing(function (Builder $query) {
+                if (auth()->user()?->hasRole('super_admin')) {
+                    return $query->latest();
                 }
-                return $query->where('user_id', auth()->user()->id);
+                return $query->where('user_id', auth()->user()->id)->latest();
             });
     }
 
@@ -201,7 +249,7 @@ class EventResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        if(auth()->user()?->hasRole('super_admin')){
+        if (auth()->user()?->hasRole('super_admin')) {
             return static::getModel()::count();
         }
 

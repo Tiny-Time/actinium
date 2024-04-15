@@ -11,8 +11,8 @@
         {{-- Section 2: Subscription --}}
         <div class="flex flex-col items-center justify-between px-3 py-5 mt-8 dark:bg-gray-800 bg-slate-100 md:flex-row md:px-10">
             <div>
-                <h3 class="text-2xl font-bold uppercase">subscribe</h3>
-                <p class="">Be the first to get updates about our new features</p>
+                <h3 class="text-2xl font-bold uppercase">Become an insider!</h3>
+                <p class="">Get the inside scoope of what most people don't have acccess to.</p>
             </div>
             <div>
                 @livewire('email-subscription')

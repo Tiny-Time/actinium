@@ -376,11 +376,19 @@
                 // Get form data
                 var formData = this.formData;
 
+                // Timezone
+                const offset = new Date().getTimezoneOffset() / 60;
+                const sign = offset < 0 ? '+' : '-';
+                const absOffset = Math.abs(offset);
+
+                const userTimeZone = `UTC${sign}${absOffset}`;
+
                 // Get all fields values
                 const data = {
                     title: formData.ce_title,
                     description: formData.ce_description,
                     date_time: formData.ce_datetime,
+                    timezone: userTimeZone,
                     template_id: this.selectedImage,
                 }
 

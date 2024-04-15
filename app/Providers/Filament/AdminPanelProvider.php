@@ -70,7 +70,7 @@ class AdminPanelProvider extends PanelProvider
             ])->plugins([
                     FilamentSpatieLaravelHealthPlugin::make()
                         ->usingPage(HealthCheckResults::class),
-                    VersionsPlugin::make(),
+                    VersionsPlugin::make()->widgetColumnSpan('full'),
                     \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
                         ->gridColumns([
                             'default' => 1,
