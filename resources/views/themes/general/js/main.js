@@ -17,8 +17,35 @@ function calculateTimeRemaining(targetDate) {
     return { days, hours, minutes, seconds };
 }
 
-function updateCountdown(datetime) {
-    const targetDate = new Date(datetime).getTime();
+function userTimezone() {
+    const offset = new Date().getTimezoneOffset() / 60;
+    const sign = offset < 0 ? "+" : "-";
+    const absOffset = Math.abs(offset);
+
+    const userTimeZone = `UTC${sign}${absOffset}`;
+
+    return userTimeZone;
+}
+
+function updateCountdown(datetime, timezone) {
+
+    const localOffset = new Date().getTimezoneOffset(); // Get the local timezone offset in minutes
+
+    let targetDate = new Date(datetime);
+    const tzNow = userTimezone();
+    timezone = 'UTC-5'
+    // Extract the offset value from the timezone parameter
+    const offsetMatch = timezone.match(/UTC([+-]\d+)/i);
+    let offsetHours = 0;
+    if (offsetMatch) {
+        offsetHours = parseInt(offsetMatch[1]);
+    }
+
+    if(tzNow != timezone) {
+        // Use the timezone that was used to create the timer for countdown
+        tzTimeNow = new Date(new Date().getTime() + offsetHours * 60 * 60 * 1000)
+    }
+
     const countdown = calculateTimeRemaining(targetDate);
 
     // Calculate the dynamic stroke length based on the screen width

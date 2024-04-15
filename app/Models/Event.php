@@ -20,6 +20,7 @@ class Event extends Model
         'title',
         'description',
         'date_time',
+        'timezone',
         'event_id',
         'template_id',
         'user_id',

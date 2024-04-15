@@ -36,7 +36,7 @@
                     <div class="ml-3">
                         <p class="font-semibold text-gray-600">Active</p>
                         <h3 class="text-3xl font-bold break-all">
-                            {{ \App\Models\Event::where('user_id', auth()->user()->id)->where('status', 1)->count() }}
+                            {{ \App\Models\Event::where('user_id', auth()->user()->id)->where('status', 1)->where('date_time', '>', now()->toDateTimeString())->count() }}
                         </h3>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                         </svg>
                     </div>
                     <div class="ml-3">
-                        <p class="font-semibold text-gray-600">Paused</p>
+                        <p class="font-semibold text-gray-600">Inactive</p>
                         <h3 class="text-3xl font-bold break-all">
                             {{ \App\Models\Event::where('user_id', auth()->user()->id)->where('status', 0)->count() }}
                         </h3>

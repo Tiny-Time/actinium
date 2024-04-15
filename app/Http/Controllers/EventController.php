@@ -33,6 +33,7 @@ class EventController extends Controller
             'title' => 'required|string|max:30',
             'description' => 'nullable|string',
             'date_time' => 'required|date',
+            'timezone' => 'required|string',
             'template_id' => 'required|integer',
             'user_id' => 'nullable|exists:users,id',
         ]);
@@ -41,6 +42,7 @@ class EventController extends Controller
         $event->title = $request->title;
         $event->description = $request->description;
         $event->date_time = $request->date_time;
+        $event->timezone = $request->timezone;
         $event->event_id = Str::random(16);
         $event->user_id = $request->user_id;
         $event->template_id = $request->template_id;
