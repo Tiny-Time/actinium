@@ -39,10 +39,17 @@ function updateCountdown(datetime, timezone) {
     if (offsetMatch) {
         offsetHours = parseInt(offsetMatch[1]);
     }
+    
+    // Extract the offset value from the timezone parameter
+    const offsetMatchLocal = tzNow.match(/UTC([+-]\d+)/i);
+    let offsetHoursLocal = 0;
+    if (offsetMatchLocal) {
+        offsetHoursLocal = parseInt(offsetMatchLocal[1]);
+    }
 
     if(tzNow != timezone) {
         // Use the timezone that was used to create the timer for countdown
-        tzTimeNow = new Date(new Date().getTime() + offsetHours * 60 * 60 * 1000)
+        targetDate = new Date(targetDate.getTime() + (-1 * offsetHours + offsetHoursLocal) * 60 * 60 * 1000)
     }
 
     const countdown = calculateTimeRemaining(targetDate);
