@@ -33,7 +33,6 @@ function updateCountdown(datetime, timezone) {
 
     let targetDate = new Date(datetime);
     const tzNow = userTimezone();
-    timezone = 'UTC-5'
     // Extract the offset value from the timezone parameter
     const offsetMatch = timezone.match(/UTC([+-]\d+)/i);
     let offsetHours = 0;
