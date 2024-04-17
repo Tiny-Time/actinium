@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f4ecee139fa5f75ab8647e7d0a0f6be",
+    "content-hash": "d68ad009aebbbdf46136679f1f6167bd",
     "packages": [
         {
             "name": "3x1io/filament-user",
@@ -948,17 +948,88 @@
             "time": "2024-02-28T15:08:03+00:00"
         },
         {
+            "name": "custom-andreaselia/analytics",
+            "version": "dev-advanced-event",
+            "dist": {
+                "type": "path",
+                "url": "packages/custom-andreaselia/analytics",
+                "reference": "f8baf1bee1c23442a9c43fcea1aae1af36e84538"
+            },
+            "require": {
+                "ext-intl": "*",
+                "illuminate/collections": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/database": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/http": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/view": "^8.0|^9.0|^10.0|^11.0",
+                "jaybizzle/crawler-detect": "^1.2",
+                "mobiledetect/mobiledetectlib": "^4.8",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "8.0|^9.0",
+                "phpunit/phpunit": "^10|^11.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "AndreasElia\\Analytics\\AnalyticsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AndreasElia\\Analytics\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "AndreasElia\\Analytics\\Tests\\": "tests/",
+                    "AndreasElia\\Analytics\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Elia",
+                    "email": "contact@andreaselia.co.uk"
+                },
+                {
+                    "name": "Tom Irons",
+                    "email": "tom@irons.pw"
+                }
+            ],
+            "description": "Analytics for the Laravel framework.",
+            "keywords": [
+                "analytics",
+                "laravel",
+                "middleware",
+                "package"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "custom-lara-zeus/sky",
             "version": "dev-advanced-event",
             "dist": {
                 "type": "path",
                 "url": "packages/custom-lara-zeus/sky",
-                "reference": "60ad709d628b153bf172a5c9726b7741963b553a"
+                "reference": "930edecb023f4c93bcdefb031b9b84b8d03b86d0"
             },
             "require": {
                 "doctrine/dbal": "^3.5.1",
                 "ext-json": "*",
-                "filament/spatie-laravel-media-library-plugin": "^3.1",
+                "filament/spatie-laravel-media-library-plugin": "^3.2",
                 "filament/spatie-laravel-tags-plugin": "^3.1",
                 "lara-zeus/core": "^3.1",
                 "php": "^8.1",
@@ -3294,6 +3365,58 @@
                 }
             ],
             "time": "2022-05-21T17:30:32+00:00"
+        },
+        {
+            "name": "jaybizzle/crawler-detect",
+            "version": "v1.2.117",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JayBizzle/Crawler-Detect.git",
+                "reference": "6785557f03d0fa9e2205352ebae9a12a4484cc8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/6785557f03d0fa9e2205352ebae9a12a4484cc8e",
+                "reference": "6785557f03d0fa9e2205352ebae9a12a4484cc8e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8|^5.5|^6.5|^9.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jaybizzle\\CrawlerDetect\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Beech",
+                    "email": "m@rkbee.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CrawlerDetect is a PHP class for detecting bots/crawlers/spiders via the user agent",
+            "homepage": "https://github.com/JayBizzle/Crawler-Detect/",
+            "keywords": [
+                "crawler",
+                "crawler detect",
+                "crawler detector",
+                "crawlerdetect",
+                "php crawler detect"
+            ],
+            "support": {
+                "issues": "https://github.com/JayBizzle/Crawler-Detect/issues",
+                "source": "https://github.com/JayBizzle/Crawler-Detect/tree/v1.2.117"
+            },
+            "time": "2024-03-19T22:51:22+00:00"
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",

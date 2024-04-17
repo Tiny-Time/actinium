@@ -1,0 +1,54 @@
+{
+    "name": "custom-andreaselia/analytics",
+    "description": "Analytics for the Laravel framework.",
+    "keywords": ["laravel", "analytics", "middleware", "package"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andreas Elia",
+            "email": "contact@andreaselia.co.uk"
+        },
+        {
+            "name": "Tom Irons",
+            "email": "tom@irons.pw"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-intl": "*",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/database": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/collections": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/http": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/view": "^8.0|^9.0|^10.0|^11.0",
+        "mobiledetect/mobiledetectlib": "^4.8",
+        "jaybizzle/crawler-detect": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "AndreasElia\\Analytics\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AndreasElia\\Analytics\\Tests\\": "tests/",
+            "AndreasElia\\Analytics\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AndreasElia\\Analytics\\AnalyticsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "orchestra/testbench": "8.0|^9.0",
+        "phpunit/phpunit": "^10|^11.0"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
+}
