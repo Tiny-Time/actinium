@@ -33,8 +33,7 @@ class RecentEvents extends BaseWidget
                         }
 
                         return $state;
-                    })
-                    ->searchable(),
+                    }),
                 Tables\Columns\TextColumn::make('date_time')
                     ->dateTime()
                     ->sortable(),

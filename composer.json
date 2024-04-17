@@ -2,7 +2,10 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.1",
@@ -11,6 +14,7 @@
         "awcodes/filament-tiptap-editor": "^3.0@beta",
         "awcodes/filament-versions": "^2.0",
         "bezhansalleh/filament-shield": "^3.2",
+        "custom-andreaselia/analytics": "dev-advanced-event",
         "custom-lara-zeus/sky": "*",
         "filament/filament": "^3.2",
         "flowframe/laravel-trend": "^0.2.0",
@@ -82,6 +86,10 @@
         {
             "type": "path",
             "url": "packages/custom-lara-zeus/sky"
+        },
+        {
+            "type": "path",
+            "url": "packages/custom-andreaselia/analytics"
         }
     ]
 }

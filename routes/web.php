@@ -30,7 +30,7 @@ use Laravel\Jetstream\Http\Controllers\Livewire\TermsOfServiceController;
 
 /* --------------------------------- Routes with middleware. --------------------------------- */
 
-Route::middleware('domain.redirect')->group(function () {
+Route::middleware(['domain.redirect', 'analytics'])->group(function () {
 
     /* -------------------------------- Fortify Starts -------------------------------- */
 
