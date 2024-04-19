@@ -268,4 +268,20 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
 
         return 'Sitemap generated successfully!';
     });
+
+    /* --------------------------- Error Page Preview --------------------------- */
+
+    Route::get('/errors/{code}', function ($code) {
+        return view('errors.'.$code);
+    });
+
+    /* ------------------------- Fully customizable 404 ------------------------- */
+
+    Route::get('404', function(){
+        return view('errors.404');
+    });
+
+    Route::fallback(function () {
+        return redirect('404');
+    });
 });
