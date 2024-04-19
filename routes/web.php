@@ -10,6 +10,7 @@ use App\Models\EmailSubscriber;
 use Laravel\Jetstream\Jetstream;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Spatie\Sitemap\SitemapGenerator;
 use Illuminate\Support\Facades\Route;
 use Filament\Notifications\Notification;
 use Laravel\Socialite\Facades\Socialite;
@@ -258,5 +259,13 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     // Redirect
     Route::get('/user/profile', function () {
         return redirect()->route('filament.user.pages.profile');
+    });
+
+    /* ---------------------------- Generate Sitemap ---------------------------- */
+    Route::get('/generate-sitemap', function () {
+
+        SitemapGenerator::create(env('APP_URL'))->writeToFile('sitemap.xml');
+
+        return 'Sitemap generated successfully!';
     });
 });
