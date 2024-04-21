@@ -145,13 +145,13 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
 
     /* ---------------------------------- Blogs ---------------------------------- */
 
-    Route::get('blogs', function () {
-        return view('blogs.listings');
-    });
+    // Route::get('blogs', function () {
+    //     return view('blogs.listings');
+    // });
 
-    Route::get('blogs/{post_id}/{post_title}', function () {
-        return view('blogs.show');
-    });
+    // Route::get('blogs/{post_id}/{post_title}', function () {
+    //     return view('blogs.show');
+    // });
 
     /* ---------------------------------- Event --------------------------------- */
 

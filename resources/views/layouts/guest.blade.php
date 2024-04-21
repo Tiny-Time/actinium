@@ -7,8 +7,18 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="application-name" content="{{ config('app.name', 'TinyTime') }}">
 
-    <title>{{ $title ?? env('META_TITLE', 'TinyTime') }}</title>
-    <meta name="description" content="{{ env('META_DESCRIPTION', 'TinyTime') }}">
+    @sectionMissing('title')
+        <title>{{ env('META_TITLE', 'TinyTime') }}</title>
+    @else
+        <title>@yield('title')</title>
+    @endif
+
+    @sectionMissing('description')
+        <meta name="description" content="{{ env('META_DESCRIPTION', 'TinyTime') }}">
+    @else
+        <meta name="description" content="@yield('description')">
+    @endif
+
     <link rel="icon" href="{{ Vite::asset('resources/images/stopwatch.png') }}">
 
     <!-- Google tag (gtag.js) -->
@@ -61,7 +71,7 @@
     </script>
 </head>
 
-<body class="relative font-sans antialiased" x-data="authModal"
+<body class="relative font-sans antialiased bg-gray-100 dark:bg-gray-900" x-data="authModal"
     @keydown.window.escape="{ openSignUpModal: false, openLoginModal: false, openForgotPasswordModal: false }">
 
     @livewire('preloader')

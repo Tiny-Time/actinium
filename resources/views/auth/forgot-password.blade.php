@@ -1,4 +1,9 @@
 <x-guest-layout>
+
+    @section('title', __('Forgot Password'))
+
+    @section('description', __('Forgot your password for TinyTime? Easily reset it on our user-friendly platform for event planning and personalization. Get back to creating events hassle-free.'))
+
     <x-authentication-card title="Forgot Password">
         <x-slot name="logo">
             <x-authentication-card-logo />

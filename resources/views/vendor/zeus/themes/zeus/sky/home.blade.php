@@ -31,6 +31,7 @@
         <div class="grid gap-6 mt-8 md:grid-cols-3">
             {{-- Subsection 1: Blog Listings --}}
             <div class="md:col-span-2">
+                <h1 class="text-3xl font-bold mb-6">Blogs</h1>
                 <div class="grid gap-6 sm:grid-cols-2 md:flex md:flex-col lg:gap-8">
                     {{-- Blog Post --}}
                     @unless ($posts->isEmpty())

@@ -1,5 +1,10 @@
 <x-guest-layout>
-    <x-authentication-card title="Social SignIn/SignUp">
+
+    @section('title', __('Social Authentication'))
+
+    @section('description', __('Use TinyTime to easily plan and personalize events with TinyTime\'s user-friendly platform. Create unique experiences for individuals and organizations alike.'))
+
+    <x-authentication-card title="Social Authentication">
         <x-slot name="logo">
             <x-authentication-card-logo />
         </x-slot>
