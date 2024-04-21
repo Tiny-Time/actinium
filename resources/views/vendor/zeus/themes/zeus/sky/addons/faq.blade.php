@@ -1,10 +1,10 @@
 <div>
     @if (!$faqs->isEmpty())
         <div class="max-w-4xl mx-auto mt-5">
-            <h2
+            <h1
                 class="text-3xl font-extrabold tracking-tight text-center sm:text-4xl text-primary-600 dark:text-primary-400">
                 {{ __('Frequently Asked Questions') }}
-            </h2>
+            </h1>
             <div class="mx-auto mt-6 space-y-8 bg-white border border-gray-200">
                 <ul class="shadow-box">
                     @foreach ($faqs as $faq)

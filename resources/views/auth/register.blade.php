@@ -1,4 +1,9 @@
 <x-guest-layout>
+
+    @section('title', __('Register an Account'))
+
+    @section('description', __('Swiftly plan and personalize events with TinyTime, a user-friendly platform for individuals and organizations. Create memorable experiences today!'))
+
     <x-authentication-card title="Sign Up">
         <x-slot name="logo">
             <x-authentication-card-logo />

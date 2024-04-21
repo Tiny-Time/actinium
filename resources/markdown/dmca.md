@@ -2,74 +2,43 @@
 
 Effective Date: July 7, 2023
 
-1. **Introduction:**
-    
-    This DMCA Notice is provided pursuant to the Digital Millennium Copyright Act (DMCA) to address copyright infringement concerns related to the TinyTime (the "website"). We respect the intellectual property rights of others and expect our users to do the same. This notice outlines the procedure for reporting alleged copyright infringements that occur within the website.
+Introduction
+--------------------------------------------------------
 
-2. **Copyrighted Work Information:**
+This Digital Millennium Copyright Act Policy (“Policy”) applies to the **https://tinyti.me/** website (“Website” or “Service”) and any of its related products and services (collectively, “Services”) and outlines how this Website operator (“Operator”, “we”, “us” or “our”) addresses copyright infringement notifications and how you (“you” or “your”) may submit a copyright infringement complaint.
 
-    If you believe that your copyrighted work has been used in a way that constitutes copyright infringement within the website, please provide the following information:
+Protection of intellectual property is of utmost importance to us and we ask our users and their authorized agents to do the same. It is our policy to expeditiously respond to clear notifications of alleged copyright infringement that comply with the United States Digital Millennium Copyright Act (“DMCA”) of 1998, the text of which can be found on the U.S. Copyright Office [website](https://www.copyright.gov/).
 
-    
-    a. Description of the copyrighted work: [Title and description of the copyrighted work]
-    
-    b. Copyright owner's name: [Your Name or Copyright Owner's Name]
-    
-    c. Copyright registration (if applicable): [Copyright Registration Number, if applicable]
-    
-    d. Location of the infringing material: [Provide URLs or specific links where the copyrighted material is being infringed]
+What to consider before submitting a copyright complaint
+--------------------------------------------------------
 
-3. **Contact Information:**
+Please note that if you are unsure whether the material you are reporting is in fact infringing, you may wish to contact an attorney before filing a notification with us. Our DMCA page was generated with the help of the RaptorKit's [Free DMCA Generator](https://raptorkit.com/dmca-generator/).
 
-    Please provide your contact information to enable us to communicate with you regarding this matter:
+The DMCA requires you to provide your personal information in the copyright infringement notification. If you are concerned about the privacy of your personal information, you may wish to [use an agent](https://www.copyrighted.com/professional-takedowns) to report infringing material for you.
 
-    
-    a. Your full name: [Your Name]
-    
-    b. Address: [Your Address]
-    
-    c. Email address: [Your Email Address]
-    
-    d. Phone number: [Your Phone Number]
+Notifications of infringement
+-----------------------------
 
-4. **Statement of Good Faith:**
+If you are a copyright owner or an agent thereof, and you believe that any material available on our Services infringes your copyrights, then you may submit a written copyright infringement notification (“Notification”) using the contact details below pursuant to the DMCA. All such Notifications must comply with the DMCA requirements.
 
-    In your DMCA Notice, you must include the following statement:
+Filing a DMCA complaint is the start of a pre-defined legal process. Your complaint will be reviewed for accuracy, validity, and completeness. If your complaint has satisfied these requirements, our response may include the removal or restriction of access to the allegedly infringing material.
 
-    "I have a good faith belief that the use of the copyrighted materials described above is not authorized by the copyright owner, its agent, or the law."
+If we remove or restrict access to materials or terminate any account in response to a notification of alleged infringement, we will make a good faith effort to contact the affected user with information concerning the removal or restriction of access.
 
-5. **Statement of Accuracy:**
-    
-    You must also include the following statement:
+Notwithstanding anything to the contrary contained in any portion of this Policy, the Operator reserves the right to take no action upon receipt of a DMCA copyright infringement notification if it fails to comply with all the requirements of the DMCA for such notifications.
 
-    "I declare under penalty of perjury that the information provided in this DMCA Notice is accurate and that I am the copyright owner or authorized to act on behalf of the copyright owner."
+Changes and amendments
+----------------------
 
-6. **Signature:**
-   
-   Please provide your electronic or physical signature to complete the DMCA Notice.
+We reserve the right to modify this Policy or its terms related to the Website and Services at any time at our discretion. When we do, we will post a notification on the main page of the Website. We may also provide notice to you in other ways at our discretion, such as through the contact information you have provided.
 
-7. **Sending the DMCA Notice:**
+An updated version of this Policy will be effective immediately upon the posting of the revised policy unless otherwise specified. Your continued use of the Website and Services after the effective date of the revised Policy (or such other act specified at that time) will constitute your consent to those changes.
 
-   Send the completed DMCA Notice to the following designated Copyright Agent:
+Reporting copyright infringement
+--------------------------------
 
-    [Copyright Agent's Name]
+If you would like to notify us of the infringing material or activity, we encourage you to contact us using the details below:
 
-    [Copyright Agent's Address]
+Visit our Contact us page or mail us on **assist@tinyti.me**
 
-    [City, State, Zip Code]
-
-    [Copyright Agent's Email Address]
-    
-8. **Action Taken:**
-
-    Upon receiving a valid DMCA Notice, we will promptly investigate the reported infringement. If we find that the material in question is indeed infringing, we will take appropriate actions, including removing or disabling access to the infringing content.
-
-9. **Counter-Notification:**
-
-    If you believe that your content was mistakenly removed or disabled and that you have the right to use the copyrighted material, you may send a Counter-Notification to the Copyright Agent at the above address.
-
-10. **Contact Us:**
-    
-    If you have any questions or concerns about this DMCA Notice or the website's copyright practices, please contact us at assit@tinyti.me.
-
-    By using the TinyTime, you acknowledge and agree to comply with this DMCA Notice and the website's Copyright Policy.
+Please allow us 2-5 business working days for an email response.
