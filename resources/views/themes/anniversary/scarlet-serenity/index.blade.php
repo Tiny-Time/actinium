@@ -12,8 +12,11 @@
             }, 1000);
         </script>
     @endpush
-    <x-slot name="title">{{ ucfirst($event->title) . ' - ' . config('app.name', 'TinyTime') }}</x-slot>
-    <x-slot name="header"></x-slot>
+    <x-slot name="header">
+        @section('title', __(ucfirst($event->title) . ' - ' . config('app.name', 'TinyTime')))
+
+        @section('description', __($event->description))
+    </x-slot>
     <!-- Main timer template -->
     <section class="p-4 -mb-6 toz">
         <div class="flex flex-col items-center gap-4 text-white toz-main">
