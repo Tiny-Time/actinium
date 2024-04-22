@@ -1,6 +1,6 @@
 <x-guest-layout>
 
-    @section('title', __('Register an Account'))
+    @section('title', __('Register - TinyTime: Create Your Account'))
 
     @section('description', __('Swiftly plan and personalize events with TinyTime, a user-friendly platform for individuals and organizations. Create memorable experiences today!'))
 

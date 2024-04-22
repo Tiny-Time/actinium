@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @section('title', __('Sign into your Account'))
+    @section('title', __('Login - TinyTime: Sign into your Account'))
 
     @section('description', __('TinyTime: A user-friendly platform for effortless event planning and personalization. Create events, birthdays, product launch, live streaming and more with ease. Sign in now!'))
 
