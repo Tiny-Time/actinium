@@ -69,9 +69,24 @@
             a.appendChild(s);
         })(window, document, "https://public.produktly.com/js/main.js");
     </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "TinyTime",
+          "alternateName": "Create and Customize an Event",
+          "url": "https://tinyti.me",
+          "logo": "https://tinyti.me/build/assets/feature%20image%202-a55a2c81.png",
+          "sameAs": "https://twitter.com/tinytime10"
+        }
+    </script>
 </head>
 
-<body class="relative font-sans antialiased bg-gray-100 dark:bg-gray-900" x-data="authModal"
+<body
+    class="relative font-sans antialiased @if (!request()->routeIs('homePage')) bg-gray-100 dark:bg-gray-900
+@else
+    bg-white @endif"
+    x-data="authModal"
     @keydown.window.escape="{ openSignUpModal: false, openLoginModal: false, openForgotPasswordModal: false }">
 
     @livewire('preloader')
