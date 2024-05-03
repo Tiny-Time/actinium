@@ -6,6 +6,7 @@ use App\Mail\Unsubscribed;
 use App\Models\Testimonial;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Livewire\EventSearch;
 use App\Models\EmailSubscriber;
 use Laravel\Jetstream\Jetstream;
 use Illuminate\Support\Facades\Auth;
@@ -272,7 +273,13 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     /* --------------------------- Error Page Preview --------------------------- */
 
     Route::get('/errors/{code}', function ($code) {
-        return view('errors.'.$code);
+        $error_codes = [401, 402, 403, 404, 419, 429, 500, 503];
+
+        if (in_array($code, $error_codes)) {
+            return view('errors.'.$code);
+        } else {
+            abort(404);
+        }
     });
 
     /* ------------------------- Fully customizable 404 ------------------------- */
@@ -284,4 +291,8 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     Route::fallback(function () {
         return redirect('404');
     });
+
+    /* ------------------------------ Event Search ------------------------------ */
+
+    Route::get('/search', EventSearch::class)->name('search');
 });
