@@ -21,13 +21,14 @@
                         ce_title: '',
                         ce_description: '',
                         ce_datetime: localNow,
+                        ce_terms: false
                     },
                     cseHtitle: true,
                     csStep: 1,
                     selectedImage: 1,
                     shareUrl: 'URL to be copied to clipboard!',
-                    formError: { ce_title: false, ce_description: false, ce_datetime: false, },
-                    formErrorText: { ce_title: '', ce_description: '', ce_datetime: '' },
+                    formError: { ce_title: false, ce_description: false, ce_datetime: false, ce_terms: false },
+                    formErrorText: { ce_title: '', ce_description: '', ce_datetime: '', ce_terms: '' },
                     validateForm: validateForm,
                 }">
                     <!-- Create  Event -->
@@ -82,6 +83,17 @@
                                         <span
                                             x-show="(formError.ce_datetime && formData.ce_datetime.length == 0) || (formError.ce_datetime && new Date(formData.ce_datetime) <= new Date(localNow()))"
                                             x-text="formErrorText.ce_datetime" class="text-sm text-pink-500"></span>
+                                    </div>
+                                    <div class="mt-3">
+                                        <label for="eventTerms" class="flex items-start">
+                                            <x-checkbox id="eventTerms" name="eventTerms" x-model="formData.ce_terms"/>
+                                            <span class="ml-2 text-sm">I am confirming that my event does not reflect
+                                                neither contains any materials that is illegal in the U.S. and the country
+                                                which I reside nor has any pornography or 18+ material.</span>
+                                        </label>
+                                        <span
+                                            x-show="(formError.ce_terms && formData.ce_terms == false)"
+                                            x-text="formErrorText.ce_terms" class="text-sm text-pink-500"></span>
                                     </div>
                                     <x-button type="button" class="disabled:opacity-50 !bg-cyan-500"
                                         x-bind:disabled="ce_title.length > 30" @click="validateForm" :ce_next="true">
@@ -354,6 +366,13 @@
                     formErrorText.ce_datetime = 'The date field needs to be greater than current date.';
                     formError.ce_datetime = true;
                     cseDateFocus.focus();
+                    return;
+                }
+
+                // Validate Terms
+                if (formData.ce_terms == false) {
+                    formErrorText.ce_terms = 'The terms field is required.';
+                    formError.ce_terms = true;
                     return;
                 }
 

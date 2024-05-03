@@ -73,6 +73,13 @@ class EventResource extends Resource
                             ->hintColor('danger')
                             ->required()
                             ->default(1),
+                        Forms\Components\Checkbox::make('terms')
+                            ->label('I am confirming that my event does not reflect
+                        neither contains any materials that is illegal in the U.S. and the country
+                        which I reside nor has any pornography or 18+ material.')
+                            ->validationAttribute('terms')
+                            ->required()
+                            ->accepted(),
                     ]),
                 // Section::make('Advanced Features')
                 //     ->schema([
