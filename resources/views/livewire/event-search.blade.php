@@ -32,7 +32,8 @@
                                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                             </svg>
                         </div>
-                        <input type="query" wire:model="query" placeholder="Search for an event near you..." name="query" id="query"
+                        <input type="query" wire:model="query" placeholder="Search for an event near you..."
+                            name="query" id="query"
                             class="flex-grow pl-3 md:pl-0 p-0 mr-2 text-sm text-gray-500 bg-transparent border-none placeholder:text-gray-500 focus:ring-0 focus:outline-none">
                         <button class="block h-full px-3 text-sm md:text-lg font-semibold text-gray-100 bg-red-400">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -51,7 +52,8 @@
             <section id="results" class="mt-4">
                 <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 content-stretch">
                     @foreach ($events as $event)
-                        <a href="{{ route('event.preview', $event->event_id) }}" wire:key="{{ $event->event_id }}" class="overflow-hidden bg-gray-200 rounded shadow-md">
+                        <a href="{{ route('event.preview', $event->event_id) }}" wire:key="{{ $event->event_id }}"
+                            class="overflow-hidden bg-gray-200 rounded shadow-md">
                             @if ($event->template_id == 1)
                                 <img src="{{ $templates[0]['image'] }}" alt="{{ $templates[0]['name'] }}"
                                     class="object-cover w-full">
@@ -69,6 +71,11 @@
                     @endforeach
                 </div>
             </section>
+            @if($events->isEmpty())
+                <div class="flex-grow py-16 sm:px-12 dark:text-gray-100">
+                    <p class="mt-3 text-3xl font-bold text-center text-gray-300 md:text-5xl">No events to display.</p>
+                </div>
+            @endif
             <div class="mt-5">
                 {{ $events->links() }}
             </div>
