@@ -26,20 +26,38 @@
                     <form method="POST" wire:submit="search"
                         class="h-12 md:w-[350px] lg:w-[500px] flex rounded-full items-center bg-white overflow-clip">
                         <div class="px-3 hidden md:block">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            <svg xmlns="http://www.w3.org/2000/svg" wire:loading.class="hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-6 h-6 text-gray-500">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-blue-600 animate-spin" wire:loading xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4">
+                                </circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
                             </svg>
                         </div>
                         <input type="query" wire:model="query" placeholder="Search for an event near you..."
                             name="query" id="query"
                             class="flex-grow pl-3 md:pl-0 p-0 mr-2 text-sm text-gray-500 bg-transparent border-none placeholder:text-gray-500 focus:ring-0 focus:outline-none">
                         <button class="block h-full px-3 text-sm md:text-lg font-semibold text-gray-100 bg-red-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            <svg xmlns="http://www.w3.org/2000/svg" wire:loading.class="hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-5 h-5 md:hidden">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                            </svg>
+                            <svg class="w-5 h-5 text-blue-600 animate-spin md:!hidden" wire:loading xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4">
+                                </circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
                             </svg>
                             <span class="sr-only md:not-sr-only">Find Event</span>
                         </button>
@@ -71,7 +89,7 @@
                     @endforeach
                 </div>
             </section>
-            @if($events->isEmpty())
+            @if ($events->isEmpty())
                 <div class="flex-grow py-16 sm:px-12 dark:text-gray-100">
                     <p class="mt-3 text-3xl font-bold text-center text-gray-300 md:text-5xl">No events to display.</p>
                 </div>
