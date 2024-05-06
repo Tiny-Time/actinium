@@ -30,30 +30,22 @@
     <div class="flex flex-col gap-3 mt-4">
         @foreach ($events as $event)
             <a href="{{ route('event.preview', $event->event_id) }}" wire:key="{{ $event->event_id }}"
-                class="bg-white rounded-xl shadow overflow-hidden w-full block">
+                class="block w-full overflow-hidden bg-white shadow rounded-xl">
                 <div class="flex items-stretch">
-                    <div class="shrink-0 self-stretch">
-                        @if ($event->template_id == 1)
-                            <img src="{{ $templates[0]['image'] }}" alt="{{ $templates[0]['name'] }}"
-                                class="object-cover w-36 h-full">
-                        @elseif($event->template_id == 2)
-                            <img src="{{ $templates[1]['image'] }}" alt="{{ $templates[1]['name'] }}"
-                                class="object-cover w-36 h-full">
-                        @else
-                            <img src="{{ $templates[2]['image'] }}" alt="{{ $templates[2]['name'] }}"
-                                class="object-cover w-36 h-full">
-                        @endif
+                    <div class="self-stretch shrink-0">
+                        <img src="{{ $templates[$event->template_id - 1]['image'] }}"
+                            alt="{{ $templates[$event->template_id - 1]['name'] }}" class="object-cover h-full w-36">
                     </div>
                     <div class="p-4">
-                        <h3 class="mt-1 sm:text-lg leading-tight font-medium text-black line-clamp-1 md:line-clamp-2">
+                        <h3 class="mt-1 font-medium leading-tight text-black sm:text-lg line-clamp-1 md:line-clamp-2">
                             {{ $event->title }}</h3>
-                        <p class="mt-1 text-slate-500 line-clamp-1 sm:line-clamp-3 text-sm">{{ $event->description }}
+                        <p class="mt-1 text-sm text-slate-500 line-clamp-1 sm:line-clamp-3">{{ $event->description }}
                         </p>
                     </div>
                 </div>
             </a>
         @endforeach
-        @if(!is_array($events) && $events->isEmpty() || empty($events))
+        @if ((!is_array($events) && $events->isEmpty()) || empty($events))
             <div class="flex-grow py-16 sm:px-12 dark:text-gray-100">
                 <p class="mt-3 text-3xl font-bold text-center text-gray-300 md:text-5xl">No events to display.</p>
             </div>

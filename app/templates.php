@@ -21,5 +21,5 @@ $templates = [
         'category' => 'Birthday',
         'image' => '/images/templates/Birthday_ Dark_Blue_Sequins.png',
         'type' => 'free',
-    ]
+    ],
 ];

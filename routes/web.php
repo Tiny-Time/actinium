@@ -167,9 +167,9 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
 
     /* ----------------------------- Advanced Event ----------------------------- */
 
-    Route::get('advanced-event', function () {
-        return view('advanced-event');
-    })->name('advanced-event');
+    // Route::get('advanced-event', function () {
+    //     return view('advanced-event');
+    // })->name('advanced-event');
 
     /* ---------------------------------- Unsubscribe --------------------------------- */
 
