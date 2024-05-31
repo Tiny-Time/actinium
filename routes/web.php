@@ -167,9 +167,9 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
 
     /* ----------------------------- Advanced Event ----------------------------- */
 
-    // Route::get('advanced-event', function () {
-    //     return view('advanced-event');
-    // })->name('advanced-event');
+    Route::get('advanced-event', function () {
+        return view('advanced-event');
+    })->name('advanced-event');
 
     /* ---------------------------------- Unsubscribe --------------------------------- */
 
@@ -265,9 +265,15 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     /* ---------------------------- Generate Sitemap ---------------------------- */
     Route::get('/generate-sitemap', function () {
 
-        SitemapGenerator::create(env('APP_URL'))->writeToFile('sitemap.xml');
+        if(auth()->check()){
+            if(auth()->user()->hasRole('super_admin')){
+                SitemapGenerator::create(env('APP_URL'))->writeToFile('sitemap.xml');
 
-        return 'Sitemap generated successfully!';
+                return 'Sitemap generated successfully!';
+            }
+        }
+
+        redirect('404');
     });
 
     /* --------------------------- Error Page Preview --------------------------- */
@@ -278,9 +284,13 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
         if (in_array($code, $error_codes)) {
             return view('errors.'.$code);
         } else {
-            abort(404);
+            redirect('404');
         }
     });
+
+    /* ------------------------------ Event Search ------------------------------ */
+
+    Route::get('/search', EventSearch::class)->name('search');
 
     /* ------------------------- Fully customizable 404 ------------------------- */
 
@@ -291,8 +301,4 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     Route::fallback(function () {
         return redirect('404');
     });
-
-    /* ------------------------------ Event Search ------------------------------ */
-
-    Route::get('/search', EventSearch::class)->name('search');
 });

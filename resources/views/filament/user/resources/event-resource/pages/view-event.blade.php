@@ -1,26 +1,23 @@
 <x-filament-panels::page x-data="{ activeTab: 'analytics' }">
     <x-filament::tabs>
         <x-filament::tabs.item alpine-active="activeTab === 'form'" x-on:click="activeTab = 'form'">
-            Edit Event
+            View Event
         </x-filament::tabs.item>
 
         <x-filament::tabs.item alpine-active="activeTab === 'analytics'" x-on:click="activeTab = 'analytics'">
-            Analytics
+            Manage
         </x-filament::tabs.item>
     </x-filament::tabs>
 
-    <x-filament-panels::form wire:submit="save" name="form" x-show="activeTab == 'form'">
-        {{ $this->form }}
+    <div id="form" x-show="activeTab == 'form'">
+        @if ($this->hasInfolist())
+            {{ $this->infolist }}
+        @else
+            {{ $this->form }}
+        @endif
+    </div>
 
-        <x-filament-panels::form.actions :actions="$this->getCachedFormActions()" :full-width="$this->hasFullWidthFormActions()" />
-    </x-filament-panels::form>
-
-    @if (count($relationManagers = $this->getRelationManagers()))
-        <x-filament-panels::resources.relation-managers :active-manager="$this->activeRelationManager" :managers="$relationManagers" :owner-record="$record"
-            :page-class="static::class" />
-    @endif
-
-    <div name="analytics" x-show="activeTab == 'analytics'">
+    <div id="analytics" x-show="activeTab == 'analytics'">
 
         <div class="">
             @livewire(\App\Livewire\EventViewsOverview::class)
@@ -37,7 +34,14 @@
         </div>
 
         <div class="mt-5">
-             @livewire(\App\Livewire\EventViewsChart::class)
+            @livewire(\App\Livewire\EventViewsChart::class)
         </div>
     </div>
+
+
+
+    @if (count($relationManagers = $this->getRelationManagers()))
+        <x-filament-panels::resources.relation-managers :active-manager="$this->activeRelationManager" :managers="$relationManagers" :owner-record="$record"
+            :page-class="static::class" />
+    @endif
 </x-filament-panels::page>

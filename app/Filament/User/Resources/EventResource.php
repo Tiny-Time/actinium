@@ -5,6 +5,8 @@ namespace App\Filament\User\Resources;
 use Filament\Forms;
 use Filament\Tables;
 use App\Models\Event;
+use Filament\Forms\Get;
+use Filament\Forms\Set;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
@@ -12,12 +14,14 @@ use Filament\Resources\Resource;
 use App\Forms\Components\TimeZone;
 use Filament\Tables\Filters\Filter;
 use Illuminate\Contracts\View\View;
-use App\Forms\Components\ThemePicker;
 use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
+use App\Forms\Components\SelectedTemplate;
 use App\Forms\Components\CustomDateTimePicker;
 use App\Filament\User\Resources\EventResource\Pages;
+use App\Filament\User\Resources\EventResource\RelationManagers\RsvpsRelationManager;
+use App\Filament\User\Resources\EventResource\RelationManagers\GuestbooksRelationManager;
 
 class EventResource extends Resource
 {
@@ -57,13 +61,13 @@ class EventResource extends Resource
                             ->required(),
                         TimeZone::make('timezone')
                             ->required(),
-                        ThemePicker::make('template_id')
+                        SelectedTemplate::make('template_id')
                             ->label('Template')
                             ->required()
                             ->default(1)
                             ->columnSpanFull(),
                         Forms\Components\Toggle::make('status')
-                            ->hint('This control determines whether the event is active or not.')
+                            ->hint('This control determines whether the event is published or in draft.')
                             ->hintColor('danger')
                             ->default(1)
                             ->required()
@@ -73,58 +77,84 @@ class EventResource extends Resource
                             ->hintColor('danger')
                             ->required()
                             ->default(1),
-                        Forms\Components\Checkbox::make('terms')
-                            ->label('I am confirming that my event does not reflect
-                        neither contains any materials that is illegal in the U.S. and the country
-                        which I reside nor has any pornography or 18+ material.')
-                            ->validationAttribute('terms')
-                            ->required()
-                            ->accepted(),
+                        Forms\Components\Section::make('Advanced Features (Optional)')
+                            ->schema([
+                                Forms\Components\TextInput::make('address')
+                                    ->maxLength(191)
+                                    ->string()
+                                    ->columnSpanFull(),
+                                Forms\Components\Select::make('country')
+                                    ->options(function () {
+                                        include 'EventResource/Pages/countries.php';
+                                        $options = [];
+                                        foreach ($countriesStates as $country) {
+                                            $name = $country['name'];
+                                            $options[$name] = $name;
+                                        }
+                                        return $options;
+                                    })
+                                    ->searchable()
+                                    ->live()
+                                    ->afterStateUpdated(fn(Set $set, ?string $state) => $set('state', '')),
+                                Forms\Components\Select::make('state')
+                                    ->options(function (Get $get) {
+                                        include 'EventResource/Pages/countries.php';
+                                        foreach ($countriesStates as $country) {
+                                            if ($country['name'] == $get('country')) {
+                                                $states = [];
+                                                foreach ($country['states'] as $cState) {
+                                                    $stateName = $cState['name'];
+                                                    $states[$stateName] = $stateName;
+                                                }
+                                                return $states;
+                                            }
+                                        }
+                                    })
+                                    ->searchable(),
+                                Forms\Components\TextInput::make('contact_name')
+                                    ->string()
+                                    ->hint('The contact name will be visible to users.')
+                                    ->hintColor('danger')
+                                    ->columnSpanFull(),
+                                Forms\Components\TextInput::make('contact_email_address')
+                                    ->string()
+                                    ->hint('The contact email address will be visible to users.')
+                                    ->hintColor('danger')
+                                    ->columnSpanFull(),
+                                Forms\Components\TextInput::make('contact_phone_number')
+                                    ->string()
+                                    ->hint('The contact phone number will be visible to users.')
+                                    ->hintColor('danger')
+                                    ->columnSpanFull(),
+                                Forms\Components\TimePicker::make('check_in_time')
+                                    ->seconds(false)
+                                    ->string()
+                                    ->hint('The check in time for visitors.')
+                                    ->hintColor('danger')
+                                    ->columnSpanFull(),
+                                Forms\Components\TimePicker::make('event_end_time')
+                                    ->seconds(false)
+                                    ->string()
+                                    ->hint('The event end time for visitors')
+                                    ->hintColor('danger')
+                                    ->columnSpanFull(),
+                                Forms\Components\Toggle::make('guestbook')
+                                    ->hint('This control determines whether guestbook should be available or not.')
+                                    ->hintColor('danger')
+                                    ->default(0),
+                                Forms\Components\Toggle::make('rsvp')
+                                    ->hint('This control determines whether RSVP should be available or not.')
+                                    ->hintColor('danger')
+                                    ->default(0),
+                                Forms\Components\TextInput::make('post_event_massage')
+                                    ->string()
+                                    ->hint('Display a message when the timer stops.')
+                                    ->hintColor('danger')
+                                    ->columnSpanFull(),
+                            ])
+                            ->collapsible()
+                            ->persistCollapsed(),
                     ]),
-                // Section::make('Advanced Features')
-                //     ->schema([
-                //         Forms\Components\TimePicker::make('start_time')
-                //             ->columnSpanFull(),
-                //         Forms\Components\TimePicker::make('end_time')
-                //             ->columnSpanFull(),
-                //         Forms\Components\TextInput::make('location')
-                //             ->maxLength(191)
-                //             ->string()
-                //             ->columnSpanFull(),
-                //         Forms\Components\TextInput::make('contact_name')
-                //             ->string()
-                //             ->hint('The contact name will be visible to users.')
-                //             ->hintColor('danger')
-                //             ->columnSpanFull(),
-                //         Forms\Components\TextInput::make('contact_email_address')
-                //             ->string()
-                //             ->hint('The contact email address will be visible to users.')
-                //             ->hintColor('danger')
-                //             ->columnSpanFull(),
-                //         Forms\Components\TextInput::make('contact_phone_number')
-                //             ->string()
-                //             ->hint('The contact phone number will be visible to users.')
-                //             ->hintColor('danger')
-                //             ->columnSpanFull(),
-                //         Forms\Components\Toggle::make('guestbook')
-                //             ->hint('This control determines whether guestbook should be available or not.')
-                //             ->hintColor('danger')
-                //             ->default(0),
-                //         Forms\Components\Toggle::make('rsvp')
-                //             ->hint('This control determines whether RSVP should be available or not.')
-                //             ->hintColor('danger')
-                //             ->default(0),
-                //         Forms\Components\TextInput::make('pre_event_massage')
-                //             ->string()
-                //             ->hint('Show a message before the timer starts.')
-                //             ->hintColor('danger')
-                //             ->columnSpanFull(),
-                //         Forms\Components\TextInput::make('post_event_massage')
-                //             ->string()
-                //             ->hint('Show a message when the timer stops.')
-                //             ->hintColor('danger')
-                //             ->columnSpanFull(),
-                //     ])
             ]);
     }
 
@@ -155,7 +185,8 @@ class EventResource extends Resource
 
                         return $state;
                     })
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('user.name')
                     ->visible(auth()->user()?->hasRole('super_admin')),
                 Tables\Columns\TextColumn::make('date_time')
@@ -208,6 +239,7 @@ class EventResource extends Resource
                     ->url(fn(Event $record): string => route('event.preview', $record->event_id))
                     ->openUrlInNewTab()
                     ->icon('heroicon-m-magnifying-glass-plus')
+                    ->color('success')
                     ->label('')
                     ->tooltip('Preview'),
                 Tables\Actions\DeleteAction::make()
@@ -241,7 +273,8 @@ class EventResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RsvpsRelationManager::class,
+            GuestbooksRelationManager::class
         ];
     }
 
@@ -261,5 +294,126 @@ class EventResource extends Resource
         }
 
         return static::getModel()::where('user_id', auth()->user()->id)->count();
+    }
+
+    public static function formFields() : array {
+        return [
+            Forms\Components\TextInput::make('title')
+                ->required()
+                ->maxLength(191)
+                ->string()
+                ->columnSpanFull(),
+            Forms\Components\Textarea::make('description')
+                ->string()
+                ->columnSpanFull(),
+            Forms\Components\Select::make('user_id')
+                ->relationship('user', 'name')
+                ->default(auth()->user()->id)
+                ->hidden(!auth()->user()?->hasRole('super_admin'))
+                ->columnSpanFull(),
+            CustomDateTimePicker::make('date_time')
+                ->required()
+                ->columnSpanFull(),
+            TimeZone::make('timezone')
+                ->required()
+                ->columnSpanFull(),
+            Forms\Components\Toggle::make('status')
+                ->hint('This control determines whether the event is published or in draft.')
+                ->hintColor('danger')
+                ->default(1)
+                ->required()
+                ->columnSpanFull(),
+            Forms\Components\Toggle::make('public')
+                ->hint('This control determines whether the event should be included in search results.')
+                ->hintColor('danger')
+                ->required()
+                ->default(1)
+                ->columnSpanFull(),
+            Forms\Components\Section::make('Advanced Features (Optional)')
+                ->schema([
+                    Forms\Components\TextInput::make('address')
+                        ->maxLength(191)
+                        ->string()
+                        ->columnSpanFull(),
+                    Forms\Components\Select::make('country')
+                        ->options(function () {
+                            include 'countries.php';
+                            $options = [];
+                            foreach ($countriesStates as $country) {
+                                $name = $country['name'];
+                                $options[$name] = $name;
+                            }
+                            return $options;
+                        })
+                        ->searchable()
+                        ->live()
+                        ->afterStateUpdated(fn(Set $set, ?string $state) => $set('state', '')),
+                    Forms\Components\Select::make('state')
+                        ->options(function (Get $get) {
+                            include 'countries.php';
+                            foreach ($countriesStates as $country) {
+                                if ($country['name'] == $get('country')) {
+                                    $states = [];
+                                    foreach ($country['states'] as $cState) {
+                                        $stateName = $cState['name'];
+                                        $states[$stateName] = $stateName;
+                                    }
+                                    return $states;
+                                }
+                            }
+                        })
+                        ->searchable(),
+                    Forms\Components\TextInput::make('contact_name')
+                        ->string()
+                        ->hint('The contact name will be visible to users.')
+                        ->hintColor('danger')
+                        ->columnSpanFull(),
+                    Forms\Components\TextInput::make('contact_email_address')
+                        ->string()
+                        ->hint('The contact email address will be visible to users.')
+                        ->hintColor('danger')
+                        ->columnSpanFull(),
+                    Forms\Components\TextInput::make('contact_phone_number')
+                        ->string()
+                        ->hint('The contact phone number will be visible to users.')
+                        ->hintColor('danger')
+                        ->columnSpanFull(),
+                    Forms\Components\TimePicker::make('check_in_time')
+                        ->seconds(false)
+                        ->string()
+                        ->hint('The check in time for visitors.')
+                        ->hintColor('danger')
+                        ->columnSpanFull(),
+                    Forms\Components\TimePicker::make('event_end_time')
+                        ->seconds(false)
+                        ->string()
+                        ->hint('The event end time for visitors')
+                        ->hintColor('danger')
+                        ->columnSpanFull(),
+                    Forms\Components\Toggle::make('guestbook')
+                        ->hint('This control determines whether guestbook should be available or not.')
+                        ->hintColor('danger')
+                        ->default(0),
+                    Forms\Components\Toggle::make('rsvp')
+                        ->hint('This control determines whether RSVP should be available or not.')
+                        ->hintColor('danger')
+                        ->default(0),
+                    Forms\Components\TextInput::make('post_event_massage')
+                        ->string()
+                        ->hint('Display a message when the timer stops.')
+                        ->hintColor('danger')
+                        ->columnSpanFull(),
+                ])
+                ->collapsible()
+                ->persistCollapsed(),
+            Forms\Components\Checkbox::make('terms')
+                ->label('I am confirming that my event does not reflect
+            neither contains any materials that is illegal in the U.S. and the country
+            which I reside nor has any pornography or 18+ material.')
+                ->validationAttribute('terms')
+                ->required()
+                ->accepted()
+                ->columnSpanFull()
+                    ];
     }
 }

@@ -2,7 +2,7 @@
     <x-slot name="header"></x-slot>
     {{-- Timer Template --}}
     <div class="mx-auto max-w-7xl" x-data="{ days: 0, hours: 0, mins: 5, secs: 0 }">
-        <div class="bg-[url('../images/timer-bg.png')] bg-no-repeat bg-cover relative z-10">
+        <div class="bg-[url('../images/timer-bg.webp')] bg-no-repeat bg-cover relative z-10">
             <div class="timer-template" x-data="{ playBtn: true, counter: false }">
                 <div class="flex items-center justify-between min-h-[300px] py-4 md:py-8 flex-col">
                     {{-- Event Title --}}
@@ -526,7 +526,7 @@
                 <span class="text-[6px] absolute top-full md:top[80%] left-[40%]">Coming soon</span>
             </div>
             {{-- Streamlabs --}}
-            <img src="{{ Vite::asset('resources/images/streamlabs.png') }}" width="150" height="30" alt="Streamlabs Timer Widget">
+            <img src="{{ Vite::asset('resources/images/streamlabs.webp') }}" width="150" height="30" alt="Streamlabs Timer Widget">
             {{-- Shopify --}}
             <svg width="150" height="30" viewBox="0 0 150 43" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -655,7 +655,7 @@
         <p class="mt-2 text-center">Unlocking the Full Potential: Discover Our Powerful Features!</p>
         {{-- Feature 1: Multiple Templates --}}
         <div class="grid gap-6 mt-6 md:grid-cols-2 md:gap-16">
-            <img src="{{ Vite::asset('resources/images/feature image 1.png') }}" alt="Multiple Templates"
+            <img src="{{ Vite::asset('resources/images/feature image 1.webp') }}" alt="Multiple Templates"
                 class="w-[550px] mx-auto">
             <div class="flex flex-col gap-4 justify-evenly">
                 <h3 class="font-bold text-3xl border-l-[6px] border-cyan-500 pl-2">Multiple Templates</h3>
@@ -688,12 +688,12 @@
                         Your Event</button>
                 </div>
             </div>
-            <img src="{{ Vite::asset('resources/images/feature image 2.png') }}" alt="Website Integration"
+            <img src="{{ Vite::asset('resources/images/feature image 2.webp') }}" alt="Website Integration"
                 class="w-[550px] mx-auto">
         </div>
         {{-- Feature 3: Customization --}}
         <div class="grid gap-6 mt-6 md:grid-cols-2 md:gap-16">
-            <img src="{{ Vite::asset('resources/images/feature image 3.png') }}" alt="Customization"
+            <img src="{{ Vite::asset('resources/images/feature image 3.webp') }}" alt="Customization"
                 class="w-[550px] mx-auto">
             <div class="flex flex-col gap-4 justify-evenly">
                 <h3 class="font-bold text-3xl border-l-[6px] border-olivine pl-2">Customization</h3>
@@ -862,7 +862,7 @@
     </div>
     {{-- Testimonials --}}
     <div class="relative z-10 px-4 mx-auto mt-8 max-w-7xl sm:px-6 lg:px-8">
-        <div class="bg-[url('../images/testimonials-bg.png')] rounded-xl relative -z-20">
+        <div class="bg-[url('../images/testimonials-bg.webp')] rounded-xl relative -z-20">
             <div class="p-3 md:p-10 testimonials">
                 <div class="">
                     <p class="text-xl font-semibold text-center text-gray-100 uppercase md:text-2xl">testimonials</p>
@@ -871,7 +871,7 @@
                         Power of Customer Satisfaction: Explore Heartwarming Testimonials and Reviews from Our Delighted
                         Clients! Discover Why They Trust and Love Our Services.</p>
                     {{-- Testimonial Cards --}}
-                    <section class="pb-8 mt-6 splide" aria-label="Testimonials Cards">
+                    <section id="splide" class="pb-8 mt-6 splide" aria-label="Testimonials Cards">
                         <div class="splide__track">
                             <ul class="splide__list">
                                 @if($testimonials->isEmpty())
@@ -911,7 +911,7 @@
                                                 </div>
                                             </div>
                                             <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
-                                                <img src="{{ Vite::asset('resources/images/profile image.png') }}"
+                                                <img src="{{ Vite::asset('resources/images/profile image.webp') }}"
                                                     alt="Profile" class="flex-shrink rounded-full max-w-[70px]">
                                                 <div>
                                                     <h4 class="text-xl font-bold">Kristin Watson</h4>
@@ -953,7 +953,7 @@
                                                 </div>
                                             </div>
                                             <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
-                                                <img src="{{ Vite::asset('resources/images/profile image 2.png') }}"
+                                                <img src="{{ Vite::asset('resources/images/profile image 2.webp') }}"
                                                     alt="Profile" class="flex-shrink rounded-full max-w-[70px]">
                                                 <div>
                                                     <h4 class="text-xl font-bold">Jerome Bell</h4>
@@ -996,7 +996,7 @@
                                                 </div>
                                             </div>
                                             <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
-                                                <img src="{{ Vite::asset('resources/images/profile image 3.png') }}"
+                                                <img src="{{ Vite::asset('resources/images/profile image 3.webp') }}"
                                                     alt="Profile" class="flex-shrink rounded-full max-w-[70px]">
                                                 <div>
                                                     <h4 class="text-xl font-bold">Jane Cooper</h4>

@@ -18,6 +18,7 @@ document.addEventListener('alpine:init', () => {
         } else {
 
             try {
+                $('#shareURL').select();
                 document.execCommand('copy');
                 $('#copied').removeClass('hidden');
                 setTimeout(() => {

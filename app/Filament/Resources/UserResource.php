@@ -68,9 +68,7 @@ class UserResource extends Resource
                 ->password()
                 ->maxLength(255)
                 ->dehydrateStateUsing(static function ($state) use ($form) {
-                    return !empty ($state) ? Hash::make($state) : null;
-                    // $user = User::find($form->getColumns());
-                    // return $user ? $user->password : null;
+                    return !empty ($state) ? Hash::make($state) : $form->model->password;
                 }),
         ];
 

@@ -33,8 +33,8 @@
                 class="block w-full overflow-hidden bg-white shadow rounded-xl">
                 <div class="flex items-stretch">
                     <div class="self-stretch shrink-0">
-                        <img src="{{ $templates[$event->template_id - 1]['image'] }}"
-                            alt="{{ $templates[$event->template_id - 1]['name'] }}" class="object-cover h-full w-36">
+                        <img src="{{ $event->template->image }}"
+                            alt="{{ $event->template->name }}" class="object-cover h-full w-36">
                     </div>
                     <div class="p-4">
                         <h3 class="mt-1 font-medium leading-tight text-black sm:text-lg line-clamp-1 md:line-clamp-2">

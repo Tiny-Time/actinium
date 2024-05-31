@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div
-                        class="relative w-full bg-[url('../images/bg.jpg')] bg-cover bg-no-repeat bg-center rounded-l-2xl hidden lg:block">
+                        class="relative w-full bg-[url('../images/bg.webp')] bg-cover bg-no-repeat bg-center rounded-l-2xl hidden lg:block">
                         <svg class="absolute w-5 h-5 cursor-pointer right-2 top-2"
                             @click="openForgotPasswordModal = !openForgotPasswordModal" viewBox="0 0 30 30" fill="none"
                             xmlns="http://www.w3.org/2000/svg">

@@ -15,12 +15,23 @@ class Rsvp extends Component
     #[Rule('required|min:6|email:rfc,dns|unique:r_s_v_p_s,email')]
     public $email = '';
 
-    public function save(){
+    #[Rule('required|string')]
+    public $event_id = '';
+
+    public function mount()
+    {
+        $this->event_id = request()->event_id;
+    }
+
+    public function save()
+    {
         $this->validate();
 
-        RSVPModel::create(
-            $this->only(['name', 'email'])
-        );
+        RSVPModel::create([
+            'name' => $this->name,
+            'email' => $this->email,
+            'event_id' => $this->event_id
+        ]);
 
         $this->reset();
 

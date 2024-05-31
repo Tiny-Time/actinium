@@ -24,7 +24,6 @@
 
     <!-- Styles -->
     @filamentStyles
-    @livewireStyles
 
     <!-- Scripts -->
     @vite(['resources/css/app.css'])
@@ -39,29 +38,7 @@
     <x-banner />
 
     @php
-        $templates = [
-            [
-                'id' => 1,
-                'name' => 'Enchanted Midnight Forest',
-                'category' => 'Anniversary',
-                'image' => '/images/templates/Anniversary_ Enchanted_Midnight_Forest.png',
-                'type' => 'free',
-            ],
-            [
-                'id' => 2,
-                'name' => 'Anniversary Scarlet Serenity',
-                'category' => 'Anniversary',
-                'image' => '/images/templates/Anniversary_ Scarlet_Serenity.png',
-                'type' => 'free',
-            ],
-            [
-                'id' => 3,
-                'name' => 'Dark Blue Sequins',
-                'category' => 'Birthday',
-                'image' => '/images/templates/Birthday_ Dark_Blue_Sequins.png',
-                'type' => 'free',
-            ],
-        ];
+        $templates = \App\Models\Template::take(3);
     @endphp
     @include('layouts.header')
     <div class="flex flex-col items-center justify-center gap-3 px-4 py-10 text-center">
@@ -76,8 +53,8 @@
         <div class="grid gap-3 mx-auto mt-3 md:grid-cols-3">
             @foreach ($templates as $temp)
                 <div class="overflow-hidden bg-gray-200 rounded">
-                    <img src="{{ $temp['image'] }}" alt="{{ $temp['name'] }}" class="object-cover w-full h-44">
-                    <p class="px-4 my-2 font-semibold text-md">{{ $temp['name'] }}</p>
+                    <img src="{{ $temp->image }}" alt="{{ $temp->name }}" class="object-cover w-full h-44">
+                    <p class="px-4 my-2 font-semibold text-md">{{ $temp->name }}</p>
                 </div>
             @endforeach
         </div>
@@ -96,7 +73,6 @@
     @include('modals.create-timer')
     @include('modals.create-event')
 
-    @livewireScriptConfig
     @filamentScripts
     @stack('js')
     @include('layouts.clipboard')

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -26,6 +28,17 @@ class Event extends Model
         'user_id',
         'status',
         'public',
+        'address',
+        'country',
+        'state',
+        'contact_name',
+        'contact_email_address',
+        'contact_phone_number',
+        'check_in_time',
+        'event_end_time',
+        'guestbook',
+        'rsvp',
+        'post_event_massage',
         'deleted_at',
     ];
 
@@ -43,7 +56,29 @@ class Event extends Model
      *
      * @return BelongsTo
      */
-    public function user() : BelongsTo {
+    public function user(): BelongsTo
+    {
         return $this->belongsTo(User::class);
+    }
+
+    public function template(): BelongsTo
+    {
+        return $this->belongsTo(Template::class);
+    }
+
+    /**
+     * Get the guestbooks for the event.
+     */
+    public function guestbooks(): HasMany
+    {
+        return $this->hasMany(Guestbook::class, 'event_id', 'event_id');
+    }
+
+    /**
+     * Get the RSVPs for the event.
+     */
+    public function rsvps(): HasMany
+    {
+        return $this->hasMany(RSVP::class, 'event_id', 'event_id');
     }
 }

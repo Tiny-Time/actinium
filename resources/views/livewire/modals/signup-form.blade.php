@@ -2,8 +2,8 @@
     <form wire:submit="submit" method="post">
         <div>
             <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
-                <x-label for="email" value="{{ __('Your Email') }}" />
-                <x-input id="email" type="email" name="email" wire:model.live="email" :value="old('email')" required autofocus autocomplete="email"
+                <x-label for="su-email" value="{{ __('Your Email') }}" />
+                <x-input id="su-email" type="email" name="email" wire:model.live="email" :value="old('email')" required autofocus autocomplete="email"
                     placeholder="Your email goes here..." />
             </div>
             @error('email')

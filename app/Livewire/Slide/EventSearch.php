@@ -4,6 +4,7 @@ namespace App\Livewire\Slide;
 
 use App\Models\Event;
 use Livewire\Component;
+use App\Models\Template;
 use Livewire\WithPagination;
 
 class EventSearch extends Component
@@ -14,11 +15,7 @@ class EventSearch extends Component
 
     public function mount(): void
     {
-        global $templates;
-
-        require_once __DIR__.'/../../templates.php';
-
-        $this->templates = $templates;
+        $this->templates = Template::all();;
     }
 
     public function render()

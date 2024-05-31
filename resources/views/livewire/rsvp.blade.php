@@ -1,5 +1,4 @@
 <form wire:submit="save" method="post" class="mt-4">
-
     <!-- RSVP: Form - Input - Name -->
     <div class="relative flex flex-col w-full">
         <!-- RSVP: Form - Input - Label -->
@@ -48,8 +47,8 @@
         <button type="submit"
             class="flex transition duration-150 ease-in-out px-4 py-2 uppercase bg-white shadow rounded-3xl text-sm text-[#32214d] font-bold"
             wire:target="save" wire:loading.class="cursor-not-allowed">
-            <svg wire:target="save" wire:loading class="w-5 h-5 mr-3 -ml-1 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 24 24">
+            <svg wire:target="save" wire:loading class="w-5 h-5 mr-3 -ml-1 animate-spin"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
                 </circle>
                 <path class="opacity-75" fill="currentColor"
