@@ -40,16 +40,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
+        rel="preload" as="style" onload="this.rel='stylesheet'">
     <link href="https://fonts.googleapis.com/css2?family=Trochut:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
+        rel="preload" as="style" onload="this.rel='stylesheet'">
     <link
         href="https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
+        rel="preload" as="style" onload="this.rel='stylesheet'">
 
     <!-- Styles -->
     @filamentStyles
-    @livewireStyles
 
     <!-- Scripts -->
     @vite(['resources/css/app.css'])
@@ -57,7 +56,7 @@
     @stack('css')
 
     <!-- Produktly -->
-    <script>
+    <script type="text/javascript" defer>
         (function(w, d, f) {
             var a = d.getElementsByTagName('head')[0];
             var s = d.createElement('script');
@@ -69,7 +68,7 @@
             a.appendChild(s);
         })(window, document, "https://public.produktly.com/js/main.js");
     </script>
-    <script type="application/ld+json">
+    <script type="application/ld+json" defer>
         {
           "@context": "https://schema.org",
           "@type": "Organization",
@@ -109,16 +108,17 @@
     @endif
 
     <!-- Modals -->
-    @if (!request()->routeIs('login') && !request()->routeIs('register'))
+    @if (!request()->routeIs('login') && !request()->routeIs('register') && auth()->guest())
         @include('modals.login')
         @include('modals.signup')
         @include('modals.forgot-password')
     @endif
 
-    @include('modals.create-timer')
-    @include('modals.create-event')
+    @if (request()->routeIs('homePage'))
+        @include('modals.create-timer')
+        @include('modals.create-event')
+    @endif
 
-    @livewireScriptConfig
     @filamentScripts
     @stack('js')
     @include('layouts.clipboard')

@@ -119,7 +119,7 @@
                                             <div class="w-full" x-show="selectedImage === 1">
                                                 <label for="template1">
                                                     <img alt="template1"
-                                                        src="{{ Vite::asset('resources/images/Anniversary_ Enchanted_Midnight_Forest.png') }}"
+                                                        src="{{ Vite::asset('resources/images/Anniversary_ Enchanted_Midnight_Forest.webp') }}"
                                                         class="w-full h-64 rounded-lg shadow-md">
                                                 </label>
                                                 <input type="radio" name="template" value="1"
@@ -129,7 +129,7 @@
                                             <div class="w-full" x-show="selectedImage === 2">
                                                 <label for="template2">
                                                     <img alt="template2"
-                                                        src="{{ Vite::asset('resources/images/Anniversary_ Scarlet_Serenity.png') }}"
+                                                        src="{{ Vite::asset('resources/images/Anniversary_ Scarlet_Serenity.webp') }}"
                                                         class="w-full h-64 rounded-lg shadow-md">
                                                 </label>
                                                 <input type="radio" name="template" value="2"
@@ -139,7 +139,7 @@
                                             <div class="w-full" x-show="selectedImage === 3">
                                                 <label for="template3">
                                                     <img alt="template3"
-                                                        src="{{ Vite::asset('resources/images/Birthday_ Dark_Blue_Sequins.png') }}"
+                                                        src="{{ Vite::asset('resources/images/Birthday_ Dark_Blue_Sequins.webp') }}"
                                                         class="w-full h-64 rounded-lg shadow-md">
                                                 </label>
                                                 <input type="radio" name="template" value="3"

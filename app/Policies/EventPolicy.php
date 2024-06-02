@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\Event;
 use App\Models\User;
+use App\Models\Event;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class EventPolicy
@@ -25,10 +25,10 @@ class EventPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Event  $page
+     * @param  \App\Models\Event  $event
      * @return bool
      */
-    public function view(User $user, Event $page): bool
+    public function view(User $user, Event $event): bool
     {
         return $user->can('view_event');
     }
@@ -48,10 +48,10 @@ class EventPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Event  $page
+     * @param  \App\Models\Event  $event
      * @return bool
      */
-    public function update(User $user, Event $page): bool
+    public function update(User $user, Event $event): bool
     {
         return $user->can('update_event');
     }
@@ -60,10 +60,10 @@ class EventPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Event  $page
+     * @param  \App\Models\Event  $event
      * @return bool
      */
-    public function delete(User $user, Event $page): bool
+    public function delete(User $user, Event $event): bool
     {
         return $user->can('delete_event');
     }
@@ -83,10 +83,10 @@ class EventPolicy
      * Determine whether the user can permanently delete.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Event  $page
+     * @param  \App\Models\Event  $event
      * @return bool
      */
-    public function forceDelete(User $user, Event $page): bool
+    public function forceDelete(User $user, Event $event): bool
     {
         return $user->can('force_delete_event');
     }
@@ -106,10 +106,10 @@ class EventPolicy
      * Determine whether the user can restore.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Event  $page
+     * @param  \App\Models\Event  $event
      * @return bool
      */
-    public function restore(User $user, Event $page): bool
+    public function restore(User $user, Event $event): bool
     {
         return $user->can('restore_event');
     }
@@ -129,10 +129,10 @@ class EventPolicy
      * Determine whether the user can replicate.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Event $page
+     * @param  \App\Models\Event  $event
      * @return bool
      */
-    public function replicate(User $user, Event $page): bool
+    public function replicate(User $user, Event $event): bool
     {
         return $user->can('replicate_event');
     }

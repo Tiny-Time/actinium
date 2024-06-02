@@ -4,7 +4,10 @@ function calculateTimeRemaining(targetDate) {
 
     if (timeRemaining <= 0) {
         var audio = new Audio("/audio/alarm.mp3");
-        audio.play();
+        audio
+            .play()
+            .then(() => {})
+            .catch((error) => {});
         clearInterval(timerInterval);
         return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     }
@@ -28,7 +31,6 @@ function userTimezone() {
 }
 
 function updateCountdown(datetime, timezone) {
-
     const localOffset = new Date().getTimezoneOffset(); // Get the local timezone offset in minutes
 
     let targetDate = new Date(datetime);
@@ -39,7 +41,7 @@ function updateCountdown(datetime, timezone) {
     if (offsetMatch) {
         offsetHours = parseInt(offsetMatch[1]);
     }
-    
+
     // Extract the offset value from the timezone parameter
     const offsetMatchLocal = tzNow.match(/UTC([+-]\d+)/i);
     let offsetHoursLocal = 0;
@@ -47,9 +49,12 @@ function updateCountdown(datetime, timezone) {
         offsetHoursLocal = parseInt(offsetMatchLocal[1]);
     }
 
-    if(tzNow != timezone) {
+    if (tzNow != timezone) {
         // Use the timezone that was used to create the timer for countdown
-        targetDate = new Date(targetDate.getTime() + (-1 * offsetHours + offsetHoursLocal) * 60 * 60 * 1000)
+        targetDate = new Date(
+            targetDate.getTime() +
+                (-1 * offsetHours + offsetHoursLocal) * 60 * 60 * 1000
+        );
     }
 
     const countdown = calculateTimeRemaining(targetDate);

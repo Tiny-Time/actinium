@@ -16,8 +16,11 @@ class AdvancedEvent extends Component
         'location' => 'required|string|min:3',
     ];
 
-    public function mount(){
-        include 'templates.php';
+    public function mount()
+    {
+        global $templates;
+
+        require_once __DIR__ . '/../templates.php';
 
         $this->templates = $templates;
 
@@ -35,11 +38,13 @@ class AdvancedEvent extends Component
         $this->currentStep = 2;
     }
 
-    public function prev(){
+    public function prev()
+    {
         $this->currentStep = 1;
     }
 
-    public function save(){
+    public function save()
+    {
         $this->validate([
             'title' => 'required|string|min:3',
             'description' => 'nullable|string|min:10',
@@ -51,8 +56,11 @@ class AdvancedEvent extends Component
         $this->currentStep = 3;
     }
 
-    function searchTemplatesByName() {
-        include 'templates.php';
+    function searchTemplatesByName()
+    {
+        global $templates;
+
+        require_once __DIR__ . '/../templates.php';
 
         $this->templates = $templates;
 
@@ -76,8 +84,10 @@ class AdvancedEvent extends Component
     {
         if ($this->search) {
             $this->templates = $this->searchTemplatesByName();
-        }else{
-            include 'templates.php';
+        } else {
+            global $templates;
+
+            require_once __DIR__ . '/../templates.php';
 
             $this->templates = $templates;
         }

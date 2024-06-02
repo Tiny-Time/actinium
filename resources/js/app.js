@@ -2,6 +2,7 @@ import "./bootstrap";
 
 import "@splidejs/splide/css";
 import Splide from "@splidejs/splide";
+window.Splide = Splide;
 
 import $ from "jquery";
 window.jQuery = window.$ = $;
@@ -9,20 +10,16 @@ window.jQuery = window.$ = $;
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
 
-import {
-    Livewire,
-    Alpine,
-} from "../../vendor/livewire/livewire/dist/livewire.esm";
-Livewire.start();
-
 /* Tooltip */
-document.addEventListener("alpine:init", () => {
-    Alpine.directive("tooltip", (el, value, { name }) => {
-        const placement = name.split(".")[2];
+document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("alpine:init", () => {
+        Alpine.directive("tooltip", (el, value, { name }) => {
+            const placement = name.split(".")[2];
 
-        el.setAttribute("title", value);
+            el.setAttribute("title", value);
 
-        tippy(el, { placement: placement });
+            tippy(el, { placement: placement });
+        });
     });
 });
 
@@ -35,7 +32,7 @@ import.meta.glob([
 
 /* Splide Slider */
 
-if ($(".splide").length > 0) {
+if ($("#splide").length > 0) {
     var splide = new Splide(".splide", {
         perPage: 3,
         focus: 0,

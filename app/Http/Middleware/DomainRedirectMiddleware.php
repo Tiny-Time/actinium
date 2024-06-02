@@ -59,7 +59,7 @@ class DomainRedirectMiddleware
 
                 // Restrict admin access to users.
                 if (str_contains($uri, '/admin')) {
-                    return abort(404);
+                    return redirect('404');
                 }
             }
         } else {

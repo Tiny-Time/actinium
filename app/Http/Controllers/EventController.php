@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Template;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -61,18 +62,11 @@ class EventController extends Controller
         $event = Event::where('event_id', $event_id)->where('status', 1)->first();
 
         if ($event) {
-            $template_id = $event->template_id;
-
-            if ($template_id == 1) {
-                return view('themes.anniversary.enchanted-midnight-forest.index', compact('event'));
-            } elseif ($template_id == 2) {
-                return view('themes.anniversary.scarlet-serenity.index', compact('event'));
-            } elseif ($template_id == 3) {
-                return view('themes.birthday.dark-blue-sequins.index', compact('event'));
-            }
+            $template = Template::find($event->template_id);
+            return view("$template->path", compact('event'));
         }
 
-        return abort(404);
+        return redirect('404');
     }
 
     /**

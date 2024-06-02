@@ -3,14 +3,15 @@ const e = {
     counterInterval: null,
 
     // Start Event Timer or Counter.
-    startEvent() { // Get all the form values.
-        const ct_title = $('#ct_title').val();
-        const ct_date = $('#ct_date').val();
-        const ct_hour = $('#ct_hour').val();
-        const ct_min = $('#ct_min').val();
-        const ct_sec = $('#ct_sec').val();
-        const ct_type = $('#ct_type').val();
-        const autostart = $('#autostart').is(':checked');
+    startEvent() {
+        // Get all the form values.
+        const ct_title = $("#ct_title").val();
+        const ct_date = $("#ct_date").val();
+        const ct_hour = $("#ct_hour").val();
+        const ct_min = $("#ct_min").val();
+        const ct_sec = $("#ct_sec").val();
+        const ct_type = $("#ct_type").val();
+        const autostart = $("#autostart").is(":checked");
 
         // Get the current date
         const currentDate = new Date();
@@ -25,16 +26,16 @@ const e = {
         const ct_day = Math.floor(timeDifference / (1000 * 60 * 60 * 24)) + 1;
 
         // Set the event value.
-        $('.eventTitle').text(ct_title);
-        $('.days').text(ct_day);
-        $('.hours').text(ct_hour);
-        $('.mins').text(ct_min);
-        $('.secs').text(ct_sec);
+        $(".eventTitle").text(ct_title);
+        $(".days").text(ct_day);
+        $(".hours").text(ct_hour);
+        $(".mins").text(ct_min);
+        $(".secs").text(ct_sec);
 
         // Close modal
         const alpineInstance = Alpine;
         if (alpineInstance) {
-            Alpine.store('openCreateTimerModal').toggle()
+            Alpine.store("openCreateTimerModal").toggle();
         }
 
         // Start the event timer or counter.
@@ -46,30 +47,32 @@ const e = {
         clearInterval(e.timerInterval);
         clearInterval(e.counterInterval);
 
-        if (ct_type == 'timer') {
+        if (ct_type == "timer") {
             autostart ? e.startTimer(d, h, m, s) : e.setVal(d, h, m, s);
-            Alpine.store('counter').on = false;
+            Alpine.store("counter").on = false;
         } else {
             autostart ? e.startCounter(d, h, m, s) : e.setVal(d, h, m, s);
-            Alpine.store('counter').on = true;
+            Alpine.store("counter").on = true;
         }
 
         if (autostart) {
-            Alpine.store('playBtn').on = false;
+            Alpine.store("playBtn").on = false;
         } else {
-            Alpine.store('playBtn').on = true;
+            Alpine.store("playBtn").on = true;
         }
     },
     startTimer(d, h, m, s) {
-
         let totalSeconds = d * 86400 + h * 3600 + m * 60 + s;
 
         function updateTimer() {
             if (totalSeconds < 0) {
                 clearInterval(e.timerInterval);
-                var audio = new Audio('/audio/alarm.mp3');
-                audio.play();
-                Alpine.store('playBtn').on = true;
+                var audio = new Audio("/audio/alarm.mp3");
+                audio
+                    .play()
+                    .then(() => {})
+                    .catch((error) => {});
+                Alpine.store("playBtn").on = true;
             } else {
                 const days = Math.floor(totalSeconds / 86400);
                 const hours = Math.floor((totalSeconds % 86400) / 3600);
@@ -94,9 +97,12 @@ const e = {
         function updateCounter() {
             if (totalSeconds > targetSeconds) {
                 clearInterval(e.counterInterval);
-                var audio = new Audio('/audio/alarm.mp3');
-                audio.play();
-                Alpine.store('playBtn').on = true;
+                var audio = new Audio("/audio/alarm.mp3");
+                audio
+                    .play()
+                    .then(() => {})
+                    .catch((error) => {});
+                Alpine.store("playBtn").on = true;
             } else {
                 const days = Math.floor(totalSeconds / 86400);
                 const hours = Math.floor((totalSeconds % 86400) / 3600);
@@ -116,27 +122,27 @@ const e = {
         e.counterInterval = setInterval(updateCounter, 1000);
     },
     setVal(d, h, m, s) {
-        $('.days').text(d);
-        $('.hours').text(h);
-        $('.mins').text(m);
-        $('.secs').text(s);
+        $(".days").text(d);
+        $(".hours").text(h);
+        $(".mins").text(m);
+        $(".secs").text(s);
     },
     play(mobile = false) {
         if (mobile) {
-            var d = parseInt($('#mDays').text(), 10);
-            var h = parseInt($('#mHours').text(), 10);
-            var m = parseInt($('#mMins').text(), 10);
-            var s = parseInt($('#mSecs').text(), 10);
-        }else{
-            var d = parseInt($('#days').text(), 10);
-            var h = parseInt($('#hours').text(), 10);
-            var m = parseInt($('#mins').text(), 10);
-            var s = parseInt($('#secs').text(), 10);
+            var d = parseInt($("#mDays").text(), 10);
+            var h = parseInt($("#mHours").text(), 10);
+            var m = parseInt($("#mMins").text(), 10);
+            var s = parseInt($("#mSecs").text(), 10);
+        } else {
+            var d = parseInt($("#days").text(), 10);
+            var h = parseInt($("#hours").text(), 10);
+            var m = parseInt($("#mins").text(), 10);
+            var s = parseInt($("#secs").text(), 10);
         }
 
         const alpineInstance = Alpine;
         if (alpineInstance) {
-            const counter = Alpine.store('counter').on;
+            const counter = Alpine.store("counter").on;
 
             if (counter) {
                 e.startCounter(d, h, m, s);
@@ -161,7 +167,7 @@ const e = {
         } else {
             document.title = `${minutes} : ${seconds} - TinyTime`;
         }
-    }
-}
+    },
+};
 
 export default e;

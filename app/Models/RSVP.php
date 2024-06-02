@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class RSVP extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -17,5 +19,12 @@ class RSVP extends Model
     protected $fillable = [
         'name',
         'email',
+        'event_id',
+        'deleted_at',
     ];
+
+    public function event(): BelongsTo
+    {
+        return $this->belongsTo(Event::class, 'event_id', 'event_id');
+    }
 }

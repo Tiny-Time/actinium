@@ -20,7 +20,7 @@ class RecentEvents extends BaseWidget
     {
         return $table
             ->query(
-                fn (Event $query) => $query->where('user_id', auth()->user()->id)->take(5)
+                fn (Event $query) => $query->where('user_id', auth()->user()->id)->latest()->take(5)
             )
             ->columns([
                 Tables\Columns\TextColumn::make('title')

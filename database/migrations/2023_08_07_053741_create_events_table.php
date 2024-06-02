@@ -18,7 +18,7 @@ return new class extends Migration
             $table->dateTime('date_time');
             $table->string('event_id');
             $table->integer('template_id');
-            $table->foreignId('user_id')->nullable();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->nullable();
             $table->boolean('public')->default(1);
             $table->boolean('status')->default(1);
             $table->softDeletes();

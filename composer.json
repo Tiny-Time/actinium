@@ -14,6 +14,7 @@
         "awcodes/filament-tiptap-editor": "^3.0@beta",
         "awcodes/filament-versions": "^2.0",
         "bezhansalleh/filament-shield": "^3.2",
+        "calebporzio/sushi": "^2.5",
         "custom-andreaselia/analytics": "dev-advanced-event",
         "custom-lara-zeus/sky": "*",
         "filament/filament": "^3.2",

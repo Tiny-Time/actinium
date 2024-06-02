@@ -23,7 +23,7 @@
                 <a href="{{ route('filament.user.pages.dashboard') }}"
                     class="px-6 py-2 font-semibold text-gray-100 uppercase bg-red-400 rounded">Dashboard</a>
             @else
-                <button @click="openSignUpModal = !openSignUpModal"
+                <button type="button" @click="openSignUpModal = !openSignUpModal"
                     class="px-6 py-2 font-semibold text-gray-100 uppercase bg-red-400 rounded">Login/sign-up</button>
             @endauth
         </div>
@@ -31,7 +31,8 @@
     {{-- Mobile Nav --}}
     <div class="px-4 py-2 mx-auto max-w-7xl sm:px-6 lg:px-8 md:hidden" x-data="{ menuOverlay: false, searchOverlay: false }">
         <div class="flex items-center justify-between">
-            <button class="relative group" @click="menuOverlay = true">
+            <button type="button" class="relative group" @click="menuOverlay = true">
+                <span class="sr-only">hamburger</span>
                 <div
                     class="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden">
                     <div
@@ -63,7 +64,8 @@
             x-transition:leave-end="-translate-x-full">
             <div class="flex items-center justify-between mt-3">
                 <h3 class="text-2xl font-bold uppercase font-trochut">Menu</h3>
-                <button @click="menuOverlay = false">
+                <button type="button" @click="menuOverlay = false">
+                    <span class="sr-only">Close</span>
                     <svg width="19" height="18" class="cursor-pointer" viewBox="0 0 19 18" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
