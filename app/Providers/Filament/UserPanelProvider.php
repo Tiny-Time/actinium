@@ -127,6 +127,7 @@ class UserPanelProvider extends PanelProvider
                     ]),
             ])
             ->favicon(asset('/favicon.png'))
-            ->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js', 'resources/css/custom.css']);
+            ->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js', 'resources/css/custom.css'])
+            ->databaseNotifications();
     }
 }

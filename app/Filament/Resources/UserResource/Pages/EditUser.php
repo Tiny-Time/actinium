@@ -25,4 +25,9 @@ class EditUser extends EditRecord
     {
         return trans('filament-user::user.resource.title.edit');
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

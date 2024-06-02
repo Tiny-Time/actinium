@@ -2,7 +2,7 @@
 
 <x-guest-layout>
     @push('css')
-       {{ $css }}
+        {{ $css }}
     @endpush
 
     @push('js')
@@ -65,8 +65,8 @@
             <!-- Social links -->
             <div class="flex justify-center gap-2 mt-3 toz-sl">
                 <!-- Facebook Link -->
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('homePage') }}" rel="noopener noreferrer"
-                    target="_blank"
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('homePage') }}"
+                    rel="noopener noreferrer" target="_blank"
                     class="flex items-center justify-center bg-white text-[#091253] hover:text-green-600 rounded-full toz-social-link w-10 h-10">
                     <span class="sr-only">Facebook</span>
                     <svg class="w-5 h-5" width="14" height="26" viewBox="0 0 14 26" fill="none"
@@ -118,4 +118,6 @@
     @else
         @include('modals.require-sub')
     @endif
+
+    @livewire('modals.report-event')
 </x-guest-layout>
