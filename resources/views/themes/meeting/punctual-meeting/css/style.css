@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0 auto;
+}
+
+.toz {
+    background: linear-gradient(0deg, rgba(23, 31, 37, 0.40) 0%, rgba(23, 31, 37, 0.40) 100%),
+        url("/resources/views/themes/meeting/punctual-meeting/images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Roboto Slab', serif;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 20px;
+    text-align: center;
+}
+
+.toz-title {
+    font-size: 64px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+}
+
+.toz-subtitle {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 400;
+    margin: 0;
+}
+
+.toz-timer {
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    color: white;
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.toz-ec-d img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.toz-unit {
+    display: flex;
+    justify-content: center;
+}
+
+.toz-unit>sub {
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.toz-control-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.toz-tcb {
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8%;
+    padding: 10px;
+    border: 2px solid #f2f2f2;
+    background: #171f25;
+}
+
+.toz-c-btn {
+    display: flex;
+    padding: 5px 16px;
+    align-self: stretch;
+    align-items: center;
+    font-size: 24px;
+    color: #f2f2f2;
+    font-weight: 500;
+    border-radius: 12px;
+    border: 2px solid #f2f2f2;
+    background: #171f25;
+    outline: none;
+}
+
+.toz-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: circle(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.toz-subscription {
+    border-radius: 24px;
+    border: 3px solid #f2f2f2;
+    background: rgba(23, 31, 37, 0.5);
+}
+
+.toz-subscription-subtitle {
+    color: #fff;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.toz-form {
+    border-radius: 12px;
+    padding: 5px;
+    border: 2px solid #f2f2f2;
+    background: rgba(242, 242, 242, 0.25);
+}
+
+.toz-input {
+    font-size: 20px;
+    color: #fff;
+    padding: 5px;
+    width: 250px;
+    border: none;
+    padding: 5px;
+    outline: none;
+    background: transparent;
+}
+
+#tsubscribe > input::placeholder {
+    color: #fff !important;
+}
+
+.toz-f-btn {
+    align-items: center;
+    font-size: 18px;
+    outline: none;
+    padding: 5px 15px;
+    color: #f2f2f2;
+    border-radius: 6px;
+    border: 2px solid #f2f2f2;
+    background: #171f25;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.toz-sl {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: max-content;
+    margin: 10px auto;
+}
+
+.toz-sl a:hover,
+.toz-f-btn:hover {
+    color: #2563eb;
+}
+
+/* social links */
+
+.toz-sl a {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 2px solid #f2f2f2;
+    background: #171f25;
+}
+
+.toz-social-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff !important;
+    border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.toz-policy,
+.toz-policy a {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0 0 20px 0;
+    line-height: normal;
+}
+
+.toz-watermark,
+.toz-watermark a {
+    color: #ffffff80;
+    font-size: 24px;
+    width: 100%;
+    text-decoration: none;
+    padding: 50px 10px 50px 0px;
+    font-weight: 700;
+    text-align: end;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-title {
+        font-size: 22px;
+    }
+
+    .toz-subtitle {
+        font-size: 16px;
+    }
+
+    .toz-timer {
+        font-size: 64px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 130px;
+        height: 130px;
+    }
+
+    .toz-ec-d>div {
+        margin-top: -15px;
+    }
+
+    .toz-unit>sub {
+        font-size: 14px;
+    }
+
+    .toz-control-buttons {
+        gap: 5px;
+    }
+
+    .toz-tcb {
+        width: 30px;
+        border-radius: 8px;
+        align-items: center;
+        height: 30px;
+        padding: 5px;
+    }
+
+    .toz-c-btn {
+        padding: 2px 10px;
+    }
+
+    .toz-subscription {
+        gap: 0;
+    }
+
+    .toz-subscription-subtitle {
+        font-size: 16px;
+        margin: 0 auto;
+    }
+
+    .toz-form {
+        height: 45px;
+    }
+
+    .toz-input {
+        font-size: 16px;
+        width: 170px;
+    }
+
+    .toz-f-btn {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .toz-sl {
+        margin: 0 auto;
+    }
+
+    .toz-sl a {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+}

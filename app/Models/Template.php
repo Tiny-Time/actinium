@@ -22,7 +22,7 @@ class Template extends Model
                 'image' => '/images/templates/Anniversary_ Enchanted_Midnight_Forest.png',
                 'type' => 'free',
                 'path' => 'themes.anniversary.enchanted-midnight-forest.index',
-                'points' => '',
+                'points' => 0,
             ],
             [
                 'id' => 2,
@@ -32,7 +32,7 @@ class Template extends Model
                 'image' => '/images/templates/Anniversary_ Scarlet_Serenity.png',
                 'type' => 'free',
                 'path' => 'themes.anniversary.scarlet-serenity.index',
-                'points' => '',
+                'points' => 0,
             ],
             [
                 'id' => 3,
@@ -42,7 +42,17 @@ class Template extends Model
                 'image' => '/images/templates/Birthday_ Dark_Blue_Sequins.png',
                 'type' => 'free',
                 'path' => 'themes.birthday.dark-blue-sequins.index',
-                'points' => '',
+                'points' => 0,
+            ],
+            [
+                'id' => 4,
+                'name' => 'Punctual Meeting',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => '/images/templates/meeting/Punctual Meeting/preview.webp',
+                'type' => 'paid',
+                'path' => 'themes.meeting.punctual-meeting.index',
+                'points' => 5,
             ],
         ];
     }

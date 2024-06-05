@@ -298,7 +298,7 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
         return view('errors.404');
     });
 
-    Route::fallback(function () {
-        return redirect('404');
-    });
+    // Route::fallback(function () {
+    //     return redirect('404');
+    // });
 });
