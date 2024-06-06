@@ -2,7 +2,7 @@
 
 @if (
     $event->check_in_time ||
-        $event->party_end_time ||
+        $event->event_end_time ||
         $event->address ||
         $event->country ||
         $event->state ||
@@ -12,11 +12,11 @@
     <div class="mt-4 text-lg text-center text-white">
         <h3 class="text-2xl font-bold text-center md:text-3xl">Event Details</h3>
         @if ($event->check_in_time)
-            <p class="mt-2"><strong>Check-In Time:</strong> {{ $event->check_in_time }}</p>
+            <p class="mt-2"><strong>Check-In Time:</strong> {{ \Carbon\Carbon::parse($event->check_in_time)->format('h:i A') }}</p>
         @endif
 
-        @if ($event->party_end_time)
-            <p><strong>Party End Time:</strong> {{ $event->party_end_time }}</p>
+        @if ($event->event_end_time)
+            <p><strong>Party End Time:</strong> {{ \Carbon\Carbon::parse($event->event_end_time)->format('h:i A') }}</p>
         @endif
 
         @if ($event->address || $event->country || $event->state)

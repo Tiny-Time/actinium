@@ -23,10 +23,8 @@ class EventViewsOverview extends BaseWidget
 
         return [
             Stat::make('Total Views', PageView::where('uri', '/event/'.$event_id)->count())
-                ->chart([7, 2, 10, 3, 15, 4, 17])
                 ->color('primary'),
             Stat::make('Unique Views', PageView::where('uri', '/event/'.$event_id)->distinct('session')->count())
-                ->chart([7, 2, 10, 3, 15, 4, 17])
                 ->color('success'),
         ];
     }
