@@ -346,10 +346,9 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
             } elseif ($plan->type == 'free' && $activePlan) {
                 if ($request->downgrade) {
 
-                    $request->user()->subscriptions->where('stripe_status', 'active')->each->cancel();
-                    // Get recently cancel subscription
-                    $recentlyCancelled = Subscription::where('user_id', $request->user()->id)->where('stripe_status', 'canceled')->latest()->first();
-                    $ending = $recentlyCancelled?->ends_at->format('F j, Y');
+                    $request->user()->subscription($activePlan->type)->cancel();
+                    // Get the ending date of the subscription
+                    $ending = $request->user()->subscription($activePlan->type)->ends_at->format('d M, Y');
 
                     Notification::make()
                         ->title("Successful downgrade!")
