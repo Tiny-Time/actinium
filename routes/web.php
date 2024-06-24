@@ -347,7 +347,9 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
                 if ($request->downgrade) {
 
                     $request->user()->subscription($activePlan->type)->cancel();
-                    $ending = $activePlan->ends_at->format('F j, Y');
+                    // Get recently cancel subscription
+                    $recentlyCancelled = Subscription::where('user_id', $request->user()->id)->where('stripe_status', 'canceled')->latest()->first();
+                    $ending = $recentlyCancelled->ends_at->format('F j, Y');
 
                     Notification::make()
                         ->title("Successful downgrade!")
