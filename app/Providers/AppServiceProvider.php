@@ -3,12 +3,15 @@
 namespace App\Providers;
 
 use Livewire\Livewire;
+use Laravel\Cashier\Cashier;
 use Filament\Support\Assets\Js;
 use Spatie\Health\Facades\Health;
+use Filament\View\PanelsRenderHook;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Filament\Support\Facades\FilamentView;
 use Filament\Support\Facades\FilamentAsset;
 use Spatie\Health\Checks\Checks\CacheCheck;
 use Spatie\Health\Checks\Checks\DebugModeCheck;
@@ -58,5 +61,12 @@ class AppServiceProvider extends ServiceProvider
         FilamentAsset::register([
             Js::make('Produktly', __DIR__ . '/../../resources/js/Produktly.js'),
         ]);
+
+        FilamentView::registerRenderHook(
+            PanelsRenderHook::GLOBAL_SEARCH_AFTER,
+            fn (): \Illuminate\Contracts\View\View => view('user.tokens'),
+        );
+
+        Cashier::calculateTaxes();
     }
 }

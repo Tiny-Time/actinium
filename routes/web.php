@@ -1,14 +1,17 @@
 <?php
 
+use App\Models\Plan;
 use App\Models\User;
 use App\Mail\Subscribed;
 use App\Mail\Unsubscribed;
 use App\Models\Testimonial;
+use App\Models\Transaction;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Livewire\EventSearch;
 use App\Models\EmailSubscriber;
 use Laravel\Jetstream\Jetstream;
+use Laravel\Cashier\Subscription;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Spatie\Sitemap\SitemapGenerator;
@@ -48,75 +51,76 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
 
     /* ----------------------------  Social SignIn/SignUp. --------------------------- */
 
-    Route::get('/social-auth', function () {
-        return view('auth.social-auth');
-    })->name('socialAuth');
+    Route::middleware(['guest'])->group(function () {
+        Route::get('/social-auth', function () {
+            return view('auth.social-auth');
+        })->name('socialAuth');
 
-    // Google.
+        // Google.
 
-    Route::get('/auth/google', function () {
-        return Socialite::driver('google')->redirect();
-    })->name('google');
+        Route::get('/auth/google', function () {
+            return Socialite::driver('google')->redirect();
+        })->name('google');
 
-    Route::get('/auth/google-callback', function (Request $request) {
-        $response = Socialite::driver('google')->user();
+        Route::get('/auth/google-callback', function (Request $request) {
+            $response = Socialite::driver('google')->user();
 
-        $user = User::where('email', $response->user['email'])->first();
+            $user = User::where('email', $response->user['email'])->first();
 
-        if ($user) {
-            Auth::login($user);
+            if ($user) {
+                Auth::login($user);
 
-            $request->session()->regenerate();
+                $request->session()->regenerate();
 
-            return redirect()->route('filament.user.pages.dashboard');
-        } else {
-            $newUser = new User();
-            $newUser->name = $response->user['name'];
-            $newUser->email = $response->user['email'];
-            $newUser->password = bcrypt(Str::random(16));
-            $newUser->email_verified_at = now();
-            $newUser->save();
+                return redirect()->route('filament.user.pages.dashboard');
+            } else {
+                $newUser = new User();
+                $newUser->name = $response->user['name'];
+                $newUser->email = $response->user['email'];
+                $newUser->password = bcrypt(Str::random(16));
+                $newUser->email_verified_at = now();
+                $newUser->save();
 
-            Auth::login($newUser);
+                Auth::login($newUser);
 
-            $request->session()->regenerate();
+                $request->session()->regenerate();
 
-            return redirect()->route('filament.user.pages.dashboard');
-        }
-    })->name('googleCallback');
+                return redirect()->route('filament.user.pages.dashboard');
+            }
+        })->name('googleCallback');
 
-    // Facebook.
+        // Facebook.
 
-    Route::get('/auth/facebook', function () {
-        return Socialite::driver('facebook')->redirect();
-    })->name('facebook');
+        Route::get('/auth/facebook', function () {
+            return Socialite::driver('facebook')->redirect();
+        })->name('facebook');
 
-    Route::get('/auth/facebook-callback', function (Request $request) {
-        $response_user = Socialite::driver('facebook')->user();
-        $user = User::where('email', $response_user->email)->first();
+        Route::get('/auth/facebook-callback', function (Request $request) {
+            $response_user = Socialite::driver('facebook')->user();
+            $user = User::where('email', $response_user->email)->first();
 
-        if ($user) {
-            Auth::login($user);
+            if ($user) {
+                Auth::login($user);
 
-            $request->session()->regenerate();
+                $request->session()->regenerate();
 
-            return redirect()->route('filament.user.pages.dashboard');
-        } else {
-            $newUser = new User();
-            $newUser->name = $response_user->name;
-            $newUser->email = $response_user->email;
-            $newUser->password = bcrypt(Str::random(16));
-            $newUser->email_verified_at = now();
-            $newUser->save();
+                return redirect()->route('filament.user.pages.dashboard');
+            } else {
+                $newUser = new User();
+                $newUser->name = $response_user->name;
+                $newUser->email = $response_user->email;
+                $newUser->password = bcrypt(Str::random(16));
+                $newUser->email_verified_at = now();
+                $newUser->save();
 
-            Auth::login($newUser);
+                Auth::login($newUser);
 
-            $request->session()->regenerate();
+                $request->session()->regenerate();
 
-            return redirect()->route('filament.user.pages.dashboard');
-        }
-    })->name('facebookCallback');
-
+                return redirect()->route('filament.user.pages.dashboard');
+            }
+        })->name('facebookCallback');
+    });
 
     /* ------------------------ Account verified notice. ------------------------ */
 
@@ -176,7 +180,7 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     Route::get('unsubscribe/{token}', function ($token) {
         $subscriber = EmailSubscriber::where('token', $token)->where('subscribed', 1)->first();
 
-        if (empty ($subscriber)) {
+        if (empty($subscriber)) {
             Notification::make()
                 ->title('Unable to unsubscribe from ' . env('APP_NAME'))
                 ->body('Possible reason: The email is not subscribed.')
@@ -204,7 +208,7 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     Route::get('subscribe/{token}', function ($token) {
         $subscriber = EmailSubscriber::where('token', $token)->where('subscribed', 0)->first();
 
-        if (empty ($subscriber)) {
+        if (empty($subscriber)) {
             Notification::make()
                 ->title('Unable to subscribe to ' . env('APP_NAME'))
                 ->body('Possible reason: The email address is already subscribed.')
@@ -265,8 +269,8 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     /* ---------------------------- Generate Sitemap ---------------------------- */
     Route::get('/generate-sitemap', function () {
 
-        if(auth()->check()){
-            if(auth()->user()->hasRole('super_admin')){
+        if (auth()->check()) {
+            if (auth()->user()->hasRole('super_admin')) {
                 SitemapGenerator::create(env('APP_URL'))->writeToFile('sitemap.xml');
 
                 return 'Sitemap generated successfully!';
@@ -282,7 +286,7 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
         $error_codes = [401, 402, 403, 404, 419, 429, 500, 503];
 
         if (in_array($code, $error_codes)) {
-            return view('errors.'.$code);
+            return view('errors.' . $code);
         } else {
             redirect('404');
         }
@@ -294,11 +298,105 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
 
     /* ------------------------- Fully customizable 404 ------------------------- */
 
-    Route::get('404', function(){
+    Route::get('404', function () {
         return view('errors.404');
     });
 
     // Route::fallback(function () {
     //     return redirect('404');
     // });
+
+    Route::get('/checkout/{slug}', function (Request $request) {
+        $plan = Plan::where('slug', $request->slug)->firstOrFail();
+
+        $activePlan = Subscription::where('user_id', $request->user()->id)->where('stripe_status', 'active')->first();
+        $lifetime = Transaction::where('user_id', $request->user()->id)
+            ->where('type', 'lifetime')
+            ->where('status', 'completed')
+            ->exists();
+
+        if ($lifetime && $plan->type !== 'extra_token' && $plan->type !== 'lifetime') {
+            Notification::make()
+                ->title("Unable to downgrade!")
+                ->body("You have a lifetime subscription. You can't downgrade to the $plan->name.")
+                ->danger()
+                ->send()
+                ->persistent()
+                ->sendToDatabase($request->user());
+
+            return redirect('/dashboard/subscription');
+        } else {
+            if ($plan->type != 'free') {
+                $transaction = Transaction::create([
+                    'user_id' => $request->user()->id,
+                    'type' => $plan->type,
+                    'amount' => $plan->price,
+                    'status' => 'incomplete',
+                    'reference' => Transaction::generateTransactionReference(),
+                ]);
+            }
+
+            if ($plan->type == 'extra_token' || $plan->type == 'lifetime') {
+                return $request->user()
+                    ->checkout([$plan->stripe_price_id => 1], [
+                        'success_url' => route('checkout-success'),
+                        'cancel_url' => route('checkout-cancel'),
+                        'metadata' => ['order_type' => $plan->type, 'transaction_id' => $transaction->id],
+                    ]);
+            } elseif ($plan->type == 'free' && $activePlan) {
+                if ($request->downgrade) {
+
+                    $request->user()->subscription($activePlan->type)->cancel();
+                    $ending = $activePlan->ends_at->format('F j, Y');
+
+                    Notification::make()
+                        ->title("Successful downgrade!")
+                        ->body("You have successfully downgraded to the free plan. Your subscription will remain active till $ending.")
+                        ->success()
+                        ->send()
+                        ->persistent()
+                        ->sendToDatabase($request->user());
+                    return redirect('/dashboard/subscription');
+                } else {
+                    return redirect()->route('downgrade-confirmation', ['slug' => $plan->slug]);
+                }
+            } elseif ($plan->type == 'yearly' || $plan->type == 'monthly') {
+                return $request->user()
+                    ->newSubscription($plan->slug, $plan->stripe_price_id)
+                    ->allowPromotionCodes()
+                    ->checkout([
+                        'success_url' => route('checkout-success'),
+                        'cancel_url' => route('checkout-cancel'),
+                        'metadata' => ['order_type' => $plan->type, 'transaction_id' => $transaction->id],
+                    ]);
+            }
+        }
+    })->name('checkout');
+
+    Route::get('checkout-cancel', function () {
+        Notification::make()
+            ->title('Failed')
+            ->body('Unable to process transaction.')
+            ->danger()
+            ->send()
+            ->persistent();
+
+        return redirect('/dashboard/subscription');
+    })->name('checkout-cancel');
+
+    Route::get('checkout-success', function () {
+        Notification::make()
+            ->title('Payment Processed!')
+            ->body('You will receive an update on the status shortly.')
+            ->success()
+            ->send()
+            ->persistent();
+
+        return redirect('/dashboard/subscription');
+    })->name('checkout-success');
+
+    Route::get('downgrade-confirmation', function (Request $request) {
+        $plan = Plan::where('slug', $request->slug)->firstOrFail();
+        return view('downgrade-confirmation', compact('plan'));
+    })->name('downgrade-confirmation');
 });

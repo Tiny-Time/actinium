@@ -26,7 +26,7 @@
                 <h1 class="text-3xl capitalize toz-title md:text-5xl">{{ $event->title }}</h1>
                 @if ($event->description)
                     <h2 class="max-w-2xl mx-auto mt-4 mb-2 text-lg text-gray-200 toz-subtitle md:text-xl">
-                        {{ $event->description }}
+                        {{ $event->description }}<br>{{ $event->post_event_massage }}
                     </h2>
                 @endif
             </div>
@@ -107,7 +107,7 @@
 
         <!-- Guestbook Notes -->
         {{-- @livewire('guestbook-list') --}}
-        <p class="my-6 text-xl text-center">Guestbooks list and reaction is coming soon.</p>
+        <p class="my-6 text-xl text-center">Guestbooks list and reactions are coming soon.</p>
 
         <!-- TinyTi.me watermark -->
         <x-event-watermark></x-event-watermark>

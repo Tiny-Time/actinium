@@ -16,7 +16,7 @@
         @endif
 
         @if ($event->event_end_time)
-            <p><strong>Party End Time:</strong> {{ \Carbon\Carbon::parse($event->event_end_time)->format('h:i A') }}</p>
+            <p><strong>Event End Time:</strong> {{ \Carbon\Carbon::parse($event->event_end_time)->format('h:i A') }}</p>
         @endif
 
         @if ($event->address || $event->country || $event->state)
