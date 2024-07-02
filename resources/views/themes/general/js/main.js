@@ -134,7 +134,7 @@ function getEventTimezoneOffset(timezone) {
 }
 
 function eventStartEndTime(datetime, timezone){
-    const targetDate = new Date(datetime);
+    let targetDate = new Date(datetime);
     const tzNow = userTimezone();
     const offsetHours = getEventTimezoneOffset(tzNow)[0];
     const offsetHoursLocal = getEventTimezoneOffset(tzNow)[1];
