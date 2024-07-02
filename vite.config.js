@@ -1,5 +1,10 @@
 import { defineConfig } from "vite";
 import laravel, { refreshPaths } from "laravel-vite-plugin";
+import glob from "glob";
+
+function getThemeFiles() {
+    return glob.sync("resources/views/themes/**/{*.css,*.js}");
+}
 
 export default defineConfig({
     plugins: [
@@ -11,7 +16,7 @@ export default defineConfig({
                 "resources/js/embed.js",
                 "resources/js/main.js",
                 "resources/js/clipboard.js",
-                "resources/views/themes/**",
+                ...getThemeFiles(),
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
