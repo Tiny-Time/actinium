@@ -49,6 +49,8 @@ class Event extends Model
      */
     protected $casts = [
         'date_time' => 'datetime',
+        'check_in_time' => 'datetime',
+        'event_end_time' => 'datetime',
     ];
 
     /**

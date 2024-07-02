@@ -1,7 +1,9 @@
 <x-filament-panels::page>
-    <div class="flex flex-wrap justify-center gap-4 bg-gray-50">
+    <div
+        class="flex flex-wrap justify-center gap-4">
         @foreach ($plans as $plan)
-            <div class="w-full max-w-[256px] p-4 bg-white rounded-lg shadow grid content-between">
+            <div
+                class="w-full max-w-[256px] p-4 bg-white ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10 rounded-lg shadow grid content-between">
                 <div>
                     <p class="text-xs font-semibold tracking-[4px] uppercase text-gray-400">Secure</p>
                     <h3 class="text-2xl font-bold">{{ $plan->name }}</h3>
@@ -11,7 +13,7 @@
                 </div>
                 <div class="mt-3">
                     @if ($plan->group_id)
-                        <div x-data="{ sub_type: {{ auth()->user()->subscribed($plan->slug) || auth()->user()->subscribed($plan->group->type)? 'true': 'false' }} }">
+                        <div x-data="{ sub_type: {{ auth()->user()->subscribed($plan->slug) ||auth()->user()->subscribed($plan->group->type)? 'true': 'false' }} }">
                             <label for="sub_type"
                                 class="relative inline-flex items-center gap-3 text-gray-400 cursor-pointer">
                                 <span @click="sub_type = true">{{ ucfirst($plan->group->type) }}</span>

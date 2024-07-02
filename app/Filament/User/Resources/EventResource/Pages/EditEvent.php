@@ -28,7 +28,7 @@ class EditEvent extends EditRecord
 
     public $template_id, $preview_url;
 
-    #[Url( as: 'q')]
+    #[Url(as: 'q')]
     public $query = '';
 
     public function search()
@@ -56,6 +56,15 @@ class EditEvent extends EditRecord
     public function nextStep()
     {
         $this->validate();
+        // Token charge
+        $token_charge = $this->tokenCharge();
+
+        // Check if user has enough tokens
+        if (auth()->user()->mainBalance() < $token_charge) {
+            $this->addError('insufficient_token', 'You do not have enough tokens to create this event.');
+            return;
+        }
+
         $this->currentStep = 2;
     }
 
@@ -84,6 +93,32 @@ class EditEvent extends EditRecord
             $this->callHook('afterValidate');
 
             $data['template_id'] = $this->template_id;
+
+            $token_charge = 0;
+
+            // Update token if template is changed and previous template token is greater than current template token
+            if ($this->record->template_id != $this->template_id) {
+                $template = Template::find($this->template_id);
+                $token_charge = $template->tokens;
+
+                $previous_template = Template::find($this->record->template_id);
+                $previous_token_charge = $previous_template->tokens;
+
+                if ($previous_token_charge > $token_charge) {
+                    $token_charge = $previous_token_charge - $token_charge;
+                }
+            }
+
+            $token_charge = $this->tokenCharge() + $token_charge;
+
+            // Check if user has enough tokens
+            if (auth()->user()->mainBalance() < $token_charge) {
+                $this->addError('insufficient_token', 'You do not have enough tokens to create this event.');
+                return;
+            }
+
+            // Deduct tokens
+            (new EventResource)->deductTokens($token_charge, 'edited');
 
             $data = $this->mutateFormDataBeforeSave($data);
 
@@ -135,5 +170,58 @@ class EditEvent extends EditRecord
             'templates' => Template::where('name', 'like', "%{$this->query}%")
                 ->orderByRaw("id = $specificId DESC")->paginate(12)
         ];
+    }
+
+    public function tokenCharge(): int
+    {
+        $token_charge = 0;
+
+        $original_data = $this->record;
+        $data = $this->data;
+
+        // Check if any of the fields are being set for the first time
+        if (
+            (!$original_data['address'] && $data['address']) ||
+            (!$original_data['country'] && $data['country']) ||
+            (!$original_data['state'] && $data['state']) ||
+            (!$original_data['contact_name'] && $data['contact_name']) ||
+            (!$original_data['contact_email_address'] && $data['contact_email_address']) ||
+            (!$original_data['contact_phone_number'] && $data['contact_phone_number']) ||
+            (!$original_data['check_in_time'] && $data['check_in_time']) ||
+            (!$original_data['event_end_time'] && $data['event_end_time']) ||
+            ($original_data['guestbook'] == false && $data['guestbook'] == true) ||
+            ($original_data['rsvp'] == false && $data['rsvp'] == true) ||
+            (!$original_data['post_event_massage'] && $data['post_event_massage'])
+        ) {
+            if (
+                !$original_data['address']
+                && !$original_data['country']
+                && !$original_data['state']
+                && !$original_data['contact_name']
+                && !$original_data['contact_email_address']
+                && !$original_data['contact_phone_number']
+                && !$original_data['check_in_time']
+                && !$original_data['event_end_time']
+                && !$original_data['guestbook']
+                && !$original_data['rsvp']
+                && !$original_data['post_event_massage']
+            ) {
+                $token_charge = 2;
+            }
+
+            if ($original_data['guestbook'] == false && $data['guestbook'] == true) {
+                $token_charge = $token_charge + 1;
+            }
+
+            if ($original_data['rsvp'] == false && $data['rsvp'] == true) {
+                $token_charge = $token_charge + 1;
+            }
+
+            if (!$original_data['post_event_massage'] && $data['post_event_massage']) {
+                $token_charge = $token_charge + 1;
+            }
+        }
+
+        return $token_charge;
     }
 }

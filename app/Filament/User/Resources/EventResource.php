@@ -16,6 +16,7 @@ use Filament\Tables\Filters\Filter;
 use Illuminate\Contracts\View\View;
 use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Builder;
 use App\Forms\Components\SelectedTemplate;
 use App\Forms\Components\CustomDateTimePicker;
@@ -329,7 +330,7 @@ class EventResource extends Resource
                 ->required()
                 ->default(1)
                 ->columnSpanFull(),
-            Forms\Components\Section::make('Advanced Features (Optional)')
+            Forms\Components\Section::make('Advanced Features (Optional) - 2 tokens')
                 ->schema([
                     Forms\Components\TextInput::make('address')
                         ->maxLength(191)
@@ -378,27 +379,32 @@ class EventResource extends Resource
                         ->hint('The contact phone number will be visible to users.')
                         ->hintColor('danger')
                         ->columnSpanFull(),
-                    Forms\Components\TimePicker::make('check_in_time')
+                    Forms\Components\DateTimePicker::make('check_in_time')
                         ->seconds(false)
+                        ->after('date_time')
                         ->string()
-                        ->hint('The check in time for visitors.')
+                        ->hint('The check in day and time for visitors.')
                         ->hintColor('danger')
                         ->columnSpanFull(),
-                    Forms\Components\TimePicker::make('event_end_time')
+                    Forms\Components\DateTimePicker::make('event_end_time')
                         ->seconds(false)
+                        ->after('check_in_time')
                         ->string()
-                        ->hint('The event end time for visitors')
+                        ->hint('The event end day and time for visitors')
                         ->hintColor('danger')
                         ->columnSpanFull(),
                     Forms\Components\Toggle::make('guestbook')
+                        ->label('Guestbook (1 token)')
                         ->hint('This control determines whether guestbook should be available or not.')
                         ->hintColor('danger')
                         ->default(0),
                     Forms\Components\Toggle::make('rsvp')
+                        ->label('RSVP (1 token)')
                         ->hint('This control determines whether RSVP should be available or not.')
                         ->hintColor('danger')
                         ->default(0),
                     Forms\Components\TextInput::make('post_event_massage')
+                        ->label('Post Event Message (1 token)')
                         ->string()
                         ->hint('Display a message when the timer stops.')
                         ->hintColor('danger')
@@ -415,5 +421,54 @@ class EventResource extends Resource
                 ->accepted()
                 ->columnSpanFull()
                     ];
+    }
+
+    public function deductTokens($token_charge, $message) {
+        $user = auth()->user();
+
+        if($token_charge > 0){
+            if ($user->wallet->free_tokens >= $token_charge) {
+                $user->wallet->free_tokens = $user->wallet->free_tokens - $token_charge;
+            } elseif ($user->wallet->subscription_tokens >= $token_charge) {
+                $user->wallet->subscription_tokens = $user->wallet->subscription_tokens - $token_charge;
+            } elseif ($user->wallet->extra_tokens >= $token_charge) {
+                $user->wallet->extra_tokens = $user->wallet->extra_tokens - $token_charge;
+            } elseif ($user->wallet->free_tokens + $user->wallet->subscription_tokens + $user->wallet->extra_tokens >= $token_charge) {
+                // Deduct from all tokens
+                $remaining_tokens = $token_charge;
+                if ($user->wallet->free_tokens > 0) {
+                    $remaining_tokens = $remaining_tokens - $user->wallet->free_tokens;
+                    $user->wallet->free_tokens = 0;
+                }
+
+                if ($remaining_tokens > 0 && $user->wallet->subscription_tokens > 0) {
+                    $remaining_tokens = $remaining_tokens - $user->wallet->subscription_tokens;
+                    $user->wallet->subscription_tokens = 0;
+                }
+
+                if ($remaining_tokens > 0 && $user->wallet->extra_tokens > 0) {
+                    $user->wallet->extra_tokens = $user->wallet->extra_tokens - $remaining_tokens;
+                }
+            } else {
+                $this->addError('insufficient_token', 'You do not have enough tokens to create this event.');
+                return;
+            }
+
+            if ($message == 'created') {
+                Notification::make()
+                    ->title('Event Created Successfully!')
+                    ->body('Congratulations! Your event has been created successfully. A token charge of ' . $token_charge . ' has been applied.')
+                    ->success()
+                    ->sendToDatabase(auth()->user());
+            } elseif ($message == 'edited') {
+                Notification::make()
+                    ->title('Event Edited Successfully!')
+                    ->body('Congratulations! Your event has been edited successfully. A token charge of ' . $token_charge . ' has been applied.')
+                    ->success()
+                    ->sendToDatabase(auth()->user());
+            }
+
+            $user->wallet->save();
+        }
     }
 }

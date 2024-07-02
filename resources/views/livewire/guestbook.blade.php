@@ -1,5 +1,5 @@
 <div>
-    <h2 class="mt-4 text-2xl font-bold text-center text-white md:text-3xl">Guestbook</h2>
+    <h2 class="mt-4 text-2xl font-bold text-center text-white md:text-3xl title-color">Guestbook</h2>
     <h3 class="mt-2 text-center text-white md:text-xl">Leave your wishes, comments, and thoughts below</h3>
 
     <form wire:submit="save" method="post" class="mt-4">

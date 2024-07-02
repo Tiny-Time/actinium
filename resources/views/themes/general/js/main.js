@@ -42,7 +42,7 @@ function updateCountdown(datetime, timezone) {
         offsetHours = parseInt(offsetMatch[1]);
     }
 
-    // Extract the offset value from the timezone parameter
+    // Extract the offset from the timezone parameter for the local timezone
     const offsetMatchLocal = tzNow.match(/UTC([+-]\d+)/i);
     let offsetHoursLocal = 0;
     if (offsetMatchLocal) {
@@ -113,4 +113,80 @@ function updateCountdown(datetime, timezone) {
     }
 }
 
+// Get the event and local timezone offset
+function getEventTimezoneOffset(timezone) {
+    const tzNow = userTimezone();
+    // Extract the offset value from the timezone parameter
+    const offsetMatch = timezone.match(/UTC([+-]\d+)/i);
+    let offsetHours = 0;
+    if (offsetMatch) {
+        offsetHours = parseInt(offsetMatch[1]);
+    }
+
+    // Extract the offset from the timezone parameter for the local timezone
+    const offsetMatchLocal = tzNow.match(/UTC([+-]\d+)/i);
+    let offsetHoursLocal = 0;
+    if (offsetMatchLocal) {
+        offsetHoursLocal = parseInt(offsetMatchLocal[1]);
+    }
+
+    return [offsetHours, offsetHoursLocal];
+}
+
+function eventStartEndTime(datetime, timezone){
+    const targetDate = new Date(datetime);
+    const tzNow = userTimezone();
+    const offsetHours = getEventTimezoneOffset(tzNow)[0];
+    const offsetHoursLocal = getEventTimezoneOffset(tzNow)[1];
+
+    if (tzNow != timezone) {
+        // Use the timezone that was used to create the timer for countdown
+        targetDate = new Date(
+            targetDate.getTime() +
+                (-1 * offsetHours + offsetHoursLocal) * 60 * 60 * 1000
+        );
+    }
+
+    return formatDateTime(targetDate);
+}
+
+function formatDateTime(targetDate) {
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    const now = new Date(targetDate);
+
+    const dayName = days[now.getDay()];
+    const monthName = months[now.getMonth()];
+    const day = String(now.getDate()).padStart(2, '0');
+    const year = now.getFullYear();
+
+    let hour = now.getHours();
+    const minute = String(now.getMinutes()).padStart(2, '0');
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    hour = hour % 12;
+    hour = hour ? hour : 12; // the hour '0' should be '12'
+    const formattedHour = String(hour).padStart(2, '0');
+
+    const formattedDateTime = `${dayName} - ${monthName} ${day}, ${year} ${formattedHour}:${minute} ${ampm}`;
+
+    return formattedDateTime;
+}
+
+function colorUpdate() {
+    const tozTitle = document.querySelector(".toz-title");
+
+    const computedStyle = window.getComputedStyle(tozTitle);
+    const color = computedStyle.color;
+
+    // Apply the color to elements with the class 'title-color'
+    const titleColor = document.querySelectorAll(".title-color");
+    titleColor.forEach((element) => {
+        element.style.color = color;
+    });
+}
+
+colorUpdate();
+
+window.eventStartEndTime = eventStartEndTime;
 window.uC = updateCountdown;

@@ -24,7 +24,7 @@
         stateDatePicker = formattedLocalNow;
     }">
         <x-filament::input.wrapper>
-            <x-filament::input type="datetime-local" x-model="stateDatePicker" name="date_time" x-bind:min="stateDatePicker" />
+            <x-filament::input type="datetime-local" x-model="stateDatePicker" name="date_time" x-bind:min="new Date(localNow())" step="any" />
         </x-filament::input.wrapper>
         <span class="mt-2 text-pink-600" x-show="(new Date(stateDatePicker) <= new Date(localNow()))">The date-time
             field

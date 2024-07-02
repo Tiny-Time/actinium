@@ -87,7 +87,7 @@
                 </div>
             @endif
             <div class="mt-5">
-                {{ $events->links() }}
+                {{ $events->links('vendor.livewire.tailwind') }}
             </div>
         </div>
         <x-slot name="footer"></x-slot>

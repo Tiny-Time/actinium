@@ -53,7 +53,7 @@
     </div>
     @if (!is_array($events))
         <div class="mt-5">
-            {{ $events->links() }}
+            {{ $events->links('vendor.livewire.tailwind') }}
         </div>
     @endif
 </div>

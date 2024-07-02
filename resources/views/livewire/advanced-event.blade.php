@@ -141,14 +141,14 @@
                     @foreach ($templates as $temp)
                         <div class="relative overflow-hidden bg-gray-200 rounded group" wire:key="{{ $temp['id'] }}">
                             <div class="absolute top-0 bottom-0 left-0 right-0 items-center justify-center bg-black/60 group-hover:flex"
-                                :class="selectedIndex == {{ $temp['id'] }} ? 'flex' : 'hidden'"
+                                :class="selectedIndex == @js($temp['id']) ? 'flex' : 'hidden'"
                                 @click="selectedIndex !== {{ $temp['id'] }} ? selectedIndex = {{ $temp['id'] }} : selectedIndex = null;">
                                 <button type="button" class="px-4 py-2 text-sm bg-red-400 rounded text-gray-50"
                                     x-text="selectedIndex == {{ $temp['id'] }} ? 'Selected' : 'Select Template'"></button>
                             </div>
                             <img src="{{ $temp['image'] }}"
                                 alt="TemplateName" class="object-cover w-full h-44">
-                            <p class="px-4 my-2 text-md font-semibold">{{ $temp['name'] }}</p>
+                            <p class="px-4 my-2 font-semibold text-md">{{ $temp['name'] }}</p>
                         </div>
                     @endforeach
                 </div>

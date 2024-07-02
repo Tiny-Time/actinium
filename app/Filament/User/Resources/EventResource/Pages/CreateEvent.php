@@ -5,6 +5,7 @@ namespace App\Filament\User\Resources\EventResource\Pages;
 use App\Models\Event;
 use App\Models\Template;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Illuminate\Support\Str;
 use Filament\Actions\Action;
 use Livewire\Attributes\Url;
@@ -27,7 +28,7 @@ class CreateEvent extends Page
 
     public ?array $data = [];
 
-    #[Url( as: 'q')]
+    #[Url(as: 'q')]
     public $query = '';
 
     public function mount(): void
@@ -65,6 +66,15 @@ class CreateEvent extends Page
         $this->data['event_id'] = Str::random(16);
         $this->data['user_id'] = empty($this->data['user_id']) ? auth()->id() : $this->data['user_id'];
 
+        // Token charge
+        $token_charge = $this->tokenCharge();
+
+        // Check if user has enough tokens
+        if (auth()->user()->mainBalance() < $token_charge) {
+            $this->addError('insufficient_token', 'You do not have enough tokens to create this event.');
+            return;
+        }
+
         $this->currentStep = 2;
     }
 
@@ -78,6 +88,26 @@ class CreateEvent extends Page
         $this->validate([
             'template_id' => 'required|numeric'
         ]);
+
+        // Get template tokens
+        $template = Template::find($this->template_id);
+
+        if (empty($template)) {
+            $this->addError('template_id', 'Invalid template selected.');
+            return;
+        }
+
+        // Token charge
+        $token_charge = $this->tokenCharge() + $template->tokens;
+
+        // Check if user has enough tokens
+        if (auth()->user()->mainBalance() < $token_charge) {
+            $this->addError('insufficient_token', 'You do not have enough tokens to create this event.');
+            return;
+        }
+
+        // Deduct tokens
+        (new EventResource)->deductTokens($token_charge, 'created');
 
         $this->data['template_id'] = $this->template_id;
 
@@ -93,5 +123,42 @@ class CreateEvent extends Page
         return [
             'templates' => Template::where('name', 'like', "%{$this->query}%")->paginate(12)
         ];
+    }
+
+    public function tokenCharge(): int
+    {
+        $token_charge = 0;
+
+        $data = $this->data;
+
+        if (
+            $data['address'] ||
+            $data['country'] ||
+            $data['state'] ||
+            $data['contact_name'] ||
+            $data['contact_email_address'] ||
+            $data['contact_phone_number'] ||
+            $data['check_in_time'] ||
+            $data['event_end_time'] ||
+            $data['guestbook'] == true ||
+            $data['rsvp'] == true ||
+            $data['post_event_massage']
+        ) {
+            $token_charge = 2;
+
+            if ($data['guestbook'] == true) {
+                $token_charge = $token_charge + 1;
+            }
+
+            if ($data['rsvp'] == true) {
+                $token_charge = $token_charge + 1;
+            }
+
+            if ($data['post_event_massage']) {
+                $token_charge = $token_charge + 1;
+            }
+        }
+
+        return $token_charge;
     }
 }

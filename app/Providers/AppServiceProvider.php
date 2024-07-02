@@ -48,7 +48,7 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
         Livewire::setScriptRoute(function ($handle) {
-            return Route::get('/vendor/livewire/livewire.js', $handle);
+            return Route::get('/vendor/livewire/livewire.js', $handle)->name('livewire.js');
         });
 
         FilamentAsset::registerScriptData([
