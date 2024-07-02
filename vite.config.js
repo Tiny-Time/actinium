@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import laravel, { refreshPaths } from "laravel-vite-plugin";
-import glob from "glob";
+const glob = require("glob");
 
 function getThemeFiles() {
     return glob.sync("resources/views/themes/**/{*.css,*.js}");
