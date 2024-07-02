@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 import.meta.glob([
     "../images/**",
     "../fonts/**",
-    "../views/themes/birthday/dark-blue-sequins/images/**",
+    "../views/themes/**",
 ]);
 
 /* Splide Slider */
