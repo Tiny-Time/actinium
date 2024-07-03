@@ -39,6 +39,11 @@ class DomainRedirectMiddleware
         // Request URI
         $uri = $request->getRequestUri();
 
+        // Skip Livewire update requests
+        if (str_contains($uri, '/livewire/update')) {
+            return $next($request);
+        }
+
         // Log users out on forgot password page
         if ($isAuthenticated && $request->is('forgot-password')) {
             Auth::logout();
