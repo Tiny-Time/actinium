@@ -218,7 +218,9 @@ class EventResource extends Resource
                 Filter::make('status')
                     ->toggle(),
                 Filter::make('expired')
-                    ->query(fn(Builder $query): Builder => $query->where('date_time', '<', now()->toDateTimeString()))
+                    ->query(function (Builder $query): Builder {
+                        return $query->expired();
+                    })->toggle()
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
@@ -297,7 +299,8 @@ class EventResource extends Resource
         return static::getModel()::where('user_id', auth()->user()->id)->count();
     }
 
-    public static function formFields() : array {
+    public static function formFields(): array
+    {
         return [
             Forms\Components\TextInput::make('title')
                 ->required()
@@ -420,13 +423,14 @@ class EventResource extends Resource
                 ->required()
                 ->accepted()
                 ->columnSpanFull()
-                    ];
+        ];
     }
 
-    public function deductTokens($token_charge, $message) {
+    public function deductTokens($token_charge, $message)
+    {
         $user = auth()->user();
 
-        if($token_charge > 0){
+        if ($token_charge > 0) {
             if ($user->wallet->free_tokens >= $token_charge) {
                 $user->wallet->free_tokens = $user->wallet->free_tokens - $token_charge;
             } elseif ($user->wallet->subscription_tokens >= $token_charge) {

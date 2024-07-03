@@ -34,9 +34,9 @@
                         </svg>
                     </div>
                     <div class="ml-3">
-                        <p class="font-semibold text-gray-600">Active</p>
+                        <p class="font-semibold text-gray-600">Published</p>
                         <h3 class="text-3xl font-bold break-all">
-                            {{ \App\Models\Event::where('status', 1)->where('date_time', '>', now()->toDateTimeString())->count() }}
+                            {{ \App\Models\Event::where('status', 1)->count() }}
                         </h3>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                         </svg>
                     </div>
                     <div class="ml-3">
-                        <p class="font-semibold text-gray-600">Inactive</p>
+                        <p class="font-semibold text-gray-600">Draft</p>
                         <h3 class="text-3xl font-bold break-all">
                             {{ \App\Models\Event::where('status', 0)->count() }}
                         </h3>
@@ -87,7 +87,7 @@
                     <div class="ml-3">
                         <p class="font-semibold text-gray-600">Expired</p>
                         <h3 class="text-3xl font-bold break-all">
-                            {{ \App\Models\Event::where('date_time', '<', now()->toDateTimeString())->count() }}
+                            {{ \App\Models\Event::expired()->count() }}
                         </h3>
                     </div>
                 </div>

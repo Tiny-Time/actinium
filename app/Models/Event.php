@@ -83,4 +83,20 @@ class Event extends Model
     {
         return $this->hasMany(RSVP::class, 'event_id', 'event_id');
     }
+
+    /**
+     * Get the expired events based on timezone.
+     */
+    public function scopeExpired($query)
+    {
+        return $query->where('date_time', '<', now($this->timezone));
+    }
+
+    /**
+     * Get the upcoming events based on timezone.
+     */
+    public function scopeUpcoming($query)
+    {
+        return $query->where('date_time', '>', now($this->timezone));
+    }
 }
