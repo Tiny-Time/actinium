@@ -39,126 +39,7 @@ class EventResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                Section::make('Event')
-                    ->schema([
-                        Forms\Components\TextInput::make('title')
-                            ->required()
-                            ->maxLength(191)
-                            ->string()
-                            ->columnSpanFull(),
-                        Forms\Components\Select::make('user_id')
-                            ->relationship('user', 'name')
-                            ->default(auth()->user()->id)
-                            ->hidden(!auth()->user()?->hasRole('super_admin')),
-                        Forms\Components\Hidden::make('user_id')
-                            ->default(auth()->user()->id)
-                            ->hidden(auth()->user()?->hasRole('super_admin')),
-                        Forms\Components\Hidden::make('event_id')
-                            ->required()
-                            ->default(Str::random(16)),
-                        Forms\Components\Textarea::make('description')
-                            ->string()
-                            ->columnSpanFull(),
-                        CustomDateTimePicker::make('date_time')
-                            ->required(),
-                        TimeZone::make('timezone')
-                            ->required(),
-                        SelectedTemplate::make('template_id')
-                            ->label('Template')
-                            ->required()
-                            ->default(1)
-                            ->columnSpanFull(),
-                        Forms\Components\Toggle::make('status')
-                            ->hint('This control determines whether the event is published or in draft.')
-                            ->hintColor('danger')
-                            ->default(1)
-                            ->required()
-                            ->columnSpanFull(),
-                        Forms\Components\Toggle::make('public')
-                            ->hint('This control determines whether the event should be included in search results.')
-                            ->hintColor('danger')
-                            ->required()
-                            ->default(1),
-                        Forms\Components\Section::make('Advanced Features (Optional)')
-                            ->schema([
-                                Forms\Components\TextInput::make('address')
-                                    ->maxLength(191)
-                                    ->string()
-                                    ->columnSpanFull(),
-                                Forms\Components\Select::make('country')
-                                    ->options(function () {
-                                        include 'EventResource/Pages/countries.php';
-                                        $options = [];
-                                        foreach ($countriesStates as $country) {
-                                            $name = $country['name'];
-                                            $options[$name] = $name;
-                                        }
-                                        return $options;
-                                    })
-                                    ->searchable()
-                                    ->live()
-                                    ->afterStateUpdated(fn(Set $set, ?string $state) => $set('state', '')),
-                                Forms\Components\Select::make('state')
-                                    ->options(function (Get $get) {
-                                        include 'EventResource/Pages/countries.php';
-                                        foreach ($countriesStates as $country) {
-                                            if ($country['name'] == $get('country')) {
-                                                $states = [];
-                                                foreach ($country['states'] as $cState) {
-                                                    $stateName = $cState['name'];
-                                                    $states[$stateName] = $stateName;
-                                                }
-                                                return $states;
-                                            }
-                                        }
-                                    })
-                                    ->searchable(),
-                                Forms\Components\TextInput::make('contact_name')
-                                    ->string()
-                                    ->hint('The contact name will be visible to users.')
-                                    ->hintColor('danger')
-                                    ->columnSpanFull(),
-                                Forms\Components\TextInput::make('contact_email_address')
-                                    ->string()
-                                    ->hint('The contact email address will be visible to users.')
-                                    ->hintColor('danger')
-                                    ->columnSpanFull(),
-                                Forms\Components\TextInput::make('contact_phone_number')
-                                    ->string()
-                                    ->hint('The contact phone number will be visible to users.')
-                                    ->hintColor('danger')
-                                    ->columnSpanFull(),
-                                Forms\Components\TimePicker::make('check_in_time')
-                                    ->seconds(false)
-                                    ->string()
-                                    ->hint('The check in time for visitors.')
-                                    ->hintColor('danger')
-                                    ->columnSpanFull(),
-                                Forms\Components\TimePicker::make('event_end_time')
-                                    ->seconds(false)
-                                    ->string()
-                                    ->hint('The event end time for visitors')
-                                    ->hintColor('danger')
-                                    ->columnSpanFull(),
-                                Forms\Components\Toggle::make('guestbook')
-                                    ->hint('This control determines whether guestbook should be available or not.')
-                                    ->hintColor('danger')
-                                    ->default(0),
-                                Forms\Components\Toggle::make('rsvp')
-                                    ->hint('This control determines whether RSVP should be available or not.')
-                                    ->hintColor('danger')
-                                    ->default(0),
-                                Forms\Components\TextInput::make('post_event_massage')
-                                    ->string()
-                                    ->hint('Display a message when the timer stops.')
-                                    ->hintColor('danger')
-                                    ->columnSpanFull(),
-                            ])
-                            ->collapsible()
-                            ->persistCollapsed(),
-                    ]),
-            ]);
+            ->schema(self::formFields());
     }
 
     public static function table(Table $table): Table
@@ -233,7 +114,7 @@ class EventResource extends Resource
                         function (Event $record, Component $livewire): View {
                             return view(
                                 'filament.user.pages.actions.share',
-                                ['event' => $record/* , 'livewire' => $livewire */],
+                                ['event' => $record],
                             );
                         }
                     )
@@ -325,12 +206,6 @@ class EventResource extends Resource
                 ->required()
                 ->columnSpanFull(),
             TimeZone::make('timezone')
-                ->required()
-                ->columnSpanFull(),
-            Forms\Components\Toggle::make('status')
-                ->hint('This control determines whether the event is published or in draft.')
-                ->hintColor('danger')
-                ->default(1)
                 ->required()
                 ->columnSpanFull(),
             Forms\Components\Toggle::make('public')
@@ -438,44 +313,47 @@ class EventResource extends Resource
 
         if ($token_charge > 0) {
             if ($user->wallet->free_tokens >= $token_charge) {
-                $user->wallet->free_tokens = $user->wallet->free_tokens - $token_charge;
+                $user->wallet->free_tokens -= $token_charge;
             } elseif ($user->wallet->subscription_tokens >= $token_charge) {
-                $user->wallet->subscription_tokens = $user->wallet->subscription_tokens - $token_charge;
+                $user->wallet->subscription_tokens -= $token_charge;
             } elseif ($user->wallet->extra_tokens >= $token_charge) {
-                $user->wallet->extra_tokens = $user->wallet->extra_tokens - $token_charge;
+                $user->wallet->extra_tokens -= $token_charge;
             } elseif ($user->wallet->free_tokens + $user->wallet->subscription_tokens + $user->wallet->extra_tokens >= $token_charge) {
                 // Deduct from all tokens
                 $remaining_tokens = $token_charge;
                 if ($user->wallet->free_tokens > 0) {
-                    $remaining_tokens = $remaining_tokens - $user->wallet->free_tokens;
+                    $remaining_tokens -= $user->wallet->free_tokens;
                     $user->wallet->free_tokens = 0;
                 }
 
                 if ($remaining_tokens > 0 && $user->wallet->subscription_tokens > 0) {
-                    $remaining_tokens = $remaining_tokens - $user->wallet->subscription_tokens;
+                    $remaining_tokens -= $user->wallet->subscription_tokens;
                     $user->wallet->subscription_tokens = 0;
                 }
 
                 if ($remaining_tokens > 0 && $user->wallet->extra_tokens > 0) {
-                    $user->wallet->extra_tokens = $user->wallet->extra_tokens - $remaining_tokens;
+                    $user->wallet->extra_tokens -= $remaining_tokens;
                 }
             } else {
                 $this->addError('insufficient_token', 'You do not have enough tokens to create this event.');
                 return;
             }
 
-            if ($message == 'created') {
-                Notification::make()
-                    ->title('Event Created Successfully!')
-                    ->body('Congratulations! Your event has been created successfully. A token charge of ' . $token_charge . ' has been applied.')
-                    ->success()
-                    ->sendToDatabase(auth()->user());
-            } elseif ($message == 'edited') {
-                Notification::make()
-                    ->title('Event Edited Successfully!')
-                    ->body('Congratulations! Your event has been edited successfully. A token charge of ' . $token_charge . ' has been applied.')
-                    ->success()
-                    ->sendToDatabase(auth()->user());
+            switch ($message) {
+                case 'created':
+                    Notification::make()
+                        ->title('Event Created Successfully!')
+                        ->body("Congratulations! Your event has been created successfully. A token charge of $token_charge has been applied.")
+                        ->success()
+                        ->sendToDatabase(auth()->user());
+                    break;
+                case 'edited':
+                    Notification::make()
+                        ->title('Event Edited Successfully!')
+                        ->body("Congratulations! Your event has been edited successfully. A token charge of $token_charge has been applied.")
+                        ->success()
+                        ->sendToDatabase(auth()->user());
+                    break;
             }
 
             $user->wallet->save();

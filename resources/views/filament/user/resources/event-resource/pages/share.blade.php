@@ -99,7 +99,7 @@
     <p class="hidden mt-2 text-sm text-green-500" id="copied">Text copied to
         clipboard.</p>
     <a href="{{ $preview_url }}" target="_blank" id="csePreview"
-        class="flex items-center justify-center gap-2 px-4 py-2 mx-auto mt-3 text-sm font-semibold text-white rounded-lg bg-olivine">
+        class="flex items-center justify-center gap-2 py-2 mx-auto mt-3 text-sm font-semibold text-white rounded-lg bg-olivine">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round"

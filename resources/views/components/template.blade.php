@@ -16,7 +16,7 @@
         {{ $js }}
     @endpush
 
-    @section('title', __(ucfirst($event->title) . ' - ' . config('app.name', 'TinyTime')))
+    @section('title', __(ucfirst(substr($event->title, 0, 29)) . ' - ' . config('app.name', 'TinyTime')))
     @section('description', __($event->description))
 
     <!-- Main timer template -->

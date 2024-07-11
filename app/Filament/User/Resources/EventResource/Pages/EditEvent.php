@@ -3,6 +3,7 @@
 namespace App\Filament\User\Resources\EventResource\Pages;
 
 use Throwable;
+use App\Models\Event;
 use Filament\Actions;
 use App\Models\Template;
 use Filament\Forms\Form;
@@ -26,7 +27,7 @@ class EditEvent extends EditRecord
 
     public $currentStep = 1;
 
-    public $template_id, $preview_url;
+    public $template_id, $preview_url, $showPublishNotification;
 
     #[Url(as: 'q')]
     public $query = '';
@@ -38,6 +39,8 @@ class EditEvent extends EditRecord
         parent::mount($record);
 
         $this->event = $this->getRecord();
+
+        $this->showPublishNotification = false;
     }
 
     public function search()
@@ -82,7 +85,20 @@ class EditEvent extends EditRecord
         $this->currentStep = 1;
     }
 
-    public function save(bool $shouldRedirect = true): void
+    public function draft(){
+        $this->save(true, false);
+        $this->showPublishNotification = true;
+    }
+
+    public function publish(){
+        $event = Event::find($this->event->id);
+        $event->status = true;
+        $event->save();
+
+        $this->showPublishNotification = false;
+    }
+
+    public function save(bool $shouldRedirect = true, bool $status = true): void
     {
         $this->validate([
             'template_id' => 'required|numeric'
@@ -103,6 +119,9 @@ class EditEvent extends EditRecord
 
             $data['template_id'] = $this->template_id;
 
+            // Update status
+            $data['status'] = $status;
+            // Token charge
             $token_charge = 0;
 
             // Update token if template is changed and previous template token is greater than current template token

@@ -135,9 +135,15 @@
                 <x-button class="px-4 max-w-max" ce_prev="true" wire:click="prev">
                     {{ __('Previous') }}
                 </x-button>
-                <x-button type="button" class="px-4 max-w-max !bg-olivine" ce_next="true" wire:click="save">
-                    {{ __('Submit') }}
-                </x-button>
+                <div class="flex gap-1 items-center">
+                    <x-filament::button type="button" :class="'h-max mt-3'" icon="heroicon-o-document" color="warning"
+                        wire:click="draft">
+                        {{ __('Draft') }}
+                    </x-filament::button>
+                    <x-button type="button" class="px-4 max-w-max !bg-olivine" ce_next="true" wire:click="save">
+                        {{ __('Publish') }}
+                    </x-button>
+                </div>
             </div>
         </div>
 
@@ -172,6 +178,9 @@
             </svg>
             <p class="my-2 text-sm text-center md:text-base">Your event countdown has been successfully created. Start
                 sharing the excitement!</p>
+
+            @include('filament.user.resources.event-resource.pages.publish')
+
             @include('filament.user.resources.event-resource.pages.share')
             @include('filament.user.pages.actions.modal')
 

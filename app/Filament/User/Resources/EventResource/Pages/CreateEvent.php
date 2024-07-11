@@ -24,7 +24,7 @@ class CreateEvent extends Page
 
     protected static string $view = 'filament.user.resources.event-resource.pages.create-event';
 
-    public $currentStep, $template_id, $preview_url, $event;
+    public $currentStep, $template_id, $preview_url, $event, $showPublishNotification;
 
     public ?array $data = [];
 
@@ -36,6 +36,8 @@ class CreateEvent extends Page
         $this->currentStep = 1;
 
         $this->form->fill();
+
+        $this->showPublishNotification = false;
     }
 
     public function search()
@@ -83,7 +85,20 @@ class CreateEvent extends Page
         $this->currentStep = 1;
     }
 
-    public function save()
+    public function draft(){
+        $this->save(false);
+        $this->showPublishNotification = true;
+    }
+
+    public function publish(){
+        $event = Event::find($this->event->id);
+        $event->status = true;
+        $event->save();
+
+        $this->showPublishNotification = false;
+    }
+
+    public function save(bool $status = true)
     {
         $this->validate([
             'template_id' => 'required|numeric'
@@ -110,6 +125,9 @@ class CreateEvent extends Page
         (new EventResource)->deductTokens($token_charge, 'created');
 
         $this->data['template_id'] = $this->template_id;
+
+        // Update status
+        $this->data['status'] = $status;
 
         $this->event = Event::create($this->data);
 
