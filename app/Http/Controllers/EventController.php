@@ -63,7 +63,7 @@ class EventController extends Controller
 
         if ($event) {
             $template = Template::find($event->template_id);
-            return view("$template->path", compact('event'));
+            return view((string) $template->path, compact('event'));
         }
 
         return redirect('404');

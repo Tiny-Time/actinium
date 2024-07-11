@@ -7,6 +7,7 @@ use Filament\Tables;
 use App\Models\Event;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
+use Livewire\Component;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
@@ -21,6 +22,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Forms\Components\SelectedTemplate;
 use App\Forms\Components\CustomDateTimePicker;
 use App\Filament\User\Resources\EventResource\Pages;
+use App\Filament\User\Resources\EventResource\Pages\ListEvents;
 use App\Filament\User\Resources\EventResource\RelationManagers\RsvpsRelationManager;
 use App\Filament\User\Resources\EventResource\RelationManagers\GuestbooksRelationManager;
 
@@ -228,10 +230,12 @@ class EventResource extends Resource
                     ->tooltip('Edit'),
                 Tables\Actions\Action::make('share')
                     ->modalContent(
-                        fn(Event $record): View => view(
-                            'filament.user.pages.actions.share',
-                            ['event' => $record],
-                        )
+                        function (Event $record, Component $livewire): View {
+                            return view(
+                                'filament.user.pages.actions.share',
+                                ['event' => $record/* , 'livewire' => $livewire */],
+                            );
+                        }
                     )
                     ->modalSubmitAction(false)
                     ->modalWidth('md')
@@ -304,11 +308,13 @@ class EventResource extends Resource
         return [
             Forms\Components\TextInput::make('title')
                 ->required()
+                ->minLength(3)
                 ->maxLength(191)
                 ->string()
                 ->columnSpanFull(),
             Forms\Components\Textarea::make('description')
                 ->string()
+                ->maxLength(400)
                 ->columnSpanFull(),
             Forms\Components\Select::make('user_id')
                 ->relationship('user', 'name')

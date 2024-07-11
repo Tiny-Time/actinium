@@ -31,6 +31,15 @@ class EditEvent extends EditRecord
     #[Url(as: 'q')]
     public $query = '';
 
+    public $event;
+
+    public function mount(int | string $record): void
+    {
+        parent::mount($record);
+
+        $this->event = $this->getRecord();
+    }
+
     public function search()
     {
         $this->resetPage();
@@ -150,8 +159,8 @@ class EditEvent extends EditRecord
         }
 
         // Filament Ends
-
-        $this->preview_url = route('event.preview', $this->data['event_id']);
+        $app_url = config('app.url');
+        $this->preview_url = str_replace('//event', '/event', "$app_url/event/").$this->data['event_id'];
 
         $this->currentStep = 3;
     }

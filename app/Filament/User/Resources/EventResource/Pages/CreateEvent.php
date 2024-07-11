@@ -24,7 +24,7 @@ class CreateEvent extends Page
 
     protected static string $view = 'filament.user.resources.event-resource.pages.create-event';
 
-    public $currentStep, $template_id, $preview_url;
+    public $currentStep, $template_id, $preview_url, $event;
 
     public ?array $data = [];
 
@@ -111,9 +111,9 @@ class CreateEvent extends Page
 
         $this->data['template_id'] = $this->template_id;
 
-        $event = Event::create($this->data);
+        $this->event = Event::create($this->data);
 
-        $this->preview_url = route('event.preview', $event->event_id);
+        $this->preview_url = str_replace('//event', '/event', config('app.url').'/event/'.$this->event->event_id);
 
         $this->currentStep = 3;
     }

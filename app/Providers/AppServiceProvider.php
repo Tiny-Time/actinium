@@ -67,6 +67,11 @@ class AppServiceProvider extends ServiceProvider
             fn (): \Illuminate\Contracts\View\View => view('user.tokens'),
         );
 
+        FilamentView::registerRenderHook(
+            PanelsRenderHook::GLOBAL_SEARCH_AFTER,
+            fn (): \Illuminate\Contracts\View\View => view('filament.user.pages.actions.event'),
+        );
+
         Cashier::calculateTaxes();
     }
 }

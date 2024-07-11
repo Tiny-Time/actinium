@@ -126,6 +126,7 @@ class UserPanelProvider extends PanelProvider
                         'faq' => 'Faq',
                     ]),
             ])
+            ->spa()
             ->favicon(asset('/favicon.png'))
             ->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js', 'resources/css/custom.css'])
             ->databaseNotifications();

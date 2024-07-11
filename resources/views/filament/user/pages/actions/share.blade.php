@@ -1,16 +1,15 @@
 <!-- Share Event -->
-<div class="w-full">
+<div class="w-full" x-data="{ isHidden: true }">
     <h3 class="text-2xl font-bold text-center">Share Event</h3>
     <div class="mt-3">
         <!-- Social icons -->
         <div class="flex flex-wrap justify-center gap-4">
             <!-- Facebook -->
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('event.preview', $event->event_id) }}"
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ str_replace('//event', '/event', config('app.url') . '/event/' . $event->event_id) }}"
                 rel="noopener noreferrer" target="_blank" id="cseShareFacebook">
                 <div
                     class="flex items-center justify-center w-16 h-16 text-blue-500 bg-white rounded-full shadow cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current"
-                        viewBox="0 0 320 512">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 320 512">
                         <path
                             d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
                     </svg>
@@ -18,7 +17,7 @@
                 <p class="mt-1 text-sm text-center">Facebook</p>
             </a>
             <!-- Telegram -->
-            <a href="https://t.me/share/url?url={{ urlencode(route('event.preview', $event->event_id)) }}&text={{ urlencode($event->title) }}"
+            <a href="https://t.me/share/url?text={{ urlencode($event->title) }}&url={{ str_replace('//event', '/event', config('app.url') . '/event/' . $event->event_id) }}"
                 rel="noopener noreferrer" target="_blank" id="cseShareTelegram">
                 <div
                     class="rounded-full w-16 h-16 bg-white shadow cursor-pointer text-[#0088CC] flex items-center justify-center">
@@ -32,7 +31,7 @@
                 <p class="mt-1 text-sm text-center">Telegram</p>
             </a>
             <!-- XTwitter -->
-            <a href="https://twitter.com/intent/tweet?url={{ urlencode(route('event.preview', $event->event_id)) }}&text={{ urlencode($event->title . '!') }}"
+            <a href="https://twitter.com/intent/tweet?text={{ urlencode($event->title . '!') }}&url={{ str_replace('//event', '/event', config('app.url') . '/event/' . $event->event_id) }}"
                 rel="noopener noreferrer" target="_blank" id="cseShareXTwitter">
                 <div
                     class="rounded-full w-16 h-16 bg-white shadow cursor-pointer text-[#1DA1F2] flex items-center justify-center">
@@ -45,7 +44,7 @@
                 <p class="mt-1 text-sm text-center">X-Twitter</p>
             </a>
             <!-- WhatsApp -->
-            <a href="whatsapp://send?text={{ urlencode($event->title . ' ' . route('event.preview', $event->event_id)) }}"
+            <a href="whatsapp://send?text={{ $event->title . ' ' . str_replace('//event', '/event', config('app.url') . '/event/' . $event->event_id) }}"
                 rel="noopener noreferrer" target="_blank" id="cseShareWhatsApp">
                 <div
                     class="rounded-full w-16 h-16 bg-white shadow cursor-pointer text-[#25D366] flex items-center justify-center">
@@ -59,7 +58,7 @@
                 <p class="mt-1 text-sm text-center">WhatsApp</p>
             </a>
             <!-- Email -->
-            <a href="mailto:?subject={{ urlencode($event->title) }}&body={{ urlencode($event->description . ' ' . $event->title . ' ' . route('event.preview', $event->event_id)) }}"
+            <a href="mailto:?subject={{ urlencode($event->title) }}&body={{ $event->description . ' ' . $event->title . ' ' . str_replace('//event', '/event', config('app.url') . '/event/' . $event->event_id) }}"
                 rel="noopener noreferrer" target="_blank" id="cseShareEmail">
                 <div
                     class="rounded-full w-16 h-16 bg-white shadow cursor-pointer text-[#EE6C4D] flex items-center justify-center">
@@ -81,20 +80,26 @@
             </a>
         </div>
         <p class="my-2 text-sm text-center text-gray-400">Or share the link</p>
-        <div class="flex items-center bg-white rounded-lg shadow" x-data="{ shareUrl: '{{ route('event.preview', $event->event_id) }}' }">
-            <label for="shareUrl" class="sr-only">Share URL</label>
-            <input type="url" name="shareUrl" id="shareUrl" x-model="shareUrl"
-                class="w-full h-10 px-3 bg-transparent border-none focus:outline-none focus:ring-0">
-            <button type="button" x-on:click="$clipboard(shareUrl)" class="px-3">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M16 20H8C7.20435 20 6.44129 19.6839 5.87868 19.1213C5.31607 18.5587 5 17.7956 5 17V7C5 6.73478 4.89464 6.48043 4.70711 6.29289C4.51957 6.10536 4.26522 6 4 6C3.73478 6 3.48043 6.10536 3.29289 6.29289C3.10536 6.48043 3 6.73478 3 7V17C3 18.3261 3.52678 19.5979 4.46447 20.5355C5.40215 21.4732 6.67392 22 8 22H16C16.2652 22 16.5196 21.8946 16.7071 21.7071C16.8946 21.5196 17 21.2652 17 21C17 20.7348 16.8946 20.4804 16.7071 20.2929C16.5196 20.1054 16.2652 20 16 20ZM21 8.94C20.9896 8.84813 20.9695 8.75763 20.94 8.67V8.58C20.8919 8.47718 20.8278 8.38267 20.75 8.3L14.75 2.3C14.6673 2.22222 14.5728 2.15808 14.47 2.11H14.38L14.06 2H10C9.20435 2 8.44129 2.31607 7.87868 2.87868C7.31607 3.44129 7 4.20435 7 5V15C7 15.7956 7.31607 16.5587 7.87868 17.1213C8.44129 17.6839 9.20435 18 10 18H18C18.7956 18 19.5587 17.6839 20.1213 17.1213C20.6839 16.5587 21 15.7956 21 15V9C21 9 21 9 21 8.94ZM15 5.41L17.59 8H16C15.7348 8 15.4804 7.89464 15.2929 7.70711C15.1054 7.51957 15 7.26522 15 7V5.41ZM19 15C19 15.2652 18.8946 15.5196 18.7071 15.7071C18.5196 15.8946 18.2652 16 18 16H10C9.73478 16 9.48043 15.8946 9.29289 15.7071C9.10536 15.5196 9 15.2652 9 15V5C9 4.73478 9.10536 4.48043 9.29289 4.29289C9.48043 4.10536 9.73478 4 10 4H13V7C13 7.79565 13.3161 8.55871 13.8787 9.12132C14.4413 9.68393 15.2044 10 16 10H19V15Z"
-                        fill="#EE6C4D" />
-                </svg>
+        <div class="flex gap-1">
+            <div class="flex items-center w-full bg-white rounded-lg shadow dark:text-gray-700" x-data="{ shareUrl: '{{ str_replace('//event', '/event', config('app.url') . '/event/' . $event->event_id) }}' }">
+                <label for="shareUrl" class="sr-only">Share URL</label>
+                <input type="url" name="shareUrl" id="shareUrl" x-model="shareUrl"
+                    class="w-full h-10 px-3 bg-transparent border-none focus:outline-none focus:ring-0">
+                <button type="button" x-on:click="$clipboard(shareUrl)" class="px-3">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 20H8C7.20435 20 6.44129 19.6839 5.87868 19.1213C5.31607 18.5587 5 17.7956 5 17V7C5 6.73478 4.89464 6.48043 4.70711 6.29289C4.51957 6.10536 4.26522 6 4 6C3.73478 6 3.48043 6.10536 3.29289 6.29289C3.10536 6.48043 3 6.73478 3 7V17C3 18.3261 3.52678 19.5979 4.46447 20.5355C5.40215 21.4732 6.67392 22 8 22H16C16.2652 22 16.5196 21.8946 16.7071 21.7071C16.8946 21.5196 17 21.2652 17 21C17 20.7348 16.8946 20.4804 16.7071 20.2929C16.5196 20.1054 16.2652 20 16 20ZM21 8.94C20.9896 8.84813 20.9695 8.75763 20.94 8.67V8.58C20.8919 8.47718 20.8278 8.38267 20.75 8.3L14.75 2.3C14.6673 2.22222 14.5728 2.15808 14.47 2.11H14.38L14.06 2H10C9.20435 2 8.44129 2.31607 7.87868 2.87868C7.31607 3.44129 7 4.20435 7 5V15C7 15.7956 7.31607 16.5587 7.87868 17.1213C8.44129 17.6839 9.20435 18 10 18H18C18.7956 18 19.5587 17.6839 20.1213 17.1213C20.6839 16.5587 21 15.7956 21 15V9C21 9 21 9 21 8.94ZM15 5.41L17.59 8H16C15.7348 8 15.4804 7.89464 15.2929 7.70711C15.1054 7.51957 15 7.26522 15 7V5.41ZM19 15C19 15.2652 18.8946 15.5196 18.7071 15.7071C18.5196 15.8946 18.2652 16 18 16H10C9.73478 16 9.48043 15.8946 9.29289 15.7071C9.10536 15.5196 9 15.2652 9 15V5C9 4.73478 9.10536 4.48043 9.29289 4.29289C9.48043 4.10536 9.73478 4 10 4H13V7C13 7.79565 13.3161 8.55871 13.8787 9.12132C14.4413 9.68393 15.2044 10 16 10H19V15Z"
+                            fill="#EE6C4D" />
+                    </svg>
+                </button>
+            </div>
+            <button type="button" @click="isHidden = !isHidden; $dispatch('open-modal', { id: 'edit-url' });"
+                aria-label="Edit URL" class="px-2 bg-white rounded-lg shadow text-[#EE6C4D]">
+                <x-filament::icon icon="heroicon-m-pencil-square" class="w-5 h-5 min-w-min" />
             </button>
         </div>
         <p class="hidden mt-2 text-sm text-green-500" id="copied">Text copied to
             clipboard.</p>
     </div>
+    @include('filament.user.pages.actions.modal')
 </div>
