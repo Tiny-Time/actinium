@@ -194,4 +194,15 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
 
         return $isSubscribed ? 'bg-green-600/80' : 'bg-green-600';
     }
+
+    public function isCurrentSubscribed(): bool
+    {
+        $activePlan = Subscription::where('user_id', auth()->id())->where('stripe_status', 'active')->exists();
+        $lifetime = Transaction::where('user_id', auth()->id())
+            ->where('type', 'lifetime')
+            ->where('status', 'completed')
+            ->exists();
+
+        return $activePlan || $lifetime;
+    }
 }

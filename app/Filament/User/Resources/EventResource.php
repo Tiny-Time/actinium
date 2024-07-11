@@ -214,6 +214,13 @@ class EventResource extends Resource
                 ->required()
                 ->default(1)
                 ->columnSpanFull(),
+            Forms\Components\Toggle::make('watermark')
+                ->hint('This control determines whether the event should have a watermark or not.')
+                ->hintColor('danger')
+                ->hintIcon('heroicon-m-question-mark-circle', tooltip: 'Available for premium users only.')
+                ->default(1)
+                ->columnSpanFull()
+                ->disabled(!auth()->user()->isCurrentSubscribed()),
             Forms\Components\Section::make('Advanced Features (Optional) - 2 tokens')
                 ->schema([
                     Forms\Components\TextInput::make('address')

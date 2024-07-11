@@ -39,6 +39,7 @@ class Event extends Model
         'guestbook',
         'rsvp',
         'post_event_massage',
+        'watermark',
         'deleted_at',
     ];
 

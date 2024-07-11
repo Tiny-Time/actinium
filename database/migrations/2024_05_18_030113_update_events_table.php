@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('contact_phone_number')->nullable();
             $table->string('check_in_time')->nullable();
             $table->string('event_end_time')->nullable();
-            $table->boolean('guestbook')->nullable()->default(false);
-            $table->boolean('rsvp')->nullable()->default(false);
+            $table->boolean('guestbook')->default(false);
+            $table->boolean('rsvp')->default(false);
             $table->string('post_event_massage')->nullable();
         });
     }

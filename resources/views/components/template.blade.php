@@ -110,7 +110,9 @@
         <p class="my-6 text-xl text-center">Guestbooks list and reactions are coming soon.</p>
 
         <!-- TinyTi.me watermark -->
-        <x-event-watermark></x-event-watermark>
+        @if ($event->watermark)
+            <x-event-watermark></x-event-watermark>
+        @endif
     </section>
     @include('modals.share')
     @if ($event->user_id && $event->rsvp)

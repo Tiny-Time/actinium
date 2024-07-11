@@ -87,6 +87,7 @@
             </div>
             <div class="h-[0px] border border-black border-opacity-50 mt-3"></div>
             <div class="mt-3 other-links">
+                <a href="{{ route('blogs') }}" class="block mt-3 text-gray-600 hover:text-gray-900">Blogs</a>
                 <a href="{{ route('terms.show') }}" class="block mt-3 text-gray-600 hover:text-gray-900">Terms
                     and
                     Conditions</a>
