@@ -125,7 +125,7 @@
                 <div class="grid gap-3 mt-5 sm:grid-cols-3 xl:grid-cols-4" x-data="{ selectedIndex: {{ empty($this->record?->template_id) ? 1 : $this->record?->template_id }} }"
                     x-init="() => { $watch('selectedIndex', value => templateSelected(value)) }">
                     @foreach ($templates as $temp)
-                        <div class="relative overflow-hidden bg-gray-200 rounded group ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10"
+                        <div class="relative overflow-hidden bg-gray-100 shadow rounded group ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10"
                             wire:key="{{ $temp['id'] }}">
                             <div class="absolute top-0 bottom-0 left-0 right-0 items-center justify-center bg-black/60 group-hover:flex"
                                 :class="selectedIndex == @js($temp['id']) ? 'flex' : 'hidden'"
@@ -135,7 +135,17 @@
                             </div>
                             <img src="{{ $temp['image'] }}" alt="{{ $temp['name'] }}"
                                 class="object-cover w-full h-44">
-                            <p class="px-4 my-2 font-semibold text-md">{{ $temp['name'] }}</p>
+                            <div class="px-4 my-2">
+                                <p class="font-semibold text-md">
+                                    {{ $temp['name'] }}
+                                </p>
+                                <div class="mt-2">
+                                    <x-filament::badge icon="heroicon-o-clock" color="success">
+                                        <span>{{ $temp['tokens'] }}</span>
+                                        {{ $temp['tokens'] > 1 ? 'tokens' : 'token' }}
+                                    </x-filament::badge>
+                                </div>
+                            </div>
                         </div>
                     @endforeach
                 </div>

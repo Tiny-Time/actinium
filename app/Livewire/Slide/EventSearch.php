@@ -27,8 +27,8 @@ class EventSearch extends Component
         }
 
         return view('livewire.slide.event-search', [
-            'events' => Event::where('public', 1)->where('title', 'like', "%{$this->query}%")
-                ->orWhere('description', 'like', "%{$this->query}%")->paginate(5),
+            'events' => Event::where('public', true)->where('status', true)->where('title', 'like', "%{$this->query}%")
+                ->orWhere('description', 'like', "%{$this->query}%")->latest()->paginate(5),
         ]);
     }
 }

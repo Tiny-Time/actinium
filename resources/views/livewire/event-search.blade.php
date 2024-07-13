@@ -24,14 +24,14 @@
                         exploring now!
                     </p>
                     <form method="POST" wire:submit="search"
-                        class="h-12 md:w-[350px] lg:w-[500px] flex rounded-full items-center bg-white overflow-clip">
+                        class="h-12 md:w-[350px] lg:w-[500px] flex rounded-full items-center bg-white overflow-clip w-full">
                         <div class="hidden px-3 md:block">
-                            <svg xmlns="http://www.w3.org/2000/svg" wire:loading.class="hidden" fill="none"
+                            <svg xmlns="http://www.w3.org/2000/svg" wire:target="search" wire:loading.class="hidden" fill="none"
                                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-500">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                             </svg>
-                            <svg class="w-5 h-5 text-blue-600 animate-spin" wire:loading xmlns="http://www.w3.org/2000/svg"
+                            <svg class="w-5 h-5 text-blue-600 animate-spin" wire:target="search" wire:loading xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 24 24">
                                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
                                     stroke-width="4">
@@ -64,8 +64,13 @@
                     </form>
                 </div>
             </section>
-            <section id="filter" class="flex justify-between mt-4">
+            <section id="filter" class="flex justify-end mt-4">
                 {{-- Filters --}}
+                <form class="w-full max-w-xs">
+                    {{ $this->form }}
+                </form>
+
+                <x-filament-actions::modals />
             </section>
             <section id="results" class="mt-4">
                 <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 content-stretch">

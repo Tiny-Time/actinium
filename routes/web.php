@@ -294,7 +294,7 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
 
     /* ------------------------------ Event Search ------------------------------ */
 
-    Route::get('/search', EventSearch::class)->name('search');
+    Route::get('/events', EventSearch::class)->name('search');
 
     /* ------------------------- Fully customizable 404 ------------------------- */
 

@@ -74,6 +74,7 @@
         <div class="flex flex-col gap-2">
             <h3 class="text-xl font-semibold">Quick Links</h3>
             <a href="/">Home</a>
+            <a href="{{ route('search') }}">Events</a>
             {{-- <a href="#" class="w-max">About Us</a>
             <a href="#" class="w-max">Contact</a> --}}
             @if (request()->routeIs('homePage'))

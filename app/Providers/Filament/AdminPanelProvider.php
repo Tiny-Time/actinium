@@ -117,7 +117,6 @@ class AdminPanelProvider extends PanelProvider
                     ->url('/dashboard', shouldOpenInNewTab: true)
                     ->icon('heroicon-o-user'),
             ])
-            ->spa()
             ->favicon(asset('/favicon.png'))
             ->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js', 'resources/css/custom.css'])
             ->databaseNotifications();
