@@ -124,16 +124,16 @@ class EditEvent extends EditRecord
             // Token charge
             $token_charge = 0;
 
-            // Update token if template is changed and previous template token is greater than current template token
+            // Update token if template is changed
             if ($this->record->template_id != $this->template_id) {
                 $template = Template::find($this->template_id);
-                $token_charge = $template->tokens;
+                $current_token_charge = $template->tokens;
 
-                $previous_template = Template::find($this->record->template_id);
-                $previous_token_charge = $previous_template->tokens;
+                $previous_token_charge = Template::find($this->record->template_id)->tokens;
 
-                if ($previous_token_charge > $token_charge) {
-                    $token_charge = $previous_token_charge - $token_charge;
+                $token_charge = $current_token_charge - $previous_token_charge;
+                if ($token_charge < 0) {
+                    $token_charge = 0;
                 }
             }
 
