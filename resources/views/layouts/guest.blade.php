@@ -9,17 +9,26 @@
 
     @sectionMissing('title')
         <title>{{ env('META_TITLE', 'TinyTime') }}</title>
+        <meta property="og:title" content="Create and Customize an Event | TinyTime">
     @else
         <title>@yield('title')</title>
+        <meta property="og:title" content="@yield('title') | Tinytime">
     @endif
 
     @sectionMissing('description')
         <meta name="description" content="{{ env('META_DESCRIPTION', 'TinyTime') }}">
+        <meta property="og:description"
+            content="TinyTime is a user-friendly platform that enables individuals and organizations to effortlessly plan and personalize their events. Creat events, birthday events, wedding events, concerts, work events, product launch, holiday party, religious events.">
     @else
         <meta name="description" content="@yield('description')">
+        <meta property="og:description" content="@yield('description')">
     @endif
 
     <link rel="icon" href="{{ Vite::asset('resources/images/stopwatch.png') }}">
+
+    <meta property="og:image" content="{{ Vite::asset('resources/images/feature image 2.webp') }}">
+    <meta property="og:url" content="https://tinyti.me">
+    <meta property="og:type" content="website">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PL2TQE6L2R"></script>
