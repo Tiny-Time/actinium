@@ -88,6 +88,11 @@ class DomainRedirectMiddleware
      */
     public function isMobile(): bool
     {
+        // Check if HTTP_USER_AGENT is set
+        if (!isset($_SERVER['HTTP_USER_AGENT'])) {
+            return false;
+        }
+
         $userAgent = $_SERVER['HTTP_USER_AGENT'];
 
         return strpos($userAgent, 'Android') !== false
