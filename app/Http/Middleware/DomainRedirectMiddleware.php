@@ -75,7 +75,7 @@ class DomainRedirectMiddleware
         $needRedirect = $this->needRedirect($domain, $request->getSchemeAndHttpHost());
 
         if ($needRedirect) {
-            return redirect()->to($domain . $uri);
+            return redirect()->to("$domain$uri");
         }
 
         return $next($request);
@@ -106,6 +106,6 @@ class DomainRedirectMiddleware
 
     public function needRedirect($domain, $currentDomain)
     {
-        return ($currentDomain != $domain);
+        return $currentDomain != $domain;
     }
 }

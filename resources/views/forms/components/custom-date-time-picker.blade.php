@@ -11,11 +11,14 @@
 
         let localNow = new Date(now.getTime() - offsetMinutes * 60000); // Adjust for the offset
 
+        // Add 5 days to localNow
+        localNow.setDate(localNow.getDate() + 5);
+
         if (oldVal != '1') {
             @if(isset($this->record))
             localNow = new Date(new Date('{{ $this->record?->date_time }}').getTime() - offsetMinutes * 60000); // Adjust for the offset
             @endif
-        }
+            }
 
         // Format the local date and time for the datetime-local input
         const formattedLocalNow = localNow.toISOString().slice(0, -5);
@@ -24,7 +27,8 @@
         stateDatePicker = formattedLocalNow;
     }">
         <x-filament::input.wrapper>
-            <x-filament::input type="datetime-local" x-model="stateDatePicker" name="date_time" x-bind:min="new Date(localNow())" step="any" />
+            <x-filament::input type="datetime-local" x-model="stateDatePicker" name="date_time"
+                x-bind:min="new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, -5)" step="any" />
         </x-filament::input.wrapper>
         <span class="mt-2 text-pink-600" x-show="(new Date(stateDatePicker) <= new Date(localNow()))">The date-time
             field
