@@ -1,11 +1,13 @@
 <?php
 
+use Illuminate\Http\Request;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\RoutePath;
 use Illuminate\Http\JsonResponse;
 use App\Mail\AccountVerifiedSuccess;
 use Illuminate\Auth\Events\Verified;
+use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Http\Controllers\PasswordController;
@@ -18,13 +20,11 @@ use Laravel\Fortify\Http\Controllers\ProfileInformationController;
 use Laravel\Fortify\Http\Controllers\TwoFactorSecretKeyController;
 use Laravel\Fortify\Http\Controllers\ConfirmablePasswordController;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
-use Laravel\Fortify\Contracts\FailedPasswordResetLinkRequestResponse;
 use Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController;
 use Laravel\Fortify\Http\Controllers\EmailVerificationPromptController;
 use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticationController;
 use Laravel\Fortify\Http\Controllers\TwoFactorAuthenticatedSessionController;
 use Laravel\Fortify\Http\Controllers\ConfirmedTwoFactorAuthenticationController;
-use Laravel\Fortify\Contracts\SuccessfulPasswordResetLinkRequestResponse;
 
 
 Route::group(['middleware' => config('fortify.middleware', ['web'])], function () {
@@ -73,9 +73,17 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
                 $request->only(Fortify::email())
             );
 
-            return $status == Password::RESET_LINK_SENT
-                ? app(SuccessfulPasswordResetLinkRequestResponse::class, ['status' => $status])
-                : app(FailedPasswordResetLinkRequestResponse::class, ['status' => $status]);
+            $status == Password::RESET_LINK_SENT
+                ? Notification::make()
+                    ->title('Password Reset Link Sent')
+                    ->body('We have emailed your password reset link!')
+                    ->success()
+                    ->send() : Notification::make()
+                    ->title('Password Reset Link Failed')
+                    ->body('We have failed to email your password reset link!')
+                    ->danger()
+                    ->send();
+            return redirect()->back();
         })
             ->middleware(['guest:' . config('fortify.guard')])
             ->name('password.email');

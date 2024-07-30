@@ -76,7 +76,7 @@ class Guestbook extends Component
             ->success()
             ->send();
 
-       return redirect()->back();
+        $this->js('window.location.reload()');
     }
 
     public function render()

@@ -54,3 +54,7 @@
 .timer-text-bg{
     background: linear-gradient(133deg, rgba(250, 226, 218, 0.11) 0%, rgba(217, 154, 114, 0.11) 100%);
 }
+
+#temail {
+    color: #000000;
+}

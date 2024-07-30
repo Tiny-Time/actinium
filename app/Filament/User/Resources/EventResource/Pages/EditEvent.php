@@ -41,6 +41,8 @@ class EditEvent extends EditRecord
         $this->event = $this->getRecord();
 
         $this->showPublishNotification = false;
+
+        $this->preview_url = route('event.preview', ['event_id' => $this->event->event_id]);
     }
 
     public function search()
@@ -67,7 +69,9 @@ class EditEvent extends EditRecord
 
     public function nextStep()
     {
-        $this->validate();
+        // Validate form
+        $this->form->getState();
+
         // Token charge
         $token_charge = $this->tokenCharge();
 
@@ -188,6 +192,9 @@ class EditEvent extends EditRecord
     {
         return [
             Actions\DeleteAction::make(),
+            Actions\Action::make('preview')
+                ->url($this->preview_url, true)
+                ->hidden(!$this->record->status),
         ];
     }
 
@@ -238,15 +245,15 @@ class EditEvent extends EditRecord
             }
 
             if ($original_data['guestbook'] == false && $data['guestbook'] == true) {
-                $token_charge = $token_charge + 1;
+                $token_charge++;
             }
 
             if ($original_data['rsvp'] == false && $data['rsvp'] == true) {
-                $token_charge = $token_charge + 1;
+                $token_charge++;
             }
 
             if (!$original_data['post_event_massage'] && $data['post_event_massage']) {
-                $token_charge = $token_charge + 1;
+                $token_charge++;
             }
         }
 

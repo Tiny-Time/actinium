@@ -5,7 +5,6 @@ namespace App\Filament\User\Resources\EventResource\Pages;
 use App\Models\Event;
 use App\Models\Template;
 use Filament\Forms\Form;
-use Filament\Notifications\Notification;
 use Illuminate\Support\Str;
 use Filament\Actions\Action;
 use Livewire\Attributes\Url;
@@ -65,6 +64,9 @@ class CreateEvent extends Page
 
     public function nextStep()
     {
+        // Validate form
+        $this->form->getState();
+
         $this->data['event_id'] = Str::random(16);
         $this->data['user_id'] = empty($this->data['user_id']) ? auth()->id() : $this->data['user_id'];
 
@@ -165,15 +167,15 @@ class CreateEvent extends Page
             $token_charge = 2;
 
             if ($data['guestbook'] == true) {
-                $token_charge = $token_charge + 1;
+                $token_charge++;
             }
 
             if ($data['rsvp'] == true) {
-                $token_charge = $token_charge + 1;
+                $token_charge++;
             }
 
             if ($data['post_event_massage']) {
-                $token_charge = $token_charge + 1;
+                $token_charge++;
             }
         }
 

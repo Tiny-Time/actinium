@@ -24,7 +24,7 @@ class GuestbooksRelationManager extends RelationManager
                     ->required()
                     ->maxLength(255)
                     ->columnSpanFull(),
-                Forms\Components\TextArea::make('message')
+                Forms\Components\Textarea::make('message')
                     ->required()
                     ->columnSpanFull(),
             ]);
