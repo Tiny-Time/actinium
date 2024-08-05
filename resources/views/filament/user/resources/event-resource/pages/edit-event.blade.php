@@ -15,6 +15,10 @@
         <x-filament::tabs.item alpine-active="activeTab === 'guestbook'" x-on:click="activeTab = 'guestbook'">
             Guestbook
         </x-filament::tabs.item>
+
+        <x-filament::tabs.item alpine-active="activeTab === 'customUrl'" x-on:click="activeTab = 'customUrl'">
+            Custom URL
+        </x-filament::tabs.item>
     </x-filament::tabs>
 
     <div class="pb-4 bg-white rounded-md shadow ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10"
@@ -125,7 +129,7 @@
                 <div class="grid gap-3 mt-5 sm:grid-cols-3 xl:grid-cols-4" x-data="{ selectedIndex: {{ empty($this->record?->template_id) ? 1 : $this->record?->template_id }} }"
                     x-init="() => { $watch('selectedIndex', value => templateSelected(value)) }">
                     @foreach ($templates as $temp)
-                        <div class="relative overflow-hidden bg-gray-100 shadow rounded group ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10"
+                        <div class="relative overflow-hidden bg-gray-100 rounded shadow group ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10"
                             wire:key="{{ $temp['id'] }}">
                             <div class="absolute top-0 bottom-0 left-0 right-0 items-center justify-center bg-black/60 group-hover:flex"
                                 :class="selectedIndex == @js($temp['id']) ? 'flex' : 'hidden'"
@@ -164,7 +168,7 @@
                 <x-button class="px-4 max-w-max" ce_prev="true" wire:click="prev">
                     {{ __('Previous') }}
                 </x-button>
-                <div class="flex gap-1 items-center">
+                <div class="flex items-center gap-1">
                     <x-filament::button type="button" :class="'h-max mt-3'" icon="heroicon-o-document" color="warning"
                         wire:click="draft">
                         {{ __('Draft') }}
@@ -250,6 +254,13 @@
     <div id="guestbook" x-show="activeTab == 'guestbook'">
         @if (count($guestbookManager = [$this->getRelationManagers()[1]]))
             <x-filament-panels::resources.relation-managers :active-manager="0" :managers="$guestbookManager" :owner-record="$record"
+                :page-class="static::class" />
+        @endif
+    </div>
+
+    <div id="customUrl" x-show="activeTab == 'customUrl'">
+        @if (count($customUrlManager = [$this->getRelationManagers()[2]]))
+            <x-filament-panels::resources.relation-managers :active-manager="0" :managers="$customUrlManager" :owner-record="$record"
                 :page-class="static::class" />
         @endif
     </div>

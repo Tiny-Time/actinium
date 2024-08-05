@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Forms\Components\CustomDateTimePicker;
 use App\Filament\User\Resources\EventResource\Pages;
 use App\Filament\User\Resources\EventResource\RelationManagers\RsvpsRelationManager;
+use App\Filament\User\Resources\EventResource\RelationManagers\CustomUrlRelationManager;
 use App\Filament\User\Resources\EventResource\RelationManagers\GuestbooksRelationManager;
 
 class EventResource extends Resource
@@ -158,7 +159,8 @@ class EventResource extends Resource
     {
         return [
             RsvpsRelationManager::class,
-            GuestbooksRelationManager::class
+            GuestbooksRelationManager::class,
+            CustomUrlRelationManager::class,
         ];
     }
 
@@ -224,33 +226,34 @@ class EventResource extends Resource
                         ->string()
                         ->columnSpanFull(),
                     Forms\Components\Select::make('country')
-                        ->options(function () {
-                            include 'countries.php';
-                            $options = [];
-                            foreach ($countriesStates as $country) {
-                                $name = $country['name'];
-                                $options[$name] = $name;
-                            }
-                            return $options;
-                        })
                         ->searchable()
+                        ->getSearchResultsUsing(function (string $search): array {
+                            include 'countries.php';
+                            $options = array_column($countriesStates, 'name', 'name');
+
+                            // Filter options based on the search term.
+                            return array_filter($options, fn($option) => str_contains(strtolower($option), strtolower($search)), ARRAY_FILTER_USE_KEY);
+                        })
                         ->live()
                         ->afterStateUpdated(fn(Set $set, ?string $state) => $set('state', '')),
                     Forms\Components\Select::make('state')
-                        ->options(function (Get $get) {
+                        ->searchable()
+                        ->getSearchResultsUsing(function (Get $get, string $search): array {
                             include 'countries.php';
+                            $states = [];
+
                             foreach ($countriesStates as $country) {
                                 if ($country['name'] == $get('country')) {
-                                    $states = [];
                                     foreach ($country['states'] as $cState) {
                                         $stateName = $cState['name'];
                                         $states[$stateName] = $stateName;
                                     }
-                                    return $states;
                                 }
                             }
-                        })
-                        ->searchable(),
+
+                            // Filter states based on the search term.
+                            return array_filter($states, fn($state) => str_contains(strtolower($state), strtolower($search)), ARRAY_FILTER_USE_KEY);
+                        }),
                     Forms\Components\TextInput::make('contact_name')
                         ->string()
                         ->hint('The contact name will be visible to users.')
@@ -338,7 +341,12 @@ class EventResource extends Resource
                     $user->wallet->extra_tokens -= $remaining_tokens;
                 }
             } else {
-                $this->addError('insufficient_token', 'You do not have enough tokens to create this event.');
+                // $this->addError('insufficient_token', 'You do not have enough tokens to create this event.');
+                Notification::make()
+                    ->title('Insufficient Tokens!')
+                    ->body('You do not have enough tokens to create this event.')
+                    ->danger()
+                    ->send();
                 return;
             }
 

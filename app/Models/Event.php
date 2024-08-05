@@ -100,4 +100,12 @@ class Event extends Model
     {
         return $query->where('date_time', '>', now($this->timezone));
     }
+
+    /**
+     * Get the event that owns the custom URL.
+     */
+    public function customUrl(): HasOne
+    {
+        return $this->hasOne(EventCustomUrl::class);
+    }
 }

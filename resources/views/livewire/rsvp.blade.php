@@ -42,6 +42,16 @@
         </svg>
     </div>
 
+    <!-- RSVP: Form - Recaptcha -->
+    <div class="text-center">
+        <div class="flex justify-center mt-3" wire:ignore>
+            {!! NoCaptcha::display(['data-callback' => 'recaptchaCallback']) !!}
+        </div>
+        @error('recaptcha')
+            <span class="mt-1 text-sm font-semibold text-pink-500 drop-shadow">{{ $message }}</span>
+        @enderror
+    </div>
+
     <!-- RSVP: Form - Submit button -->
     <div class="flex justify-end w-full max-w-4xl mx-auto mt-5">
         <button type="submit"

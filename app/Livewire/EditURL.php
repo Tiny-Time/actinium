@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\EventCustomUrl;
 use Closure;
 use App\Models\Event;
 use Livewire\Component;
@@ -41,7 +42,7 @@ class EditURL extends Component implements HasForms
                     ->required()
                     ->rules([
                         fn(): Closure => function (string $attribute, $value, Closure $fail) {
-                            if (Event::where('event_id', $value)->exists()) {
+                            if (Event::where('event_id', $value)->exists() || EventCustomUrl::where('custom_url', $value)->exists()) {
                                 $fail('The :attribute is already in use.');
                             }
 
@@ -60,10 +61,10 @@ class EditURL extends Component implements HasForms
 
     public function edit(): void
     {
-        $this->event->update(['event_id' => $this->form->getState()['url']]);
+        // Deduct 2 tokens from user's balance
+        (new EventResource)->deductTokens(2, 'edited');
 
-        // Deduct 1 token from user's balance
-        (new EventResource)->deductTokens(1, 'edited');
+        $this->event->update(['event_id' => $this->form->getState()['url']]);
 
         // Close the modal
         $this->dispatch('close-modal', ['id' => 'edit-url']);

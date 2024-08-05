@@ -27,7 +27,7 @@ class EventSources extends BaseWidget
         $table->query(function () {
             $event_id = $this->record->event_id;
             return PageView::query()
-                ->where('uri', '/event/' . $event_id)
+                ->where('uri', "/event/$event_id")
                 ->select('source as page', DB::raw('count(*) as users'), DB::raw('MIN(id) as id'))
                 ->whereNotNull('source')
                 ->groupBy('source')

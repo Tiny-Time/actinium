@@ -1,4 +1,4 @@
-<x-template :event="$event">
+<x-template :event="$event" :userIP="$userIP">
     <x-slot:css>
         <link rel="stylesheet"
             href="{{ Vite::asset('resources/views/themes/meeting/punctual-meeting/css/style.css') }}" />

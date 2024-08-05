@@ -1,14 +1,11 @@
 @props(['event'])
 
 <div class="flex justify-center gap-2">
-    @if ($event->rsvp == true)
-        @if ($event->user_id)
-            <button type="button" @click="$store.openCreateRSVPModal.toggle()"
-                class="hover:text-green-600 px-4 py-2 uppercase bg-white rounded-3xl text-sm text-[#32214d] font-bold">rsvp</button>
-        @else
-            <button type="button" @click="$store.openSubscriptionModal.toggle()"
-                class="hover:text-green-600 px-4 py-2 uppercase bg-white rounded-3xl text-sm text-[#32214d] font-bold">rsvp</button>
-        @endif
+    @if ($event->rsvp && $event->user_id)
+        <button type="button"
+            @if (auth()->user()) @click="$store.openCreateRSVPModal.toggle()" @else
+            @click="openSignUpModal = !openSignUpModal" @endif
+            class="hover:text-green-600 px-4 py-2 uppercase bg-white rounded-3xl text-sm text-[#32214d] font-bold">rsvp</button>
     @endif
     <button type="button" @click="$store.openShareModal.toggle()"
         class="hover:text-green-600 bg-white p-2 rounded-full text-[#32214d]">

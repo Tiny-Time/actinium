@@ -59,6 +59,8 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
         // Google.
 
         Route::get('/auth/google', function () {
+            // Store the intended URL in the session
+            session(['url.intended' => url()->previous()]);
             return Socialite::driver('google')->redirect();
         })->name('google');
 
@@ -69,10 +71,6 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
 
             if ($user) {
                 Auth::login($user);
-
-                $request->session()->regenerate();
-
-                return redirect()->route('filament.user.pages.dashboard');
             } else {
                 $newUser = new User();
                 $newUser->name = $response->user['name'];
@@ -82,16 +80,18 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
                 $newUser->save();
 
                 Auth::login($newUser);
-
-                $request->session()->regenerate();
-
-                return redirect()->route('filament.user.pages.dashboard');
             }
+
+            $request->session()->regenerate();
+
+            // Redirect to the intended URL
+            return redirect(session('url.intended'));
         })->name('googleCallback');
 
         // Facebook.
 
         Route::get('/auth/facebook', function () {
+            session(['url.intended' => url()->previous()]);
             return Socialite::driver('facebook')->redirect();
         })->name('facebook');
 
@@ -101,10 +101,6 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
 
             if ($user) {
                 Auth::login($user);
-
-                $request->session()->regenerate();
-
-                return redirect()->route('filament.user.pages.dashboard');
             } else {
                 $newUser = new User();
                 $newUser->name = $response_user->name;
@@ -112,13 +108,12 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
                 $newUser->password = bcrypt(Str::random(16));
                 $newUser->email_verified_at = now();
                 $newUser->save();
-
                 Auth::login($newUser);
-
-                $request->session()->regenerate();
-
-                return redirect()->route('filament.user.pages.dashboard');
             }
+
+            $request->session()->regenerate();
+            // Redirect to the intended URL
+            return redirect(session('url.intended'));
         })->name('facebookCallback');
     });
 
@@ -165,6 +160,9 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
 
     // Preview & Share
     Route::get('event/{event_id}', [EventController::class, 'show'])->name('event.preview');
+
+    // Reaction
+    Route::post('event/reaction', [EventController::class, 'react'])->name('event.reaction');
 
     // Embed
     Route::get('event/embed/{event_id}', [EventController::class, 'index'])->name('event.embed');

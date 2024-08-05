@@ -63,6 +63,14 @@ document.addEventListener('alpine:init', () => {
         },
     });
 
+    Alpine.store("openCreateGuestbookModal", {
+        on: false,
+
+        toggle() {
+            this.on = !this.on;
+        },
+    });
+
     Alpine.store("openSubscriptionModal", {
         on: false,
 

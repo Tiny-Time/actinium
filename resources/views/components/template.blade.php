@@ -1,4 +1,4 @@
-@props(['event'])
+@props(['event', 'userIP'])
 
 <x-guest-layout>
     @push('css')
@@ -20,7 +20,7 @@
     @section('description', __($event->description))
 
     <!-- Main timer template -->
-    <section class="px-5 py-8 text-white toz">
+    <section class="px-5 py-8 text-white toz min-h-dvh">
         <div class="flex flex-col items-center gap-4 toz-main">
             <div class="text-center toz-text-wrapper">
                 <h1 class="text-3xl capitalize toz-title md:text-5xl">{{ $event->title }}</h1>
@@ -102,23 +102,33 @@
             </div>
         </div>
 
-        <!-- Guestbook: Form -->
-        @livewire('guestbook')
-
-        <!-- Guestbook Notes -->
-        {{-- @livewire('guestbook-list') --}}
-        <p class="my-6 text-xl text-center">Guestbooks list and reactions are coming soon.</p>
+        @if ($event->guestbook)
+            <div class="text-center">
+                <h2 class="mt-4 text-2xl font-bold text-white md:text-3xl title-color">Guestbook</h2>
+                <h3 class="mt-2 text-white md:text-xl">Leave your wishes, comments, and thoughts below</h3>
+                <button type="button"
+                    @if (auth()->user()) @click="$store.openCreateGuestbookModal.toggle()"
+                    @else
+                        @click="openSignUpModal = !openSignUpModal" @endif
+                    class="hover:text-green-600 mx-auto px-4 py-2 uppercase mt-3 bg-white rounded-3xl text-sm text-[#32214d] font-bold">Share
+                    Your Thoughts</button>
+            </div>
+            <!-- Guestbook: Form -->
+            @include('modals.create-guestbook')
+            <!-- Guestbook Notes -->
+            @include('guestbook-list')
+        @endif
 
         <!-- TinyTi.me watermark -->
         @if ($event->watermark)
             <x-event-watermark></x-event-watermark>
         @endif
     </section>
+
     @include('modals.share')
+
     @if ($event->user_id && $event->rsvp)
         @include('modals.create-rsvp')
-    @else
-        @include('modals.require-sub')
     @endif
 
     @livewire('modals.report-event')

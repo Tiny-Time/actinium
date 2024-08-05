@@ -13,7 +13,7 @@ class Guestbook extends Component
     #[Validate('required|min:3')]
     public $name = '';
 
-    #[Validate('required|min:6|email:rfc,dns')]
+    #[Validate('required|min:6|email:rfc,dns|unique:guestbooks,email')]
     public $email = '';
 
     #[Validate('required|min:3|max:4294967295')]
@@ -71,12 +71,14 @@ class Guestbook extends Component
             'event_id' => $this->event_id
         ]);
 
-        Notification::make()
-            ->title('Saved successfully')
-            ->success()
-            ->send();
-
         $this->js('window.location.reload()');
+
+        Notification::make()
+            ->title('Guestbook Message Received')
+            ->body('Thank you for your message. We look forward to seeing you at the event.')
+            ->success()
+            ->persistent()
+            ->send();
     }
 
     public function render()

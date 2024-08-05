@@ -244,11 +244,11 @@ class EditEvent extends EditRecord
                 $token_charge = 2;
             }
 
-            if ($original_data['guestbook'] == false && $data['guestbook'] == true) {
+            if (!$original_data['guestbook'] && $data['guestbook']) {
                 $token_charge++;
             }
 
-            if ($original_data['rsvp'] == false && $data['rsvp'] == true) {
+            if (!$original_data['rsvp'] && $data['rsvp']) {
                 $token_charge++;
             }
 

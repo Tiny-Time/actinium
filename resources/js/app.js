@@ -1,6 +1,7 @@
 import "./bootstrap";
 
-import "@splidejs/splide/css";
+// import "@splidejs/splide/css";
+import '@splidejs/splide/css/skyblue';
 import Splide from "@splidejs/splide";
 window.Splide = Splide;
 
@@ -104,3 +105,10 @@ function setCursorPosition(element, cursorPosition) {
     sel.removeAllRanges();
     sel.addRange(range);
 }
+
+// Resize google recaptcha to fit parent container.
+// Get all recaptcha elements and resize them.
+const recaptchaElements = document.querySelectorAll(".g-recaptcha");
+recaptchaElements.forEach((element) => {
+    element.style.transform = "scale(0.77)";
+});

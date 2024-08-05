@@ -2,8 +2,9 @@
 
 namespace App\Livewire;
 
-use Livewire\Attributes\Rule;
 use Livewire\Component;
+use Livewire\Attributes\On;
+use Livewire\Attributes\Rule;
 use App\Models\RSVP as RSVPModel;
 use Filament\Notifications\Notification;
 
@@ -18,14 +19,31 @@ class Rsvp extends Component
     #[Rule('required|string')]
     public $event_id = '';
 
+    public $recaptcha;
+
     public function mount()
     {
         $this->event_id = request()->event_id;
     }
 
+    /**
+     * handleRecaptchaResponse
+     *
+     * @param  mixed $response
+     * @return void
+     */
+
+     #[On('recaptchaResponse')]
+     public function handleRecaptchaResponse($response)
+     {
+         $this->recaptcha = $response;
+     }
+
     public function save()
     {
-        $this->validate();
+        $this->validate([
+            'recaptcha' => 'required|captcha',
+        ]);
 
         RSVPModel::create([
             'name' => $this->name,
@@ -33,11 +51,13 @@ class Rsvp extends Component
             'event_id' => $this->event_id
         ]);
 
-        $this->reset();
+        $this->js('window.location.reload()');
 
         Notification::make()
-            ->title('Saved successfully')
+            ->title('RSVP Received')
+            ->body('Thank you for your RSVP. We look forward to seeing you at the event.')
             ->success()
+            ->persistent()
             ->send();
     }
 

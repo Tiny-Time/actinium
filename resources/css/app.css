@@ -36,9 +36,9 @@
     }
 }
 
-.splide__arrows {
+/* .splide__arrows {
     display: none;
-}
+} */
 
 .timer-title-shadow{
     text-shadow: 0 3px 3px #013801, 3px 0 3px rgba(1, 56, 1, 0.25), 0 9px 3px rgba(1, 56, 1, 0.25), -6px 0 3px rgba(1, 56, 1, 0.25), 0 -6px 3px rgba(1, 56, 1, 0.25);
@@ -57,4 +57,29 @@
 
 #temail {
     color: #000000;
+}
+
+.splide__arrow {
+    width: 1.2rem !important;
+}
+
+.splide__pagination {
+    bottom: -1.8em !important;
+}
+
+@media (max-width: 767px) {
+    body {
+        background-size: contain;
+        background-repeat: repeat;
+        background-position: top;
+    }
+}
+
+
+.splide__arrow--next{
+    right: -1em !important;
+}
+
+.splide__arrow--prev{
+    left: -1em !important;
 }
