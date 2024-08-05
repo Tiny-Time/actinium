@@ -66,15 +66,8 @@ class EditURL extends Component implements HasForms
 
         $this->event->update(['event_id' => $this->form->getState()['url']]);
 
-        // Close the modal
-        $this->dispatch('close-modal', ['id' => 'edit-url']);
-
         // Show a notification
-        Notification::make()
-            ->title('URL Updated')
-            ->body('The URL has been updated successfully.')
-            ->success()
-            ->send();
+        session()->flash('status', 'The URL has been updated successfully.');
 
         // Dispatch update url
         $this->dispatch('update-url', ['event' => $this->event]);
