@@ -49,6 +49,7 @@ class CustomUrlRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('custom_url')
                     ->label('URL')
                     ->copyable()
+                    ->copyableState(fn(string $state): string => config('app.url') . '/event/' . $state)
                     ->formatStateUsing(fn(string $state): string => __(config('app.url') . '/event/' . $state)),
                 Tables\Columns\TextColumn::make('total_views')
                     ->state(function (EventCustomUrl $record) {

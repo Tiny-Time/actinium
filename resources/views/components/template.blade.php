@@ -116,7 +116,9 @@
             <!-- Guestbook: Form -->
             @include('modals.create-guestbook')
             <!-- Guestbook Notes -->
-            @include('guestbook-list')
+            @if (!$event->guestbooks->isEmpty())
+                @include('guestbook-list')
+            @endif
         @endif
 
         <!-- TinyTi.me watermark -->
