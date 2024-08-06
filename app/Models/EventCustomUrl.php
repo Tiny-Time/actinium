@@ -18,4 +18,19 @@ class EventCustomUrl extends Model
     {
         return $this->belongsTo(Event::class);
     }
+
+    /**
+     * Get the guestbooks through the event.
+     */
+    public function guestbooks()
+    {
+        return $this->hasManyThrough(
+            Guestbook::class,
+            Event::class,
+            'id',
+            'event_id',
+            'event_id',
+            'id'
+        );
+    }
 }

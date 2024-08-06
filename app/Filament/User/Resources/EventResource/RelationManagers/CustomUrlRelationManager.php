@@ -79,13 +79,19 @@ class CustomUrlRelationManager extends RelationManager
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
+                    ->label('')
                     ->modalWidth('md')
                     ->modalHeading('Edit Event Custom URL (2 tokens)')
                     ->before(function () {
                         // Deduct 2 tokens from user's balance
                         (new EventResource)->deductTokens(2, 'edited');
                     }),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\Action::make('preview')
+                    ->url(fn(EventCustomUrl $record) => config('app.url') . '/event/' . $record->custom_url, true)
+                    ->label('')
+                    ->icon('heroicon-o-eye'),
+                Tables\Actions\DeleteAction::make()
+                    ->label(''),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
