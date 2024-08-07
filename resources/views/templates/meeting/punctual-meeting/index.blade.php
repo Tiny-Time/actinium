@@ -1,7 +1,7 @@
 <x-template :event="$event" :userIP="$userIP">
     <x-slot:css>
         <link rel="stylesheet"
-            href="{{ Vite::asset('resources/views/themes/meeting/punctual-meeting/css/style.css') }}" />
+            href="{{ Vite::asset('resources/views/templates/meeting/punctual-meeting/css/style.css') }}" />
     </x-slot>
     <x-slot:js>
         {{-- Write Javascript code here (Optional) --}}
@@ -12,7 +12,7 @@
         <!-- Days -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/themes/meeting/punctual-meeting/images/timer_icon.svg') }}" alt="Timer BG" />
+            <img src="{{ Vite::asset('resources/views/templates/meeting/punctual-meeting/images/timer_icon.svg') }}" alt="Timer BG" />
             <div class="toz-days">
                 <span id="toz-days">365</span>
                 <span class="toz-unit"><sub>days</sub></span>
@@ -22,7 +22,7 @@
         <!-- Hours -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/themes/meeting/punctual-meeting/images/timer_icon.svg') }}" alt="Timer BG" />
+            <img src="{{ Vite::asset('resources/views/templates/meeting/punctual-meeting/images/timer_icon.svg') }}" alt="Timer BG" />
 
             <div class="toz-hours">
                 <span id="toz-hours">24</span>
@@ -33,7 +33,7 @@
         <!-- Minutes -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/themes/meeting/punctual-meeting/images/timer_icon.svg') }}" alt="Timer BG" />
+            <img src="{{ Vite::asset('resources/views/templates/meeting/punctual-meeting/images/timer_icon.svg') }}" alt="Timer BG" />
             <div class="toz-mins">
                 <span id="toz-mins">60</span>
                 <span class="toz-unit"><sub>minutes</sub></span>
@@ -43,7 +43,7 @@
         <!-- Seconds -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/themes/meeting/punctual-meeting/images/timer_icon.svg') }}" alt="Timer BG" />
+            <img src="{{ Vite::asset('resources/views/templates/meeting/punctual-meeting/images/timer_icon.svg') }}" alt="Timer BG" />
             <div class="toz-secs">
                 <span id="toz-secs">60</span>
                 <span class="toz-unit"> <sub>seconds</sub></span>

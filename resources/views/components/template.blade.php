@@ -6,8 +6,8 @@
     @endpush
 
     @push('js')
-        <script src="{{ Vite::asset('resources/views/themes/general/js/subscribe.js') }}"></script>
-        <script src="{{ Vite::asset('resources/views/themes/general/js/main.js') }}"></script>
+        <script src="{{ Vite::asset('resources/views/templates/general/js/subscribe.js') }}"></script>
+        <script src="{{ Vite::asset('resources/views/templates/general/js/main.js') }}"></script>
         <script>
             const timerInterval = setInterval(function() {
                 window.uC('{{ $event->date_time }}', '{{ $event->timezone }}')

@@ -202,7 +202,8 @@ class EventResource extends Resource
                 ->columnSpanFull(),
             CustomDateTimePicker::make('date_time')
                 ->required()
-                ->columnSpanFull(),
+                ->columnSpanFull()
+                ->live(),
             TimeZone::make('timezone')
                 ->required()
                 ->columnSpanFull(),
@@ -275,14 +276,16 @@ class EventResource extends Resource
                         ->string()
                         ->hint('The check in day and time for visitors.')
                         ->hintColor('danger')
-                        ->columnSpanFull(),
+                        ->columnSpanFull()
+                        ->live(),
                     Forms\Components\DateTimePicker::make('event_end_time')
                         ->seconds(false)
                         ->after('check_in_time')
                         ->string()
                         ->hint('The event end day and time for visitors')
                         ->hintColor('danger')
-                        ->columnSpanFull(),
+                        ->columnSpanFull()
+                        ->live(),
                     Forms\Components\Toggle::make('guestbook')
                         ->label('Guestbook (1 token)')
                         ->hint('This control determines whether guestbook should be available or not.')

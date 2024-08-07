@@ -138,7 +138,7 @@
                                     x-text="selectedIndex == {{ $temp['id'] }} ? 'Selected' : 'Select Template'"></button>
                             </div>
                             <img src="{{ $temp['image'] }}" alt="{{ $temp['name'] }}"
-                                class="object-cover w-full h-44">
+                                class="object-fill w-full h-40">
                             <div class="px-4 my-2">
                                 <p class="font-semibold text-md">
                                     {{ $temp['name'] }}

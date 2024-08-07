@@ -106,7 +106,7 @@
                 <div class="grid gap-3 mt-5 sm:grid-cols-3 xl:grid-cols-4" x-data="{ selectedIndex: 1 }"
                     x-init="() => { $watch('selectedIndex', value => templateSelected(value)) }">
                     @foreach ($templates as $temp)
-                        <div class="relative overflow-hidden bg-gray-100 shadow rounded group ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10"
+                        <div class="relative overflow-hidden bg-gray-100 rounded shadow group ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10"
                             wire:key="{{ $temp['id'] }}">
                             <div class="absolute top-0 bottom-0 left-0 right-0 items-center justify-center bg-black/60 group-hover:flex"
                                 :class="selectedIndex == @js($temp['id']) ? 'flex' : 'hidden'"
@@ -115,7 +115,7 @@
                                     x-text="selectedIndex == {{ $temp['id'] }} ? 'Selected' : 'Select Template'"></button>
                             </div>
                             <img src="{{ $temp['image'] }}" alt="{{ $temp['name'] }}"
-                                class="object-cover w-full h-44">
+                                class="object-fill w-full h-40">
                             <div class="px-4 my-2">
                                 <p class="font-semibold text-md">
                                     {{ $temp['name'] }}
@@ -145,7 +145,7 @@
                 <x-button class="px-4 max-w-max" ce_prev="true" wire:click="prev">
                     {{ __('Previous') }}
                 </x-button>
-                <div class="flex gap-1 items-center">
+                <div class="flex items-center gap-1">
                     <x-filament::button type="button" :class="'h-max mt-3'" icon="heroicon-o-document" color="warning"
                         wire:click="draft">
                         {{ __('Draft') }}

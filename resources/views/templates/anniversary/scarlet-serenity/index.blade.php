@@ -1,7 +1,7 @@
 <x-template :event="$event" :userIP="$userIP">
     <x-slot:css>
         <link rel="stylesheet"
-            href="{{ Vite::asset('resources/views/themes/anniversary/scarlet-serenity/css/style.css') }}" />
+            href="{{ Vite::asset('resources/views/templates/anniversary/scarlet-serenity/css/style.css') }}" />
     </x-slot>
     <x-slot:js>
         {{-- Write Javascript code here (Optional) --}}

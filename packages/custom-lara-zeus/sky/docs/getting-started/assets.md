@@ -13,7 +13,7 @@ You need to add these files to your `tailwind.config.js` file in the `content` s
 
 * frontend:
   * `./vendor/lara-zeus/core/resources/views/**/*.blade.php`
-  * `./vendor/lara-zeus/sky/resources/views/themes/**/*.blade.php`
+  * `./vendor/lara-zeus/sky/resources/views/templates/**/*.blade.php`
 
 * filament:
   * `./vendor/lara-zeus/sky/resources/views/filament/**/*.blade.php`
