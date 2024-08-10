@@ -169,13 +169,7 @@ body {
 }
 
 .toz-form {
-    max-width: max-content;
-    display: flex;
-    height: 50px;
-    align-items: center;
-    margin: 10px auto;
     border-radius: 12px;
-    padding: 5px;
     border: 2px solid #f2f2f2;
     background: rgba(242, 242, 242, 0.25);
 }
@@ -195,14 +189,6 @@ body {
     background: #171f25;
     font-weight: 700;
     cursor: pointer;
-}
-
-.toz-sl {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    max-width: max-content;
-    margin: 10px auto;
 }
 
 .toz-sl a:hover,
@@ -306,22 +292,9 @@ body {
         font-size: 16px;
     }
 
-    .toz-form {
-        height: 45px;
-    }
-
-    .toz-input {
-        font-size: 16px;
-        width: 170px;
-    }
-
     .toz-f-btn {
         font-size: 14px;
         font-weight: 600;
-    }
-
-    .toz-sl {
-        margin: 0 auto;
     }
 
     .toz-sl a {

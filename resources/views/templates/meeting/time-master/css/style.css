@@ -107,11 +107,6 @@ body {
 }
 
 .toz-form {
-    max-width: max-content;
-    display: flex;
-    height: 50px;
-    align-items: center;
-    margin: 10px auto;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.25);
 }
@@ -214,10 +209,6 @@ body {
 
     .toz-c-btn {
         padding: 2px 10px;
-    }
-
-    .toz-form {
-        height: 40px;
     }
 
     .toz-f-btn {
