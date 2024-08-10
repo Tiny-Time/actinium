@@ -80,6 +80,10 @@ body {
     stroke-linecap: round;
 }
 
+.success_msg > p {
+    color: #fff !important;
+}
+
 /* Mobile/Tablets */
 
 @media (max-width: 767px) {

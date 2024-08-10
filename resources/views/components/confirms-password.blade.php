@@ -24,7 +24,7 @@
         {{ $content }}
 
         <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500" x-data="{}" x-on:confirming-password.window="setTimeout(() => $refs.confirmable_password.focus(), 250)">
-            <x-label for="password" value="{{ __('Password') }}" class="!bg-white"/>
+            <x-label for="password" value="{{ __('Password') }}" class="!bg-white dark:!bg-gray-800"/>
             <x-input type="password" placeholder="{{ __('Password') }}" autocomplete="current-password"
                         x-ref="confirmable_password"
                         wire:model="confirmablePassword"

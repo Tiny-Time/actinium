@@ -40,17 +40,6 @@ body {
     font-family: "Comic Sans MS";
 }
 
-/*
-.toz-timer {
-    display: flex;
-    padding: 42px 69px;
-    justify-content: center;
-    align-items: center;
-    gap: 29px;
-    border-radius: 16px;
-    background: rgba(4, 98, 105, 0.48);
-} */
-
 .toz-timer>div {
     font-family: "Comic Sans MS";
     font-size: 96px;

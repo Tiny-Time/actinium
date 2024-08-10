@@ -47,6 +47,9 @@ class DomainRedirectMiddleware
         // Log users out on forgot password page
         if ($isAuthenticated && $request->is('forgot-password')) {
             Auth::logout();
+
+            // Redirect to the forgot password page.
+            return $next($request);
         }
 
         // Define the redirection logic based on the current domain, device, and authentication status.

@@ -77,7 +77,7 @@
                     @foreach ($events as $event)
                         <a href="{{ route('event.preview', $event->event_id) }}" wire:key="{{ $event->event_id }}"
                             class="overflow-hidden bg-gray-200 rounded shadow-md">
-                            <img src="{{ $event->template->image }}"
+                            <img src="{{ Vite::asset($event->template->image) }}"
                                 alt="{{ $event->template->name }}" class="object-fill w-full h-40">
                             <div class="px-4 py-3">
                                 <p class="font-semibold text-gray-900 line-clamp-3">{{ $event->title }}</p>

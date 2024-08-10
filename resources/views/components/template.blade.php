@@ -47,11 +47,11 @@
             </h4>
 
             <form action="{{ route('tsubscribe') }}" method="post" id="tsubscribe"
-                class="flex p-1 mx-auto mt-3 text-sm bg-white toz-form rounded-xl max-w-max overflow-clip md:text-base">
+                class="flex max-w-sm p-1 mx-auto mt-3 text-sm bg-white toz-form rounded-xl overflow-clip md:text-base">
                 <label for="temail" class="sr-only">Email</label>
                 <input type="email" name="email" id="temail"
-                    class="flex-grow w-full border-none toz-input bg-none focus:outline-none focus:ring-0"
-                    placeholder="Your Email here..." />
+                    class="flex-grow w-full bg-transparent border-none placeholder:text-gray-700 toz-input focus:outline-none focus:ring-0"
+                    placeholder="Enter your email address here..." />
                 <button type="submit" class="toz-f-btn px-4 py-2 bg-[#091253] rounded-lg">Subscribe</button>
             </form>
 

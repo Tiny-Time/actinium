@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0 auto;
+}
+
+.toz {
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.25) 0%,
+            rgba(0, 0, 0, 0.25) 100%),
+        url("../../../../../images/templates/meeting/time-master/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Roboto", sans-serif;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 20px;
+    text-align: center;
+}
+
+.toz-title {
+    font-size: 64px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+}
+
+.toz-subtitle {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 400;
+    margin: 0;
+}
+
+.toz-timer {
+    width: 600px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+}
+
+.toz-timer>span {
+    justify-content: center;
+    color: #fff;
+    font-size: 80px;
+}
+
+.toz-unit {
+    font-size: 64px;
+}
+
+.toz-control-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.toz-tcb {
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8%;
+    padding: 12px;
+    border: none;
+    outline: none;
+}
+
+.toz-c-btn {
+    display: flex;
+    padding: 5px 16px;
+    align-self: stretch;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 8%;
+    border: none;
+    outline: none;
+}
+
+.toz-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: circle(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.toz-form {
+    max-width: max-content;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    margin: 10px auto;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.toz-input {
+    padding: 5px;
+}
+
+.toz-f-btn {
+    align-items: center;
+    align-self: stretch;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: "Open Sans";
+}
+
+.toz-sl a:hover,
+.toz-f-btn:hover {
+    color: #2563eb;
+}
+
+/* social links */
+
+.toz-sl a {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.toz-social-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.toz-policy,
+.toz-policy a {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 20px 0;
+    line-height: normal;
+}
+
+
+@media (max-width: 767px) {
+
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-title {
+        font-size: 22px;
+    }
+
+    .toz-subtitle {
+        font-size: 16px;
+    }
+
+    .toz-timer {
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0px;
+    }
+
+    .toz-timer>span {
+        font-size: 48px;
+    }
+
+    .toz-unit {
+        font-size: 40px;
+    }
+
+    .toz-divider-2 {
+        display: none;
+    }
+
+    .toz-tcb {
+        width: 30px;
+        align-items: center;
+        height: 30px;
+        padding: 5px;
+    }
+
+    .toz-c-btn {
+        padding: 2px 10px;
+    }
+
+    .toz-form {
+        height: 40px;
+    }
+
+    .toz-f-btn {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .toz-sl a {
+        width: 30px;
+        height: 30px;
+        padding: 8px;
+    }
+}

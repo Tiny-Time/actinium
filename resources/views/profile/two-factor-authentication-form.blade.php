@@ -49,15 +49,17 @@
                 </div>
 
                 @if ($showingConfirmation)
-                    <div class="rounded-lg border-[1.7px] bg-white relative mt-4 w-full focus-within:border-indigo-500">
-                        <x-label for="code" value="{{ __('Code') }}" class="!bg-white" />
+                    <div class="dark:text-gray-300">
+                        <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
+                            <x-label for="code" value="{{ __('Code') }}" class="!bg-white dark:!bg-gray-800" />
 
-                        <x-input id="code" type="text" name="code" class="block w-1/2 mt-1" inputmode="numeric" autofocus autocomplete="one-time-code"
-                            wire:model="code"
-                            wire:keydown.enter="confirmTwoFactorAuthentication" />
+                            <x-input id="code" type="text" name="code" inputmode="numeric" autofocus autocomplete="one-time-code"
+                                wire:model="code"
+                                wire:keydown.enter="confirmTwoFactorAuthentication" />
 
+                        </div>
+                        <x-input-error for="code" class="mt-2" />
                     </div>
-                    <x-input-error for="code" class="mt-2" />
                 @endif
             @endif
 
@@ -68,7 +70,7 @@
                     </p>
                 </div>
 
-                <div class="grid max-w-xl gap-1 px-4 py-4 mt-4 font-mono text-sm bg-gray-100 rounded-lg">
+                <div class="grid max-w-xl gap-1 px-4 py-4 mt-4 font-mono text-sm bg-gray-100 rounded-lg dark:bg-gray-800">
                     @foreach (json_decode(decrypt($this->user->two_factor_recovery_codes), true) as $code)
                         <div>{{ $code }}</div>
                     @endforeach

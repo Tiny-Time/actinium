@@ -31,7 +31,7 @@
                         ? 'after:border-red-100 dark:after:border-red-800'
                         : 'after:border-gray-100 dark:after:border-gray-700' }} flex w-full items-center text-red-600 dark:text-red-500 after:content-[''] after:w-full after:h-1 after:border-b after:border-4 after:inline-block">
                     <span
-                        class="flex items-center justify-center w-10 h-10 bg-red-100 rounded-full lg:h-12 lg:w-12 dark:bg-red-800 shrink-0">
+                        class="flex items-center justify-center w-10 h-10 bg-red-100 rounded-full lg:h-12 lg:w-12 dark:bg-red-400 shrink-0">
                         <svg class="w-3.5 h-3.5 lg:w-4 lg:h-4 text-red-600 dark:text-red-300" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -44,7 +44,7 @@
                         ? 'after:border-red-100 dark:after:border-red-800'
                         : 'after:border-gray-100 dark:after:border-gray-700' }} flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-4 after:inline-block">
                     <span
-                        class="{{ $currentStep > 1 ? 'bg-red-100 dark:bg-red-800' : 'bg-gray-100 dark:bg-gray-700' }} flex items-center justify-center w-10 h-10 rounded-full lg:h-12 lg:w-12 shrink-0">
+                        class="{{ $currentStep > 1 ? 'bg-red-100 dark:bg-red-400' : 'bg-gray-100 dark:bg-gray-700' }} flex items-center justify-center w-10 h-10 rounded-full lg:h-12 lg:w-12 shrink-0">
                         <svg class="{{ $currentStep > 1 ? 'text-red-600 dark:text-red-300' : 'text-gray-500 dark:text-gray-100' }} w-6 h-6 lg:w-5 lg:h-5 "
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor">
@@ -55,7 +55,7 @@
                 </li>
                 <li class="flex items-center w-max">
                     <span
-                        class="{{ $currentStep > 2 ? 'bg-red-100 dark:bg-red-800' : 'bg-gray-100 dark:bg-gray-700' }} flex items-center justify-center w-10 h-10 rounded-full lg:h-12 lg:w-12 shrink-0">
+                        class="{{ $currentStep > 2 ? 'bg-red-100 dark:bg-red-400' : 'bg-gray-100 dark:bg-gray-700' }} flex items-center justify-center w-10 h-10 rounded-full lg:h-12 lg:w-12 shrink-0">
                         <svg class="{{ $currentStep > 2 ? 'text-red-600 dark:text-red-300' : 'text-gray-500 dark:text-gray-100' }} w-6 h-6 lg:w-5 lg:h-5"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor">
@@ -137,7 +137,7 @@
                                 <button type="button" class="px-4 py-2 text-sm bg-red-400 rounded text-gray-50"
                                     x-text="selectedIndex == {{ $temp['id'] }} ? 'Selected' : 'Select Template'"></button>
                             </div>
-                            <img src="{{ $temp['image'] }}" alt="{{ $temp['name'] }}"
+                            <img src="{{ Vite::asset($temp['image']) }}" alt="{{ $temp['name'] }}"
                                 class="object-fill w-full h-40">
                             <div class="px-4 my-2">
                                 <p class="font-semibold text-md">

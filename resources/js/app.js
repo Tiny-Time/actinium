@@ -29,6 +29,7 @@ import.meta.glob([
     "../images/**",
     "../fonts/**",
     "../views/themes/**/*.{jpg,jpeg,png,gif,svg,webp,woff,woff2,ttf,eot}",
+    "../views/templates/**/*.{jpg,jpeg,png,gif,svg,webp,woff,woff2,ttf,eot}",
 ]);
 
 /* Splide Slider */

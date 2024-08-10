@@ -17,6 +17,8 @@ export default defineConfig({
                 "resources/views/templates/general/js/subscribe.js",
                 "resources/views/templates/general/js/main.js",
                 "resources/views/templates/meeting/punctual-meeting/css/style.css",
+                "resources/views/templates/meeting/time-master/css/style.css",
+                "resources/views/templates/study/shape-the-future/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

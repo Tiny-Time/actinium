@@ -6,6 +6,10 @@
         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
     </div>
 
+    @php
+        $ctemplates = \App\Models\Template::where('type', 'free')->get();
+    @endphp
+
     <div class="fixed inset-0 z-10 overflow-y-auto">
         <div class="flex items-center justify-center min-h-full p-4">
             <div class="relative w-full max-w-md overflow-hidden transition-all transform bg-gray-100 rounded shadow-xl"
@@ -115,36 +119,20 @@
                                                         d="M15.75 19.5L8.25 12l7.5-7.5" />
                                                 </svg>
                                             </div>
-                                            <!-- Template -->
-                                            <div class="w-full" x-show="selectedImage === 1">
-                                                <label for="template1">
-                                                    <img alt="template1"
-                                                        src="{{ Vite::asset('resources/images/Anniversary_ Enchanted_Midnight_Forest.webp') }}"
-                                                        class="w-full h-64 rounded-lg shadow-md">
-                                                </label>
-                                                <input type="radio" name="template" value="1"
-                                                    x-model="selectedImage" class="hidden" id="template1" checked>
-                                            </div>
-                                            <!-- Template -->
-                                            <div class="w-full" x-show="selectedImage === 2">
-                                                <label for="template2">
-                                                    <img alt="template2"
-                                                        src="{{ Vite::asset('resources/images/Anniversary_ Scarlet_Serenity.webp') }}"
-                                                        class="w-full h-64 rounded-lg shadow-md">
-                                                </label>
-                                                <input type="radio" name="template" value="2"
-                                                    x-model="selectedImage" class="hidden" id="template2">
-                                            </div>
-                                            <!-- Template -->
-                                            <div class="w-full" x-show="selectedImage === 3">
-                                                <label for="template3">
-                                                    <img alt="template3"
-                                                        src="{{ Vite::asset('resources/images/Birthday_ Dark_Blue_Sequins.webp') }}"
-                                                        class="w-full h-64 rounded-lg shadow-md">
-                                                </label>
-                                                <input type="radio" name="template" value="3"
-                                                    x-model="selectedImage" class="hidden" id="template3">
-                                            </div>
+                                            @foreach ($ctemplates as $ctemplate)
+                                                <!-- Template -->
+                                                <div class="w-full" x-show="selectedImage === {{ $ctemplate->id }}">
+                                                    <label for="template{{ $ctemplate->id }}">
+                                                        <img alt="template{{ $ctemplate->id }}"
+                                                            src="{{ Vite::asset($ctemplate->image) }}"
+                                                            class="w-full h-64 rounded-lg shadow-md">
+                                                    </label>
+                                                    <input type="radio" name="template" value="{{ $ctemplate->id }}"
+                                                        x-model="selectedImage" class="hidden" id="template{{ $ctemplate->id }}" @if ($loop->first)
+                                                            checked
+                                                        @endif>
+                                                </div>
+                                            @endforeach
                                             <!-- Right arrow -->
                                             <div class="rounded-full p-1 bg-gray-50 cursor-pointer absolute top-[45%] right-2"
                                                 @click="(selectedImage < 3) ? selectedImage = selectedImage + 1 : ''">
@@ -410,6 +398,25 @@
                     timezone: userTimeZone,
                     template_id: this.selectedImage,
                 }
+
+                // if(true){
+                //         // Remove title
+                //         self.cseHtitle = false;
+                //         // Show Error
+                //         self.csStep = 3;
+                //         // Hide preloader
+                //         loader.style.display = "none";
+
+                //         // Store the event data in the local storage
+
+                // }else{
+                //     // Remove title
+                //     self.cseHtitle = false;
+                //     // Show Error
+                //     self.csStep = 4;
+                //     // Hide preloader
+                //     loader.style.display = "none";
+                // }
 
                 // Load preloader
                 var loader = document.querySelector(".loader-wrapper");
