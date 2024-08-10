@@ -54,7 +54,6 @@ body {
     color: #fff;
     font-weight: 400;
     font-family: "Josefin Sans", sans-serif;
-    margin: 0;
 }
 
 .toz-timer {
@@ -165,8 +164,8 @@ body {
     font-weight: 500;
 }
 
-#temail{
-    color: #fff;
+#temail, #temail::placeholder {
+    color: #fff !important;
 }
 
 .toz-form {
@@ -182,18 +181,7 @@ body {
 }
 
 .toz-input {
-    font-size: 18px;
-    color: #fff;
     padding: 5px;
-    width: 250px;
-    border: none;
-    padding: 5px;
-    outline: none;
-    background: transparent;
-}
-
-#temail::placeholder {
-    color: #fff !important;
 }
 
 .toz-f-btn {
@@ -317,16 +305,6 @@ body {
         padding: 0px 10px;
         font-size: 16px;
     }
-
-    /* .toz-subscription {
-        gap: 0;
-        border-radius: 5px;
-    }
-
-    .toz-subscription-subtitle {
-        font-size: 16px;
-        margin: 0 auto;
-    } */
 
     .toz-form {
         height: 45px;
