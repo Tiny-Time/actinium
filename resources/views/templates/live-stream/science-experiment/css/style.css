@@ -24,24 +24,12 @@ body {
 }
 
 .toz-text-wrapper {
-	display: flex;
 	color: #f8f1e7;
-	flex-direction: column;
-	width: 70%;
-	gap: 10px;
-	text-align: center;
 }
 
 .toz-title {
 	font-size: 40px;
 	font-weight: 700;
-	margin: 0;
-}
-
-.toz-subtitle {
-	font-size: 16px;
-	font-weight: 400;
-	margin: 0;
 }
 
 .toz-timer {
@@ -220,16 +208,8 @@ body {
 }
 
 @media (max-width: 767px) {
-	.toz-text-wrapper {
-		width: 100%;
-	}
-
 	.toz-title {
 		font-size: 30px;
-	}
-
-	.toz-subtitle {
-		font-size: 14px;
 	}
 
 	.toz-timer {

@@ -2,8 +2,13 @@
     <x-slot:css>
         <link rel="stylesheet" href="{{ Vite::asset('resources/views/templates/live-stream/mind-body-wellness/css/style.css') }}" />
     </x-slot>
+
     <x-slot:js>
         {{-- Write Javascript code here (Optional) --}}
+    </x-slot>
+
+    <x-slot:live>
+        <img src="{{ Vite::asset('resources/views/templates/live-stream/mind-body-wellness/images/live_icon.webp') }}" alt="live icon" width="60" />
     </x-slot>
 
     <!-- Event timer/counter -->

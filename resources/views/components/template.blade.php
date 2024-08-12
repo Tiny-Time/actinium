@@ -22,10 +22,13 @@
     <!-- Main timer template -->
     <section class="px-5 py-8 text-white toz min-h-dvh">
         <div class="flex flex-col items-center gap-4 toz-main">
-            <div class="text-center toz-text-wrapper">
+            <div class="flex flex-col items-center gap-3 toz-text-wrapper">
+                @if (isset($live))
+                    {{ $live }}
+                @endif
                 <h1 class="text-3xl capitalize toz-title md:text-5xl">{{ $event->title }}</h1>
                 @if ($event->description)
-                    <h2 class="max-w-2xl mx-auto mt-4 mb-2 text-lg text-gray-200 toz-subtitle md:text-xl">
+                    <h2 class="max-w-2xl mx-auto text-lg text-gray-200 toz-subtitle md:text-xl">
                         {{ $event->description }}<br>{{ $event->post_event_massage }}
                     </h2>
                 @endif

@@ -24,19 +24,10 @@ body {
     font-family: 'Roboto Slab', serif;
 }
 
-.toz-text-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    gap: 20px;
-    text-align: center;
-}
-
 .toz-title {
     font-size: 64px;
     font-weight: 800;
     color: #fff;
-    margin: 0;
 }
 
 .toz-subtitle {
@@ -231,10 +222,6 @@ body {
 }
 
 @media (max-width: 767px) {
-    .toz-text-wrapper {
-        width: 100%;
-    }
-
     .toz-title {
         font-size: 22px;
     }

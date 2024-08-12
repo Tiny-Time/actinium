@@ -24,26 +24,16 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-.toz-text-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    gap: 20px;
-    text-align: center;
-}
-
 .toz-title {
     font-size: 64px;
     font-weight: 600;
     color: #fff;
-    margin: 0;
 }
 
 .toz-subtitle {
     font-size: 24px;
     color: #fff;
     font-weight: 400;
-    margin: 0;
 }
 
 .toz-timer {
@@ -168,11 +158,6 @@ body {
 
 
 @media (max-width: 767px) {
-
-    .toz-text-wrapper {
-        width: 100%;
-    }
-
     .toz-title {
         font-size: 22px;
     }
