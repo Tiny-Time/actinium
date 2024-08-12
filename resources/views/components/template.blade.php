@@ -22,7 +22,7 @@
     <!-- Main timer template -->
     <section class="px-5 py-8 text-white toz min-h-dvh">
         <div class="flex flex-col items-center gap-4 toz-main">
-            <div class="flex flex-col items-center gap-3 toz-text-wrapper">
+            <div class="flex flex-col items-center gap-3 text-center toz-text-wrapper">
                 @if (isset($live))
                     {{ $live }}
                 @endif

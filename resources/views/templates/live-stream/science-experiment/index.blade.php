@@ -8,7 +8,7 @@
     </x-slot>
 
     <x-slot:live>
-        <img src="{{ Vite::asset('resources/views/templates/live-stream/science-experiment/images/live_icon.webp') }}" alt="live icon" width="60" />
+        <img src="{{ Vite::asset('resources/views/templates/live-stream/science-experiment/images/live_icon.webp') }}" alt="live icon" width="80" />
     </x-slot>
 
     <!-- Event timer/counter -->
