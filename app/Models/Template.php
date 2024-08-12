@@ -73,6 +73,16 @@ class Template extends Model
                 'path' => 'templates.study.shape-the-future.index',
                 'tokens' => 4,
             ],
+            [
+                'id' => 7,
+                'name' => 'Mind Body Wellness',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/mind-body-wellness/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.mind-body-wellness.index',
+                'tokens' => 5,
+            ],
         ];
     }
 
