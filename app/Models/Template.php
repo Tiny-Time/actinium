@@ -83,6 +83,16 @@ class Template extends Model
                 'path' => 'templates.live-stream.mind-body-wellness.index',
                 'tokens' => 5,
             ],
+            [
+                'id' => 8,
+                'name' => 'Science Experiment',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/science-experiment/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.science-experiment.index',
+                'tokens' => 5,
+            ],
         ];
     }
 
