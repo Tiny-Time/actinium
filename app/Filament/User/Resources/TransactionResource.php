@@ -2,16 +2,17 @@
 
 namespace App\Filament\User\Resources;
 
-use App\Filament\User\Resources\TransactionResource\Pages;
-use App\Filament\User\Resources\TransactionResource\RelationManagers;
-use App\Models\Transaction;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Models\Transaction;
+use Filament\Resources\Resource;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\User\Resources\TransactionResource\Pages;
+use App\Filament\User\Resources\TransactionResource\RelationManagers;
 
 class TransactionResource extends Resource
 {
@@ -54,7 +55,7 @@ class TransactionResource extends Resource
                     ->visible(auth()->user()?->hasRole('super_admin')),
                 Tables\Columns\TextColumn::make('type')
                     ->searchable()
-                    ->formatStateUsing(fn ($state) => match ($state) {
+                    ->formatStateUsing(fn($state) => match ($state) {
                         'free' => 'Free',
                         'monthly' => 'Monthly',
                         'yearly' => 'Yearly',
@@ -69,12 +70,12 @@ class TransactionResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->badge()
-                    ->icon(fn ($record) => match ($record->status) {
+                    ->icon(fn($record) => match ($record->status) {
                         'incomplete' => 'heroicon-o-exclamation-circle',
                         'failed' => 'heroicon-o-x-circle',
                         'completed' => 'heroicon-o-check-circle',
                     })
-                    ->color(fn ($record) => match ($record->status) {
+                    ->color(fn($record) => match ($record->status) {
                         'incomplete' => 'warning',
                         'failed' => 'danger',
                         'completed' => 'success',
@@ -99,6 +100,17 @@ class TransactionResource extends Resource
             ])
             ->actions([
                 Tables\Actions\DeleteAction::make(),
+                Tables\Actions\Action::make('retry')
+                    ->label('Retry')
+                    ->icon('heroicon-o-arrow-path')
+                    ->visible(function ($record) {
+                        $visible = in_array($record->status, ['incomplete', 'failed'])
+                            && $record->user_id === auth()->user()->id
+                            && !auth()->user()->isCurrentSubscribed();
+
+                        return $visible;
+                    })
+                    ->url(fn($record) => route('checkout', $record->type), true),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

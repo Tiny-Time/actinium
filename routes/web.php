@@ -305,7 +305,11 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     });
 
     Route::get('/checkout/{slug}', function (Request $request) {
-        $plan = Plan::where('slug', $request->slug)->firstOrFail();
+        $plan = Plan::where('slug', $request->slug)->first();
+
+        if (empty($plan)) {
+            $plan = Plan::where('type', $request->slug)->firstOrFail();
+        }
 
         $activePlan = Subscription::where('user_id', $request->user()->id)->where('stripe_status', 'active')->first();
         $lifetime = Transaction::where('user_id', $request->user()->id)
