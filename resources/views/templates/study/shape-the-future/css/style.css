@@ -183,11 +183,6 @@ body {
     cursor: pointer;
 }
 
-.toz-sl a:hover,
-.toz-f-btn:hover {
-    color: #2563eb;
-}
-
 /* social links */
 
 .toz-sl a {

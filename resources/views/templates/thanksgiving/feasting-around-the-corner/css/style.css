@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&family=Pacifico&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0 auto;
+}
+
+.toz {
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.5) 100%),
+        url("../../../../../views/templates/thanksgiving/feasting-around-the-corner/images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Pacifico', cursive;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 20px;
+    text-align: center;
+}
+
+.toz-subtitle:first-of-type, p, h3:nth-of-type(2) {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.toz-timer {
+    width: 70%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-family: 'Hi Melody', sans-serif;
+}
+
+.toz-timer>span {
+    justify-content: center;
+    color: #FFFBEE;
+    font-weight: 400;
+    font-size: 10rem;
+    line-height: 1;
+}
+
+.toz-unit {
+    font-size: 64px;
+}
+
+.toz-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: circle(0, 0, 0, 0);
+    word-wrap: nowrap;
+    border-width: 0;
+}
+
+.toz-subscription-subtitle {
+    color: #FFFBEE;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.toz-input {
+    font-family:' Open Sans', sans-serif;
+    background: transparent;
+}
+
+::placeholder {
+    color: #FFFBEE;
+}
+
+.toz-f-btn {
+    align-items: center;
+    align-self: stretch;
+    font-size: 18px;
+    outline: none;
+    color: #FFFBEE;
+    border: none;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: 'Pacifico', cursive;
+    border-left: 2px solid #FFFBEE;
+    background: #450E2D;
+}
+
+/* social links */
+
+.toz-sl a {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: 2px solid #FFFBEE;
+    background: #450E2D;
+}
+
+.toz-social-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFBEE;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+@media (max-width: 767px) {
+    .toz-timer {
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0px;
+    }
+
+    .toz-timer>span {
+        font-size: 48px;
+    }
+
+    .toz-unit {
+        font-size: 40px;
+    }
+
+    .toz-divider-2 {
+        display: none;
+    }
+
+    .toz-tcb {
+        width: 30px;
+        align-items: center;
+        height: 30px;
+        padding: 5px;
+    }
+
+    .toz-c-btn {
+        padding: 2px 10px;
+    }
+
+    .toz-subscription-subtitle {
+        font-size: 16px;
+    }
+}

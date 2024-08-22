@@ -93,6 +93,16 @@ class Template extends Model
                 'path' => 'templates.live-stream.science-experiment.index',
                 'tokens' => 5,
             ],
+            [
+                'id' => 9,
+                'name' => 'Feasting Around The Corner',
+                'category' => 'Thanksgiving',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/thanksgiving/feasting-around-the-corner/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.thanksgiving.feasting-around-the-corner.index',
+                'tokens' => 5,
+            ],
         ];
     }
 
