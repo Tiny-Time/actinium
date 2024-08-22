@@ -103,6 +103,16 @@ class Template extends Model
                 'path' => 'templates.thanksgiving.feasting-around-the-corner.index',
                 'tokens' => 5,
             ],
+            [
+                'id' => 10,
+                'name' => 'Great Escape',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/great-escape/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.great-escape.index',
+                'tokens' => 3,
+            ],
         ];
     }
 
