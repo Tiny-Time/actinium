@@ -11,7 +11,7 @@ body {
 
 body {
 	margin: 0 auto;
-	background: url("../../../../../views/templates/live-stream/science-experiment/images/bg.webp");
+	background: url("../images/bg.webp");
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;

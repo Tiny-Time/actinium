@@ -16,7 +16,7 @@ body {
 
 .toz {
     background: linear-gradient(0deg, rgba(23, 31, 37, 0.40) 0%, rgba(23, 31, 37, 0.40) 100%),
-        url("/resources/views/templates/meeting/punctual-meeting/images/bg.webp"), lightgray 50%;
+        url("../images/bg.webp"), lightgray 50%;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;

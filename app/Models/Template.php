@@ -113,6 +113,26 @@ class Template extends Model
                 'path' => 'templates.vacation.great-escape.index',
                 'tokens' => 3,
             ],
+            [
+                'id' => 11,
+                'name' => 'Peak Performance',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/peak-performance/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.peak-performance.index',
+                'tokens' => 3,
+            ],
+            [
+                'id' => 12,
+                'name' => 'Peak Performance V2',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/peak-performance-v2/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.peak-performance-v2.index',
+                'tokens' => 3,
+            ],
         ];
     }
 

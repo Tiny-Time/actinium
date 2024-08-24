@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0 auto;
+}
+
+.toz {
+    background: linear-gradient(0deg,
+            rgba(64, 69, 73, 0.25) 0%,
+            rgba(64, 69, 73, 0.25) 100%),
+        url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Montserrat", sans-serif;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 20px;
+    text-align: center;
+}
+
+.toz-timer {
+    width: 750px;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.toz-timer>span {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: 80px;
+    gap: 10px;
+}
+
+.toz-t-w {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8%;
+    border: 2px solid #fff;
+    background: rgba(219, 143, 94, 0.5);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    width: 150px;
+    height: 150px;
+}
+
+.toz-unit {
+    font-size: 24px;
+}
+
+.toz-c-btn {
+    color: #fff;
+    border: 1px solid #fff;
+    background: rgba(219, 143, 94, 0.5);
+}
+
+.toz-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: circle(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.toz-subscription {
+    border-radius: 4%;
+    border: 2px solid #fff;
+    background: rgba(219, 143, 94, 0.5);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.toz-form {
+    border-radius: 12px;
+    border: 1.5px solid #fff;
+}
+
+.toz-input,
+::placeholder {
+    color: #fff;
+}
+
+.toz-f-btn {
+    color: #fff;
+    border-left: 2px solid #fff;
+    background: #db8f5e;
+}
+
+/* social links */
+
+.toz-social-link {
+    border: 1.5px solid #fff;
+    background: #db8f5e;
+    color: #fff;
+}
+
+.toz-watermark,
+.toz-watermark a {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 800px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .toz-timer>span {
+        font-size: 48px;
+    }
+
+    .toz-t-w {
+        width: 120px;
+        height: 120px;
+    }
+
+    .toz-unit {
+        font-size: 16px;
+    }
+
+    .toz-divider-2 {
+        display: none !important;
+    }
+}

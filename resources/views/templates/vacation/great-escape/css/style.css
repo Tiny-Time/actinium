@@ -15,7 +15,7 @@ body {
 }
 
 .toz {
-    background: url("../../../../../views/templates/vacation/great-escape/images/bg.webp"), lightgray 50%;
+    background: url("../images/bg.webp"), lightgray 50%;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
