@@ -141,7 +141,7 @@ class Template extends Model
                 'image' => 'resources/views/templates/vacation/journey-to-relaxation/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.vacation.journey-to-relaxation.index',
-                'tokens' => 3,
+                'tokens' => 10,
             ],
             [
                 'id' => 14,
@@ -151,6 +151,16 @@ class Template extends Model
                 'image' => 'resources/views/templates/vacation/dream-to-reality/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.vacation.dream-to-reality.index',
+                'tokens' => 10,
+            ],
+            [
+                'id' => 15,
+                'name' => 'Mastery tracker',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/mastery-tracker/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.mastery-tracker.index',
                 'tokens' => 3,
             ],
         ];
