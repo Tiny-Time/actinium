@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700;800&display=swap");
+
+body {
+    font-family: "Recursive", sans-serif;
+}
+
+.toz {
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.5) 100%),
+        url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-title, .toz-subtitle {
+    color: #ffd25e;
+}
+
+.toz-timer {
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    align-items: center;
+}
+
+.toz-ec-d {
+    width: 180px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    font-weight: 300;
+    position: relative;
+    transform: rotateY(180deg);
+}
+
+.toz-timer-knob {
+    display: flex;
+    width: 14px;
+    height: 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 8.345px;
+    position: absolute;
+    left: 87.8%;
+    bottom: 44%;
+    border-radius: 16.69px;
+    background-color: #ffd25e;
+}
+
+.toz-ec-d>div {
+    width: 130px;
+    height: 130px;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #ffd25e;
+    text-shadow: 0px 0px 13px #ffd25e, 0px 0px 26px rgba(255, 210, 94, 0.25),
+        0px 4px 52px rgba(255, 210, 94, 0.25),
+        0px 4px 104px rgba(255, 210, 94, 0.25),
+        0px 4px 208px rgba(255, 210, 94, 0.25),
+        0px 4px 250px rgba(255, 210, 94, 0.25);
+    border-radius: 100%;
+    transform: rotateY(180deg);
+}
+
+.toz-unit {
+    font-size: 18px;
+    font-weight: 300;
+    color: #ffd25e;
+    text-shadow: 0px 0px 13px #ffd25e, 0px 0px 26px rgba(255, 210, 94, 0.25),
+        0px 4px 52px rgba(255, 210, 94, 0.25),
+        0px 4px 104px rgba(255, 210, 94, 0.25),
+        0px 4px 208px rgba(255, 210, 94, 0.25),
+        0px 4px 250px rgba(255, 210, 94, 0.25);
+}
+
+.toz-ec-d svg {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+.toz-ec-d>svg>circle {
+    fill: transparent;
+    stroke: rgba(255, 210, 94, 0.5);
+    stroke-width: 4px;
+}
+
+.toz-ec-d>svg>circle:nth-child(2) {
+    stroke: #ffd25e;
+    stroke-dasharray: 471;
+    stroke-linecap: round;
+
+}
+
+.toz-subscription {
+    color: #ffd25e;
+    border-radius: 20px;
+    border: 2px solid #ffd25e;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+
+.toz-form{
+    padding: 0;
+    border-radius: 50px;
+}
+
+.toz-form, li.splide__slide > div{
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1.5px solid #ffd25e;
+}
+
+::placeholder, .toz-input, h3 {
+    color: #ffd25e !important;
+}
+
+.toz-f-btn {
+    color: #ffd25e;
+    border-radius: 0px 20px 20px 0px;
+    border-left: 2px solid #ffd25e;
+    background: rgba(255, 210, 94, 0.25);
+}
+
+/* social links */
+
+.toz-sl a {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 100%;
+    background: #ffd25e;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 48px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 120px;
+        height: 120px;
+        font-size: 42px;
+    }
+
+    .toz-ec-d svg {
+        width: 140px;
+        height: 130px;
+        top: auto;
+        left: auto;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+
+    .toz-ec-d svg circle {
+        r: 58px;
+        cx: 65px;
+        cy: 65px;
+        stroke-width: 4px;
+    }
+
+    .toz-timer-knob {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        left: 89%;
+        bottom: 45%;
+    }
+
+    .toz-ec-d>svg>circle:nth-child(2) {
+        stroke-dasharray: 365;
+        stroke-linecap: round;
+    }
+
+    .toz-unit {
+        font-size: 12px;
+    }
+}

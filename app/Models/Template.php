@@ -173,6 +173,16 @@ class Template extends Model
                 'path' => 'templates.meeting.time-keeper.index',
                 'tokens' => 12,
             ],
+            [
+                'id' => 17,
+                'name' => 'Training Regimen',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/training-regimen/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.training-regimen.index',
+                'tokens' => 23,
+            ],
         ];
     }
 
