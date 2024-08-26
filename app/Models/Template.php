@@ -133,6 +133,16 @@ class Template extends Model
                 'path' => 'templates.fitness.peak-performance-v2.index',
                 'tokens' => 3,
             ],
+            [
+                'id' => 13,
+                'name' => 'Journey To Relaxation',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/journey-to-relaxation/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.journey-to-relaxation.index',
+                'tokens' => 3,
+            ],
         ];
     }
 

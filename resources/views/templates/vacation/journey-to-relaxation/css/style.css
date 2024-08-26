@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+
+.toz {
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.5) 100%),
+        url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Quicksand", sans-serif;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    width: 180px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+    color: #d0cff3;
+    font-size: 48px;
+    font-weight: 700;
+    border-radius: 100%;
+    position: relative;
+}
+
+.toz-ec-d svg {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+.toz-ec-d>svg>circle {
+    fill: transparent;
+    stroke: rgba(224, 215, 206, 0.25);
+    stroke-width: 12px;
+}
+
+.toz-ec-d>svg>circle:nth-child(2) {
+    stroke: #172d26;
+    stroke-dasharray: 471;
+    stroke-linecap: round;
+}
+
+.toz-ec-d>div {
+    color: #172d26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 162px;
+    height: 162px;
+    border-radius: 100%;
+    line-height: 1;
+    flex-direction: column;
+}
+
+.toz-unit {
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.toz-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: circle(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.toz-subscription {
+    gap: 10px;
+    border-radius: 12px;
+    background: #172d26;
+}
+
+.toz-input {
+    color: #172d26;
+}
+
+::placeholder {
+    color: #013c3d;
+}
+
+.toz-f-btn {
+    align-items: center;
+    align-self: stretch;
+    font-size: 18px;
+    outline: none;
+    padding: 5px 15px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    background: #172d26;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* social links */
+
+.toz-sl a {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 48px;
+        gap: 8px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 125px;
+        height: 125px;
+        font-size: 42px;
+    }
+
+    .toz-ec-d>div {
+        width: 128px;
+        height: 128px;
+    }
+
+    .toz-ec-d svg {
+        width: 140px;
+        height: 130px;
+        top: auto;
+        left: -2px;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+
+    .toz-ec-d svg circle {
+        r: 60px;
+        cx: 65px;
+        cy: 65px;
+        stroke-width: 8px;
+    }
+
+    .toz-ec-d>svg>circle:nth-child(2) {
+        stroke-width: 8px;
+
+        stroke-dasharray: 377;
+        stroke-linecap: round;
+    }
+}

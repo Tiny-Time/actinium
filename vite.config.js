@@ -24,7 +24,8 @@ export default defineConfig({
                 "resources/views/templates/thanksgiving/feasting-around-the-corner/css/style.css",
                 "resources/views/templates/vacation/great-escape/css/style.css",
                 "resources/views/templates/fitness/peak-performance/css/style.css",
-                "resources/views/templates/fitness/peak-performance-v2/css/style.css"
+                "resources/views/templates/fitness/peak-performance-v2/css/style.css",
+                "resources/views/templates/vacation/journey-to-relaxation/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
