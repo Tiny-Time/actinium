@@ -21,6 +21,10 @@ export default defineConfig({
                 "resources/views/templates/study/shape-the-future/css/style.css",
                 "resources/views/templates/live-stream/mind-body-wellness/css/style.css",
                 "resources/views/templates/live-stream/science-experiment/css/style.css",
+                "resources/views/templates/thanksgiving/feasting-around-the-corner/css/style.css",
+                "resources/views/templates/vacation/great-escape/css/style.css",
+                "resources/views/templates/fitness/peak-performance/css/style.css",
+                "resources/views/templates/fitness/peak-performance-v2/css/style.css"
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
