@@ -48,6 +48,10 @@ body {
     font-family: "Josefin Sans", sans-serif;
 }
 
+input, p, textarea{
+    font-family: "Josefin Sans", sans-serif !important;
+}
+
 .toz-timer {
     font-size: 80px;
     display: flex;
