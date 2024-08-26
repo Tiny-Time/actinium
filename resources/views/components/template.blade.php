@@ -8,12 +8,19 @@
     @push('js')
         <script src="{{ Vite::asset('resources/views/templates/general/js/subscribe.js') }}"></script>
         <script src="{{ Vite::asset('resources/views/templates/general/js/main.js') }}"></script>
-        <script>
-            const timerInterval = setInterval(function() {
-                window.uC('{{ $event->date_time }}', '{{ $event->timezone }}')
-            }, 1000);
-        </script>
-        {{ $js }}
+        @isset($stroke)
+            {{ $stroke }}
+        @else
+            <script type="text/javascript">
+                const timerInterval = setInterval(function() {
+                    window.uC('{{ $event->date_time }}', '{{ $event->timezone }}')
+                }, 1000);
+            </script>
+        @endisset
+
+        @isset($js)
+            {{ $js }}
+        @endisset
     @endpush
 
     @section('title', __(ucfirst(substr($event->title, 0, 29)) . ' - ' . config('app.name', 'TinyTime')))

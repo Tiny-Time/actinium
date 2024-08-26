@@ -155,13 +155,23 @@ class Template extends Model
             ],
             [
                 'id' => 15,
-                'name' => 'Mastery tracker',
+                'name' => 'Mastery Tracker',
                 'category' => 'Meeting',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/meeting/mastery-tracker/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.meeting.mastery-tracker.index',
                 'tokens' => 3,
+            ],
+            [
+                'id' => 16,
+                'name' => 'Time Keeper',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/time-keeper/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.time-keeper.index',
+                'tokens' => 12,
             ],
         ];
     }

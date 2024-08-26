@@ -30,7 +30,7 @@ function userTimezone() {
     return userTimeZone;
 }
 
-function updateCountdown(datetime, timezone) {
+function updateCountdown(datetime, timezone, dynamicStrokeLength = '') {
     const localOffset = new Date().getTimezoneOffset(); // Get the local timezone offset in minutes
 
     let targetDate = new Date(datetime);
@@ -61,7 +61,10 @@ function updateCountdown(datetime, timezone) {
 
     // Calculate the dynamic stroke length based on the screen width
     const screenWidth = window.innerWidth;
-    const dynamicStrokeLength = screenWidth <= 767 ? 377 : 468;
+
+    if(!Number.isInteger(dynamicStrokeLength)){
+        dynamicStrokeLength = screenWidth <= 767 ? 377 : 468;
+    }
 
     // Event component stroke control
     // Control For seconds
