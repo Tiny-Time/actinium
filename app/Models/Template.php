@@ -143,6 +143,16 @@ class Template extends Model
                 'path' => 'templates.vacation.journey-to-relaxation.index',
                 'tokens' => 3,
             ],
+            [
+                'id' => 14,
+                'name' => 'Dream To Reality',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/dream-to-reality/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.dream-to-reality.index',
+                'tokens' => 3,
+            ],
         ];
     }
 
