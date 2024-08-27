@@ -233,6 +233,16 @@ class Template extends Model
                 'path' => 'templates.fitness.tailored-fitness-journey.index',
                 'tokens' => 7,
             ],
+            [
+                'id' => 23,
+                'name' => 'Momentum Timer',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/momentum-timer/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.momentum-timer.index',
+                'tokens' => 23,
+            ],
         ];
     }
 
