@@ -193,6 +193,16 @@ class Template extends Model
                 'path' => 'templates.new-year.ticking-away.index',
                 'tokens' => 7,
             ],
+            [
+                'id' => 19,
+                'name' => 'Dare To Start',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/dare-to-start/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.dare-to-start.index',
+                'tokens' => 7,
+            ],
         ];
     }
 

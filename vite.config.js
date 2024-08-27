@@ -31,6 +31,7 @@ export default defineConfig({
                 "resources/views/templates/meeting/time-keeper/css/style.css",
                 "resources/views/templates/fitness/training-regimen/css/style.css",
                 "resources/views/templates/new-year/ticking-away/css/style.css",
+                "resources/views/templates/study/dare-to-start/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
