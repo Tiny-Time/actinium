@@ -213,6 +213,16 @@ class Template extends Model
                 'path' => 'templates.study.embracing-mastery.index',
                 'tokens' => 7,
             ],
+            [
+                'id' => 21,
+                'name' => 'Mind Forge',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/mind-forge/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.mind-forge.index',
+                'tokens' => 7,
+            ],
         ];
     }
 
