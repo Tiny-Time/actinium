@@ -34,6 +34,7 @@ export default defineConfig({
                 "resources/views/templates/study/dare-to-start/css/style.css",
                 "resources/views/templates/study/embracing-mastery/css/style.css",
                 "resources/views/templates/study/mind-forge/css/style.css",
+                "resources/views/templates/fitness/tailored-fitness-journey/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

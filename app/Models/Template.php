@@ -223,6 +223,16 @@ class Template extends Model
                 'path' => 'templates.study.mind-forge.index',
                 'tokens' => 7,
             ],
+            [
+                'id' => 22,
+                'name' => 'Tailored Fitness Journey',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/tailored-fitness-journey/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.tailored-fitness-journey.index',
+                'tokens' => 7,
+            ],
         ];
     }
 
