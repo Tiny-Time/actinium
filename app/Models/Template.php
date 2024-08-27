@@ -203,6 +203,16 @@ class Template extends Model
                 'path' => 'templates.study.dare-to-start.index',
                 'tokens' => 7,
             ],
+            [
+                'id' => 20,
+                'name' => 'Embracing Mastery',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/embracing-mastery/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.embracing-mastery.index',
+                'tokens' => 7,
+            ],
         ];
     }
 
