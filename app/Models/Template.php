@@ -183,6 +183,16 @@ class Template extends Model
                 'path' => 'templates.fitness.training-regimen.index',
                 'tokens' => 23,
             ],
+            [
+                'id' => 18,
+                'name' => 'Ticking Away',
+                'category' => 'New Year',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/new-year/ticking-away/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.new-year.ticking-away.index',
+                'tokens' => 7,
+            ],
         ];
     }
 
