@@ -263,6 +263,16 @@ class Template extends Model
                 'path' => 'templates.meeting.punctual-progress-timer.index',
                 'tokens' => 20,
             ],
+            [
+                'id' => 26,
+                'name' => 'Sun Kissed Paradise',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/sun-kissed-paradise/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.sun-kissed-paradise.index',
+                'tokens' => 17,
+            ],
         ];
     }
 

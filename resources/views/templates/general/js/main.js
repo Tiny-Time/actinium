@@ -30,7 +30,12 @@ function userTimezone() {
     return userTimeZone;
 }
 
-function updateCountdown(datetime, timezone, dynamicStrokeLength = '') {
+function updateCountdown(
+    datetime,
+    timezone,
+    dynamicStrokeLength = "",
+    hasCountdownComponent = false
+) {
     const localOffset = new Date().getTimezoneOffset(); // Get the local timezone offset in minutes
 
     let targetDate = new Date(datetime);
@@ -62,8 +67,37 @@ function updateCountdown(datetime, timezone, dynamicStrokeLength = '') {
     // Calculate the dynamic stroke length based on the screen width
     const screenWidth = window.innerWidth;
 
-    if(!Number.isInteger(dynamicStrokeLength)){
+    if (!Number.isInteger(dynamicStrokeLength)) {
         dynamicStrokeLength = screenWidth <= 767 ? 377 : 468;
+    }
+
+    if (hasCountdownComponent) {
+        updateCountdownComponent(
+            "toz-days",
+            countdown.days,
+            "#F46D8A",
+            "white"
+        );
+        updateCountdownComponent(
+            "toz-hours",
+            countdown.hours,
+            "#F46D8A",
+            "white"
+        );
+        updateCountdownComponent(
+            "toz-mins",
+            countdown.minutes,
+            "#F46D8A",
+            "white"
+        );
+        updateCountdownComponent(
+            "toz-secs",
+            countdown.seconds,
+            "#F46D8A",
+            "white"
+        );
+
+        return;
     }
 
     // Event component stroke control
@@ -136,7 +170,7 @@ function getEventTimezoneOffset(timezone) {
     return [offsetHours, offsetHoursLocal];
 }
 
-function eventStartEndTime(datetime, timezone){
+function eventStartEndTime(datetime, timezone) {
     let targetDate = new Date(datetime);
     const tzNow = userTimezone();
     const offsetHours = getEventTimezoneOffset(tzNow)[0];
@@ -154,22 +188,35 @@ function eventStartEndTime(datetime, timezone){
 }
 
 function formatDateTime(targetDate) {
-    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+    ];
 
     const now = new Date(targetDate);
 
     const dayName = days[now.getDay()];
     const monthName = months[now.getMonth()];
-    const day = String(now.getDate()).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, "0");
     const year = now.getFullYear();
 
     let hour = now.getHours();
-    const minute = String(now.getMinutes()).padStart(2, '0');
-    const ampm = hour >= 12 ? 'PM' : 'AM';
+    const minute = String(now.getMinutes()).padStart(2, "0");
+    const ampm = hour >= 12 ? "PM" : "AM";
     hour = hour % 12;
     hour = hour ? hour : 12; // the hour '0' should be '12'
-    const formattedHour = String(hour).padStart(2, '0');
+    const formattedHour = String(hour).padStart(2, "0");
 
     const formattedDateTime = `${dayName} - ${monthName} ${day}, ${year} ${formattedHour}:${minute} ${ampm}`;
 
@@ -190,6 +237,55 @@ function colorUpdate() {
 }
 
 colorUpdate();
+
+function updateCountdownComponent(elementId, value, bgColor, textColor) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        // Remove existing content
+        element.innerHTML = "";
+
+        // Customize the innerText and style here for each digit
+        value
+            .toString()
+            .split("")
+            .forEach((digit, index, array) => {
+                const digitElement = document.createElement("div");
+                digitElement.innerText = digit + " ";
+                digitElement.style.backgroundColor = bgColor;
+                digitElement.style.color = textColor;
+                digitElement.style.padding = "20px";
+
+                // Apply border-radius based on digit and position
+                if (array.length === 1) {
+                    // Apply border-radius to all corners
+                    digitElement.style.borderRadius = "10px";
+                } else if (array.length === 2) {
+                    if (index === 0) {
+                        // First element - top-left and bottom-left
+                        digitElement.style.borderTopLeftRadius = "10px";
+                        digitElement.style.borderBottomLeftRadius = "10px";
+                    } else if (index === array.length - 1) {
+                        // Last element - top-right and bottom-right
+                        digitElement.style.borderTopRightRadius = "10px";
+                        digitElement.style.borderBottomRightRadius = "10px";
+                    }
+                } else if (array.length === 3) {
+                    if (index === 0) {
+                        // First element - top-left and bottom-left
+                        digitElement.style.borderTopLeftRadius = "10px";
+                        digitElement.style.borderBottomLeftRadius = "10px";
+                    }
+                    if (index === array.length - 1) {
+                        // Last element - top-right and bottom-right
+                        digitElement.style.borderTopRightRadius = "10px";
+                        digitElement.style.borderBottomRightRadius = "10px";
+                    }
+                }
+
+                element.appendChild(digitElement);
+            });
+    }
+}
 
 window.eventStartEndTime = eventStartEndTime;
 window.uC = updateCountdown;
