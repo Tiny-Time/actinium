@@ -39,6 +39,7 @@ export default defineConfig({
                 "resources/views/templates/study/journey-to-mastery/css/style.css",
                 "resources/views/templates/meeting/punctual-progress-timer/css/style.css",
                 "resources/views/templates/vacation/sun-kissed-paradise/css/style.css",
+                "resources/views/templates/vacation/adventure-escape/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

@@ -273,6 +273,16 @@ class Template extends Model
                 'path' => 'templates.vacation.sun-kissed-paradise.index',
                 'tokens' => 17,
             ],
+            [
+                'id' => 27,
+                'name' => 'Adventure Escape',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/adventure-escape/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.adventure-escape.index',
+                'tokens' => 19,
+            ],
         ];
     }
 
