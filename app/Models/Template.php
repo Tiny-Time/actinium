@@ -253,6 +253,16 @@ class Template extends Model
                 'path' => 'templates.study.journey-to-mastery.index',
                 'tokens' => 14,
             ],
+            [
+                'id' => 25,
+                'name' => 'Punctual Progress Timer',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/punctual-progress-timer/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.punctual-progress-timer.index',
+                'tokens' => 20,
+            ],
         ];
     }
 

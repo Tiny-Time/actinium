@@ -37,6 +37,7 @@ export default defineConfig({
                 "resources/views/templates/fitness/tailored-fitness-journey/css/style.css",
                 "resources/views/templates/meeting/momentum-timer/css/style.css",
                 "resources/views/templates/study/journey-to-mastery/css/style.css",
+                "resources/views/templates/meeting/punctual-progress-timer/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap");
 
 .toz {
     background: url("../images/bg.webp"), lightgray 50%;
@@ -6,10 +6,10 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'Cinzel', serif;
+    font-family: "Lusitana", serif;
 }
 
-.toz-main, .toz-subtitle {
+.toz-main {
     color: #101212;
 }
 
@@ -21,18 +21,18 @@
     text-align: center;
 }
 
-.toz-subtitle, #temail, p {
-    font-family: 'Montserrat', sans-serif;
-}
-
 .toz-timer {
     font-size: 64px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
+    padding: 10px;
     max-width: max-content;
     margin: 0;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
 }
 
 .toz-ec-d {
@@ -44,7 +44,6 @@
     font-size: 64px;
     font-weight: 700;
     border-radius: 100%;
-    background: #FCFAEE;
     position: relative;
 }
 
@@ -53,16 +52,16 @@
     height: 145px;
     padding: 20px 0px;
     display: flex;
-    background-color: white;
+    flex-direction: column;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     text-align: center;
     border-radius: 100%;
 }
 
 .toz-unit {
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1;
 }
 
@@ -75,38 +74,41 @@
 
 .toz-ec-d>svg>circle {
     fill: transparent;
-    stroke: #d3ed74;
-    stroke-width: 6px;
+    stroke: rgba(0, 0, 0, 0.25);
+    stroke-width: 8px;
 }
 
 .toz-ec-d>svg>circle:nth-child(2) {
-    stroke: #87AC02;
+    stroke: #000;
     stroke-dasharray: 471;
     stroke-linecap: round;
 }
 
-.toz-subscription, li.splide__slide > div {
+.toz-subscription,
+li.splide__slide>div {
     color: #101212;
-    border-radius: 14px;
-    background: rgba(252, 250, 238, 0.50);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.5);
 }
 
-.toz-subscription{
-    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);
+.toz-subscription {
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
 }
 
 .toz-form {
-    border-radius: 31px;
-    background: rgba(0, 0, 0, 0.50);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.25);
 }
 
-#temail, #temail::placeholder {
-    color: #101212;
+#temail,
+#temail::placeholder,
+.toz-subtitle, li.splide__slide>div > p, h2, h3, h4, p {
+    color: #101212 !important;
 }
 
 .toz-f-btn {
-    color: #000;
-    background: #FCFAEE;
+    color: #fff;
+    background: #000;
 }
 
 /* social links */
@@ -117,7 +119,7 @@
     padding: 10px;
     border-radius: 100%;
     background: #000;
-    color: #FCFAEE;
+    color: #fff;
 }
 
 .toz-social-link {
@@ -133,7 +135,7 @@
 }
 
 .toz-watermark a {
-    color: rgba(0, 0, 0, 0.75);
+    color: rgba(255, 255, 255, 0.75);
 }
 
 @media (max-width: 767px) {
@@ -144,7 +146,6 @@
     .toz-timer {
         font-size: 48px;
         gap: 18px;
-        padding: 0px;
     }
 
     .toz-ec-d {
