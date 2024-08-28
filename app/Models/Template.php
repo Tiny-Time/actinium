@@ -243,6 +243,16 @@ class Template extends Model
                 'path' => 'templates.meeting.momentum-timer.index',
                 'tokens' => 23,
             ],
+            [
+                'id' => 24,
+                'name' => 'Journey To Mastery',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/journey-to-mastery/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.journey-to-mastery.index',
+                'tokens' => 14,
+            ],
         ];
     }
 
