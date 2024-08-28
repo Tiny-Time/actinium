@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Rampart+One&display=swap");
+
+.toz {
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.5) 100%),
+        url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: "Rampart One", sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 20px;
+    text-align: center;
+}
+
+.toz-subtitle {
+    font-family: "Lato", sans-serif;
+}
+
+.toz-timer {
+    font-size: 100px;
+    display: flex;
+    line-height: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    color: #fff;
+}
+
+.toz-ec-d {
+    justify-content: center;
+    line-height: 1;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toz-ec-d>div {
+    letter-spacing: 20px;
+}
+
+.toz-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.divider {
+    margin-top: -50px;
+}
+
+.toz-unit {
+    font-size: 16px;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    border: 1px solid #fff;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+li.splide__slide>div>p,
+h4, h3, h2{
+    color: #fff !important;
+}
+
+div.relative.z-10.text-\[\#32214d\] > div.fixed.inset-0.z-10.overflow-y-auto > div > div > div > h3{
+    color: #000 !important;
+}
+
+div.relative.z-10.text-\[\#32214d\] > div.fixed.inset-0.z-10.overflow-y-auto > div > div > div {
+    font-family: "Rampart One", sans-serif;
+}
+
+.toz-form {
+    background: rgba(242, 242, 242, 0.25);
+}
+
+#temail,
+#temail::placeholder {
+    color: #fff;
+}
+
+.toz-f-btn {
+    font-family: "Rampart One", sans-serif;
+    color: #000;
+    background: #fff;
+}
+
+/* social links */
+
+.toz-sl a {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid #f2f2f2;
+    background: #f2f2f2;
+}
+
+@media (max-width: 767px) {
+
+    .left,
+    .right {
+        width: 50px;
+    }
+
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 48px;
+        gap: 15px;
+        margin: 0;
+        color: #fff;
+    }
+
+    .toz-ec-d>div {
+        letter-spacing: 10px;
+    }
+
+    .toz-divider {
+        margin-top: -10px;
+    }
+
+    .divider {
+        margin-top: -30px;
+    }
+
+    #divider-2 {
+        display: none;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+}

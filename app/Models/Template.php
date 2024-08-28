@@ -283,6 +283,16 @@ class Template extends Model
                 'path' => 'templates.vacation.adventure-escape.index',
                 'tokens' => 19,
             ],
+            [
+                'id' => 28,
+                'name' => 'Quest For Knowledge',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/quest-for-knowledge/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.quest-for-knowledge.index',
+                'tokens' => 8,
+            ],
         ];
     }
 
