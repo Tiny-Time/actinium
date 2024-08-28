@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700&family=Oswald:wght@400;500&display=swap');
+
+.toz {
+    background: url("../images/bg.webp"), lightgray 50% / cover no-repeat;
+    background-attachment: fixed;
+    min-height: 100dvh;
+}
+
+.toz-main {
+    color: #0a0943;
+    margin: 20px 20px;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 800px;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.toz-timer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #0a0943;
+    background: rgba(187, 215, 247, 0.3);
+}
+
+.toz-ec-d {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0a0943;
+    font-size: 64px;
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    border: 2px dashed #0a0943;
+    border-radius: 10px;
+}
+
+.toz-ec-d>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.toz-unit {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.toz-subscription, li.splide__slide > div {
+    border-radius: 10px;
+    border: 2px solid #0a0943;
+    background: rgba(187, 215, 247, 0.3);
+    -webkit-backdrop-filter: blur(4.5px);
+    backdrop-filter: blur(4.5px);
+}
+
+.toz-form {
+    border-radius: 5px;
+    border: 1.5px solid #0a0943;
+    background: rgba(187, 215, 247, 0.22);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+#temail,
+#temail::placeholder, li.splide__slide > div > p, h3 {
+    color: #0a0943 !important;
+}
+
+.toz-f-btn {
+    color: #BBD7F7;
+    background: #0a0943;
+}
+
+/* social links */
+.toz-social-link {
+    color: #BBD7F7;
+    background: #0a0943;
+}
+
+.toz-watermark a {
+    color: #0A0943;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Mobile/Tablets */
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 90%;
+    }
+
+    .toz-timer {
+        gap: 18px;
+        border: none;
+        background: rgba(10, 9, 67, 0.30);
+    }
+
+    .toz-ec-d {
+        display: flex;
+        color: #BBD7F7;
+        width: 100px;
+        height: 100px;
+        font-size: 36px;
+        justify-content: center;
+        align-items: center;
+        border: 2px dashed #bbd7f7;
+    }
+}

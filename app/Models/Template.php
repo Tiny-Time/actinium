@@ -293,6 +293,16 @@ class Template extends Model
                 'path' => 'templates.study.quest-for-knowledge.index',
                 'tokens' => 8,
             ],
+            [
+                'id' => 29,
+                'name' => 'Tranquil',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/tranquil/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.tranquil.index',
+                'tokens' => 7,
+            ],
         ];
     }
 
