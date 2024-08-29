@@ -333,6 +333,16 @@ class Template extends Model
                 'path' => 'templates.birthday.ticking-time.index',
                 'tokens' => 7,
             ],
+            [
+                'id' => 33,
+                'name' => 'Santa\'s Spectacle',
+                'category' => 'Christmas',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/christmas/santa-s-spectacle/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.christmas.santa-s-spectacle.index',
+                'tokens' => 7,
+            ],
         ];
     }
 

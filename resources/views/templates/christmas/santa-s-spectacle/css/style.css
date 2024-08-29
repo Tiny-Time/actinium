@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+body {
+    background: url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Open Sans", sans-serif !important;
+    min-height: 100vh;
+}
+
+.left,
+.right {
+    position: absolute;
+    top: 0;
+}
+
+.left {
+    left: 10%;
+}
+
+.right {
+    right: 10%;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 20px;
+    text-align: center;
+}
+
+.toz-title {
+    color: #076082;
+    font-family: "Lobster", sans-serif !important;
+}
+
+.toz-title span {
+    color: #ef5054;
+}
+
+.toz-subtitle {
+    color: #076082;
+}
+
+.toz-timer {
+    font-size: 39px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: max-content;
+    font-family: "Quicksand", sans-serif;
+    margin: 0;
+}
+
+.toz-ec-d {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    position: relative;
+}
+
+.toz-timer>.toz-ec-d:nth-child(1),
+.toz-timer>.toz-ec-d:nth-child(3) {
+    color: #ef5054;
+}
+
+.toz-timer>.toz-ec-d:nth-child(2) {
+    color: #043403;
+}
+
+.toz-timer>.toz-ec-d:nth-child(4) {
+    color: #073182;
+}
+
+.toz-ec-d>div {
+    margin-top: 40px;
+    margin-left: -70px;
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.toz-ec-d img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.toz-unit {
+    display: flex;
+    justify-content: center;
+}
+
+.toz-unit>sub {
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.toz-subscription-subtitle {
+    font-family: 'Lobster', sans-serif;
+    color: #fff;
+}
+
+.toz-form,
+li.splide__slide>div {
+    border-radius: 5px;
+    border: 2px solid #ef5054;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p {
+    color: #ef5054;
+}
+
+#temail,
+#temail::placeholder {
+    color: #ef5054;
+    font-family: "Lobster", sans-serif;
+}
+
+.toz-f-btn {
+    border-left: 2px solid #ef5054;
+    background: #fff;
+    color: #ef5054;
+    font-family: "Lobster", sans-serif;
+    font-weight: 700;
+}
+
+/* social links */
+
+.toz-social-link {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 3px solid #ef5054;
+    background: #fff;
+}
+
+.toz-watermark a {
+    color: rgba(252, 215, 210, 0.75);
+    font-family: "Lobster", sans-serif;
+}
+
+@media (max-width: 767px) {
+    .left,
+    .right {
+        width: 50px;
+        z-index: 0;
+    }
+
+    .toz-text-wrapper {
+        width: 100%;
+        z-index: 1;
+    }
+
+    .toz-timer {
+        font-size: 28px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 130px;
+        height: 130px;
+    }
+
+    .toz-ec-d>div {
+        margin-top: 30px;
+        margin-left: -40px;
+        gap: 5px;
+    }
+
+    .toz-unit>sub {
+        font-size: 14px;
+    }
+}
