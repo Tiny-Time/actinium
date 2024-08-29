@@ -46,6 +46,7 @@ export default defineConfig({
                 "resources/views/templates/plant/watering-effortless/css/style.css",
                 "resources/views/templates/birthday/ticking-time/css/style.css",
                 "resources/views/templates/christmas/santa-s-spectacle/css/style.css",
+                "resources/views/templates/birthday/building-excitement/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

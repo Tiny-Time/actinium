@@ -343,6 +343,16 @@ class Template extends Model
                 'path' => 'templates.christmas.santa-s-spectacle.index',
                 'tokens' => 7,
             ],
+            [
+                'id' => 34,
+                'name' => 'Building Excitement',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/building-excitement/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.building-excitement.index',
+                'tokens' => 7,
+            ],
         ];
     }
 
