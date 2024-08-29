@@ -313,6 +313,16 @@ class Template extends Model
                 'path' => 'templates.walk.step-by-step.index',
                 'tokens' => 7,
             ],
+            [
+                'id' => 31,
+                'name' => 'Watering Effortless',
+                'category' => 'Plant',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/plant/watering-effortless/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.plant.watering-effortless.index',
+                'tokens' => 7,
+            ],
         ];
     }
 

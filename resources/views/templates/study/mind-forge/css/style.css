@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 
-.toz {
+body {
     background: url("../images/bg.webp"), lightgray 50%;
     background-attachment: fixed;
     background-position: center;

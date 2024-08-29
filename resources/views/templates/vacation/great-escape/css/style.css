@@ -14,7 +14,7 @@ body {
     margin: 0 auto;
 }
 
-.toz {
+body {
     background: url("../images/bg.webp"), lightgray 50%;
     background-attachment: fixed;
     background-position: center;

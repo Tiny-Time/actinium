@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
 
-.toz {
+body {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%,
             rgba(0, 0, 0, 0.50) 100%), url("../images/bg.webp"), lightgray 50%;
     background-attachment: fixed;

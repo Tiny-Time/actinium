@@ -1,28 +1,39 @@
-@import url("https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;600;700&display=swap');
 
 body {
-    background: linear-gradient(0deg,
-            rgba(0, 0, 0, 0.25) 0%,
-            rgba(0, 0, 0, 0.25) 100%),
+    background:
         url("../images/bg.webp"), lightgray 50%;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: "Amiko", sans-serif;
-    color: #f2f2f4;
+    font-family: 'Antonio', sans-serif;
+    color: #C7C7A7;
+}
+
+main {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    margin: 0 !important;
+}
+
+.toz {
+    background: rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    max-width: 100%;
 }
 
 .toz-text-wrapper {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 850px;
     gap: 20px;
     text-align: center;
 }
 
 .toz-timer {
-    font-size: 80px;
+    font-size: 44px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -49,9 +60,7 @@ body {
 }
 
 .toz-ec-d>div {
-    color: #242920;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: white;
+    color: #2B6A31;
     text-align: center;
     display: flex;
     gap: 10px;
@@ -78,40 +87,40 @@ body {
     font-weight: 500;
 }
 
-.toz-subscription {
-    color: #f2f2f4;
+.toz-subscription,
+li.splide__slide>div {
+    color: #C7C7A7;
+    border-radius: 12px;
+    border: 1px solid #C7C7A7;
+    background: rgba(43, 106, 49, 0.25);
 }
 
-#tsubscribe {
+li.splide__slide>div>p,
+li.splide__slide>div>h3 {
+    color: #C7C7A7 !important;
+}
+
+.toz-form {
     background: transparent !important;
     gap: 5px;
 }
 
 .toz-input {
-    color: #f0f2efbf;
+    color: #C7C7A7;
     border-radius: 30px;
+    border: 1px solid #C7C7A7;
+    background: rgba(43, 106, 49, 0.50);
 }
 
-.toz-input,
-li.splide__slide>div {
-    background: #242920;
-    border: 2px dashed #f0f2ef;
-}
-
-li.splide__slide>div>p,
-li.splide__slide>div> h3 {
-    color: #f0f2ef;
-}
-
+#temail,
 #temail::placeholder {
-    color: #f0f2efbf;
+    color: #C7C7A7 !important;
 }
 
 .toz-f-btn {
-    color: #f0f2ef;
+    color: #2B6A31;
     border-radius: 30px;
-    border: 2px dashed #f0f2ef;
-    background: #242920;
+    background: #C7C7A7;
 }
 
 /* social links */
@@ -121,19 +130,15 @@ li.splide__slide>div> h3 {
     height: 40px;
     padding: 10px;
     border-radius: 24px;
-    border: 1px dashed #f0f2ef;
-    background: #242920;
-}
-
-.toz-social-link {
-    color: #a7e4de;
+    background: #C7C7A7;
 }
 
 .toz-watermark a {
-    color: rgba(242, 242, 244, 0.75);
+    color: rgba(199, 199, 167, 0.50);
 }
 
 @media (max-width: 767px) {
+
     .left,
     .right {
         width: 50px;
@@ -144,9 +149,11 @@ li.splide__slide>div> h3 {
     }
 
     .toz-timer {
-        font-size: 48px;
+        font-size: 33px;
         gap: 18px;
         padding: 0px;
+        font-family: 'Antonio', sans-serif;
+        filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     }
 
     .toz-ec-d {
