@@ -303,6 +303,16 @@ class Template extends Model
                 'path' => 'templates.vacation.tranquil.index',
                 'tokens' => 7,
             ],
+            [
+                'id' => 30,
+                'name' => 'Step by Step',
+                'category' => 'Walk',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/walk/step-by-step/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.walk.step-by-step.index',
+                'tokens' => 7,
+            ],
         ];
     }
 

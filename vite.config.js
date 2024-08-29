@@ -42,6 +42,7 @@ export default defineConfig({
                 "resources/views/templates/vacation/adventure-escape/css/style.css",
                 "resources/views/templates/study/quest-for-knowledge/css/style.css",
                 "resources/views/templates/vacation/tranquil/css/style.css",
+                "resources/views/templates/walk/step-by-step/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
