@@ -323,6 +323,16 @@ class Template extends Model
                 'path' => 'templates.plant.watering-effortless.index',
                 'tokens' => 7,
             ],
+            [
+                'id' => 32,
+                'name' => 'Ticking Time',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/ticking-time/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.ticking-time.index',
+                'tokens' => 7,
+            ],
         ];
     }
 
