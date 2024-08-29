@@ -7,7 +7,6 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: "Sirin Stencil", sans-serif;
 }
 
 main {
@@ -20,6 +19,10 @@ main {
     background: rgba(218, 176, 162, 0.15);
     -webkit-backdrop-filter: blur(7px);
     backdrop-filter: blur(7px);
+}
+
+h1, h2, h3, h4, .toz-ec-d>div{
+    font-family: "Sirin Stencil", sans-serif !important;
 }
 
 .toz-main, .toz-subtitle, p, h3, h4, h2 {
