@@ -10,6 +10,7 @@ use Filament\Forms\Form;
 use Filament\Actions\Action;
 use Livewire\Attributes\Url;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\DB;
 use Filament\Support\Exceptions\Halt;
 use Filament\Resources\Pages\EditRecord;
 use Filament\Support\Enums\IconPosition;
@@ -34,7 +35,7 @@ class EditEvent extends EditRecord
 
     public $event;
 
-    public function mount(int | string $record): void
+    public function mount(int|string $record): void
     {
         parent::mount($record);
 
@@ -89,12 +90,14 @@ class EditEvent extends EditRecord
         $this->currentStep = 1;
     }
 
-    public function draft(){
+    public function draft()
+    {
         $this->save(true, false);
         $this->showPublishNotification = true;
     }
 
-    public function publish(){
+    public function publish()
+    {
         $event = Event::find($this->event->id);
         $event->status = true;
         $event->save();
@@ -123,21 +126,24 @@ class EditEvent extends EditRecord
 
             $data['template_id'] = $this->template_id;
 
-            // Update status
+            // Update status.
             $data['status'] = $status;
-            // Token charge
+            // Token charge.
             $token_charge = 0;
 
-            // Update token if template is changed
+            // Update token if template is changed.
             if ($this->record->template_id != $this->template_id) {
                 $template = Template::find($this->template_id);
-                $current_token_charge = $template->tokens;
 
-                $previous_token_charge = Template::find($this->record->template_id)->tokens;
+                // Check if the user has paid for the template before.
+                $hasPaid = DB::table('event_template')
+                    ->where('event_id', $this->record->id)
+                    ->where('template_id', $this->template_id)
+                    ->where('paid', true)
+                    ->exists();
 
-                $token_charge = $current_token_charge - $previous_token_charge;
-                if ($token_charge < 0) {
-                    $token_charge = 0;
+                if (!$hasPaid) {
+                    $token_charge = $template->tokens;
                 }
             }
 
@@ -159,6 +165,15 @@ class EditEvent extends EditRecord
             $this->handleRecordUpdate($this->getRecord(), $data);
 
             $this->callHook('afterSave');
+
+            if (!$hasPaid) {
+                // Update pivot table.
+                DB::table('event_template')->insert([
+                    'event_id' => $this->record->id,
+                    'template_id' => $this->template_id,
+                    'paid' => true
+                ]);
+            }
 
             $this->commitDatabaseTransaction();
         } catch (Halt $exception) {
@@ -183,7 +198,7 @@ class EditEvent extends EditRecord
 
         // Filament Ends
         $app_url = config('app.url');
-        $this->preview_url = str_replace('//event', '/event', "$app_url/event/").$this->data['event_id'];
+        $this->preview_url = str_replace('//event', '/event', "$app_url/event/") . $this->data['event_id'];
 
         $this->currentStep = 3;
     }

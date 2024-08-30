@@ -357,14 +357,14 @@ class EventResource extends Resource
                 case 'created':
                     Notification::make()
                         ->title('Event Created Successfully!')
-                        ->body("Congratulations! Your event has been created successfully. A token charge of $token_charge has been applied.")
+                        ->body("Congratulations! Your event has been created successfully. You've been charged $token_charge tokens.")
                         ->success()
                         ->sendToDatabase(auth()->user());
                     break;
                 case 'edited':
                     Notification::make()
                         ->title('Event Edited Successfully!')
-                        ->body("Congratulations! Your event has been edited successfully. A token charge of $token_charge has been applied.")
+                        ->body("Congratulations! Your event has been edited successfully. You've been charged $token_charge tokens.")
                         ->success()
                         ->sendToDatabase(auth()->user());
                     break;

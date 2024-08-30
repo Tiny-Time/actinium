@@ -10,6 +10,7 @@ use Filament\Actions\Action;
 use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 use Filament\Resources\Pages\Page;
+use Illuminate\Support\Facades\DB;
 use Filament\Support\Enums\IconPosition;
 use App\Filament\User\Resources\EventResource;
 use Filament\Pages\Concerns\InteractsWithFormActions;
@@ -87,12 +88,14 @@ class CreateEvent extends Page
         $this->currentStep = 1;
     }
 
-    public function draft(){
+    public function draft()
+    {
         $this->save(false);
         $this->showPublishNotification = true;
     }
 
-    public function publish(){
+    public function publish()
+    {
         $event = Event::find($this->event->id);
         $event->status = true;
         $event->save();
@@ -133,7 +136,13 @@ class CreateEvent extends Page
 
         $this->event = Event::create($this->data);
 
-        $this->preview_url = str_replace('//event', '/event', config('app.url').'/event/'.$this->event->event_id);
+        DB::table('event_template')->insert([
+            'event_id' => $this->event->id,
+            'template_id' => $this->template_id,
+            'paid' => true
+        ]);
+
+        $this->preview_url = str_replace('//event', '/event', config('app.url') . '/event/' . $this->event->event_id);
 
         $this->currentStep = 3;
     }
