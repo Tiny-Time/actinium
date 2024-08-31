@@ -71,8 +71,7 @@ class EventSearch extends Component implements HasForms
                     ->orWhere('description', 'like', "%{$this->query}%")
                     ->orWhere('address', 'like', "%{$this->query}%")
                     ->orWhere('country', 'like', "%{$this->query}%")
-                    ->orWhere('state', 'like', "%{$this->query}%")
-                    ->orWhere('tags', 'like', "%{$this->query}%");
+                    ->orWhere('state', 'like', "%{$this->query}%");
             });
 
         if ($country = $this->form->getState()['country']) {

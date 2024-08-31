@@ -33,7 +33,6 @@ class EventSearch extends Component
                 ->orWhere('address', 'like', "%{$this->query}%")
                 ->orWhere('country', 'like', "%{$this->query}%")
                 ->orWhere('state', 'like', "%{$this->query}%")
-                ->orWhere('tags', 'like', "%{$this->query}%")
                 ->latest()->paginate(5),
         ]);
     }
