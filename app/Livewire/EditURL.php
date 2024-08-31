@@ -59,8 +59,10 @@ class EditURL extends Component implements HasForms
 
     public function edit(): void
     {
-        // Deduct 2 tokens from user's balance
-        (new EventResource)->deductTokens(2, 'edited');
+        if ($this->event->event_id !== $this->form->getState()['url']) {
+            // Deduct 2 tokens from user's balance
+            (new EventResource)->deductTokens(2, 'edited');
+        }
 
         $this->event->update(['event_id' => $this->form->getState()['url']]);
 
