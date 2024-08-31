@@ -139,19 +139,17 @@ class EditEvent extends EditRecord
             $token_charge = 0;
 
             // Update token if template is changed.
-            if ($this->record->template_id != $this->template_id) {
-                $template = Template::find($this->template_id);
+            $template = Template::find($this->template_id);
 
-                // Check if the user has paid for the template before.
-                $hasPaid = DB::table('event_template')
-                    ->where('event_id', $this->record->id)
-                    ->where('template_id', $this->template_id)
-                    ->where('paid', true)
-                    ->exists();
+            // Check if the user has paid for the template before.
+            $hasPaid = DB::table('event_template')
+                ->where('event_id', $this->record->id)
+                ->where('template_id', $this->template_id)
+                ->where('paid', true)
+                ->exists();
 
-                if (!$hasPaid) {
-                    $token_charge = $template->tokens;
-                }
+            if (!$hasPaid) {
+                $token_charge = $template->tokens;
             }
 
             $token_charge = $this->tokenCharge() + $token_charge;
