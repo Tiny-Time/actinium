@@ -22,6 +22,7 @@ class Template extends Model
                 'type' => 'free',
                 'path' => 'templates.anniversary.enchanted-midnight-forest.index',
                 'tokens' => 7,
+                'tags' => 'forest, night, anniversary, enchanted, midnight, free, template',
             ],
             [
                 'id' => 2,
@@ -32,6 +33,7 @@ class Template extends Model
                 'type' => 'free',
                 'path' => 'templates.anniversary.scarlet-serenity.index',
                 'tokens' => 3,
+                'tags' => 'scarlet, serenity, anniversary, free, template',
             ],
             [
                 'id' => 3,
@@ -42,6 +44,7 @@ class Template extends Model
                 'type' => 'free',
                 'path' => 'templates.birthday.dark-blue-sequins.index',
                 'tokens' => 5,
+                'tags' => 'dark, blue, sequins, birthday, free, template',
             ],
             [
                 'id' => 4,
@@ -52,6 +55,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.meeting.punctual-meeting.index',
                 'tokens' => 2,
+                'tags' => 'punctual, meeting, paid, template',
             ],
             [
                 'id' => 5,
@@ -62,6 +66,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.meeting.time-master.index',
                 'tokens' => 3,
+                'tags' => 'time, master, meeting, paid, template',
             ],
             [
                 'id' => 6,
@@ -72,6 +77,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.study.shape-the-future.index',
                 'tokens' => 4,
+                'tags' => 'shape, future, study, paid, template',
             ],
             [
                 'id' => 7,
@@ -82,6 +88,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.live-stream.mind-body-wellness.index',
                 'tokens' => 5,
+                'tags' => 'mind, body, wellness, live, stream, paid, template',
             ],
             [
                 'id' => 8,
@@ -92,6 +99,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.live-stream.science-experiment.index',
                 'tokens' => 5,
+                'tags' => 'science, experiment, live, stream, paid, template',
             ],
             [
                 'id' => 9,
@@ -102,6 +110,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.thanksgiving.feasting-around-the-corner.index',
                 'tokens' => 5,
+                'tags' => 'feasting, around, corner, thanksgiving, paid, template',
             ],
             [
                 'id' => 10,
@@ -112,6 +121,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.vacation.great-escape.index',
                 'tokens' => 3,
+                'tags' => 'great, escape, vacation, paid, template',
             ],
             [
                 'id' => 11,
@@ -122,6 +132,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.fitness.peak-performance.index',
                 'tokens' => 3,
+                'tags' => 'peak, performance, fitness, paid, template',
             ],
             [
                 'id' => 12,
@@ -132,6 +143,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.fitness.peak-performance-v2.index',
                 'tokens' => 3,
+                'tags' => 'peak, performance, fitness, paid, template',
             ],
             [
                 'id' => 13,
@@ -142,6 +154,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.vacation.journey-to-relaxation.index',
                 'tokens' => 10,
+                'tags' => 'journey, relaxation, vacation, paid, template',
             ],
             [
                 'id' => 14,
@@ -152,6 +165,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.vacation.dream-to-reality.index',
                 'tokens' => 10,
+                'tags' => 'dream, reality, vacation, paid, template',
             ],
             [
                 'id' => 15,
@@ -162,6 +176,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.meeting.mastery-tracker.index',
                 'tokens' => 3,
+                'tags' => 'mastery, tracker, meeting, paid, template',
             ],
             [
                 'id' => 16,
@@ -172,6 +187,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.meeting.time-keeper.index',
                 'tokens' => 12,
+                'tags' => 'time, keeper, meeting, paid, template',
             ],
             [
                 'id' => 17,
@@ -182,6 +198,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.fitness.training-regimen.index',
                 'tokens' => 23,
+                'tags' => 'training, regimen, fitness, paid, template',
             ],
             [
                 'id' => 18,
@@ -192,6 +209,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.new-year.ticking-away.index',
                 'tokens' => 7,
+                'tags' => 'ticking, away, new, year, paid, template',
             ],
             [
                 'id' => 19,
@@ -202,6 +220,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.study.dare-to-start.index',
                 'tokens' => 7,
+                'tags' => 'dare, start, study, paid, template',
             ],
             [
                 'id' => 20,
@@ -212,6 +231,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.study.embracing-mastery.index',
                 'tokens' => 7,
+                'tags' => 'embracing, mastery, study, paid, template',
             ],
             [
                 'id' => 21,
@@ -222,6 +242,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.study.mind-forge.index',
                 'tokens' => 7,
+                'tags' => 'mind, forge, study, paid, template',
             ],
             [
                 'id' => 22,
@@ -232,6 +253,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.fitness.tailored-fitness-journey.index',
                 'tokens' => 7,
+                'tags' => 'tailored, fitness, journey, paid, template',
             ],
             [
                 'id' => 23,
@@ -242,6 +264,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.meeting.momentum-timer.index',
                 'tokens' => 23,
+                'tags' => 'momentum, timer, meeting, paid, template',
             ],
             [
                 'id' => 24,
@@ -252,6 +275,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.study.journey-to-mastery.index',
                 'tokens' => 14,
+                'tags' => 'journey, mastery, study, paid, template',
             ],
             [
                 'id' => 25,
@@ -262,6 +286,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.meeting.punctual-progress-timer.index',
                 'tokens' => 20,
+                'tags' => 'punctual, progress, timer, meeting, paid, template',
             ],
             [
                 'id' => 26,
@@ -272,6 +297,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.vacation.sun-kissed-paradise.index',
                 'tokens' => 17,
+                'tags' => 'sun, kissed, paradise, vacation, paid, template',
             ],
             [
                 'id' => 27,
@@ -282,6 +308,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.vacation.adventure-escape.index',
                 'tokens' => 19,
+                'tags' => 'adventure, escape, vacation, paid, template',
             ],
             [
                 'id' => 28,
@@ -292,6 +319,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.study.quest-for-knowledge.index',
                 'tokens' => 8,
+                'tags' => 'quest, knowledge, study, paid, template',
             ],
             [
                 'id' => 29,
@@ -302,6 +330,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.vacation.tranquil.index',
                 'tokens' => 7,
+                'tags' => 'tranquil, vacation, paid, template',
             ],
             [
                 'id' => 30,
@@ -312,6 +341,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.walk.step-by-step.index',
                 'tokens' => 7,
+                'tags' => 'step, walk, paid, template',
             ],
             [
                 'id' => 31,
@@ -322,6 +352,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.plant.watering-effortless.index',
                 'tokens' => 7,
+                'tags' => 'watering, effortless, plant, paid, template',
             ],
             [
                 'id' => 32,
@@ -332,6 +363,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.birthday.ticking-time.index',
                 'tokens' => 7,
+                'tags' => 'ticking, time, birthday, paid, template',
             ],
             [
                 'id' => 33,
@@ -342,6 +374,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.christmas.santa-s-spectacle.index',
                 'tokens' => 7,
+                'tags' => 'santa, spectacle, christmas, paid, template',
             ],
             [
                 'id' => 34,
@@ -352,6 +385,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.birthday.building-excitement.index',
                 'tokens' => 7,
+                'tags' => 'building, excitement, birthday, paid, template',
             ],
         ];
     }

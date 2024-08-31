@@ -15,12 +15,13 @@ class EventSearch extends Component
 
     public function mount(): void
     {
-        $this->templates = Template::all();;
+        $this->templates = Template::all();
+        ;
     }
 
     public function render()
     {
-        if(empty($this->query)){
+        if (empty($this->query)) {
             return view('livewire.slide.event-search', [
                 'events' => []
             ]);
@@ -28,7 +29,12 @@ class EventSearch extends Component
 
         return view('livewire.slide.event-search', [
             'events' => Event::where('public', true)->where('status', true)->where('title', 'like', "%{$this->query}%")
-                ->orWhere('description', 'like', "%{$this->query}%")->latest()->paginate(5),
+                ->orWhere('description', 'like', "%{$this->query}%")
+                ->orWhere('address', 'like', "%{$this->query}%")
+                ->orWhere('country', 'like', "%{$this->query}%")
+                ->orWhere('state', 'like', "%{$this->query}%")
+                ->orWhere('tags', 'like', "%{$this->query}%")
+                ->latest()->paginate(5),
         ]);
     }
 }

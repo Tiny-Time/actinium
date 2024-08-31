@@ -8,12 +8,14 @@ use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
+use Filament\Tables\Actions\Action;
 use Illuminate\Support\Facades\Hash;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Notifications\Notification;
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Actions\DeleteAction;
 use Illuminate\Database\Eloquent\Builder;
@@ -68,7 +70,7 @@ class UserResource extends Resource
                 ->password()
                 ->maxLength(255)
                 ->dehydrateStateUsing(static function ($state) use ($form) {
-                    return !empty ($state) ? Hash::make($state) : $form->model->password;
+                    return !empty($state) ? Hash::make($state) : $form->model->password;
                 }),
         ];
 
@@ -86,6 +88,39 @@ class UserResource extends Resource
 
     public static function table(Table $table): Table
     {
+        $table_actions = [
+            ViewAction::make()
+                ->label('')
+                ->tooltip('User Info'),
+            EditAction::make()
+                ->label('')
+                ->tooltip('Edit User'),
+            Action::make('add_token')
+                ->label('')
+                ->color('success')
+                ->tooltip('Add Token')
+                ->icon('heroicon-o-clock')
+                ->form([
+                    TextInput::make('tokens')
+                        ->required()
+                        ->numeric(),
+                ])
+                ->modalWidth('sm')
+                ->action(function (User $user, array $data) {
+                    $user->wallet->extra_tokens += $data['tokens'];
+                    $user->wallet->save();
+
+                    Notification::make()
+                        ->title('Token Added Successfully!')
+                        ->body("{$data['tokens']} tokens have been successfully added to {$user->name}'s wallet.")
+                        ->success()
+                        ->send();
+                }),
+            DeleteAction::make()
+                ->label('')
+                ->tooltip('Delete User'),
+        ];
+
         $table
             ->columns([
                 TextColumn::make('id')
@@ -129,18 +164,14 @@ class UserResource extends Resource
                     ->label(trans('filament-user::user.resource.unverified'))
                     ->query(fn(Builder $query): Builder => $query->whereNull('email_verified_at')),
             ])
-            ->actions([
-                ActionGroup::make([
-                    ViewAction::make(),
-                    EditAction::make(),
-                    DeleteAction::make()
-                ]),
-            ]);
+            ->actions($table_actions);
 
         if (config('filament-user.impersonate')) {
-            $table->actions([
-                Impersonate::make('impersonate'),
-            ]);
+            $table->actions(array_merge($table_actions, [
+                Impersonate::make()
+                    ->label('Impersonate')
+                    ->tooltip('Impersonate User'),
+            ]));
         }
 
         return $table;

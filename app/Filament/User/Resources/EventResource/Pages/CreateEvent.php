@@ -45,6 +45,13 @@ class CreateEvent extends Page
         $this->resetPage();
     }
 
+    public function updated($name, $value): void
+    {
+        if($name === 'query') {
+            $this->resetPage();
+        }
+    }
+
     public function form(Form $form): Form
     {
         return
@@ -150,7 +157,9 @@ class CreateEvent extends Page
     public function getViewData(): array
     {
         return [
-            'templates' => Template::where('name', 'like', "%{$this->query}%")->paginate(12)
+            'templates' => Template::where('name', 'like', "%{$this->query}%")
+                ->orWhere('tags', 'like', "%{$this->query}%")
+                ->paginate(12)
         ];
     }
 

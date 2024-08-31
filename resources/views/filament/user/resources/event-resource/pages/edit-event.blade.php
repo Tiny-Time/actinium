@@ -97,34 +97,34 @@
             <div class="px-4 mt-4 mb-4 md:px-8">
                 <div class="flex flex-col gap-3 md:items-center md:justify-between md:flex-row">
                     <h1 class="text-xl font-bold md:text-2xl">Choose a template</h1>
-                    <div class="flex flex-wrap items-center gap-3">
-                        <x-filament-panels::form wire:submit="search">
-                            <div
-                                class="h-10 md:w-[350px] lg:w-[400px] flex rounded-full items-center bg-[#8D8D8D] overflow-clip">
-                                <input type="search" wire:model.live="query" placeholder="Type in a search keyword..."
-                                    name="q" id="find-event"
-                                    class="flex-grow px-4 text-sm text-gray-100 bg-transparent border-none placeholder:text-gray-100 focus:ring-0 focus:outline-none">
-                                <button type="submit"
-                                    class="block h-full px-3 text-lg font-semibold text-gray-100 bg-red-400">
-                                    <svg class="w-5 h-5 mr-2 -ml-1 text-white animate-spin" wire:loading
-                                        wire:target="search" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        viewBox="0 0 24 24">
-                                        <circle class="opacity-25" cx="12" cy="12" r="10"
-                                            stroke="currentColor" stroke-width="4"></circle>
-                                        <path class="opacity-75" fill="currentColor"
-                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                                        </path>
-                                    </svg>
-                                    <svg class="w-5 h-5" viewBox="0 0 18 19" wire:loading.class="hidden"
-                                        wire:target="search" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.79999 2.3C4.49339 2.3 1.79999 4.9934 1.79999 8.3C1.79999 11.6066 4.49339 14.3 7.79999 14.3C9.23789 14.3 10.5584 13.7894 11.5933 12.9418L15.1758 16.5242C15.2311 16.5818 15.2973 16.6278 15.3706 16.6595C15.4438 16.6911 15.5227 16.7079 15.6025 16.7087C15.6823 16.7095 15.7615 16.6944 15.8354 16.6642C15.9093 16.634 15.9765 16.5894 16.0329 16.5329C16.0894 16.4765 16.134 16.4094 16.1642 16.3354C16.1943 16.2615 16.2095 16.1824 16.2087 16.1025C16.2078 16.0227 16.1911 15.9438 16.1594 15.8706C16.1278 15.7973 16.0818 15.7311 16.0242 15.6758L12.4418 12.0934C13.2894 11.0584 13.8 9.73791 13.8 8.3C13.8 4.9934 11.1066 2.3 7.79999 2.3ZM7.79999 3.5C10.4581 3.5 12.6 5.64193 12.6 8.3C12.6 10.9581 10.4581 13.1 7.79999 13.1C5.14191 13.1 2.99999 10.9581 2.99999 8.3C2.99999 5.64193 5.14191 3.5 7.79999 3.5Z"
-                                            fill="#F1F5F9" />
-                                    </svg>
-                                    <span class="sr-only">Search</span>
-                                </button>
-                            </div>
-                        </x-filament-panels::form>
+                    <x-filament-panels::form wire:submit="search">
+                        <div
+                            class="h-10 md:w-[350px] lg:w-[400px] flex rounded-full items-center bg-[#8D8D8D] overflow-clip">
+                            <input type="search" wire:model.live="query" placeholder="Type in a search keyword..."
+                                name="q" id="find-event"
+                                class="flex-grow px-4 text-sm text-gray-100 bg-transparent border-none placeholder:text-gray-100 focus:ring-0 focus:outline-none">
+                            <button type="submit"
+                                class="block h-full px-3 text-lg font-semibold text-gray-100 bg-red-400">
+                                <svg class="w-5 h-5 mr-2 -ml-1 text-white animate-spin" wire:loading
+                                    wire:target="search" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10"
+                                        stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                    </path>
+                                </svg>
+                                <svg class="w-5 h-5" viewBox="0 0 18 19" wire:loading.class="hidden"
+                                    wire:target="search" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7.79999 2.3C4.49339 2.3 1.79999 4.9934 1.79999 8.3C1.79999 11.6066 4.49339 14.3 7.79999 14.3C9.23789 14.3 10.5584 13.7894 11.5933 12.9418L15.1758 16.5242C15.2311 16.5818 15.2973 16.6278 15.3706 16.6595C15.4438 16.6911 15.5227 16.7079 15.6025 16.7087C15.6823 16.7095 15.7615 16.6944 15.8354 16.6642C15.9093 16.634 15.9765 16.5894 16.0329 16.5329C16.0894 16.4765 16.134 16.4094 16.1642 16.3354C16.1943 16.2615 16.2095 16.1824 16.2087 16.1025C16.2078 16.0227 16.1911 15.9438 16.1594 15.8706C16.1278 15.7973 16.0818 15.7311 16.0242 15.6758L12.4418 12.0934C13.2894 11.0584 13.8 9.73791 13.8 8.3C13.8 4.9934 11.1066 2.3 7.79999 2.3ZM7.79999 3.5C10.4581 3.5 12.6 5.64193 12.6 8.3C12.6 10.9581 10.4581 13.1 7.79999 13.1C5.14191 13.1 2.99999 10.9581 2.99999 8.3C2.99999 5.64193 5.14191 3.5 7.79999 3.5Z"
+                                        fill="#F1F5F9" />
+                                </svg>
+                                <span class="sr-only">Search</span>
+                            </button>
+                        </div>
+                    </x-filament-panels::form>
+                    {{-- <div class="flex flex-wrap items-center gap-3">
                         <x-filament::dropdown placement="bottom-end">
                             <x-slot name="trigger">
                                 <x-filament::button color="success" icon="heroicon-m-funnel" icon-position="after" outlined>
@@ -138,7 +138,7 @@
                                 </x-filament::dropdown.list.item>
                             </x-filament::dropdown.list>
                         </x-filament::dropdown>
-                    </div>
+                    </div> --}}
                 </div>
                 <x-validation-errors class="my-4" />
                 <div class="grid gap-3 mt-5 sm:grid-cols-3 xl:grid-cols-4" x-data="{ selectedIndex: {{ empty($this->record?->template_id) ? 1 : $this->record?->template_id }} }"

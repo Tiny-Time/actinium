@@ -51,6 +51,13 @@ class EditEvent extends EditRecord
         $this->resetPage();
     }
 
+    public function updated($name, $value): void
+    {
+        if($name === 'query') {
+            $this->resetPage();
+        }
+    }
+
     public function form(Form $form): Form
     {
         return
@@ -218,6 +225,7 @@ class EditEvent extends EditRecord
         $specificId = $this->record->template_id;
         return [
             'templates' => Template::where('name', 'like', "%{$this->query}%")
+                ->orWhere('tags', 'like', "%{$this->query}%")
                 ->orderByRaw("id = $specificId DESC")->paginate(12)
         ];
     }
