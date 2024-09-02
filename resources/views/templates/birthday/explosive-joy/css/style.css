@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap");
+
+
+body {
+    background: url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Fredoka", sans-serif;
+    min-height: 100vh;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-title, .toz-subtitle, p, h3 {
+    color: #490d91 !important;
+}
+
+.toz-timer {
+    font-size: 42px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    color: #490d91;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    width: 155px;
+    height: 155px;
+}
+
+.toz-ec-d img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.toz-unit {
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+.toz-subscription, li.splide__slide > div {
+    color: #490d91;
+    border-radius: 14px;
+    border: 3px solid #490d91;
+    background: #a5d3ff;
+}
+
+.toz-form {
+    gap: 7px;
+    background: transparent;
+}
+
+.toz-input {
+    color: #490d91;
+    border-radius: 33px;
+    border: 2px solid #490d91;
+}
+
+#temail::placeholder {
+    color: #490d91;
+}
+
+.toz-f-btn {
+    color: #490d91;
+    border-radius: 30px;
+    border: 2px solid #490d91;
+    font-weight: 700;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* social links */
+
+.toz-social-link {
+    border-radius: 100%;
+    border: 2px solid #490d91;
+    background: transparent;
+}
+
+.toz-watermark a {
+    color: rgba(73, 13, 145, 0.5);
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer{
+        font-size: 20px;
+    }
+
+    .toz-ec-d {
+        width: 130px;
+        height: 130px;
+    }
+
+    .toz-ec-d>div {
+        width: 115px;
+        height: 115px;
+    }
+
+    .toz-unit {
+        font-size: 12px;
+    }
+}

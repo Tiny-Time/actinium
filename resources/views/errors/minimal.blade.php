@@ -36,11 +36,11 @@
 
     @livewire('preloader')
     <x-banner />
+    @include('layouts.header')
 
     @php
-        $templates = \App\Models\Template::take(3);
+        $templates = \App\Models\Template::limit(3)->get();
     @endphp
-    @include('layouts.header')
     <div class="flex flex-col items-center justify-center gap-3 px-4 py-10 text-center">
         <h1 class="text-xl font-bold md:text-4xl">Whoopsie daisy!</h1>
         <p class="md:text-lg">It seems our event timer decided to take an unscheduled coffee break.<br>
@@ -53,7 +53,7 @@
         <div class="grid gap-3 mx-auto mt-3 md:grid-cols-3">
             @foreach ($templates as $temp)
                 <div class="overflow-hidden bg-gray-200 rounded">
-                    <img src="{{ $temp->image }}" alt="{{ $temp->name }}" class="object-cover w-full h-44">
+                    <img src="{{ Vite::asset($temp->image) }}" alt="{{ $temp->name }}" class="object-cover w-full h-44">
                     <p class="px-4 my-2 font-semibold text-md">{{ $temp->name }}</p>
                 </div>
             @endforeach

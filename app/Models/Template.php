@@ -409,6 +409,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'elevate, sweat, sessions, fitness, paid, template',
             ],
+            [
+                'id' => 37,
+                'name' => 'Explosive Joy',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/explosive-joy/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.explosive-joy.index',
+                'tokens' => 7,
+                'tags' => 'explosive, joy, birthday, paid, template',
+            ],
         ];
     }
 
