@@ -398,6 +398,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'limitless, learning, study, paid, template',
             ],
+            [
+                'id' => 36,
+                'name' => 'Elevate Your Sweat Sessions',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/elevate-your-sweat-sessions/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.elevate-your-sweat-sessions.index',
+                'tokens' => 7,
+                'tags' => 'elevate, sweat, sessions, fitness, paid, template',
+            ],
         ];
     }
 

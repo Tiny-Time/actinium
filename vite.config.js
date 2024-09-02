@@ -48,6 +48,7 @@ export default defineConfig({
                 "resources/views/templates/christmas/santa-s-spectacle/css/style.css",
                 "resources/views/templates/birthday/building-excitement/css/style.css",
                 "resources/views/templates/study/limitless-learning/css/style.css",
+                "resources/views/templates/fitness/elevate-your-sweat-sessions/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
