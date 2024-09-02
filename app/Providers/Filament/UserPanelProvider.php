@@ -77,6 +77,10 @@ class UserPanelProvider extends PanelProvider
                     ->visible(fn () => auth()->user()?->hasRole('super_admin'))
                     ->icon('heroicon-o-user-plus'),
                 NavigationItem::make()
+                    ->label('Search Events')
+                    ->url('/events', shouldOpenInNewTab: true)
+                    ->icon('heroicon-o-clock'),
+                NavigationItem::make()
                     ->label('Blogs')
                     ->url('/blog')
                     ->icon('heroicon-o-document-text')

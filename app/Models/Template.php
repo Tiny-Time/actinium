@@ -387,6 +387,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'building, excitement, birthday, paid, template',
             ],
+            [
+                'id' => 35,
+                'name' => 'Limitless Learning',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/limitless-learning/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.limitless-learning.index',
+                'tokens' => 7,
+                'tags' => 'limitless, learning, study, paid, template',
+            ],
         ];
     }
 

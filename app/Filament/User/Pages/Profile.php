@@ -13,4 +13,6 @@ class Profile extends Page
     protected static ?int $navigationSort = 5;
 
     protected static string $view = 'filament.user.pages.profile';
+
+    protected static ?string $navigationGroup = 'Settings';
 }
