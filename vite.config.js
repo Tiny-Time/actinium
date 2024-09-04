@@ -51,6 +51,7 @@ export default defineConfig({
                 "resources/views/templates/fitness/elevate-your-sweat-sessions/css/style.css",
                 "resources/views/templates/birthday/explosive-joy/css/style.css",
                 "resources/views/templates/birthday/hyped-celebration/css/style.css",
+                "resources/views/templates/vacation/dream-gateway/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

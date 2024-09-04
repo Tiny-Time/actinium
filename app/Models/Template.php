@@ -431,6 +431,17 @@ class Template extends Model
                 'tokens' => 8,
                 'tags' => 'hyped, celebration, birthday, paid, template',
             ],
+            [
+                'id' => 39,
+                'name' => 'Dream Gateway',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/dream-gateway/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.dream-gateway.index',
+                'tokens' => 7,
+                'tags' => 'dream, gateway, vacation, paid, template',
+            ],
         ];
     }
 
