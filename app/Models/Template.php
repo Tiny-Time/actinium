@@ -442,6 +442,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'dream, gateway, vacation, paid, template',
             ],
+            [
+                'id' => 40,
+                'name' => 'Stay on Track',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/stay-on-track/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.stay-on-track.index',
+                'tokens' => 3,
+                'tags' => 'stay, track, meeting, paid, template',
+            ],
         ];
     }
 

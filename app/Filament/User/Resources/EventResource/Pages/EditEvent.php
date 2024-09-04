@@ -224,6 +224,7 @@ class EditEvent extends EditRecord
         return [
             'templates' => Template::where('name', 'like', "%{$this->query}%")
                 ->orWhere('tags', 'like', "%{$this->query}%")
+                ->orWhere('tokens', 'like', "%{$this->query}%")
                 ->orderByRaw("id = $specificId DESC")->paginate(12)
         ];
     }

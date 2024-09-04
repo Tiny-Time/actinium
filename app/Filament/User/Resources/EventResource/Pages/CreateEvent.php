@@ -159,6 +159,7 @@ class CreateEvent extends Page
         return [
             'templates' => Template::where('name', 'like', "%{$this->query}%")
                 ->orWhere('tags', 'like', "%{$this->query}%")
+                ->orWhere('tokens', 'like', "%{$this->query}%")
                 ->paginate(12)
         ];
     }
