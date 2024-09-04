@@ -420,6 +420,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'explosive, joy, birthday, paid, template',
             ],
+            [
+                'id' => 38,
+                'name' => 'Hyped Celebration',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/hyped-celebration/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.hyped-celebration.index',
+                'tokens' => 8,
+                'tags' => 'hyped, celebration, birthday, paid, template',
+            ],
         ];
     }
 

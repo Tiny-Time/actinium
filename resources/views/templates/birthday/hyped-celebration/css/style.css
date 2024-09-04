@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    background: url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100dvh;
+}
+
+.toz-main {
+    color: #101212;
+    font-family: "Boogaloo", sans-serif;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    font-weight: 500;
+    border-radius: 100%;
+    background: #a0d5cb;
+    position: relative;
+    transform: rotateY(180deg);
+}
+
+.toz-timer-knob {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8.345px;
+    position: absolute;
+    left: 87%;
+    bottom: 44%;
+    z-index: 1;
+    border-radius: 16.69px;
+    background-color: #101212;
+}
+
+.toz-ec-d>div {
+    width: 145px;
+    height: 145px;
+    padding: 20px 0px;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 100%;
+    transform: rotateY(180deg);
+}
+
+.toz-unit {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.toz-ec-d svg {
+    position: absolute;
+    top: 5px;
+    left: -6px;
+    z-index: 1;
+}
+
+.toz-ec-d>svg>circle {
+    fill: transparent;
+    stroke: rgba(16, 18, 18, 0.5);
+    stroke-width: 6px;
+}
+
+.toz-ec-d>svg>circle:nth-child(2) {
+    stroke: #101212;
+    stroke-dasharray: 471;
+    stroke-linecap: round;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    color: #101212;
+    border-radius: 14px;
+    border: 8px solid #a0d5cb;
+    background: #d5e7eb;
+    box-shadow: 0px 0px 4px 4px rgba(16, 18, 18, 0.25);
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+h3, h4, h3, .title-color,
+.toz-subtitle,
+p {
+    color: #101212 !important;
+    font-family: "Boogaloo", sans-serif;
+}
+
+.toz-subtitle, p {
+    font-family: "Roboto", sans-serif;
+}
+
+.toz-form {
+    margin: 5px auto;
+    border-radius: 33px 33px;
+    background: #a0d5cb;
+}
+
+#temail,
+#temail::placeholder {
+    color: #101212 !important;
+}
+
+.toz-f-btn {
+    color: #a0d5cb;
+    border-radius: 0px 30px 30px 0px;
+    border: 3px solid #101212;
+    background: #101212;
+}
+
+.toz-highlight {
+    color: #D5E7EB;
+}
+
+/* social links */
+
+.toz-sl a:nth-child(even) {
+    color: #101212;
+    background: #a0d5cb;
+}
+
+.toz-sl a:nth-child(odd) {
+    color: #a0d5cb;
+    background: #101212;
+}
+
+.toz-social-link {
+    background: #101212;
+}
+
+.toz-watermark a {
+    font-family: "Boogaloo", sans-serif;
+    color: rgba(16, 18, 18, 0.75);
+    font-size: 25px;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 48px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 130px;
+        height: 130px;
+        font-size: 42px;
+    }
+
+    .toz-ec-d>div {
+        width: 110px;
+        height: 110px;
+    }
+
+    .toz-ec-d svg {
+        width: 130px;
+        height: 130px;
+        top: auto;
+        left: auto;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+
+    .toz-ec-d svg circle {
+        r: 58px;
+        cx: 65px;
+        cy: 65px;
+        stroke-width: 4px;
+    }
+
+    .toz-timer-knob {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        left: 89%;
+        bottom: 45%;
+    }
+
+    .toz-ec-d>svg>circle:nth-child(2) {
+        stroke-dasharray: 365;
+        stroke-linecap: round;
+    }
+
+    .toz-unit {
+        font-size: 12px;
+    }
+}
