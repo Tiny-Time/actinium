@@ -475,6 +475,17 @@ class Template extends Model
                 'tokens' => 21,
                 'tags' => 'laughter, surprises, pure, joy, birthday, paid, template',
             ],
+            [
+                'id' => 43,
+                'name' => 'Focus Booster',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/focus-booster/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.focus-booster.index',
+                'tokens' => 6,
+                'tags' => 'focus, booster, study, paid, template',
+            ],
         ];
     }
 

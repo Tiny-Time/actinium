@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Geostar+Fill&family=Montserrat:wght@400;600;700&display=swap");
+
+body {
+    margin: 0 auto;
+    background: url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100dvh;
+}
+
+.toz-main {
+    font-family: "Geostar Fill", serif !important;
+    color: #110a07 !important;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-subtitle {
+    font-family: "Montserrat", sans-serif;
+}
+
+.toz-timer {
+    width: 850px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+    padding: 10px 50px;
+    background: rgba(252, 253, 248, 0.5);
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.toz-timer>span {
+    justify-content: center;
+    font-size: 64px;
+}
+
+.toz-divider>svg {
+    height: 100%;
+}
+
+.toz-t-w {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.toz-unit {
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.toz-subscription, li.splide__slide > div {
+    background: rgba(252, 253, 248, 0.5);
+    box-shadow: 0px 0px 4px 2px rgba(17, 10, 7, 0.25);
+    gap: 10px;
+    border-radius: 0;
+}
+
+.toz-subscription-subtitle {
+    font-family: "Montserrat", sans-serif;
+}
+
+.toz-form {
+    gap: 5px;
+}
+
+.toz-input {
+    color: #01273e;
+    font-family: "Montserrat", sans-serif;
+    background: rgba(252, 253, 248, 0.5);
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25) inset;
+}
+
+::placeholder, * {
+    color: #01273e !important;
+}
+
+.toz-f-btn {
+    font-family: "Montserrat", sans-serif;
+    background: rgba(252, 253, 248, 0.5);
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+/* social links */
+.toz-social-link {
+    background: rgba(252, 253, 248, 0.5);
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+.toz-watermark a {
+    background: rgba(252, 253, 248, 0.5);
+    padding: 10px 20px;
+    font-weight: 700;
+    color: #110a07;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0px;
+        padding: 10px;
+    }
+
+    .toz-timer>span {
+        font-size: 48px;
+    }
+
+    .toz-unit {
+        font-size: 16px;
+        margin-right: -35px;
+    }
+
+    .toz-divider-2 {
+        display: none;
+    }
+}

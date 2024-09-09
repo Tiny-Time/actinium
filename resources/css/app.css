@@ -67,6 +67,10 @@
     bottom: -1.8em !important;
 }
 
+.splide__track{
+    padding: 10px !important;
+}
+
 @media (max-width: 767px) {
     body {
         background-size: contain;
