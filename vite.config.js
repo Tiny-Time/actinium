@@ -58,6 +58,7 @@ export default defineConfig({
                 "resources/views/templates/study/focus-booster/css/style.css",
                 "resources/views/templates/vacation/dream-gateway-v2/css/style.css",
                 "resources/views/templates/fitness/optimal-workout/css/style.css",
+                "resources/views/templates/fitness/redefined-fitness-journey/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

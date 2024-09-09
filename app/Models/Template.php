@@ -508,6 +508,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'optimal, workout, fitness, paid, template',
             ],
+            [
+                'id' => 46,
+                'name' => 'Redefined Fitness Journey',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/redefined-fitness-journey/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.redefined-fitness-journey.index',
+                'tokens' => 10,
+                'tags' => 'redefined, fitness, journey, paid, template',
+            ],
         ];
     }
 
