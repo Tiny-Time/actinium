@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&family=Tourney:wght@400;500;600&display=swap");
+
+* {
+    color: #3a1502 !important;
+}
+
+body {
+    background: url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
+    background-repeat: repeat;
+    min-height: 100dvh;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 20px;
+    text-align: center;
+}
+
+.toz-subtitle {
+    font-family: "Titillium Web", sans-serif !important;
+}
+
+.toz-timer {
+    width: 700px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-family: "Tourney", sans-serif !important;
+}
+
+.toz-timer>span {
+    justify-content: center;
+    font-weight: 700;
+    font-size: 64px;
+    margin: 0;
+}
+
+.toz-t-w {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.toz-unit {
+    font-size: 18px;
+    font-family: "Titillium Web", sans-serif;
+}
+
+.toz-t-w>svg {
+    width: 90%;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.toz-subscription-subtitle {
+    color: #3a1502;
+    font-family: "Titillium Web", sans-serif;
+}
+
+.toz-form {
+    color: #fff;
+    background: rgba(58, 21, 2, 0.75);
+}
+
+.toz-input,
+.toz-input::placeholder {
+    color: #fff;
+}
+
+.toz-f-btn {
+    color: #fff !important;
+    background: #3a1502 !important;
+}
+
+/* social links */
+
+.toz-watermark a {
+    color: rgba(58, 21, 2, 0.5);
+}
+
+@media (max-width: 767px) {
+    body {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0px;
+    }
+
+    .toz-timer>span {
+        font-size: 48px;
+    }
+
+    .toz-unit {
+        font-size: 16px;
+    }
+
+    .toz-divider-2 {
+        display: none;
+    }
+}

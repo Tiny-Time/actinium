@@ -497,6 +497,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'dream, gateway, vacation, paid, template',
             ],
+            [
+                'id' => 45,
+                'name' => 'Optimal Workout',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/optimal-workout/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.optimal-workout.index',
+                'tokens' => 7,
+                'tags' => 'optimal, workout, fitness, paid, template',
+            ],
         ];
     }
 
