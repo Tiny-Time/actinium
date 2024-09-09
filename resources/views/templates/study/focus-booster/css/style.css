@@ -43,6 +43,10 @@ body {
     font-size: 64px;
 }
 
+.toz-divider{
+    margin: auto;
+}
+
 .toz-divider>svg {
     height: 100%;
 }

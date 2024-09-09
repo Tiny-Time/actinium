@@ -486,6 +486,17 @@ class Template extends Model
                 'tokens' => 6,
                 'tags' => 'focus, booster, study, paid, template',
             ],
+            [
+                'id' => 44,
+                'name' => 'Dream Gateway v2',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/dream-gateway-v2/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.dream-gateway-v2.index',
+                'tokens' => 7,
+                'tags' => 'dream, gateway, vacation, paid, template',
+            ],
         ];
     }
 

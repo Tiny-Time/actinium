@@ -56,6 +56,7 @@ export default defineConfig({
                 "resources/views/templates/meeting/time-sync/css/style.css",
                 "resources/views/templates/birthday/laughter-surprises-pure-joy/css/style.css",
                 "resources/views/templates/study/focus-booster/css/style.css",
+                "resources/views/templates/vacation/dream-gateway-v2/css/style.css"
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
