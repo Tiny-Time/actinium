@@ -453,6 +453,17 @@ class Template extends Model
                 'tokens' => 3,
                 'tags' => 'stay, track, meeting, paid, template',
             ],
+            [
+                'id' => 41,
+                'name' => 'TimeSync',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/time-sync/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.time-sync.index',
+                'tokens' => 3,
+                'tags' => 'time, sync, meeting, paid, template',
+            ],
         ];
     }
 

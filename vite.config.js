@@ -53,6 +53,7 @@ export default defineConfig({
                 "resources/views/templates/birthday/hyped-celebration/css/style.css",
                 "resources/views/templates/vacation/dream-gateway/css/style.css",
                 "resources/views/templates/meeting/stay-on-track/css/style.css",
+                "resources/views/templates/meeting/time-sync/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

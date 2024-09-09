@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&display=swap");
+
+body {
+    background: url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
+    min-height: 100dvh;
+}
+
+.toz {
+    font-family: "Sorts Mill Goudy", serif;
+    color: #192a3c;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-subtitle {
+    font-family: "Quicksand", sans-serif;
+}
+
+.toz-timer {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.toz-timer>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toz-t-w {
+    display: flex;
+    justify-content: center;
+    font-size: 80px;
+}
+
+.toz-t-w span {
+    display: flex;
+    gap: 8px;
+}
+
+.toz-unit {
+    color: #192a3c;
+    font-size: 20px;
+}
+
+.toz-subscription, p {
+    color: #192a3c;
+    font-family: "Quicksand", sans-serif;
+}
+
+.toz-form, li.splide__slide > div {
+    border-radius: 26px;
+    border: 2px solid #192a3c;
+}
+
+#temail, #temail::placeholder, h2, h3 {
+    color: #192a3c !important;
+}
+
+.toz-f-btn {
+    background: #192a3c;
+    color: #fff;
+    border-top-right-radius: 26px;
+    border-bottom-right-radius: 26px;
+}
+
+/* social links */
+
+.toz-social-link {
+    color: #ebe6d5;
+    border: 1.5px solid #ebe6d5;
+    background: #192a3c;
+    border-radius: 100%;
+}
+
+.toz-watermark a {
+    color: rgba(25, 42, 60, 0.5);
+    font-weight: 700;
+    font-size: 24px;
+    width: 100%;
+    text-decoration: none;
+    padding: 50px 10px 50px 0px;
+    text-align: end;
+}
+
+@media (max-width: 767px) {
+    body{
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        gap: 10px;
+    }
+
+    .toz-t-w {
+        font-size: 48px;
+    }
+
+    .toz-t-w>span>div {
+        padding: 10px !important;
+        height: 70px !important;
+        width: 70px !important;
+        justify-content: center;
+        border-radius: 100% !important;
+    }
+
+    .toz-unit {
+        font-size: 18px;
+    }
+}
