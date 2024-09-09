@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+
+body {
+    background: linear-gradient(0deg,
+            rgba(34, 51, 82, 0.25) 0%,
+            rgba(34, 51, 82, 0.25) 100%),
+        url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100dvh;
+}
+
+.toz-main, .toz-title, h2, h3 {
+    font-family: "Quicksand", sans-serif !important;
+    color: #223352;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    font-weight: 700;
+    border-radius: 100%;
+    background: #e8e7e6;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    width: 145px;
+    height: 145px;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    text-align: center;
+    border-radius: 100%;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.toz-unit {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.toz-ec-d svg {
+    position: absolute;
+    top: 5px;
+    left: -6px;
+    z-index: 1;
+}
+
+.toz-ec-d>svg>circle {
+    fill: transparent;
+    stroke: rgba(0, 0, 0, 0.25);
+    stroke-width: 6px;
+}
+
+.toz-ec-d>svg>circle:nth-child(2) {
+    stroke: #223352;
+    stroke-dasharray: 471;
+    stroke-linecap: round;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    color: #223352;
+    border-radius: 14px;
+    background: #e8e7e6;
+    box-shadow: 0px 0px 4px 2px rgba(34, 51, 82, 0.25);
+}
+
+.toz-form {
+    gap: 10px;
+}
+
+.toz-input {
+    color: #223352;
+    border-radius: 20px;
+    background: #e8e7e6;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25) inset;
+}
+
+::placeholder {
+    color: #223352;
+}
+
+.toz-f-btn {
+    color: #223352;
+    border-radius: 20px;
+    background: #e8e7e6;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+/* social links */
+.toz-social-link {
+    border-radius: 30px;
+    background: #e8e7e6;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+.toz-watermark a {
+    color: rgba(34, 51, 82, 0.5);
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 48px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 130px;
+        height: 130px;
+        font-size: 42px;
+    }
+
+    .toz-ec-d>div {
+        width: 112px;
+        height: 112px;
+    }
+
+    .toz-ec-d svg {
+        width: 130px;
+        height: 130px;
+        top: auto;
+        left: auto;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+
+    .toz-ec-d svg circle {
+        r: 58px;
+        cx: 65px;
+        cy: 65px;
+        stroke-width: 4px;
+    }
+
+    .toz-timer-knob {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        left: 89%;
+        bottom: 45%;
+    }
+
+    .toz-ec-d>svg>circle:nth-child(2) {
+        stroke-dasharray: 365;
+        stroke-linecap: round;
+    }
+
+    .toz-unit {
+        font-size: 12px;
+    }
+}

@@ -461,8 +461,19 @@ class Template extends Model
                 'image' => 'resources/views/templates/meeting/time-sync/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.meeting.time-sync.index',
-                'tokens' => 3,
+                'tokens' => 9,
                 'tags' => 'time, sync, meeting, paid, template',
+            ],
+            [
+                'id' => 42,
+                'name' => 'Laughter Surprises Pure Joy',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/laughter-surprises-pure-joy/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.laughter-surprises-pure-joy.index',
+                'tokens' => 21,
+                'tags' => 'laughter, surprises, pure, joy, birthday, paid, template',
             ],
         ];
     }

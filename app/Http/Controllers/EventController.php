@@ -9,7 +9,6 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\EventCustomUrl;
 use Illuminate\Support\Facades\Http;
-use Filament\Notifications\Notification;
 
 class EventController extends Controller
 {

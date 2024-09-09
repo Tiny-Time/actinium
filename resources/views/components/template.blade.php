@@ -33,9 +33,9 @@
                 @if (isset($live))
                     {{ $live }}
                 @endif
-                <h1 class="text-3xl capitalize toz-title md:text-5xl">{{ $event->title }}</h1>
+                <h1 class="text-3xl capitalize font-bold toz-title md:text-5xl">{{ $event->title }}</h1>
                 @if ($event->description)
-                    <h2 class="max-w-2xl mx-auto text-lg text-gray-200 toz-subtitle md:text-xl">
+                    <h2 class="max-w-2xl mx-auto text-lg font-medium text-gray-200 toz-subtitle md:text-xl">
                         {{ $event->description }}<br>{{ $event->post_event_massage }}
                     </h2>
                 @endif
