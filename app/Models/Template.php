@@ -530,6 +530,17 @@ class Template extends Model
                 'tokens' => 19,
                 'tags' => 'meeting, time, keeper, paid, template',
             ],
+            [
+                'id' => 48,
+                'name' => 'Meeting Time Matters',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/meeting-time-matters/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.meeting-time-matters.index',
+                'tokens' => 19,
+                'tags' => 'meeting, time, matters, paid, template',
+            ],
         ];
     }
 

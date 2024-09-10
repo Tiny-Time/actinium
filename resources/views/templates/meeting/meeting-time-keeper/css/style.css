@@ -2,6 +2,7 @@
 
 * {
     color: #680705 !important;
+    font-family: "Taviraj", serif !important;
 }
 
 body {
@@ -11,7 +12,6 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: "Taviraj", serif;
     min-height: 100dvh;
 }
 
@@ -63,7 +63,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: "Trirong", serif;
+    font-family: "Trirong", serif !important;
 }
 
 .toz-unit {
