@@ -538,8 +538,19 @@ class Template extends Model
                 'image' => 'resources/views/templates/meeting/meeting-time-matters/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.meeting.meeting-time-matters.index',
-                'tokens' => 19,
+                'tokens' => 6,
                 'tags' => 'meeting, time, matters, paid, template',
+            ],
+            [
+                'id' => 49,
+                'name' => 'Stay Focus',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/stay-focus/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.stay-focus.index',
+                'tokens' => 7,
+                'tags' => 'stay, focus, study, paid, template',
             ],
         ];
     }
