@@ -519,6 +519,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'redefined, fitness, journey, paid, template',
             ],
+            [
+                'id' => 47,
+                'name' => 'Meeting Time keeper',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/meeting-time-keeper/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.meeting-time-keeper.index',
+                'tokens' => 19,
+                'tags' => 'meeting, time, keeper, paid, template',
+            ],
         ];
     }
 
