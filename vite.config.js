@@ -64,6 +64,7 @@ export default defineConfig({
                 "resources/views/templates/study/stay-focus/css/style.css",
                 "resources/views/templates/study/mind-sync/css/style.css",
                 "resources/views/templates/vacation/blissful-escape/css/style.css",
+                "resources/views/templates/fitness/sync-clockwork/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

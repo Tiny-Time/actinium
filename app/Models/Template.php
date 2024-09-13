@@ -575,6 +575,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'blissful, escape, vacation, paid, template',
             ],
+            [
+                'id' => 52,
+                'name' => 'Sync Clockwork',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/sync-clockwork/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.sync-clockwork.index',
+                'tokens' => 7,
+                'tags' => 'sync, clockwork, fitness, paid, template',
+            ],
         ];
     }
 
