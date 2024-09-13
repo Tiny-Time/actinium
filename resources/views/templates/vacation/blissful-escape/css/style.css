@@ -43,7 +43,6 @@ body {
 
 .toz-timer {
     width: 600px;
-    max-width: 'fit-content';
     justify-content: center;
     align-items: center;
     font-family: "Mycalc", sans-serif;

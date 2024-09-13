@@ -608,6 +608,17 @@ class Template extends Model
                 'tokens' => 13,
                 'tags' => 'tick, bash, birthday, paid, template',
             ],
+            [
+                'id' => 55,
+                'name' => 'Blissful Thrill',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/blissful-thrill/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.blissful-thrill.index',
+                'tokens' => 7,
+                'tags' => 'blissful, thrill, birthday, paid, template',
+            ],
         ];
     }
 
