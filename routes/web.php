@@ -267,17 +267,14 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     /* ---------------------------- Generate Sitemap ---------------------------- */
     Route::get('/generate-sitemap', function () {
 
-        if (auth()->check()) {
-            if (auth()->user()->hasRole('super_admin')) {
-                SitemapGenerator::create(env('APP_URL'))->writeToFile('sitemap.xml');
+        if (auth()->check() && auth()->user()->hasRole('super_admin')) {
+            SitemapGenerator::create(env('APP_URL'))->writeToFile('sitemap.xml');
 
-                return 'Sitemap generated successfully!';
-            }
+            return 'Sitemap generated successfully!';
         }
 
         redirect('404');
     });
-
     /* --------------------------- Error Page Preview --------------------------- */
 
     Route::get('/errors/{code}', function ($code) {

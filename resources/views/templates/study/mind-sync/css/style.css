@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+body {
+    background: url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: center;
+    background-repeat: no-repeat;
+    padding: 20px 0 5px 5px;
+}
+
+.toz {
+    min-height: 100dvh;
+    background: rgba(224, 225, 221, 0.25);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    font-family: "Montserrat", sans-serif;
+    color: #100a0a;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    max-width: max-content;
+    margin: 10px;
+}
+
+.toz-ec-d {
+    width: 133px;
+    height: 133px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    border-radius: 100%;
+    position: relative;
+}
+
+.toz-ec-d:nth-child(1) {
+    background: #fea1c8;
+}
+
+.toz-ec-d:nth-child(2) {
+    background: #feeaa1;
+}
+
+.toz-ec-d:nth-child(3) {
+    background: #8ce2ff;
+}
+
+.toz-ec-d:nth-child(4) {
+    background: #b2ff92;
+}
+
+.toz-ec-d>div {
+    width: 100px;
+    height: 100px;
+    padding: 20px 0px;
+    display: flex;
+    line-height: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.toz-unit {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.toz-ec-d svg {
+    position: absolute;
+    left: -28.5px;
+    z-index: 1;
+}
+
+.toz-ec-d>svg>circle {
+    fill: transparent;
+    stroke-width: 16px;
+}
+
+#first>circle {
+    stroke: rgba(104, 7, 5, 0.5);
+}
+
+#second>circle {
+    stroke: rgba(244, 191, 3, 0.25);
+}
+
+#third>circle {
+    stroke: rgba(0, 144, 191, 0.25);
+}
+
+#fourth>circle {
+    stroke: rgba(60, 204, 0, 0.25);
+}
+
+.toz-ec-d>svg>circle:nth-child(2) {
+    stroke-dasharray: 471;
+    stroke-linecap: round;
+}
+
+#first>circle:nth-child(2) {
+    stroke: #f50267;
+}
+
+#second>circle:nth-child(2) {
+    stroke: #f4bf03;
+}
+
+#third>circle:nth-child(2) {
+    stroke: #0090bf;
+}
+
+#fourth>circle:nth-child(2) {
+    stroke: #3ccc00;
+}
+
+.toz-subscription, li.splide__slide > div {
+    border-radius: 8px;
+    background: rgba(238, 239, 234, 0.5);
+    box-shadow: 0px 0px 4px 3px rgba(20, 40, 24, 0.25);
+}
+
+li.splide__slide > div > svg > path{
+    fill: #100a0a;
+}
+
+li.splide__slide > div > h3, li.splide__slide > div > p {
+    color: #100a0a;
+}
+
+.toz-form {
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.toz-input, .toz-input::placeholder {
+    color: rgba(238, 239, 234, 0.5);
+}
+
+.toz-f-btn {
+    color: #eeefea;
+    border-radius: 25px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background: #100a0a;
+}
+
+/* social links */
+.toz-social-link {
+    color: #eeefea;
+    background: #100a0a;
+}
+
+.toz-watermark a {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 48px;
+        gap: 40px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 100px;
+        height: 100px;
+        font-size: 42px;
+    }
+
+    .toz-ec-d>div {
+        width: 112px;
+        height: 112px;
+    }
+
+    .toz-ec-d svg {
+        width: 130px;
+        height: 130px;
+        top: auto;
+        left: auto;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+
+    .toz-ec-d svg circle {
+        r: 58px;
+        cx: 65px;
+        cy: 65px;
+        stroke-width: 14px;
+    }
+
+    .toz-timer-knob {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        left: 89%;
+        bottom: 45%;
+    }
+
+    .toz-ec-d>svg>circle:nth-child(2) {
+        stroke-dasharray: 365;
+        stroke-linecap: round;
+    }
+
+    .toz-unit {
+        font-size: 12px;
+    }
+}

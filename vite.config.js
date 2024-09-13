@@ -62,6 +62,7 @@ export default defineConfig({
                 "resources/views/templates/meeting/meeting-time-keeper/css/style.css",
                 "resources/views/templates/meeting/meeting-time-matters/css/style.css",
                 "resources/views/templates/study/stay-focus/css/style.css",
+                "resources/views/templates/study/mind-sync/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Template extends Model
 {
@@ -552,26 +553,37 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'stay, focus, study, paid, template',
             ],
+            [
+                'id' => 50,
+                'name' => 'Mind Sync',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/mind-sync/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.mind-sync.index',
+                'tokens' => 14,
+                'tags' => 'mind, sync, study, paid, template',
+            ],
         ];
     }
 
-    protected function sushiShouldCache()
+    protected function sushiShouldCache(): bool
     {
         return true;
     }
 
-    protected function afterMigrate(Blueprint $table)
+    protected function afterMigrate(Blueprint $table): void
     {
-        $table->index('id');
+        $table->index(columns: 'id');
     }
 
     public function event(): HasMany
     {
-        return $this->hasMany(Event::class);
+        return $this->hasMany(related: Event::class);
     }
 
-    public function events()
+    public function events(): BelongsToMany
     {
-        return $this->belongsToMany(Event::class);
+        return $this->belongsToMany(related: Event::class);
     }
 }
