@@ -597,6 +597,17 @@ class Template extends Model
                 'tokens' => 20,
                 'tags' => 'personal, tempo, fitness, paid, template',
             ],
+            [
+                'id' => 54,
+                'name' => 'Tick Bash',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/tick-bash/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.tick-bash.index',
+                'tokens' => 13,
+                'tags' => 'tick, bash, birthday, paid, template',
+            ],
         ];
     }
 

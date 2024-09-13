@@ -66,6 +66,7 @@ export default defineConfig({
                 "resources/views/templates/vacation/blissful-escape/css/style.css",
                 "resources/views/templates/fitness/sync-clockwork/css/style.css",
                 "resources/views/templates/fitness/personal-tempo/css/style.css",
+                "resources/views/templates/birthday/tick-bash/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
