@@ -564,6 +564,17 @@ class Template extends Model
                 'tokens' => 14,
                 'tags' => 'mind, sync, study, paid, template',
             ],
+            [
+                'id' => 51,
+                'name' => 'Blissful Escape',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/blissful-escape/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.blissful-escape.index',
+                'tokens' => 7,
+                'tags' => 'blissful, escape, vacation, paid, template',
+            ],
         ];
     }
 
