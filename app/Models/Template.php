@@ -11,7 +11,7 @@ class Template extends Model
 {
     use \Sushi\Sushi;
 
-    public function getRows()
+    public function getRows(): array
     {
         return [
             [
@@ -583,8 +583,19 @@ class Template extends Model
                 'image' => 'resources/views/templates/fitness/sync-clockwork/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.fitness.sync-clockwork.index',
-                'tokens' => 7,
+                'tokens' => 14,
                 'tags' => 'sync, clockwork, fitness, paid, template',
+            ],
+            [
+                'id' => 53,
+                'name' => 'Personal Tempo',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/personal-tempo/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.personal-tempo.index',
+                'tokens' => 20,
+                'tags' => 'personal, tempo, fitness, paid, template',
             ],
         ];
     }
