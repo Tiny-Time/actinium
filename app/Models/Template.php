@@ -641,6 +641,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'paradise, gateway, vacation, paid, template',
             ],
+            [
+                'id' => 58,
+                'name' => 'Achieving Peak Performance',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/achieving-peak-performance/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.achieving-peak-performance.index',
+                'tokens' => 19,
+                'tags' => 'achieving, peak, performance, fitness, paid, template',
+            ],
         ];
     }
 

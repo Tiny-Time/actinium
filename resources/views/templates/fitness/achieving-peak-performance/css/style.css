@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700;800;900&display=swap");
+
+* {
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    background: url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.toz {
+    min-height: 100dvh;
+    color: #fff;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    border-radius: 100%;
+    background: transparent;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    width: 145px;
+    height: 145px;
+    padding: 20px 0px;
+    display: flex;
+    line-height: 1;
+    gap: 3px;
+    font-weight: 800;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.divider {
+    width: 60%;
+    height: 2px;
+    background: white;
+}
+
+.toz-unit {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.toz-ec-d svg {
+    position: absolute;
+    left: -20px;
+    z-index: 1;
+}
+
+.toz-timer-knob {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    left: 96%;
+    bottom: 45%;
+    border-radius: 100%;
+    background: white;
+}
+
+.toz-ec-d>svg>circle {
+    fill: transparent;
+    stroke: rgba(255, 255, 255, 0.5);
+    stroke-dasharray: 5 5;
+    stroke-width: 4px;
+}
+
+.toz-ec-d>svg>circle:nth-child(2) {
+    stroke: #ffffff;
+    stroke-width: 4px;
+    stroke-dasharray: 471;
+    stroke-linecap: round;
+}
+
+.toz-form {
+    background: transparent;
+}
+
+.toz-input {
+    font-size: 14px;
+    align-self: stretch;
+    color: rgba(255, 255, 255, 0.75);
+    border-radius: 28.5px 0px 0px 28.5px;
+    border: 2px solid #fff;
+    background: #21030eb0;
+}
+
+.toz-input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.toz-f-btn {
+    color: #fff;
+    border-radius: 0px 28.5px 28.5px 0px;
+    border: 2px solid #fff;
+    background: #21030eb0;
+}
+
+li.splide__slide>div {
+    background: #21030eb0;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #fff;
+}
+
+/* social links */
+.toz-social-link {
+    color: #fff;
+    background: #21030eb0;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 48px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 120px;
+        height: 120px;
+        font-size: 40px;
+    }
+
+    .toz-ec-d>div {
+        width: 112px;
+        height: 112px;
+    }
+
+    .toz-ec-d svg {
+        width: 130px;
+        height: 130px;
+        top: auto;
+        left: auto;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+
+    .toz-ec-d svg circle {
+        r: 58px;
+        cx: 65px;
+        cy: 65px;
+        stroke-width: 4px;
+    }
+
+    .toz-timer-knob {
+        left: 93%;
+    }
+
+    .toz-ec-d>svg>circle:nth-child(2) {
+        stroke-dasharray: 365;
+        stroke-linecap: round;
+    }
+
+    .toz-unit {
+        font-size: 12px;
+    }
+}
