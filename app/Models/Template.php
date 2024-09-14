@@ -619,6 +619,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'blissful, thrill, birthday, paid, template',
             ],
+            [
+                'id' => 56,
+                'name' => 'Closer to Paradise',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/closer-to-paradise/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.closer-to-paradise.index',
+                'tokens' => 7,
+                'tags' => 'closer, paradise, vacation, paid, template',
+            ],
         ];
     }
 

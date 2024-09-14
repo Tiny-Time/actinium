@@ -68,6 +68,7 @@ export default defineConfig({
                 "resources/views/templates/fitness/personal-tempo/css/style.css",
                 "resources/views/templates/birthday/tick-bash/css/style.css",
                 "resources/views/templates/birthday/blissful-thrill/css/style.css",
+                "resources/views/templates/vacation/closer-to-paradise/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
