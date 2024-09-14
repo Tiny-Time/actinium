@@ -71,6 +71,7 @@ export default defineConfig({
                 "resources/views/templates/vacation/closer-to-paradise/css/style.css",
                 "resources/views/templates/vacation/paradise-gateway/css/style.css",
                 "resources/views/templates/fitness/achieving-peak-performance/css/style.css",
+                "resources/views/templates/christmas/enchanted-season/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

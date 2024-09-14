@@ -652,6 +652,17 @@ class Template extends Model
                 'tokens' => 19,
                 'tags' => 'achieving, peak, performance, fitness, paid, template',
             ],
+            [
+                'id' => 59,
+                'name' => 'Enchanted Season',
+                'category' => 'Christmas',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/christmas/enchanted-season/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.christmas.enchanted-season.index',
+                'tokens' => 10,
+                'tags' => 'enchanted, season, christmas, paid, template',
+            ],
         ];
     }
 

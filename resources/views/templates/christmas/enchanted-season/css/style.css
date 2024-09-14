@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300,400;500;700&family=Send+Flowers&display=swap");
+
+* {
+    font-family: "Send Flowers", cursive;
+}
+
+body {
+    margin: 0 auto;
+    background: url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 20px 5px;
+}
+
+.toz {
+    min-height: 100dvh;
+    background: linear-gradient(180deg, #16272f 0%, rgba(22, 39, 47, 0) 100%);
+    color: #ffffff;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    display: flex;
+    width: 160px;
+    height: 160px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: rgba(22, 39, 47, 0.4);
+    box-shadow: 0px 0px 4px 2px #fff;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+.toz-ec-d>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    gap: 10px;
+    font-weight: 600;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.toz-ec-d>div>svg {
+    width: 80%;
+}
+
+.toz-unit {
+    text-align: center;
+    font-size: 20px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.toz-form {
+    gap: 3px;
+}
+
+.toz-input {
+    border-radius: 5px;
+    color: #fff;
+    background: rgba(22, 39, 47, 0.4);
+    box-shadow: 0px 0px 4px 2px #fff;
+}
+
+.toz-f-btn {
+    color: #fff;
+    font-weight: 500;
+    background: #16272f;
+    box-shadow: 0px 0px 4px 2px #fff;
+}
+
+.toz-social-link,
+li.splide__slide>div {
+    color: #fff;
+    background: #16272f;
+    box-shadow: 0px 0px 4px 2px #fff;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 40px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 115px;
+        height: 115px;
+        border-width: 1.5px;
+    }
+
+    .toz-unit {
+        font-size: 12px;
+    }
+}
