@@ -663,6 +663,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'enchanted, season, christmas, paid, template',
             ],
+            [
+                'id' => 60,
+                'name' => 'New Beginning',
+                'category' => 'New Year',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/new-year/new-beginning/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.new-year.new-beginning.index',
+                'tokens' => 10,
+                'tags' => 'new, beginning, new, year, paid, template',
+            ],
         ];
     }
 

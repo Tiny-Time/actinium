@@ -221,12 +221,29 @@ class EditEvent extends EditRecord
     public function getViewData(): array
     {
         $specificId = $this->record->template_id;
-        return [
-            'templates' => Template::where('name', 'like', "%{$this->query}%")
-                ->orWhere('tags', 'like', "%{$this->query}%")
-                ->orWhere('tokens', 'like', "%{$this->query}%")
-                ->orderByRaw("id = $specificId DESC")->paginate(12)
-        ];
+        $word = explode(' ', $this->query);
+
+        // Check if the query is a single word
+        switch (count($word)) {
+            case 1:
+                $word = $word[0];
+                return [
+                    'templates' => Template::where('name', 'like', "%{$this->query}%")
+                        ->orWhere('tags', 'like', "%{$this->query}%")
+                        ->orWhere('tokens', 'like', "%{$this->query}%")
+                        ->orderByRaw("id = $specificId DESC")->paginate(12)
+                ];
+            default:
+                return [
+                    'templates' => Template::where(function ($q) use ($word) {
+                        foreach ($word as $w) {
+                            $q->where('name', 'like', "%{$w}%")
+                                ->orWhere('tags', 'like', "%{$w}%")
+                                ->orWhere('tokens', 'like', "%{$w}%");
+                        }
+                    })->orderByRaw("id = $specificId DESC")->paginate(12)
+                ];
+        }
     }
 
     public function tokenCharge(): int

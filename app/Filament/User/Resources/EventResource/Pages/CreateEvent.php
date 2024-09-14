@@ -47,7 +47,7 @@ class CreateEvent extends Page
 
     public function updated($name, $value): void
     {
-        if($name === 'query') {
+        if ($name === 'query') {
             $this->resetPage();
         }
     }
@@ -156,12 +156,29 @@ class CreateEvent extends Page
 
     public function getViewData(): array
     {
-        return [
-            'templates' => Template::where('name', 'like', "%{$this->query}%")
-                ->orWhere('tags', 'like', "%{$this->query}%")
-                ->orWhere('tokens', 'like', "%{$this->query}%")
-                ->paginate(12)
-        ];
+        $word = explode(' ', $this->query);
+
+        // Check if the query is a single word
+        switch (count($word)) {
+            case 1:
+                $word = $word[0];
+                return [
+                    'templates' => Template::where('name', 'like', "%{$this->query}%")
+                        ->orWhere('tags', 'like', "%{$this->query}%")
+                        ->orWhere('tokens', 'like', "%{$this->query}%")
+                        ->paginate(12)
+                ];
+            default:
+                return [
+                    'templates' => Template::where(function ($q) use ($word) {
+                        foreach ($word as $w) {
+                            $q->where('name', 'like', "%{$w}%")
+                                ->orWhere('tags', 'like', "%{$w}%")
+                                ->orWhere('tokens', 'like', "%{$w}%");
+                        }
+                    })->paginate(12)
+                ];
+        }
     }
 
     public function tokenCharge(): int
