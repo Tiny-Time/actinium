@@ -627,8 +627,19 @@ class Template extends Model
                 'image' => 'resources/views/templates/vacation/closer-to-paradise/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.vacation.closer-to-paradise.index',
-                'tokens' => 7,
+                'tokens' => 9,
                 'tags' => 'closer, paradise, vacation, paid, template',
+            ],
+            [
+                'id' => 57,
+                'name' => 'Paradise Gateway',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/paradise-gateway/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.paradise-gateway.index',
+                'tokens' => 10,
+                'tags' => 'paradise, gateway, vacation, paid, template',
             ],
         ];
     }

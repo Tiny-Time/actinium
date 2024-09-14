@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap");
+
+* {
+    font-family: "Lobster Two", sans-serif;
+}
+
+body {
+    background: linear-gradient(0deg,
+            rgba(17, 12, 4, 0.25) 0%,
+            rgba(17, 12, 4, 0.25) 100%),
+        url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.toz {
+    color: #f1eff2;
+    min-height: 100dvh;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec {
+    flex-direction: column;
+    display: flex;
+    gap: 3px;
+}
+
+.toz-ec-d {
+    display: flex;
+    width: 150px;
+    height: 110px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    border-radius: 8px 8px 0px 0px;
+    border-top: 2px solid #f9f1e6;
+    border-right: 2px solid #f9f1e6;
+    border-left: 2px solid #f9f1e6;
+    background: #9b6923;
+}
+
+.toz-unit {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 0px 0px 8px 8px;
+    border-right: 2px solid #f9f1e6;
+    border-bottom: 2px solid #f9f1e6;
+    border-left: 2px solid #f9f1e6;
+    background: #9b6923;
+}
+
+.toz-form {
+    gap: 3px;
+}
+
+.toz-input {
+    font-size: 18px;
+    color: rgba(249, 241, 230, 0.75) !important;
+    border-radius: 10px;
+    font-weight: 700;
+    border-radius: 8px;
+    background: #9b6923;
+}
+
+::placeholder {
+    color: rgba(249, 241, 230, 0.75);
+}
+
+.toz-f-btn {
+    color: #f9f1e6;
+    font-weight: 700;
+    padding: 5px 15px;
+    background: #9b6923;
+}
+
+li.splide__slide>div {
+    border-radius: 8px;
+    border: 2px solid #f9f1e6;
+    background: #9b6923;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #f9f1e6;
+}
+
+/* social links */
+
+.toz-social-link {
+    border-radius: 8px;
+    border: 2px solid #f9f1e6;
+    background: #9b6923;
+    color: #f9f1e6;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 40px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 110px;
+        height: 80px;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+        width: 110px;
+        height: 25px;
+    }
+}
