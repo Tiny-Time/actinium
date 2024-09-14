@@ -1,19 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
 
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    height: 100%;
-    width: 100%;
-}
-
-body {
-    margin: 0 auto;
-}
-
 body {
     background: linear-gradient(0deg,
             rgba(0, 0, 0, 0.5) 0%,
@@ -24,6 +10,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     font-family: "Quicksand", sans-serif;
+}
+
+.toz{
     color: #f2f2f4;
 }
 

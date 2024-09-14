@@ -9,6 +9,11 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: "Amiko", sans-serif !important;
+
+}
+
+.toz {
     font-family: "Amiko", sans-serif;
     color: #f2f2f4;
 }
@@ -99,7 +104,7 @@ li.splide__slide>div {
 }
 
 li.splide__slide>div>p,
-li.splide__slide>div> h3 {
+li.splide__slide>div>h3 {
     color: #f0f2ef;
 }
 
@@ -134,6 +139,7 @@ li.splide__slide>div> h3 {
 }
 
 @media (max-width: 767px) {
+
     .left,
     .right {
         width: 50px;

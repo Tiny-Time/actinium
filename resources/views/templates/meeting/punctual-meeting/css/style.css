@@ -1,19 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap');
 
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    height: 100%;
-    width: 100%;
-}
-
-body {
-    margin: 0 auto;
-}
-
 body {
     background: linear-gradient(0deg, rgba(23, 31, 37, 0.40) 0%, rgba(23, 31, 37, 0.40) 100%),
         url("../images/bg.webp"), lightgray 50%;

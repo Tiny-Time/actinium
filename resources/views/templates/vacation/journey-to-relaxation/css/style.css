@@ -9,6 +9,10 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: "Quicksand", sans-serif !important;
+}
+
+.toz{
     font-family: "Quicksand", sans-serif;
 }
 

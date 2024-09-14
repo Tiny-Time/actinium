@@ -6,7 +6,12 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', serif !important;
+}
+
+.toz{
+    color: #ffffff;
+    font-family: 'Cinzel', serif !important;
 }
 
 .toz-main, .toz-subtitle {

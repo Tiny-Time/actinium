@@ -9,6 +9,9 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.toz {
     font-family: 'Ovo', serif;
 }
 
@@ -82,13 +85,14 @@ body {
     stroke-linecap: round;
 }
 
-.toz-subscription, li.splide__slide > div {
+.toz-subscription,
+li.splide__slide>div {
     color: #22100e;
     background: #FBE1AF;
     box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-li.splide__slide > div > p {
+li.splide__slide>div>p {
     color: #22100e;
 }
 
@@ -96,7 +100,8 @@ li.splide__slide > div > p {
     background: #22100e;
 }
 
-.toz-input, #temail::placeholder  {
+.toz-input,
+#temail::placeholder {
     color: #FBE1AF;
 }
 

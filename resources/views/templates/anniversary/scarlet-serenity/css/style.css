@@ -1,20 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
 
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    width: 100%;
-    height: 100%;
-}
-
-body {
-    margin: 0 auto;
-}
-
 body {
     background-image: url("../../scarlet-serenity/images/bg.png");
     background-position: bottom;

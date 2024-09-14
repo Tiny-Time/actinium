@@ -10,7 +10,10 @@ body {
     font-family: "Rampart One", sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
-    color: #fff;
+}
+
+.toz{
+    color: #ffffff;
 }
 
 .toz-text-wrapper {

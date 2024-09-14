@@ -6,7 +6,6 @@
 
 body {
     margin: 0 auto;
-    color: #ffff;
     background: url("../images/bg.webp"), lightgray 50%;
     background-attachment: fixed;
     background-position: center;
@@ -18,6 +17,7 @@ body {
 .toz {
     background: rgba(41, 35, 31, 0.25);
     min-height: 100dvh;
+    color: #ffff;
 }
 
 .toz-text-wrapper {
