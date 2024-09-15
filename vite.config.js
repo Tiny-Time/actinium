@@ -74,6 +74,7 @@ export default defineConfig({
                 "resources/views/templates/christmas/enchanted-season/css/style.css",
                 "resources/views/templates/new-year/new-beginning/css/style.css",
                 "resources/views/templates/meditation/enhancing-mindfulness/css/style.css",
+                "resources/views/templates/self-care/harmony-and-well-being/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

@@ -685,6 +685,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'enhancing, enhancement, mindfulness, meditation, paid, template',
             ],
+            [
+                'id' => 62,
+                'name' => 'Harmony And Well Being',
+                'category' => 'Self Care',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/self-care/harmony-and-well-being/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.self-care.harmony-and-well-being.index',
+                'tokens' => 10,
+                'tags' => 'harmony, well, being, self, care, paid, template',
+            ],
         ];
     }
 
