@@ -718,6 +718,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'managing, manage, time, cleaning, paid, template',
             ],
+            [
+                'id' => 65,
+                'name' => 'Conquer Every Level',
+                'category' => 'Gaming',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/gaming/conquer-every-level/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.gaming.conquer-every-level.index',
+                'tokens' => 10,
+                'tags' => 'conquer, every, level, gaming, paid, template',
+            ],
         ];
     }
 
