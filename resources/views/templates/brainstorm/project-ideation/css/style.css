@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800&display=swap');
+
+* {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.toz {
+    background: linear-gradient(0deg, rgba(217, 225, 228, 0.10) 0%,
+            rgba(217, 225, 228, 0.10) 100%), url("../images/bg.webp");
+    color: #000;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100dvh;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    color: #000;
+    display: flex;
+    width: 180px;
+    height: 180px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    border: 3px solid #000;
+    background: #D9E1E4;
+}
+
+.toz-ec-d>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    gap: 10px;
+    font-weight: 600;
+    flex-direction: column-reverse;
+    z-index: 1;
+}
+
+.toz-ec-d>div>svg {
+    width: 60%;
+}
+
+.toz-unit {
+    text-align: center;
+    font-size: 20px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    border-radius: 8px;
+    border: 3px solid #000;
+    background: #D9E1E4;
+}
+
+.toz-form {
+    background: transparent;
+    gap: 5px;
+}
+
+.toz-input {
+    border-radius: 8px;
+    border: 2px solid #000;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+::placeholder,
+h2,
+h3,
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #000 !important;
+}
+
+.toz-f-btn {
+    color: #dfeefc;
+    border-radius: 8px;
+    background: #000;
+}
+
+/* social links */
+.toz-social-link {
+    color: #dfeefc;
+    border-radius: 6px;
+    background: #000;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 40px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 130px;
+        height: 130px;
+    }
+
+    .toz-ec-d>div {
+        width: 115px;
+        height: 115px;
+    }
+
+    .toz-unit {
+        font-size: 12px;
+    }
+}

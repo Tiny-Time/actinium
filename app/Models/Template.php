@@ -696,6 +696,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'harmony, well, being, self, care, paid, template',
             ],
+            [
+                'id' => 63,
+                'name' => 'Project Ideation',
+                'category' => 'Brainstorm',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/brainstorm/project-ideation/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.brainstorm.project-ideation.index',
+                'tokens' => 10,
+                'tags' => 'project, ideation, brainstorm, paid, template',
+            ],
         ];
     }
 
