@@ -674,6 +674,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'new, beginning, new, year, paid, template',
             ],
+            [
+                'id' => 61,
+                'name' => 'Enhancing Mindfulness',
+                'category' => 'Meditation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meditation/enhancing-mindfulness/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meditation.enhancing-mindfulness.index',
+                'tokens' => 10,
+                'tags' => 'enhancing, enhancement, mindfulness, meditation, paid, template',
+            ],
         ];
     }
 

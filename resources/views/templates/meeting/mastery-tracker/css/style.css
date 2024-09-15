@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,200;16..144,300;16..144,400;16..144,500;16..144,600;16..144,700&display=swap");
 
 body {
-    background: url("../images/bg.webp"), lightgray 50%;
+    background: url("../images/bg.webp");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;

@@ -114,8 +114,8 @@
 
         @if ($event->guestbook)
             <div class="text-center">
-                <h2 class="mt-4 text-2xl font-bold text-white md:text-3xl title-color">Guestbook</h2>
-                <h3 class="mt-2 text-white md:text-xl">Leave your wishes, comments, and thoughts below</h3>
+                <h3 class="mt-4 text-2xl font-bold text-white md:text-3xl title-color">Guestbook</h3>
+                <p class="mt-2 text-white md:text-xl">Leave your wishes, comments, and thoughts below</p>
                 <button type="button"
                     @if (auth()->user()) @click="$store.openCreateGuestbookModal.toggle()"
                     @else

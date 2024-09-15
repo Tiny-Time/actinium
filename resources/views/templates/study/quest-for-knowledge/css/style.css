@@ -4,7 +4,7 @@ body {
     background: linear-gradient(0deg,
             rgba(0, 0, 0, 0.5) 0%,
             rgba(0, 0, 0, 0.5) 100%),
-        url("../images/bg.webp"), lightgray 50%;
+        url("../images/bg.webp");
     background-attachment: fixed;
     background-position: center;
     font-family: "Rampart One", sans-serif;

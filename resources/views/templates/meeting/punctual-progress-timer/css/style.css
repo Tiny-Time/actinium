@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap");
 
 body {
-    background: url("../images/bg.webp"), lightgray 50%;
+    background: url("../images/bg.webp");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;

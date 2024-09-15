@@ -2,7 +2,7 @@
 
 body {
     background: linear-gradient(0deg, rgba(36, 36, 36, 0.50) 0%, rgba(36, 36, 36, 0.50) 100%),
-        url("../images/bg.webp"), lightgray 50%;
+        url("../images/bg.webp");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;

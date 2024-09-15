@@ -3,7 +3,7 @@
 
 body {
     background:
-        url("../images/bg.webp"), lightgray 50%;
+        url("../images/bg.webp");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
