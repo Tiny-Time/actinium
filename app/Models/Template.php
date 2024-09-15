@@ -707,6 +707,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'project, ideation, brainstorm, paid, template',
             ],
+            [
+                'id' => 64,
+                'name' => 'Managing Time',
+                'category' => 'Cleaning',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/cleaning/managing-time/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.cleaning.managing-time.index',
+                'tokens' => 7,
+                'tags' => 'managing, manage, time, cleaning, paid, template',
+            ],
         ];
     }
 
