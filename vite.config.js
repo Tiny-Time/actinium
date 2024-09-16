@@ -78,6 +78,7 @@ export default defineConfig({
                 "resources/views/templates/brainstorm/project-ideation/css/style.css",
                 "resources/views/templates/cleaning/managing-time/css/style.css",
                 "resources/views/templates/gaming/conquer-every-level/css/style.css",
+                "resources/views/templates/meeting/simplify-your-meeting/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

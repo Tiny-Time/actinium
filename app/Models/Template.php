@@ -729,6 +729,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'conquer, every, level, gaming, paid, template',
             ],
+            [
+                'id' => 66,
+                'name' => 'Simplify Your Meeting',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/simplify-your-meeting/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.simplify-your-meeting.index',
+                'tokens' => 20,
+                'tags' => 'simplify, meeting, paid, template',
+            ],
         ];
     }
 
