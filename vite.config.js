@@ -81,6 +81,7 @@ export default defineConfig({
                 "resources/views/templates/meeting/simplify-your-meeting/css/style.css",
                 "resources/views/templates/meeting/keep-everyone-on-track/css/style.css",
                 "resources/views/templates/sport/improve-your-swimming-skills/css/style.css",
+                "resources/views/templates/holiday/celebrate-love/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

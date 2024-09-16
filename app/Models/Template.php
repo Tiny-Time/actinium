@@ -762,6 +762,17 @@ class Template extends Model
                 'tokens' => 20,
                 'tags' => 'improve, swimming, skills, sport, paid, template',
             ],
+            [
+                'id' => 69,
+                'name' => 'Celebrate Love',
+                'category' => 'Holiday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/holiday/celebrate-love/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.holiday.celebrate-love.index',
+                'tokens' => 10,
+                'tags' => 'celebrate, love, holiday, paid, template',
+            ],
         ];
     }
 
