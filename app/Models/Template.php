@@ -795,6 +795,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'table, innovation, meeting, paid, template',
             ],
+            [
+                'id' => 72,
+                'name' => 'Intensive Study Dive',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/intensive-study-dive/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.intensive-study-dive.index',
+                'tokens' => 7,
+                'tags' => 'intensive, study, dive, paid, template',
+            ],
         ];
     }
 
