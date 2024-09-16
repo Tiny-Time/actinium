@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Racing+Sans+One&display=swap");
+
+* {
+    font-family: "Racing Sans One", sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    background: url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    min-height: 100dvh;
+    background: rgba(0, 13, 32, 0.25);
+}
+
+.toz-main {
+    color: #e8edf2;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-subtitle {
+    font-family: "Lato", sans-serif;
+}
+
+.toz-timer {
+    color: #000f61;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    border-radius: 100%;
+    background: transparent;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    width: 147px;
+    height: 147px;
+    padding: 20px 0px;
+    background: #e8edf2;
+    border-radius: 100%;
+    display: flex;
+    line-height: 1;
+    gap: 3px;
+    font-weight: 500;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.toz-unit {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.toz-ec-d svg {
+    position: absolute;
+    left: -20px;
+    z-index: 1;
+}
+
+.toz-timer-knob {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 95%;
+    bottom: 45%;
+    border-radius: 100%;
+    background: #000f61;
+    z-index: 10;
+}
+
+.toz-ec-d>svg>circle {
+    fill: transparent;
+    stroke: #000f61;
+    stroke-width: 4px;
+}
+
+.toz-ec-d>svg>circle:nth-child(2) {
+    stroke: #000f61;
+    stroke-width: 8px;
+    stroke-dasharray: 471;
+    stroke-linecap: round;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    font-family: "Lato", sans-serif;
+    color: #000f61;
+    border: 3px solid #000f61;
+    background: #e8edf2;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #000f61;
+}
+
+.toz-form {
+    border-radius: 22px;
+    background: rgba(0, 15, 97, 0.25);
+    gap: 5px;
+}
+
+.toz-input, ::placeholder{
+    color: #000f61;
+}
+
+.toz-f-btn {
+    color: #e8edf2;
+    border-radius: 22px;
+    background: #000f61;
+}
+
+/* social links */
+.toz-social-link {
+    color: #e8edf2;
+    background: #000f61;
+}
+
+.toz-watermark a {
+    color: rgba(220, 214, 100, 0.5);
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 48px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 120px;
+        height: 120px;
+        font-size: 40px;
+    }
+
+    .toz-ec-d>div {
+        width: 100px;
+        height: 100px;
+    }
+
+    .toz-ec-d svg {
+        width: 130px;
+        height: 130px;
+        top: auto;
+        left: auto;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+
+    .toz-ec-d svg circle {
+        r: 58px;
+        cx: 65px;
+        cy: 65px;
+        stroke-width: 4px;
+    }
+
+    .toz-timer-knob {
+        left: 93%;
+    }
+
+    .toz-ec-d>svg>circle:nth-child(2) {
+        stroke-dasharray: 365;
+        stroke-linecap: round;
+    }
+
+    .toz-unit {
+        font-size: 12px;
+    }
+}

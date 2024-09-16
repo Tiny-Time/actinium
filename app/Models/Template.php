@@ -751,6 +751,17 @@ class Template extends Model
                 'tokens' => 20,
                 'tags' => 'keep, everyone, track, meeting, paid, template',
             ],
+            [
+                'id' => 68,
+                'name' => 'Improve Your Swimming Skills',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/improve-your-swimming-skills/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.improve-your-swimming-skills.index',
+                'tokens' => 20,
+                'tags' => 'improve, swimming, skills, sport, paid, template',
+            ],
         ];
     }
 
