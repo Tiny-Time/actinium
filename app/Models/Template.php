@@ -784,6 +784,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'revitalize, skin, beauty, paid, template',
             ],
+            [
+                'id' => 71,
+                'name' => 'Table Of Innovation',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/table-of-innovation/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.table-of-innovation.index',
+                'tokens' => 7,
+                'tags' => 'table, innovation, meeting, paid, template',
+            ],
         ];
     }
 
