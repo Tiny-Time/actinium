@@ -817,6 +817,17 @@ class Template extends Model
                 'tokens' => 14,
                 'tags' => 'embracing, healthier, lifestyles, fitness, paid, template',
             ],
+            [
+                'id' => 74,
+                'name' => 'Organize Your Haircare Routine',
+                'category' => 'Beauty',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/beauty/organize-your-haircare-routine/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.beauty.organize-your-haircare-routine.index',
+                'tokens' => 18,
+                'tags' => 'organize, haircare, routine, beauty, paid, template',
+            ],
         ];
     }
 

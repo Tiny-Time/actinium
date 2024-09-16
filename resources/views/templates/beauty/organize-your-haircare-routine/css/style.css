@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap");
+
+* {
+    font-family: "Dosis", sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    background: url("../images/bg.webp"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0px 5px;
+}
+
+.toz {
+    min-height: 100dvh;
+    color: #e5e6e8;
+    background: rgba(30, 17, 10, 0.5);
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    border-radius: 100%;
+    background: transparent;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    width: 145px;
+    height: 145px;
+    padding: 20px 0px;
+    display: flex;
+    line-height: 1;
+    gap: 3px;
+    font-weight: 500;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.toz-unit {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.toz-ec-d svg {
+    position: absolute;
+    left: -20px;
+    z-index: 1;
+}
+
+.toz-timer-knob {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    left: 96%;
+    bottom: 45%;
+    border-radius: 100%;
+    background: #e5e6e8;
+    z-index: 10;
+}
+
+.toz-ec-d>svg>circle {
+    fill: transparent;
+    stroke: rgba(255, 255, 255, 0.5);
+    stroke-dasharray: 5 5;
+    stroke-width: 4px;
+}
+
+.toz-ec-d>svg>circle:nth-child(2) {
+    stroke: #ffffff;
+    stroke-width: 4px;
+    stroke-dasharray: 471;
+    stroke-linecap: round;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    border-radius: 20px;
+    border: 2px solid #e5e6e8;
+    background: transparent;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #e5e6e8;
+}
+
+.toz-form {
+    border-radius: 22px;
+    background: rgba(229, 230, 232, 0.25);
+    border: 2px solid #e5e6e8;
+    gap: 10px;
+}
+
+.toz-input,
+.toz-input::placeholder {
+    color: #e5e6e8;
+}
+
+.toz-f-btn {
+    color: #e5e6e8;
+    border-radius: 22px;
+    border-left: 2px solid #e5e6e8;
+    background: rgba(229, 230, 232, 0.25);
+}
+
+/* social links */
+.toz-social-link {
+    background: rgba(229, 230, 232, 0.25);
+    border: 2px solid #e5e6e8;
+    color: #e5e6e8;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 48px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 120px;
+        height: 120px;
+        font-size: 40px;
+    }
+
+    .toz-ec-d>div {
+        width: 112px;
+        height: 112px;
+    }
+
+    .toz-ec-d svg {
+        width: 130px;
+        height: 130px;
+        top: auto;
+        left: auto;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+
+    .toz-ec-d svg circle {
+        r: 58px;
+        cx: 65px;
+        cy: 65px;
+        stroke-width: 4px;
+    }
+
+    .toz-timer-knob {
+        left: 93%;
+    }
+
+    .toz-ec-d>svg>circle:nth-child(2) {
+        stroke-dasharray: 365;
+        stroke-linecap: round;
+    }
+
+    .toz-unit {
+        font-size: 12px;
+    }
+}
