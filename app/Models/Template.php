@@ -773,6 +773,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'celebrate, love, holiday, paid, template',
             ],
+            [
+                'id' => 70,
+                'name' => 'Revitalize Your Skin',
+                'category' => 'Beauty',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/beauty/revitalize-your-skin/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.beauty.revitalize-your-skin.index',
+                'tokens' => 10,
+                'tags' => 'revitalize, skin, beauty, paid, template',
+            ],
         ];
     }
 
