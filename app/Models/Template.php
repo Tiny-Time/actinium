@@ -740,6 +740,17 @@ class Template extends Model
                 'tokens' => 20,
                 'tags' => 'simplify, meeting, paid, template',
             ],
+            [
+                'id' => 67,
+                'name' => 'Keep Everyone On Track',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/keep-everyone-on-track/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.keep-everyone-on-track.index',
+                'tokens' => 20,
+                'tags' => 'keep, everyone, track, meeting, paid, template',
+            ],
         ];
     }
 
