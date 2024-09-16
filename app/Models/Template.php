@@ -828,6 +828,17 @@ class Template extends Model
                 'tokens' => 18,
                 'tags' => 'organize, haircare, routine, beauty, paid, template',
             ],
+            [
+                'id' => 75,
+                'name' => 'Refine Your Swing',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/refine-your-swing/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.refine-your-swing.index',
+                'tokens' => 10,
+                'tags' => 'refine, swing, sport, paid, template',
+            ],
         ];
     }
 
