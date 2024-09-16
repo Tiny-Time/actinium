@@ -806,6 +806,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'intensive, study, dive, paid, template',
             ],
+            [
+                'id' => 73,
+                'name' => 'Embracing Healthier Lifestyles',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/embracing-healthier-lifestyles/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.embracing-healthier-lifestyles.index',
+                'tokens' => 14,
+                'tags' => 'embracing, healthier, lifestyles, fitness, paid, template',
+            ],
         ];
     }
 
