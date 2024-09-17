@@ -905,6 +905,17 @@ class Template extends Model
                 'tokens' => 29,
                 'tags' => 'playing, fetch, pets, paid, template',
             ],
+            [
+                'id' => 82,
+                'name' => "International Women's Day",
+                'category' => 'Holiday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/holiday/international-women-s-day/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.holiday.international-women-s-day.index',
+                'tokens' => 10,
+                'tags' => 'international, women, day, holiday, paid, template',
+            ],
         ];
     }
 
