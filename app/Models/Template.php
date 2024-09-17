@@ -894,6 +894,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'charting, course, success, meeting, paid, template',
             ],
+            [
+                'id' => 81,
+                'name' => 'Playing Fetch',
+                'category' => 'Pets',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets/playing-fetch/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets.playing-fetch.index',
+                'tokens' => 29,
+                'tags' => 'playing, fetch, pets, paid, template',
+            ],
         ];
     }
 
