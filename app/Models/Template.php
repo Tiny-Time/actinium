@@ -883,6 +883,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'dance, practice, fitness, paid, template',
             ],
+            [
+                'id' => 80,
+                'name' => 'Charting The Course For Success',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/charting-the-course-for-success/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.charting-the-course-for-success.index',
+                'tokens' => 10,
+                'tags' => 'charting, course, success, meeting, paid, template',
+            ],
         ];
     }
 

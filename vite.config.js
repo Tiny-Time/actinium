@@ -91,6 +91,7 @@ export default defineConfig({
                 "resources/views/templates/vacation/an-unforgettable-journey/css/style.css",
                 "resources/views/templates/vacation/generations-united/css/style.css",
                 "resources/views/templates/fitness/dance-practice/css/style.css",
+                "resources/views/templates/meeting/charting-the-course-for-success/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
