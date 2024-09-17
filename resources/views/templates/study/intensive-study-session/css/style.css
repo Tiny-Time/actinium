@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.toz {
+    color: #eddbd7;
+    min-height: 100dvh;
+    background: rgba(69, 38, 32, 0.35);
+}
+
+.toz-text-wrapper {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    width: 150px;
+    height: 150px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+    border-radius: 15px;
+    border: 2px solid #eddbd7;
+    background: #452620;
+}
+
+.toz-ec-d > div{
+    margin: auto;
+}
+
+.toz-unit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 30px;
+    border-radius: 9px;
+    font-size: 16px;
+    background-color: #eddbd7;
+    color: #452620;
+    font-weight: 500;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    border-radius: 20px;
+    background-color: rgba(69, 38, 32, 0.25);
+    border: 1.5px solid #eddbd7;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #eddbd7;
+}
+
+.toz-form {
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid #eddbd7;
+}
+
+.toz-input, .toz-input::placeholder {
+    color: #eddbd7;
+}
+
+.toz-f-btn {
+    color: #452620;
+    border-radius: 18px;
+    background: #eddbd7;
+}
+
+/* social links */
+
+.toz-social-link {
+    border-radius: 100%;
+    background: #eddbd7;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .toz-timer {
+        font-size: 40px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 110px;
+        height: 110px;
+        border-radius: 10px;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+        width: 90px;
+        height: 25px;
+        border-radius: 5px;
+    }
+}

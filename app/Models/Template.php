@@ -916,6 +916,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'international, women, day, holiday, paid, template',
             ],
+            [
+                'id' => 83,
+                'name' => "Intensive Study Session",
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/intensive-study-session/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.intensive-study-session.index',
+                'tokens' => 10,
+                'tags' => 'intensive, study, session, study, paid, template',
+            ],
         ];
     }
 
