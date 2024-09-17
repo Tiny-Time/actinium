@@ -850,6 +850,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'embrace, day, birthday, paid, template',
             ],
+            [
+                'id' => 77,
+                'name' => 'An Unforgettable Journey',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/an-unforgettable-journey/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.an-unforgettable-journey.index',
+                'tokens' => 20,
+                'tags' => 'unforgettable, journey, vacation, paid, template',
+            ],
         ];
     }
 

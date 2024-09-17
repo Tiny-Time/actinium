@@ -88,6 +88,7 @@ export default defineConfig({
                 "resources/views/templates/beauty/organize-your-haircare-routine/css/style.css",
                 "resources/views/templates/sport/refine-your-swing/css/style.css",
                 "resources/views/templates/birthday/embrace-the-day/css/style.css",
+                "resources/views/templates/vacation/an-unforgettable-journey/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
