@@ -839,6 +839,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'refine, swing, sport, paid, template',
             ],
+            [
+                'id' => 76,
+                'name' => 'Embrace The Day',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/embrace-the-day/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.embrace-the-day.index',
+                'tokens' => 10,
+                'tags' => 'embrace, day, birthday, paid, template',
+            ],
         ];
     }
 
