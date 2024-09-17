@@ -872,6 +872,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'generations, united, vacation, paid, template',
             ],
+            [
+                'id' => 79,
+                'name' => 'Dance Practice',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/dance-practice/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.dance-practice.index',
+                'tokens' => 10,
+                'tags' => 'dance, practice, fitness, paid, template',
+            ],
         ];
     }
 
