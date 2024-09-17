@@ -861,6 +861,17 @@ class Template extends Model
                 'tokens' => 20,
                 'tags' => 'unforgettable, journey, vacation, paid, template',
             ],
+            [
+                'id' => 78,
+                'name' => 'Generations United',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/generations-united/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.generations-united.index',
+                'tokens' => 10,
+                'tags' => 'generations, united, vacation, paid, template',
+            ],
         ];
     }
 
