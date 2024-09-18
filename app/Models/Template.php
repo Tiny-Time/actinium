@@ -971,6 +971,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'your, time, style, fashion, paid, template',
             ],
+            [
+                'id' => 88,
+                'name' => "Another Trip Around The Sun",
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/another-trip-around-the-sun/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.another-trip-around-the-sun.index',
+                'tokens' => 13,
+                'tags' => 'another, trip, around, sun, birthday, paid, template',
+            ],
         ];
     }
 

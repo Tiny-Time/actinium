@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap");
+
+* {
+    font-family: "Yatra One", system-ui;
+}
+
+body {
+    margin: 0 auto;
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: 0% 70%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.toz {
+    min-height: 100dvh;
+    color: #cdedeb;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    font-family: "Quintessential";
+    margin: 0;
+}
+
+.toz-ec-d {
+    display: flex;
+    width: 165px;
+    height: 165px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    color: #004e38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    line-height: 1;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toz-ec-d img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.toz-unit {
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    border-radius: 8px;
+    background: #004e38;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #cdedeb;
+}
+
+.toz-form {
+    border-radius: 20px;
+    background: rgba(205, 237, 235, 0.25);
+}
+
+.toz-input,
+.toz-input::placeholder {
+    color: #cdedeb;
+}
+
+.toz-f-btn {
+    color: #004e38;
+    border-radius: 20px;
+    background: #cdedeb;
+}
+
+/* social links */
+.toz-social-link {
+    color: #004e38;
+    background: #cdedeb;
+}
+
+@media (max-width: 767px) {
+    .toz {
+        background-position: center;
+    }
+
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 36px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 130px;
+        height: 130px;
+    }
+
+    .toz-ec-d>div {
+        width: 115px;
+        padding: 5px;
+        height: 115px;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+}
