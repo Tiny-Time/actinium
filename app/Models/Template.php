@@ -949,6 +949,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'fresh, perspectives, meeting, paid, template',
             ],
+            [
+                'id' => 86,
+                'name' => "Never Keep Paws Waiting",
+                'category' => 'Pets',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets/never-keep-paws-waiting/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets.never-keep-paws-waiting.index',
+                'tokens' => 18,
+                'tags' => 'never, keep, paws, waiting, pets, paid, template',
+            ],
         ];
     }
 
