@@ -982,6 +982,17 @@ class Template extends Model
                 'tokens' => 13,
                 'tags' => 'another, trip, around, sun, birthday, paid, template',
             ],
+            [
+                'id' => 89,
+                'name' => "Embrace The Challenge",
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/embrace-the-challenge/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.embrace-the-challenge.index',
+                'tokens' => 18,
+                'tags' => 'embrace, challenge, fitness, paid, template',
+            ],
         ];
     }
 

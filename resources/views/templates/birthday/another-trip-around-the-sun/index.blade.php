@@ -4,7 +4,6 @@
             href="{{ Vite::asset('resources/views/templates/birthday/another-trip-around-the-sun/css/style.css') }}" />
     </x-slot>
 
-
     <!-- Event timer/counter -->
     <div class="toz-timer">
         <!-- Days -->
