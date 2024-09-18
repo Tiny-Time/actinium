@@ -924,8 +924,19 @@ class Template extends Model
                 'image' => 'resources/views/templates/study/intensive-study-session/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.study.intensive-study-session.index',
-                'tokens' => 10,
+                'tokens' => 6,
                 'tags' => 'intensive, study, session, study, paid, template',
+            ],
+            [
+                'id' => 84,
+                'name' => "Transformative Journey",
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/transformative-journey/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.transformative-journey.index',
+                'tokens' => 10,
+                'tags' => 'transformative, journey, fitness, paid, template',
             ],
         ];
     }
