@@ -993,6 +993,17 @@ class Template extends Model
                 'tokens' => 18,
                 'tags' => 'embrace, challenge, fitness, paid, template',
             ],
+            [
+                'id' => 90,
+                'name' => "TechTalk Summer",
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/techtalk-summer/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.techtalk-summer.index',
+                'tokens' => 10,
+                'tags' => 'techtalk, summer, meeting, paid, template',
+            ],
         ];
     }
 
