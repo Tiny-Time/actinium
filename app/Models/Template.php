@@ -1015,6 +1015,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'basketball, sport, paid, template',
             ],
+            [
+                'id' => 92,
+                'name' => "Master Your Studies",
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/master-your-studies/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.master-your-studies.index',
+                'tokens' => 12,
+                'tags' => 'master, studies, study, paid, template',
+            ],
         ];
     }
 
