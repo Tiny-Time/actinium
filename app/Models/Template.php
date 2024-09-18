@@ -938,6 +938,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'transformative, journey, fitness, paid, template',
             ],
+            [
+                'id' => 85,
+                'name' => "Fresh Perspectives",
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/fresh-perspectives/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.fresh-perspectives.index',
+                'tokens' => 10,
+                'tags' => 'fresh, perspectives, meeting, paid, template',
+            ],
         ];
     }
 

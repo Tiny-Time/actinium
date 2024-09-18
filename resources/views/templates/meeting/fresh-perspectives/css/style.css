@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap");
+
+* {
+    font-family: "Quicksand", serif;
+}
+
+body {
+    margin: 0 auto;
+    background: url("../images/bg.avif"), lightgray 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    background: rgba(18, 15, 5, 0.4);
+    min-height: 100dvh;
+    color: #f7f1e0;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 850px;
+    gap: 20px;
+}
+
+.toz-timer {
+    font-size: 48px;
+    width: 850px;
+    text-align: center;
+    align-items: center;
+    display: grid;
+    padding: 30px 50px;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.toz-t-w {
+    color: #f7f1e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    width: 160px;
+    height: 100px;
+    background: #120f05;
+    border: 4px solid #f7f1e0;
+    border-radius: 50px;
+}
+
+.toz-unit {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    background: transparent;
+    border-radius: 16px;
+    border: 2px solid #f7f1e0;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #f7f1e0;
+}
+
+.toz-form {
+    border-radius: 20px;
+    border: 2px solid #f7f1e0;
+    background: rgba(209, 198, 194, 0.25) c;
+}
+
+.toz-input,
+.toz-input::placeholder {
+    color: #120f05;
+}
+
+.toz-f-btn {
+    color: #f7f1e0;
+    border-radius: 20px;
+    background: #120f05;
+}
+
+/* social links */
+
+.toz-social-link {
+    color: #f7f1e0;
+    background: #120f05;
+    border: 2px solid #f7f1e0;
+}
+
+.toz-watermark a {
+    color: #f7f1e0;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 10px 20px;
+    }
+
+    .toz-t-w {
+        width: 110px;
+        height: 80px;
+        border-radius: 40px;
+        border-width: 2px;
+    }
+
+    .toz-timer>span {
+        font-size: 30px;
+    }
+
+    .toz-unit {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .toz-divider-2 {
+        display: none;
+    }
+}
