@@ -103,6 +103,8 @@ export default defineConfig({
                 "resources/views/templates/fitness/embrace-the-challenge/css/style.css",
                 "resources/views/templates/meeting/techtalk-summer/css/style.css",
                 "resources/views/templates/sport/basketball/css/style.css",
+                "resources/views/templates/study/master-your-studies/css/style.css",
+                "resources/views/templates/study/manage-your-study-time/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

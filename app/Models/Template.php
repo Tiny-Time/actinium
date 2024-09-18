@@ -1026,6 +1026,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'master, studies, study, paid, template',
             ],
+            [
+                'id' => 93,
+                'name' => "Manage Your Study Time",
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/manage-your-study-time/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.manage-your-study-time.index',
+                'tokens' => 12,
+                'tags' => 'manage, study, time, study, paid, template',
+            ],
         ];
     }
 
