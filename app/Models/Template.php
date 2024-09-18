@@ -960,6 +960,17 @@ class Template extends Model
                 'tokens' => 18,
                 'tags' => 'never, keep, paws, waiting, pets, paid, template',
             ],
+            [
+                'id' => 87,
+                'name' => "Your Time Your Style",
+                'category' => 'Fashion',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fashion/your-time-your-style/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fashion.your-time-your-style.index',
+                'tokens' => 12,
+                'tags' => 'your, time, style, fashion, paid, template',
+            ],
         ];
     }
 
