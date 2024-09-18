@@ -1001,8 +1001,19 @@ class Template extends Model
                 'image' => 'resources/views/templates/meeting/techtalk-summer/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.meeting.techtalk-summer.index',
-                'tokens' => 10,
+                'tokens' => 20,
                 'tags' => 'techtalk, summer, meeting, paid, template',
+            ],
+            [
+                'id' => 91,
+                'name' => "Basketball",
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/basketball/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.basketball.index',
+                'tokens' => 12,
+                'tags' => 'basketball, sport, paid, template',
             ],
         ];
     }

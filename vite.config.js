@@ -102,6 +102,7 @@ export default defineConfig({
                 "resources/views/templates/birthday/another-trip-around-the-sun/css/style.css",
                 "resources/views/templates/fitness/embrace-the-challenge/css/style.css",
                 "resources/views/templates/meeting/techtalk-summer/css/style.css",
+                "resources/views/templates/sport/basketball/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
