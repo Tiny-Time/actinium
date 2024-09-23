@@ -1059,6 +1059,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'timeless, grace, personified, fashion, paid, template',
             ],
+            [
+                'id' => 96,
+                'name' => 'Picnic Paradise Retreat',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/picnic-paradise-retreat/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.picnic-paradise-retreat.index',
+                'tokens' => 12,
+                'tags' => 'picnic, paradise, retreat, vacation, paid, template',
+            ],
         ];
     }
 
