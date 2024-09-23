@@ -76,8 +76,9 @@ class DomainRedirectMiddleware
         }
 
         $needRedirect = $this->needRedirect($domain, $request->getSchemeAndHttpHost());
+        $middlewareEnabled = env('DOMAIN_REDIRECT_MIDDLEWARE_ENABLED', true);
 
-        if ($needRedirect) {
+        if ($needRedirect && $middlewareEnabled) {
             return redirect()->to("$domain$uri");
         }
 

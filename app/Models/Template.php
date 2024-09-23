@@ -1037,6 +1037,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'manage, study, time, study, paid, template',
             ],
+            [
+                'id' => 94,
+                'name' => "Let The Celebration Begin",
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/let-the-celebration-begin/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.let-the-celebration-begin.index',
+                'tokens' => 12,
+                'tags' => 'celebration, begin, birthday, paid, template',
+            ],
         ];
     }
 
