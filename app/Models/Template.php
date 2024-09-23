@@ -1081,6 +1081,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'holiday, international, tiger, day, animals, paid, template',
             ],
+            [
+                'id' => 98,
+                'name' => 'Power Packed Workout',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/power-packed-workout/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.power-packed-workout.index',
+                'tokens' => 12,
+                'tags' => 'power, packed, workout, fitness, paid, template',
+            ],
         ];
     }
 
