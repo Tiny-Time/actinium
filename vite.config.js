@@ -106,6 +106,7 @@ export default defineConfig({
                 "resources/views/templates/study/master-your-studies/css/style.css",
                 "resources/views/templates/study/manage-your-study-time/css/style.css",
                 "resources/views/templates/birthday/let-the-celebration-begin/css/style.css",
+                "resources/views/templates/fashion/timeless-grace-personified/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

@@ -1048,6 +1048,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'celebration, begin, birthday, paid, template',
             ],
+            [
+                'id' => 95,
+                'name' => 'Timeless Grace Personified',
+                'category' => 'Fashion',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fashion/timeless-grace-personified/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fashion.timeless-grace-personified.index',
+                'tokens' => 12,
+                'tags' => 'timeless, grace, personified, fashion, paid, template',
+            ],
         ];
     }
 
