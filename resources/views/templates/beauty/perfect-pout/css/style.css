@@ -4,6 +4,10 @@
     font-family: "Spectral SC", serif;
 }
 
+p, input, textarea, span, h2{
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
 body {
     background: url("../images/bg.webp");
     background-attachment: fixed;
