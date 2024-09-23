@@ -1092,6 +1092,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'power, packed, workout, fitness, paid, template',
             ],
+            [
+                'id' => 99,
+                'name' => 'Perfect Pout',
+                'category' => 'Beauty',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/beauty/perfect-pout/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.beauty.perfect-pout.index',
+                'tokens' => 12,
+                'tags' => 'perfect, pout, beauty, paid, template',
+            ],
         ];
     }
 
