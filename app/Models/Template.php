@@ -1070,6 +1070,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'picnic, paradise, retreat, vacation, paid, template',
             ],
+            [
+                'id' => 97,
+                'name' => 'Holiday International Tiger Day',
+                'category' => 'Animals',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/animals/holiday-international-tiger-day/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.animals.holiday-international-tiger-day.index',
+                'tokens' => 12,
+                'tags' => 'holiday, international, tiger, day, animals, paid, template',
+            ],
         ];
     }
 
