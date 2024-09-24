@@ -1158,6 +1158,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'smash, it, on, the, court, sport, paid, template',
             ],
+            [
+                'id' => 105,
+                'name' => 'Academic Excellence',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/academic-excellence/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.academic-excellence.index',
+                'tokens' => 12,
+                'tags' => 'academic, excellence, study, paid, template',
+            ],
         ];
     }
 
