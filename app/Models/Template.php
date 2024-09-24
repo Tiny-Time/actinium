@@ -1136,6 +1136,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'boxing, fit, fitness, paid, template',
             ],
+            [
+                'id' => 103,
+                'name' => 'Collaboration Gathering',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/collaboration-gathering/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.collaboration-gathering.index',
+                'tokens' => 12,
+                'tags' => 'collaboration, gathering, meeting, paid, template',
+            ],
         ];
     }
 
