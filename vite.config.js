@@ -120,6 +120,7 @@ export default defineConfig({
                 "resources/views/templates/sport/time-your-tennis-thrills/css/style.css",
                 "resources/views/templates/pets/nutritious-feeding-for-happy-bunnies/css/style.css",
                 "resources/views/templates/birthday/get-ready-to-party/css/style.css",
+                "resources/views/templates/vacation/coastal-beachfront-paradise/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

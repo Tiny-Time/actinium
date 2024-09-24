@@ -1202,6 +1202,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'get, ready, to, party, birthday, paid, template',
             ],
+            [
+                'id' => 109,
+                'name' => 'Coastal Beachfront Paradise',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/coastal-beachfront-paradise/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.coastal-beachfront-paradise.index',
+                'tokens' => 12,
+                'tags' => 'coastal, beachfront, paradise, vacation, paid, template',
+            ],
         ];
     }
 
