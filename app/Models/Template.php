@@ -1235,6 +1235,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'discover, learn, succeed, study, paid, template',
             ],
+            [
+                'id' => 112,
+                'name' => 'Sculpt Your Body',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/sculpt-your-body/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.sculpt-your-body.index',
+                'tokens' => 12,
+                'tags' => 'sculpt, your, body, fitness, paid, template',
+            ],
         ];
     }
 
