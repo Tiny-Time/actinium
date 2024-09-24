@@ -1125,6 +1125,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'focus, session, study, paid, template',
             ],
+            [
+                'id' => 102,
+                'name' => 'Boxing Fit',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/boxing-fit/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.boxing-fit.index',
+                'tokens' => 12,
+                'tags' => 'boxing, fit, fitness, paid, template',
+            ],
         ];
     }
 
