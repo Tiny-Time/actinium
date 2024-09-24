@@ -1180,6 +1180,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'time, your, tennis, thrills, sport, paid, template',
             ],
+            [
+                'id' => 107,
+                'name' => 'Nutritious Feeding For Happy Bunnies',
+                'category' => 'Pets',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets/nutritious-feeding-for-happy-bunnies/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets.nutritious-feeding-for-happy-bunnies.index',
+                'tokens' => 12,
+                'tags' => 'nutritious, feeding, for, happy, bunnies, pets, paid, template',
+            ],
         ];
     }
 
