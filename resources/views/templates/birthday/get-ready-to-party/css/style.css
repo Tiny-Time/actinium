@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Coiny&display=swap");
+
+* {
+	font-family: "Coiny", system-ui;
+	font-weight: 400;
+}
+
+body {
+	background: url("../images/bg.webp");
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 20px 5px 0 5px;
+}
+
+.toz {
+	color: #fcf0eb;
+	min-height: 100dvh;
+	background: rgba(15, 3, 4, 0.2);
+}
+
+.toz-text-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+	gap: 20px;
+	text-align: center;
+}
+
+.toz-timer {
+	font-size: 48px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;
+	max-width: max-content;
+	margin: 0;
+}
+
+.toz-ec-d {
+	display: flex;
+	width: 150px;
+	height: 150px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.toz-ec-d > div {
+	color: #a03c1c;
+	text-align: center;
+	display: flex;
+	flex-direction: column-reverse;
+	z-index: 1;
+}
+
+.toz-ec-d img {
+	position: absolute;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.toz-unit {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	font-size: 18px;
+	line-height: 1;
+}
+
+.toz-subscription {
+	color: #a03c1c;
+	border-radius: 15px;
+	background: #fcf0eb;
+	border: 2px solid #a03c1c;
+}
+
+li.splide__slide > div {
+	color: #a03c1c;
+	border-radius: 15px;
+	background: #fcf0eb;
+	border: 2px solid #a03c1c;
+}
+
+li.splide__slide > div > h3,
+li.splide__slide > div > p,
+li.splide__slide > div > svg {
+	color: #a03c1c;
+}
+
+.toz-form {
+	border-radius: 20px;
+	background: rgba(160, 60, 28, 0.25);
+}
+
+.toz-input {
+	color: #a03c1c !important;
+}
+
+.toz-f-btn {
+	color: #fcf0eb;
+	border-radius: 20px;
+	background: #a03c1c;
+}
+
+.toz-social-link {
+	background: #a03c1c;
+	color: #fcf0eb;
+}
+
+@media (max-width: 767px) {
+	.toz-text-wrapper {
+		width: 100%;
+	}
+
+	.toz-timer {
+		font-size: 36px;
+		gap: 18px;
+	}
+
+	.toz-ec-d {
+		width: 120px;
+		height: 120px;
+	}
+
+	.toz-unit {
+		font-size: 14px;
+	}
+}

@@ -1191,6 +1191,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'nutritious, feeding, for, happy, bunnies, pets, paid, template',
             ],
+            [
+                'id' => 108,
+                'name' => 'Get Ready To Party',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/get-ready-to-party/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.get-ready-to-party.index',
+                'tokens' => 12,
+                'tags' => 'get, ready, to, party, birthday, paid, template',
+            ],
         ];
     }
 
