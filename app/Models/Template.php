@@ -1169,6 +1169,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'academic, excellence, study, paid, template',
             ],
+            [
+                'id' => 106,
+                'name' => 'Time Your Tennis Thrills',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/time-your-tennis-thrills/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.time-your-tennis-thrills.index',
+                'tokens' => 12,
+                'tags' => 'time, your, tennis, thrills, sport, paid, template',
+            ],
         ];
     }
 

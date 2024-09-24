@@ -117,6 +117,7 @@ export default defineConfig({
                 "resources/views/templates/meeting/collaboration-gathering/css/style.css",
                 "resources/views/templates/sport/smash-it-on-the-court/css/style.css",
                 "resources/views/templates/study/academic-excellence/css/style.css",
+                "resources/views/templates/sport/time-your-tennis-thrills/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
