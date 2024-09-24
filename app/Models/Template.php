@@ -1224,6 +1224,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'team, huddle, meeting, paid, template',
             ],
+            [
+                'id' => 111,
+                'name' => 'Discover Learn Succeed',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/discover-learn-succeed/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.discover-learn-succeed.index',
+                'tokens' => 12,
+                'tags' => 'discover, learn, succeed, study, paid, template',
+            ],
         ];
     }
 

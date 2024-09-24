@@ -122,6 +122,7 @@ export default defineConfig({
                 "resources/views/templates/birthday/get-ready-to-party/css/style.css",
                 "resources/views/templates/vacation/coastal-beachfront-paradise/css/style.css",
                 "resources/views/templates/meeting/team-huddle/css/style.css",
+                "resources/views/templates/study/discover-learn-succeed/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
