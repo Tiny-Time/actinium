@@ -1114,6 +1114,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'focused, learning, study, paid, template',
             ],
+            [
+                'id' => 101,
+                'name' => 'Focus Session',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/focus-session/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.focus-session.index',
+                'tokens' => 12,
+                'tags' => 'focus, session, study, paid, template',
+            ],
         ];
     }
 
