@@ -1147,6 +1147,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'collaboration, gathering, meeting, paid, template',
             ],
+            [
+                'id' => 104,
+                'name' => 'Smash It On The Court',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/smash-it-on-the-court/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.smash-it-on-the-court.index',
+                'tokens' => 12,
+                'tags' => 'smash, it, on, the, court, sport, paid, template',
+            ],
         ];
     }
 

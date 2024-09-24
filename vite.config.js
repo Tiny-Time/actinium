@@ -115,6 +115,7 @@ export default defineConfig({
                 "resources/views/templates/study/focus-session/css/style.css",
                 "resources/views/templates/fitness/boxing-fit/css/style.css",
                 "resources/views/templates/meeting/collaboration-gathering/css/style.css",
+                "resources/views/templates/sport/smash-it-on-the-court/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
