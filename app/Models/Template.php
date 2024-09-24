@@ -1103,6 +1103,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'perfect, pout, beauty, paid, template',
             ],
+            [
+                'id' => 100,
+                'name' => 'Focused Learning',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/focused-learning/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.focused-learning.index',
+                'tokens' => 12,
+                'tags' => 'focused, learning, study, paid, template',
+            ],
         ];
     }
 

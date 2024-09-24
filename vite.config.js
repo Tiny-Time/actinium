@@ -111,6 +111,7 @@ export default defineConfig({
                 "resources/views/templates/animals/holiday-international-tiger-day/css/style.css",
                 "resources/views/templates/fitness/power-packed-workout/css/style.css",
                 "resources/views/templates/beauty/perfect-pout/css/style.css",
+                "resources/views/templates/study/focused-learning/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
