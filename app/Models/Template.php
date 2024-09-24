@@ -1213,6 +1213,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'coastal, beachfront, paradise, vacation, paid, template',
             ],
+            [
+                'id' => 110,
+                'name' => 'Team Huddle',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/team-huddle/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.team-huddle.index',
+                'tokens' => 12,
+                'tags' => 'team, huddle, meeting, paid, template',
+            ],
         ];
     }
 
