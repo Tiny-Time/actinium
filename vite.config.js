@@ -135,6 +135,7 @@ export default defineConfig({
                 "resources/views/templates/fashion/a-fashion-fusion-photoshoot/css/style.css",
                 "resources/views/templates/sport/serve-rally-win/css/style.css",
                 "resources/views/templates/vacation/blissful-nature-retreat/css/style.css",
+                "resources/views/templates/study/boost-your-focus/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

@@ -1367,6 +1367,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'blissful, nature, retreat, vacation, paid, template',
             ],
+            [
+                'id' => 124,
+                'name' => 'Boost Your Focus',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/boost-your-focus/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.boost-your-focus.index',
+                'tokens' => 12,
+                'tags' => 'boost, your, focus, study, paid, template',
+            ],
         ];
     }
 
