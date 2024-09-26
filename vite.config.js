@@ -124,6 +124,7 @@ export default defineConfig({
                 "resources/views/templates/meeting/team-huddle/css/style.css",
                 "resources/views/templates/study/discover-learn-succeed/css/style.css",
                 "resources/views/templates/fitness/sculpt-your-body/css/style.css",
+                "resources/views/templates/pets/dogs-having-a-blast/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

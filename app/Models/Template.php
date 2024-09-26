@@ -1246,6 +1246,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'sculpt, your, body, fitness, paid, template',
             ],
+            [
+                'id' => 113,
+                'name' => 'Dogs Having A Blast',
+                'category' => 'Pets',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets/dogs-having-a-blast/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets.dogs-having-a-blast.index',
+                'tokens' => 8,
+                'tags' => 'dogs, having, a, blast, pets, paid, template',
+            ],
         ];
     }
 
