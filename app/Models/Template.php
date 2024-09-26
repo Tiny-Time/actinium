@@ -1323,6 +1323,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'scoot-s, party, pets birthday , paid, template',
             ],
+            [
+                'id' => 120,
+                'name' => 'Go Fly A Kite',
+                'category' => 'Holiday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/holiday/go-fly-a-kite/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.holiday.go-fly-a-kite.index',
+                'tokens' => 12,
+                'tags' => 'go, fly, a, kite, holiday, paid, template',
+            ],
         ];
     }
 
