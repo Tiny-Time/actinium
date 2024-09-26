@@ -1400,6 +1400,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'toast, to, another, year, birthday, paid, template',
             ],
+            [
+                'id' => 127,
+                'name' => 'Learning Together',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/learning-together/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.learning-together.index',
+                'tokens' => 11,
+                'tags' => 'learning, together, study, paid, template',
+            ],
         ];
     }
 
