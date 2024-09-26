@@ -1301,6 +1301,17 @@ class Template extends Model
                 'tokens' => 9,
                 'tags' => 'focused, reading, session, study, paid, template',
             ],
+            [
+                'id' => 118,
+                'name' => 'Ace Your Game',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/ace-your-game/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.ace-your-game.index',
+                'tokens' => 12,
+                'tags' => 'ace, your, game, sport, paid, template',
+            ],
         ];
     }
 
