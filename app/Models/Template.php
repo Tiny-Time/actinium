@@ -1312,6 +1312,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'ace, your, game, sport, paid, template',
             ],
+            [
+                'id' => 119,
+                'name' => 'Scoot\'s Party',
+                'category' => 'Pets BirthDay',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets-birthday/scoot-s-party/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets-birthday.scoot-s-party.index',
+                'tokens' => 12,
+                'tags' => 'scoot-s, party, pets birthday , paid, template',
+            ],
         ];
     }
 
