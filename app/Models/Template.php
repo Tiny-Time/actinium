@@ -1386,8 +1386,19 @@ class Template extends Model
                 'image' => 'resources/views/templates/vacation/hit-the-open-road/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.vacation.hit-the-open-road.index',
-                'tokens' => 8,
+                'tokens' => 11,
                 'tags' => 'hit, the, open, road, vacation, paid, template',
+            ],
+            [
+                'id' => 126,
+                'name' => 'Toast To Another Year',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/toast-to-another-year/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.toast-to-another-year.index',
+                'tokens' => 12,
+                'tags' => 'toast, to, another, year, birthday, paid, template',
             ],
         ];
     }
