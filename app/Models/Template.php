@@ -1433,6 +1433,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'vogue, vista, fashion, paid, template',
             ],
+            [
+                'id' => 130,
+                'name' => 'International Joke Day',
+                'category' => 'Holiday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/holiday/international-joke-day/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.holiday.international-joke-day.index',
+                'tokens' => 11,
+                'tags' => 'international, joke, day, holiday, paid, template',
+            ],
         ];
     }
 

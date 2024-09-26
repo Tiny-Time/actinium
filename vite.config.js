@@ -141,6 +141,7 @@ export default defineConfig({
                 "resources/views/templates/study/learning-together/css/style.css",
                 "resources/views/templates/meeting/business-strategy-session/css/style.css",
                 "resources/views/templates/fashion/vogue-vista/css/style.css",
+                "resources/views/templates/holiday/international-joke-day/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
