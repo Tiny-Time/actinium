@@ -127,6 +127,7 @@ export default defineConfig({
                 "resources/views/templates/pets/dogs-having-a-blast/css/style.css",
                 "resources/views/templates/birthday/let-s-celebrate/css/style.css",
                 "resources/views/templates/beauty/transform-your-hair/css/style.css",
+                "resources/views/templates/vacation/nature-s-tranquil-haven/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

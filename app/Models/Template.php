@@ -1279,6 +1279,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'transform, your, hair, beauty, paid, template',
             ],
+            [
+                'id' => 116,
+                'name' => 'Nature\'s Tranquil Haven',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/nature-s-tranquil-haven/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.nature-s-tranquil-haven.index',
+                'tokens' => 7,
+                'tags' => 'nature-s, tranquil, haven, vacation, paid, template',
+            ],
         ];
     }
 
