@@ -1411,6 +1411,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'learning, together, study, paid, template',
             ],
+            [
+                'id' => 128,
+                'name' => 'Business Strategy Session',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/business-strategy-session/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.business-strategy-session.index',
+                'tokens' => 11,
+                'tags' => 'business, strategy, session, meeting, paid, template',
+            ],
         ];
     }
 

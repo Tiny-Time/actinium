@@ -139,6 +139,7 @@ export default defineConfig({
                 "resources/views/templates/vacation/hit-the-open-road/css/style.css",
                 "resources/views/templates/birthday/toast-to-another-year/css/style.css",
                 "resources/views/templates/study/learning-together/css/style.css",
+                "resources/views/templates/meeting/business-strategy-session/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
