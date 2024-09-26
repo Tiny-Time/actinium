@@ -1268,6 +1268,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'let\'s, celebrate, birthday, paid, template',
             ],
+            [
+                'id' => 115,
+                'name' => 'Transform Your Hair',
+                'category' => 'Beauty',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/beauty/transform-your-hair/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.beauty.transform-your-hair.index',
+                'tokens' => 7,
+                'tags' => 'transform, your, hair, beauty, paid, template',
+            ],
         ];
     }
 
