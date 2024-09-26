@@ -1345,6 +1345,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'a, fashion, fusion, photoshoot, fashion, paid, template',
             ],
+            [
+                'id' => 122,
+                'name' => 'Serve Rally Win',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/serve-rally-win/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.serve-rally-win.index',
+                'tokens' => 12,
+                'tags' => 'serve, rally, win, sport, paid, template',
+            ],
         ];
     }
 

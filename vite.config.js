@@ -133,6 +133,7 @@ export default defineConfig({
                 "resources/views/templates/pets-birthday/scoot-s-party/css/style.css",
                 "resources/views/templates/holiday/go-fly-a-kite/css/style.css",
                 "resources/views/templates/fashion/a-fashion-fusion-photoshoot/css/style.css",
+                "resources/views/templates/sport/serve-rally-win/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
