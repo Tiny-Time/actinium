@@ -1422,6 +1422,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'business, strategy, session, meeting, paid, template',
             ],
+            [
+                'id' => 129,
+                'name' => 'Vogue Vista',
+                'category' => 'Fashion',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fashion/vogue-vista/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fashion.vogue-vista.index',
+                'tokens' => 11,
+                'tags' => 'vogue, vista, fashion, paid, template',
+            ],
         ];
     }
 
