@@ -1334,6 +1334,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'go, fly, a, kite, holiday, paid, template',
             ],
+            [
+                'id' => 121,
+                'name' => 'A Fashion Fusion Photoshoot',
+                'category' => 'Fashion',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fashion/a-fashion-fusion-photoshoot/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fashion.a-fashion-fusion-photoshoot.index',
+                'tokens' => 12,
+                'tags' => 'a, fashion, fusion, photoshoot, fashion, paid, template',
+            ],
         ];
     }
 
