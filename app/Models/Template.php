@@ -1356,6 +1356,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'serve, rally, win, sport, paid, template',
             ],
+            [
+                'id' => 123,
+                'name' => 'Blissful Nature Retreat',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/blissful-nature-retreat/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.blissful-nature-retreat.index',
+                'tokens' => 12,
+                'tags' => 'blissful, nature, retreat, vacation, paid, template',
+            ],
         ];
     }
 
