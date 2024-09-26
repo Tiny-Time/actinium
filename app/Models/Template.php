@@ -1378,6 +1378,17 @@ class Template extends Model
                 'tokens' => 12,
                 'tags' => 'boost, your, focus, study, paid, template',
             ],
+            [
+                'id' => 125,
+                'name' => 'Hit The Open Road',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/hit-the-open-road/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.hit-the-open-road.index',
+                'tokens' => 8,
+                'tags' => 'hit, the, open, road, vacation, paid, template',
+            ],
         ];
     }
 
