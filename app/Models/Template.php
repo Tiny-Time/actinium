@@ -1290,6 +1290,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'nature-s, tranquil, haven, vacation, paid, template',
             ],
+            [
+                'id' => 117,
+                'name' => 'Focused Reading Session',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/focused-reading-session/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.focused-reading-session.index',
+                'tokens' => 9,
+                'tags' => 'focused, reading, session, study, paid, template',
+            ],
         ];
     }
 
