@@ -1257,6 +1257,17 @@ class Template extends Model
                 'tokens' => 8,
                 'tags' => 'dogs, having, a, blast, pets, paid, template',
             ],
+            [
+                'id' => 114,
+                'name' => 'Let\'s Celebrate',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/let-s-celebrate/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.let-s-celebrate.index',
+                'tokens' => 12,
+                'tags' => 'let\'s, celebrate, birthday, paid, template',
+            ],
         ];
     }
 
