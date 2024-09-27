@@ -1598,6 +1598,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'a, celebration, of, life, birthday, paid, template',
             ],
+            [
+                'id' => 145,
+                'name' => 'Elevate Your Wellness',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/elevate-your-wellness/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.elevate-your-wellness.index',
+                'tokens' => 11,
+                'tags' => 'elevate, your, wellness, fitness, paid, template',
+            ],
         ];
     }
 
