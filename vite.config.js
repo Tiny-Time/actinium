@@ -150,6 +150,7 @@ export default defineConfig({
                 "resources/views/templates/beauty/lip-care/css/style.css",
                 "resources/views/templates/birthday/marking-another-year-with-joy/css/style.css",
                 "resources/views/templates/fitness/yoga-for-mind-body-and-soul/css/style.css",
+                "resources/views/templates/study/illuminate-your-mind/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

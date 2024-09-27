@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
+
+* {
+    font-family: "Bree Serif", serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    background: rgba(3, 2, 27, 0.1);
+    color: #f8eae4;
+    min-height: 100dvh;
+}
+
+.toz-text-wrapper {
+    color: #f8eae4;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    display: flex;
+    width: 145px;
+    height: 145px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    color: #211008;
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    z-index: 1;
+}
+
+.toz-ec-d img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.toz-unit {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    background: rgba(248, 234, 228, 0.25);
+    border-radius: 15px;
+    color: #f8eae4;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #f8eae4;
+}
+
+.toz-input {
+    color: #f8eae4 !important;
+}
+
+.toz-f-btn {
+    color: #211008;
+    border-radius: 20px;
+    background: #f8eae4;
+}
+
+.toz-social-link {
+    background: #f8eae4;
+    color: #211008;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 30px;
+        gap: 18px;
+    }
+
+    .toz-ec-d {
+        width: 120px;
+        height: 120px;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+
+    .toz-input {
+        font-size: 14px;
+    }
+
+    .toz-f-btn {
+        font-size: 14px;
+    }
+}

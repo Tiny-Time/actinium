@@ -1532,6 +1532,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'yoga, for, mind, body, and, soul, fitness, paid, template',
             ],
+            [
+                'id' => 139,
+                'name' => 'Illuminate Your Mind',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/illuminate-your-mind/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.illuminate-your-mind.index',
+                'tokens' => 11,
+                'tags' => 'illuminate, your, mind, study, paid, template',
+            ],
         ];
     }
 
