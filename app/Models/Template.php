@@ -1510,6 +1510,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'lip, care, beauty, paid, template',
             ],
+            [
+                'id' => 137,
+                'name' => 'Marking Another Year With Joy',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/marking-another-year-with-joy/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.marking-another-year-with-joy.index',
+                'tokens' => 11,
+                'tags' => 'marking, another, year, with, joy, birthday, paid, template',
+            ],
         ];
     }
 

@@ -148,6 +148,7 @@ export default defineConfig({
                 "resources/views/templates/meeting/corporate-alignment-summit/css/style.css",
                 "resources/views/templates/pets/purr-fect-relaxation/css/style.css",
                 "resources/views/templates/beauty/lip-care/css/style.css",
+                "resources/views/templates/birthday/marking-another-year-with-joy/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
