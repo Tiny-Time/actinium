@@ -1631,6 +1631,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'shoulder, chic, fashion, paid, template',
             ],
+            [
+                'id' => 148,
+                'name' => 'Celebrating Nature\'s Treasure',
+                'category' => 'Holiday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/holiday/celebrating-nature-s-treasure/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.holiday.celebrating-nature-s-treasure.index',
+                'tokens' => 11,
+                'tags' => 'celebrating, nature\'s, treasure, holiday, paid, template',
+            ],
         ];
     }
 
