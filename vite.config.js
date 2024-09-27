@@ -154,6 +154,7 @@ export default defineConfig({
                 "resources/views/templates/sport/pause-the-action-and-recharge/css/style.css",
                 "resources/views/templates/holiday/world-peace-day/css/style.css",
                 "resources/views/templates/meeting/quarterly-board-meeting/css/style.css",
+                "resources/views/templates/fashion/graceful-elegance/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

@@ -1576,6 +1576,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'quarterly, board, meeting, meeting, paid, template',
             ],
+            [
+                'id' => 143,
+                'name' => 'Graceful Elegance',
+                'category' => 'Fashion',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fashion/graceful-elegance/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fashion.graceful-elegance.index',
+                'tokens' => 11,
+                'tags' => 'graceful, elegance, fashion, paid, template',
+            ],
         ];
     }
 
