@@ -1466,6 +1466,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'kick, off, passion, sport, paid, template',
             ],
+            [
+                'id' => 133,
+                'name' => 'World Humanitarian Day',
+                'category' => 'Holiday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/holiday/world-humanitarian-day/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.holiday.world-humanitarian-day.index',
+                'tokens' => 11,
+                'tags' => 'world, humanitarian, day, holiday, paid, template',
+            ],
         ];
     }
 
