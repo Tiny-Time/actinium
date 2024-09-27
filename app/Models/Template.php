@@ -1719,6 +1719,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'eid, al, fitr, ramadan, paid, template',
             ],
+            [
+                'id' => 156,
+                'name' => 'Master The Art',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/master-the-art/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.master-the-art.index',
+                'tokens' => 11,
+                'tags' => 'master, the, art, sport, paid, template',
+            ],
         ];
     }
 
