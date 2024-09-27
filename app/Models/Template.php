@@ -1730,6 +1730,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'master, the, art, sport, paid, template',
             ],
+            [
+                'id' => 157,
+                'name' => 'Dedicate Time To Radiant Skin',
+                'category' => 'Beauty',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/beauty/dedicate-time-to-radiant-skin/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.beauty.dedicate-time-to-radiant-skin.index',
+                'tokens' => 11,
+                'tags' => 'dedicate, time, to, radiant, skin, beauty, paid, template',
+            ],
         ];
     }
 

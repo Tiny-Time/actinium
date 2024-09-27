@@ -168,6 +168,7 @@ export default defineConfig({
                 "resources/views/templates/birthday/a-whimsical-birthday-soirée/css/style.css",
                 "resources/views/templates/ramadan/eid-al-fitr/css/style.css",
                 "resources/views/templates/sport/master-the-art/css/style.css",
+                "resources/views/templates/beauty/dedicate-time-to-radiant-skin/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
