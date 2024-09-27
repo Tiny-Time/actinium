@@ -1565,6 +1565,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'world, peace, day, holiday, paid, template',
             ],
+            [
+                'id' => 142,
+                'name' => 'Quarterly Board Meeting',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/quarterly-board-meeting/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.quarterly-board-meeting.index',
+                'tokens' => 11,
+                'tags' => 'quarterly, board, meeting, meeting, paid, template',
+            ],
         ];
     }
 
