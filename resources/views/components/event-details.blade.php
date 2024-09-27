@@ -9,7 +9,7 @@
         $event->contact_phone_number ||
         $event->contact_email_address ||
         $event->contact_name)
-    <div class="mt-4 text-lg text-center text-white" x-data="{
+    <div class="mt-4 text-lg text-center text-white" id="toz-event-details" x-data="{
         endTime: window.eventStartEndTime(@js(\Carbon\Carbon::parse($event->event_end_time)->format('Y-m-d H:i:s')), @js($event->timezone)),
         checkinTime: window.eventStartEndTime(@js(\Carbon\Carbon::parse($event->check_in_time)->format('Y-m-d H:i:s')),  @js($event->timezone))
     }">

@@ -157,6 +157,7 @@ export default defineConfig({
                 "resources/views/templates/fashion/graceful-elegance/css/style.css",
                 "resources/views/templates/birthday/a-celebration-of-life/css/style.css",
                 "resources/views/templates/fitness/elevate-your-wellness/css/style.css",
+                "resources/views/templates/meeting/project-progress-review/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

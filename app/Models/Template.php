@@ -1609,6 +1609,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'elevate, your, wellness, fitness, paid, template',
             ],
+            [
+                'id' => 146,
+                'name' => 'Project Progress Review',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/project-progress-review/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.project-progress-review.index',
+                'tokens' => 11,
+                'tags' => 'project, progress, review, meeting, paid, template',
+            ],
         ];
     }
 
