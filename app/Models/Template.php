@@ -1455,6 +1455,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'ace, your, exam, study, paid, template',
             ],
+            [
+                'id' => 132,
+                'name' => 'Kick Off Passion',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/kick-off-passion/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.kick-off-passion.index',
+                'tokens' => 11,
+                'tags' => 'kick, off, passion, sport, paid, template',
+            ],
         ];
     }
 
