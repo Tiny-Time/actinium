@@ -1521,6 +1521,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'marking, another, year, with, joy, birthday, paid, template',
             ],
+            [
+                'id' => 138,
+                'name' => 'Yoga For Mind Body And Soul',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/yoga-for-mind-body-and-soul/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.yoga-for-mind-body-and-soul.index',
+                'tokens' => 11,
+                'tags' => 'yoga, for, mind, body, and, soul, fitness, paid, template',
+            ],
         ];
     }
 

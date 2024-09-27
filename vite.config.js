@@ -149,6 +149,7 @@ export default defineConfig({
                 "resources/views/templates/pets/purr-fect-relaxation/css/style.css",
                 "resources/views/templates/beauty/lip-care/css/style.css",
                 "resources/views/templates/birthday/marking-another-year-with-joy/css/style.css",
+                "resources/views/templates/fitness/yoga-for-mind-body-and-soul/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
