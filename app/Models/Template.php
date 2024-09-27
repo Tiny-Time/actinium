@@ -1554,6 +1554,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'pause, the, action, and, recharge, sport, paid, template',
             ],
+            [
+                'id' => 141,
+                'name' => 'World Peace Day',
+                'category' => 'Holiday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/holiday/world-peace-day/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.holiday.world-peace-day.index',
+                'tokens' => 11,
+                'tags' => 'world, peace, day, holiday, paid, template',
+            ],
         ];
     }
 
