@@ -1664,6 +1664,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'healthier, stronger, and, happier, you, fitness, paid, template',
             ],
+            [
+                'id' => 151,
+                'name' => 'Study Smart Succeed Strong',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/study-smart-succeed-strong/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.study-smart-succeed-strong.index',
+                'tokens' => 11,
+                'tags' => 'study, smart, succeed, strong, study, paid, template',
+            ],
         ];
     }
 
