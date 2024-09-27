@@ -1444,6 +1444,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'international, joke, day, holiday, paid, template',
             ],
+            [
+                'id' => 131,
+                'name' => 'Ace Your Exam',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/ace-your-exam/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.ace-your-exam.index',
+                'tokens' => 11,
+                'tags' => 'ace, your, exam, study, paid, template',
+            ],
         ];
     }
 
