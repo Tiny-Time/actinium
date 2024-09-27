@@ -1675,6 +1675,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'study, smart, succeed, strong, study, paid, template',
             ],
+            [
+                'id' => 152,
+                'name' => 'Shoreline Shindig',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/shoreline-shindig/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.shoreline-shindig.index',
+                'tokens' => 11,
+                'tags' => 'shoreline, shindig, vacation, paid, template',
+            ],
         ];
     }
 
