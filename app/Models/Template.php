@@ -1620,6 +1620,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'project, progress, review, meeting, paid, template',
             ],
+            [
+                'id' => 147,
+                'name' => 'Shoulder Chic',
+                'category' => 'Fashion',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fashion/shoulder-chic/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fashion.shoulder-chic.index',
+                'tokens' => 11,
+                'tags' => 'shoulder, chic, fashion, paid, template',
+            ],
         ];
     }
 
