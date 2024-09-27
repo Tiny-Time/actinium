@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+
+* {
+    font-family: "Comic Neue", cursive;
+}
+
+body {
+    background: url("../images/bg.avif");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    background: rgba(44, 26, 14, 0.25);
+    color: #ecd3c2;
+    min-height: 100dvh;
+}
+
+.toz-text-wrapper {
+    color: #ecd3c2;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    display: flex;
+    width: 145px;
+    height: 145px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    color: #2c1a0e;
+    text-align: center;
+    display: flex;
+    font-weight: 700;
+    flex-direction: column-reverse;
+    align-items: center;
+    z-index: 1;
+}
+
+.toz-ec-d img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.toz-unit {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    background: #ecd3c2;
+    border: 2px solid #ecd3c2;
+    color: #2c1a0e;
+    border-radius: 15px;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #2c1a0e;
+}
+
+.toz-input {
+    color: #2c1a0e !important;
+}
+
+.toz-f-btn {
+    color: #ecd3c2;
+    border-radius: 20px;
+    background: #2c1a0e;
+}
+
+.toz-social-link {
+    background: #2c1a0e;
+    color: #ecd3c2;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 30px;
+        gap: 18px;
+    }
+
+    .toz-ec-d {
+        width: 120px;
+        height: 120px;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+
+    .toz-input {
+        font-size: 14px;
+    }
+
+    .toz-f-btn {
+        font-size: 14px;
+    }
+}

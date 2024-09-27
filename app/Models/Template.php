@@ -1488,6 +1488,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'corporate, alignment, summit, meeting, paid, template',
             ],
+            [
+                'id' => 135,
+                'name' => 'Purr Fect Relaxation',
+                'category' => 'Pets',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets/purr-fect-relaxation/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets.purr-fect-relaxation.index',
+                'tokens' => 11,
+                'tags' => 'purr, fect, relaxation, pets, paid, template',
+            ],
         ];
     }
 
