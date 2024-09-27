@@ -1587,6 +1587,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'graceful, elegance, fashion, paid, template',
             ],
+            [
+                'id' => 144,
+                'name' => 'A Celebration Of Life',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/a-celebration-of-life/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.a-celebration-of-life.index',
+                'tokens' => 11,
+                'tags' => 'a, celebration, of, life, birthday, paid, template',
+            ],
         ];
     }
 
