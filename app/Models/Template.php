@@ -1477,6 +1477,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'world, humanitarian, day, holiday, paid, template',
             ],
+            [
+                'id' => 134,
+                'name' => 'Corporate Alignment Summit',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/corporate-alignment-summit/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.corporate-alignment-summit.index',
+                'tokens' => 11,
+                'tags' => 'corporate, alignment, summit, meeting, paid, template',
+            ],
         ];
     }
 

@@ -145,6 +145,7 @@ export default defineConfig({
                 "resources/views/templates/study/ace-your-exam/css/style.css",
                 "resources/views/templates/sport/kick-off-passion/css/style.css",
                 "resources/views/templates/holiday/world-humanitarian-day/css/style.css",
+                "resources/views/templates/meeting/corporate-alignment-summit/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
