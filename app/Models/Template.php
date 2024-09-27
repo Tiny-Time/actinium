@@ -1543,6 +1543,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'illuminate, your, mind, study, paid, template',
             ],
+            [
+                'id' => 140,
+                'name' => 'Pause The Action And Recharge',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/pause-the-action-and-recharge/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.pause-the-action-and-recharge.index',
+                'tokens' => 11,
+                'tags' => 'pause, the, action, and, recharge, sport, paid, template',
+            ],
         ];
     }
 
