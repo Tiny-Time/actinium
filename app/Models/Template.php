@@ -1686,6 +1686,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'shoreline, shindig, vacation, paid, template',
             ],
+            [
+                'id' => 153,
+                'name' => 'Collaborative Strategy Session',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/collaborative-strategy-session/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.collaborative-strategy-session.index',
+                'tokens' => 11,
+                'tags' => 'collaborative, strategy, session, meeting, paid, template',
+            ],
         ];
     }
 
