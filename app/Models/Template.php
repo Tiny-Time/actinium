@@ -1642,6 +1642,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'celebrating, nature\'s, treasure, holiday, paid, template',
             ],
+            [
+                'id' => 149,
+                'name' => 'Play Fetch By The Beach',
+                'category' => 'Pets',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets/play-fetch-by-the-beach/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets.play-fetch-by-the-beach.index',
+                'tokens' => 11,
+                'tags' => 'play, fetch, by, the, beach, pets, paid, template',
+            ],
         ];
     }
 

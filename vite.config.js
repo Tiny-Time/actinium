@@ -160,6 +160,7 @@ export default defineConfig({
                 "resources/views/templates/meeting/project-progress-review/css/style.css",
                 "resources/views/templates/fashion/shoulder-chic/css/style.css",
                 "resources/views/templates/holiday/celebrating-nature-s-treasure/css/style.css",
+                "resources/views/templates/pets/play-fetch-by-the-beach/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
