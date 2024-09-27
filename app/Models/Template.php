@@ -1499,6 +1499,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'purr, fect, relaxation, pets, paid, template',
             ],
+            [
+                'id' => 136,
+                'name' => 'Lip Care',
+                'category' => 'Beauty',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/beauty/lip-care/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.beauty.lip-care.index',
+                'tokens' => 11,
+                'tags' => 'lip, care, beauty, paid, template',
+            ],
         ];
     }
 
