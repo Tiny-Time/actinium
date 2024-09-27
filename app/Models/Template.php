@@ -1653,6 +1653,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'play, fetch, by, the, beach, pets, paid, template',
             ],
+            [
+                'id' => 150,
+                'name' => 'Healthier Stronger And Happier You',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/healthier-stronger-and-happier-you/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.healthier-stronger-and-happier-you.index',
+                'tokens' => 11,
+                'tags' => 'healthier, stronger, and, happier, you, fitness, paid, template',
+            ],
         ];
     }
 
