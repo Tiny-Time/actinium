@@ -1763,6 +1763,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'workout, warriors, fitness, paid, template',
             ],
+            [
+                'id' => 160,
+                'name' => 'WanderLust Adventure',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/wanderlust-adventure/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.wanderlust-adventure.index',
+                'tokens' => 11,
+                'tags' => 'wanderlust, adventure, vacation, paid, template',
+            ],
         ];
     }
 

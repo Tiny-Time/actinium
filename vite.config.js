@@ -171,6 +171,7 @@ export default defineConfig({
                 "resources/views/templates/beauty/dedicate-time-to-radiant-skin/css/style.css",
                 "resources/views/templates/cooking/delightful-culinary-creations/css/style.css",
                 "resources/views/templates/fitness/workout-warriors/css/style.css",
+                "resources/views/templates/vacation/wanderlust-adventure/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
