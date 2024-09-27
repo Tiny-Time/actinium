@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
 
 * {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", serif;
 }
 
 body {
@@ -14,18 +14,14 @@ body {
 }
 
 .toz {
-    color: #f7f1eb;
-    background: rgba(6, 4, 3, 0.2);
+    color: #d5cdc1;
+    background: rgba(17, 15, 12, 0.2);
     min-height: 100dvh;
-}
-
-.toz-title, h3 {
-    font-family: "Poiret One", sans-serif;
 }
 
 .toz-text-wrapper {
     display: flex;
-    color: #f7f1eb;
+    color: #d5cdc1;
     flex-direction: column;
     width: 70%;
     gap: 10px;
@@ -33,7 +29,7 @@ body {
 }
 
 .toz-timer {
-    font-size: 48px;
+    font-size: 40px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -54,8 +50,8 @@ body {
 
 .toz-ec-d>div {
     text-align: center;
-    font-family: "Poiret One", sans-serif;
     display: flex;
+    font-weight: 900;
     flex-direction: column;
     align-items: center;
     z-index: 1;
@@ -78,15 +74,15 @@ body {
 
 .toz-subscription,
 li.splide__slide>div {
-    background: rgba(231, 228, 223, 0.25);
+    background: #685b47;
     border-radius: 15px;
-    color: #f7f1eb;
+    color: #d5cdc1;
 }
 
 li.splide__slide>div>h3,
 li.splide__slide>div>p,
 li.splide__slide>div>svg {
-    color: #f7f1eb;
+    color: #d5cdc1;
 }
 
 .toz-form {
@@ -94,18 +90,18 @@ li.splide__slide>div>svg {
 }
 
 .toz-input {
-    color: #f7f1eb !important;
+    color: #d5cdc1 !important;
 }
 
 .toz-f-btn {
-    background: #f7f1eb;
+    background: #d5cdc1;
     border-radius: 20px;
-    color: #563c23;
+    color: #685b47;
 }
 
 .toz-social-link {
-    background: #f7f1eb;
-    color: #563c23;
+    background: #d5cdc1;
+    color: #685b47;
 }
 
 /* Mobile Styles */
@@ -116,7 +112,7 @@ li.splide__slide>div>svg {
 
     .toz-timer {
         font-size: 30px;
-        gap: 18px;
+        gap: 16px;
     }
 
     .toz-ec-d {

@@ -1741,6 +1741,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'dedicate, time, to, radiant, skin, beauty, paid, template',
             ],
+            [
+                'id' => 158,
+                'name' => 'Delightful Culinary Creations',
+                'category' => 'Cooking',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/cooking/delightful-culinary-creations/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.cooking.delightful-culinary-creations.index',
+                'tokens' => 11,
+                'tags' => 'delightful, culinary, creations, cooking, paid, template',
+            ],
         ];
     }
 
