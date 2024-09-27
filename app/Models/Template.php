@@ -1752,6 +1752,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'delightful, culinary, creations, cooking, paid, template',
             ],
+            [
+                'id' => 159,
+                'name' => 'Workout Warriors',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/workout-warriors/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.workout-warriors.index',
+                'tokens' => 11,
+                'tags' => 'workout, warriors, fitness, paid, template',
+            ],
         ];
     }
 
