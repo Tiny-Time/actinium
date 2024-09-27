@@ -1697,6 +1697,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'collaborative, strategy, session, meeting, paid, template',
             ],
+            [
+                'id' => 154,
+                'name' => 'A Whimsical Birthday Soirée',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/a-whimsical-birthday-soirée/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.a-whimsical-birthday-soirée.index',
+                'tokens' => 11,
+                'tags' => 'a, whimsical, birthday, soirée, birthday, paid, template',
+            ],
         ];
     }
 
