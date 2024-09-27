@@ -1708,6 +1708,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'a, whimsical, birthday, soirée, birthday, paid, template',
             ],
+            [
+                'id' => 155,
+                'name' => 'Eid Al Fitr',
+                'category' => 'Ramadan',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/ramadan/eid-al-fitr/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.ramadan.eid-al-fitr.index',
+                'tokens' => 11,
+                'tags' => 'eid, al, fitr, ramadan, paid, template',
+            ],
         ];
     }
 

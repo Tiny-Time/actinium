@@ -1,8 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&display=swap");
+
+@font-face {
+    font-family: "Ramadhan Amazing";
+    src: url("../fonts/RamadhanAmazing-jEnDv.ttf");
+}
 
 * {
-    font-family: "Lato", sans-serif;
+    font-family: "Crimson Pro", serif;
 }
 
 body {
@@ -15,18 +19,18 @@ body {
 }
 
 .toz {
-    color: #ddded2;
-    background: rgb(16, 16, 12, 0.1);
+    color: #bdd9cb;
+    background: rgba(11, 19, 15, 0.2);
     min-height: 100dvh;
 }
 
-.toz-title, h3 {
-    font-family: 'Great Vibes', cursive;
+.toz-title, h3{
+    font-family: "Ramadhan Amazing", cursive;
 }
 
 .toz-text-wrapper {
     display: flex;
-    color: #ddded2;
+    color: #bdd9cb;
     flex-direction: column;
     width: 70%;
     gap: 10px;
@@ -34,7 +38,7 @@ body {
 }
 
 .toz-timer {
-    font-size: 40px;
+    font-size: 48px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -54,10 +58,13 @@ body {
 }
 
 .toz-ec-d>div {
+    color: #78a29b;
     text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #0b130f;
     display: flex;
-    font-weight: 800;
-    flex-direction: column-reverse;
+    font-weight: 900;
+    flex-direction: column;
     align-items: center;
     z-index: 1;
 }
@@ -73,21 +80,21 @@ body {
     display: flex;
     justify-content: center;
     text-align: center;
-    font-weight: 700;
-    font-size: 16px;
+    -webkit-text-stroke-width: 0.7px;
+    font-size: 18px;
 }
 
 .toz-subscription,
 li.splide__slide>div {
-    background: rgba(31, 32, 24, 0.35);
+    background: rgba(11, 19, 15, 0.5);
     border-radius: 15px;
-    color: #ddded2;
+    color: #bdd9cb;
 }
 
 li.splide__slide>div>h3,
 li.splide__slide>div>p,
 li.splide__slide>div>svg {
-    color: #ddded2;
+    color: #bdd9cb;
 }
 
 .toz-form {
@@ -95,18 +102,18 @@ li.splide__slide>div>svg {
 }
 
 .toz-input {
-    color: #ddded2 !important;
+    color: #bdd9cb !important;
 }
 
 .toz-f-btn {
-    background: #ddded2;
+    background: #bdd9cb;
     border-radius: 20px;
-    color: #2f3023;
+    color: #0b130f;
 }
 
 .toz-social-link {
-    background: #ddded2;
-    color: #2f3023;
+    background: #bdd9cb;
+    color: #0b130f;
 }
 
 /* Mobile Styles */
@@ -116,7 +123,8 @@ li.splide__slide>div>svg {
     }
 
     .toz-timer {
-        font-size: 30px;
+        font-size: 36px;
+        -webkit-text-stroke-width: 0.5px;
         gap: 18px;
     }
 
@@ -126,7 +134,8 @@ li.splide__slide>div>svg {
     }
 
     .toz-unit {
-        font-size: 14px;
+        -webkit-text-stroke-width: 0.3px;
+        font-size: 18px;
     }
 
     .toz-input {

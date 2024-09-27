@@ -166,6 +166,7 @@ export default defineConfig({
                 "resources/views/templates/vacation/shoreline-shindig/css/style.css",
                 "resources/views/templates/meeting/collaborative-strategy-session/css/style.css",
                 "resources/views/templates/birthday/a-whimsical-birthday-soirée/css/style.css",
+                "resources/views/templates/ramadan/eid-al-fitr/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
