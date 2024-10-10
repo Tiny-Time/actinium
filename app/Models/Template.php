@@ -2049,6 +2049,17 @@ class Template extends Model
                 'tokens' => 20,
                 'tags' => 'sharpening, craft, your, mastery, skill, paid, template',
             ],
+            [
+                'id' => 186,
+                'name' => 'Nap Time',
+                'category' => 'Pets',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets/nap-time/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets.nap-time.index',
+                'tokens' => 11,
+                'tags' => 'nap, time, pets, paid, template',
+            ],
         ];
     }
 
