@@ -13,7 +13,8 @@ class Template extends Model
 
     public function getRows(): array
     {
-        return [[
+        return [
+            [
                 'id' => 1,
                 'name' => 'Enchanted Midnight Forest',
                 'category' => 'Anniversary',
@@ -1850,18 +1851,29 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'glide, through, winter, sport, paid, template',
             ],
-[
-    'id' => 168,
-    'name' => 'Soothing Massage Experience',
-    'category' => 'Beauty',
-    'sub_category' => '',
-    'image' => 'resources/views/templates/beauty/soothing-massage-experience/images/preview.webp',
-    'type' => 'paid',
-    'path' => 'templates.beauty.soothing-massage-experience.index',
-    'tokens' => 11,
-    'tags' => 'soothing, massage, experience, beauty, paid, template',
-],
-];
+            [
+                'id' => 168,
+                'name' => 'Soothing Massage Experience',
+                'category' => 'Beauty',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/beauty/soothing-massage-experience/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.beauty.soothing-massage-experience.index',
+                'tokens' => 11,
+                'tags' => 'soothing, massage, experience, beauty, paid, template',
+            ],
+            [
+                'id' => 169,
+                'name' => 'Strategy Alignment Meeting',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/strategy-alignment-meeting/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.strategy-alignment-meeting.index',
+                'tokens' => 11,
+                'tags' => 'strategy, alignment, meeting, meeting, paid, template',
+            ],
+        ];
     }
 
     protected function sushiShouldCache(): bool
