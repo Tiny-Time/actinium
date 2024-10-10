@@ -13,8 +13,7 @@ class Template extends Model
 
     public function getRows(): array
     {
-        return [
-            [
+        return [[
                 'id' => 1,
                 'name' => 'Enchanted Midnight Forest',
                 'category' => 'Anniversary',
@@ -2060,7 +2059,18 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'nap, time, pets, paid, template',
             ],
-        ];
+[
+    'id' => 187,
+    'name' => 'Ramadan',
+    'category' => 'Holiday',
+    'sub_category' => '',
+    'image' => 'resources/views/templates/holiday/ramadan/images/preview.webp',
+    'type' => 'paid',
+    'path' => 'templates.holiday.ramadan.index',
+    'tokens' => 11,
+    'tags' => 'ramadan, holiday, paid, template',
+],
+];
     }
 
     protected function sushiShouldCache(): bool
