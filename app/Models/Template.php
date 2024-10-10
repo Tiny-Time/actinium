@@ -1818,6 +1818,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'stroll, with, your, friend, pets, paid, template',
             ],
+            [
+                'id' => 165,
+                'name' => 'Harmonious Melody Of Joy And Jubilation',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/harmonious-melody-of-joy-and-jubilation/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.harmonious-melody-of-joy-and-jubilation.index',
+                'tokens' => 11,
+                'tags' => 'harmonious, melody, of, joy, and, jubilation, birthday, paid, template',
+            ],
         ];
     }
 
