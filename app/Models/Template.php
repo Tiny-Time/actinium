@@ -2093,6 +2093,17 @@ class Template extends Model
                 'tokens' => 25,
                 'tags' => 'walk, your, fury, friends, pets, paid, template',
             ],
+            [
+                'id' => 190,
+                'name' => 'Synced Precision',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/synced-precision/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.synced-precision.index',
+                'tokens' => 20,
+                'tags' => 'synced, precision, fitness, paid, template',
+            ],
         ];
     }
 
