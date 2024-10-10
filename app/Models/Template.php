@@ -1873,6 +1873,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'strategy, alignment, meeting, meeting, paid, template',
             ],
+            [
+                'id' => 170,
+                'name' => 'Team Sync Up Meeting',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/team-sync-up-meeting/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.team-sync-up-meeting.index',
+                'tokens' => 11,
+                'tags' => 'team, sync, up, meeting, meeting, paid, template',
+            ],
         ];
     }
 

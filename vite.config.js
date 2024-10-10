@@ -181,6 +181,7 @@ export default defineConfig({
                 "resources/views/templates/sport/glide-through-winter/css/style.css",
                 "resources/views/templates/beauty/soothing-massage-experience/css/style.css",
                 "resources/views/templates/meeting/strategy-alignment-meeting/css/style.css",
+                "resources/views/templates/meeting/team-sync-up-meeting/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
