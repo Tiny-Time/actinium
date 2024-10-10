@@ -13,7 +13,8 @@ class Template extends Model
 
     public function getRows(): array
     {
-        return [[
+        return [
+            [
                 'id' => 1,
                 'name' => 'Enchanted Midnight Forest',
                 'category' => 'Anniversary',
@@ -1795,18 +1796,29 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'a, picnic, retreat, for, one, vacation, paid, template',
             ],
-[
-    'id' => 163,
-    'name' => 'Ride The Waves',
-    'category' => 'Sport',
-    'sub_category' => '',
-    'image' => 'resources/views/templates/sport/ride-the-waves/images/preview.webp',
-    'type' => 'paid',
-    'path' => 'templates.sport.ride-the-waves.index',
-    'tokens' => 11,
-    'tags' => 'ride, the, waves, sport, paid, template',
-],
-];
+            [
+                'id' => 163,
+                'name' => 'Ride The Waves',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/ride-the-waves/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.ride-the-waves.index',
+                'tokens' => 11,
+                'tags' => 'ride, the, waves, sport, paid, template',
+            ],
+            [
+                'id' => 164,
+                'name' => 'Stroll With Your Friend',
+                'category' => 'Pets',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets/stroll-with-your-friend/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets.stroll-with-your-friend.index',
+                'tokens' => 11,
+                'tags' => 'stroll, with, your, friend, pets, paid, template',
+            ],
+        ];
     }
 
     protected function sushiShouldCache(): bool
