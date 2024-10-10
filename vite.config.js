@@ -199,6 +199,7 @@ export default defineConfig({
                 "resources/views/templates/skill/sharpening-craft-your-mastery/css/style.css",
                 "resources/views/templates/pets/nap-time/css/style.css",
                 "resources/views/templates/holiday/ramadan/css/style.css",
+                "resources/views/templates/beauty/radiant-glow/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

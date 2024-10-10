@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&display=swap");
+
+* {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    color: #fbebe8;
+    min-height: 100dvh;
+    background: rgba(24, 7, 4, 0.25);
+}
+
+.toz-text-wrapper {
+    display: flex;
+    color: #fbebe8;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 54px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ecc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.toz-ec-d {
+    width: 145px;
+    height: 145px;
+    border: 2px solid #4d2519;
+    border-radius: 100%;
+    position: relative;
+}
+
+.toz-ec {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform-origin: center;
+    transition: background 1s linear;
+    z-index: 2;
+}
+
+.toz-timer-value {
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+}
+
+.toz-timer-value>div {
+    position: absolute;
+}
+
+.under-value {
+    color: #253a4b;
+    z-index: 1;
+}
+
+.toz-tm-value {
+    color: #aec6ce;
+    z-index: 3;
+}
+
+.toz-tm-value {
+    color: #aec6ce;
+    z-index: 4;
+    mix-blend-mode: difference;
+    transition: color 0.5s ease-in-out;
+}
+
+.toz-unit {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    color: #fbebe8;
+    border-radius: 15px;
+    background: #4d2519;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #fbebe8;
+}
+
+.toz-form {
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.toz-input {
+    font-size: 16px;
+    color: #fbebe8 !important;
+}
+
+.toz-f-btn {
+    color: #4d2519;
+    border-radius: 20px;
+    background: #fbebe8;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: #fbebe8;
+    color: #4d2519;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 40px;
+        gap: 16px;
+    }
+
+    .toz-ec-d {
+        width: 110px;
+        height: 110px;
+    }
+
+    .toz-unit {
+        font-size: 16px;
+    }
+}
