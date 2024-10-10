@@ -1983,6 +1983,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'zen, harmony, fitness, paid, template',
             ],
+            [
+                'id' => 180,
+                'name' => 'Virtual Business Conference',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/virtual-business-conference/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.virtual-business-conference.index',
+                'tokens' => 17,
+                'tags' => 'virtual, business, conference, meeting, paid, template',
+            ],
         ];
     }
 
