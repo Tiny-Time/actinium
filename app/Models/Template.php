@@ -1917,6 +1917,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'relaxing, facial, spa, beauty, paid, template',
             ],
+            [
+                'id' => 174,
+                'name' => 'Year Ahead',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/year-ahead/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.year-ahead.index',
+                'tokens' => 11,
+                'tags' => 'year, ahead, birthday, paid, template',
+            ],
         ];
     }
 

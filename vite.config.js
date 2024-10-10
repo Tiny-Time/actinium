@@ -185,6 +185,7 @@ export default defineConfig({
                 "resources/views/templates/sport/the-art-of-archery/css/style.css",
                 "resources/views/templates/vacation/coastal-bliss/css/style.css",
                 "resources/views/templates/beauty/relaxing-facial-spa/css/style.css",
+                "resources/views/templates/birthday/year-ahead/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

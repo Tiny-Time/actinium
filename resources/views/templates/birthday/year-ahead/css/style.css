@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap");
+
+* {
+    font-family: "Inria Sans", sans-serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    color: #2f0a07;
+    background: rgba(47, 10, 7, 0.2);
+    min-height: 100dvh;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 20px;
+    text-align: center;
+}
+
+.toz-timer {
+    color: #fcf8f1;
+    font-size: 64px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: max-content;
+    gap: 20px;
+    margin: 0;
+}
+
+.toz-ec-d {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 140px;
+    height: 140px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    text-align: center;
+    display: flex;
+    z-index: 1;
+    line-height: 1;
+}
+
+.toz-ec-d img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+hr {
+    width: 40%;
+    border: 2px dashed #fcf8f1;
+    margin: 0;
+}
+
+.toz-unit {
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.toz-divider {
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 8px;
+    gap: 8px;
+}
+
+.toz-divider>span {
+    width: 8px;
+    height: 8px;
+    background: white;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    background: #fcf8f1;
+}
+
+.toz-form {
+    background: rgba(47, 10, 7, 0.25);
+}
+
+.toz-input {
+    font-size: 14px;
+    color: #fefdf9 !important;
+}
+
+.toz-f-btn {
+    color: #fcf8f1;
+    background: #2f0a07;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: #2f0a07;
+    color: #fcf8f1;
+}
+
+@media (max-width: 767px) {
+
+    .toz-text-wrapper {
+        width: 100%;
+        gap: 5px;
+    }
+
+    .toz-timer {
+        font-size: 40px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-timer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    #exc {
+        display: none;
+    }
+
+    .toz-ec-d {
+        width: 100px;
+        height: 100px;
+        gap: 5px;
+    }
+
+    hr {
+        border-width: 1px;
+    }
+
+    .toz-unit {
+        font-size: 16px;
+    }
+
+    .toz-divider {
+        width: 70%;
+    }
+}
