@@ -2016,6 +2016,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'world, smile, day, holiday, paid, template',
             ],
+            [
+                'id' => 183,
+                'name' => 'Serene Forest Groves',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/serene-forest-groves/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.serene-forest-groves.index',
+                'tokens' => 11,
+                'tags' => 'serene, forest, groves, vacation, paid, template',
+            ],
         ];
     }
 
