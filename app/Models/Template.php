@@ -1961,6 +1961,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'world, laughter, day, holiday, paid, template',
             ],
+            [
+                'id' => 178,
+                'name' => 'Unlocking Deeper Understanding',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/unlocking-deeper-understanding/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.unlocking-deeper-understanding.index',
+                'tokens' => 11,
+                'tags' => 'unlocking, deeper, understanding, study, paid, template',
+            ],
         ];
     }
 
