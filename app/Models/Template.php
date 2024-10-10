@@ -13,7 +13,8 @@ class Template extends Model
 
     public function getRows(): array
     {
-        return [[
+        return [
+            [
                 'id' => 1,
                 'name' => 'Enchanted Midnight Forest',
                 'category' => 'Anniversary',
@@ -1783,6 +1784,17 @@ class Template extends Model
                 'path' => 'templates.birthday.emilys-first-birthday-bash.index',
                 'tokens' => 11,
                 'tags' => 'emilys, first, birthday, bash, birthday, paid, template',
+            ],
+            [
+                'id' => 162,
+                'name' => 'A Picnic Retreat For One',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/a-picnic-retreat-for-one/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.a-picnic-retreat-for-one.index',
+                'tokens' => 11,
+                'tags' => 'a, picnic, retreat, for, one, vacation, paid, template',
             ],
         ];
     }

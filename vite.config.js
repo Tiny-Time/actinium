@@ -173,6 +173,7 @@ export default defineConfig({
                 "resources/views/templates/fitness/workout-warriors/css/style.css",
                 "resources/views/templates/vacation/wanderlust-adventure/css/style.css",
                 "resources/views/templates/birthday/emilys-first-birthday-bash/css/style.css",
+                "resources/views/templates/vacation/a-picnic-retreat-for-one/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
