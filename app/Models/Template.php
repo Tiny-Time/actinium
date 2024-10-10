@@ -2038,6 +2038,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'applauding, their, accomplishments, study, paid, template',
             ],
+            [
+                'id' => 185,
+                'name' => 'Sharpening Craft Your Mastery',
+                'category' => 'Skill',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/skill/sharpening-craft-your-mastery/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.skill.sharpening-craft-your-mastery.index',
+                'tokens' => 20,
+                'tags' => 'sharpening, craft, your, mastery, skill, paid, template',
+            ],
         ];
     }
 

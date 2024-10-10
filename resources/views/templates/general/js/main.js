@@ -82,7 +82,7 @@ function updateCountdown(
         // Dispatching the event on an element
         document.dispatchEvent(countdownComponentEvent);
 
-        return;
+        // return;
     }
 
     // Event component stroke control

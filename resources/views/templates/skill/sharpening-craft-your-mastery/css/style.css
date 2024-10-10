@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+
+* {
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    color: #dbe1e0;
+    min-height: 100dvh;
+    background: rgba(27, 32, 31, 0.3);
+}
+
+.toz-text-wrapper {
+    display: flex;
+    color: #dbe1e0;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 44px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    width: 145px;
+    height: 145px;
+    border: 3px solid #1b201f;
+    background: rgba(239, 242, 241, 0.25);
+    border-radius: 12px;
+    position: relative;
+}
+
+.toz-ec {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #dbe1e0;
+    width: 50%;
+    transition: width 1s ease;
+    border-radius: 10px;
+    height: 100%;
+    z-index: 0;
+}
+
+.toz-timer-value {
+    color: #1b201f;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.toz-timer-value>* {
+    z-index: 1;
+}
+
+.toz-unit {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    color: #1b201f;
+    border-radius: 15px;
+    border: 3px solid #1b201f;
+    background: #dbe1e0;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #1b201f;
+}
+
+.toz-form {
+    border-radius: 20px;
+    gap: 10px;
+}
+
+.toz-input {
+    font-size: 14px;
+    color: #1b201f !important;
+}
+
+.toz-f-btn {
+    color: #dbe1e0;
+    border-radius: 8px;
+    background: #1b201f;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: #1b201f;
+    color: #dbe1e0;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 32px;
+        gap: 16px;
+    }
+
+    .toz-ec-d {
+        width: 110px;
+        height: 110px;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+}
