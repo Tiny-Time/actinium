@@ -1939,6 +1939,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'indoor, running, fitness, paid, template',
             ],
+            [
+                'id' => 176,
+                'name' => 'Team Collaboration Session',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/team-collaboration-session/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.team-collaboration-session.index',
+                'tokens' => 11,
+                'tags' => 'team, collaboration, session, meeting, paid, template',
+            ],
         ];
     }
 
