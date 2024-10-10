@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    color: #cdbcaa;
+    min-height: 100dvh;
+    background: rgba(19, 16, 3, 0.2);
+}
+
+.toz-text-wrapper {
+    color: #eeeadf;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+}
+
+.toz-timer {
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    color: #131003;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.toz-ec-d img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.toz-ec-d svg {
+    width: 150px;
+    height: 150px;
+    top: 10px;
+    left: 10px;
+    position: absolute;
+}
+
+.toz-ec-d>svg>rect {
+    width: 130px;
+    height: 130px;
+    fill: transparent;
+    stroke: rgba(19, 16, 3, 0.5);
+    stroke-width: 8px;
+}
+
+.toz-ec-d>svg>rect:nth-child(2) {
+    stroke: #131003;
+    stroke-dasharray: 500;
+    stroke-linecap: round;
+}
+
+.toz-unit {
+    color: #131003;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    color: #131003;
+    border-radius: 12px;
+    background: #cdbcaa;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #131003;
+}
+
+.toz-form {
+    border-radius: 20px;
+    background-color: rgba(19, 16, 3, 0.25);
+}
+
+.toz-input {
+    font-size: 14px;
+    color: #131003 !important;
+}
+
+.toz-f-btn {
+    color: #cdbcaa;
+    border-radius: 20px;
+    background: #131003;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: #131003;
+    color: #cdbcaa;
+}
+
+@media (max-width: 767px) {
+
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 40px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 125px;
+        height: 125px;
+    }
+
+    .toz-ec-d svg {
+        width: 130px;
+        height: 130px;
+        top: 7px;
+        left: 7px;
+    }
+
+    .toz-ec-d>svg>rect {
+        width: 100px;
+        height: 100px;
+        stroke-width: 6px;
+    }
+
+    .toz-ec-d>svg>rect:nth-child(2) {
+        stroke-dasharray: 380;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+}

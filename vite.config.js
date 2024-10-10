@@ -192,6 +192,7 @@ export default defineConfig({
                 "resources/views/templates/study/unlocking-deeper-understanding/css/style.css",
                 "resources/views/templates/fitness/zen-harmony/css/style.css",
                 "resources/views/templates/meeting/virtual-business-conference/css/style.css",
+                "resources/views/templates/study/stay-disciplined/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

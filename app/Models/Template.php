@@ -1994,6 +1994,17 @@ class Template extends Model
                 'tokens' => 17,
                 'tags' => 'virtual, business, conference, meeting, paid, template',
             ],
+            [
+                'id' => 181,
+                'name' => 'Stay Disciplined',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/stay-disciplined/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.stay-disciplined.index',
+                'tokens' => 18,
+                'tags' => 'stay, disciplined, study, paid, template',
+            ],
         ];
     }
 
