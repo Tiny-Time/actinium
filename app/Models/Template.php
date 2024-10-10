@@ -1928,6 +1928,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'year, ahead, birthday, paid, template',
             ],
+            [
+                'id' => 175,
+                'name' => 'Indoor Running',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/indoor-running/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.indoor-running.index',
+                'tokens' => 11,
+                'tags' => 'indoor, running, fitness, paid, template',
+            ],
         ];
     }
 
