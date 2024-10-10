@@ -1906,6 +1906,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'coastal, bliss, vacation, paid, template',
             ],
+            [
+                'id' => 173,
+                'name' => 'Relaxing Facial Spa',
+                'category' => 'Beauty',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/beauty/relaxing-facial-spa/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.beauty.relaxing-facial-spa.index',
+                'tokens' => 11,
+                'tags' => 'relaxing, facial, spa, beauty, paid, template',
+            ],
         ];
     }
 
