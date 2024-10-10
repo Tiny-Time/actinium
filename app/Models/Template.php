@@ -13,8 +13,7 @@ class Template extends Model
 
     public function getRows(): array
     {
-        return [
-            [
+        return [[
                 'id' => 1,
                 'name' => 'Enchanted Midnight Forest',
                 'category' => 'Anniversary',
@@ -1829,7 +1828,18 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'harmonious, melody, of, joy, and, jubilation, birthday, paid, template',
             ],
-        ];
+[
+    'id' => 166,
+    'name' => 'Seasoned Gym Goer',
+    'category' => 'Fitness',
+    'sub_category' => '',
+    'image' => 'resources/views/templates/fitness/seasoned-gym-goer/images/preview.webp',
+    'type' => 'paid',
+    'path' => 'templates.fitness.seasoned-gym-goer.index',
+    'tokens' => 11,
+    'tags' => 'seasoned, gym, goer, fitness, paid, template',
+],
+];
     }
 
     protected function sushiShouldCache(): bool
