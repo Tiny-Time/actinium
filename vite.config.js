@@ -183,6 +183,7 @@ export default defineConfig({
                 "resources/views/templates/meeting/strategy-alignment-meeting/css/style.css",
                 "resources/views/templates/meeting/team-sync-up-meeting/css/style.css",
                 "resources/views/templates/sport/the-art-of-archery/css/style.css",
+                "resources/views/templates/vacation/coastal-bliss/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

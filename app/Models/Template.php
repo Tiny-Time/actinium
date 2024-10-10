@@ -1895,6 +1895,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'the, art, of, archery, sport, paid, template',
             ],
+            [
+                'id' => 172,
+                'name' => 'Coastal Bliss',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/coastal-bliss/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.coastal-bliss.index',
+                'tokens' => 11,
+                'tags' => 'coastal, bliss, vacation, paid, template',
+            ],
         ];
     }
 
