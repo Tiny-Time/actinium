@@ -2005,6 +2005,17 @@ class Template extends Model
                 'tokens' => 18,
                 'tags' => 'stay, disciplined, study, paid, template',
             ],
+            [
+                'id' => 182,
+                'name' => 'World Smile Day',
+                'category' => 'Holiday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/holiday/world-smile-day/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.holiday.world-smile-day.index',
+                'tokens' => 11,
+                'tags' => 'world, smile, day, holiday, paid, template',
+            ],
         ];
     }
 
