@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Rasa:wght@300..700&display=swap");
+
+* {
+    font-family: "Rasa", serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    color: #f1e8e0;
+    min-height: 100dvh;
+    background: rgba(26, 21, 17, 0.25);
+}
+
+.toz-text-wrapper {
+    display: flex;
+    color: #f1e8e0;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    color: #1a1511;
+    font-size: 54px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    display: flex;
+    width: 160px;
+    height: 160px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+    line-height: 1;
+    z-index: 1;
+}
+
+.toz-ec-d img {
+    position: absolute;
+    z-index: 0;
+    width: 95%;
+    height: 95%;
+}
+
+.toz-ec-d svg {
+    position: absolute;
+    z-index: 1;
+}
+
+.toz-ec-d>svg>circle {
+    fill: transparent;
+    stroke: transparent;
+    stroke-width: 12px;
+}
+
+.toz-ec-d>svg>circle:nth-child(2) {
+    stroke: #1a1511;
+    stroke-dasharray: 471;
+    stroke-linecap: round;
+}
+
+.toz-unit {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    color: #1a1511;
+    border-radius: 12px;
+    border: 3px solid #1a1511;
+    background: #f1e8e0;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #1a1511;
+}
+
+.toz-form {
+    gap: 10px;
+}
+
+.toz-input {
+    font-size: 16px;
+    color: #1a1511 !important;
+}
+
+.toz-f-btn {
+    color: #f1e8e0;
+    background: #1a1511;
+    border-radius: 20px;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: #1a1511;
+    color: #f1e8e0;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 40px;
+        gap: 16px;
+    }
+
+    .toz-ec-d {
+        width: 130px;
+        height: 130px;
+    }
+
+    .toz-ec-d svg {
+        width: 130px;
+        height: 130px;
+    }
+
+    .toz-ec-d svg circle {
+        r: 58px;
+        cx: 65px;
+        cy: 65px;
+        stroke-width: 5px;
+    }
+
+    .toz-ec-d>svg>circle:nth-child(2) {
+        stroke-width: 8px;
+        stroke-dasharray: 377;
+    }
+
+    .toz-unit {
+        font-size: 16px;
+    }
+}

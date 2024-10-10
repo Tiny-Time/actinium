@@ -200,6 +200,7 @@ export default defineConfig({
                 "resources/views/templates/pets/nap-time/css/style.css",
                 "resources/views/templates/holiday/ramadan/css/style.css",
                 "resources/views/templates/beauty/radiant-glow/css/style.css",
+                "resources/views/templates/pets/walk-your-fury-friends/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

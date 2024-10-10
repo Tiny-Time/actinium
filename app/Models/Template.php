@@ -2082,6 +2082,17 @@ class Template extends Model
                 'tokens' => 20,
                 'tags' => 'radiant, glow, beauty, paid, template',
             ],
+            [
+                'id' => 189,
+                'name' => 'Walk Your Fury Friends',
+                'category' => 'Pets',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets/walk-your-fury-friends/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets.walk-your-fury-friends.index',
+                'tokens' => 25,
+                'tags' => 'walk, your, fury, friends, pets, paid, template',
+            ],
         ];
     }
 
