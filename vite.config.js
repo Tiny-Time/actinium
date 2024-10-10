@@ -188,6 +188,7 @@ export default defineConfig({
                 "resources/views/templates/birthday/year-ahead/css/style.css",
                 "resources/views/templates/fitness/indoor-running/css/style.css",
                 "resources/views/templates/meeting/team-collaboration-session/css/style.css",
+                "resources/views/templates/holiday/world-laughter-day/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

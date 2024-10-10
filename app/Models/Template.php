@@ -1950,6 +1950,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'team, collaboration, session, meeting, paid, template',
             ],
+            [
+                'id' => 177,
+                'name' => 'World Laughter Day',
+                'category' => 'Holiday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/holiday/world-laughter-day/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.holiday.world-laughter-day.index',
+                'tokens' => 11,
+                'tags' => 'world, laughter, day, holiday, paid, template',
+            ],
         ];
     }
 
