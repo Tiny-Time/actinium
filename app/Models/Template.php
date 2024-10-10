@@ -1884,6 +1884,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'team, sync, up, meeting, meeting, paid, template',
             ],
+            [
+                'id' => 171,
+                'name' => 'The Art OF Archery',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/the-art-of-archery/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.the-art-of-archery.index',
+                'tokens' => 11,
+                'tags' => 'the, art, of, archery, sport, paid, template',
+            ],
         ];
     }
 
