@@ -13,7 +13,8 @@ class Template extends Model
 
     public function getRows(): array
     {
-        return [[
+        return [
+            [
                 'id' => 1,
                 'name' => 'Enchanted Midnight Forest',
                 'category' => 'Anniversary',
@@ -1828,18 +1829,29 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'harmonious, melody, of, joy, and, jubilation, birthday, paid, template',
             ],
-[
-    'id' => 166,
-    'name' => 'Seasoned Gym Goer',
-    'category' => 'Fitness',
-    'sub_category' => '',
-    'image' => 'resources/views/templates/fitness/seasoned-gym-goer/images/preview.webp',
-    'type' => 'paid',
-    'path' => 'templates.fitness.seasoned-gym-goer.index',
-    'tokens' => 11,
-    'tags' => 'seasoned, gym, goer, fitness, paid, template',
-],
-];
+            [
+                'id' => 166,
+                'name' => 'Seasoned Gym Goer',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/seasoned-gym-goer/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.seasoned-gym-goer.index',
+                'tokens' => 11,
+                'tags' => 'seasoned, gym, goer, fitness, paid, template',
+            ],
+            [
+                'id' => 167,
+                'name' => 'Glide Through Winter',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/glide-through-winter/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.glide-through-winter.index',
+                'tokens' => 11,
+                'tags' => 'glide, through, winter, sport, paid, template',
+            ],
+        ];
     }
 
     protected function sushiShouldCache(): bool

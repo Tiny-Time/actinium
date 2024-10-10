@@ -178,6 +178,7 @@ export default defineConfig({
                 "resources/views/templates/pets/stroll-with-your-friend/css/style.css",
                 "resources/views/templates/birthday/harmonious-melody-of-joy-and-jubilation/css/style.css",
                 "resources/views/templates/fitness/seasoned-gym-goer/css/style.css",
+                "resources/views/templates/sport/glide-through-winter/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
