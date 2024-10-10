@@ -190,6 +190,7 @@ export default defineConfig({
                 "resources/views/templates/meeting/team-collaboration-session/css/style.css",
                 "resources/views/templates/holiday/world-laughter-day/css/style.css",
                 "resources/views/templates/study/unlocking-deeper-understanding/css/style.css",
+                "resources/views/templates/fitness/zen-harmony/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

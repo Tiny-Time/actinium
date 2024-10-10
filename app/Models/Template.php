@@ -1972,6 +1972,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'unlocking, deeper, understanding, study, paid, template',
             ],
+            [
+                'id' => 179,
+                'name' => 'Zen Harmony',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/zen-harmony/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.zen-harmony.index',
+                'tokens' => 11,
+                'tags' => 'zen, harmony, fitness, paid, template',
+            ],
         ];
     }
 
