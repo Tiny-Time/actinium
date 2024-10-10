@@ -2027,6 +2027,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'serene, forest, groves, vacation, paid, template',
             ],
+            [
+                'id' => 184,
+                'name' => 'Applauding Their Accomplishments',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/applauding-their-accomplishments/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.applauding-their-accomplishments.index',
+                'tokens' => 11,
+                'tags' => 'applauding, their, accomplishments, study, paid, template',
+            ],
         ];
     }
 

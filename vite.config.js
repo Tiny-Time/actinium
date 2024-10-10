@@ -195,6 +195,7 @@ export default defineConfig({
                 "resources/views/templates/study/stay-disciplined/css/style.css",
                 "resources/views/templates/holiday/world-smile-day/css/style.css",
                 "resources/views/templates/vacation/serene-forest-groves/css/style.css",
+                "resources/views/templates/study/applauding-their-accomplishments/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
