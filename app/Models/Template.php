@@ -2291,6 +2291,17 @@ class Template extends Model
                 'tokens' => 6,
                 'tags' => 'swimming, championship, sport, paid, template',
             ],
+            [
+                'id' => 208,
+                'name' => 'Fashion Frenzy',
+                'category' => 'Fashion',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fashion/fashion-frenzy/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fashion.fashion-frenzy.index',
+                'tokens' => 11,
+                'tags' => 'fashion, frenzy, fashion, paid, template',
+            ],
         ];
     }
 
