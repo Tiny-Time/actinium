@@ -230,6 +230,7 @@ export default defineConfig({
                 "resources/views/templates/live-stream/diy-upcycling/css/style.css",
                 "resources/views/templates/live-stream/music-reviews-2/css/style.css",
                 "resources/views/templates/live-stream/technology-tech-news/css/style.css",
+                "resources/views/templates/live-stream/crypto-analysis/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

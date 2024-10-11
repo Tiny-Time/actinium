@@ -2412,6 +2412,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'technology, tech, news, live stream, paid, template',
             ],
+            [
+                'id' => 219,
+                'name' => 'Crypto Analysis',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/crypto-analysis/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.crypto-analysis.index',
+                'tokens' => 7,
+                'tags' => 'crypto, analysis, live stream, paid, template',
+            ],
         ];
     }
 
