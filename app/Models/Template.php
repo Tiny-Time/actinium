@@ -2346,6 +2346,17 @@ class Template extends Model
                 'tokens' => 5,
                 'tags' => 'travel, destination, tours, 2, live stream, paid, template',
             ],
+            [
+                'id' => 213,
+                'name' => 'Art PrintMaking 3',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/art-printmaking-3/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.art-printmaking-3.index',
+                'tokens' => 11,
+                'tags' => 'art, printmaking, 3, live stream, paid, template',
+            ],
         ];
     }
 
