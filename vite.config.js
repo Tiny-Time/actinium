@@ -205,6 +205,7 @@ export default defineConfig({
                 "resources/views/templates/fitness/tempo-tuned/css/style.css",
                 "resources/views/templates/fashion/the-big-shoe/css/style.css",
                 "resources/views/templates/study/deep-focus/css/style.css",
+                "resources/views/templates/fashion/elegance-in-motion/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

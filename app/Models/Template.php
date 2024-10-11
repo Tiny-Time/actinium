@@ -2137,6 +2137,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'deep, focus, study, paid, template',
             ],
+            [
+                'id' => 194,
+                'name' => 'Elegance In Motion',
+                'category' => 'Fashion',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fashion/elegance-in-motion/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fashion.elegance-in-motion.index',
+                'tokens' => 11,
+                'tags' => 'elegance, in, motion, fashion, paid, template',
+            ],
         ];
     }
 
