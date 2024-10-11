@@ -2335,6 +2335,17 @@ class Template extends Model
                 'tokens' => 4,
                 'tags' => 'crypto, live, trading, live stream, paid, template',
             ],
+            [
+                'id' => 212,
+                'name' => 'Travel Destination Tours 2',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/travel-destination-tours-2/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.travel-destination-tours-2.index',
+                'tokens' => 5,
+                'tags' => 'travel, destination, tours, 2, live stream, paid, template',
+            ],
         ];
     }
 
