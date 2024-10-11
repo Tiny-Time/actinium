@@ -2247,6 +2247,17 @@ class Template extends Model
                 'tokens' => 17,
                 'tags' => 'soccer, showdown, sport, paid, template',
             ],
+            [
+                'id' => 204,
+                'name' => 'Tech News',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/tech-news/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.tech-news.index',
+                'tokens' => 17,
+                'tags' => 'tech, news, live stream, paid, template',
+            ],
         ];
     }
 
