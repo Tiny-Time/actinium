@@ -214,6 +214,7 @@ export default defineConfig({
                 "resources/views/templates/fitness/personal-training-session-with-coach/css/style.css",
                 "resources/views/templates/pets/family-pet-day-in-nature/css/style.css",
                 "resources/views/templates/study/reach-your-goals-with-confidence/css/style.css",
+                "resources/views/templates/sport/soccer-showdown/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

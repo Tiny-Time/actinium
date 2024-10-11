@@ -2236,6 +2236,17 @@ class Template extends Model
                 'tokens' => 17,
                 'tags' => 'reach, your, goals, with, confidence, study, paid, template',
             ],
+            [
+                'id' => 203,
+                'name' => 'Soccer Showdown',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/soccer-showdown/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.soccer-showdown.index',
+                'tokens' => 17,
+                'tags' => 'soccer, showdown, sport, paid, template',
+            ],
         ];
     }
 
