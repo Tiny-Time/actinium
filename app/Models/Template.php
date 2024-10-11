@@ -2310,8 +2310,19 @@ class Template extends Model
                 'image' => 'resources/views/templates/vacation/family-adventure/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.vacation.family-adventure.index',
-                'tokens' => 11,
+                'tokens' => 6,
                 'tags' => 'family, adventure, vacation, paid, template',
+            ],
+            [
+                'id' => 210,
+                'name' => 'Kickstart Your Fitness Journey',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/kickstart-your-fitness-journey/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.kickstart-your-fitness-journey.index',
+                'tokens' => 6,
+                'tags' => 'kickstart, your, fitness, journey, fitness, paid, template',
             ],
         ];
     }
