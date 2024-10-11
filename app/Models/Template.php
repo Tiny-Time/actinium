@@ -2192,6 +2192,17 @@ class Template extends Model
                 'tokens' => 4,
                 'tags' => 'discover, new, horizons, vacation, paid, template',
             ],
+            [
+                'id' => 199,
+                'name' => 'Fun Day For Furry Friends',
+                'category' => 'Pets',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets/fun-day-for-furry-friends/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets.fun-day-for-furry-friends.index',
+                'tokens' => 4,
+                'tags' => 'fun, day, for, furry, friends, pets, paid, template',
+            ],
         ];
     }
 
