@@ -203,6 +203,7 @@ export default defineConfig({
                 "resources/views/templates/pets/walk-your-fury-friends/css/style.css",
                 "resources/views/templates/fitness/synced-precision/css/style.css",
                 "resources/views/templates/fitness/tempo-tuned/css/style.css",
+                "resources/views/templates/fashion/the-big-shoe/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

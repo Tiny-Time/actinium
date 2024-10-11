@@ -2115,6 +2115,17 @@ class Template extends Model
                 'tokens' => 20,
                 'tags' => 'tempo, tuned, fitness, paid, template',
             ],
+            [
+                'id' => 192,
+                'name' => 'The Big Shoe',
+                'category' => 'Fashion',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fashion/the-big-shoe/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fashion.the-big-shoe.index',
+                'tokens' => 11,
+                'tags' => 'the, big, shoe, fashion, paid, template',
+            ],
         ];
     }
 
