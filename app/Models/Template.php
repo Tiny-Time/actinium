@@ -2148,6 +2148,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'elegance, in, motion, fashion, paid, template',
             ],
+            [
+                'id' => 195,
+                'name' => 'Travel Destination Tour',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/travel-destination-tour/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.travel-destination-tour.index',
+                'tokens' => 7,
+                'tags' => 'travel, destination, tour, live stream, paid, template',
+            ],
         ];
     }
 
