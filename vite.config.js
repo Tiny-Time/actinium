@@ -228,6 +228,7 @@ export default defineConfig({
                 "resources/views/templates/live-stream/gaming-arcade-mario/css/style.css",
                 "resources/views/templates/live-stream/healthy-eating/css/style.css",
                 "resources/views/templates/live-stream/diy-upcycling/css/style.css",
+                "resources/views/templates/live-stream/music-reviews-2/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

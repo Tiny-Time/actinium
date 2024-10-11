@@ -2390,6 +2390,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'diy, upcycling, live stream, paid, template',
             ],
+            [
+                'id' => 217,
+                'name' => 'Music Reviews 2',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/music-reviews-2/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.music-reviews-2.index',
+                'tokens' => 7,
+                'tags' => 'music, reviews, 2, live stream, paid, template',
+            ],
         ];
     }
 
