@@ -2401,6 +2401,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'music, reviews, 2, live stream, paid, template',
             ],
+            [
+                'id' => 218,
+                'name' => 'Technology Tech News',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/technology-tech-news/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.technology-tech-news.index',
+                'tokens' => 7,
+                'tags' => 'technology, tech, news, live stream, paid, template',
+            ],
         ];
     }
 
