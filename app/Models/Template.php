@@ -2181,6 +2181,17 @@ class Template extends Model
                 'tokens' => 4,
                 'tags' => 'presentation, meeting, meeting, paid, template',
             ],
+            [
+                'id' => 198,
+                'name' => 'Discover New Horizons',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/discover-new-horizons/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.discover-new-horizons.index',
+                'tokens' => 4,
+                'tags' => 'discover, new, horizons, vacation, paid, template',
+            ],
         ];
     }
 
