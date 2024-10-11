@@ -222,6 +222,7 @@ export default defineConfig({
                 "resources/views/templates/fashion/fashion-frenzy/css/style.css",
                 "resources/views/templates/vacation/family-adventure/css/style.css",
                 "resources/views/templates/fitness/kickstart-your-fitness-journey/css/style.css",
+                "resources/views/templates/live stream/crypto-live-trading/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

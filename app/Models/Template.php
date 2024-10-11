@@ -2324,6 +2324,17 @@ class Template extends Model
                 'tokens' => 6,
                 'tags' => 'kickstart, your, fitness, journey, fitness, paid, template',
             ],
+            [
+                'id' => 211,
+                'name' => 'Crypto Live Trading',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/crypto-live-trading/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.crypto-live-trading.index',
+                'tokens' => 4,
+                'tags' => 'crypto, live, trading, live stream, paid, template',
+            ],
         ];
     }
 
