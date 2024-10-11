@@ -2280,6 +2280,17 @@ class Template extends Model
                 'tokens' => 6,
                 'tags' => 'focus, session, study, paid, template',
             ],
+            [
+                'id' => 207,
+                'name' => 'Swimming Championship',
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/swimming-championship/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.swimming-championship.index',
+                'tokens' => 6,
+                'tags' => 'swimming, championship, sport, paid, template',
+            ],
         ];
     }
 
