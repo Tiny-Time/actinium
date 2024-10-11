@@ -2354,8 +2354,19 @@ class Template extends Model
                 'image' => 'resources/views/templates/live-stream/art-printmaking-3/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.live-stream.art-printmaking-3.index',
-                'tokens' => 11,
+                'tokens' => 7,
                 'tags' => 'art, printmaking, 3, live stream, paid, template',
+            ],
+            [
+                'id' => 214,
+                'name' => 'Gaming Arcade Mario',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/gaming-arcade-mario/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.gaming-arcade-mario.index',
+                'tokens' => 7,
+                'tags' => 'gaming, arcade, mario, live stream, paid, template',
             ],
         ];
     }

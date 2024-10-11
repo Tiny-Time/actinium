@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap");
+
+* {
+    font-family: "Sarala", sans-serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    color: #fdf0f2;
+    min-height: 100dvh;
+    background: rgba(17, 3, 4, 0.1);
+}
+
+.toz-icon>img {
+    height: 35px;
+    width: 50px;
+}
+
+.toz-text-wrapper {
+    color: #fdf0f2;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 70%;
+    gap: 10px;
+}
+
+.toz-timer {
+    font-size: 48px;
+    font-weight: 400;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    width: 140px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    line-height: 1.2;
+    z-index: 1;
+}
+
+.toz-ec-d img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.toz-unit {
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    color: #fdf0f2;
+    background: rgba(223, 46, 67, 0.15);
+    border: 1.5px solid #fdf0f2;
+    border-radius: 16px;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #fdf0f2;
+}
+
+.toz-form {
+    gap: 10px;
+}
+
+.toz-input {
+    font-size: 14px;
+}
+
+.toz-f-btn {
+    color: #df2e43;
+    background: #fdf0f2;
+    border-radius: 20px;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: #fdf0f2;
+    color: #df2e43;
+}
+
+@media (max-width: 767px) {
+    .toz-icon>img {
+        height: 30px;
+        width: 45px;
+    }
+
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 32px;
+        gap: 16px;
+    }
+
+    .toz-ec-d {
+        width: 110px;
+        height: 110px;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+}
