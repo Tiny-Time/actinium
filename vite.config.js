@@ -217,6 +217,7 @@ export default defineConfig({
                 "resources/views/templates/sport/soccer-showdown/css/style.css",
                 "resources/views/templates/live-stream/tech-news/css/style.css",
                 "resources/views/templates/birthday/counting-down-to-the-big-day/css/style.css",
+                "resources/views/templates/study/focus-session-2/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

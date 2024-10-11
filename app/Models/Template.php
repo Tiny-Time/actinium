@@ -2269,6 +2269,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'counting, down, to, the, big, day, birthday, paid, template',
             ],
+            [
+                'id' => 206,
+                'name' => 'Focus Session 2',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/focus-session-2/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.focus-session-2.index',
+                'tokens' => 6,
+                'tags' => 'focus, session, study, paid, template',
+            ],
         ];
     }
 
