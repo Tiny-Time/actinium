@@ -2225,6 +2225,17 @@ class Template extends Model
                 'tokens' => 17,
                 'tags' => 'family, pet, day, in, nature, pets, paid, template',
             ],
+            [
+                'id' => 202,
+                'name' => 'Reach Your Goals With Confidence',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/reach-your-goals-with-confidence/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.reach-your-goals-with-confidence.index',
+                'tokens' => 17,
+                'tags' => 'reach, your, goals, with, confidence, study, paid, template',
+            ],
         ];
     }
 
