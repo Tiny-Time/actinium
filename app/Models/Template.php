@@ -2376,8 +2376,19 @@ class Template extends Model
                 'image' => 'resources/views/templates/live-stream/healthy-eating/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.live-stream.healthy-eating.index',
-                'tokens' => 11,
+                'tokens' => 7,
                 'tags' => 'healthy, eating, live stream, paid, template',
+            ],
+            [
+                'id' => 216,
+                'name' => 'DIY Upcycling',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/diy-upcycling/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.diy-upcycling.index',
+                'tokens' => 7,
+                'tags' => 'diy, upcycling, live stream, paid, template',
             ],
         ];
     }
