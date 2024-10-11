@@ -2104,6 +2104,17 @@ class Template extends Model
                 'tokens' => 20,
                 'tags' => 'synced, precision, fitness, paid, template',
             ],
+            [
+                'id' => 191,
+                'name' => 'Tempo Tuned',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/tempo-tuned/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.tempo-tuned.index',
+                'tokens' => 20,
+                'tags' => 'tempo, tuned, fitness, paid, template',
+            ],
         ];
     }
 

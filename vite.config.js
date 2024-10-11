@@ -202,6 +202,7 @@ export default defineConfig({
                 "resources/views/templates/beauty/radiant-glow/css/style.css",
                 "resources/views/templates/pets/walk-your-fury-friends/css/style.css",
                 "resources/views/templates/fitness/synced-precision/css/style.css",
+                "resources/views/templates/fitness/tempo-tuned/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
