@@ -2258,6 +2258,17 @@ class Template extends Model
                 'tokens' => 17,
                 'tags' => 'tech, news, live stream, paid, template',
             ],
+            [
+                'id' => 205,
+                'name' => 'Counting Down To The Big Day',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/counting-down-to-the-big-day/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.counting-down-to-the-big-day.index',
+                'tokens' => 7,
+                'tags' => 'counting, down, to, the, big, day, birthday, paid, template',
+            ],
         ];
     }
 
