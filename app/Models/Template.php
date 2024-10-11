@@ -13,7 +13,8 @@ class Template extends Model
 
     public function getRows(): array
     {
-        return [[
+        return [
+            [
                 'id' => 1,
                 'name' => 'Enchanted Midnight Forest',
                 'category' => 'Anniversary',
@@ -2202,18 +2203,29 @@ class Template extends Model
                 'tokens' => 4,
                 'tags' => 'fun, day, for, furry, friends, pets, paid, template',
             ],
-[
-    'id' => 200,
-    'name' => 'Personal Training Session With Coach',
-    'category' => 'Fitness',
-    'sub_category' => '',
-    'image' => 'resources/views/templates/fitness/personal-training-session-with-coach/images/preview.webp',
-    'type' => 'paid',
-    'path' => 'templates.fitness.personal-training-session-with-coach.index',
-    'tokens' => 11,
-    'tags' => 'personal, training, session, with, coach, fitness, paid, template',
-],
-];
+            [
+                'id' => 200,
+                'name' => 'Personal Training Session With Coach',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/personal-training-session-with-coach/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.personal-training-session-with-coach.index',
+                'tokens' => 11,
+                'tags' => 'personal, training, session, with, coach, fitness, paid, template',
+            ],
+            [
+                'id' => 201,
+                'name' => 'Family Pet Day In Nature',
+                'category' => 'Pets',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets/family-pet-day-in-nature/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets.family-pet-day-in-nature.index',
+                'tokens' => 17,
+                'tags' => 'family, pet, day, in, nature, pets, paid, template',
+            ],
+        ];
     }
 
     protected function sushiShouldCache(): bool
