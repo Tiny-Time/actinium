@@ -2302,6 +2302,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'fashion, frenzy, fashion, paid, template',
             ],
+            [
+                'id' => 209,
+                'name' => 'Family Adventure',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/family-adventure/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.family-adventure.index',
+                'tokens' => 11,
+                'tags' => 'family, adventure, vacation, paid, template',
+            ],
         ];
     }
 

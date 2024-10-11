@@ -220,6 +220,7 @@ export default defineConfig({
                 "resources/views/templates/study/focus-session-2/css/style.css",
                 "resources/views/templates/sport/swimming-championship/css/style.css",
                 "resources/views/templates/fashion/fashion-frenzy/css/style.css",
+                "resources/views/templates/vacation/family-adventure/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
