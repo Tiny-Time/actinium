@@ -13,7 +13,8 @@ class Template extends Model
 
     public function getRows(): array
     {
-        return [[
+        return [
+            [
                 'id' => 1,
                 'name' => 'Enchanted Midnight Forest',
                 'category' => 'Anniversary',
@@ -2168,6 +2169,17 @@ class Template extends Model
                 'path' => 'templates.birthday.mark-your-calendar.index',
                 'tokens' => 4,
                 'tags' => 'mark, your, calendar, birthday, paid, template',
+            ],
+            [
+                'id' => 197,
+                'name' => 'Presentation Meeting',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/presentation-meeting/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.presentation-meeting.index',
+                'tokens' => 4,
+                'tags' => 'presentation, meeting, meeting, paid, template',
             ],
         ];
     }

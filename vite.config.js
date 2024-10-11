@@ -208,6 +208,7 @@ export default defineConfig({
                 "resources/views/templates/fashion/elegance-in-motion/css/style.css",
                 "resources/views/templates/live stream/travel-destination-tour/css/style.css",
                 "resources/views/templates/birthday/mark-your-calendar/css/style.css",
+                "resources/views/templates/meeting/presentation-meeting/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
