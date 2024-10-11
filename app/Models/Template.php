@@ -2126,6 +2126,17 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'the, big, shoe, fashion, paid, template',
             ],
+            [
+                'id' => 193,
+                'name' => 'Deep Focus',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/deep-focus/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.deep-focus.index',
+                'tokens' => 11,
+                'tags' => 'deep, focus, study, paid, template',
+            ],
         ];
     }
 
