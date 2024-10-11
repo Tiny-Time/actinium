@@ -2368,6 +2368,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'gaming, arcade, mario, live stream, paid, template',
             ],
+            [
+                'id' => 215,
+                'name' => 'Healthy Eating',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/healthy-eating/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.healthy-eating.index',
+                'tokens' => 11,
+                'tags' => 'healthy, eating, live stream, paid, template',
+            ],
         ];
     }
 
