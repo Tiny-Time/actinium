@@ -2552,8 +2552,19 @@ class Template extends Model
                 'image' => 'resources/views/templates/live-stream/diy-craftings/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.live-stream.diy-craftings.index',
-                'tokens' => 11,
+                'tokens' => 7,
                 'tags' => 'diy, craftings, live stream, paid, template',
+            ],
+            [
+                'id' => 232,
+                'name' => 'Music Live Performances',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/music-live-performances/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.music-live-performances.index',
+                'tokens' => 7,
+                'tags' => 'music, live, performances, live stream, paid, template',
             ],
         ];
     }
