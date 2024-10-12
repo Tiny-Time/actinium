@@ -2566,6 +2566,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'music, live, performances, live stream, paid, template',
             ],
+            [
+                'id' => 233,
+                'name' => 'Art Paintings',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/art-paintings/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.art-paintings.index',
+                'tokens' => 11,
+                'tags' => 'art, paintings, live stream, paid, template',
+            ],
         ];
     }
 
