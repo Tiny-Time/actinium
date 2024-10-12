@@ -248,6 +248,7 @@ export default defineConfig({
                 "resources/views/templates/live-stream/travel-cultural-experiences/css/style.css",
                 "resources/views/templates/live-stream/crypto-interviews/css/style.css",
                 "resources/views/templates/live-stream/music-reviews/css/style.css",
+                "resources/views/templates/live-stream/technology-consumer-electronic/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

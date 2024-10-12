@@ -2610,6 +2610,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'music, reviews, live stream, paid, template',
             ],
+            [
+                'id' => 237,
+                'name' => 'Technology Consumer Electronic',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/technology-consumer-electronic/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.technology-consumer-electronic.index',
+                'tokens' => 15,
+                'tags' => 'technology, consumer, electronic, live stream, paid, template',
+            ],
         ];
     }
 

@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100..900&display=swap");
+
+* {
+    font-family: "MuseoModerno", sans-serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    color: #f7f5f5;
+    min-height: 100dvh;
+    background: rgba(31, 25, 26, 0.2);
+}
+
+.toz-icon>img {
+    width: 70px;
+    height: 25px;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    color: #f7f5f5;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 54px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    width: 155px;
+    height: 155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f7f5f5;
+    border: 3px solid #f7f5f5;
+    border-radius: 100%;
+}
+
+.toz-ec-d svg {
+    position: absolute;
+}
+
+.toz-ec-d>svg>circle {
+    fill: transparent;
+    stroke: rgba(247, 245, 245, 0.5);
+    stroke-dasharray: 3 3;
+    stroke-width: 4px;
+}
+
+.toz-ec-d>svg>circle:nth-child(2) {
+    stroke: #f7f5f5;
+    stroke-width: 8px;
+    stroke-linecap: round;
+    stroke-dasharray: 408.41;
+}
+
+.toz-ec-d>div {
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.toz-unit {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    color: #f7f5f5;
+    background: rgba(102, 84, 85, 0.25);
+    border: 1.5px solid #f7f5f5;
+    border-radius: 16px;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #f7f5f5;
+}
+
+.toz-form {
+    gap: 10px;
+}
+
+.toz-input {
+    font-size: 14px;
+}
+
+.toz-f-btn {
+    color: #665455;
+    background: #f7f5f5;
+    border-radius: 20px;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: #f7f5f5;
+    color: #665455;
+}
+
+@media (max-width: 767px) {
+    .toz-icon>img {
+        width: 70px;
+        height: 25px;
+    }
+
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 36px;
+        gap: 16px;
+    }
+
+    .toz-ec-d {
+        width: 110px;
+        height: 110px;
+    }
+
+    .toz-ec-d>svg {
+        width: 100px;
+        height: 100px;
+    }
+
+    .toz-ec-d svg circle {
+        r: 45px;
+        cx: 50px;
+        cy: 50px;
+        stroke-width: 3px;
+    }
+
+    .toz-ec-d>svg>circle:nth-child(2) {
+        stroke-width: 6px;
+        stroke-dasharray: 282.74;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+}
