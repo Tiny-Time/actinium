@@ -2643,6 +2643,17 @@ class Template extends Model
                 'tokens' => 17,
                 'tags' => 'travel, destination, tours, live stream, paid, template',
             ],
+            [
+                'id' => 240,
+                'name' => 'Crypto Educational',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/crypto-educational/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.crypto-educational.index',
+                'tokens' => 10,
+                'tags' => 'crypto, educational, live stream, paid, template',
+            ],
         ];
     }
 
