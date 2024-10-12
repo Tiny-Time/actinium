@@ -13,7 +13,8 @@ class Template extends Model
 
     public function getRows(): array
     {
-        return [[
+        return [
+            [
                 'id' => 1,
                 'name' => 'Enchanted Midnight Forest',
                 'category' => 'Anniversary',
@@ -2521,18 +2522,29 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'food, cookings, live, live stream, paid, template',
             ],
-[
-    'id' => 229,
-    'name' => 'Technology Tech Reviews',
-    'category' => 'Live Stream',
-    'sub_category' => '',
-    'image' => 'resources/views/templates/live-stream/technology-tech-reviews/images/preview.webp',
-    'type' => 'paid',
-    'path' => 'templates.live-stream.technology-tech-reviews.index',
-    'tokens' => 11,
-    'tags' => 'technology, tech, reviews, live stream, paid, template',
-],
-];
+            [
+                'id' => 229,
+                'name' => 'Technology Tech Reviews',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/technology-tech-reviews/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.technology-tech-reviews.index',
+                'tokens' => 7,
+                'tags' => 'technology, tech, reviews, live stream, paid, template',
+            ],
+            [
+                'id' => 230,
+                'name' => 'Gaming Shootings',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/gaming-shootings/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.gaming-shootings.index',
+                'tokens' => 7,
+                'tags' => 'gaming, shootings, live stream, paid, template',
+            ],
+        ];
     }
 
     protected function sushiShouldCache(): bool
