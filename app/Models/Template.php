@@ -2467,6 +2467,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'food, challenges, live stream, paid, template',
             ],
+            [
+                'id' => 224,
+                'name' => 'DIY Home Improvements 2',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/diy-home-improvements-2/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.diy-home-improvements-2.index',
+                'tokens' => 11,
+                'tags' => 'diy, home, improvements, 2, live stream, paid, template',
+            ],
         ];
     }
 
