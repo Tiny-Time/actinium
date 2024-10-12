@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap");
 
 * {
-    font-family: "Red Hat Display", sans-serif;
+    font-family: "Lora", serif;
 }
 
 body {
@@ -14,19 +14,19 @@ body {
 }
 
 .toz {
-    color: #faf2ea;
+    color: #f6efe6;
     min-height: 100dvh;
-    background: rgba(56, 36, 14, 0.2);
+    background: rgba(24, 4, 8, 0.2);
 }
 
 .toz-icon>img {
-    width: 60px;
-    height: 35px;
+    height: 25px;
+    width: 80px;
 }
 
 .toz-text-wrapper {
     display: flex;
-    color: #faf2ea;
+    color: #f6efe6;
     flex-direction: column;
     width: 70%;
     gap: 10px;
@@ -35,6 +35,7 @@ body {
 
 .toz-timer {
     font-size: 48px;
+    color: #835b2d;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -57,9 +58,9 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column-reverse;
+    font-weight: 500;
     align-items: center;
     line-height: 1.2;
-    font-weight: 400;
     z-index: 1;
 }
 
@@ -72,24 +73,24 @@ body {
 
 .toz-unit {
     display: flex;
+    font-weight: 400;
     justify-content: center;
     text-align: center;
-    font-weight: 400;
     font-size: 16px;
 }
 
 .toz-subscription,
 li.splide__slide>div {
-    color: #faf2ea;
-    background: rgba(75, 48, 19, 0.25);
-    border: 1.5px solid #faf2ea;
+    color: #f6efe6;
+    background: rgba(131, 91, 45, 0.25);
+    border: 1.5px solid #f6efe6;
     border-radius: 16px;
 }
 
 li.splide__slide>div>h3,
 li.splide__slide>div>p,
 li.splide__slide>div>svg {
-    color: #faf2ea;
+    color: #f6efe6;
 }
 
 .toz-form {
@@ -101,19 +102,24 @@ li.splide__slide>div>svg {
 }
 
 .toz-f-btn {
-    color: #4b3013;
-    background: #faf2ea;
+    color: #835b2d;
+    background: #f6efe6;
     border-radius: 20px;
 }
 
 /* social links */
 
 .toz-social-link {
-    background: #faf2ea;
-    color: #4b3013;
+    background: #f6efe6;
+    color: #835b2d;
 }
 
 @media (max-width: 767px) {
+    .toz-icon>img {
+        height: 20px;
+        width: 50px;
+    }
+
     .toz-text-wrapper {
         width: 100%;
     }

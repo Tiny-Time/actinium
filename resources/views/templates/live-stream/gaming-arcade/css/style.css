@@ -20,10 +20,6 @@ body {
     background: rgba(29, 22, 6, 0.2);
 }
 
-.toz-main>*:not(:first-child) {
-    margin-bottom: 30px;
-}
-
 .toz-icon>img {
     height: 30px;
     width: 60px;

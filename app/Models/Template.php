@@ -2489,6 +2489,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'gaming, arcade, live stream, paid, template',
             ],
+            [
+                'id' => 226,
+                'name' => 'Travel Vlog',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/travel-vlog/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.travel-vlog.index',
+                'tokens' => 11,
+                'tags' => 'travel, vlog, live stream, paid, template',
+            ],
         ];
     }
 
