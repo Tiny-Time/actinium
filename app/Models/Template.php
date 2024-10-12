@@ -2544,6 +2544,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'gaming, shootings, live stream, paid, template',
             ],
+            [
+                'id' => 231,
+                'name' => 'DIY Craftings',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/diy-craftings/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.diy-craftings.index',
+                'tokens' => 11,
+                'tags' => 'diy, craftings, live stream, paid, template',
+            ],
         ];
     }
 
