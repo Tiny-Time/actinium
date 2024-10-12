@@ -13,8 +13,7 @@ class Template extends Model
 
     public function getRows(): array
     {
-        return [
-            [
+        return [[
                 'id' => 1,
                 'name' => 'Enchanted Midnight Forest',
                 'category' => 'Anniversary',
@@ -2577,7 +2576,18 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'art, paintings, live stream, paid, template',
             ],
-        ];
+[
+    'id' => 234,
+    'name' => 'Travel Cultural Experiences',
+    'category' => 'Live Stream',
+    'sub_category' => '',
+    'image' => 'resources/views/templates/live-stream/travel-cultural-experiences/images/preview.webp',
+    'type' => 'paid',
+    'path' => 'templates.live-stream.travel-cultural-experiences.index',
+    'tokens' => 11,
+    'tags' => 'travel, cultural, experiences, live stream, paid, template',
+],
+];
     }
 
     protected function sushiShouldCache(): bool
