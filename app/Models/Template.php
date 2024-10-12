@@ -2599,6 +2599,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'crypto, interviews, live stream, paid, template',
             ],
+            [
+                'id' => 236,
+                'name' => 'Music Reviews',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/music-reviews/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.music-reviews.index',
+                'tokens' => 7,
+                'tags' => 'music, reviews, live stream, paid, template',
+            ],
         ];
     }
 
