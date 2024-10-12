@@ -2456,6 +2456,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'music, lessons, live stream, paid, template',
             ],
+            [
+                'id' => 223,
+                'name' => 'Food Challenges',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/food-challenges/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.food-challenges.index',
+                'tokens' => 7,
+                'tags' => 'food, challenges, live stream, paid, template',
+            ],
         ];
     }
 

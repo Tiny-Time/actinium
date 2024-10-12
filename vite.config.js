@@ -234,6 +234,7 @@ export default defineConfig({
                 "resources/views/templates/live-stream/travel-destination-tour-3/css/style.css",
                 "resources/views/templates/live-stream/art-printmaking-2/css/style.css",
                 "resources/views/templates/live-stream/music-lessons/css/style.css",
+                "resources/views/templates/live-stream/food-challenges/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
