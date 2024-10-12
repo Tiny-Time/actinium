@@ -239,6 +239,7 @@ export default defineConfig({
                 "resources/views/templates/live-stream/gaming-arcade/css/style.css",
                 "resources/views/templates/live-stream/travel-vlog/css/style.css",
                 "resources/views/templates/live-stream/art-painting-art/css/style.css",
+                "resources/views/templates/live-stream/food-cookings-live/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

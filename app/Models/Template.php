@@ -13,7 +13,8 @@ class Template extends Model
 
     public function getRows(): array
     {
-        return [[
+        return [
+            [
                 'id' => 1,
                 'name' => 'Enchanted Midnight Forest',
                 'category' => 'Anniversary',
@@ -2499,18 +2500,29 @@ class Template extends Model
                 'tokens' => 11,
                 'tags' => 'travel, vlog, live stream, paid, template',
             ],
-[
-    'id' => 227,
-    'name' => 'Art Painting Art',
-    'category' => 'Live Stream',
-    'sub_category' => '',
-    'image' => 'resources/views/templates/live-stream/art-painting-art/images/preview.webp',
-    'type' => 'paid',
-    'path' => 'templates.live-stream.art-painting-art.index',
-    'tokens' => 11,
-    'tags' => 'art, painting, art, live stream, paid, template',
-],
-];
+            [
+                'id' => 227,
+                'name' => 'Art Painting Art',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/art-painting-art/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.art-painting-art.index',
+                'tokens' => 7,
+                'tags' => 'art, painting, art, live stream, paid, template',
+            ],
+            [
+                'id' => 228,
+                'name' => 'Food Cookings Live',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/food-cookings-live/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.food-cookings-live.index',
+                'tokens' => 7,
+                'tags' => 'food, cookings, live, live stream, paid, template',
+            ],
+        ];
     }
 
     protected function sushiShouldCache(): bool
