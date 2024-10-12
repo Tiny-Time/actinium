@@ -2475,8 +2475,19 @@ class Template extends Model
                 'image' => 'resources/views/templates/live-stream/diy-home-improvements-2/images/preview.webp',
                 'type' => 'paid',
                 'path' => 'templates.live-stream.diy-home-improvements-2.index',
-                'tokens' => 11,
+                'tokens' => 7,
                 'tags' => 'diy, home, improvements, 2, live stream, paid, template',
+            ],
+            [
+                'id' => 225,
+                'name' => 'Gaming Arcade',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/gaming-arcade/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.gaming-arcade.index',
+                'tokens' => 7,
+                'tags' => 'gaming, arcade, live stream, paid, template',
             ],
         ];
     }
