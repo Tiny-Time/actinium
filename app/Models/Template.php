@@ -2621,6 +2621,17 @@ class Template extends Model
                 'tokens' => 15,
                 'tags' => 'technology, consumer, electronic, live stream, paid, template',
             ],
+            [
+                'id' => 238,
+                'name' => 'Crypto Market Analysis',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/crypto-market-analysis/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.crypto-market-analysis.index',
+                'tokens' => 17,
+                'tags' => 'crypto, market, analysis, live stream, paid, template',
+            ],
         ];
     }
 

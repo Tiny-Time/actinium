@@ -249,6 +249,7 @@ export default defineConfig({
                 "resources/views/templates/live-stream/crypto-interviews/css/style.css",
                 "resources/views/templates/live-stream/music-reviews/css/style.css",
                 "resources/views/templates/live-stream/technology-consumer-electronic/css/style.css",
+                "resources/views/templates/live-stream/crypto-market-analysis/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
