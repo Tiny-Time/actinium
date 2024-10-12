@@ -2445,6 +2445,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'art, printmaking, 2, live stream, paid, template',
             ],
+            [
+                'id' => 222,
+                'name' => 'Music Lessons',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/music-lessons/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.music-lessons.index',
+                'tokens' => 7,
+                'tags' => 'music, lessons, live stream, paid, template',
+            ],
         ];
     }
 
