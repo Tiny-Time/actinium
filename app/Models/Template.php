@@ -2434,6 +2434,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'travel, destination, tour, 3, live stream, paid, template',
             ],
+            [
+                'id' => 221,
+                'name' => 'Art Printmaking 2',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/art-printmaking-2/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.art-printmaking-2.index',
+                'tokens' => 7,
+                'tags' => 'art, printmaking, 2, live stream, paid, template',
+            ],
         ];
     }
 
