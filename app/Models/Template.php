@@ -2709,6 +2709,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'technology, consumer, electronics, live stream, paid, template',
             ],
+            [
+                'id' => 246,
+                'name' => 'Textile Art',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/textile-art/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.textile-art.index',
+                'tokens' => 7,
+                'tags' => 'textile, art, live stream, paid, template',
+            ],
         ];
     }
 
