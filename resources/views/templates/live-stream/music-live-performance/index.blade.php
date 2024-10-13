@@ -1,59 +1,59 @@
 <x-template :event="$event" :userIP="$userIP">
     <x-slot:css>
         <link rel="stylesheet"
-            href="{{ Vite::asset('resources/views/templates/live-stream/travel-gaming-horror/css/style.css') }}" />
+            href="{{ Vite::asset('resources/views/templates/live-stream/music-live-performance/css/style.css') }}" />
     </x-slot:css>
 
     <x-slot:live>
         <div class="mb-3">
-            <img src="{{ Vite::asset('resources/views/templates/live-stream/travel-gaming-horror/images/icon.webp') }}"
-                alt="live icon" width="80" />
+            <img src="{{ Vite::asset('resources/views/templates/live-stream/music-live-performance/images/icon.webp') }}"
+                alt="live icon" width="100" />
         </div>
     </x-slot>
 
     <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/live-stream/travel-gaming-horror/images/timer_icon.webp') }}"
+            <img src="{{ Vite::asset('resources/views/templates/live-stream/music-live-performance/images/timer_icon.webp') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-days" id="toz-days">
                     365
                 </div>
-                <span class="toz-unit">DAYS</span>
+                <span class="toz-unit">Days</span>
             </div>
         </div>
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/live-stream/travel-gaming-horror/images/timer_icon.webp') }}"
+            <img src="{{ Vite::asset('resources/views/templates/live-stream/music-live-performance/images/timer_icon.webp') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-hours" id="toz-hours">
                     24
                 </div>
-                <span class="toz-unit">HOURS</span>
+                <span class="toz-unit">Hours</span>
             </div>
         </div>
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/live-stream/travel-gaming-horror/images/timer_icon.webp') }}"
+            <img src="{{ Vite::asset('resources/views/templates/live-stream/music-live-performance/images/timer_icon.webp') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-mins" id="toz-mins">
                     60
                 </div>
-                <span class="toz-unit">MINUTES</span>
+                <span class="toz-unit">Minutes</span>
             </div>
         </div>
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/live-stream/travel-gaming-horror/images/timer_icon.webp') }}"
+            <img src="{{ Vite::asset('resources/views/templates/live-stream/music-live-performance/images/timer_icon.webp') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-secs" id="toz-secs">
                     60
                 </div>
-                <span class="toz-unit">SECONDS</span>
+                <span class="toz-unit">Seconds</span>
             </div>
         </div>
     </div>

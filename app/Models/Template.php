@@ -2775,6 +2775,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'travel, gaming, horror, live stream, paid, template',
             ],
+            [
+                'id' => 252,
+                'name' => 'Music Live Performance',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/music-live-performance/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.music-live-performance.index',
+                'tokens' => 7,
+                'tags' => 'music, live, performance, live stream, paid, template',
+            ],
         ];
     }
 
