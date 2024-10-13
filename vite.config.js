@@ -260,6 +260,7 @@ export default defineConfig({
                 "resources/views/templates/live-stream/textile-art/css/style.css",
                 "resources/views/templates/live-stream/art-painting/css/style.css",
                 "resources/views/templates/live-stream/diy-gardening/css/style.css",
+                "resources/views/templates/live-stream/travel-vlogs/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

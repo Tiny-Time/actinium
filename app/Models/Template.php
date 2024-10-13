@@ -2742,6 +2742,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'diy, gardening, live stream, paid, template',
             ],
+            [
+                'id' => 249,
+                'name' => 'Travel Vlogs',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/travel-vlogs/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.travel-vlogs.index',
+                'tokens' => 7,
+                'tags' => 'travel, vlogs, live stream, paid, template',
+            ],
         ];
     }
 
