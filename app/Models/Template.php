@@ -2764,6 +2764,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'food, healthy, eatings, live stream, paid, template',
             ],
+            [
+                'id' => 251,
+                'name' => 'Travel Gaming Horror',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/travel-gaming-horror/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.travel-gaming-horror.index',
+                'tokens' => 7,
+                'tags' => 'travel, gaming, horror, live stream, paid, template',
+            ],
         ];
     }
 
