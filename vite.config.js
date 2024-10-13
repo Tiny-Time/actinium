@@ -254,6 +254,7 @@ export default defineConfig({
                 "resources/views/templates/live-stream/crypto-educational/css/style.css",
                 "resources/views/templates/live-stream/art-drawing-and-illustrations/css/style.css",
                 "resources/views/templates/live-stream/diy-home-improvements/css/style.css",
+                "resources/views/templates/live-stream/food-review/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

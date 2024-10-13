@@ -2676,6 +2676,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'diy, home, improvements, live stream, paid, template',
             ],
+            [
+                'id' => 243,
+                'name' => 'Food Review',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/food-review/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.food-review.index',
+                'tokens' => 7,
+                'tags' => 'food, review, live stream, paid, template',
+            ],
         ];
     }
 
