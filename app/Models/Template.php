@@ -2797,6 +2797,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'technology, how, to, guide, live stream, paid, template',
             ],
+            [
+                'id' => 254,
+                'name' => 'Crypto Trend Analysis',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/crypto-trend-analysis/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.crypto-trend-analysis.index',
+                'tokens' => 7,
+                'tags' => 'crypto, trend, analysis, live stream, paid, template',
+            ],
         ];
     }
 
