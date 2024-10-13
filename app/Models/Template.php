@@ -2720,6 +2720,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'textile, art, live stream, paid, template',
             ],
+            [
+                'id' => 247,
+                'name' => 'Art Painting',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/art-painting/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.art-painting.index',
+                'tokens' => 7,
+                'tags' => 'art, painting, live stream, paid, template',
+            ],
         ];
     }
 
