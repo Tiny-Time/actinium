@@ -2687,6 +2687,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'food, review, live stream, paid, template',
             ],
+            [
+                'id' => 244,
+                'name' => 'Gaming Action',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/gaming-action/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.gaming-action.index',
+                'tokens' => 7,
+                'tags' => 'gaming, action, live stream, paid, template',
+            ],
         ];
     }
 
