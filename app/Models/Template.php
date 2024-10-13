@@ -2753,6 +2753,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'travel, vlogs, live stream, paid, template',
             ],
+            [
+                'id' => 250,
+                'name' => 'Food Healthy Eatings',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/food-healthy-eatings/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.food-healthy-eatings.index',
+                'tokens' => 7,
+                'tags' => 'food, healthy, eatings, live stream, paid, template',
+            ],
         ];
     }
 
