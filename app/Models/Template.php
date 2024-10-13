@@ -2665,6 +2665,17 @@ class Template extends Model
                 'tokens' => 17,
                 'tags' => 'art, drawing, and, illustrations, live stream, paid, template',
             ],
+            [
+                'id' => 242,
+                'name' => 'DIY Home Improvements',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/diy-home-improvements/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.diy-home-improvements.index',
+                'tokens' => 7,
+                'tags' => 'diy, home, improvements, live stream, paid, template',
+            ],
         ];
     }
 
