@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Kulim+Park:wght@400;600;700&display=swap");
+
+* {
+    font-family: "Kulim Park", sans-serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    color: #d8dce0;
+    min-height: 100dvh;
+    background: rgba(21, 18, 18, 0.2);
+}
+
+.toz-icon>img {
+    width: 70px;
+    height: 25px;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    color: #d8dce0;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 54px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    width: 155px;
+    height: 155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d8dce0;
+    border: 3px solid #d8dce0;
+    border-radius: 100%;
+}
+
+.toz-ec-d svg {
+    position: absolute;
+}
+
+.toz-ec-d>svg>circle {
+    fill: transparent;
+    stroke: #d8dce0;
+    stroke-dasharray: 2 2;
+    stroke-width: 8px;
+}
+
+.toz-ec-d>svg>circle:nth-child(2) {
+    stroke: #d8dce0;
+    stroke-dasharray: 408.41;
+    stroke-linecap: dashed;
+}
+
+.toz-ec-d>div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.toz-unit {
+    font-size: 18px;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    color: #d8dce0;
+    background: rgba(59, 50, 51, 0.25);
+    border: 1.5px solid #d8dce0;
+    border-radius: 16px;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #d8dce0;
+}
+
+.toz-form {
+    gap: 10px;
+}
+
+.toz-input {
+    font-size: 14px;
+}
+
+.toz-f-btn {
+    color: #3b3233;
+    background: #d8dce0;
+    border-radius: 20px;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: #d8dce0;
+    color: #3b3233;
+}
+
+@media (max-width: 767px) {
+    .toz-icon>img {
+        width: 70px;
+        height: 25px;
+    }
+
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 36px;
+        gap: 16px;
+    }
+
+    .toz-ec-d {
+        width: 110px;
+        height: 110px;
+    }
+
+    .toz-ec-d>svg {
+        width: 100px;
+        height: 100px;
+    }
+
+    .toz-ec-d svg circle {
+        r: 45px;
+        cx: 50px;
+        cy: 50px;
+        stroke-width: 6px;
+    }
+
+    .toz-ec-d>svg>circle:nth-child(2) {
+        stroke-width: 6px;
+        stroke-dasharray: 282.74;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+}

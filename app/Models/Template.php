@@ -2654,6 +2654,17 @@ class Template extends Model
                 'tokens' => 10,
                 'tags' => 'crypto, educational, live stream, paid, template',
             ],
+            [
+                'id' => 241,
+                'name' => 'Art Drawing And Illustrations',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/art-drawing-and-illustrations/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.art-drawing-and-illustrations.index',
+                'tokens' => 17,
+                'tags' => 'art, drawing, and, illustrations, live stream, paid, template',
+            ],
         ];
     }
 
