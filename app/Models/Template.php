@@ -2786,6 +2786,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'music, live, performance, live stream, paid, template',
             ],
+            [
+                'id' => 253,
+                'name' => 'Technology How To Guide',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/technology-how-to-guide/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.technology-how-to-guide.index',
+                'tokens' => 7,
+                'tags' => 'technology, how, to, guide, live stream, paid, template',
+            ],
         ];
     }
 
