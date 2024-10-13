@@ -2698,6 +2698,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'gaming, action, live stream, paid, template',
             ],
+            [
+                'id' => 245,
+                'name' => 'Technology Consumer Electronics',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/technology-consumer-electronics/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.technology-consumer-electronics.index',
+                'tokens' => 7,
+                'tags' => 'technology, consumer, electronics, live stream, paid, template',
+            ],
         ];
     }
 
