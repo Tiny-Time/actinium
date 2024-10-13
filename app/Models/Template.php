@@ -2808,6 +2808,28 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'crypto, trend, analysis, live stream, paid, template',
             ],
+            [
+                'id' => 255,
+                'name' => 'Travel Packing Tips',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/travel-packing-tips/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.travel-packing-tips.index',
+                'tokens' => 7,
+                'tags' => 'travel, packing, tips, live stream, paid, template',
+            ],
+            [
+                'id' => 256,
+                'name' => 'Food Challenge Eating Contests',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/food-challenge-eating-contests/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.food-challenge-eating-contests.index',
+                'tokens' => 7,
+                'tags' => 'food, challenge, eating, contests, live stream, paid, template',
+            ],
         ];
     }
 
