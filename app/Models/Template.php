@@ -2962,6 +2962,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'paws, in, motion, pets, paid, template',
             ],
+            [
+                'id' => 269,
+                'name' => 'A Sacred Month',
+                'category' => 'Ramadan',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/ramadan/a-sacred-month/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.ramadan.a-sacred-month.index',
+                'tokens' => 7,
+                'tags' => 'a, sacred, month, ramadan, paid, template',
+            ],
         ];
     }
 
