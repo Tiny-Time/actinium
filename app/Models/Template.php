@@ -2973,6 +2973,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'a, sacred, month, ramadan, paid, template',
             ],
+            [
+                'id' => 270,
+                'name' => 'Happy Ramadan',
+                'category' => 'Ramadan',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/ramadan/happy-ramadan/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.ramadan.happy-ramadan.index',
+                'tokens' => 7,
+                'tags' => 'happy, ramadan, ramadan, paid, template',
+            ],
         ];
     }
 

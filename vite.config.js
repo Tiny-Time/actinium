@@ -281,6 +281,7 @@ export default defineConfig({
                 "resources/views/templates/ramadan/eid-mubarak/css/style.css",
                 "resources/views/templates/pets/paws-in-motion/css/style.css",
                 "resources/views/templates/ramadan/a-sacred-month/css/style.css",
+                "resources/views/templates/ramadan/happy-ramadan/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

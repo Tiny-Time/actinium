@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&display=swap");
+
+@font-face {
+    font-family: "Sketsa Ramadhan";
+    src: url("../fonts/Marhaban\ Ramadhan\ DEMO.otf") format("opentype"),
+        url("../fonts/Omotu\ Studio\ Font\ Licensing.pdf") format("truetype");
+}
+
+* {
+    font-family: "Cormorant Garamond", serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1,
+h3 {
+    font-family: "Sketsa Ramadhan";
+    transform: scale(0.5);
+}
+
+.toz {
+    color: #ffe7c8;
+    min-height: 100dvh;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    color: #ffe7c8;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    color: #371f00;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    display: flex;
+    width: 160px;
+    height: 160px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    font-weight: 700;
+    margin-top: -10px;
+    z-index: 1;
+}
+
+.toz-ec-d img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.toz-unit {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    color: #ffe7c8;
+    background: rgba(248, 235, 230, 0.25);
+    border-radius: 16px;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #ffe7c8;
+}
+
+.toz-form {
+    gap: 10px;
+}
+
+.toz-input {
+    font-size: 16px;
+}
+
+.toz-f-btn {
+    color: #371f00;
+    border-radius: 17px;
+    background: #ffe7c8;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: #ffe7c8;
+    color: #371f00;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 36px;
+        gap: 16px;
+    }
+
+    .toz-ec-d {
+        width: 110px;
+        height: 110px;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+}
