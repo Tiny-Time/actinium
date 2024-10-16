@@ -3105,6 +3105,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'bounding, with, pet, birds, pets, paid, template',
             ],
+            [
+                'id' => 282,
+                'name' => 'Agenda Stopwatch',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/agenda-stopwatch/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.agenda-stopwatch.index',
+                'tokens' => 7,
+                'tags' => 'agenda, stopwatch, meeting, paid, template',
+            ],
         ];
     }
 
