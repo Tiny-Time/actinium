@@ -3138,6 +3138,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'escape, countdown, vacation, paid, template',
             ],
+            [
+                'id' => 285,
+                'name' => 'Unleashing Full Potential',
+                'category' => 'Study',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/study/unleashing-full-potential/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.study.unleashing-full-potential.index',
+                'tokens' => 7,
+                'tags' => 'unleashing, full, potential, study, paid, template',
+            ],
         ];
     }
 

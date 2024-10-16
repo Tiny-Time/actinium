@@ -296,6 +296,7 @@ export default defineConfig({
                 "resources/views/templates/meeting/agenda-stopwatch/css/style.css",
                 "resources/views/templates/birthday/birthday-bliss/css/style.css",
                 "resources/views/templates/vacation/escape-countdown/css/style.css",
+                "resources/views/templates/study/unleashing-full-potential/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

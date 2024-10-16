@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Monofett&family=Quicksand:wght@300..700&display=swap");
+
+* {
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    color: #806144;
+    background: rgba(0, 0, 0, 0.1);
+    min-height: 100dvh;
+}
+
+h2 {
+    color: #806144 !important;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 20px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 8rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: max-content;
+    margin: 0;
+    border-radius: 10px;
+    background: rgba(252, 253, 248, 0.5);
+    padding: 0 20px 10px 20px;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+.toz-ec {
+    flex-direction: column;
+    display: flex;
+    gap: 5px;
+}
+
+.toz-ec-d {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    font-family: "Monofett", monospace;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+}
+
+.toz-unit {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.toz-divider {
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -29px;
+    width: 8px;
+    gap: 8px;
+}
+
+.toz-divider>span {
+    width: 8px;
+    height: 8px;
+    background: #806144;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    border-radius: 12px;
+    background: #fcfdf8;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #806144;
+}
+
+.toz-form {
+    gap: 10px;
+    border: 2px solid #806144;
+}
+
+.toz-input {
+    font-size: 14px;
+}
+
+.toz-f-btn {
+    color: #fcfdf8;
+    border-radius: 5px;
+    background: #806144;
+}
+
+/* social links */
+
+.toz-social-link {
+    color: #fcfdf8;
+    background: #806144;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 36px;
+        gap: 18px;
+        padding: 10px;
+    }
+
+    .toz-timer {
+        font-size: 5rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .toz-divider {
+        margin-top: -20px;
+    }
+
+    #exc {
+        display: none;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+
+    .toz-divider {
+        width: 70%;
+    }
+}
