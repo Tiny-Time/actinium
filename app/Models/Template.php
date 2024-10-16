@@ -3050,6 +3050,28 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'sweat, and, strength, fitness, paid, template',
             ],
+            [
+                'id' => 277,
+                'name' => 'Freedom Of The Open Road',
+                'category' => 'Pets',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets/freedom-of-the-open-road/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets.freedom-of-the-open-road.index',
+                'tokens' => 7,
+                'tags' => 'freedom, of, the, open, road, pets, paid, template',
+            ],
+            [
+                'id' => 278,
+                'name' => 'Business Plan And Strategy',
+                'category' => 'Meeting',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/meeting/business-plan-and-strategy/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.meeting.business-plan-and-strategy.index',
+                'tokens' => 7,
+                'tags' => 'business, plan, and, strategy, meeting, paid, template',
+            ],
         ];
     }
 
