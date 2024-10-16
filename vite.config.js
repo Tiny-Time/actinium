@@ -287,6 +287,7 @@ export default defineConfig({
                 "resources/views/templates/live-stream/puzzle-party/css/style.css",
                 "resources/views/templates/live-stream/zookeeper-behind-the-scene/css/style.css",
                 "resources/views/templates/live-stream/paranormal-investigation/css/style.css",
+                "resources/views/templates/fitness/sweat-and-strength/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

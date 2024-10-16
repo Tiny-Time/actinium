@@ -3039,6 +3039,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'paranormal, investigation, live stream, paid, template',
             ],
+            [
+                'id' => 276,
+                'name' => 'Sweat And Strength',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/sweat-and-strength/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.sweat-and-strength.index',
+                'tokens' => 7,
+                'tags' => 'sweat, and, strength, fitness, paid, template',
+            ],
         ];
     }
 
