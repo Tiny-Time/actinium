@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+
+* {
+    font-family: "Macondo", cursive;
+    font-weight: 400;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.toz {
+    color: #ffffff;
+    min-height: 100dvh;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: max-content;
+    background: transparent;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0;
+}
+
+.toz-ec-d {
+    font-size: 64px;
+    margin: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.toz-ec-d:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: white;
+}
+
+.toz-unit {
+    font-size: 18px;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #ffff;
+}
+
+.toz-form {
+    align-self: center;
+    background: transparent;
+    border-radius: 20px;
+    border: 1.5px solid #ffff;
+}
+
+.toz-input {
+    font-size: 18px;
+}
+
+.toz-f-btn {
+    color: #ffff;
+    background: #062330;
+    border-radius: 20px;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: white;
+    color: #062330;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 20px;
+        padding: 20px 10px;
+    }
+
+    .toz-ec-d:nth-child(odd)::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 1.5px;
+    }
+
+    .toz-ec-d {
+        font-size: 48px;
+        margin: 0;
+    }
+
+    .toz-ec-d:nth-child(2)::after,
+    .toz-ec-d:nth-child(4)::after {
+        display: none;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+}

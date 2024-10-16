@@ -3215,6 +3215,17 @@ class Template extends Model
                 'tokens' => 3,
                 'tags' => 'anticipation, thrill, birthday, paid, template',
             ],
+            [
+                'id' => 292,
+                'name' => 'Dynamic Workout Routine',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/dynamic-workout-routine/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.dynamic-workout-routine.index',
+                'tokens' => 7,
+                'tags' => 'dynamic, workout, routine, fitness, paid, template',
+            ],
         ];
     }
 
