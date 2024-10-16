@@ -3204,6 +3204,17 @@ class Template extends Model
                 'tokens' => 3,
                 'tags' => 'dream, getaway, vacation, paid, template',
             ],
+            [
+                'id' => 291,
+                'name' => 'Anticipation Thrill',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/anticipation-thrill/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.anticipation-thrill.index',
+                'tokens' => 3,
+                'tags' => 'anticipation, thrill, birthday, paid, template',
+            ],
         ];
     }
 

@@ -302,6 +302,7 @@ export default defineConfig({
                 "resources/views/templates/vacation/beach-front-release/css/style.css",
                 "resources/views/templates/silent/retreat-serene-tranquility/css/style.css",
                 "resources/views/templates/vacation/dream-getaway/css/style.css",
+                "resources/views/templates/birthday/anticipation-thrill/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
