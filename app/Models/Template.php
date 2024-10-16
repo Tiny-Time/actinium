@@ -3094,6 +3094,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'picnic, delights, in, nature, vacation, paid, template',
             ],
+            [
+                'id' => 281,
+                'name' => 'Bounding With Pet Birds',
+                'category' => 'Pets',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/pets/bounding-with-pet-birds/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.pets.bounding-with-pet-birds.index',
+                'tokens' => 7,
+                'tags' => 'bounding, with, pet, birds, pets, paid, template',
+            ],
         ];
     }
 
