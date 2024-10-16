@@ -3028,6 +3028,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'zookeeper, behind, the, scene, live stream, paid, template',
             ],
+            [
+                'id' => 275,
+                'name' => 'Paranormal Investigation',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/paranormal-investigation/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.paranormal-investigation.index',
+                'tokens' => 7,
+                'tags' => 'paranormal, investigation, live stream, paid, template',
+            ],
         ];
     }
 
