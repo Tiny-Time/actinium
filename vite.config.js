@@ -297,6 +297,8 @@ export default defineConfig({
                 "resources/views/templates/birthday/birthday-bliss/css/style.css",
                 "resources/views/templates/vacation/escape-countdown/css/style.css",
                 "resources/views/templates/study/unleashing-full-potential/css/style.css",
+                "resources/views/templates/mindful/breathing-experience-tranquility/css/style.css",
+                "resources/views/templates/vacation/timeless-memories/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

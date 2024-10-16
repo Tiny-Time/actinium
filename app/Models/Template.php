@@ -3149,6 +3149,28 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'unleashing, full, potential, study, paid, template',
             ],
+            [
+                'id' => 286,
+                'name' => 'Breathing Experience Tranquility',
+                'category' => 'Mindful',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/mindful/breathing-experience-tranquility/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.mindful.breathing-experience-tranquility.index',
+                'tokens' => 7,
+                'tags' => 'breathing, experience, tranquility, mindful, paid, template',
+            ],
+            [
+                'id' => 287,
+                'name' => 'Timeless Memories',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/timeless-memories/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.timeless-memories.index',
+                'tokens' => 7,
+                'tags' => 'timeless, memories, vacation, paid, template',
+            ],
         ];
     }
 
