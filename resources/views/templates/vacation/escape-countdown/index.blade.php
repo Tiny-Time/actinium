@@ -1,8 +1,8 @@
 <x-template :event="$event" :userIP="$userIP">
     <x-slot:css>
         <link rel="stylesheet"
-            href="{{ Vite::asset('resources/views/templates/vacation/sun-kissed-paradise/css/style.css') }}" />
-    </x-slot>
+            href="{{ Vite::asset('resources/views/templates/vacation/escape-countdown/css/style.css') }}" />
+    </x-slot:css>
 
     <x-slot:stroke>
         <script type="text/javascript">
@@ -18,33 +18,10 @@
             document.addEventListener('countdownComponentEvent', function(event) {
                 const countdown = event.detail.countdown;
 
-                updateCountdownComponent(
-                    "toz-days",
-                    countdown.days,
-                    "#F46D8A",
-                    "white"
-                );
-
-                updateCountdownComponent(
-                    "toz-hours",
-                    countdown.hours,
-                    "#F46D8A",
-                    "white"
-                );
-
-                updateCountdownComponent(
-                    "toz-mins",
-                    countdown.minutes,
-                    "#F46D8A",
-                    "white"
-                );
-
-                updateCountdownComponent(
-                    "toz-secs",
-                    countdown.seconds,
-                    "#F46D8A",
-                    "white"
-                );
+                updateCountdownComponent("toz-days", countdown.days, "#000", "white");
+                updateCountdownComponent("toz-hours", countdown.hours, "#000", "white");
+                updateCountdownComponent("toz-mins", countdown.minutes, "#000", "white");
+                updateCountdownComponent("toz-secs", countdown.seconds, "#000", "white");
             });
 
             function updateCountdownComponent(elementId, value, bgColor, textColor) {
@@ -61,8 +38,12 @@
                             const digitElement = document.createElement("div");
                             digitElement.innerText = digit + " ";
                             digitElement.style.backgroundColor = bgColor;
+                            digitElement.style.borderColor = "white";
+                            digitElement.style.borderWidth = "1px";
+                            digitElement.style.borderStyle = "solid";
                             digitElement.style.color = textColor;
-                            digitElement.style.padding = "20px";
+                            digitElement.style.padding = ".8rem";
+                            element.appendChild(digitElement);
 
                             const firstElement = index === 0;
                             const lastElement = index === array.length - 1;
@@ -82,46 +63,60 @@
                                     digitElement.style.borderBottomRightRadius = "10px";
                                 }
                             }
-
-                            element.appendChild(digitElement);
                         });
                 }
             }
         </script>
     </x-slot>
 
-    <!-- Event timer/counter -->
     <div class="toz-timer">
         <!-- Days -->
-        <div class="toz-days">
-            <div class="toz-t-w">
-                <div id="toz-days">365</div>
+        <div class="toz-ec">
+            <div class="toz-ec-d">
+                <div class="toz-days" id="toz-days">
+                    365
+                </div>
             </div>
-            <span class="toz-unit"> Day </span>
+            <span class="toz-unit">Days</span>
         </div>
-
+        <div class="toz-divider">
+            <span></span>
+            <span></span>
+        </div>
         <!-- Hours -->
-        <div class="toz-hours">
-            <div class="toz-t-w">
-                <div id="toz-hours">24</div>
+        <div class="toz-ec">
+            <div class="toz-ec-d">
+                <div class="toz-hours" id="toz-hours">
+                    24
+                </div>
             </div>
-            <span class="toz-unit"> Hour </span>
+            <span class="toz-unit">Hours</span>
         </div>
-
+        <div class="toz-divider" id="exc">
+            <span></span>
+            <span></span>
+        </div>
         <!-- Minutes -->
-        <div class="toz-mins">
-            <div class="toz-t-w">
-                <div id="toz-mins">60</div>
+        <div class="toz-ec">
+            <div class="toz-ec-d">
+                <div class="toz-mins" id="toz-mins">
+                    60
+                </div>
             </div>
-            <span class="toz-unit"> Minute </span>
+            <span class="toz-unit">Minutes</span>
         </div>
-
+        <div class="toz-divider">
+            <span></span>
+            <span></span>
+        </div>
         <!-- Seconds -->
-        <div class="toz-secs">
-            <div class="toz-t-w">
-                <div id="toz-secs">60</div>
+        <div class="toz-ec">
+            <div class="toz-ec-d">
+                <div class="toz-secs" id="toz-secs">
+                    60
+                </div>
             </div>
-            <span class="toz-unit"> Second </span>
+            <span class="toz-unit">Seconds</span>
         </div>
     </div>
 </x-template>

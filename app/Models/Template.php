@@ -3116,6 +3116,28 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'agenda, stopwatch, meeting, paid, template',
             ],
+            [
+                'id' => 283,
+                'name' => 'Birthday Bliss',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/birthday-bliss/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.birthday-bliss.index',
+                'tokens' => 7,
+                'tags' => 'birthday, bliss, birthday, paid, template',
+            ],
+            [
+                'id' => 284,
+                'name' => 'Escape Countdown',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/escape-countdown/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.escape-countdown.index',
+                'tokens' => 7,
+                'tags' => 'escape, countdown, vacation, paid, template',
+            ],
         ];
     }
 
