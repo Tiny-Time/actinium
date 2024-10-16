@@ -2984,6 +2984,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'happy, ramadan, ramadan, paid, template',
             ],
+            [
+                'id' => 271,
+                'name' => 'Storm Chaser',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/storm-chaser/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.storm-chaser.index',
+                'tokens' => 7,
+                'tags' => 'storm, chaser, live stream, paid, template',
+            ],
         ];
     }
 
