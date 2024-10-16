@@ -3083,6 +3083,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'father-s, day, holiday, paid, template',
             ],
+            [
+                'id' => 280,
+                'name' => 'Picnic Delights In Nature',
+                'category' => 'Vacation',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/vacation/picnic-delights-in-nature/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.vacation.picnic-delights-in-nature.index',
+                'tokens' => 7,
+                'tags' => 'picnic, delights, in, nature, vacation, paid, template',
+            ],
         ];
     }
 

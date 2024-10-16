@@ -291,6 +291,7 @@ export default defineConfig({
                 "resources/views/templates/pets/freedom-of-the-open-road/css/style.css",
                 "resources/views/templates/meeting/business-plan-and-strategy/css/style.css",
                 "resources/views/templates/holiday/father-s-day/css/style.css",
+                "resources/views/templates/vacation/picnic-delights-in-nature/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
