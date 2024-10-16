@@ -3072,6 +3072,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'business, plan, and, strategy, meeting, paid, template',
             ],
+            [
+                'id' => 279,
+                'name' => 'Father\'s Day',
+                'category' => 'Holiday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/holiday/father-s-day/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.holiday.father-s-day.index',
+                'tokens' => 7,
+                'tags' => 'father-s, day, holiday, paid, template',
+            ],
         ];
     }
 
