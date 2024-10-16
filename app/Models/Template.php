@@ -3017,6 +3017,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'puzzle, party, live stream, paid, template',
             ],
+            [
+                'id' => 274,
+                'name' => 'Zookeeper Behind The Scene',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/zookeeper-behind-the-scene/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.zookeeper-behind-the-scene.index',
+                'tokens' => 7,
+                'tags' => 'zookeeper, behind, the, scene, live stream, paid, template',
+            ],
         ];
     }
 
