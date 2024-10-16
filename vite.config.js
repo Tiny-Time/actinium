@@ -284,6 +284,7 @@ export default defineConfig({
                 "resources/views/templates/ramadan/happy-ramadan/css/style.css",
                 "resources/views/templates/live-stream/storm-chaser/css/style.css",
                 "resources/views/templates/live-stream/stream-q-a-session/css/style.css",
+                "resources/views/templates/live-stream/puzzle-party/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

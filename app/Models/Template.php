@@ -3006,6 +3006,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'stream, q-a, q&a, session, live stream, paid, template',
             ],
+            [
+                'id' => 273,
+                'name' => 'Puzzle Party',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/puzzle-party/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.puzzle-party.index',
+                'tokens' => 7,
+                'tags' => 'puzzle, party, live stream, paid, template',
+            ],
         ];
     }
 
