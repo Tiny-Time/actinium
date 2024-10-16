@@ -3226,6 +3226,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'dynamic, workout, routine, fitness, paid, template',
             ],
+            [
+                'id' => 293,
+                'name' => 'Perfect Timing',
+                'category' => 'Fitness',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/fitness/perfect-timing/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.fitness.perfect-timing.index',
+                'tokens' => 7,
+                'tags' => 'perfect, timing, fitness, paid, template',
+            ],
         ];
     }
 

@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&display=swap");
+
+* {
+    font-family: "Playfair Display", serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    color: #ffffff;
+    background: rgba(44, 42, 40, 0.2);
+    min-height: 100dvh;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: max-content;
+    background: transparent;
+    border: 2px solid #fff;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0;
+}
+
+.toz-ec-d {
+    font-size: 64px;
+    font-weight: 900;
+    margin: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.toz-ec-d:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: white;
+}
+
+.toz-unit {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    border: 1.5px solid #fff;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #000;
+}
+
+.toz-form {
+    align-self: center;
+    background: transparent;
+    border: 1.5px solid #fff;
+}
+
+.toz-input, .toz-input::placeholder {
+    font-size: 14px;
+    color: #fff !important;
+}
+
+.toz-f-btn {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* social links */
+
+.toz-social-link {
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 20px;
+        padding: 20px 10px;
+    }
+
+    .toz-ec-d:nth-child(odd)::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 1.5px;
+    }
+
+    .toz-ec-d {
+        font-size: 48px;
+        margin: 0;
+    }
+
+    .toz-ec-d:nth-child(2)::after,
+    .toz-ec-d:nth-child(4)::after {
+        display: none;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+}

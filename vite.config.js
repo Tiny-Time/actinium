@@ -304,6 +304,7 @@ export default defineConfig({
                 "resources/views/templates/vacation/dream-getaway/css/style.css",
                 "resources/views/templates/birthday/anticipation-thrill/css/style.css",
                 "resources/views/templates/fitness/dynamic-workout-routine/css/style.css",
+                "resources/views/templates/fitness/perfect-timing/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
