@@ -2995,6 +2995,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'storm, chaser, live stream, paid, template',
             ],
+            [
+                'id' => 272,
+                'name' => 'Stream Q & A Session',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/stream-q-a-session/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.stream-q-a-session.index',
+                'tokens' => 7,
+                'tags' => 'stream, q-a, q&a, session, live stream, paid, template',
+            ],
         ];
     }
 
