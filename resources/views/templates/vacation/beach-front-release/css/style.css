@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
+
+* {
+    font-family: "Cabin", sans-serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    min-height: 100dvh;
+    color: #ebf5ec;
+    background: rgba(23, 46, 25, 0.3);
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 70%;
+    gap: 10px;
+}
+
+.toz-timer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    font-size: 54px;
+    width: 150px;
+    height: 150px;
+    color: #172e19;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    font-weight: 700;
+    text-shadow: 0px 0px 4px #ebf5ec;
+    width: 145px;
+    height: 145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1;
+}
+
+.toz-unit {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.toz-ec-d svg {
+    position: absolute;
+    z-index: 1;
+}
+
+.toz-ec-d>svg>circle {
+    fill: transparent;
+    stroke: rgba(23, 46, 25, 0.5);
+    stroke-width: 8px;
+}
+
+.toz-ec-d>svg>circle:nth-child(2) {
+    stroke: #172e19;
+    stroke-width: 12px;
+    stroke-dasharray: 471;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    border-radius: 8px;
+    background: #172e19;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #ebf5ec;
+}
+
+
+.toz-form {
+    border-radius: 20px;
+    background: rgba(235, 245, 236, 0.25);
+}
+
+.toz-input {
+    font-size: 14px;
+    color: #ebf5ec !important;
+}
+
+.toz-f-btn {
+    color: #172e19;
+    background: #ebf5ec;
+    border-radius: 20px;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: #ebf5ec;
+    color: #172e19;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 48px;
+        gap: 18px;
+        padding: 0px;
+    }
+
+    .toz-ec-d {
+        width: 120px;
+        height: 120px;
+        font-size: 42px;
+    }
+
+    .toz-ec-d>div {
+        width: 112px;
+        height: 112px;
+    }
+
+    .toz-ec-d svg {
+        width: 130px;
+        height: 130px;
+        top: auto;
+        left: auto;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+
+    .toz-ec-d svg circle {
+        r: 58px;
+        cx: 65px;
+        cy: 65px;
+        stroke-width: 6px;
+    }
+
+    .toz-timer-knob {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        left: 89%;
+        bottom: 45%;
+    }
+
+    .toz-ec-d>svg>circle:nth-child(2) {
+        stroke-dasharray: 365;
+        stroke-width: 10px;
+    }
+
+    .toz-unit {
+        font-size: 12px;
+    }
+}
