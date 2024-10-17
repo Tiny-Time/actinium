@@ -3281,6 +3281,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'building, excitement, 2, birthday, paid, template',
             ],
+            [
+                'id' => 298,
+                'name' => 'Deep Sea Exploration',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/deep-sea-exploration/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.deep-sea-exploration.index',
+                'tokens' => 7,
+                'tags' => 'deep, sea, exploration, live stream, paid, template',
+            ],
         ];
     }
 

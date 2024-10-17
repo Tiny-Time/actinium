@@ -309,6 +309,7 @@ export default defineConfig({
                 "resources/views/templates/birthday/unfolding-magic/css/style.css",
                 "resources/views/templates/birthday/grand-birthday-spectacle/css/style.css",
                 "resources/views/templates/birthday/building-excitement-2/css/style.css",
+                "resources/views/templates/live-stream/deep-sea-exploration/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
