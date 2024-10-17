@@ -3292,6 +3292,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'deep, sea, exploration, live stream, paid, template',
             ],
+            [
+                'id' => 299,
+                'name' => 'Wildlife Streaming',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/wildlife-streaming/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.wildlife-streaming.index',
+                'tokens' => 7,
+                'tags' => 'wildlife, streaming, live stream, paid, template',
+            ],
         ];
     }
 
