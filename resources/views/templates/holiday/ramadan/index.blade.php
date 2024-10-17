@@ -1,7 +1,7 @@
 <x-template :event="$event" :userIP="$userIP">
     <x-slot:css>
         <link rel="stylesheet" href="{{ Vite::asset('resources/views/templates/holiday/ramadan/css/style.css') }}" />
-    </x-slot:css>
+    </x-slot>
 
     <x-slot:stroke>
         <script type="text/javascript">

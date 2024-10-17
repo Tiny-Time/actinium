@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:wght@300..800&display=swap");
+
+* {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 300;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.toz {
+    color: #4b0119;
+    min-height: 100dvh;
+}
+
+p, span, a, input, textarea, h2 {
+    font-family: "Open Sans", sans-serif;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    color: #fed5e2;
+    font-size: 54px;
+    -webkit-text-stroke-color: #4b0119;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    width: 160px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.toz-ec-d>div {
+    -webkit-text-stroke-width: 2px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.3;
+    margin-top: 15px;
+    z-index: 1;
+}
+
+.toz-ec-d img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.toz-unit {
+    font-size: 18px;
+    -webkit-text-stroke-width: 1.5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.toz-subscription,
+li.splide__slide>div {
+    color: #4b0119;
+    border: 2px solid #4b0119;
+    background: #fed5e2;
+    border-radius: 16px;
+}
+
+li.splide__slide>div>h3,
+li.splide__slide>div>p,
+li.splide__slide>div>svg {
+    color: #4b0119;
+}
+
+.toz-form {
+    align-self: center;
+    background: #fd97b7;
+    border-radius: 20px;
+    border: 2px solid #4b0119;
+}
+
+.toz-input {
+    font-size: 14px;
+}
+
+.toz-f-btn {
+    color: #4b0119;
+    background: #fed5e2;
+    border-radius: 20px;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: #fd97b7;
+    color: #4b0119;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 36px;
+        gap: 16px;
+    }
+
+    .toz-ec-d {
+        width: 120px;
+        height: 110px;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+        -webkit-text-stroke-width: 1.2px;
+    }
+}

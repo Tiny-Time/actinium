@@ -2,7 +2,7 @@
     <x-slot:css>
         <link rel="stylesheet"
             href="{{ Vite::asset('resources/views/templates/vacation/escape-countdown/css/style.css') }}" />
-    </x-slot:css>
+    </x-slot>
 
     <x-slot:stroke>
         <script type="text/javascript">

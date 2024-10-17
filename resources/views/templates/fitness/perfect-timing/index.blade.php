@@ -2,9 +2,7 @@
     <x-slot:css>
         <link rel="stylesheet"
             href="{{ Vite::asset('resources/views/templates/fitness/perfect-timing/css/style.css') }}" />
-    </x-slot:css>
-
-    <div class="toz-timer">
+      <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
             <span class="toz-days" id="toz-days">365</span>

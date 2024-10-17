@@ -2,7 +2,7 @@
     <x-slot:css>
         <link rel="stylesheet"
             href="{{ Vite::asset('resources/views/templates/live-stream/music-live-performance/css/style.css') }}" />
-    </x-slot:css>
+    </x-slot>
 
     <x-slot:live>
         <div class="mb-3">

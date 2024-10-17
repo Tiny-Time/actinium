@@ -2,7 +2,7 @@
     <x-slot:css>
         <link rel="stylesheet"
             href="{{ Vite::asset('resources/views/templates/live-stream/travel-destination-tours/css/style.css') }}" />
-    </x-slot:css>
+    </x-slot>
 
     <x-slot:live>
         <div class="mb-3">

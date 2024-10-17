@@ -1,7 +1,7 @@
 <x-template :event="$event" :userIP="$userIP">
     <x-slot:css>
         <link rel="stylesheet" href="{{ Vite::asset('resources/views/templates/ramadan/eid-al-fitr/css/style.css') }}" />
-    </x-slot:css>
+    </x-slot>
 
     <!-- Event timer/counter -->
     <div class="toz-timer">

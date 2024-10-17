@@ -2,7 +2,7 @@
     <x-slot:css>
         <link rel="stylesheet"
             href="{{ Vite::asset('resources/views/templates/live-stream/diy-home-improvements-2/css/style.css') }}" />
-    </x-slot:css>
+    </x-slot>
 
     <x-slot:live>
         <div class="mb-3">

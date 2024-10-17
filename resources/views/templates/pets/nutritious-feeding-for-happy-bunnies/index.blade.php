@@ -2,7 +2,7 @@
     <x-slot:css>
         <link rel="stylesheet"
             href="{{ Vite::asset('resources/views/templates/pets/nutritious-feeding-for-happy-bunnies/css/style.css') }}" />
-    </x-slot:css>
+    </x-slot>
 
     <!-- Event timer/counter -->
     <div class="toz-timer">

@@ -2,7 +2,7 @@
     <x-slot:css>
         <link rel="stylesheet"
             href="{{ Vite::asset('resources/views/templates/study/amplify-your-learning/css/style.css') }}" />
-    </x-slot:css>
+    </x-slot>
 
     <div class="toz-timer">
         <!-- Days -->

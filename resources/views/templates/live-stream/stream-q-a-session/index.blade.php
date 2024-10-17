@@ -2,7 +2,7 @@
     <x-slot:css>
         <link rel="stylesheet"
             href="{{ Vite::asset('resources/views/templates/live-stream/stream-q-a-session/css/style.css') }}" />
-    </x-slot:css>
+    </x-slot>
 
     <div class="toz-timer">
         <!-- Days -->

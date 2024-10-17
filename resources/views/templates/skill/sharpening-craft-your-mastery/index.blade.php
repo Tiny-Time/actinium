@@ -2,7 +2,7 @@
     <x-slot:css>
         <link rel="stylesheet"
             href="{{ Vite::asset('resources/views/templates/skill/sharpening-craft-your-mastery/css/style.css') }}" />
-    </x-slot:css>
+    </x-slot>
 
     <x-slot:stroke>
         <script type="text/javascript">
@@ -37,7 +37,7 @@
                 bgSeconds.style.width = `${(countdown.seconds / maxSeconds) * 100}%`;
             });
         </script>
-    </x-slot:js>
+    </x-slot>
 
     <div class="toz-timer">
         <!-- Days -->

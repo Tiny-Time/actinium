@@ -2,9 +2,7 @@
     <x-slot:css>
         <link rel="stylesheet"
             href="{{ Vite::asset('resources/views/templates/live-stream/technology-consumer-electronics/css/style.css') }}" />
-    </x-slot:css>
-
-    <x-slot:live>
+      <x-slot:live>
         <div class="mb-3">
             <img src="{{ Vite::asset('resources/views/templates/live-stream/technology-consumer-electronics/images/live_icon.webp') }}"
                 alt="live icon" width="80" />
