@@ -3237,6 +3237,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'perfect, timing, fitness, paid, template',
             ],
+            [
+                'id' => 294,
+                'name' => 'Beyond Imagination',
+                'category' => 'Birthday',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/birthday/beyond-imagination/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.birthday.beyond-imagination.index',
+                'tokens' => 7,
+                'tags' => 'beyond, imagination, birthday, paid, template',
+            ],
         ];
     }
 
