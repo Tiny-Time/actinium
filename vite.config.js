@@ -312,6 +312,7 @@ export default defineConfig({
                 "resources/views/templates/live-stream/deep-sea-exploration/css/style.css",
                 "resources/views/templates/live-stream/wildlife-streaming/css/style.css",
                 "resources/views/templates/live-stream/sculpting/css/style.css",
+                "resources/views/templates/live-stream/dance-performances/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

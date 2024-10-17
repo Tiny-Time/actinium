@@ -3314,6 +3314,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'sculpting, live stream, paid, template',
             ],
+            [
+                'id' => 301,
+                'name' => 'Dance Performances',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/dance-performances/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.dance-performances.index',
+                'tokens' => 7,
+                'tags' => 'dance, performances, live stream, paid, template',
+            ],
         ];
     }
 
