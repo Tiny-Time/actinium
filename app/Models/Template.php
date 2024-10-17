@@ -3303,6 +3303,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'wildlife, streaming, live stream, paid, template',
             ],
+            [
+                'id' => 300,
+                'name' => 'Sculpting',
+                'category' => 'Live Stream',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/live-stream/sculpting/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.live-stream.sculpting.index',
+                'tokens' => 7,
+                'tags' => 'sculpting, live stream, paid, template',
+            ],
         ];
     }
 
