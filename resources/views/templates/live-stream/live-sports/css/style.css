@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap");
+* {
+    font-family: "Domine", serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    color: #cbddde;
+    background: rgba(23, 36, 37, 0.2);
+    min-height: 100dvh;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    color: #cbddde;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+    text-align: center;
+}
+
+.toz-timer {
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: max-content;
+    margin: 0;
+}
+
+.toz-ec-d {
+    display: flex;
+    width: 140px;
+    height: 140px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.toz-ec-d > div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    align-items: center;
+    line-height: 1.2;
+    z-index: 1;
+}
+
+.toz-ec-d img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.toz-unit {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-transform: lowercase;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.toz-subscription,
+li.splide__slide > div {
+    color: #cbddde;
+    background: rgba(23, 36, 37, 0.25);
+    border: 2px solid #cbddde;
+    border-radius: 12px;
+}
+
+li.splide__slide > div > h3,
+li.splide__slide > div > p,
+li.splide__slide > div > svg {
+    color: #cbddde;
+}
+
+.toz-form {
+    gap: 10px;
+}
+
+.toz-input {
+    font-size: 14px;
+}
+
+.toz-f-btn {
+    color: #172425;
+    background: #cbddde;
+    border-radius: 20px;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: #cbddde;
+    color: #172425;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 36px;
+        gap: 16px;
+    }
+
+    .toz-ec-d {
+        width: 110px;
+        height: 110px;
+    }
+
+    .toz-unit {
+        font-size: 14px;
+    }
+}
