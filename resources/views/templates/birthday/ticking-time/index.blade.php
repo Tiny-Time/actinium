@@ -9,7 +9,8 @@
         <!-- Days -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/birthday/ticking-time/images/timer_icon.svg') }}" alt="Timer icon" />
+                <img src="{{ Vite::asset('resources/views/templates/birthday/ticking-time/images/timer_icon.svg') }}"
+                    alt="Timer icon" />
                 <div class="toz-days" id="toz-days">365</div>
             </div>
             <span class="toz-unit">Days</span>
@@ -18,7 +19,8 @@
         <!-- Hours -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/birthday/ticking-time/images/timer_icon.svg') }}" alt="Timer icon" />
+                <img src="{{ Vite::asset('resources/views/templates/birthday/ticking-time/images/timer_icon.svg') }}"
+                    alt="Timer icon" />
                 <div class="toz-hours" id="toz-hours">24</div>
             </div>
             <span class="toz-unit">Hours</span>
@@ -27,7 +29,8 @@
         <!-- Minutes -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/birthday/ticking-time/images/timer_icon.svg') }}" alt="Timer icon" />
+                <img src="{{ Vite::asset('resources/views/templates/birthday/ticking-time/images/timer_icon.svg') }}"
+                    alt="Timer icon" />
                 <div class="toz-mins" id="toz-mins">60</div>
             </div>
             <span class="toz-unit">Minutes</span>
@@ -36,7 +39,8 @@
         <!-- Seconds -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/birthday/ticking-time/images/timer_icon.svg') }}" alt="Timer icon" />
+                <img src="{{ Vite::asset('resources/views/templates/birthday/ticking-time/images/timer_icon.svg') }}"
+                    alt="Timer icon" />
                 <div class="toz-secs" id="toz-secs">60</div>
             </div>
             <span class="toz-unit">Seconds</span>

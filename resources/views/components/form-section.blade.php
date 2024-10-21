@@ -12,7 +12,8 @@
             {{ $form }}
 
             @if (isset($actions))
-                <div class="flex items-center justify-end px-4 py-3 text-right shadow bg-gray-50 dark:bg-gray-800 sm:px-6 rounded-bl-md rounded-br-md">
+                <div
+                    class="flex items-center justify-end px-4 py-3 text-right shadow bg-gray-50 dark:bg-gray-800 sm:px-6 rounded-bl-md rounded-br-md">
                     {{ $actions }}
                 </div>
             @endif

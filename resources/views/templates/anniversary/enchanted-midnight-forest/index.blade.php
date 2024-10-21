@@ -17,10 +17,8 @@
             </div>
             <!-- Divider -->
             <div class="toz-divider">
-                <svg width="9" height="80" viewBox="0 0 9 97" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0.313232" y="0.449463" width="7.71596" height="96.4495" rx="3.85798"
-                        fill="white" />
+                <svg width="9" height="80" viewBox="0 0 9 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.313232" y="0.449463" width="7.71596" height="96.4495" rx="3.85798" fill="white" />
                 </svg>
             </div>
             <!-- Hours -->
@@ -31,10 +29,8 @@
         </div>
         <!-- Divider -->
         <div class="hidden toz-divider sm:block">
-            <svg width="9" height="80" viewBox="0 0 9 97" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <rect x="0.313232" y="0.449463" width="7.71596" height="96.4495" rx="3.85798"
-                    fill="white" />
+            <svg width="9" height="80" viewBox="0 0 9 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.313232" y="0.449463" width="7.71596" height="96.4495" rx="3.85798" fill="white" />
             </svg>
         </div>
         <div class="flex items-center gap-4">
@@ -45,10 +41,8 @@
             </div>
             <!-- Divider -->
             <div class="toz-divider">
-                <svg width="9" height="80" viewBox="0 0 9 97" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0.313232" y="0.449463" width="7.71596" height="96.4495" rx="3.85798"
-                        fill="white" />
+                <svg width="9" height="80" viewBox="0 0 9 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.313232" y="0.449463" width="7.71596" height="96.4495" rx="3.85798" fill="white" />
                 </svg>
             </div>
             <!-- Seconds -->

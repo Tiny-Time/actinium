@@ -1,6 +1,7 @@
 <x-template :event="$event" :userIP="$userIP">
     <x-slot:css>
-        <link rel="stylesheet" href="{{ Vite::asset('resources/views/templates/meeting/meeting-time-keeper/css/style.css') }}" />
+        <link rel="stylesheet"
+            href="{{ Vite::asset('resources/views/templates/meeting/meeting-time-keeper/css/style.css') }}" />
     </x-slot>
 
     <!-- Event timer/counter -->

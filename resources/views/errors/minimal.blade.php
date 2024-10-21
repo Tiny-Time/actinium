@@ -53,7 +53,8 @@
         <div class="grid gap-3 mx-auto mt-3 md:grid-cols-3">
             @foreach ($templates as $temp)
                 <div class="overflow-hidden bg-gray-200 rounded">
-                    <img src="{{ Vite::asset($temp->image) }}" alt="{{ $temp->name }}" class="object-cover w-full h-44">
+                    <img src="{{ Vite::asset($temp->image) }}" alt="{{ $temp->name }}"
+                        class="object-cover w-full h-44">
                     <p class="px-4 my-2 font-semibold text-md">{{ $temp->name }}</p>
                 </div>
             @endforeach

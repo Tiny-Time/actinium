@@ -18,8 +18,7 @@
                 @click.away="$store.openSubscriptionModal.toggle()">
                 <!-- Paid Membership -->
                 <div class="relative w-full p-4 -mb-4 bg-gray-100 dark:bg-gray-900">
-                    <div
-                        class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-red-100">
+                    <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-red-100">
                         <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"

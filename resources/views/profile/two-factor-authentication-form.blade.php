@@ -50,11 +50,12 @@
 
                 @if ($showingConfirmation)
                     <div class="dark:text-gray-300">
-                        <div class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
+                        <div
+                            class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full focus-within:border-indigo-500">
                             <x-label for="code" value="{{ __('Code') }}" class="!bg-white dark:!bg-gray-800" />
 
-                            <x-input id="code" type="text" name="code" inputmode="numeric" autofocus autocomplete="one-time-code"
-                                wire:model="code"
+                            <x-input id="code" type="text" name="code" inputmode="numeric" autofocus
+                                autocomplete="one-time-code" wire:model="code"
                                 wire:keydown.enter="confirmTwoFactorAuthentication" />
 
                         </div>
@@ -70,7 +71,8 @@
                     </p>
                 </div>
 
-                <div class="grid max-w-xl gap-1 px-4 py-4 mt-4 font-mono text-sm bg-gray-100 rounded-lg dark:bg-gray-800">
+                <div
+                    class="grid max-w-xl gap-1 px-4 py-4 mt-4 font-mono text-sm bg-gray-100 rounded-lg dark:bg-gray-800">
                     @foreach (json_decode(decrypt($this->user->two_factor_recovery_codes), true) as $code)
                         <div>{{ $code }}</div>
                     @endforeach
@@ -79,7 +81,7 @@
         @endif
 
         <div class="mt-5">
-            @if (! $this->enabled)
+            @if (!$this->enabled)
                 <x-confirms-password wire:then="enableTwoFactorAuthentication">
                     <x-button type="button" wire:loading.attr="disabled">
                         {{ __('Enable') }}

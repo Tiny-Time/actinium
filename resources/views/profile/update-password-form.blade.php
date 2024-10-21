@@ -20,8 +20,7 @@
 
                 <div class="rounded-lg border-[1.7px] bg-white relative mt-4 w-full focus-within:border-indigo-500">
                     <x-label class="rounded-b !bg-cyan-500" for="password" value="{{ __('New Password') }}" />
-                    <x-input id="password" type="password" wire:model="state.password"
-                        autocomplete="new-password"/>
+                    <x-input id="password" type="password" wire:model="state.password" autocomplete="new-password" />
                 </div>
                 <x-input-error for="password" class="mt-2" />
 

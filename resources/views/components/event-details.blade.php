@@ -11,11 +11,12 @@
         $event->contact_name)
     <div class="mt-4 text-lg text-center text-white" id="toz-event-details" x-data="{
         endTime: window.eventStartEndTime(@js(\Carbon\Carbon::parse($event->event_end_time)->format('Y-m-d H:i:s')), @js($event->timezone)),
-        checkinTime: window.eventStartEndTime(@js(\Carbon\Carbon::parse($event->check_in_time)->format('Y-m-d H:i:s')),  @js($event->timezone))
+        checkinTime: window.eventStartEndTime(@js(\Carbon\Carbon::parse($event->check_in_time)->format('Y-m-d H:i:s')), @js($event->timezone))
     }">
         <h3 class="text-2xl font-bold text-center title-color md:text-3xl">Event Details</h3>
         @if ($event->check_in_time)
-            <p class="mt-2"><span class="font-bold title-color">Check-In Time:</span> <span x-text="checkinTime"></span> </p>
+            <p class="mt-2"><span class="font-bold title-color">Check-In Time:</span> <span x-text="checkinTime"></span>
+            </p>
         @endif
 
         @if ($event->event_end_time)

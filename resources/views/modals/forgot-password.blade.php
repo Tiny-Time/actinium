@@ -1,4 +1,5 @@
-<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" x-show="openForgotPasswordModal" x-cloak>
+<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" x-show="openForgotPasswordModal"
+    x-cloak>
     <div class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" x-show="openForgotPasswordModal"
         x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0"
         x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200"
@@ -37,8 +38,8 @@
                     <div
                         class="relative w-full bg-[url('../images/bg.webp')] bg-cover bg-no-repeat bg-center rounded-l-2xl hidden lg:block">
                         <svg class="absolute w-5 h-5 cursor-pointer right-2 top-2"
-                            @click="openForgotPasswordModal = !openForgotPasswordModal" viewBox="0 0 30 30" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                            @click="openForgotPasswordModal = !openForgotPasswordModal" viewBox="0 0 30 30"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.5 7.5L7.5 22.5M7.5 7.5L22.5 22.5" stroke="#F1F5F9" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>

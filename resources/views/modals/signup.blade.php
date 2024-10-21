@@ -36,8 +36,8 @@
                             </div>
                         </div>
                         <!-- Email SignUp -->
-                        <div class="relative flex flex-col items-center justify-center w-full py-6"
-                            x-show="showSignUp" x-transition:enter="transform duration-300 ease-out"
+                        <div class="relative flex flex-col items-center justify-center w-full py-6" x-show="showSignUp"
+                            x-transition:enter="transform duration-300 ease-out"
                             x-transition:enter-start="transform translate-x-full"
                             x-transition:enter-end="transform translate-x-0"
                             x-transition:leave="transform duration-100 ease-in"

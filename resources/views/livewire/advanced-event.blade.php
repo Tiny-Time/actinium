@@ -120,7 +120,8 @@
                 <h1 class="text-xl font-bold md:text-2xl">Choose a template</h1>
                 <form method="POST" action="#"
                     class="h-10 md:w-[350px] lg:w-[400px] flex rounded-full items-center bg-[#8D8D8D] overflow-clip">
-                    <input type="search" wire:model.live="search" placeholder="Type in a search keyword..." name="find" id="find-event"
+                    <input type="search" wire:model.live="search" placeholder="Type in a search keyword..."
+                        name="find" id="find-event"
                         class="flex-grow px-4 text-sm text-gray-100 bg-transparent border-none placeholder:text-gray-100 focus:ring-0 focus:outline-none">
                     <button class="block h-full px-3 text-lg font-semibold text-gray-100 bg-red-400">
                         <svg class="w-5 h-5" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -139,15 +140,15 @@
                 <div class="grid gap-3 mt-3 md:grid-cols-3 lg:grid-cols-4" x-data="{ selectedIndex: {{ $templates && $templates[0] ? $templates[0]['id'] : 'null' }} }"
                     x-init="() => { $watch('selectedIndex', value => templateSelected(value)) }">
                     @foreach ($templates as $temp)
-                        <div class="relative overflow-hidden bg-gray-200 rounded group" wire:key="{{ $temp['id'] }}">
+                        <div class="relative overflow-hidden bg-gray-200 rounded group"
+                            wire:key="{{ $temp['id'] }}">
                             <div class="absolute top-0 bottom-0 left-0 right-0 items-center justify-center bg-black/60 group-hover:flex"
                                 :class="selectedIndex == @js($temp['id']) ? 'flex' : 'hidden'"
                                 @click="selectedIndex !== {{ $temp['id'] }} ? selectedIndex = {{ $temp['id'] }} : selectedIndex = null;">
                                 <button type="button" class="px-4 py-2 text-sm bg-red-400 rounded text-gray-50"
                                     x-text="selectedIndex == {{ $temp['id'] }} ? 'Selected' : 'Select Template'"></button>
                             </div>
-                            <img src="{{ $temp['image'] }}"
-                                alt="TemplateName" class="object-cover w-full h-44">
+                            <img src="{{ $temp['image'] }}" alt="TemplateName" class="object-cover w-full h-44">
                             <p class="px-4 my-2 font-semibold text-md">{{ $temp['name'] }}</p>
                         </div>
                     @endforeach

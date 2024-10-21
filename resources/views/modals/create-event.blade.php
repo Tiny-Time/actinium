@@ -90,13 +90,13 @@
                                     </div>
                                     <div class="mt-3">
                                         <label for="eventTerms" class="flex items-start">
-                                            <x-checkbox id="eventTerms" name="eventTerms" x-model="formData.ce_terms"/>
+                                            <x-checkbox id="eventTerms" name="eventTerms" x-model="formData.ce_terms" />
                                             <span class="ml-2 text-sm">I am confirming that my event does not reflect
-                                                neither contains any materials that is illegal in the U.S. and the country
+                                                neither contains any materials that is illegal in the U.S. and the
+                                                country
                                                 which I reside nor has any pornography or 18+ material.</span>
                                         </label>
-                                        <span
-                                            x-show="(formError.ce_terms && formData.ce_terms == false)"
+                                        <span x-show="(formError.ce_terms && formData.ce_terms == false)"
                                             x-text="formErrorText.ce_terms" class="text-sm text-pink-500"></span>
                                     </div>
                                     <x-button type="button" class="disabled:opacity-50 !bg-cyan-500"
@@ -127,10 +127,10 @@
                                                             src="{{ Vite::asset($ctemplate->image) }}"
                                                             class="w-full h-64 rounded-lg shadow-md">
                                                     </label>
-                                                    <input type="radio" name="template" value="{{ $ctemplate->id }}"
-                                                        x-model="selectedImage" class="hidden" id="template{{ $ctemplate->id }}" @if ($loop->first)
-                                                            checked
-                                                        @endif>
+                                                    <input type="radio" name="template"
+                                                        value="{{ $ctemplate->id }}" x-model="selectedImage"
+                                                        class="hidden" id="template{{ $ctemplate->id }}"
+                                                        @if ($loop->first) checked @endif>
                                                 </div>
                                             @endforeach
                                             <!-- Right arrow -->

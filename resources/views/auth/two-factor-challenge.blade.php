@@ -38,7 +38,9 @@
                         {{ __('Log in') }}
                     </x-button>
 
-                    <button type="button" class="flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-white bg-blue-400 rounded-lg" x-show="! recovery"
+                    <button type="button"
+                        class="flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-white bg-blue-400 rounded-lg"
+                        x-show="! recovery"
                         x-on:click="
                                         recovery = true;
                                         $nextTick(() => { $refs.recovery_code.focus() })
@@ -54,7 +56,9 @@
                         <span>{{ __('Use a recovery code') }}</span>
                     </button>
 
-                    <button type="button" class="flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-white bg-blue-400 rounded-lg" x-cloak x-show="recovery"
+                    <button type="button"
+                        class="flex items-center justify-center w-full gap-2 py-2 mt-3 text-sm font-semibold text-white bg-blue-400 rounded-lg"
+                        x-cloak x-show="recovery"
                         x-on:click="
                                         recovery = false;
                                         $nextTick(() => { $refs.code.focus() })

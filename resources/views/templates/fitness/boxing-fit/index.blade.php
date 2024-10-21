@@ -1,14 +1,14 @@
 <x-template :event="$event" :userIP="$userIP">
     <x-slot:css>
-        <link rel="stylesheet"
-            href="{{ Vite::asset('resources/views/templates/fitness/boxing-fit/css/style.css') }}" />
+        <link rel="stylesheet" href="{{ Vite::asset('resources/views/templates/fitness/boxing-fit/css/style.css') }}" />
     </x-slot>
 
     <!-- Event timer/counter -->
     <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fitness/boxing-fit/images/timer_icon.webp') }}" alt="Timer icon">
+            <img src="{{ Vite::asset('resources/views/templates/fitness/boxing-fit/images/timer_icon.webp') }}"
+                alt="Timer icon">
             <div>
                 <div class="toz-days" id="toz-days">
                     365
@@ -19,7 +19,8 @@
 
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fitness/boxing-fit/images/timer_icon.webp') }}" alt="Timer icon">
+            <img src="{{ Vite::asset('resources/views/templates/fitness/boxing-fit/images/timer_icon.webp') }}"
+                alt="Timer icon">
             <div>
                 <div class="toz-hours" id="toz-hours">
                     24
@@ -30,7 +31,8 @@
 
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fitness/boxing-fit/images/timer_icon.webp') }}" alt="Timer icon">
+            <img src="{{ Vite::asset('resources/views/templates/fitness/boxing-fit/images/timer_icon.webp') }}"
+                alt="Timer icon">
             <div>
                 <div class="toz-mins" id="toz-mins">
                     60
@@ -41,7 +43,8 @@
 
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fitness/boxing-fit/images/timer_icon.webp') }}" alt="Timer icon">
+            <img src="{{ Vite::asset('resources/views/templates/fitness/boxing-fit/images/timer_icon.webp') }}"
+                alt="Timer icon">
             <div>
                 <div class="toz-secs" id="toz-secs">
                     60

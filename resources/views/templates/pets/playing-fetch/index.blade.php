@@ -1,7 +1,6 @@
 <x-template :event="$event" :userIP="$userIP">
     <x-slot:css>
-        <link rel="stylesheet"
-            href="{{ Vite::asset('resources/views/templates/pets/playing-fetch/css/style.css') }}" />
+        <link rel="stylesheet" href="{{ Vite::asset('resources/views/templates/pets/playing-fetch/css/style.css') }}" />
     </x-slot>
 
     <!-- Event timer/counter -->

@@ -1,6 +1,7 @@
 <x-template :event="$event" :userIP="$userIP">
     <x-slot:css>
-        <link rel="stylesheet" href="{{ Vite::asset('resources/views/templates/vacation/journey-to-relaxation/css/style.css') }}" />
+        <link rel="stylesheet"
+            href="{{ Vite::asset('resources/views/templates/vacation/journey-to-relaxation/css/style.css') }}" />
     </x-slot>
 
     <x-slot:js>
