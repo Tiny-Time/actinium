@@ -133,9 +133,9 @@ class EventResource extends Resource
                     ->tooltip('Delete'),
             ])
             ->bulkActions([
-                // Tables\Actions\BulkActionGroup::make([
-                //     Tables\Actions\DeleteBulkAction::make(),
-                // ]),
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make()
@@ -301,7 +301,9 @@ class EventResource extends Resource
                         ->string()
                         ->hint('Display a message when the timer stops.')
                         ->hintColor('danger')
-                        ->columnSpanFull(),
+                        ->columnSpanFull()
+                        ->minLength(3)
+                        ->maxLength(191),
                 ])
                 ->collapsible()
                 ->persistCollapsed(),

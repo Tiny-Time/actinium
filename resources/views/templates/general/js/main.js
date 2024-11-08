@@ -9,6 +9,8 @@ function calculateTimeRemaining(targetDate) {
             .then(() => {})
             .catch((error) => {});
         clearInterval(timerInterval);
+        // Display post event message
+        $('#post-event').removeClass('hidden')
         return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     }
 

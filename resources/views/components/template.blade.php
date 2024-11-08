@@ -40,7 +40,10 @@
                 <h1 class="text-3xl font-bold capitalize toz-title md:text-5xl">{{ $event->title }}</h1>
                 @if ($event->description)
                     <h2 class="max-w-2xl mx-auto text-lg font-medium text-gray-200 toz-subtitle md:text-xl">
-                        {{ $event->description }}<br>{{ $event->post_event_massage }}
+                        {{ $event->description }}<br>
+                        <span id="post-event" class="hidden">
+                            {{ $event->post_event_massage }}
+                        </span>
                     </h2>
                 @endif
             </div>
