@@ -2,8 +2,11 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Event;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
 use Illuminate\Console\Command;
-use Spatie\Sitemap\SitemapGenerator;
+use Illuminate\Support\Facades\Route;
 
 class GenerateSitemap extends Command
 {
@@ -15,7 +18,7 @@ class GenerateSitemap extends Command
     protected $signature = 'app:generate-sitemap';
 
     /**
-     * The console Generate sitemap.
+     * The console description for generating sitemap.
      *
      * @var string
      */
@@ -26,7 +29,37 @@ class GenerateSitemap extends Command
      */
     public function handle()
     {
-        SitemapGenerator::create(env('APP_URL'))->writeToFile('public/sitemap.xml');
+        $sitemap = Sitemap::create();
+
+        // Get all static routes (typically GET routes with no parameters)
+        $staticRoutes = collect(Route::getRoutes())
+            ->filter(function ($route) {
+                return in_array('GET', $route->methods())
+                    && strpos($route->uri(), '{') === false
+                    && in_array('web', $route->gatherMiddleware()); // Only include routes using the 'web' middleware
+            });
+
+        foreach ($staticRoutes as $route) {
+            $sitemap->add(
+                Url::create(url($route->uri()))
+                    ->setPriority(0.8)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+            );
+        }
+
+        // Add public events
+        $publicEvents = Event::where('status', true)->where('public', true)->get();
+
+        foreach ($publicEvents as $event) {
+            $sitemap->add(
+                Url::create(route('event.preview', $event->event_id))
+                    ->setPriority(0.7)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+            );
+        }
+
+        // Save the sitemap
+        $sitemap->writeToFile(public_path('sitemap.xml'));
 
         $this->info('Sitemap generated successfully!');
     }
