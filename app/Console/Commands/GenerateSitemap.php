@@ -6,6 +6,7 @@ use App\Models\Event;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 class GenerateSitemap extends Command
@@ -36,7 +37,8 @@ class GenerateSitemap extends Command
             ->filter(function ($route) {
                 return in_array('GET', $route->methods())
                     && strpos($route->uri(), '{') === false
-                    && in_array('web', $route->gatherMiddleware()); // Only include routes using the 'web' middleware
+                    && in_array('web', $route->gatherMiddleware()) // Only include routes using the 'web' middleware
+                    && $route->uri() !== 'generate-sitemap'; // Exclude generate-sitemap route
             });
 
         foreach ($staticRoutes as $route) {
@@ -62,5 +64,7 @@ class GenerateSitemap extends Command
         $sitemap->writeToFile(public_path('sitemap.xml'));
 
         $this->info('Sitemap generated successfully!');
+
+        Log::info('Sitemap generated successfully!');
     }
 }

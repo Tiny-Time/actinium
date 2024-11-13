@@ -9,18 +9,13 @@
 
     @sectionMissing('title')
         <title>{{ env('META_TITLE', 'TinyTime') }}</title>
-        <meta property="og:title" content="Create and Customize an Event | TinyTime">
     @else
-        <title>@yield('title')</title>
-        <meta property="og:title" content="@yield('title') | Tinytime">
+        <title>@yield('title') | Tinytime</title>
     @endif
 
     @sectionMissing('description')
         <meta name="description" content="{{ env('META_DESCRIPTION', 'TinyTime') }}">
-        <meta property="og:description"
-            content="TinyTime is a user-friendly platform that enables individuals and organizations to effortlessly plan and personalize their events. Creat events, birthday events, wedding events, concerts, work events, product launch, holiday party, religious events.">
     @else
-        <meta name="description" content="@yield('description')">
         <meta property="og:description" content="@yield('description')">
     @endif
 
