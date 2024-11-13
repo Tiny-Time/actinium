@@ -2,51 +2,47 @@
     <x-slot:css>
         <link rel="stylesheet"
             href="{{ Vite::asset('resources/views/templates/vacation/family-adventure/css/style.css') }}" />
-    </x-slot>
-    <div class="toz-timer">
-        <!-- Days -->
-        <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/family-adventure/images/timer_icon.webp') }}"
-                alt="Timer icon">
-            <div>
-                <div class="toz-days" id="toz-days">
-                    365
+        </x-slot>
+
+        <div class="toz-timer">
+            <!-- Days -->
+            <div class="toz-ec-d">
+                <img src="{{ Vite::asset('resources/views/templates/vacation/family-adventure/images/timer_icon.webp') }}"
+                    alt="Timer icon">
+
+                <div class="toz-days">
+                    <div id="toz-days">365</div>
+                    <span class="toz-unit">Days</span>
                 </div>
-                <span class="toz-unit">d</span>
+            </div>
+            <!-- Hours -->
+            <div class="toz-ec-d">
+                <img src="{{ Vite::asset('resources/views/templates/vacation/family-adventure/images/timer_icon.webp') }}"
+                    alt="Timer icon">
+
+                <div class="toz-hours">
+                    <div id="toz-hours">24</div>
+                    <span class="toz-unit">Hrs</span>
+                </div>
+            </div>
+            <!-- Minutes -->
+            <div class="toz-ec-d">
+                <img src="{{ Vite::asset('resources/views/templates/vacation/family-adventure/images/timer_icon.webp') }}"
+                    alt="Timer icon">
+
+                <div class="toz-mins">
+                    <div id="toz-mins">60</div>
+                    <span class="toz-unit">Mins</span>
+                </div>
+            </div>
+            <!-- Seconds -->
+            <div class="toz-ec-d">
+                <img src="{{ Vite::asset('resources/views/templates/vacation/family-adventure/images/timer_icon.webp') }}"
+                    alt="Timer icon">
+                <div class="toz-secs">
+                    <div id="toz-secs">60</div>
+                    <span class="toz-unit">Secs</span>
+                </div>
             </div>
         </div>
-        <!-- Hours -->
-        <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/family-adventure/images/timer_icon.webp') }}"
-                alt="Timer icon">
-            <div>
-                <div class="toz-hours" id="toz-hours">
-                    24
-                </div>
-                <span class="toz-unit">h</span>
-            </div>
-        </div>
-        <!-- Minutes -->
-        <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/family-adventure/images/timer_icon.webp') }}"
-                alt="Timer icon">
-            <div>
-                <div class="toz-mins" id="toz-mins">
-                    60
-                </div>
-                <span class="toz-unit">m</span>
-            </div>
-        </div>
-        <!-- Seconds -->
-        <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/family-adventure/images/timer_icon.webp') }}"
-                alt="Timer icon">
-            <div>
-                <div class="toz-secs" id="toz-secs">
-                    60
-                </div>
-                <span class="toz-unit">s</span>
-            </div>
-        </div>
-    </div>
 </x-template>
