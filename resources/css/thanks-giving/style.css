@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Grechen+Fuemen&family=Raleway:wght@100..900&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0 auto;
+    background: url("/images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.toz {
+    color: #e7d5ae;
+    min-height: 100dvh;
+}
+
+.toz-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.toz-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+.nav-logo {
+    color: #e7d5ae;
+    font-size: 36px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: "Grechen Fuemen", cursive;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+.toz-form {
+    font-family: arial;
+    height: 40px;
+    width: 350px;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    border-radius: 12px;
+    border: 2px solid #e7d5ae;
+    background: rgba(8, 13, 16, 0.25);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+.toz-form > img {
+    margin: auto;
+    padding: 0 10px;
+    height: 20px;
+    height: 20px;
+}
+.toz-form > input {
+    color: #e7d5ae;
+    height: 100%;
+    flex: 1;
+    left: 10%;
+    background: transparent;
+    outline: none;
+    border: 0;
+}
+::placeholder {
+    color: #e7d5ae;
+}
+.toz-form > button {
+    color: #080d10;
+    border: 0;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 0px 10px 10px 0px;
+    background: #e7d5ae;
+}
+.toz-registration {
+    display: flex;
+    gap: 10px;
+}
+.login {
+    color: #e7d5ae;
+    height: 40px;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    background: transparent;
+    border: 3px solid #e7d5ae;
+}
+.signup {
+    color: #080d10;
+    height: 40px;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 0;
+    background: #e7d5ae;
+}
+.hamburger {
+    display: none;
+}
+.search-icon-btn {
+    height: 40px;
+    width: 40px;
+    background: none;
+    border: 0;
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #e7d5ae;
+}
+.toz-text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    z-index: 1;
+    gap: 5px;
+}
+.toz-title {
+    font-size: 38px;
+    letter-spacing: 7px;
+    margin: 0;
+    font-weight: 400;
+    font-family: "Arizonia", cursive;
+}
+
+.toz-timer-text-1{
+    font-family: "Arizonia", cursive;
+}
+
+.toz-subtitle {
+    font-size: 18px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+}
+.bg-svg {
+    position: absolute;
+    width: 100vw;
+    top: 20%;
+    z-index: 0;
+}
+.toz-timer {
+    font-size: 64px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: max-content;
+    font-family: "Grechen Fuemen";
+    font-weight: 400;
+    gap: 20px;
+    z-index: 1;
+    margin: 0;
+}
+
+.toz-ec-d {
+    border-radius: 12px;
+    border: 3px solid #e7d5ae;
+    background: #080d10;
+}
+
+.toz-ec-d > h2 {
+    color: #e7d5ae;
+    line-height: 1;
+}
+.toz-unit {
+    font-size: 20px;
+    line-height: 1;
+    margin: 0;
+}
+.toz-divider {
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    gap: 8px;
+}
+.toz-divider > span {
+    width: 10px;
+    height: 12px;
+    background: #080d10;
+    border: 2px solid #e7d5ae;
+}
+.toz-control-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    gap: 10px;
+}
+
+.toz-tcb {
+    display: flex;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1.5px solid #e7d5ae;
+    background: #080d10;
+}
+
+.toz-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: circle(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+.toz-event-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    z-index: 1;
+    gap: 10px;
+}
+.event-div {
+    width: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+.toz-event-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 2px solid #e7d5ae;
+    background: #080d10;
+}
+
+.event-text {
+    font-size: 12px;
+    font-family: arial;
+    font-weight: 700;
+}
+
+@media (max-width: 767px) {
+    .toz-main {
+        padding: 30px 20px;
+        gap: 30px;
+    }
+    .toz-navbar,
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-title {
+        font-size: 32px;
+        letter-spacing: 8px;
+    }
+
+    .toz-subtitle {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 48px;
+        gap: 18px;
+        padding: 0px;
+    }
+    .toz-timer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    #exc {
+        display: none;
+    }
+    .toz-ec-d {
+        width: 120px;
+        height: 120px;
+        border-width: 2px;
+        -webkit-text-stroke-width: 2px;
+        gap: 5px;
+    }
+    .toz-unit {
+        font-size: 20px;
+        -webkit-text-stroke-width: 1px;
+        margin-top: 10px;
+    }
+    .toz-control-buttons {
+        gap: 5px;
+    }
+    .toz-divider {
+        width: 70%;
+    }
+    .toz-event-buttons {
+        justify-content: space-between;
+        padding: 0px;
+    }
+
+    .event-div {
+        width: 75px;
+    }
+    .nav-menu {
+        position: fixed;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        flex: none;
+        gap: 10px;
+        left: -100%;
+        padding-left: 20px;
+        top: 5rem;
+        backdrop-filter: blur(10px);
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

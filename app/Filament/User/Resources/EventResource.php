@@ -272,7 +272,7 @@ class EventResource extends Resource
                         ->columnSpanFull(),
                     Forms\Components\DateTimePicker::make('check_in_time')
                         ->seconds(false)
-                        ->after('date_time')
+                        ->afterOrEqual('date_time')
                         ->string()
                         ->hint('The check in day and time for visitors.')
                         ->hintColor('danger')
