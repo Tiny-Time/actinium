@@ -5075,7 +5075,7 @@ class Template extends Model
                 'tags' => 'outdoor, pet, fun, day, pets, paid, template',
             ],
             [
-                'id' => 461,
+                'id' => 462,
                 'name' => 'Hands-On Learning',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5086,7 +5086,7 @@ class Template extends Model
                 'tags' => 'hands-on, learning, study, paid, template',
             ],
             [
-                'id' => 462,
+                'id' => 463,
                 'name' => 'Radiant And Refreshing',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5097,7 +5097,7 @@ class Template extends Model
                 'tags' => 'radiant, and, refreshing, beauty, paid, template',
             ],
             [
-                'id' => 463,
+                'id' => 464,
                 'name' => 'Blissful Retreat',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -5108,7 +5108,7 @@ class Template extends Model
                 'tags' => 'blissful, retreat, vacation, paid, template',
             ],
             [
-                'id' => 464,
+                'id' => 465,
                 'name' => 'Gemini Spirit',
                 'category' => 'Holiday',
                 'sub_category' => '',
@@ -5119,7 +5119,7 @@ class Template extends Model
                 'tags' => 'gemini, spirit, holiday, paid, template',
             ],
             [
-                'id' => 465,
+                'id' => 466,
                 'name' => 'Family Adventure',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -5130,7 +5130,7 @@ class Template extends Model
                 'tags' => 'family, adventure, vacation, paid, template',
             ],
             [
-                'id' => 466,
+                'id' => 467,
                 'name' => 'Capture And Learn',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5141,7 +5141,7 @@ class Template extends Model
                 'tags' => 'capture, and, learn, study, paid, template',
             ],
             [
-                'id' => 467,
+                'id' => 468,
                 'name' => 'High Jump',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -5152,7 +5152,7 @@ class Template extends Model
                 'tags' => 'high, jump, sport, paid, template',
             ],
             [
-                'id' => 468,
+                'id' => 469,
                 'name' => 'Voice Your Insights',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5163,7 +5163,7 @@ class Template extends Model
                 'tags' => 'voice, your, insights, meeting, paid, template',
             ],
             [
-                'id' => 469,
+                'id' => 470,
                 'name' => 'Queen Of The Day',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -5174,7 +5174,7 @@ class Template extends Model
                 'tags' => 'queen, of, the, day, birthday, paid, template',
             ],
             [
-                'id' => 470,
+                'id' => 471,
                 'name' => 'Fun Time With The Little One',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5185,7 +5185,7 @@ class Template extends Model
                 'tags' => 'fun, time, with, the, little, one, pets, paid, template',
             ],
             [
-                'id' => 471,
+                'id' => 472,
                 'name' => 'Glam Squad Beauty Tutorial',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5196,7 +5196,7 @@ class Template extends Model
                 'tags' => 'glam, squad, beauty, tutorial, beauty, paid, template',
             ],
             [
-                'id' => 472,
+                'id' => 473,
                 'name' => 'Little Star\'s Big Day',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -5207,7 +5207,7 @@ class Template extends Model
                 'tags' => 'little, star-s, big, day, birthday, paid, template',
             ],
             [
-                'id' => 473,
+                'id' => 474,
                 'name' => 'Glam Squad Beauty Tutorial',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5218,7 +5218,7 @@ class Template extends Model
                 'tags' => 'glam, squad, beauty, tutorial, beauty, paid, template',
             ],
             [
-                'id' => 474,
+                'id' => 475,
                 'name' => 'Gym Session With Coach',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -5229,7 +5229,7 @@ class Template extends Model
                 'tags' => 'gym, session, with, coach, fitness, paid, template',
             ],
             [
-                'id' => 475,
+                'id' => 476,
                 'name' => 'Exclusive First Lo0k',
                 'category' => 'Fashion',
                 'sub_category' => '',
