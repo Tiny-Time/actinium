@@ -28,6 +28,8 @@ class EventSources extends BaseWidget
             $event_id = $this->record->event_id;
             return PageView::query()
                 ->where('uri', "/event/$event_id")
+                ->where('source', 'not like', 'https://admin.tinyti.me%')
+                ->where('source', 'not like', 'https://m-admin.tinyti.me%')
                 ->select('source as page', DB::raw('count(*) as users'), DB::raw('MIN(id) as id'))
                 ->whereNotNull('source')
                 ->groupBy('source')

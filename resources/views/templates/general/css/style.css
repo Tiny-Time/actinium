@@ -1,0 +1,11 @@
+.toz-timer {
+    width: 240px;
+}
+
+/* Media screen 560 */
+
+@media screen and (min-width: 560px) {
+    .toz-timer {
+        width: 100%;
+    }
+}

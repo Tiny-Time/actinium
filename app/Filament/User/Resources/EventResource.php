@@ -71,6 +71,7 @@ class EventResource extends Resource
                 Tables\Columns\TextColumn::make('user.name')
                     ->visible(auth()->user()?->hasRole('super_admin')),
                 Tables\Columns\TextColumn::make('date_time')
+                    ->label('Event Date & Time')
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\IconColumn::make('status')
@@ -84,7 +85,7 @@ class EventResource extends Resource
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
@@ -201,6 +202,7 @@ class EventResource extends Resource
                 ->hidden(!auth()->user()?->hasRole('super_admin'))
                 ->columnSpanFull(),
             CustomDateTimePicker::make('date_time')
+                ->label('Event Date & Time')
                 ->required()
                 ->columnSpanFull()
                 ->live(),

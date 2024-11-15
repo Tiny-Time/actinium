@@ -2,6 +2,7 @@
 
 <x-guest-layout>
     @push('css')
+        <link rel="stylesheet" href="{{ Vite::asset('resources/views/templates/general/css/style.css') }}">
         {{ $css }}
     @endpush
 

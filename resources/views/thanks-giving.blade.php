@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                         </button>
-                        <a href="/" class="relative nav-logo mx-auto">
+                        <a href="/" class="relative mx-auto nav-logo">
                             TinyTi.me
                             <sup
                                 class="absolute top-[10px] text-[10px] font-semibold -right-[25px] text-gray-500">Beta</sup>
@@ -136,7 +136,7 @@
             <div class="timer-template text-[#e7d5ae]" x-data="{ playBtn: true, counter: false }">
                 <div class="flex items-center justify-between min-h-[300px] py-4 md:py-8 flex-col">
                     {{-- Event Title --}}
-                    <h1 class="toz-title eventTitle text-center"
+                    <h1 class="text-center toz-title eventTitle"
                         contenteditable="true">
                         Create & Customize Events for Thanksgiving
                     </h1>
@@ -237,7 +237,7 @@
                                     <p class="text-xl toz-timer-text-1">Seconds</p>
                                 </div>
                             </div>
-                            <div class="flex items-center justify-center gap-8">
+                            <div class="flex items-center justify-center gap-4">
                                 {{-- Play --}}
                                 <div x-show="$store.playBtn.on" @click="$store.playBtn.toggle(); e.play()" x-data
                                     x-tooltip.placement.left.raw="Play"
@@ -444,7 +444,7 @@
                     <div class="flex flex-wrap justify-center gap-2 mt-3 text-xs md:gap-3 text-[#e7d5ae]">
                         {{-- Birthday --}}
                         <div class="flex flex-col items-center gap-1">
-                            <div class="toz-event-btn p-2 w-max">
+                            <div class="p-2 toz-event-btn w-max">
                                 <svg class="inline w-7 h-7" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_1_3997)">
@@ -467,7 +467,7 @@
                         </div>
                         {{-- Wedding --}}
                         <div class="flex flex-col items-center gap-1">
-                            <div class="toz-event-btn p-2 w-max">
+                            <div class="p-2 toz-event-btn w-max">
                                 <svg class="inline w-7 h-7" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_1_4005)">
@@ -490,7 +490,7 @@
                         </div>
                         {{-- Pregnancy --}}
                         <div class="flex flex-col items-center gap-1">
-                            <div class="toz-event-btn p-2 w-max">
+                            <div class="p-2 toz-event-btn w-max">
                                 <svg class="inline w-7 h-7" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -505,7 +505,7 @@
                         </div>
                         {{-- Graduation --}}
                         <div class="flex flex-col items-center gap-1">
-                            <div class="toz-event-btn p-2 w-max">
+                            <div class="p-2 toz-event-btn w-max">
                                 <svg class="inline w-7 h-7" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_1_4018)">
@@ -552,7 +552,7 @@
                         </div>
                         {{-- Events --}}
                         <div class="flex flex-col items-center gap-1">
-                            <div class="toz-event-btn p-2 w-max">
+                            <div class="p-2 toz-event-btn w-max">
                                 <svg class="inline w-7 h-7" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -564,7 +564,7 @@
                         </div>
                         {{-- Breaks --}}
                         <div class="flex flex-col items-center gap-1">
-                            <div class="toz-event-btn p-2 w-max">
+                            <div class="p-2 toz-event-btn w-max">
                                 <svg class="inline w-7 h-7" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_1_4036)">
@@ -584,7 +584,7 @@
                         </div>
                         {{-- Holiday --}}
                         <div class="flex flex-col items-center gap-1">
-                            <div class="toz-event-btn p-2 w-max">
+                            <div class="p-2 toz-event-btn w-max">
                                 <svg class="inline w-7 h-7" viewBox="0 0 48 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_1_4041)">
@@ -603,7 +603,7 @@
                         </div>
                         {{-- Meetings --}}
                         <div class="flex flex-col items-center gap-1">
-                            <div class="toz-event-btn p-2 w-max">
+                            <div class="p-2 toz-event-btn w-max">
                                 <svg class="inline w-7 h-7" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_1_4046)">
@@ -626,7 +626,7 @@
                         </div>
                         {{-- Product Launch --}}
                         <div class="flex flex-col items-center gap-1">
-                            <div class="toz-event-btn p-2 w-max">
+                            <div class="p-2 toz-event-btn w-max">
                                 <svg class="inline w-7 h-7" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -638,7 +638,7 @@
                         </div>
                         {{-- Live Streaming --}}
                         <div class="flex flex-col items-center gap-1">
-                            <div class="toz-event-btn p-2 w-max">
+                            <div class="p-2 toz-event-btn w-max">
                                 <svg class="inline w-7 h-7" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
