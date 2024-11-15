@@ -488,6 +488,7 @@ export default defineConfig({
                 "resources/views/templates/fitness/gym-session-with-coach/css/style.css",
                 "resources/views/templates/fashion/exclusive-first-look/css/style.css",
                 "resources/css/thanks-giving/style.css",
+                "resources/views/templates/general/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
