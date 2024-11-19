@@ -5558,6 +5558,17 @@ class Template extends Model
                 'tokens' => 7,
                 'tags' => 'canine, freestyle, pets, paid, template',
             ],
+            [
+                'id' => 506,
+                'name' => 'Rugby Showdown', // Sports_22072024
+                'category' => 'Sport',
+                'sub_category' => '',
+                'image' => 'resources/views/templates/sport/rugby-showdown/images/preview.webp',
+                'type' => 'paid',
+                'path' => 'templates.sport.rugby-showdown.index',
+                'tokens' => 7,
+                'tags' => 'rugby, showdown, sport, paid, template',
+            ],
         ];
     }
 

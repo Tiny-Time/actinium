@@ -141,7 +141,12 @@ class CreateEvent extends Page
         // Update status
         $this->data['status'] = $status;
 
-        $this->event = Event::create($this->data);
+        // Check if the event already exist
+        $event = Event::where('event_id', $this->data['event_id'])->first();
+
+        if (empty($event)) {
+            $this->event = Event::create($this->data);
+        }
 
         DB::table('event_template')->insert([
             'event_id' => $this->event->id,

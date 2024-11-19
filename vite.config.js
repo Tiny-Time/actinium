@@ -519,6 +519,7 @@ export default defineConfig({
                 "resources/views/templates/meeting/canine-freestyle/css/style.css",
                 "resources/views/templates/beauty/glow-and-pamper/css/style.css",
                 "resources/views/templates/pets/canine-freestyle/css/style.css",
+                "resources/views/templates/sport/rugby-showdown/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
