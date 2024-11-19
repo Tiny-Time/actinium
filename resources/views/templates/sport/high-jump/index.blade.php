@@ -6,7 +6,7 @@
         <div class="toz-timer">
             <!-- Days -->
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/sport/high-jump/images/timer_icon.webp') }}"
+                <img src="{{ Vite::asset('resources/views/templates/sport/high-jump/images/timer_icon.svg') }}"
                     alt="Timer icon">
 
                 <div class="toz-days">
@@ -16,7 +16,7 @@
             </div>
             <!-- Hours -->
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/sport/high-jump/images/timer_icon.webp') }}"
+                <img src="{{ Vite::asset('resources/views/templates/sport/high-jump/images/timer_icon.svg') }}"
                     alt="Timer icon">
 
                 <div class="toz-hours">
@@ -26,7 +26,7 @@
             </div>
             <!-- Minutes -->
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/sport/high-jump/images/timer_icon.webp') }}"
+                <img src="{{ Vite::asset('resources/views/templates/sport/high-jump/images/timer_icon.svg') }}"
                     alt="Timer icon">
 
                 <div class="toz-mins">
@@ -36,7 +36,7 @@
             </div>
             <!-- Seconds -->
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/sport/high-jump/images/timer_icon.webp') }}"
+                <img src="{{ Vite::asset('resources/views/templates/sport/high-jump/images/timer_icon.svg') }}"
                     alt="Timer icon">
                 <div class="toz-secs">
                     <div id="toz-secs">60</div>

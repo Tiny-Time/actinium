@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@100..900&display=swap");
+
+:root {
+    --primary-color: #fbfcfe;
+    --secondary-color: #374960;
+    --input-background: rgba(55, 73, 96, 0.25);
+    --background-color: rgba(16, 21, 28, 0.2);
+}
+
+* {
+    font-family: "Overpass", sans-serif;
+}
+
+.toz {
+    color: var(--primary-color);
+    background: var(--background-color);
+    min-height: 100dvh;
+}
+
+.toz-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 70%;
+    gap: 10px;
+}
+.toz-timer {
+    font-size: 48px;
+    font-weight: 900;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: max-content;
+    margin: 0;
+}
+.toz-ec-d {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    position: relative;
+}
+.toz-ec-d svg {
+    position: absolute;
+    transform: rotate(-90deg);
+}
+.toz-ec-d > img {
+    position: absolute;
+    height: 90%;
+    width: 90%;
+}
+
+.toz-ec-d > svg > circle {
+    stroke: var(--primary-color);
+    fill: transparent;
+    stroke-dasharray: 408.41;
+    stroke-width: 6px;
+}
+.toz-ec-d > div {
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1;
+    gap: 2px;
+}
+.toz-unit {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.toz-subscription,
+li.splide__slide > div {
+    border-radius: 16px;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    background: var(--input-background);
+}
+
+li.splide__slide > div > h3,
+li.splide__slide > div > p,
+li.splide__slide > div > svg {
+    color: var(--primary-color);
+}
+
+.toz-form {
+    gap: 10px;
+}
+
+.toz-input {
+    font-size: 14px;
+}
+
+.toz-f-btn {
+    color: var(--secondary-color);
+    background: var(--primary-color);
+    border-radius: 20px;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 32px;
+        gap: 16px;
+    }
+    .toz-unit {
+        font-size: 14px;
+    }
+    .toz-ec-d {
+        width: 105px;
+        height: 105px;
+    }
+    .toz-ec-d > div {
+        width: 78px;
+    }
+    .toz-ec-d > svg {
+        width: 100px;
+        height: 100px;
+    }
+    .toz-ec-d svg circle {
+        r: 45px;
+        cx: 50px;
+        cy: 50px;
+    }
+    .toz-ec-d > svg > circle {
+        stroke-width: 4px;
+        stroke-dasharray: 282.74;
+    }
+    .toz-unit {
+        font-size: 14px;
+    }
+}
