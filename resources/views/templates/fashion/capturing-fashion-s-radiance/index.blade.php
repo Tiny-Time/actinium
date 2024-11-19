@@ -1,14 +1,14 @@
 <x-template :event="$event" :userIP="$userIP">
     <x-slot:css>
         <link rel="stylesheet"
-            href="{{ Vite::asset('resources/views/templates/fashion/capturing-fashion\'s-radiance/css/style.css') }}" />
+            href="{{ Vite::asset('resources/views/templates/fashion/capturing-fashion-s-radiance/css/style.css') }}" />
     </x-slot>
 
     <div class="toz-timer">
         <!-- Days -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fashion/capturing-fashion\'s-radiance/images/timer_icon.webp') }}"
+            <img src="{{ Vite::asset('resources/views/templates/fashion/capturing-fashion-s-radiance/images/timer_icon.webp') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-days" id="toz-days">
@@ -20,7 +20,7 @@
 
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fashion/capturing-fashion\'s-radiance/images/timer_icon.webp') }}"
+            <img src="{{ Vite::asset('resources/views/templates/fashion/capturing-fashion-s-radiance/images/timer_icon.webp') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-hours" id="toz-hours">
@@ -33,7 +33,7 @@
         <!-- Minutes -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fashion/capturing-fashion\'s-radiance/images/timer_icon.webp') }}"
+            <img src="{{ Vite::asset('resources/views/templates/fashion/capturing-fashion-s-radiance/images/timer_icon.webp') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-mins" id="toz-mins">
@@ -46,7 +46,7 @@
         <!-- Seconds -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fashion/capturing-fashion\'s-radiance/images/timer_icon.webp') }}"
+            <img src="{{ Vite::asset('resources/views/templates/fashion/capturing-fashion-s-radiance/images/timer_icon.webp') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-secs" id="toz-secs">
