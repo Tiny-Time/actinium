@@ -1,23 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Radley&display=swap");
-
-:root {
-    --primary-color: #eff6f8;
-    --secondary-color: #2a5b6a;
-    --input-background: rgba(12, 38, 37, 0.25);
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Orienta&display=swap");
 * {
-    font-family: "Radley", serif;
+    font-family: "Orienta", sans-serif;
     font-weight: 400;
 }
 
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
 .toz {
-    color: var(--primary-color);
-    background: var(--background-color);
+    color: #e7e8e5;
+    background: rgba(33, 35, 31, 0.2);
     min-height: 100dvh;
 }
 
 .toz-text-wrapper {
+    color: #e7e8e5;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -30,13 +33,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: max-content;
     gap: 20px;
+    max-width: max-content;
     margin: 0;
 }
 .toz-ec-d {
-    width: 145px;
-    height: 145px;
+    width: 150px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,18 +47,19 @@
     position: relative;
 }
 .toz-ec-d > img {
-    z-index: 0;
-    height: 100%;
-    width: 100%;
     position: absolute;
+    z-index: 0;
+    height: 96%;
+    width: 96%;
 }
 .toz-ec-d > div {
     text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
-    line-height: 1.2;
+    line-height: 1;
+    gap: 2px;
 }
 .toz-unit {
     font-size: 18px;
@@ -63,16 +67,16 @@
 
 .toz-subscription,
 li.splide__slide > div {
+    color: #e7e8e5;
+    border: 1px solid #e7e8e5;
+    background: rgba(33, 35, 31, 0.25);
     border-radius: 16px;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-    background: var(--input-background);
 }
 
 li.splide__slide > div > h3,
 li.splide__slide > div > p,
 li.splide__slide > div > svg {
-    color: var(--primary-color);
+    color: #e7e8e5;
 }
 
 .toz-form {
@@ -80,20 +84,20 @@ li.splide__slide > div > svg {
 }
 
 .toz-input {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .toz-f-btn {
-    color: var(--secondary-color);
-    background: var(--primary-color);
+    color: #21231f;
+    background: #e7e8e5;
     border-radius: 20px;
 }
 
 /* social links */
 
 .toz-social-link {
-    background: var(--primary-color);
-    color: var(--secondary-color);
+    background: #e7e8e5;
+    color: #21231f;
 }
 
 @media (max-width: 767px) {

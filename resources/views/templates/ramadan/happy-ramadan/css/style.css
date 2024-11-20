@@ -2,8 +2,7 @@
 
 @font-face {
     font-family: "Sketsa Ramadhan";
-    src: url("../fonts/Marhaban\ Ramadhan\ DEMO.otf") format("opentype"),
-        url("../fonts/Omotu\ Studio\ Font\ Licensing.pdf") format("truetype");
+    src: url("../fonts/Marhaban Ramadhan DEMO.otf") format("opentype");
 }
 
 * {

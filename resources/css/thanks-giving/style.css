@@ -10,14 +10,6 @@ body {
     width: 100%;
 }
 
-body {
-    margin: 0 auto;
-    background: url("/images/bg.webp");
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 .toz {
     color: #e7d5ae;
     min-height: 100dvh;
@@ -146,7 +138,7 @@ body {
     font-family: "Arizonia", cursive;
 }
 
-.toz-timer-text-1{
+.toz-timer-text-1 {
     font-family: "Arizonia", cursive;
 }
 
@@ -340,6 +332,7 @@ body {
         left: -100%;
         padding-left: 20px;
         top: 5rem;
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         height: 100%;
         width: 100%;

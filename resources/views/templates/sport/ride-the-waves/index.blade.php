@@ -11,7 +11,7 @@
 
                 <div class="toz-days">
                     <div id="toz-days">365</div>
-                    <span class="toz-unit">Days</span>
+                    <span class="toz-unit">DD</span>
                 </div>
             </div>
             <!-- Hours -->
@@ -21,7 +21,7 @@
 
                 <div class="toz-hours">
                     <div id="toz-hours">24</div>
-                    <span class="toz-unit">Hrs</span>
+                    <span class="toz-unit">HH</span>
                 </div>
             </div>
             <!-- Minutes -->
@@ -31,7 +31,7 @@
 
                 <div class="toz-mins">
                     <div id="toz-mins">60</div>
-                    <span class="toz-unit">Mins</span>
+                    <span class="toz-unit">MM</span>
                 </div>
             </div>
             <!-- Seconds -->
@@ -40,7 +40,7 @@
                     alt="Timer icon">
                 <div class="toz-secs">
                     <div id="toz-secs">60</div>
-                    <span class="toz-unit">Secs</span>
+                    <span class="toz-unit">SS</span>
                 </div>
             </div>
         </div>

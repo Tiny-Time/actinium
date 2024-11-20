@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap");
+* {
+    font-family: "Sulphur Point", sans-serif;
+}
+
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
+
+.toz {
+    color: #f9f3f0;
+    background: rgba(21, 14, 9, 0.2);
+    min-height: 100dvh;
+}
+
+.toz-text-wrapper {
+    color: #f9f3f0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 70%;
+    gap: 10px;
+}
+
+.toz-timer {
+    font-size: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: max-content;
+    margin: 0;
+}
+.toz-ec-d {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    position: relative;
+}
+.toz-ec-d > img {
+    position: absolute;
+    z-index: 0;
+    height: 96%;
+    width: 96%;
+}
+.toz-ec-d > div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+    gap: 2px;
+}
+.toz-unit {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.toz-subscription,
+li.splide__slide > div {
+    color: #f9f3f0;
+    border: 1px solid #f9f3f0;
+    background: transparent;
+    border-radius: 16px;
+}
+
+li.splide__slide > div > h3,
+li.splide__slide > div > p,
+li.splide__slide > div > svg {
+    color: #f9f3f0;
+}
+
+.toz-form {
+    gap: 10px;
+}
+
+.toz-input {
+    font-size: 16px;
+}
+
+.toz-f-btn {
+    color: #936141;
+    background: #f9f3f0;
+    border-radius: 20px;
+}
+
+/* social links */
+
+.toz-social-link {
+    background: #f9f3f0;
+    color: #936141;
+}
+
+@media (max-width: 767px) {
+    .toz-text-wrapper {
+        width: 100%;
+    }
+
+    .toz-timer {
+        font-size: 32px;
+        gap: 16px;
+    }
+
+    .toz-ec-d {
+        width: 105px;
+        height: 105px;
+    }
+    .toz-ec-d > div {
+        width: 78px;
+    }
+    .toz-unit {
+        font-size: 14px;
+    }
+}

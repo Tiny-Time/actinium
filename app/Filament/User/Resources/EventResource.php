@@ -75,6 +75,7 @@ class EventResource extends Resource
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\IconColumn::make('status')
+                    ->label('Status (Draft/Publish)')
                     ->boolean()
                     ->sortable()
                     ->toggleable(),
@@ -83,20 +84,24 @@ class EventResource extends Resource
                     ->sortable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created on')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label('Updated on')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('deleted_at')
+                    ->label('Deleted on')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 Filter::make('status')
+                    ->label('Status (Draft/Publish)')
                     ->toggle(),
                 Filter::make('expired')
                     ->query(function (Builder $query): Builder {
