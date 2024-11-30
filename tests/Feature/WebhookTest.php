@@ -58,6 +58,7 @@ class WebhookTest extends TestCase
             'description' => 'Old description',
             'tags' => ['Laravel', 'PHP', 'Testing'],
             'featured_image' => 'https://example.com/old-image.jpg',
+            'published_at' => now(),
         ]);
 
         // Payload to update the existing post
