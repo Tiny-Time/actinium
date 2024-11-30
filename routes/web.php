@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 use Filament\Notifications\Notification;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\WebhookController;
 use Laravel\Jetstream\Http\Controllers\Livewire\PrivacyPolicyController;
 use Laravel\Jetstream\Http\Controllers\Livewire\TermsOfServiceController;
 
@@ -437,4 +438,8 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     // return response($formattedOutput, 200)
     //     ->header('Content-Type', 'text/plain');
     // });
+
+    /* -------------------------- Juice.ai Blog Webhook ------------------------- */
+
+    Route::post('/webhook/juice', [WebhookController::class, 'handle'])->name('webhook.juice');
 });
