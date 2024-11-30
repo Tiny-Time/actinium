@@ -50,7 +50,6 @@ class WebhookController extends Controller
                 'content' => $data['content'],
                 'description' => $data['meta_description'] ?? $post->description,
                 'featured_image' => $data['featured_image'] ?? $post->featured_image,
-                'tags' => json_encode($categories),
             ]);
         } else {
             // Create a new post
@@ -61,9 +60,11 @@ class WebhookController extends Controller
                 'description' => $data['meta_description'] ?? '',
                 'slug' => $slug,
                 'featured_image' => $data['featured_image'] ?? null,
-                'tags' => json_encode($categories),
                 'published_at' => now(),
             ]);
+
+            // Attach tags to the post
+            $post->attachTags($categories, 'category');
         }
     }
 }

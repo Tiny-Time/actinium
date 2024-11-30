@@ -53,13 +53,14 @@ class WebhookTest extends TestCase
         $existingPost = BlogPost::create([
             'user_id' => $superAdmin->id,
             'title' => 'Test Blog Post',
-            'slug' => 'test-blog-post',
+            'slug' => 'test-blog-post-2',
             'content' => 'Old content',
             'description' => 'Old description',
-            'tags' => ['Laravel', 'PHP', 'Testing'],
             'featured_image' => 'https://example.com/old-image.jpg',
             'published_at' => now(),
         ]);
+
+        $existingPost->syncTagsWithType(['Laravel', 'PHP', 'Testing'], 'category');
 
         // Payload to update the existing post
         $payload = [
