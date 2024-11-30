@@ -39,14 +39,12 @@
                     {{ $live }}
                 @endif
                 <h1 class="text-3xl font-bold capitalize toz-title md:text-5xl">{{ $event->title }}</h1>
-                @if ($event->description)
-                    <h2 class="max-w-2xl mx-auto text-lg font-medium text-gray-200 toz-subtitle md:text-xl">
-                        {{ $event->description }}<br>
-                        <span id="post-event" class="hidden">
-                            {{ $event->post_event_massage }}
-                        </span>
-                    </h2>
-                @endif
+                <h2 class="max-w-2xl mx-auto text-lg font-medium text-gray-200 toz-subtitle md:text-xl">
+                    {{ $event->description }}<br>
+                    <span id="post-event" class="hidden">
+                        {{ $event->post_event_massage }}
+                    </span>
+                </h2>
             </div>
 
             {{ $slot }}
@@ -143,6 +141,9 @@
         @if ($event->watermark)
             <x-event-watermark></x-event-watermark>
         @endif
+
+        <!-- Audio element -->
+        <audio id="endAudio" src="/audio/alarm.mp3" preload="auto"></audio>
     </section>
 
     @include('modals.share')

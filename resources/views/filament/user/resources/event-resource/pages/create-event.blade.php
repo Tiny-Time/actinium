@@ -136,9 +136,20 @@
                         </p>
                     </div>
                 @endif
-                <div class="mt-5">
-                    {{ $templates->links('vendor.livewire.tailwind') }}
-                </div>
+
+                @if ($templates->hasMorePages())
+                    <div class="flex justify-center mt-6">
+                        <div class="text-center loader" wire:loading wire:target="loadMore">
+                            Loading...
+                        </div>
+
+                        <button wire:click="loadMore" wire:loading.remove id="loadMoreButton"
+                            class="px-4 py-2 mx-auto text-sm font-semibold border rounded-lg">Load more</button>
+                    </div>
+
+                    <button id="to-top-button" onclick="goToTop()" title="Go To Top"
+                        class="fixed hidden text-3xl font-bold text-white bg-red-400 border-0 rounded-full size-12 z-90 bottom-8 right-8 drop-shadow-md">&uarr;</button>
+                @endif
             </div>
             <hr class="mt-5 mb-2">
             <div class="flex justify-between px-4 md:px-8">
@@ -211,6 +222,27 @@
 
                 templateSelected(1)
             });
+        </script>
+
+        <script type="text/javascript">
+            var toTopButton = document.getElementById("to-top-button");
+
+            // When the user scrolls down 200px from the top of the document, show the button
+            window.onscroll = function() {
+                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                    toTopButton.classList.remove("hidden");
+                } else {
+                    toTopButton.classList.add("hidden");
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function goToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
         </script>
     </div>
 </x-filament-panels::page>

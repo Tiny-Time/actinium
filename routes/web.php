@@ -403,4 +403,38 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
         $plan = Plan::where('slug', $request->slug)->firstOrFail();
         return view('downgrade-confirmation', compact('plan'));
     })->name('downgrade-confirmation');
+
+    // Route::get('test', function () {
+    //     $templates = \App\Models\Template::all(); // Fetch all template records
+
+    //      // Transform records into the desired key-value pair format
+    // $result = $templates->map(function ($template, $index) {
+    //     return [
+    //         'id' => $index + 1,
+    //         'name' => $template->name,
+    //         'category' => $template->category,
+    //         'sub_category' => $template->sub_category ?? '',
+    //         'image' => $template->image,
+    //         'type' => $template->type,
+    //         'path' => $template->path,
+    //         'tokens' => $template->tokens,
+    //         'tags' => $template->tags,
+    //     ];
+    // })->toArray();
+
+    // // Format the output into a PHP array-like string manually
+    // $formattedOutput = "[\n";
+    // foreach ($result as $item) {
+    //     $formattedOutput .= "    [\n";
+    //     foreach ($item as $key => $value) {
+    //         $formattedOutput .= "        '{$key}' => " . (is_numeric($value) ? $value : "'{$value}'") . ",\n";
+    //     }
+    //     $formattedOutput .= "    ],\n";
+    // }
+    // $formattedOutput .= "]";
+
+    // // Return the formatted string as plain text
+    // return response($formattedOutput, 200)
+    //     ->header('Content-Type', 'text/plain');
+    // });
 });

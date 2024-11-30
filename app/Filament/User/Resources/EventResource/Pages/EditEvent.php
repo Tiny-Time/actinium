@@ -35,6 +35,15 @@ class EditEvent extends EditRecord
 
     public $event;
 
+    public $perPage = 12;
+
+    protected $listeners = ['loadMore'];
+
+    public function loadMore()
+    {
+        $this->perPage += 12;
+    }
+
     public function mount(int|string $record): void
     {
         parent::mount($record);
@@ -231,7 +240,7 @@ class EditEvent extends EditRecord
                     'templates' => Template::where('name', 'like', "%{$this->query}%")
                         ->orWhere('tags', 'like', "%{$this->query}%")
                         ->orWhere('tokens', 'like', "%{$this->query}%")
-                        ->orderByRaw("id = $specificId DESC")->paginate(12)
+                        ->orderByRaw("id = $specificId DESC")->paginate(perPage: $this->perPage)
                 ];
             default:
                 return [
@@ -241,7 +250,7 @@ class EditEvent extends EditRecord
                                 ->orWhere('tags', 'like', "%{$w}%")
                                 ->orWhere('tokens', 'like', "%{$w}%");
                         }
-                    })->orderByRaw("id = $specificId DESC")->paginate(12)
+                    })->orderByRaw("id = $specificId DESC")->paginate(perPage: $this->perPage)
                 ];
         }
     }

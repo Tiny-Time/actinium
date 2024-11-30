@@ -1,25 +1,47 @@
+const endAudio = document.getElementById('endAudio');
+
+// Play audio function
+const playAudio = () => {
+    // Attempt to play the audio
+    endAudio.play().catch(error => {
+        console.error('Audio playback failed:', error);
+    });
+};
+
+const pageTitle = document.title;
+
 function calculateTimeRemaining(targetDate) {
     const now = new Date().getTime();
     const timeRemaining = targetDate - now;
-
-    if (timeRemaining <= 0) {
-        var audio = new Audio("/audio/alarm.mp3");
-        audio
-            .play()
-            .then(() => {})
-            .catch((error) => {});
-        clearInterval(timerInterval);
-        // Display post event message
-        $('#post-event').removeClass('hidden')
-        return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
-
     const seconds = Math.floor((timeRemaining / 1000) % 60);
     const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
     const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
     const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
 
+    if (timeRemaining <= 0) {
+        playAudio();
+        clearInterval(timerInterval);
+        // Display post event message
+        $('#post-event').removeClass('hidden')
+
+        updateTitle(0, 0, 0, 0, pageTitle);
+
+        return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+
+    updateTitle(days, hours, minutes, seconds, pageTitle);
+
     return { days, hours, minutes, seconds };
+}
+
+function updateTitle(days, hours, minutes, seconds, pageTitle) {
+    if (days > 0) {
+        document.title = `${days} : ${hours} : ${minutes} : ${seconds} - ${pageTitle}`;
+    } else if (hours > 0) {
+        document.title = `${hours} : ${minutes} : ${seconds} - ${pageTitle}`;
+    } else {
+        document.title = `${minutes} : ${seconds} - ${pageTitle}`;
+    }
 }
 
 function userTimezone() {
@@ -60,7 +82,7 @@ function updateCountdown(
         // Use the timezone that was used to create the timer for countdown
         targetDate = new Date(
             targetDate.getTime() +
-                (-1 * offsetHours + offsetHoursLocal) * 60 * 60 * 1000
+            (-1 * offsetHours + offsetHoursLocal) * 60 * 60 * 1000
         );
     }
 
@@ -135,6 +157,8 @@ function updateCountdown(
     if (tozSecs) {
         tozSecs.innerText = countdown.seconds;
     }
+
+    return countdown;
 }
 
 // Get the event and local timezone offset
@@ -167,7 +191,7 @@ function eventStartEndTime(datetime, timezone) {
         // Use the timezone that was used to create the timer for countdown
         targetDate = new Date(
             targetDate.getTime() +
-                (-1 * offsetHours + offsetHoursLocal) * 60 * 60 * 1000
+            (-1 * offsetHours + offsetHoursLocal) * 60 * 60 * 1000
         );
     }
 

@@ -31,6 +31,16 @@ class CreateEvent extends Page
     #[Url(as: 'q')]
     public $query = '';
 
+
+    public $perPage = 12;
+
+    protected $listeners = ['loadMore'];
+
+    public function loadMore()
+    {
+        $this->perPage += 12;
+    }
+
     public function mount(): void
     {
         $this->currentStep = 1;
@@ -171,7 +181,7 @@ class CreateEvent extends Page
                     'templates' => Template::where('name', 'like', "%{$this->query}%")
                         ->orWhere('tags', 'like', "%{$this->query}%")
                         ->orWhere('tokens', 'like', "%{$this->query}%")
-                        ->paginate(12)
+                        ->paginate(perPage: $this->perPage)
                 ];
             default:
                 return [
@@ -181,7 +191,7 @@ class CreateEvent extends Page
                                 ->orWhere('tags', 'like', "%{$w}%")
                                 ->orWhere('tokens', 'like', "%{$w}%");
                         }
-                    })->paginate(12)
+                    })->paginate(perPage: $this->perPage)
                 ];
         }
     }

@@ -23,6 +23,15 @@ class EventSearch extends Component implements HasForms
     public $query = '';
     public $templates;
 
+    public $perPage = 12;
+
+    protected $listeners = ['loadMore'];
+
+    public function loadMore()
+    {
+        $this->perPage += 12;
+    }
+
     public function search()
     {
         $this->resetPage();
@@ -79,7 +88,7 @@ class EventSearch extends Component implements HasForms
         }
 
         return view('livewire.event-search', [
-            'events' => $query->latest()->paginate(12),
+            'events' => $query->latest()->paginate(perPage: $this->perPage),
         ]);
     }
 }

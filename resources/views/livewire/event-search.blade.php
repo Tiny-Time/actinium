@@ -87,14 +87,38 @@
                     @endforeach
                 </div>
             </section>
+
             @if ($events->isEmpty())
                 <div class="flex-grow py-16 sm:px-12 dark:text-gray-100">
                     <p class="mt-3 text-3xl font-bold text-center text-gray-300 md:text-5xl">No events to display.</p>
                 </div>
             @endif
-            <div class="mt-5">
-                {{ $events->links('vendor.livewire.tailwind') }}
-            </div>
+
+            @if ($events->hasMorePages())
+                <div class="mt-4 text-center loader" wire:loading wire:target="loadMore">
+                    Loading...
+                </div>
+
+                <button wire:click="loadMore" wire:loading.remove class="hidden" id="loadMoreButton"></button>
+            @endif
         </div>
+
+        @push('js')
+            <script type="text/javascript">
+                window.addEventListener('scroll', () => {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    let offsetHeight = document.documentElement.offsetHeight;
+                    let innerHeight = window.innerHeight;
+
+                    if (scrollTop + innerHeight >= offsetHeight - 100) {
+                        // Trigger Livewire loadMore method
+                        const loadMoreButton = document.getElementById('loadMoreButton');
+                        if (loadMoreButton) {
+                            loadMoreButton.click();
+                        }
+                    }
+                });
+            </script>
+        @endpush
         <x-slot name="footer"></x-slot>
     </div>

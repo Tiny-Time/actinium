@@ -13,7 +13,8 @@ class Template extends Model
 
     public function getRows(): array
     {
-        return [
+        return
+        [
             [
                 'id' => 1,
                 'name' => 'Enchanted Midnight Forest',
@@ -907,7 +908,7 @@ class Template extends Model
             ],
             [
                 'id' => 82,
-                'name' => "International Women's Day",
+                'name' => 'International Women\'s Day',
                 'category' => 'Holiday',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/holiday/international-women-s-day/images/preview.webp',
@@ -918,7 +919,7 @@ class Template extends Model
             ],
             [
                 'id' => 83,
-                'name' => "Intensive Study Session",
+                'name' => 'Intensive Study Session',
                 'category' => 'Study',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/study/intensive-study-session/images/preview.webp',
@@ -929,7 +930,7 @@ class Template extends Model
             ],
             [
                 'id' => 84,
-                'name' => "Transformative Journey",
+                'name' => 'Transformative Journey',
                 'category' => 'Fitness',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/fitness/transformative-journey/images/preview.webp',
@@ -940,7 +941,7 @@ class Template extends Model
             ],
             [
                 'id' => 85,
-                'name' => "Fresh Perspectives",
+                'name' => 'Fresh Perspectives',
                 'category' => 'Meeting',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/meeting/fresh-perspectives/images/preview.webp',
@@ -951,7 +952,7 @@ class Template extends Model
             ],
             [
                 'id' => 86,
-                'name' => "Never Keep Paws Waiting",
+                'name' => 'Never Keep Paws Waiting',
                 'category' => 'Pets',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/pets/never-keep-paws-waiting/images/preview.webp',
@@ -962,7 +963,7 @@ class Template extends Model
             ],
             [
                 'id' => 87,
-                'name' => "Your Time Your Style",
+                'name' => 'Your Time Your Style',
                 'category' => 'Fashion',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/fashion/your-time-your-style/images/preview.webp',
@@ -973,7 +974,7 @@ class Template extends Model
             ],
             [
                 'id' => 88,
-                'name' => "Another Trip Around The Sun",
+                'name' => 'Another Trip Around The Sun',
                 'category' => 'Birthday',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/birthday/another-trip-around-the-sun/images/preview.webp',
@@ -984,7 +985,7 @@ class Template extends Model
             ],
             [
                 'id' => 89,
-                'name' => "Embrace The Challenge",
+                'name' => 'Embrace The Challenge',
                 'category' => 'Fitness',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/fitness/embrace-the-challenge/images/preview.webp',
@@ -995,7 +996,7 @@ class Template extends Model
             ],
             [
                 'id' => 90,
-                'name' => "TechTalk Summer",
+                'name' => 'TechTalk Summer',
                 'category' => 'Meeting',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/meeting/techtalk-summer/images/preview.webp',
@@ -1006,7 +1007,7 @@ class Template extends Model
             ],
             [
                 'id' => 91,
-                'name' => "Basketball",
+                'name' => 'Basketball',
                 'category' => 'Sport',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/sport/basketball/images/preview.webp',
@@ -1017,7 +1018,7 @@ class Template extends Model
             ],
             [
                 'id' => 92,
-                'name' => "Master Your Studies",
+                'name' => 'Master Your Studies',
                 'category' => 'Study',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/study/master-your-studies/images/preview.webp',
@@ -1028,7 +1029,7 @@ class Template extends Model
             ],
             [
                 'id' => 93,
-                'name' => "Manage Your Study Time",
+                'name' => 'Manage Your Study Time',
                 'category' => 'Study',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/study/manage-your-study-time/images/preview.webp',
@@ -1039,7 +1040,7 @@ class Template extends Model
             ],
             [
                 'id' => 94,
-                'name' => "Let The Celebration Begin",
+                'name' => 'Let The Celebration Begin',
                 'category' => 'Birthday',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/birthday/let-the-celebration-begin/images/preview.webp',
@@ -1266,7 +1267,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.birthday.let-s-celebrate.index',
                 'tokens' => 12,
-                'tags' => 'let\'s, celebrate, birthday, paid, template',
+                'tags' => 'lets, celebrate, birthday, paid, template',
             ],
             [
                 'id' => 115,
@@ -1640,7 +1641,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.holiday.celebrating-nature-s-treasure.index',
                 'tokens' => 11,
-                'tags' => 'celebrating, nature\'s, treasure, holiday, paid, template',
+                'tags' => 'celebrating, natures, treasure, holiday, paid, template',
             ],
             [
                 'id' => 149,
@@ -1798,17 +1799,6 @@ class Template extends Model
             ],
             [
                 'id' => 163,
-                'name' => 'Ride The Waves',
-                'category' => 'Sport',
-                'sub_category' => '',
-                'image' => 'resources/views/templates/sport/ride-the-waves/images/preview.webp',
-                'type' => 'paid',
-                'path' => 'templates.sport.ride-the-waves.index',
-                'tokens' => 11,
-                'tags' => 'ride, the, waves, sport, paid, template',
-            ],
-            [
-                'id' => 164,
                 'name' => 'Stroll With Your Friend',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -1819,7 +1809,7 @@ class Template extends Model
                 'tags' => 'stroll, with, your, friend, pets, paid, template',
             ],
             [
-                'id' => 165,
+                'id' => 164,
                 'name' => 'Harmonious Melody Of Joy And Jubilation',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -1830,7 +1820,7 @@ class Template extends Model
                 'tags' => 'harmonious, melody, of, joy, and, jubilation, birthday, paid, template',
             ],
             [
-                'id' => 166,
+                'id' => 165,
                 'name' => 'Seasoned Gym Goer',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -1841,7 +1831,7 @@ class Template extends Model
                 'tags' => 'seasoned, gym, goer, fitness, paid, template',
             ],
             [
-                'id' => 167,
+                'id' => 166,
                 'name' => 'Glide Through Winter',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -1852,7 +1842,7 @@ class Template extends Model
                 'tags' => 'glide, through, winter, sport, paid, template',
             ],
             [
-                'id' => 168,
+                'id' => 167,
                 'name' => 'Soothing Massage Experience',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -1863,7 +1853,7 @@ class Template extends Model
                 'tags' => 'soothing, massage, experience, beauty, paid, template',
             ],
             [
-                'id' => 169,
+                'id' => 168,
                 'name' => 'Strategy Alignment Meeting',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -1874,7 +1864,7 @@ class Template extends Model
                 'tags' => 'strategy, alignment, meeting, meeting, paid, template',
             ],
             [
-                'id' => 170,
+                'id' => 169,
                 'name' => 'Team Sync Up Meeting',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -1885,7 +1875,7 @@ class Template extends Model
                 'tags' => 'team, sync, up, meeting, meeting, paid, template',
             ],
             [
-                'id' => 171,
+                'id' => 170,
                 'name' => 'The Art OF Archery',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -1896,7 +1886,7 @@ class Template extends Model
                 'tags' => 'the, art, of, archery, sport, paid, template',
             ],
             [
-                'id' => 172,
+                'id' => 171,
                 'name' => 'Coastal Bliss',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -1907,7 +1897,7 @@ class Template extends Model
                 'tags' => 'coastal, bliss, vacation, paid, template',
             ],
             [
-                'id' => 173,
+                'id' => 172,
                 'name' => 'Relaxing Facial Spa',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -1918,7 +1908,7 @@ class Template extends Model
                 'tags' => 'relaxing, facial, spa, beauty, paid, template',
             ],
             [
-                'id' => 174,
+                'id' => 173,
                 'name' => 'Year Ahead',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -1929,7 +1919,7 @@ class Template extends Model
                 'tags' => 'year, ahead, birthday, paid, template',
             ],
             [
-                'id' => 175,
+                'id' => 174,
                 'name' => 'Indoor Running',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -1940,7 +1930,7 @@ class Template extends Model
                 'tags' => 'indoor, running, fitness, paid, template',
             ],
             [
-                'id' => 176,
+                'id' => 175,
                 'name' => 'Team Collaboration Session',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -1951,7 +1941,7 @@ class Template extends Model
                 'tags' => 'team, collaboration, session, meeting, paid, template',
             ],
             [
-                'id' => 177,
+                'id' => 176,
                 'name' => 'World Laughter Day',
                 'category' => 'Holiday',
                 'sub_category' => '',
@@ -1962,7 +1952,7 @@ class Template extends Model
                 'tags' => 'world, laughter, day, holiday, paid, template',
             ],
             [
-                'id' => 178,
+                'id' => 177,
                 'name' => 'Unlocking Deeper Understanding',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -1973,7 +1963,7 @@ class Template extends Model
                 'tags' => 'unlocking, deeper, understanding, study, paid, template',
             ],
             [
-                'id' => 179,
+                'id' => 178,
                 'name' => 'Zen Harmony',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -1984,7 +1974,7 @@ class Template extends Model
                 'tags' => 'zen, harmony, fitness, paid, template',
             ],
             [
-                'id' => 180,
+                'id' => 179,
                 'name' => 'Virtual Business Conference',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -1995,7 +1985,7 @@ class Template extends Model
                 'tags' => 'virtual, business, conference, meeting, paid, template',
             ],
             [
-                'id' => 181,
+                'id' => 180,
                 'name' => 'Stay Disciplined',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -2006,7 +1996,7 @@ class Template extends Model
                 'tags' => 'stay, disciplined, study, paid, template',
             ],
             [
-                'id' => 182,
+                'id' => 181,
                 'name' => 'World Smile Day',
                 'category' => 'Holiday',
                 'sub_category' => '',
@@ -2017,7 +2007,7 @@ class Template extends Model
                 'tags' => 'world, smile, day, holiday, paid, template',
             ],
             [
-                'id' => 183,
+                'id' => 182,
                 'name' => 'Serene Forest Groves',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -2028,7 +2018,7 @@ class Template extends Model
                 'tags' => 'serene, forest, groves, vacation, paid, template',
             ],
             [
-                'id' => 184,
+                'id' => 183,
                 'name' => 'Applauding Their Accomplishments',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -2039,7 +2029,7 @@ class Template extends Model
                 'tags' => 'applauding, their, accomplishments, study, paid, template',
             ],
             [
-                'id' => 185,
+                'id' => 184,
                 'name' => 'Sharpening Craft Your Mastery',
                 'category' => 'Skill',
                 'sub_category' => '',
@@ -2050,7 +2040,7 @@ class Template extends Model
                 'tags' => 'sharpening, craft, your, mastery, skill, paid, template',
             ],
             [
-                'id' => 186,
+                'id' => 185,
                 'name' => 'Nap Time',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -2061,7 +2051,7 @@ class Template extends Model
                 'tags' => 'nap, time, pets, paid, template',
             ],
             [
-                'id' => 187,
+                'id' => 186,
                 'name' => 'Ramadan',
                 'category' => 'Holiday',
                 'sub_category' => '',
@@ -2072,7 +2062,7 @@ class Template extends Model
                 'tags' => 'ramadan, holiday, paid, template',
             ],
             [
-                'id' => 188,
+                'id' => 187,
                 'name' => 'Radiant Glow',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -2083,7 +2073,7 @@ class Template extends Model
                 'tags' => 'radiant, glow, beauty, paid, template',
             ],
             [
-                'id' => 189,
+                'id' => 188,
                 'name' => 'Walk Your Fury Friends',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -2094,7 +2084,7 @@ class Template extends Model
                 'tags' => 'walk, your, fury, friends, pets, paid, template',
             ],
             [
-                'id' => 190,
+                'id' => 189,
                 'name' => 'Synced Precision',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -2105,7 +2095,7 @@ class Template extends Model
                 'tags' => 'synced, precision, fitness, paid, template',
             ],
             [
-                'id' => 191,
+                'id' => 190,
                 'name' => 'Tempo Tuned',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -2116,7 +2106,7 @@ class Template extends Model
                 'tags' => 'tempo, tuned, fitness, paid, template',
             ],
             [
-                'id' => 192,
+                'id' => 191,
                 'name' => 'The Big Shoe',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -2127,7 +2117,7 @@ class Template extends Model
                 'tags' => 'the, big, shoe, fashion, paid, template',
             ],
             [
-                'id' => 193,
+                'id' => 192,
                 'name' => 'Deep Focus',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -2138,7 +2128,7 @@ class Template extends Model
                 'tags' => 'deep, focus, study, paid, template',
             ],
             [
-                'id' => 194,
+                'id' => 193,
                 'name' => 'Elegance In Motion',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -2149,7 +2139,7 @@ class Template extends Model
                 'tags' => 'elegance, in, motion, fashion, paid, template',
             ],
             [
-                'id' => 195,
+                'id' => 194,
                 'name' => 'Travel Destination Tour',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2160,7 +2150,7 @@ class Template extends Model
                 'tags' => 'travel, destination, tour, live stream, paid, template',
             ],
             [
-                'id' => 196,
+                'id' => 195,
                 'name' => 'Mark Your Calendar',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -2171,7 +2161,7 @@ class Template extends Model
                 'tags' => 'mark, your, calendar, birthday, paid, template',
             ],
             [
-                'id' => 197,
+                'id' => 196,
                 'name' => 'Presentation Meeting',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -2182,7 +2172,7 @@ class Template extends Model
                 'tags' => 'presentation, meeting, meeting, paid, template',
             ],
             [
-                'id' => 198,
+                'id' => 197,
                 'name' => 'Discover New Horizons',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -2193,7 +2183,7 @@ class Template extends Model
                 'tags' => 'discover, new, horizons, vacation, paid, template',
             ],
             [
-                'id' => 199,
+                'id' => 198,
                 'name' => 'Fun Day For Furry Friends',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -2204,7 +2194,7 @@ class Template extends Model
                 'tags' => 'fun, day, for, furry, friends, pets, paid, template',
             ],
             [
-                'id' => 200,
+                'id' => 199,
                 'name' => 'Personal Training Session With Coach',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -2215,7 +2205,7 @@ class Template extends Model
                 'tags' => 'personal, training, session, with, coach, fitness, paid, template',
             ],
             [
-                'id' => 201,
+                'id' => 200,
                 'name' => 'Family Pet Day In Nature',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -2226,7 +2216,7 @@ class Template extends Model
                 'tags' => 'family, pet, day, in, nature, pets, paid, template',
             ],
             [
-                'id' => 202,
+                'id' => 201,
                 'name' => 'Reach Your Goals With Confidence',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -2237,7 +2227,7 @@ class Template extends Model
                 'tags' => 'reach, your, goals, with, confidence, study, paid, template',
             ],
             [
-                'id' => 203,
+                'id' => 202,
                 'name' => 'Soccer Showdown',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -2248,7 +2238,7 @@ class Template extends Model
                 'tags' => 'soccer, showdown, sport, paid, template',
             ],
             [
-                'id' => 204,
+                'id' => 203,
                 'name' => 'Tech News',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2259,7 +2249,7 @@ class Template extends Model
                 'tags' => 'tech, news, live stream, paid, template',
             ],
             [
-                'id' => 205,
+                'id' => 204,
                 'name' => 'Counting Down To The Big Day',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -2270,7 +2260,7 @@ class Template extends Model
                 'tags' => 'counting, down, to, the, big, day, birthday, paid, template',
             ],
             [
-                'id' => 206,
+                'id' => 205,
                 'name' => 'Focus Session 2',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -2281,7 +2271,7 @@ class Template extends Model
                 'tags' => 'focus, session, study, paid, template',
             ],
             [
-                'id' => 207,
+                'id' => 206,
                 'name' => 'Swimming Championship',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -2292,7 +2282,7 @@ class Template extends Model
                 'tags' => 'swimming, championship, sport, paid, template',
             ],
             [
-                'id' => 208,
+                'id' => 207,
                 'name' => 'Fashion Frenzy',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -2303,7 +2293,7 @@ class Template extends Model
                 'tags' => 'fashion, frenzy, fashion, paid, template',
             ],
             [
-                'id' => 209,
+                'id' => 208,
                 'name' => 'Family Adventure',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -2314,7 +2304,7 @@ class Template extends Model
                 'tags' => 'family, adventure, vacation, paid, template',
             ],
             [
-                'id' => 210,
+                'id' => 209,
                 'name' => 'Kickstart Your Fitness Journey',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -2325,7 +2315,7 @@ class Template extends Model
                 'tags' => 'kickstart, your, fitness, journey, fitness, paid, template',
             ],
             [
-                'id' => 211,
+                'id' => 210,
                 'name' => 'Crypto Live Trading',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2336,7 +2326,7 @@ class Template extends Model
                 'tags' => 'crypto, live, trading, live stream, paid, template',
             ],
             [
-                'id' => 212,
+                'id' => 211,
                 'name' => 'Travel Destination Tours 2',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2347,7 +2337,7 @@ class Template extends Model
                 'tags' => 'travel, destination, tours, 2, live stream, paid, template',
             ],
             [
-                'id' => 213,
+                'id' => 212,
                 'name' => 'Art PrintMaking 3',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2358,7 +2348,7 @@ class Template extends Model
                 'tags' => 'art, printmaking, 3, live stream, paid, template',
             ],
             [
-                'id' => 214,
+                'id' => 213,
                 'name' => 'Gaming Arcade Mario',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2369,7 +2359,7 @@ class Template extends Model
                 'tags' => 'gaming, arcade, mario, live stream, paid, template',
             ],
             [
-                'id' => 215,
+                'id' => 214,
                 'name' => 'Healthy Eating',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2380,7 +2370,7 @@ class Template extends Model
                 'tags' => 'healthy, eating, live stream, paid, template',
             ],
             [
-                'id' => 216,
+                'id' => 215,
                 'name' => 'DIY Upcycling',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2391,7 +2381,7 @@ class Template extends Model
                 'tags' => 'diy, upcycling, live stream, paid, template',
             ],
             [
-                'id' => 217,
+                'id' => 216,
                 'name' => 'Music Reviews 2',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2402,7 +2392,7 @@ class Template extends Model
                 'tags' => 'music, reviews, 2, live stream, paid, template',
             ],
             [
-                'id' => 218,
+                'id' => 217,
                 'name' => 'Technology Tech News',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2413,7 +2403,7 @@ class Template extends Model
                 'tags' => 'technology, tech, news, live stream, paid, template',
             ],
             [
-                'id' => 219,
+                'id' => 218,
                 'name' => 'Crypto Analysis',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2424,7 +2414,7 @@ class Template extends Model
                 'tags' => 'crypto, analysis, live stream, paid, template',
             ],
             [
-                'id' => 220,
+                'id' => 219,
                 'name' => 'Travel Destination Tour 3',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2435,7 +2425,7 @@ class Template extends Model
                 'tags' => 'travel, destination, tour, 3, live stream, paid, template',
             ],
             [
-                'id' => 221,
+                'id' => 220,
                 'name' => 'Art Printmaking 2',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2446,7 +2436,7 @@ class Template extends Model
                 'tags' => 'art, printmaking, 2, live stream, paid, template',
             ],
             [
-                'id' => 222,
+                'id' => 221,
                 'name' => 'Music Lessons',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2457,7 +2447,7 @@ class Template extends Model
                 'tags' => 'music, lessons, live stream, paid, template',
             ],
             [
-                'id' => 223,
+                'id' => 222,
                 'name' => 'Food Challenges',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2468,7 +2458,7 @@ class Template extends Model
                 'tags' => 'food, challenges, live stream, paid, template',
             ],
             [
-                'id' => 224,
+                'id' => 223,
                 'name' => 'DIY Home Improvements 2',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2479,7 +2469,7 @@ class Template extends Model
                 'tags' => 'diy, home, improvements, 2, live stream, paid, template',
             ],
             [
-                'id' => 225,
+                'id' => 224,
                 'name' => 'Gaming Arcade',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2490,7 +2480,7 @@ class Template extends Model
                 'tags' => 'gaming, arcade, live stream, paid, template',
             ],
             [
-                'id' => 226,
+                'id' => 225,
                 'name' => 'Travel Vlog',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2501,7 +2491,7 @@ class Template extends Model
                 'tags' => 'travel, vlog, live stream, paid, template',
             ],
             [
-                'id' => 227,
+                'id' => 226,
                 'name' => 'Art Painting Art',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2512,7 +2502,7 @@ class Template extends Model
                 'tags' => 'art, painting, art, live stream, paid, template',
             ],
             [
-                'id' => 228,
+                'id' => 227,
                 'name' => 'Food Cookings Live',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2523,7 +2513,7 @@ class Template extends Model
                 'tags' => 'food, cookings, live, live stream, paid, template',
             ],
             [
-                'id' => 229,
+                'id' => 228,
                 'name' => 'Technology Tech Reviews',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2534,7 +2524,7 @@ class Template extends Model
                 'tags' => 'technology, tech, reviews, live stream, paid, template',
             ],
             [
-                'id' => 230,
+                'id' => 229,
                 'name' => 'Gaming Shootings',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2545,7 +2535,7 @@ class Template extends Model
                 'tags' => 'gaming, shootings, live stream, paid, template',
             ],
             [
-                'id' => 231,
+                'id' => 230,
                 'name' => 'DIY Craftings',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2556,7 +2546,7 @@ class Template extends Model
                 'tags' => 'diy, craftings, live stream, paid, template',
             ],
             [
-                'id' => 232,
+                'id' => 231,
                 'name' => 'Music Live Performances',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2567,7 +2557,7 @@ class Template extends Model
                 'tags' => 'music, live, performances, live stream, paid, template',
             ],
             [
-                'id' => 233,
+                'id' => 232,
                 'name' => 'Art Paintings',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2578,7 +2568,7 @@ class Template extends Model
                 'tags' => 'art, paintings, live stream, paid, template',
             ],
             [
-                'id' => 234,
+                'id' => 233,
                 'name' => 'Travel Cultural Experiences',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2589,7 +2579,7 @@ class Template extends Model
                 'tags' => 'travel, cultural, experiences, live stream, paid, template',
             ],
             [
-                'id' => 235,
+                'id' => 234,
                 'name' => 'Crypto Interviews',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2600,7 +2590,7 @@ class Template extends Model
                 'tags' => 'crypto, interviews, live stream, paid, template',
             ],
             [
-                'id' => 236,
+                'id' => 235,
                 'name' => 'Music Reviews',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2611,7 +2601,7 @@ class Template extends Model
                 'tags' => 'music, reviews, live stream, paid, template',
             ],
             [
-                'id' => 237,
+                'id' => 236,
                 'name' => 'Technology Consumer Electronic',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2622,7 +2612,7 @@ class Template extends Model
                 'tags' => 'technology, consumer, electronic, live stream, paid, template',
             ],
             [
-                'id' => 238,
+                'id' => 237,
                 'name' => 'Crypto Market Analysis',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2633,7 +2623,7 @@ class Template extends Model
                 'tags' => 'crypto, market, analysis, live stream, paid, template',
             ],
             [
-                'id' => 239,
+                'id' => 238,
                 'name' => 'Travel Destination Tours',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2644,7 +2634,7 @@ class Template extends Model
                 'tags' => 'travel, destination, tours, live stream, paid, template',
             ],
             [
-                'id' => 240,
+                'id' => 239,
                 'name' => 'Crypto Educational',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2655,7 +2645,7 @@ class Template extends Model
                 'tags' => 'crypto, educational, live stream, paid, template',
             ],
             [
-                'id' => 241,
+                'id' => 240,
                 'name' => 'Art Drawing And Illustrations',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2666,7 +2656,7 @@ class Template extends Model
                 'tags' => 'art, drawing, and, illustrations, live stream, paid, template',
             ],
             [
-                'id' => 242,
+                'id' => 241,
                 'name' => 'DIY Home Improvements',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2677,7 +2667,7 @@ class Template extends Model
                 'tags' => 'diy, home, improvements, live stream, paid, template',
             ],
             [
-                'id' => 243,
+                'id' => 242,
                 'name' => 'Food Review',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2688,7 +2678,7 @@ class Template extends Model
                 'tags' => 'food, review, live stream, paid, template',
             ],
             [
-                'id' => 244,
+                'id' => 243,
                 'name' => 'Gaming Action',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2699,7 +2689,7 @@ class Template extends Model
                 'tags' => 'gaming, action, live stream, paid, template',
             ],
             [
-                'id' => 245,
+                'id' => 244,
                 'name' => 'Technology Consumer Electronics',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2710,7 +2700,7 @@ class Template extends Model
                 'tags' => 'technology, consumer, electronics, live stream, paid, template',
             ],
             [
-                'id' => 246,
+                'id' => 245,
                 'name' => 'Textile Art',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2721,7 +2711,7 @@ class Template extends Model
                 'tags' => 'textile, art, live stream, paid, template',
             ],
             [
-                'id' => 247,
+                'id' => 246,
                 'name' => 'Art Painting',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2732,7 +2722,7 @@ class Template extends Model
                 'tags' => 'art, painting, live stream, paid, template',
             ],
             [
-                'id' => 248,
+                'id' => 247,
                 'name' => 'DIY Gardening',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2743,7 +2733,7 @@ class Template extends Model
                 'tags' => 'diy, gardening, live stream, paid, template',
             ],
             [
-                'id' => 249,
+                'id' => 248,
                 'name' => 'Travel Vlogs',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2754,7 +2744,7 @@ class Template extends Model
                 'tags' => 'travel, vlogs, live stream, paid, template',
             ],
             [
-                'id' => 250,
+                'id' => 249,
                 'name' => 'Food Healthy Eatings',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2765,7 +2755,7 @@ class Template extends Model
                 'tags' => 'food, healthy, eatings, live stream, paid, template',
             ],
             [
-                'id' => 251,
+                'id' => 250,
                 'name' => 'Travel Gaming Horror',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2776,7 +2766,7 @@ class Template extends Model
                 'tags' => 'travel, gaming, horror, live stream, paid, template',
             ],
             [
-                'id' => 252,
+                'id' => 251,
                 'name' => 'Music Live Performance',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2787,7 +2777,7 @@ class Template extends Model
                 'tags' => 'music, live, performance, live stream, paid, template',
             ],
             [
-                'id' => 253,
+                'id' => 252,
                 'name' => 'Technology How To Guide',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2798,7 +2788,7 @@ class Template extends Model
                 'tags' => 'technology, how, to, guide, live stream, paid, template',
             ],
             [
-                'id' => 254,
+                'id' => 253,
                 'name' => 'Crypto Trend Analysis',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2809,7 +2799,7 @@ class Template extends Model
                 'tags' => 'crypto, trend, analysis, live stream, paid, template',
             ],
             [
-                'id' => 255,
+                'id' => 254,
                 'name' => 'Travel Packing Tips',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2820,7 +2810,7 @@ class Template extends Model
                 'tags' => 'travel, packing, tips, live stream, paid, template',
             ],
             [
-                'id' => 256,
+                'id' => 255,
                 'name' => 'Food Challenge Eating Contests',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2831,7 +2821,7 @@ class Template extends Model
                 'tags' => 'food, challenge, eating, contests, live stream, paid, template',
             ],
             [
-                'id' => 257,
+                'id' => 256,
                 'name' => 'Art Printmaking Etching',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2842,7 +2832,7 @@ class Template extends Model
                 'tags' => 'art, printmaking, etching, live stream, paid, template',
             ],
             [
-                'id' => 258,
+                'id' => 257,
                 'name' => 'DIY Gardening Sustainable',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2853,7 +2843,7 @@ class Template extends Model
                 'tags' => 'diy, gardening, sustainable, live stream, paid, template',
             ],
             [
-                'id' => 259,
+                'id' => 258,
                 'name' => 'Gaming Shooting',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2864,7 +2854,7 @@ class Template extends Model
                 'tags' => 'gaming, shooting, live stream, paid, template',
             ],
             [
-                'id' => 260,
+                'id' => 259,
                 'name' => 'Technology How To Guides',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2875,7 +2865,7 @@ class Template extends Model
                 'tags' => 'technology, how, to, guides, live stream, paid, template',
             ],
             [
-                'id' => 261,
+                'id' => 260,
                 'name' => 'Food Restaurant Reviews',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2886,7 +2876,7 @@ class Template extends Model
                 'tags' => 'food, restaurant, reviews, live stream, paid, template',
             ],
             [
-                'id' => 262,
+                'id' => 261,
                 'name' => 'Travel Cultural Experience',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2897,7 +2887,7 @@ class Template extends Model
                 'tags' => 'travel, cultural, experience, live stream, paid, template',
             ],
             [
-                'id' => 263,
+                'id' => 262,
                 'name' => 'Art Printmaking',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2908,7 +2898,7 @@ class Template extends Model
                 'tags' => 'art, printmaking, live stream, paid, template',
             ],
             [
-                'id' => 264,
+                'id' => 263,
                 'name' => 'Food Cooking Live',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2919,7 +2909,7 @@ class Template extends Model
                 'tags' => 'food, cooking, live, live stream, paid, template',
             ],
             [
-                'id' => 265,
+                'id' => 264,
                 'name' => 'Passing Of Comet',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2930,7 +2920,7 @@ class Template extends Model
                 'tags' => 'passing, of, comet, live stream, paid, template',
             ],
             [
-                'id' => 266,
+                'id' => 265,
                 'name' => 'Amplify Your Learning',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -2941,7 +2931,7 @@ class Template extends Model
                 'tags' => 'amplify, your, learning, study, paid, template',
             ],
             [
-                'id' => 267,
+                'id' => 266,
                 'name' => 'Eid Mubarak',
                 'category' => 'Ramadan',
                 'sub_category' => '',
@@ -2952,7 +2942,7 @@ class Template extends Model
                 'tags' => 'eid, mubarak, ramadan, paid, template',
             ],
             [
-                'id' => 268,
+                'id' => 267,
                 'name' => 'Paws In Motion',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -2963,7 +2953,7 @@ class Template extends Model
                 'tags' => 'paws, in, motion, pets, paid, template',
             ],
             [
-                'id' => 269,
+                'id' => 268,
                 'name' => 'A Sacred Month',
                 'category' => 'Ramadan',
                 'sub_category' => '',
@@ -2974,7 +2964,7 @@ class Template extends Model
                 'tags' => 'a, sacred, month, ramadan, paid, template',
             ],
             [
-                'id' => 270,
+                'id' => 269,
                 'name' => 'Happy Ramadan',
                 'category' => 'Ramadan',
                 'sub_category' => '',
@@ -2985,7 +2975,7 @@ class Template extends Model
                 'tags' => 'happy, ramadan, ramadan, paid, template',
             ],
             [
-                'id' => 271,
+                'id' => 270,
                 'name' => 'Storm Chaser',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -2996,7 +2986,7 @@ class Template extends Model
                 'tags' => 'storm, chaser, live stream, paid, template',
             ],
             [
-                'id' => 272,
+                'id' => 271,
                 'name' => 'Stream Q & A Session',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3007,7 +2997,7 @@ class Template extends Model
                 'tags' => 'stream, q-a, q&a, session, live stream, paid, template',
             ],
             [
-                'id' => 273,
+                'id' => 272,
                 'name' => 'Puzzle Party',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3018,7 +3008,7 @@ class Template extends Model
                 'tags' => 'puzzle, party, live stream, paid, template',
             ],
             [
-                'id' => 274,
+                'id' => 273,
                 'name' => 'Zookeeper Behind The Scene',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3029,7 +3019,7 @@ class Template extends Model
                 'tags' => 'zookeeper, behind, the, scene, live stream, paid, template',
             ],
             [
-                'id' => 275,
+                'id' => 274,
                 'name' => 'Paranormal Investigation',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3040,7 +3030,7 @@ class Template extends Model
                 'tags' => 'paranormal, investigation, live stream, paid, template',
             ],
             [
-                'id' => 276,
+                'id' => 275,
                 'name' => 'Sweat And Strength',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -3051,7 +3041,7 @@ class Template extends Model
                 'tags' => 'sweat, and, strength, fitness, paid, template',
             ],
             [
-                'id' => 277,
+                'id' => 276,
                 'name' => 'Freedom Of The Open Road',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -3062,7 +3052,7 @@ class Template extends Model
                 'tags' => 'freedom, of, the, open, road, pets, paid, template',
             ],
             [
-                'id' => 278,
+                'id' => 277,
                 'name' => 'Business Plan And Strategy',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -3073,7 +3063,7 @@ class Template extends Model
                 'tags' => 'business, plan, and, strategy, meeting, paid, template',
             ],
             [
-                'id' => 279,
+                'id' => 278,
                 'name' => 'Father\'s Day',
                 'category' => 'Holiday',
                 'sub_category' => '',
@@ -3081,10 +3071,10 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.holiday.father-s-day.index',
                 'tokens' => 7,
-                'tags' => 'father-s, day, holiday, paid, template',
+                'tags' => 'fathers, day, holiday, paid, template',
             ],
             [
-                'id' => 280,
+                'id' => 279,
                 'name' => 'Picnic Delights In Nature',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -3095,7 +3085,7 @@ class Template extends Model
                 'tags' => 'picnic, delights, in, nature, vacation, paid, template',
             ],
             [
-                'id' => 281,
+                'id' => 280,
                 'name' => 'Bounding With Pet Birds',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -3106,7 +3096,7 @@ class Template extends Model
                 'tags' => 'bounding, with, pet, birds, pets, paid, template',
             ],
             [
-                'id' => 282,
+                'id' => 281,
                 'name' => 'Agenda Stopwatch',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -3117,7 +3107,7 @@ class Template extends Model
                 'tags' => 'agenda, stopwatch, meeting, paid, template',
             ],
             [
-                'id' => 283,
+                'id' => 282,
                 'name' => 'Birthday Bliss',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -3128,7 +3118,7 @@ class Template extends Model
                 'tags' => 'birthday, bliss, birthday, paid, template',
             ],
             [
-                'id' => 284,
+                'id' => 283,
                 'name' => 'Escape Countdown',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -3139,7 +3129,7 @@ class Template extends Model
                 'tags' => 'escape, countdown, vacation, paid, template',
             ],
             [
-                'id' => 285,
+                'id' => 284,
                 'name' => 'Unleashing Full Potential',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -3150,7 +3140,7 @@ class Template extends Model
                 'tags' => 'unleashing, full, potential, study, paid, template',
             ],
             [
-                'id' => 286,
+                'id' => 285,
                 'name' => 'Breathing Experience Tranquility',
                 'category' => 'Mindful',
                 'sub_category' => '',
@@ -3161,7 +3151,7 @@ class Template extends Model
                 'tags' => 'breathing, experience, tranquility, mindful, paid, template',
             ],
             [
-                'id' => 287,
+                'id' => 286,
                 'name' => 'Timeless Memories',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -3172,7 +3162,7 @@ class Template extends Model
                 'tags' => 'timeless, memories, vacation, paid, template',
             ],
             [
-                'id' => 288,
+                'id' => 287,
                 'name' => 'Beach Front Release',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -3183,7 +3173,7 @@ class Template extends Model
                 'tags' => 'beach, front, release, vacation, paid, template',
             ],
             [
-                'id' => 289,
+                'id' => 288,
                 'name' => 'Retreat Serene Tranquility',
                 'category' => 'Silent',
                 'sub_category' => '',
@@ -3194,7 +3184,7 @@ class Template extends Model
                 'tags' => 'retreat, serene, tranquility, silent, paid, template',
             ],
             [
-                'id' => 290,
+                'id' => 289,
                 'name' => 'Dream Getaway',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -3205,7 +3195,7 @@ class Template extends Model
                 'tags' => 'dream, getaway, vacation, paid, template',
             ],
             [
-                'id' => 291,
+                'id' => 290,
                 'name' => 'Anticipation Thrill',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -3216,7 +3206,7 @@ class Template extends Model
                 'tags' => 'anticipation, thrill, birthday, paid, template',
             ],
             [
-                'id' => 292,
+                'id' => 291,
                 'name' => 'Dynamic Workout Routine',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -3227,7 +3217,7 @@ class Template extends Model
                 'tags' => 'dynamic, workout, routine, fitness, paid, template',
             ],
             [
-                'id' => 293,
+                'id' => 292,
                 'name' => 'Perfect Timing',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -3238,7 +3228,7 @@ class Template extends Model
                 'tags' => 'perfect, timing, fitness, paid, template',
             ],
             [
-                'id' => 294,
+                'id' => 293,
                 'name' => 'Beyond Imagination',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -3249,7 +3239,7 @@ class Template extends Model
                 'tags' => 'beyond, imagination, birthday, paid, template',
             ],
             [
-                'id' => 295,
+                'id' => 294,
                 'name' => 'Unfolding Magic',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -3260,7 +3250,7 @@ class Template extends Model
                 'tags' => 'unfolding, magic, birthday, paid, template',
             ],
             [
-                'id' => 296,
+                'id' => 295,
                 'name' => 'Grand Birthday Spectacle',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -3271,7 +3261,7 @@ class Template extends Model
                 'tags' => 'grand, birthday, spectacle, birthday, paid, template',
             ],
             [
-                'id' => 297,
+                'id' => 296,
                 'name' => 'Building Excitement 2',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -3282,7 +3272,7 @@ class Template extends Model
                 'tags' => 'building, excitement, 2, birthday, paid, template',
             ],
             [
-                'id' => 298,
+                'id' => 297,
                 'name' => 'Deep Sea Exploration',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3293,7 +3283,7 @@ class Template extends Model
                 'tags' => 'deep, sea, exploration, live stream, paid, template',
             ],
             [
-                'id' => 299,
+                'id' => 298,
                 'name' => 'Wildlife Streaming',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3304,7 +3294,7 @@ class Template extends Model
                 'tags' => 'wildlife, streaming, live stream, paid, template',
             ],
             [
-                'id' => 300,
+                'id' => 299,
                 'name' => 'Sculpting',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3315,7 +3305,7 @@ class Template extends Model
                 'tags' => 'sculpting, live stream, paid, template',
             ],
             [
-                'id' => 301,
+                'id' => 300,
                 'name' => 'Dance Performances',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3326,7 +3316,7 @@ class Template extends Model
                 'tags' => 'dance, performances, live stream, paid, template',
             ],
             [
-                'id' => 302,
+                'id' => 301,
                 'name' => 'Art Exhibits',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3337,7 +3327,7 @@ class Template extends Model
                 'tags' => 'art, exhibits, live stream, paid, template',
             ],
             [
-                'id' => 303,
+                'id' => 302,
                 'name' => 'Parades',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3348,7 +3338,7 @@ class Template extends Model
                 'tags' => 'parades, live stream, paid, template',
             ],
             [
-                'id' => 304,
+                'id' => 303,
                 'name' => 'Fashion Shows',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3359,7 +3349,7 @@ class Template extends Model
                 'tags' => 'fashion, shows, live stream, paid, template',
             ],
             [
-                'id' => 305,
+                'id' => 304,
                 'name' => 'Product Launches',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3370,7 +3360,7 @@ class Template extends Model
                 'tags' => 'product, launches, live stream, paid, template',
             ],
             [
-                'id' => 306,
+                'id' => 305,
                 'name' => 'Rocket Launch',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3381,7 +3371,7 @@ class Template extends Model
                 'tags' => 'rocket, launch, live stream, paid, template',
             ],
             [
-                'id' => 307,
+                'id' => 306,
                 'name' => 'Gaming Tournaments',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3392,7 +3382,7 @@ class Template extends Model
                 'tags' => 'gaming, tournaments, live stream, paid, template',
             ],
             [
-                'id' => 308,
+                'id' => 307,
                 'name' => 'Car Shows',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3403,7 +3393,7 @@ class Template extends Model
                 'tags' => 'car, shows, live stream, paid, template',
             ],
             [
-                'id' => 309,
+                'id' => 308,
                 'name' => 'Sheep Farm',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3414,7 +3404,7 @@ class Template extends Model
                 'tags' => 'sheep, farm, live stream, paid, template',
             ],
             [
-                'id' => 310,
+                'id' => 309,
                 'name' => 'Podcasts',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3425,7 +3415,7 @@ class Template extends Model
                 'tags' => 'podcasts, live stream, paid, template',
             ],
             [
-                'id' => 311,
+                'id' => 310,
                 'name' => 'Plant Blooms',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3436,7 +3426,7 @@ class Template extends Model
                 'tags' => 'plant, blooms, live stream, paid, template',
             ],
             [
-                'id' => 312,
+                'id' => 311,
                 'name' => 'Craft Fairs',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3447,7 +3437,7 @@ class Template extends Model
                 'tags' => 'craft, fairs, live stream, paid, template',
             ],
             [
-                'id' => 313,
+                'id' => 312,
                 'name' => 'Pet Shows',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3458,7 +3448,7 @@ class Template extends Model
                 'tags' => 'pet, shows, live stream, paid, template',
             ],
             [
-                'id' => 314,
+                'id' => 313,
                 'name' => 'Underwater Caves',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3469,7 +3459,7 @@ class Template extends Model
                 'tags' => 'underwater, caves, live stream, paid, template',
             ],
             [
-                'id' => 315,
+                'id' => 314,
                 'name' => 'Fitness Classes',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3480,7 +3470,7 @@ class Template extends Model
                 'tags' => 'fitness, classes, live stream, paid, template',
             ],
             [
-                'id' => 316,
+                'id' => 315,
                 'name' => 'Food Festivals',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3491,7 +3481,7 @@ class Template extends Model
                 'tags' => 'food, festivals, live stream, paid, template',
             ],
             [
-                'id' => 317,
+                'id' => 316,
                 'name' => 'Coral Spawning',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3502,7 +3492,7 @@ class Template extends Model
                 'tags' => 'coral, spawning, live stream, paid, template',
             ],
             [
-                'id' => 318,
+                'id' => 317,
                 'name' => 'Crypto Market',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3513,7 +3503,7 @@ class Template extends Model
                 'tags' => 'crypto, market, live stream, paid, template',
             ],
             [
-                'id' => 319,
+                'id' => 318,
                 'name' => 'Art Drawing And Illustration',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3524,7 +3514,7 @@ class Template extends Model
                 'tags' => 'art, drawing, and, illustration, live stream, paid, template',
             ],
             [
-                'id' => 320,
+                'id' => 319,
                 'name' => 'Travel Tips',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3535,7 +3525,7 @@ class Template extends Model
                 'tags' => 'travel, tips, live stream, paid, template',
             ],
             [
-                'id' => 321,
+                'id' => 320,
                 'name' => 'Book Reading',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3546,7 +3536,7 @@ class Template extends Model
                 'tags' => 'book, reading, live stream, paid, template',
             ],
             [
-                'id' => 322,
+                'id' => 321,
                 'name' => 'Food Healthy Eating',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3557,7 +3547,7 @@ class Template extends Model
                 'tags' => 'food, healthy, eating, live stream, paid, template',
             ],
             [
-                'id' => 323,
+                'id' => 322,
                 'name' => 'DIY Crafting',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3568,7 +3558,7 @@ class Template extends Model
                 'tags' => 'diy, crafting, live stream, paid, template',
             ],
             [
-                'id' => 324,
+                'id' => 323,
                 'name' => 'Art Textile Art',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3579,7 +3569,7 @@ class Template extends Model
                 'tags' => 'art, textile, art, live stream, paid, template',
             ],
             [
-                'id' => 325,
+                'id' => 324,
                 'name' => 'Tech News 2',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3590,7 +3580,7 @@ class Template extends Model
                 'tags' => 'tech, news, 2, live stream, paid, template',
             ],
             [
-                'id' => 326,
+                'id' => 325,
                 'name' => 'Music Lesson',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3601,7 +3591,7 @@ class Template extends Model
                 'tags' => 'music, lesson, live stream, paid, template',
             ],
             [
-                'id' => 327,
+                'id' => 326,
                 'name' => 'DIY Home Improvement',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3612,7 +3602,7 @@ class Template extends Model
                 'tags' => 'diy, home, improvement, live stream, paid, template',
             ],
             [
-                'id' => 328,
+                'id' => 327,
                 'name' => 'Music Live Performances 2',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3623,7 +3613,7 @@ class Template extends Model
                 'tags' => 'music, live, performances, 2, live stream, paid, template',
             ],
             [
-                'id' => 329,
+                'id' => 328,
                 'name' => 'Therapy Session',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3634,7 +3624,7 @@ class Template extends Model
                 'tags' => 'therapy, session, live stream, paid, template',
             ],
             [
-                'id' => 330,
+                'id' => 329,
                 'name' => 'Electronic Repair',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3645,7 +3635,7 @@ class Template extends Model
                 'tags' => 'electronic, repair, live stream, paid, template',
             ],
             [
-                'id' => 331,
+                'id' => 330,
                 'name' => 'Wildlife Rescue And Rehabilitation',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3656,7 +3646,7 @@ class Template extends Model
                 'tags' => 'wildlife, rescue, and, rehabilitation, live stream, paid, template',
             ],
             [
-                'id' => 332,
+                'id' => 331,
                 'name' => 'Home Decor',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3667,7 +3657,7 @@ class Template extends Model
                 'tags' => 'home, decor, live stream, paid, template',
             ],
             [
-                'id' => 333,
+                'id' => 332,
                 'name' => 'Outdoor Survival Camps',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3678,7 +3668,7 @@ class Template extends Model
                 'tags' => 'outdoor, survival, camps, live stream, paid, template',
             ],
             [
-                'id' => 334,
+                'id' => 333,
                 'name' => 'Interactive Cooking Competition',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3689,7 +3679,7 @@ class Template extends Model
                 'tags' => 'interactive, cooking, competition, live stream, paid, template',
             ],
             [
-                'id' => 335,
+                'id' => 334,
                 'name' => 'Live Sports',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3700,7 +3690,7 @@ class Template extends Model
                 'tags' => 'live, sports, live stream, paid, template',
             ],
             [
-                'id' => 336,
+                'id' => 335,
                 'name' => 'Fitness Challenges',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3711,7 +3701,7 @@ class Template extends Model
                 'tags' => 'fitness, challenges, live stream, paid, template',
             ],
             [
-                'id' => 337,
+                'id' => 336,
                 'name' => 'Play A Musical Instrument',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3722,7 +3712,7 @@ class Template extends Model
                 'tags' => 'play, a, musical, instrument, live stream, paid, template',
             ],
             [
-                'id' => 338,
+                'id' => 337,
                 'name' => 'Unboxing',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3733,7 +3723,7 @@ class Template extends Model
                 'tags' => 'unboxing, live stream, paid, template',
             ],
             [
-                'id' => 339,
+                'id' => 338,
                 'name' => 'Bedtime Story',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3744,7 +3734,7 @@ class Template extends Model
                 'tags' => 'bedtime, story, live stream, paid, template',
             ],
             [
-                'id' => 340,
+                'id' => 339,
                 'name' => 'Architecture Tours',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3755,7 +3745,7 @@ class Template extends Model
                 'tags' => 'architecture, tours, live stream, paid, template',
             ],
             [
-                'id' => 341,
+                'id' => 340,
                 'name' => 'Historical Reenactments',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3766,7 +3756,7 @@ class Template extends Model
                 'tags' => 'historical, reenactments, live stream, paid, template',
             ],
             [
-                'id' => 342,
+                'id' => 341,
                 'name' => 'Crime Solving Games',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3777,7 +3767,7 @@ class Template extends Model
                 'tags' => 'crime, solving, games, live stream, paid, template',
             ],
             [
-                'id' => 343,
+                'id' => 342,
                 'name' => 'Dance Battle',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3788,7 +3778,7 @@ class Template extends Model
                 'tags' => 'dance, battle, live stream, paid, template',
             ],
             [
-                'id' => 344,
+                'id' => 343,
                 'name' => 'GDrone Racing',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3799,7 +3789,7 @@ class Template extends Model
                 'tags' => 'gdrone, racing, live stream, paid, template',
             ],
             [
-                'id' => 345,
+                'id' => 344,
                 'name' => 'Green Power',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3810,7 +3800,7 @@ class Template extends Model
                 'tags' => 'green, power, live stream, paid, template',
             ],
             [
-                'id' => 346,
+                'id' => 345,
                 'name' => 'Museum Tours',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3821,7 +3811,7 @@ class Template extends Model
                 'tags' => 'museum, tours, live stream, paid, template',
             ],
             [
-                'id' => 347,
+                'id' => 346,
                 'name' => 'Marine Biology Expeditions',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3832,7 +3822,7 @@ class Template extends Model
                 'tags' => 'marine, biology, expeditions, live stream, paid, template',
             ],
             [
-                'id' => 348,
+                'id' => 347,
                 'name' => 'Cocktail Making',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3843,7 +3833,7 @@ class Template extends Model
                 'tags' => 'cocktail, making, live stream, paid, template',
             ],
             [
-                'id' => 349,
+                'id' => 348,
                 'name' => 'Charity',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3854,7 +3844,7 @@ class Template extends Model
                 'tags' => 'charity, live stream, paid, template',
             ],
             [
-                'id' => 350,
+                'id' => 349,
                 'name' => 'ABehind The Scenes',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3865,7 +3855,7 @@ class Template extends Model
                 'tags' => 'abehind, the, scenes, live stream, paid, template',
             ],
             [
-                'id' => 351,
+                'id' => 350,
                 'name' => 'Religious Services',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3876,7 +3866,7 @@ class Template extends Model
                 'tags' => 'religious, services, live stream, paid, template',
             ],
             [
-                'id' => 352,
+                'id' => 351,
                 'name' => 'Aquarium Tours',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3887,7 +3877,7 @@ class Template extends Model
                 'tags' => 'aquarium, tours, live stream, paid, template',
             ],
             [
-                'id' => 353,
+                'id' => 352,
                 'name' => 'Wildlife Conservation',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3898,7 +3888,7 @@ class Template extends Model
                 'tags' => 'wildlife, conservation, live stream, paid, template',
             ],
             [
-                'id' => 354,
+                'id' => 353,
                 'name' => 'AI Demonstrations',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3909,7 +3899,7 @@ class Template extends Model
                 'tags' => 'ai, demonstrations, live stream, paid, template',
             ],
             [
-                'id' => 355,
+                'id' => 354,
                 'name' => 'Plant Care',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3920,7 +3910,7 @@ class Template extends Model
                 'tags' => 'plant, care, live stream, paid, template',
             ],
             [
-                'id' => 356,
+                'id' => 355,
                 'name' => 'Fashion Design Competition',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3931,7 +3921,7 @@ class Template extends Model
                 'tags' => 'fashion, design, competition, live stream, paid, template',
             ],
             [
-                'id' => 357,
+                'id' => 356,
                 'name' => 'Racing',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3942,7 +3932,7 @@ class Template extends Model
                 'tags' => 'racing, live stream, paid, template',
             ],
             [
-                'id' => 358,
+                'id' => 357,
                 'name' => 'Culinary Clash',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3953,7 +3943,7 @@ class Template extends Model
                 'tags' => 'culinary, clash, live stream, paid, template',
             ],
             [
-                'id' => 359,
+                'id' => 358,
                 'name' => 'Celebrity Interview',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3964,7 +3954,7 @@ class Template extends Model
                 'tags' => 'celebrity, interview, live stream, paid, template',
             ],
             [
-                'id' => 360,
+                'id' => 359,
                 'name' => 'Meditation Sessions',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3975,7 +3965,7 @@ class Template extends Model
                 'tags' => 'meditation, sessions, live stream, paid, template',
             ],
             [
-                'id' => 361,
+                'id' => 360,
                 'name' => 'Astrology Readings',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3986,7 +3976,7 @@ class Template extends Model
                 'tags' => 'astrology, readings, live stream, paid, template',
             ],
             [
-                'id' => 362,
+                'id' => 361,
                 'name' => 'Talent Show',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -3997,7 +3987,7 @@ class Template extends Model
                 'tags' => 'talent, show, live stream, paid, template',
             ],
             [
-                'id' => 363,
+                'id' => 362,
                 'name' => 'Community Connect',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4008,7 +3998,7 @@ class Template extends Model
                 'tags' => 'community, connect, live stream, paid, template',
             ],
             [
-                'id' => 364,
+                'id' => 363,
                 'name' => 'Photography Workshop',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4019,7 +4009,7 @@ class Template extends Model
                 'tags' => 'photography, workshop, live stream, paid, template',
             ],
             [
-                'id' => 365,
+                'id' => 364,
                 'name' => 'Gardening Tips',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4030,7 +4020,7 @@ class Template extends Model
                 'tags' => 'gardening, tips, live stream, paid, template',
             ],
             [
-                'id' => 366,
+                'id' => 365,
                 'name' => 'Programming Workshop',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4041,7 +4031,7 @@ class Template extends Model
                 'tags' => 'programming, workshop, live stream, paid, template',
             ],
             [
-                'id' => 367,
+                'id' => 366,
                 'name' => 'Bid Win',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4052,7 +4042,7 @@ class Template extends Model
                 'tags' => 'bid, win, live stream, paid, template',
             ],
             [
-                'id' => 368,
+                'id' => 367,
                 'name' => 'Handwriting Lessons',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4063,7 +4053,7 @@ class Template extends Model
                 'tags' => 'handwriting, lessons, live stream, paid, template',
             ],
             [
-                'id' => 369,
+                'id' => 368,
                 'name' => 'Karaoke Night',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4074,7 +4064,7 @@ class Template extends Model
                 'tags' => 'karaoke, night, live stream, paid, template',
             ],
             [
-                'id' => 370,
+                'id' => 369,
                 'name' => 'StoryTelling',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4085,7 +4075,7 @@ class Template extends Model
                 'tags' => 'storytelling, live stream, paid, template',
             ],
             [
-                'id' => 371,
+                'id' => 370,
                 'name' => 'Giving Back Together',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4096,7 +4086,7 @@ class Template extends Model
                 'tags' => 'giving, back, together, live stream, paid, template',
             ],
             [
-                'id' => 372,
+                'id' => 371,
                 'name' => 'Mastering English',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4107,7 +4097,7 @@ class Template extends Model
                 'tags' => 'mastering, english, live stream, paid, template',
             ],
             [
-                'id' => 373,
+                'id' => 372,
                 'name' => 'Brushes And Beyond',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4118,7 +4108,7 @@ class Template extends Model
                 'tags' => 'brushes, and, beyond, live stream, paid, template',
             ],
             [
-                'id' => 374,
+                'id' => 373,
                 'name' => 'Fit Fab',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4129,7 +4119,7 @@ class Template extends Model
                 'tags' => 'fit, fab, live stream, paid, template',
             ],
             [
-                'id' => 375,
+                'id' => 374,
                 'name' => 'Critical Conversations',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4140,7 +4130,7 @@ class Template extends Model
                 'tags' => 'critical, conversations, live stream, paid, template',
             ],
             [
-                'id' => 376,
+                'id' => 375,
                 'name' => 'Knowledge Hub',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4151,7 +4141,7 @@ class Template extends Model
                 'tags' => 'knowledge, hub, live stream, paid, template',
             ],
             [
-                'id' => 377,
+                'id' => 376,
                 'name' => 'Conversations Unplugged',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4162,7 +4152,7 @@ class Template extends Model
                 'tags' => 'conversations, unplugged, live stream, paid, template',
             ],
             [
-                'id' => 378,
+                'id' => 377,
                 'name' => 'Laugh Out Loud',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4173,7 +4163,7 @@ class Template extends Model
                 'tags' => 'laugh, out, loud, live stream, paid, template',
             ],
             [
-                'id' => 379,
+                'id' => 378,
                 'name' => 'Virtual Tours',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4184,7 +4174,7 @@ class Template extends Model
                 'tags' => 'virtual, tours, live stream, paid, template',
             ],
             [
-                'id' => 380,
+                'id' => 379,
                 'name' => 'Crafting Corners',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4195,7 +4185,7 @@ class Template extends Model
                 'tags' => 'crafting, corners, live stream, paid, template',
             ],
             [
-                'id' => 381,
+                'id' => 380,
                 'name' => 'Junior Chefs In Action',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4206,7 +4196,7 @@ class Template extends Model
                 'tags' => 'junior, chefs, in, action, live stream, paid, template',
             ],
             [
-                'id' => 382,
+                'id' => 381,
                 'name' => 'Yours Straight From The Box',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4217,7 +4207,7 @@ class Template extends Model
                 'tags' => 'yours, straight, from, the, box, live stream, paid, template',
             ],
             [
-                'id' => 383,
+                'id' => 382,
                 'name' => 'Live Class On Geometric Principles',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4228,7 +4218,7 @@ class Template extends Model
                 'tags' => 'live, class, on, geometric, principles, live stream, paid, template',
             ],
             [
-                'id' => 384,
+                'id' => 383,
                 'name' => 'A Day In My World',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4239,7 +4229,7 @@ class Template extends Model
                 'tags' => 'a, day, in, my, world, live stream, paid, template',
             ],
             [
-                'id' => 385,
+                'id' => 384,
                 'name' => 'Live Singing Performance',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4250,7 +4240,7 @@ class Template extends Model
                 'tags' => 'live, singing, performance, live stream, paid, template',
             ],
             [
-                'id' => 386,
+                'id' => 385,
                 'name' => 'Shopping With You',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4261,7 +4251,7 @@ class Template extends Model
                 'tags' => 'shopping, with, you, live stream, paid, template',
             ],
             [
-                'id' => 387,
+                'id' => 386,
                 'name' => 'Live Performance By Acoustic Artist',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4272,7 +4262,7 @@ class Template extends Model
                 'tags' => 'live, performance, by, acoustic, artist, live stream, paid, template',
             ],
             [
-                'id' => 388,
+                'id' => 387,
                 'name' => 'Insight Inspiration',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4283,7 +4273,7 @@ class Template extends Model
                 'tags' => 'insight, inspiration, live stream, paid, template',
             ],
             [
-                'id' => 389,
+                'id' => 388,
                 'name' => 'Battle Royale Showdown',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4294,7 +4284,7 @@ class Template extends Model
                 'tags' => 'battle, royale, showdown, live stream, paid, template',
             ],
             [
-                'id' => 390,
+                'id' => 389,
                 'name' => 'Solo Performance',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4305,7 +4295,7 @@ class Template extends Model
                 'tags' => 'solo, performance, live stream, paid, template',
             ],
             [
-                'id' => 391,
+                'id' => 390,
                 'name' => 'Unleash Your Creativity With Ease',
                 'category' => 'Software Launch',
                 'sub_category' => '',
@@ -4316,7 +4306,7 @@ class Template extends Model
                 'tags' => 'unleash, your, creativity, with, ease, software launch, paid, template',
             ],
             [
-                'id' => 392,
+                'id' => 391,
                 'name' => 'Timeless Style Fit Royalty',
                 'category' => 'Clothing Brand',
                 'sub_category' => '',
@@ -4327,7 +4317,7 @@ class Template extends Model
                 'tags' => 'timeless, style, fit, royalty, clothing brand, paid, template',
             ],
             [
-                'id' => 393,
+                'id' => 392,
                 'name' => 'Redefining City Style',
                 'category' => 'Clothing Brand',
                 'sub_category' => '',
@@ -4338,7 +4328,7 @@ class Template extends Model
                 'tags' => 'redefining, city, style, clothing brand, paid, template',
             ],
             [
-                'id' => 394,
+                'id' => 393,
                 'name' => 'Organize Your Ideas',
                 'category' => 'Software Launch',
                 'sub_category' => '',
@@ -4349,7 +4339,7 @@ class Template extends Model
                 'tags' => 'organize, your, ideas, software launch, paid, template',
             ],
             [
-                'id' => 395,
+                'id' => 394,
                 'name' => 'Introducing Streamline',
                 'category' => 'Software Launch',
                 'sub_category' => '',
@@ -4360,7 +4350,7 @@ class Template extends Model
                 'tags' => 'introducing, streamline, software launch, paid, template',
             ],
             [
-                'id' => 396,
+                'id' => 395,
                 'name' => 'Discover Your Style',
                 'category' => 'Retail Store',
                 'sub_category' => '',
@@ -4371,7 +4361,7 @@ class Template extends Model
                 'tags' => 'discover, your, style, retail store, paid, template',
             ],
             [
-                'id' => 397,
+                'id' => 396,
                 'name' => 'Restaurant Savoria Bistro',
                 'category' => 'Grand Opening',
                 'sub_category' => '',
@@ -4382,7 +4372,7 @@ class Template extends Model
                 'tags' => 'restaurant, savoria, bistro, grand opening, paid, template',
             ],
             [
-                'id' => 398,
+                'id' => 397,
                 'name' => 'Your Premier Beverage Destination',
                 'category' => 'Retail Store',
                 'sub_category' => '',
@@ -4393,7 +4383,7 @@ class Template extends Model
                 'tags' => 'your, premier, beverage, destination, retail store, paid, template',
             ],
             [
-                'id' => 399,
+                'id' => 398,
                 'name' => 'Restaurant Discover Delight',
                 'category' => 'Grand Opening',
                 'sub_category' => '',
@@ -4404,7 +4394,7 @@ class Template extends Model
                 'tags' => 'restaurant, discover, delight, grand opening, paid, template',
             ],
             [
-                'id' => 400,
+                'id' => 399,
                 'name' => 'Where Style Meet Street',
                 'category' => 'Clothing Brand',
                 'sub_category' => '',
@@ -4415,7 +4405,7 @@ class Template extends Model
                 'tags' => 'where, style, meet, street, clothing brand, paid, template',
             ],
             [
-                'id' => 401,
+                'id' => 400,
                 'name' => 'Introducing NovaNote',
                 'category' => 'Software Launch',
                 'sub_category' => '',
@@ -4426,7 +4416,7 @@ class Template extends Model
                 'tags' => 'introducing, novanote, software launch, paid, template',
             ],
             [
-                'id' => 402,
+                'id' => 401,
                 'name' => 'Restaurant Where Flavor Meet Tradition',
                 'category' => 'Grand Opening',
                 'sub_category' => '',
@@ -4437,7 +4427,7 @@ class Template extends Model
                 'tags' => 'restaurant, where, flavor, meet, tradition, grand opening, paid, template',
             ],
             [
-                'id' => 403,
+                'id' => 402,
                 'name' => 'Urban Luxe',
                 'category' => 'Clothing Brand',
                 'sub_category' => '',
@@ -4448,7 +4438,7 @@ class Template extends Model
                 'tags' => 'urban, luxe, clothing brand, paid, template',
             ],
             [
-                'id' => 404,
+                'id' => 403,
                 'name' => 'Fresh Fruits Emporium',
                 'category' => 'Retail Store',
                 'sub_category' => '',
@@ -4459,7 +4449,7 @@ class Template extends Model
                 'tags' => 'fresh, fruits, emporium, retail store, paid, template',
             ],
             [
-                'id' => 405,
+                'id' => 404,
                 'name' => 'Restaurant Unveiling',
                 'category' => 'Grand Opening',
                 'sub_category' => '',
@@ -4470,7 +4460,7 @@ class Template extends Model
                 'tags' => 'restaurant, unveiling, grand opening, paid, template',
             ],
             [
-                'id' => 406,
+                'id' => 405,
                 'name' => 'Simplify Scheduling',
                 'category' => 'Software Launch',
                 'sub_category' => '',
@@ -4481,7 +4471,7 @@ class Template extends Model
                 'tags' => 'simplify, scheduling, software launch, paid, template',
             ],
             [
-                'id' => 407,
+                'id' => 406,
                 'name' => 'Urban Expression Canvas',
                 'category' => 'Clothing Brand',
                 'sub_category' => '',
@@ -4492,7 +4482,7 @@ class Template extends Model
                 'tags' => 'urban, expression, canvas, clothing brand, paid, template',
             ],
             [
-                'id' => 408,
+                'id' => 407,
                 'name' => 'Sunshine General Store',
                 'category' => 'Retail Store',
                 'sub_category' => '',
@@ -4503,7 +4493,7 @@ class Template extends Model
                 'tags' => 'sunshine, general, store, retail store, paid, template',
             ],
             [
-                'id' => 409,
+                'id' => 408,
                 'name' => 'Everyday Essentials',
                 'category' => 'Retail Store',
                 'sub_category' => '',
@@ -4514,7 +4504,7 @@ class Template extends Model
                 'tags' => 'everyday, essentials, retail store, paid, template',
             ],
             [
-                'id' => 410,
+                'id' => 409,
                 'name' => 'Training With Dumbbell',
                 'category' => 'Fitness Strength',
                 'sub_category' => '',
@@ -4525,7 +4515,7 @@ class Template extends Model
                 'tags' => 'training, with, dumbbell, fitness strength, paid, template',
             ],
             [
-                'id' => 411,
+                'id' => 410,
                 'name' => 'Horse Racing',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4536,7 +4526,7 @@ class Template extends Model
                 'tags' => 'horse, racing, live stream, paid, template',
             ],
             [
-                'id' => 412,
+                'id' => 411,
                 'name' => 'Magic Show',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4547,7 +4537,7 @@ class Template extends Model
                 'tags' => 'magic, show, live stream, paid, template',
             ],
             [
-                'id' => 413,
+                'id' => 412,
                 'name' => 'Dreams',
                 'category' => 'Sport Hoop',
                 'sub_category' => '',
@@ -4558,7 +4548,7 @@ class Template extends Model
                 'tags' => 'dreams, sport hoop, paid, template',
             ],
             [
-                'id' => 414,
+                'id' => 413,
                 'name' => 'Sweet Celebration',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -4569,7 +4559,7 @@ class Template extends Model
                 'tags' => 'sweet, celebration, birthday, paid, template',
             ],
             [
-                'id' => 415,
+                'id' => 414,
                 'name' => 'Fun Filled Pet Playtime',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -4580,7 +4570,7 @@ class Template extends Model
                 'tags' => 'fun, filled, pet, playtime, pets, paid, template',
             ],
             [
-                'id' => 416,
+                'id' => 415,
                 'name' => 'Ace Your Prep',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -4591,7 +4581,7 @@ class Template extends Model
                 'tags' => 'ace, your, prep, sport, paid, template',
             ],
             [
-                'id' => 417,
+                'id' => 416,
                 'name' => 'Maximize Your Potential',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -4602,7 +4592,7 @@ class Template extends Model
                 'tags' => 'maximize, your, potential, study, paid, template',
             ],
             [
-                'id' => 418,
+                'id' => 417,
                 'name' => 'Revitalize & Recharge',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -4613,18 +4603,18 @@ class Template extends Model
                 'tags' => 'revitalize, &, recharge, fitness, paid, template',
             ],
             [
-                'id' => 419,
+                'id' => 418,
                 'name' => 'Capturing Fashion\'s Radiance',
                 'category' => 'Fashion',
                 'sub_category' => '',
-                'image' => 'resources/views/templates/fashion/capturing-fashion\'s-radiance/images/preview.webp',
+                'image' => 'resources/views/templates/fashion/capturing-fashion-s-radiance/images/preview.webp',
                 'type' => 'paid',
-                'path' => 'templates.fashion.capturing-fashion\'s-radiance.index',
+                'path' => 'templates.fashion.capturing-fashion-s-radiance.index',
                 'tokens' => 7,
                 'tags' => 'capturing, fashion\'s, radiance, fashion, paid, template',
             ],
             [
-                'id' => 420,
+                'id' => 419,
                 'name' => 'OutDoor Fun',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -4635,7 +4625,7 @@ class Template extends Model
                 'tags' => 'outdoor, fun, pets, paid, template',
             ],
             [
-                'id' => 421,
+                'id' => 420,
                 'name' => 'Amidst A Sea Of Books',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -4646,7 +4636,7 @@ class Template extends Model
                 'tags' => 'amidst, a, sea, of, books, study, paid, template',
             ],
             [
-                'id' => 422,
+                'id' => 421,
                 'name' => 'Pampering Spa Experience',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -4657,7 +4647,7 @@ class Template extends Model
                 'tags' => 'pampering, spa, experience, beauty, paid, template',
             ],
             [
-                'id' => 423,
+                'id' => 422,
                 'name' => 'Meeting Readiness Workshop',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -4668,7 +4658,7 @@ class Template extends Model
                 'tags' => 'meeting, readiness, workshop, meeting, paid, template',
             ],
             [
-                'id' => 424,
+                'id' => 423,
                 'name' => 'On Thin Ice',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -4679,7 +4669,7 @@ class Template extends Model
                 'tags' => 'on, thin, ice, meeting, paid, template',
             ],
             [
-                'id' => 425,
+                'id' => 424,
                 'name' => 'Step Into The Ring Of Fitness',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -4690,7 +4680,7 @@ class Template extends Model
                 'tags' => 'step, into, the, ring, of, fitness, fitness, paid, template',
             ],
             [
-                'id' => 426,
+                'id' => 425,
                 'name' => 'A Birthday Extravaganza',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -4701,7 +4691,7 @@ class Template extends Model
                 'tags' => 'a, birthday, extravaganza, birthday, paid, template',
             ],
             [
-                'id' => 427,
+                'id' => 426,
                 'name' => 'Warm Glow Of Twilight',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -4712,7 +4702,7 @@ class Template extends Model
                 'tags' => 'warm, glow, of, twilight, vacation, paid, template',
             ],
             [
-                'id' => 428,
+                'id' => 427,
                 'name' => 'Library Of Learning',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -4723,7 +4713,7 @@ class Template extends Model
                 'tags' => 'library, of, learning, study, paid, template',
             ],
             [
-                'id' => 430,
+                'id' => 428,
                 'name' => 'Chic Couture',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -4734,7 +4724,7 @@ class Template extends Model
                 'tags' => 'chic, couture, fashion, paid, template',
             ],
             [
-                'id' => 431,
+                'id' => 429,
                 'name' => 'Strength Forged',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -4745,7 +4735,7 @@ class Template extends Model
                 'tags' => 'strength, forged, fitness, paid, template',
             ],
             [
-                'id' => 432,
+                'id' => 430,
                 'name' => 'Capturing Coastal Beauty',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -4756,7 +4746,7 @@ class Template extends Model
                 'tags' => 'capturing, coastal, beauty, vacation, paid, template',
             ],
             [
-                'id' => 433,
+                'id' => 431,
                 'name' => 'Smiles And Sweets',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -4767,7 +4757,7 @@ class Template extends Model
                 'tags' => 'smiles, and, sweets, birthday, paid, template',
             ],
             [
-                'id' => 434,
+                'id' => 432,
                 'name' => 'Navigating Growth',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -4778,7 +4768,7 @@ class Template extends Model
                 'tags' => 'navigating, growth, meeting, paid, template',
             ],
             [
-                'id' => 435,
+                'id' => 433,
                 'name' => 'Efficient Studying',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -4789,7 +4779,7 @@ class Template extends Model
                 'tags' => 'efficient, studying, study, paid, template',
             ],
             [
-                'id' => 436,
+                'id' => 434,
                 'name' => 'Style Spectacle',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -4800,7 +4790,7 @@ class Template extends Model
                 'tags' => 'style, spectacle, fashion, paid, template',
             ],
             [
-                'id' => 437,
+                'id' => 435,
                 'name' => 'Intensive Tennis Practice',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -4811,7 +4801,7 @@ class Template extends Model
                 'tags' => 'intensive, tennis, practice, sport, paid, template',
             ],
             [
-                'id' => 438,
+                'id' => 436,
                 'name' => 'Move Sweat Thrive',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -4822,7 +4812,7 @@ class Template extends Model
                 'tags' => 'move, sweat, thrive, fitness, paid, template',
             ],
             [
-                'id' => 439,
+                'id' => 437,
                 'name' => 'Celebrate In Style',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -4833,7 +4823,7 @@ class Template extends Model
                 'tags' => 'celebrate, in, style, birthday, paid, template',
             ],
             [
-                'id' => 440,
+                'id' => 438,
                 'name' => 'Beyond Corner',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -4844,7 +4834,7 @@ class Template extends Model
                 'tags' => 'beyond, corner, study, paid, template',
             ],
             [
-                'id' => 441,
+                'id' => 439,
                 'name' => 'Your Tranquil BeachFront Retreat',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -4855,7 +4845,7 @@ class Template extends Model
                 'tags' => 'your, tranquil, beachfront, retreat, vacation, paid, template',
             ],
             [
-                'id' => 442,
+                'id' => 440,
                 'name' => 'Groove Central',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -4866,7 +4856,7 @@ class Template extends Model
                 'tags' => 'groove, central, sport, paid, template',
             ],
             [
-                'id' => 443,
+                'id' => 441,
                 'name' => 'Relaxing Body Massage',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -4877,7 +4867,7 @@ class Template extends Model
                 'tags' => 'relaxing, body, massage, beauty, paid, template',
             ],
             [
-                'id' => 444,
+                'id' => 442,
                 'name' => 'Board Game',
                 'category' => 'Live Stream',
                 'sub_category' => '',
@@ -4888,7 +4878,7 @@ class Template extends Model
                 'tags' => 'board, game, live stream, paid, template',
             ],
             [
-                'id' => 445,
+                'id' => 443,
                 'name' => 'Settle Onto A Soft Blanket',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -4899,7 +4889,7 @@ class Template extends Model
                 'tags' => 'settle, onto, a, soft, blanket, vacation, paid, template',
             ],
             [
-                'id' => 446,
+                'id' => 444,
                 'name' => 'Personalized Skincare Routine',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -4910,7 +4900,7 @@ class Template extends Model
                 'tags' => 'personalized, skincare, routine, beauty, paid, template',
             ],
             [
-                'id' => 447,
+                'id' => 445,
                 'name' => 'Pamper You',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -4921,7 +4911,7 @@ class Template extends Model
                 'tags' => 'pamper, you, beauty, paid, template',
             ],
             [
-                'id' => 448,
+                'id' => 446,
                 'name' => 'Step Into Stride',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -4932,7 +4922,7 @@ class Template extends Model
                 'tags' => 'step, into, stride, sport, paid, template',
             ],
             [
-                'id' => 449,
+                'id' => 447,
                 'name' => 'Team Collaboration Forum',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -4943,7 +4933,7 @@ class Template extends Model
                 'tags' => 'team, collaboration, forum, meeting, paid, template',
             ],
             [
-                'id' => 450,
+                'id' => 448,
                 'name' => 'Learn Your Way',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -4954,7 +4944,7 @@ class Template extends Model
                 'tags' => 'learn, your, way, study, paid, template',
             ],
             [
-                'id' => 451,
+                'id' => 449,
                 'name' => 'A Toast To Nolan',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -4965,7 +4955,7 @@ class Template extends Model
                 'tags' => 'a, toast, to, nolan, birthday, paid, template',
             ],
             [
-                'id' => 452,
+                'id' => 450,
                 'name' => 'Pump Your Power',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -4976,7 +4966,7 @@ class Template extends Model
                 'tags' => 'pump, your, power, fitness, paid, template',
             ],
             [
-                'id' => 453,
+                'id' => 451,
                 'name' => 'Dress To Impress',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -4987,7 +4977,7 @@ class Template extends Model
                 'tags' => 'dress, to, impress, fashion, paid, template',
             ],
             [
-                'id' => 454,
+                'id' => 452,
                 'name' => 'Indulge In Pure Relaxation',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -4998,7 +4988,7 @@ class Template extends Model
                 'tags' => 'indulge, in, pure, relaxation, beauty, paid, template',
             ],
             [
-                'id' => 455,
+                'id' => 453,
                 'name' => 'Bake It Better',
                 'category' => 'Cooking',
                 'sub_category' => '',
@@ -5009,7 +4999,7 @@ class Template extends Model
                 'tags' => 'bake, it, better, cooking, paid, template',
             ],
             [
-                'id' => 456,
+                'id' => 454,
                 'name' => 'Master Your Material',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5020,18 +5010,7 @@ class Template extends Model
                 'tags' => 'master, your, material, study, paid, template',
             ],
             [
-                'id' => 457,
-                'name' => 'Ride The Waves',
-                'category' => 'Sport',
-                'sub_category' => '',
-                'image' => 'resources/views/templates/sport/ride-the-waves/images/preview.webp',
-                'type' => 'paid',
-                'path' => 'templates.sport.ride-the-waves.index',
-                'tokens' => 7,
-                'tags' => 'ride, the, waves, sport, paid, template',
-            ],
-            [
-                'id' => 458,
+                'id' => 455,
                 'name' => 'Vision And Goals',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5042,7 +5021,7 @@ class Template extends Model
                 'tags' => 'vision, and, goals, meeting, paid, template',
             ],
             [
-                'id' => 459,
+                'id' => 456,
                 'name' => 'Push Your Limits',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -5053,7 +5032,7 @@ class Template extends Model
                 'tags' => 'push, your, limits, fitness, paid, template',
             ],
             [
-                'id' => 460,
+                'id' => 457,
                 'name' => 'Culinary Delights',
                 'category' => 'Cooking',
                 'sub_category' => '',
@@ -5064,7 +5043,7 @@ class Template extends Model
                 'tags' => 'culinary, delights, cooking, paid, template',
             ],
             [
-                'id' => 461,
+                'id' => 458,
                 'name' => 'Outdoor Pet Fun Day',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5075,7 +5054,7 @@ class Template extends Model
                 'tags' => 'outdoor, pet, fun, day, pets, paid, template',
             ],
             [
-                'id' => 462,
+                'id' => 459,
                 'name' => 'Hands-On Learning',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5086,7 +5065,7 @@ class Template extends Model
                 'tags' => 'hands-on, learning, study, paid, template',
             ],
             [
-                'id' => 463,
+                'id' => 460,
                 'name' => 'Radiant And Refreshing',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5097,7 +5076,7 @@ class Template extends Model
                 'tags' => 'radiant, and, refreshing, beauty, paid, template',
             ],
             [
-                'id' => 464,
+                'id' => 461,
                 'name' => 'Blissful Retreat',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -5108,7 +5087,7 @@ class Template extends Model
                 'tags' => 'blissful, retreat, vacation, paid, template',
             ],
             [
-                'id' => 465,
+                'id' => 462,
                 'name' => 'Gemini Spirit',
                 'category' => 'Holiday',
                 'sub_category' => '',
@@ -5119,7 +5098,7 @@ class Template extends Model
                 'tags' => 'gemini, spirit, holiday, paid, template',
             ],
             [
-                'id' => 466,
+                'id' => 463,
                 'name' => 'Capture And Learn',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5130,7 +5109,7 @@ class Template extends Model
                 'tags' => 'capture, and, learn, study, paid, template',
             ],
             [
-                'id' => 467,
+                'id' => 464,
                 'name' => 'High Jump',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -5141,7 +5120,7 @@ class Template extends Model
                 'tags' => 'high, jump, sport, paid, template',
             ],
             [
-                'id' => 468,
+                'id' => 465,
                 'name' => 'Voice Your Insights',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5152,7 +5131,7 @@ class Template extends Model
                 'tags' => 'voice, your, insights, meeting, paid, template',
             ],
             [
-                'id' => 469,
+                'id' => 466,
                 'name' => 'Queen Of The Day',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -5163,7 +5142,7 @@ class Template extends Model
                 'tags' => 'queen, of, the, day, birthday, paid, template',
             ],
             [
-                'id' => 470,
+                'id' => 467,
                 'name' => 'Fun Time With The Little One',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5174,7 +5153,7 @@ class Template extends Model
                 'tags' => 'fun, time, with, the, little, one, pets, paid, template',
             ],
             [
-                'id' => 471,
+                'id' => 468,
                 'name' => 'Glam Squad Beauty Tutorial',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5185,7 +5164,7 @@ class Template extends Model
                 'tags' => 'glam, squad, beauty, tutorial, beauty, paid, template',
             ],
             [
-                'id' => 472,
+                'id' => 469,
                 'name' => 'Little Star\'s Big Day',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -5196,7 +5175,7 @@ class Template extends Model
                 'tags' => 'little, star-s, big, day, birthday, paid, template',
             ],
             [
-                'id' => 473,
+                'id' => 470,
                 'name' => 'Glam Squad Beauty Tutorial',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5207,7 +5186,7 @@ class Template extends Model
                 'tags' => 'glam, squad, beauty, tutorial, beauty, paid, template',
             ],
             [
-                'id' => 474,
+                'id' => 471,
                 'name' => 'Gym Session With Coach',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -5218,7 +5197,7 @@ class Template extends Model
                 'tags' => 'gym, session, with, coach, fitness, paid, template',
             ],
             [
-                'id' => 475,
+                'id' => 472,
                 'name' => 'Exclusive First Look',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -5229,7 +5208,7 @@ class Template extends Model
                 'tags' => 'exclusive, first, look, fashion, paid, template',
             ],
             [
-                'id' => 476,
+                'id' => 473,
                 'name' => 'Escape And Unwind',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -5240,7 +5219,7 @@ class Template extends Model
                 'tags' => 'escape, and, unwind, vacation, paid, template',
             ],
             [
-                'id' => 477,
+                'id' => 474,
                 'name' => 'Practice Problems',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5251,7 +5230,7 @@ class Template extends Model
                 'tags' => 'practice, problems, study, paid, template',
             ],
             [
-                'id' => 478,
+                'id' => 475,
                 'name' => 'Keep The Momentum Going',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5262,7 +5241,7 @@ class Template extends Model
                 'tags' => 'keep, the, momentum, going, study, paid, template',
             ],
             [
-                'id' => 479,
+                'id' => 476,
                 'name' => 'Paws In The Park',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5273,7 +5252,7 @@ class Template extends Model
                 'tags' => 'paws, in, the, park, pets, paid, template',
             ],
             [
-                'id' => 480,
+                'id' => 477,
                 'name' => 'Polished Perfection',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5284,7 +5263,7 @@ class Template extends Model
                 'tags' => 'polished, perfection, beauty, paid, template',
             ],
             [
-                'id' => 481,
+                'id' => 478,
                 'name' => 'Women\'s Soccer Showdown',
                 'category' => 'Soccer Games',
                 'sub_category' => '',
@@ -5295,7 +5274,7 @@ class Template extends Model
                 'tags' => 'women-s, soccer, showdown, soccer games, paid, template',
             ],
             [
-                'id' => 482,
+                'id' => 479,
                 'name' => 'Scenic Journey',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -5306,7 +5285,7 @@ class Template extends Model
                 'tags' => 'scenic, journey, vacation, paid, template',
             ],
             [
-                'id' => 483,
+                'id' => 480,
                 'name' => 'Friendly Kickoff',
                 'category' => 'Football Club',
                 'sub_category' => '',
@@ -5317,7 +5296,7 @@ class Template extends Model
                 'tags' => 'friendly, kickoff, football club, paid, template',
             ],
             [
-                'id' => 484,
+                'id' => 481,
                 'name' => 'Fashion Designers Debut',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -5328,7 +5307,7 @@ class Template extends Model
                 'tags' => 'fashion, designers, debut, fashion, paid, template',
             ],
             [
-                'id' => 485,
+                'id' => 482,
                 'name' => 'Study Sprint',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5339,7 +5318,7 @@ class Template extends Model
                 'tags' => 'study, sprint, study, paid, template',
             ],
             [
-                'id' => 486,
+                'id' => 483,
                 'name' => 'Car Enthusiasts Gathering',
                 'category' => 'Car Club',
                 'sub_category' => '',
@@ -5350,7 +5329,7 @@ class Template extends Model
                 'tags' => 'car, enthusiasts, gathering, car club, paid, template',
             ],
             [
-                'id' => 487,
+                'id' => 484,
                 'name' => 'Cheer For Your Favorite Club',
                 'category' => 'Football Game',
                 'sub_category' => '',
@@ -5361,7 +5340,7 @@ class Template extends Model
                 'tags' => 'cheer, for, your, favorite, club, football game, paid, template',
             ],
             [
-                'id' => 488,
+                'id' => 485,
                 'name' => 'Gym Fitness Challenge',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -5372,7 +5351,7 @@ class Template extends Model
                 'tags' => 'gym, fitness, challenge, fitness, paid, template',
             ],
             [
-                'id' => 489,
+                'id' => 486,
                 'name' => 'One-on-One Insight',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5383,7 +5362,7 @@ class Template extends Model
                 'tags' => 'one-on-one, insight, meeting, paid, template',
             ],
             [
-                'id' => 490,
+                'id' => 487,
                 'name' => 'Celebrating Four',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -5394,7 +5373,7 @@ class Template extends Model
                 'tags' => 'celebrating, four, birthday, paid, template',
             ],
             [
-                'id' => 491,
+                'id' => 488,
                 'name' => 'Sharpen Your Skills',
                 'category' => 'Football Game',
                 'sub_category' => '',
@@ -5405,7 +5384,7 @@ class Template extends Model
                 'tags' => 'sharpen, your, skills, football game, paid, template',
             ],
             [
-                'id' => 492,
+                'id' => 489,
                 'name' => 'Pages Of Insight',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5416,7 +5395,7 @@ class Template extends Model
                 'tags' => 'pages, of, insight, study, paid, template',
             ],
             [
-                'id' => 493,
+                'id' => 490,
                 'name' => 'Caring Touch',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5427,7 +5406,7 @@ class Template extends Model
                 'tags' => 'caring, touch, pets, paid, template',
             ],
             [
-                'id' => 494,
+                'id' => 491,
                 'name' => 'Raw & Rally',
                 'category' => 'Car Club',
                 'sub_category' => '',
@@ -5438,7 +5417,7 @@ class Template extends Model
                 'tags' => 'raw, and, rally, car club, paid, template',
             ],
             [
-                'id' => 495,
+                'id' => 492,
                 'name' => 'Women\'s Soccer Showdown 2',
                 'category' => 'Soccer Games',
                 'sub_category' => '',
@@ -5449,7 +5428,7 @@ class Template extends Model
                 'tags' => 'women-s, soccer, showdown, 2, soccer games, paid, template',
             ],
             [
-                'id' => 496,
+                'id' => 493,
                 'name' => 'Drive And Connect',
                 'category' => 'Car Club',
                 'sub_category' => '',
@@ -5460,7 +5439,7 @@ class Template extends Model
                 'tags' => 'drive, and, connect, car club, paid, template',
             ],
             [
-                'id' => 497,
+                'id' => 494,
                 'name' => 'Productive Conversations',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5471,7 +5450,7 @@ class Template extends Model
                 'tags' => 'productive, conversations, meeting, paid, template',
             ],
             [
-                'id' => 498,
+                'id' => 495,
                 'name' => 'Join Our Football Club',
                 'category' => 'Football Club',
                 'sub_category' => '',
@@ -5482,7 +5461,7 @@ class Template extends Model
                 'tags' => 'join, our, football, club, football club, paid, template',
             ],
             [
-                'id' => 499,
+                'id' => 496,
                 'name' => 'Game On',
                 'category' => 'Football Game',
                 'sub_category' => '',
@@ -5493,7 +5472,7 @@ class Template extends Model
                 'tags' => 'game, on, football game, paid, template',
             ],
             [
-                'id' => 500,
+                'id' => 497,
                 'name' => 'Wilderness Camp Getaway',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -5504,7 +5483,7 @@ class Template extends Model
                 'tags' => 'wilderness, camp, getaway, vacation, paid, template',
             ],
             [
-                'id' => 501,
+                'id' => 498,
                 'name' => 'Timeless Elegance',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -5515,7 +5494,7 @@ class Template extends Model
                 'tags' => 'timeless, elegance, fashion, paid, template',
             ],
             [
-                'id' => 502,
+                'id' => 499,
                 'name' => 'Group Learning',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5526,7 +5505,7 @@ class Template extends Model
                 'tags' => 'group, learning, study, paid, template',
             ],
             [
-                'id' => 503,
+                'id' => 500,
                 'name' => 'Canine Freestyle',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5537,7 +5516,7 @@ class Template extends Model
                 'tags' => 'canine, freestyle, meeting, paid, template',
             ],
             [
-                'id' => 504,
+                'id' => 501,
                 'name' => 'Glow And Pamper',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5548,7 +5527,7 @@ class Template extends Model
                 'tags' => 'glow, and, pamper, beauty, paid, template',
             ],
             [
-                'id' => 505,
+                'id' => 502,
                 'name' => 'Canine Freestyle',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5559,7 +5538,7 @@ class Template extends Model
                 'tags' => 'canine, freestyle, pets, paid, template',
             ],
             [
-                'id' => 506,
+                'id' => 503,
                 'name' => 'Rugby Showdown',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -5570,7 +5549,7 @@ class Template extends Model
                 'tags' => 'rugby, showdown, sport, paid, template',
             ],
             [
-                'id' => 507,
+                'id' => 504,
                 'name' => 'Fur And Flair',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5581,7 +5560,7 @@ class Template extends Model
                 'tags' => 'fur, and, flair, pets, paid, template',
             ],
             [
-                'id' => 508,
+                'id' => 505,
                 'name' => 'Pamper Your Hands',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5592,7 +5571,7 @@ class Template extends Model
                 'tags' => 'pamper, your, hands, beauty, paid, template',
             ],
             [
-                'id' => 509,
+                'id' => 506,
                 'name' => 'Car Enthusiasts Meetup',
                 'category' => 'Car Club',
                 'sub_category' => '',
@@ -5603,7 +5582,7 @@ class Template extends Model
                 'tags' => 'car, enthusiasts, meetup, car club, paid, template',
             ],
             [
-                'id' => 510,
+                'id' => 507,
                 'name' => 'Knockout Fitness',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -5614,7 +5593,7 @@ class Template extends Model
                 'tags' => 'knockout, fitness, fitness, paid, template',
             ],
             [
-                'id' => 511,
+                'id' => 508,
                 'name' => 'Weekly Club Training',
                 'category' => 'Football Game',
                 'sub_category' => '',
@@ -5625,7 +5604,7 @@ class Template extends Model
                 'tags' => 'weekly, club, training, football game, paid, template',
             ],
             [
-                'id' => 512,
+                'id' => 509,
                 'name' => 'Keep Fit',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -5636,7 +5615,7 @@ class Template extends Model
                 'tags' => 'keep, fit, fitness, paid, template',
             ],
             [
-                'id' => 513,
+                'id' => 510,
                 'name' => 'Learn To Train Your Pet',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5647,7 +5626,7 @@ class Template extends Model
                 'tags' => 'learn, to, train, your, pet, pets, paid, template',
             ],
             [
-                'id' => 514,
+                'id' => 511,
                 'name' => 'Birthday Bash',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -5658,7 +5637,7 @@ class Template extends Model
                 'tags' => 'birthday, bash, birthday, paid, template',
             ],
             [
-                'id' => 515,
+                'id' => 512,
                 'name' => 'Chic And Unique!',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -5669,7 +5648,7 @@ class Template extends Model
                 'tags' => 'chic, and, unique, fashion, paid, template',
             ],
             [
-                'id' => 516,
+                'id' => 513,
                 'name' => 'Roadside Adventure',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -5680,7 +5659,7 @@ class Template extends Model
                 'tags' => 'roadside, adventure, vacation, paid, template',
             ],
             [
-                'id' => 517,
+                'id' => 514,
                 'name' => 'Strategic Vision',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5691,7 +5670,7 @@ class Template extends Model
                 'tags' => 'strategic, vision, meeting, paid, template',
             ],
             [
-                'id' => 518,
+                'id' => 515,
                 'name' => 'Annual Baseball Tournament',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -5702,7 +5681,7 @@ class Template extends Model
                 'tags' => 'annual, baseball, tournament, sport, paid, template',
             ],
             [
-                'id' => 519,
+                'id' => 516,
                 'name' => 'Peaceful Time With Pets',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5713,7 +5692,7 @@ class Template extends Model
                 'tags' => 'peaceful, time, with, pets, pets, paid, template',
             ],
             [
-                'id' => 520,
+                'id' => 517,
                 'name' => 'Strategic Insights',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5724,7 +5703,7 @@ class Template extends Model
                 'tags' => 'strategic, insights, meeting, paid, template',
             ],
             [
-                'id' => 521,
+                'id' => 518,
                 'name' => 'Savory Stir Fry',
                 'category' => 'Cooking',
                 'sub_category' => '',
@@ -5735,7 +5714,7 @@ class Template extends Model
                 'tags' => 'savory, stir, fry, cooking, paid, template',
             ],
             [
-                'id' => 522,
+                'id' => 519,
                 'name' => 'International Men\'s Day',
                 'category' => 'Holiday',
                 'sub_category' => '',
@@ -5746,7 +5725,7 @@ class Template extends Model
                 'tags' => 'international, men, day, holiday, paid, template',
             ],
             [
-                'id' => 523,
+                'id' => 520,
                 'name' => 'Fun Time With Pets At The Park',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5757,7 +5736,7 @@ class Template extends Model
                 'tags' => 'fun, time, with, pets, at, the, park, pets, paid, template',
             ],
             [
-                'id' => 524,
+                'id' => 521,
                 'name' => 'Archery Mastery',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -5768,7 +5747,7 @@ class Template extends Model
                 'tags' => 'archery, mastery, sport, paid, template',
             ],
             [
-                'id' => 525,
+                'id' => 522,
                 'name' => 'Understanding Islam',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5779,7 +5758,7 @@ class Template extends Model
                 'tags' => 'understanding, islam, study, paid, template',
             ],
             [
-                'id' => 526,
+                'id' => 523,
                 'name' => 'Enhance Your Natural Beauty',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5790,7 +5769,7 @@ class Template extends Model
                 'tags' => 'enhance, your, natural, beauty, beauty, paid, template',
             ],
             [
-                'id' => 527,
+                'id' => 524,
                 'name' => 'Stronger Everyday',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -5801,7 +5780,7 @@ class Template extends Model
                 'tags' => 'stronger, everyday, fitness, paid, template',
             ],
             [
-                'id' => 528,
+                'id' => 525,
                 'name' => 'Compassionate Care',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5812,7 +5791,7 @@ class Template extends Model
                 'tags' => 'compassionate, care, pets, paid, template',
             ],
             [
-                'id' => 529,
+                'id' => 526,
                 'name' => 'Collaborative Success',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5823,7 +5802,7 @@ class Template extends Model
                 'tags' => 'collaborative, success, meeting, paid, template',
             ],
             [
-                'id' => 530,
+                'id' => 527,
                 'name' => 'Birthday Gift Unwrapping',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -5834,7 +5813,7 @@ class Template extends Model
                 'tags' => 'birthday, gift, unwrapping, birthday, paid, template',
             ],
             [
-                'id' => 531,
+                'id' => 528,
                 'name' => 'Ride The Waves',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -5845,7 +5824,7 @@ class Template extends Model
                 'tags' => 'ride, the, waves, sport, paid, template',
             ],
             [
-                'id' => 532,
+                'id' => 529,
                 'name' => 'Relax & Refresh',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -5856,7 +5835,7 @@ class Template extends Model
                 'tags' => 'relax, and, refresh, vacation, paid, template',
             ],
             [
-                'id' => 533,
+                'id' => 530,
                 'name' => 'Professional Makeup Class',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5867,7 +5846,7 @@ class Template extends Model
                 'tags' => 'professional, makeup, class, beauty, paid, template',
             ],
             [
-                'id' => 534,
+                'id' => 531,
                 'name' => 'Conquer Academic Goals',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5878,7 +5857,7 @@ class Template extends Model
                 'tags' => 'conquer, academic, goals, study, paid, template',
             ],
             [
-                'id' => 535,
+                'id' => 532,
                 'name' => 'Focus And Achieve',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5889,7 +5868,7 @@ class Template extends Model
                 'tags' => 'focus, and, achieve, study, paid, template',
             ],
             [
-                'id' => 536,
+                'id' => 533,
                 'name' => 'Cake And Celebration!',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -5900,7 +5879,7 @@ class Template extends Model
                 'tags' => 'cake, and, celebration, birthday, paid, template',
             ],
             [
-                'id' => 537,
+                'id' => 534,
                 'name' => 'Mountain Climbing Challenge',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -5911,7 +5890,7 @@ class Template extends Model
                 'tags' => 'mountain, climbing, challenge, sport, paid, template',
             ],
             [
-                'id' => 538,
+                'id' => 535,
                 'name' => 'Pulse Accelerator', // Fitness_11072024
                 'category' => 'Fitness',
                 'sub_category' => '',
