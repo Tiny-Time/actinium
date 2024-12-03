@@ -551,6 +551,7 @@ export default defineConfig({
                 "resources/views/templates/birthday/cake-and-celebration/css/style.css",
                 "resources/views/templates/sport/mountain-climbing-challenge/css/style.css",
                 "resources/views/templates/fitness/pulse-accelerator/css/style.css",
+                "resources/views/templates/fitness/revitalize-recharge/css/style.css",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),

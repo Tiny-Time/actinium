@@ -4593,14 +4593,14 @@ class Template extends Model
             ],
             [
                 'id' => 417,
-                'name' => 'Revitalize & Recharge',
+                'name' => 'Revitalize Recharge',
                 'category' => 'Fitness',
                 'sub_category' => '',
-                'image' => 'resources/views/templates/fitness/revitalize-&-recharge/images/preview.webp',
+                'image' => 'resources/views/templates/fitness/revitalize-recharge/images/preview.webp',
                 'type' => 'paid',
-                'path' => 'templates.fitness.revitalize-&-recharge.index',
+                'path' => 'templates.fitness.revitalize-recharge.index',
                 'tokens' => 7,
-                'tags' => 'revitalize, &, recharge, fitness, paid, template',
+                'tags' => 'revitalize, recharge, fitness, paid, template',
             ],
             [
                 'id' => 418,
@@ -4611,7 +4611,7 @@ class Template extends Model
                 'type' => 'paid',
                 'path' => 'templates.fashion.capturing-fashion-s-radiance.index',
                 'tokens' => 7,
-                'tags' => 'capturing, fashion\'s, radiance, fashion, paid, template',
+                'tags' => 'capturing, fashions, radiance, fashion, paid, template',
             ],
             [
                 'id' => 419,
@@ -5176,17 +5176,6 @@ class Template extends Model
             ],
             [
                 'id' => 470,
-                'name' => 'Glam Squad Beauty Tutorial',
-                'category' => 'Beauty',
-                'sub_category' => '',
-                'image' => 'resources/views/templates/beauty/glam-squad-beauty-tutorial/images/preview.webp',
-                'type' => 'paid',
-                'path' => 'templates.beauty.glam-squad-beauty-tutorial.index',
-                'tokens' => 7,
-                'tags' => 'glam, squad, beauty, tutorial, beauty, paid, template',
-            ],
-            [
-                'id' => 471,
                 'name' => 'Gym Session With Coach',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -5197,7 +5186,7 @@ class Template extends Model
                 'tags' => 'gym, session, with, coach, fitness, paid, template',
             ],
             [
-                'id' => 472,
+                'id' => 471,
                 'name' => 'Exclusive First Look',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -5208,7 +5197,7 @@ class Template extends Model
                 'tags' => 'exclusive, first, look, fashion, paid, template',
             ],
             [
-                'id' => 473,
+                'id' => 472,
                 'name' => 'Escape And Unwind',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -5219,7 +5208,7 @@ class Template extends Model
                 'tags' => 'escape, and, unwind, vacation, paid, template',
             ],
             [
-                'id' => 474,
+                'id' => 473,
                 'name' => 'Practice Problems',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5230,7 +5219,7 @@ class Template extends Model
                 'tags' => 'practice, problems, study, paid, template',
             ],
             [
-                'id' => 475,
+                'id' => 474,
                 'name' => 'Keep The Momentum Going',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5241,7 +5230,7 @@ class Template extends Model
                 'tags' => 'keep, the, momentum, going, study, paid, template',
             ],
             [
-                'id' => 476,
+                'id' => 475,
                 'name' => 'Paws In The Park',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5252,7 +5241,7 @@ class Template extends Model
                 'tags' => 'paws, in, the, park, pets, paid, template',
             ],
             [
-                'id' => 477,
+                'id' => 476,
                 'name' => 'Polished Perfection',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5263,7 +5252,7 @@ class Template extends Model
                 'tags' => 'polished, perfection, beauty, paid, template',
             ],
             [
-                'id' => 478,
+                'id' => 477,
                 'name' => 'Women\'s Soccer Showdown',
                 'category' => 'Soccer Games',
                 'sub_category' => '',
@@ -5274,7 +5263,7 @@ class Template extends Model
                 'tags' => 'women-s, soccer, showdown, soccer games, paid, template',
             ],
             [
-                'id' => 479,
+                'id' => 478,
                 'name' => 'Scenic Journey',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -5285,7 +5274,7 @@ class Template extends Model
                 'tags' => 'scenic, journey, vacation, paid, template',
             ],
             [
-                'id' => 480,
+                'id' => 479,
                 'name' => 'Friendly Kickoff',
                 'category' => 'Football Club',
                 'sub_category' => '',
@@ -5296,7 +5285,7 @@ class Template extends Model
                 'tags' => 'friendly, kickoff, football club, paid, template',
             ],
             [
-                'id' => 481,
+                'id' => 480,
                 'name' => 'Fashion Designers Debut',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -5307,7 +5296,7 @@ class Template extends Model
                 'tags' => 'fashion, designers, debut, fashion, paid, template',
             ],
             [
-                'id' => 482,
+                'id' => 481,
                 'name' => 'Study Sprint',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5318,7 +5307,7 @@ class Template extends Model
                 'tags' => 'study, sprint, study, paid, template',
             ],
             [
-                'id' => 483,
+                'id' => 482,
                 'name' => 'Car Enthusiasts Gathering',
                 'category' => 'Car Club',
                 'sub_category' => '',
@@ -5329,7 +5318,7 @@ class Template extends Model
                 'tags' => 'car, enthusiasts, gathering, car club, paid, template',
             ],
             [
-                'id' => 484,
+                'id' => 483,
                 'name' => 'Cheer For Your Favorite Club',
                 'category' => 'Football Game',
                 'sub_category' => '',
@@ -5340,7 +5329,7 @@ class Template extends Model
                 'tags' => 'cheer, for, your, favorite, club, football game, paid, template',
             ],
             [
-                'id' => 485,
+                'id' => 484,
                 'name' => 'Gym Fitness Challenge',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -5351,7 +5340,7 @@ class Template extends Model
                 'tags' => 'gym, fitness, challenge, fitness, paid, template',
             ],
             [
-                'id' => 486,
+                'id' => 485,
                 'name' => 'One-on-One Insight',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5362,7 +5351,7 @@ class Template extends Model
                 'tags' => 'one-on-one, insight, meeting, paid, template',
             ],
             [
-                'id' => 487,
+                'id' => 486,
                 'name' => 'Celebrating Four',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -5373,7 +5362,7 @@ class Template extends Model
                 'tags' => 'celebrating, four, birthday, paid, template',
             ],
             [
-                'id' => 488,
+                'id' => 487,
                 'name' => 'Sharpen Your Skills',
                 'category' => 'Football Game',
                 'sub_category' => '',
@@ -5384,7 +5373,7 @@ class Template extends Model
                 'tags' => 'sharpen, your, skills, football game, paid, template',
             ],
             [
-                'id' => 489,
+                'id' => 488,
                 'name' => 'Pages Of Insight',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5395,7 +5384,7 @@ class Template extends Model
                 'tags' => 'pages, of, insight, study, paid, template',
             ],
             [
-                'id' => 490,
+                'id' => 489,
                 'name' => 'Caring Touch',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5406,7 +5395,7 @@ class Template extends Model
                 'tags' => 'caring, touch, pets, paid, template',
             ],
             [
-                'id' => 491,
+                'id' => 490,
                 'name' => 'Raw & Rally',
                 'category' => 'Car Club',
                 'sub_category' => '',
@@ -5417,7 +5406,7 @@ class Template extends Model
                 'tags' => 'raw, and, rally, car club, paid, template',
             ],
             [
-                'id' => 492,
+                'id' => 491,
                 'name' => 'Women\'s Soccer Showdown 2',
                 'category' => 'Soccer Games',
                 'sub_category' => '',
@@ -5428,7 +5417,7 @@ class Template extends Model
                 'tags' => 'women-s, soccer, showdown, 2, soccer games, paid, template',
             ],
             [
-                'id' => 493,
+                'id' => 492,
                 'name' => 'Drive And Connect',
                 'category' => 'Car Club',
                 'sub_category' => '',
@@ -5439,7 +5428,7 @@ class Template extends Model
                 'tags' => 'drive, and, connect, car club, paid, template',
             ],
             [
-                'id' => 494,
+                'id' => 493,
                 'name' => 'Productive Conversations',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5450,7 +5439,7 @@ class Template extends Model
                 'tags' => 'productive, conversations, meeting, paid, template',
             ],
             [
-                'id' => 495,
+                'id' => 494,
                 'name' => 'Join Our Football Club',
                 'category' => 'Football Club',
                 'sub_category' => '',
@@ -5461,7 +5450,7 @@ class Template extends Model
                 'tags' => 'join, our, football, club, football club, paid, template',
             ],
             [
-                'id' => 496,
+                'id' => 495,
                 'name' => 'Game On',
                 'category' => 'Football Game',
                 'sub_category' => '',
@@ -5472,7 +5461,7 @@ class Template extends Model
                 'tags' => 'game, on, football game, paid, template',
             ],
             [
-                'id' => 497,
+                'id' => 496,
                 'name' => 'Wilderness Camp Getaway',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -5483,7 +5472,7 @@ class Template extends Model
                 'tags' => 'wilderness, camp, getaway, vacation, paid, template',
             ],
             [
-                'id' => 498,
+                'id' => 497,
                 'name' => 'Timeless Elegance',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -5494,7 +5483,7 @@ class Template extends Model
                 'tags' => 'timeless, elegance, fashion, paid, template',
             ],
             [
-                'id' => 499,
+                'id' => 498,
                 'name' => 'Group Learning',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5505,7 +5494,7 @@ class Template extends Model
                 'tags' => 'group, learning, study, paid, template',
             ],
             [
-                'id' => 500,
+                'id' => 499,
                 'name' => 'Canine Freestyle',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5516,7 +5505,7 @@ class Template extends Model
                 'tags' => 'canine, freestyle, meeting, paid, template',
             ],
             [
-                'id' => 501,
+                'id' => 500,
                 'name' => 'Glow And Pamper',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5527,7 +5516,7 @@ class Template extends Model
                 'tags' => 'glow, and, pamper, beauty, paid, template',
             ],
             [
-                'id' => 502,
+                'id' => 501,
                 'name' => 'Canine Freestyle',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5538,7 +5527,7 @@ class Template extends Model
                 'tags' => 'canine, freestyle, pets, paid, template',
             ],
             [
-                'id' => 503,
+                'id' => 502,
                 'name' => 'Rugby Showdown',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -5549,7 +5538,7 @@ class Template extends Model
                 'tags' => 'rugby, showdown, sport, paid, template',
             ],
             [
-                'id' => 504,
+                'id' => 503,
                 'name' => 'Fur And Flair',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5560,7 +5549,7 @@ class Template extends Model
                 'tags' => 'fur, and, flair, pets, paid, template',
             ],
             [
-                'id' => 505,
+                'id' => 504,
                 'name' => 'Pamper Your Hands',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5571,7 +5560,7 @@ class Template extends Model
                 'tags' => 'pamper, your, hands, beauty, paid, template',
             ],
             [
-                'id' => 506,
+                'id' => 505,
                 'name' => 'Car Enthusiasts Meetup',
                 'category' => 'Car Club',
                 'sub_category' => '',
@@ -5582,7 +5571,7 @@ class Template extends Model
                 'tags' => 'car, enthusiasts, meetup, car club, paid, template',
             ],
             [
-                'id' => 507,
+                'id' => 506,
                 'name' => 'Knockout Fitness',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -5593,7 +5582,7 @@ class Template extends Model
                 'tags' => 'knockout, fitness, fitness, paid, template',
             ],
             [
-                'id' => 508,
+                'id' => 507,
                 'name' => 'Weekly Club Training',
                 'category' => 'Football Game',
                 'sub_category' => '',
@@ -5604,7 +5593,7 @@ class Template extends Model
                 'tags' => 'weekly, club, training, football game, paid, template',
             ],
             [
-                'id' => 509,
+                'id' => 508,
                 'name' => 'Keep Fit',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -5615,7 +5604,7 @@ class Template extends Model
                 'tags' => 'keep, fit, fitness, paid, template',
             ],
             [
-                'id' => 510,
+                'id' => 509,
                 'name' => 'Learn To Train Your Pet',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5626,7 +5615,7 @@ class Template extends Model
                 'tags' => 'learn, to, train, your, pet, pets, paid, template',
             ],
             [
-                'id' => 511,
+                'id' => 510,
                 'name' => 'Birthday Bash',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -5637,7 +5626,7 @@ class Template extends Model
                 'tags' => 'birthday, bash, birthday, paid, template',
             ],
             [
-                'id' => 512,
+                'id' => 511,
                 'name' => 'Chic And Unique!',
                 'category' => 'Fashion',
                 'sub_category' => '',
@@ -5648,7 +5637,7 @@ class Template extends Model
                 'tags' => 'chic, and, unique, fashion, paid, template',
             ],
             [
-                'id' => 513,
+                'id' => 512,
                 'name' => 'Roadside Adventure',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -5659,7 +5648,7 @@ class Template extends Model
                 'tags' => 'roadside, adventure, vacation, paid, template',
             ],
             [
-                'id' => 514,
+                'id' => 513,
                 'name' => 'Strategic Vision',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5670,7 +5659,7 @@ class Template extends Model
                 'tags' => 'strategic, vision, meeting, paid, template',
             ],
             [
-                'id' => 515,
+                'id' => 514,
                 'name' => 'Annual Baseball Tournament',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -5681,7 +5670,7 @@ class Template extends Model
                 'tags' => 'annual, baseball, tournament, sport, paid, template',
             ],
             [
-                'id' => 516,
+                'id' => 515,
                 'name' => 'Peaceful Time With Pets',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5692,7 +5681,7 @@ class Template extends Model
                 'tags' => 'peaceful, time, with, pets, pets, paid, template',
             ],
             [
-                'id' => 517,
+                'id' => 516,
                 'name' => 'Strategic Insights',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5703,7 +5692,7 @@ class Template extends Model
                 'tags' => 'strategic, insights, meeting, paid, template',
             ],
             [
-                'id' => 518,
+                'id' => 517,
                 'name' => 'Savory Stir Fry',
                 'category' => 'Cooking',
                 'sub_category' => '',
@@ -5714,7 +5703,7 @@ class Template extends Model
                 'tags' => 'savory, stir, fry, cooking, paid, template',
             ],
             [
-                'id' => 519,
+                'id' => 518,
                 'name' => 'International Men\'s Day',
                 'category' => 'Holiday',
                 'sub_category' => '',
@@ -5725,7 +5714,7 @@ class Template extends Model
                 'tags' => 'international, men, day, holiday, paid, template',
             ],
             [
-                'id' => 520,
+                'id' => 519,
                 'name' => 'Fun Time With Pets At The Park',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5736,7 +5725,7 @@ class Template extends Model
                 'tags' => 'fun, time, with, pets, at, the, park, pets, paid, template',
             ],
             [
-                'id' => 521,
+                'id' => 520,
                 'name' => 'Archery Mastery',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -5747,7 +5736,7 @@ class Template extends Model
                 'tags' => 'archery, mastery, sport, paid, template',
             ],
             [
-                'id' => 522,
+                'id' => 521,
                 'name' => 'Understanding Islam',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5758,7 +5747,7 @@ class Template extends Model
                 'tags' => 'understanding, islam, study, paid, template',
             ],
             [
-                'id' => 523,
+                'id' => 522,
                 'name' => 'Enhance Your Natural Beauty',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5769,7 +5758,7 @@ class Template extends Model
                 'tags' => 'enhance, your, natural, beauty, beauty, paid, template',
             ],
             [
-                'id' => 524,
+                'id' => 523,
                 'name' => 'Stronger Everyday',
                 'category' => 'Fitness',
                 'sub_category' => '',
@@ -5780,7 +5769,7 @@ class Template extends Model
                 'tags' => 'stronger, everyday, fitness, paid, template',
             ],
             [
-                'id' => 525,
+                'id' => 524,
                 'name' => 'Compassionate Care',
                 'category' => 'Pets',
                 'sub_category' => '',
@@ -5791,7 +5780,7 @@ class Template extends Model
                 'tags' => 'compassionate, care, pets, paid, template',
             ],
             [
-                'id' => 526,
+                'id' => 525,
                 'name' => 'Collaborative Success',
                 'category' => 'Meeting',
                 'sub_category' => '',
@@ -5802,7 +5791,7 @@ class Template extends Model
                 'tags' => 'collaborative, success, meeting, paid, template',
             ],
             [
-                'id' => 527,
+                'id' => 526,
                 'name' => 'Birthday Gift Unwrapping',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -5813,7 +5802,7 @@ class Template extends Model
                 'tags' => 'birthday, gift, unwrapping, birthday, paid, template',
             ],
             [
-                'id' => 528,
+                'id' => 527,
                 'name' => 'Ride The Waves',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -5824,7 +5813,7 @@ class Template extends Model
                 'tags' => 'ride, the, waves, sport, paid, template',
             ],
             [
-                'id' => 529,
+                'id' => 528,
                 'name' => 'Relax & Refresh',
                 'category' => 'Vacation',
                 'sub_category' => '',
@@ -5835,7 +5824,7 @@ class Template extends Model
                 'tags' => 'relax, and, refresh, vacation, paid, template',
             ],
             [
-                'id' => 530,
+                'id' => 529,
                 'name' => 'Professional Makeup Class',
                 'category' => 'Beauty',
                 'sub_category' => '',
@@ -5846,7 +5835,7 @@ class Template extends Model
                 'tags' => 'professional, makeup, class, beauty, paid, template',
             ],
             [
-                'id' => 531,
+                'id' => 530,
                 'name' => 'Conquer Academic Goals',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5857,7 +5846,7 @@ class Template extends Model
                 'tags' => 'conquer, academic, goals, study, paid, template',
             ],
             [
-                'id' => 532,
+                'id' => 531,
                 'name' => 'Focus And Achieve',
                 'category' => 'Study',
                 'sub_category' => '',
@@ -5868,7 +5857,7 @@ class Template extends Model
                 'tags' => 'focus, and, achieve, study, paid, template',
             ],
             [
-                'id' => 533,
+                'id' => 532,
                 'name' => 'Cake And Celebration!',
                 'category' => 'Birthday',
                 'sub_category' => '',
@@ -5879,7 +5868,7 @@ class Template extends Model
                 'tags' => 'cake, and, celebration, birthday, paid, template',
             ],
             [
-                'id' => 534,
+                'id' => 533,
                 'name' => 'Mountain Climbing Challenge',
                 'category' => 'Sport',
                 'sub_category' => '',
@@ -5890,8 +5879,8 @@ class Template extends Model
                 'tags' => 'mountain, climbing, challenge, sport, paid, template',
             ],
             [
-                'id' => 535,
-                'name' => 'Pulse Accelerator', // Fitness_11072024
+                'id' => 534,
+                'name' => 'Pulse Accelerator',
                 'category' => 'Fitness',
                 'sub_category' => '',
                 'image' => 'resources/views/templates/fitness/pulse-accelerator/images/preview.webp',

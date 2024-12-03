@@ -412,14 +412,14 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     // $result = $templates->map(function ($template, $index) {
     //     return [
     //         'id' => $index + 1,
-    //         'name' => $template->name,
+    //         'name' => str_replace( "'", "\'", $template->name),
     //         'category' => $template->category,
     //         'sub_category' => $template->sub_category ?? '',
     //         'image' => $template->image,
     //         'type' => $template->type,
     //         'path' => $template->path,
     //         'tokens' => $template->tokens,
-    //         'tags' => $template->tags,
+    //         'tags' => str_replace( "'", "", $template->tags),
     //     ];
     // })->toArray();
 
