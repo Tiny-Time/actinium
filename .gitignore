@@ -24,3 +24,4 @@ app.js
 stderr.log
 .htaccess
 /tmp
+resources/views/modals/create-event.blade copy.php

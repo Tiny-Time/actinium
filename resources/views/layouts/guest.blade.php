@@ -106,6 +106,9 @@
         {{ $slot }}
     </main>
 
+    <!-- Audio element -->
+    <audio id="endAudio" src="/audio/alarm.mp3" preload="auto"></audio>
+
     <button id="to-top-button" onclick="goToTop()" title="Go To Top"
         class="fixed hidden text-3xl font-bold text-white bg-red-400 border-0 rounded-full size-12 z-90 bottom-8 right-8 drop-shadow-md">&uarr;</button>
 

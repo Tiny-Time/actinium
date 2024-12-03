@@ -63,18 +63,19 @@ class UserPanelProvider extends PanelProvider
                 MenuItem::make()
                     ->label('Admin Dashboard')
                     ->url('/admin')
-                    ->visible(fn () => auth()->user()?->hasRole('super_admin'))
+                    ->visible(fn() => auth()->user()?->hasRole('super_admin'))
                     ->icon('heroicon-o-user-plus'),
                 MenuItem::make()
                     ->label('FAQs')
                     ->url('/faq')
                     ->icon('heroicon-o-question-mark-circle'),
+                'logout' => MenuItem::make()->label('Sign out')->url('/logout'),
             ])
             ->navigationItems([
                 NavigationItem::make()
                     ->label('Admin Dashboard')
                     ->url('/admin', shouldOpenInNewTab: true)
-                    ->visible(fn () => auth()->user()?->hasRole('super_admin'))
+                    ->visible(fn() => auth()->user()?->hasRole('super_admin'))
                     ->icon('heroicon-o-user-plus'),
                 NavigationItem::make()
                     ->label('Search Events')
@@ -97,41 +98,41 @@ class UserPanelProvider extends PanelProvider
                 Authenticate::class,
                 DomainRedirectMiddleware::class,
             ])->plugins([
-                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
-                ->gridColumns([
-                    'default' => 1,
-                    'sm' => 2,
-                    'lg' => 3
+                    \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
+                        ->gridColumns([
+                            'default' => 1,
+                            'sm' => 2,
+                            'lg' => 3
+                        ])
+                        ->sectionColumnSpan(1)
+                        ->checkboxListColumns([
+                            'default' => 1,
+                            'sm' => 2,
+                            'lg' => 2,
+                        ])
+                        ->resourceCheckboxListColumns([
+                            'default' => 1,
+                            'sm' => 2,
+                        ]),
+                    SpatieLaravelTranslatablePlugin::make()
+                        ->defaultLocales(['en']),
+                    SkyPlugin::make()
+                        ->libraryResource(false)
+                        ->navigationGroupLabel('Content Manager')
+                        ->navigationResource(false)
+                        ->libraryTypes([
+                            'FILE' => 'File',
+                            'IMAGE' => 'Image',
+                            'VIDEO' => 'Video',
+                        ])
+                        ->tagTypes([
+                            'tag' => 'Tag',
+                            'category' => 'Category',
+                            'faq' => 'Faq',
+                        ]),
                 ])
-                ->sectionColumnSpan(1)
-                ->checkboxListColumns([
-                    'default' => 1,
-                    'sm' => 2,
-                    'lg' => 2,
-                ])
-                ->resourceCheckboxListColumns([
-                    'default' => 1,
-                    'sm' => 2,
-                ]),
-                SpatieLaravelTranslatablePlugin::make()
-                    ->defaultLocales(['en']),
-                SkyPlugin::make()
-                    ->libraryResource(false)
-                    ->navigationGroupLabel('Content Manager')
-                    ->navigationResource(false)
-                    ->libraryTypes([
-                        'FILE' => 'File',
-                        'IMAGE' => 'Image',
-                        'VIDEO' => 'Video',
-                    ])
-                    ->tagTypes([
-                        'tag' => 'Tag',
-                        'category' => 'Category',
-                        'faq' => 'Faq',
-                    ]),
-            ])
             ->favicon(asset('/favicon.png'))
-            ->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js', 'resources/css/custom.css'])
+            ->viteTheme(['resources/css/app.css', 'resources/js/clipboard.js', 'resources/css/custom.css', 'resources/js/createEvent.js'])
             ->databaseNotifications();
     }
 }

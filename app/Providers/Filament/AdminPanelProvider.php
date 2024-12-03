@@ -110,6 +110,8 @@ class AdminPanelProvider extends PanelProvider
                     ->url('/dashboard')
                     ->icon('heroicon-o-user')
                     ->sort(9),
+
+                    'logout' => MenuItem::make()->label('Sign out')->url('/logout'),
             ])
             ->navigationItems([
                 NavigationItem::make()

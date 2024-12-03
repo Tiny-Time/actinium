@@ -24,7 +24,7 @@
                     formData: {
                         ce_title: '',
                         ce_description: '',
-                        ce_datetime: localNow,
+                        ce_datetime: localNow(),
                         ce_terms: false
                     },
                     cseHtitle: true,
@@ -74,10 +74,14 @@
                                             x-text="formErrorText.ce_description" class="text-sm text-pink-500"></span>
                                     </div>
                                     <div>
-                                        <div :class="(formError.ce_datetime && formData.ce_datetime.length == 0) || (formError
-                                            .ce_datetime && new Date(formData.ce_datetime) <= new Date(localNow())) ?
-                                        'focus-within:border-pink-500' :
-                                        'focus-within:border-indigo-500'"
+                                        <div :class="{
+                                            'focus-within:border-pink-500': (formError.ce_datetime && (!formData
+                                                .ce_datetime || new Date(formData.ce_datetime) <= new Date(
+                                                    localNow()))),
+                                            'focus-within:border-indigo-500': !(formError.ce_datetime && (!formData
+                                                .ce_datetime || new Date(formData.ce_datetime) <= new Date(
+                                                    localNow())))
+                                        }"
                                             class="rounded-lg border-[1.7px] border-gray-300 relative mt-4 w-full">
                                             <x-label for="ce_datetime" value="{{ __('Date') }}" />
                                             <x-input x-model="formData.ce_datetime" id="ce_datetime" class="mt-1"
@@ -85,7 +89,9 @@
                                                 placeholder="Your date goes here..." />
                                         </div>
                                         <span
-                                            x-show="(formError.ce_datetime && formData.ce_datetime.length == 0) || (formError.ce_datetime && new Date(formData.ce_datetime) <= new Date(localNow()))"
+                                            x-show="(formError.ce_datetime && (!formData
+                                                .ce_datetime || new Date(formData.ce_datetime) <= new Date(
+                                                    localNow())))"
                                             x-text="formErrorText.ce_datetime" class="text-sm text-pink-500"></span>
                                     </div>
                                     <div class="mt-3">
@@ -387,96 +393,27 @@
                 const offset = new Date().getTimezoneOffset() / 60;
                 const sign = offset < 0 ? '+' : '-';
                 const absOffset = Math.abs(offset);
-
                 const userTimeZone = `UTC${sign}${absOffset}`;
-
-                // Get all fields values
-                const data = {
-                    title: formData.ce_title,
-                    description: formData.ce_description,
-                    date_time: formData.ce_datetime,
-                    timezone: userTimeZone,
-                    template_id: this.selectedImage,
-                }
-
-                // if(true){
-                //         // Remove title
-                //         self.cseHtitle = false;
-                //         // Show Error
-                //         self.csStep = 3;
-                //         // Hide preloader
-                //         loader.style.display = "none";
-
-                //         // Store the event data in the local storage
-
-                // }else{
-                //     // Remove title
-                //     self.cseHtitle = false;
-                //     // Show Error
-                //     self.csStep = 4;
-                //     // Hide preloader
-                //     loader.style.display = "none";
-                // }
 
                 // Load preloader
                 var loader = document.querySelector(".loader-wrapper");
                 loader.style.display = "flex";
 
-                // Use ajax to submit form
-                var self = this;
-                $.ajax({
-                    type: "POST",
-                    url: "{{ route('event.create') }}",
-                    data: data,
-                    dataType: "json",
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(response) {
-                        // Remove title
-                        self.cseHtitle = false;
-                        // Next
-                        self.csStep = 3;
-                        // Hide preloader
-                        loader.style.display = "none";
-                        // Get Event ID from response
-                        const eventId = response.event_id;
-                        const eventURL = "{{ route('event.preview', ['event_id' => ':eventId']) }}".replace(
-                            ':eventId', eventId);
-                        const eventTitle = formData.ce_title;
+                // Get all fields values
+                const eventData = {
+                    title: formData.ce_title,
+                    description: formData.ce_description,
+                    date_time: formData.ce_datetime,
+                    timezone: userTimeZone,
+                    template_id: this.selectedImage,
+                };
 
-                        /* Set all social links */
+                // Store the event data in localStorage
+                localStorage.setItem("eventData", JSON.stringify(eventData));
 
-                        // Share to WhatsApp
-                        $("#cseShareWhatsApp").attr("href", "whatsapp://send?text=" + encodeURIComponent(
-                            eventTitle + ": " + eventURL));
-                        // Share to Facebook
-                        $("#cseShareFacebook").attr("href", "https://www.facebook.com/sharer/sharer.php?u=" +
-                            encodeURIComponent(eventURL));
-                        // Share to Telegram
-                        $("#cseShareTelegram").attr("href", "https://t.me/share/url?url=" + encodeURIComponent(
-                            eventURL) + "&text=" + encodeURIComponent(eventTitle));
-                        // Share to XTwitter
-                        $("#cseShareXTwitter").attr("href", "https://twitter.com/intent/tweet?url=" +
-                            encodeURIComponent(eventURL) + "&text=" + encodeURIComponent(eventTitle));
-                        // Share to email
-                        $("#cseShareEmail").attr("href", "mailto:?subject=" + encodeURIComponent(eventTitle) +
-                            "&body=" + encodeURIComponent("Hey there, check out my newly created event: " +
-                                eventURL));
-                        // Preview
-                        $('#csePreview').attr('href', eventURL);
-                        // Clipboard Input
-                        $('#shareUrl').val(eventURL);
-                    },
-                    error: function(error) {
-                        // Remove title
-                        self.cseHtitle = false;
-                        // Show Error
-                        self.csStep = 4;
-                        // Hide preloader
-                        loader.style.display = "none";
-                    }
-                });
+                // Redirect to the register route with a notification parameter
+                const registerRoute = "{{ route('register') }}?notification=true";
+                window.location.href = registerRoute;
             }
 
             function resetCseForm() {

@@ -1,7 +1,6 @@
-const endAudio = document.getElementById('endAudio');
-
 // Play audio function
 const playAudio = () => {
+    const endAudio = document.getElementById('endAudio');
     // Attempt to play the audio
     endAudio.play().catch(error => {
         console.error('Audio playback failed:', error);

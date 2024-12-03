@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\EventCustomUrl;
 use Illuminate\Support\Facades\Http;
+use Filament\Notifications\Notification;
 
 class EventController extends Controller
 {
@@ -32,11 +33,18 @@ class EventController extends Controller
         $event->date_time = $request->date_time;
         $event->timezone = $request->timezone;
         $event->event_id = Str::random(16);
-        $event->user_id = $request->user_id;
+        $event->user_id = $request->user_id ?? auth()->user()->id;
         $event->template_id = $request->template_id;
         $event->public = 1;
         $event->status = 1;
         $event->save();
+
+        Notification::make()
+            ->title('Event Created!')
+            ->body('Your event has been created successfully.')
+            ->success()
+            ->persistent()
+            ->send();
 
         return response()->json(['message' => 'Form submitted successfully', 'event_id' => $event->event_id], 200);
     }

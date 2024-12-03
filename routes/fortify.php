@@ -10,6 +10,7 @@ use Illuminate\Auth\Events\Verified;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\CustomRegisteredUserController;
 use Laravel\Fortify\Http\Controllers\PasswordController;
 use Laravel\Fortify\Http\Controllers\NewPasswordController;
 use Laravel\Fortify\Http\Controllers\RecoveryCodeController;
@@ -96,7 +97,7 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
     // Registration...
     if (Features::enabled(Features::registration())) {
         if ($enableViews) {
-            Route::get(RoutePath::for('register', '/register'), [RegisteredUserController::class, 'create'])
+            Route::get(RoutePath::for('register', '/register'), [CustomRegisteredUserController::class, 'create'])
                 ->middleware(['guest:' . config('fortify.guard')])
                 ->name('register');
         }

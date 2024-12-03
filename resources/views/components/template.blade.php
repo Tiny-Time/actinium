@@ -141,9 +141,6 @@
         @if ($event->watermark)
             <x-event-watermark></x-event-watermark>
         @endif
-
-        <!-- Audio element -->
-        <audio id="endAudio" src="/audio/alarm.mp3" preload="auto"></audio>
     </section>
 
     @include('modals.share')

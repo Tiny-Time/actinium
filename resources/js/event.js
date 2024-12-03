@@ -67,11 +67,7 @@ const e = {
         function updateTimer() {
             if (totalSeconds < 0) {
                 clearInterval(e.timerInterval);
-                var audio = new Audio("/audio/alarm.mp3");
-                audio
-                    .play()
-                    .then(() => {})
-                    .catch((error) => {});
+                playAudio();
                 Alpine.store("playBtn").on = true;
             } else {
                 const days = Math.floor(totalSeconds / 86400);
@@ -97,11 +93,7 @@ const e = {
         function updateCounter() {
             if (totalSeconds > targetSeconds) {
                 clearInterval(e.counterInterval);
-                var audio = new Audio("/audio/alarm.mp3");
-                audio
-                    .play()
-                    .then(() => {})
-                    .catch((error) => {});
+                playAudio();
                 Alpine.store("playBtn").on = true;
             } else {
                 const days = Math.floor(totalSeconds / 86400);
