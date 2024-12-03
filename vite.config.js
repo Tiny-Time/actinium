@@ -552,6 +552,7 @@ export default defineConfig({
                 "resources/views/templates/sport/mountain-climbing-challenge/css/style.css",
                 "resources/views/templates/fitness/pulse-accelerator/css/style.css",
                 "resources/views/templates/fitness/revitalize-recharge/css/style.css",
+                "resources/js/createEvent.js",
             ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
