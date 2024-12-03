@@ -76,14 +76,16 @@
             <section id="results" class="mt-4">
                 <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 content-stretch">
                     @foreach ($events as $event)
-                        <a href="{{ route('event.preview', $event->event_id) }}" wire:key="{{ $event->event_id }}"
-                            class="overflow-hidden bg-gray-200 rounded shadow-md">
-                            <img src="{{ Vite::asset($event->template->image) }}" alt="{{ $event->template->name }}"
-                                class="object-fill w-full h-40">
-                            <div class="px-4 py-3">
-                                <p class="font-semibold text-gray-900 line-clamp-3">{{ $event->title }}</p>
-                            </div>
-                        </a>
+                        @if ($event->template)
+                            <a href="{{ route('event.preview', $event->event_id) }}" wire:key="{{ $event->event_id }}"
+                                class="overflow-hidden bg-gray-200 rounded shadow-md">
+                                <img src="{{ Vite::asset($event->template->image) }}" alt="{{ $event->template->name }}"
+                                    class="object-fill w-full h-40">
+                                <div class="px-4 py-3">
+                                    <p class="font-semibold text-gray-900 line-clamp-3">{{ $event->title }}</p>
+                                </div>
+                            </a>
+                        @endif
                     @endforeach
                 </div>
             </section>
