@@ -429,7 +429,7 @@ export default defineConfig({
                 "resources/views/templates/pets/fun-filled-pet-playtime/css/style.css",
                 "resources/views/templates/sport/ace-your-prep/css/style.css",
                 "resources/views/templates/study/maximize-your-potential/css/style.css",
-                "resources/views/templates/beauty/revitalize-your-skin/images/preview.webp",
+                "resources/views/templates/beauty/revitalize-your-skin/css/style.css",
                 "resources/views/templates/fashion/capturing-fashion-s-radiance/css/style.css",
                 "resources/views/templates/pets/outdoor-fun/css/style.css",
                 "resources/views/templates/study/amidst-a-sea-of-books/css/style.css",
