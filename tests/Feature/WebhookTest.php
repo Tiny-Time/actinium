@@ -56,7 +56,7 @@ class WebhookTest extends TestCase
             'slug' => 'test-blog-post-2',
             'content' => 'Old content',
             'description' => 'Old description',
-            'featured_image' => 'https://example.com/old-image.jpg',
+            'featured_image' => 'https://pixabay.com/images/download/people-2944065_640.jpg',
             'published_at' => now(),
         ]);
 
@@ -68,7 +68,7 @@ class WebhookTest extends TestCase
             'content' => 'Updated content of the blog post.',
             'meta_description' => 'Updated meta description.',
             'categories' => ['Laravel', 'PHP', 'Updated Testing'],
-            'featured_image' => 'https://example.com/new-image.jpg',
+            'featured_image' => 'https://pixabay.com/images/download/people-2944065_640.jpg',
         ];
 
         // Send POST request to the webhook
