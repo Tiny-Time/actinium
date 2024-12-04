@@ -20,6 +20,7 @@ use Filament\Notifications\Notification;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\WebhookController;
+use Laravel\Socialite\Two\InvalidStateException;
 use Laravel\Jetstream\Http\Controllers\Livewire\PrivacyPolicyController;
 use Laravel\Jetstream\Http\Controllers\Livewire\TermsOfServiceController;
 
@@ -52,7 +53,11 @@ Route::middleware(['guest'])->group(function () {
     })->name('google');
 
     Route::get('/auth/google-callback', function (Request $request) {
-        $response = Socialite::driver('google')->user();
+        try {
+            $response = Socialite::driver('google')->user();
+        } catch (InvalidStateException $e) {
+            $response = Socialite::driver('google')->stateless()->user();
+        }
 
         $user = User::where('email', $response->user['email'])->first();
 
