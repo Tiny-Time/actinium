@@ -4,8 +4,8 @@ namespace App\Providers;
 
 use Livewire\Livewire;
 use Laravel\Cashier\Cashier;
-use Filament\Support\Assets\Js;
 use Spatie\Health\Facades\Health;
+use Illuminate\Support\HtmlString;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +16,6 @@ use Filament\Support\Facades\FilamentAsset;
 use Spatie\Health\Checks\Checks\CacheCheck;
 use Spatie\Health\Checks\Checks\DebugModeCheck;
 use Spatie\Health\Checks\Checks\EnvironmentCheck;
-use Spatie\Health\Checks\Checks\OptimizedAppCheck;
 use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
 use Spatie\Health\Checks\Checks\DatabaseConnectionCountCheck;
 
@@ -58,20 +57,33 @@ class AppServiceProvider extends ServiceProvider
             ],
         ]);
 
-        FilamentAsset::register([
-            Js::make('Produktly', __DIR__ . '/../../resources/js/Produktly.js'),
-        ]);
+        // FilamentAsset::register([
+        //     Js::make('Produktly', __DIR__ . '/../../resources/js/Produktly.js'),
+        // ]);
 
         FilamentView::registerRenderHook(
             PanelsRenderHook::GLOBAL_SEARCH_AFTER,
-            fn (): \Illuminate\Contracts\View\View => view('user.tokens'),
+            fn(): \Illuminate\Contracts\View\View => view('user.tokens'),
         );
 
         FilamentView::registerRenderHook(
             PanelsRenderHook::GLOBAL_SEARCH_AFTER,
-            fn (): \Illuminate\Contracts\View\View => view('filament.user.pages.actions.event'),
+            fn(): \Illuminate\Contracts\View\View => view('filament.user.pages.actions.event'),
         );
 
         Cashier::calculateTaxes();
+
+        // Get the domain in the format yourdomain.com from the env
+        $domain = parse_url(config('app.url'), PHP_URL_HOST);
+
+        // If the domain includes 'www.', remove it
+        if (strpos($domain, 'www.') === 0) {
+            $domain = substr($domain, 4);
+        }
+
+        FilamentView::registerRenderHook(
+            PanelsRenderHook::HEAD_END,
+            fn(): HtmlString => new HtmlString("<meta name=\"app-domain\" content=\"$domain\">")
+        );
     }
 }

@@ -316,6 +316,15 @@
             </div>
         </div>
     </div>
+    @php
+        // Get the domain in the format yourdomain.com from the env
+        $domain = parse_url(config('app.url'), PHP_URL_HOST);
+
+        // If the domain includes 'www.', remove it
+        if (strpos($domain, 'www.') === 0) {
+            $domain = substr($domain, 4);
+        }
+    @endphp
     @push('js')
         <script>
             function validateForm() {
@@ -408,8 +417,9 @@
                     template_id: this.selectedImage,
                 };
 
-                // Store the event data in localStorage
-                localStorage.setItem("eventData", JSON.stringify(eventData));
+                // Store the event data in a cookie
+                document.cookie =
+                    `eventData=${encodeURIComponent(JSON.stringify(eventData))}; path=/; domain={{ $domain }}; secure`;
 
                 // Redirect to the register route with a notification parameter
                 const registerRoute = "{{ route('register') }}?notification=true";

@@ -73,8 +73,8 @@
     {{-- @include('modals.login')
     @include('modals.signup')
     @include('modals.forgot-password')
-    @include('modals.create-timer')
-    @include('modals.create-event') --}}
+    @include('modals.create-timer') --}}
+    @include('modals.create-event')
 
     @filamentScripts
     @stack('js')
