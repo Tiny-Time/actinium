@@ -36,7 +36,7 @@
 
     @livewire('preloader')
     <x-banner />
-    @include('layouts.header')
+    {{-- @include('layouts.header') --}}
 
     @php
         $templates = \App\Models\Template::limit(3)->get();
@@ -52,11 +52,13 @@
             has cooked up?</p>
         <div class="grid gap-3 mx-auto mt-3 md:grid-cols-3">
             @foreach ($templates as $temp)
-                <div class="overflow-hidden bg-gray-200 rounded">
-                    <img src="{{ Vite::asset($temp->image) }}" alt="{{ $temp->name }}"
-                        class="object-cover w-full h-44">
-                    <p class="px-4 my-2 font-semibold text-md">{{ $temp->name }}</p>
-                </div>
+                <a href="{{ route('search') }}">
+                    <div class="overflow-hidden bg-gray-200 rounded">
+                        <img src="{{ Vite::asset($temp->image) }}" alt="{{ $temp->name }}"
+                            class="object-cover w-full h-44">
+                        <p class="px-4 my-2 font-semibold text-md">{{ $temp->name }}</p>
+                    </div>
+                </a>
             @endforeach
         </div>
         <p>
@@ -65,14 +67,14 @@
             <a href="/" class="font-semibold text-red-400">Return to the Homepage</a>
         </p>
     </div>
-    @include('layouts.footer')
+    {{-- @include('layouts.footer') --}}
 
     <!-- Modals -->
-    @include('modals.login')
+    {{-- @include('modals.login')
     @include('modals.signup')
     @include('modals.forgot-password')
     @include('modals.create-timer')
-    @include('modals.create-event')
+    @include('modals.create-event') --}}
 
     @filamentScripts
     @stack('js')

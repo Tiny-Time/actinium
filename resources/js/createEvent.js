@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
     // Check if eventData exists in localStorage
     const storedEventData = localStorage.getItem("eventData");
 
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             success: function (response) {
                 // Remove the eventData from localStorage after successful submission
                 localStorage.removeItem("eventData");
+                console.log(response);
             },
             error: function (error) {
                 console.error("Error creating event:", error);
