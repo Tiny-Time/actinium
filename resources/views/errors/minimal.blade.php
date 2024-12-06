@@ -62,8 +62,8 @@
             @endforeach
         </div>
         <p>
-            <button type="button" @click="$store.openCreateEventModal.toggle()" x-data
-                x-tooltip.placement.right.raw="Create Event" class="font-semibold text-red-400">Create Event</button> Or
+            {{-- <button type="button" @click="$store.openCreateEventModal.toggle()" x-data
+                x-tooltip.placement.right.raw="Create Event" class="font-semibold text-red-400">Create Event</button> Or --}}
             <a href="/" class="font-semibold text-red-400">Return to the Homepage</a>
         </p>
     </div>
@@ -73,8 +73,8 @@
     {{-- @include('modals.login')
     @include('modals.signup')
     @include('modals.forgot-password')
-    @include('modals.create-timer') --}}
-    @include('modals.create-event')
+    @include('modals.create-timer')
+    @include('modals.create-event') --}}
 
     @filamentScripts
     @stack('js')
