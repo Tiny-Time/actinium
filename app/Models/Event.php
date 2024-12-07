@@ -30,6 +30,7 @@ class Event extends Model
         'status',
         'public',
         'address',
+        'zip_code',
         'country',
         'state',
         'contact_name',

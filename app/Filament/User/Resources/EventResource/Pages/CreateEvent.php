@@ -204,6 +204,7 @@ class CreateEvent extends Page
 
         if (
             $data['address'] ||
+            $data['zip_code'] ||
             $data['country'] ||
             $data['state'] ||
             $data['contact_name'] ||

@@ -265,6 +265,7 @@ class EditEvent extends EditRecord
         // Check if any of the fields are being set for the first time
         if (
             (!$original_data['address'] && $data['address']) ||
+            (!$original_data['zip_code'] && $data['zip_code']) ||
             (!$original_data['country'] && $data['country']) ||
             (!$original_data['state'] && $data['state']) ||
             (!$original_data['contact_name'] && $data['contact_name']) ||
@@ -278,6 +279,7 @@ class EditEvent extends EditRecord
         ) {
             if (
                 !$original_data['address']
+                && !$original_data['zip_code']
                 && !$original_data['country']
                 && !$original_data['state']
                 && !$original_data['contact_name']

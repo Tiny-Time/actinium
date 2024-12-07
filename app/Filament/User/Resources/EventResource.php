@@ -233,6 +233,10 @@ class EventResource extends Resource
                         ->maxLength(191)
                         ->string()
                         ->columnSpanFull(),
+                    Forms\Components\TextInput::make('zip_code')
+                        ->maxLength(191)
+                        ->string()
+                        ->columnSpanFull(),
                     Forms\Components\Select::make('country')
                         ->searchable()
                         ->getSearchResultsUsing(function (string $search): array {

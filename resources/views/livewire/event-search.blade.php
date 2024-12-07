@@ -16,12 +16,7 @@
                         Global
                         Events Near You</h1>
                     <p class="max-w-3xl m-0 text-sm font-medium md:text-base">
-                        Explore a world of possibilities with our event search tool. Whether you're seeking concerts,
-                        workshops,
-                        or cultural festivals, find the perfect event near you or in your desired location. Discover
-                        trending
-                        happenings, filter by date or category, and plan your next memorable experience effortlessly. Start
-                        exploring now!
+                        Explore a world of possibilities with our event search tool. Whether you're seeking concerts, workshops, or cultural festivals, find the perfect event near you or in your desired location. Discover trending happenings and refine your search by <span class="text-pink-600">event date and time, check-in time, location, guestbook availability, or RSVP requirements</span>. Plan your next memorable experience effortlessly with these powerful filters. Start exploring now!
                     </p>
                     <form method="POST" wire:submit="search"
                         class="h-12 md:w-[350px] lg:w-[500px] flex rounded-full items-center bg-white overflow-clip w-full">
@@ -65,15 +60,15 @@
                     </form>
                 </div>
             </section>
-            <section id="filter" class="flex justify-end mt-4">
+            <section id="filter" class="flex justify-end mt-8">
                 {{-- Filters --}}
-                <form class="w-full max-w-xs">
+                <form class="w-full">
                     {{ $this->form }}
                 </form>
 
                 <x-filament-actions::modals />
             </section>
-            <section id="results" class="mt-4">
+            <section id="results" class="mt-8">
                 <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 content-stretch">
                     @foreach ($events as $event)
                         @if ($event->template)
