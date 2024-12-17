@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Event extends Model
 {
@@ -42,6 +43,8 @@ class Event extends Model
         'rsvp',
         'post_event_massage',
         'watermark',
+        'is_paid',
+        'ticket_levels',
         'deleted_at',
     ];
 
@@ -54,6 +57,7 @@ class Event extends Model
         'date_time' => 'datetime',
         'check_in_time' => 'datetime',
         'event_end_time' => 'datetime',
+        'ticket_levels' => 'array',
     ];
 
     /**
@@ -101,6 +105,23 @@ class Event extends Model
     }
 
     /**
+     * Scope a query to include events that are ending soon.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param int $hours The number of hours within which the event should be ending.
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeEndingSoon($query, $hours)
+    {
+        $now = now($this->timezone);
+
+        return $query->whereRaw("
+        CONVERT_TZ(date_time, '+00:00', timezone) BETWEEN ? AND ?",
+            [$now->toDateTimeString(), $now->clone()->addHours($hours)->toDateTimeString()]
+        );
+    }
+
+    /**
      * Get the upcoming events based on timezone.
      */
     public function scopeUpcoming($query)
@@ -114,5 +135,25 @@ class Event extends Model
     public function customUrl(): HasOne
     {
         return $this->hasOne(EventCustomUrl::class);
+    }
+
+    /**
+     * Trending by views scope.
+     */
+    public function scopeTrending($query, $limit = null)
+    {
+        $query->select('events.*')
+            ->leftJoin('page_views', function ($join) {
+                $join->on('page_views.uri', '=', DB::raw("CONCAT('/event/', events.event_id)"));
+            })
+            ->selectRaw('COUNT(page_views.id) as view_count')
+            ->groupBy('events.id')
+            ->orderByDesc('view_count');
+
+        if ($limit) {
+            $query->limit($limit);
+        }
+
+        return $query;
     }
 }

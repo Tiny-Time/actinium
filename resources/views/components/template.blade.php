@@ -137,6 +137,31 @@
             @endif
         @endif
 
+        @if ($event->is_paid)
+            <div class="text-center">
+                <h3 class="mt-4 text-2xl font-bold text-white md:text-3xl title-color">Available tickets</h3>
+                @php
+                    $colors = ['#CC0215', '#254111'];
+                @endphp
+                <!-- Tickets -->
+                <div class="flex flex-col md:flex-row md:flex-wrap gap-3 justify-center mt-3">
+                    @foreach ($event->ticket_levels as $index => $ticket)
+                        @php
+                            $color = $colors[($index + 1) % 2];
+                        @endphp
+                        <div class="rounded-lg overflow-clip flex border-[#F6EECF] border-2 text-lg font-bold">
+                            <div class="bg-[#F6EECF] px-4 py-1" style="color: {{ $color }};">
+                                ${{ $ticket['cost'] }}
+                            </div>
+                            <div class="px-4 py-1 text-[#F6EECF] w-full" style="background-color: {{ $color }};">
+                                {{ $ticket['name'] }}
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        @endif
+
         <!-- TinyTi.me watermark -->
         @if ($event->watermark)
             <x-event-watermark></x-event-watermark>

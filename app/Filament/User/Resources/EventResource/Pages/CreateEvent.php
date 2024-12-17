@@ -214,7 +214,8 @@ class CreateEvent extends Page
             $data['event_end_time'] ||
             $data['guestbook'] == true ||
             $data['rsvp'] == true ||
-            $data['post_event_massage']
+            $data['post_event_massage'] ||
+            $data['is_paid'] == true
         ) {
             $token_charge = 2;
 
@@ -228,6 +229,10 @@ class CreateEvent extends Page
 
             if ($data['post_event_massage']) {
                 $token_charge++;
+            }
+
+            if ($data['is_paid'] == true) {
+                $token_charge += 3;
             }
         }
 

@@ -3,15 +3,21 @@
 namespace App\Livewire;
 
 use App\Models\Event;
-use Filament\Forms\Set;
+use Filament\Forms\Get;
 use Livewire\Component;
 use App\Models\Template;
 use Filament\Forms\Form;
+use App\Actions\CustomRange;
 use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 use Filament\Forms\Components;
+use App\Forms\Components\Inline;
+use App\Forms\Components\RangeSlider;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Concerns\InteractsWithForms;
+use Rupadana\FilamentSlider\Components\InputSlider;
+use Rupadana\FilamentSlider\Components\InputSliderGroup;
+use Rupadana\FilamentSlider\Components\Concerns\InputSliderBehaviour;
 
 class EventSearch extends Component implements HasForms
 {
@@ -51,11 +57,13 @@ class EventSearch extends Component implements HasForms
             ->schema([
                 Components\Split::make([
                     Components\DateTimePicker::make('date_time')
-                        ->label('Event Date & Time')
+                        ->label('')
+                        ->prefix('Event Date & Time')
                         ->seconds(false)
                         ->live(),
                     Components\Select::make('country')
-                        ->label('Location')
+                        ->label('')
+                        ->prefix('Location')
                         ->placeholder('Preferred country')
                         ->options(function () {
                             include base_path('app/Filament/User/Resources/countries.php');
@@ -70,7 +78,8 @@ class EventSearch extends Component implements HasForms
                         ->live(),
                     // Zip code
                     Components\TextInput::make('zip_code')
-                        ->label('Zip Code')
+                        ->prefix('Zip Code')
+                        ->label('')
                         ->placeholder('Paste or enter your Zip Code')
                         ->suffixAction(
                             Components\Actions\Action::make('paste')
@@ -102,7 +111,30 @@ class EventSearch extends Component implements HasForms
                             'x-on:paste-from-clipboard.window' => 'pasteFromClipboard()',
                         ])
                         ->live(),
-                ])->from('md')
+                ])->from('lg'),
+                Components\Split::make([
+                    Components\Select::make('display')
+                        ->label('')
+                        ->prefix('Display')
+                        ->options([
+                            'high_to_low' => 'High -> Low',
+                            'low_to_high' => 'Low -> High',
+                            'most_recent' => 'Most Recent',
+                            'trending' => 'Trending',
+                            'ending_soon' => 'Ending Soon',
+                        ])->live(),
+                    Inline::make()
+                        ->schema([
+                            Components\Toggle::make('active_all')
+                                ->label('Active/All')
+                                ->live(),
+                            RangeSlider::make('range')
+                                ->label("Paid Event Costs Range")
+                                ->extraFieldWrapperAttributes(['class' => 'w-full'])
+                                ->default([0, 5000])
+                                ->live(),
+                        ]),
+                ])->from('lg'),
             ])
             ->statePath('data');
     }
@@ -110,6 +142,11 @@ class EventSearch extends Component implements HasForms
     public function updated(): void
     {
         $this->search();
+    }
+
+    public function resetFilters(): void
+    {
+        $this->form->fill();
     }
 
     public function render()
@@ -131,7 +168,7 @@ class EventSearch extends Component implements HasForms
             });
         }
 
-        // Apply filters
+        // Apply general filters
         $filters = [
             'country' => 'country',
             'date_time' => 'date_time',
@@ -146,6 +183,73 @@ class EventSearch extends Component implements HasForms
                     $query->where($dbColumn, $formState[$field]);
                 }
             }
+        }
+
+        $min = $formState['range'][0];
+        $max = $formState['range'][1];
+
+        // Apply Min and Max Cost Filters for Ticket Levels
+        if (!empty($min) || !empty($max)) {
+            $query->where(function ($q) use ($min, $max) {
+                if (!empty($min) && (int) $min > 0) {
+                    // Apply min filter only when min > 0 and is_paid is true
+                    $q->where(function ($subQuery) use ($min, $max) {
+                        $subQuery->where('is_paid', true)
+                            ->whereNotNull('ticket_levels')
+                            ->whereRaw("JSON_EXTRACT(ticket_levels, '$[*].cost') >= ?", [(int) $min])
+                            // Handle max filter
+                            ->whereRaw("JSON_EXTRACT(ticket_levels, '$[*].cost') <= ?", [(int) $max]);
+                    });
+                }
+            });
+        }
+
+        // Display Filter
+        if (!empty($formState['display'])) {
+            switch ($formState['display']) {
+                case 'high_to_low':
+                    $query->orderByRaw("
+                        CASE
+                            WHEN is_paid = true THEN JSON_EXTRACT(ticket_levels, '$[0].cost') + 0
+                            ELSE 0
+                        END DESC
+                    ");
+                    break;
+
+                case 'low_to_high':
+                    $query->orderByRaw("
+                        CASE
+                            WHEN is_paid = true THEN JSON_EXTRACT(ticket_levels, '$[0].cost') + 0
+                            ELSE 0
+                        END ASC
+                    ");
+                    break;
+
+                case 'most_recent':
+                    $query->orderBy('created_at', 'desc');
+                    break;
+
+                case 'trending':
+                    $query->trending();
+                    break;
+
+                case 'ending_soon':
+                    // A week from now
+                    $query->endingSoon(168)
+                        ->orderBy('date_time', 'desc');
+                    break;
+
+                default:
+                    $query->orderBy('date_time', 'desc'); // Default fallback
+                    break;
+            }
+        }
+
+        // Apply Active All filter if not selected
+        if (!$formState['active_all']) {
+            $query->whereNot(function ($q) {
+                $q->expired();
+            });
         }
 
         return view('livewire.event-search', [

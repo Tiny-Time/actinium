@@ -229,6 +229,29 @@ class EventResource extends Resource
                 ->disabled(!auth()->user()->isCurrentSubscribed()),
             Forms\Components\Section::make('Advanced Features (Optional) - 2 tokens')
                 ->schema([
+                    Forms\Components\Toggle::make('is_paid')
+                        ->label('Paid Event - 3 tokens')
+                        ->reactive()
+                        ->default(false),
+
+                    Forms\Components\Repeater::make('ticket_levels')
+                        ->label('Ticket Levels')
+                        ->defaultItems(1)
+                        ->schema([
+                            Forms\Components\TextInput::make('name')
+                                ->label('Ticket Name')
+                                ->placeholder('e.g., Basic, Premium, VIP')
+                                ->required(),
+                            Forms\Components\TextInput::make('cost')
+                                ->label('Ticket Cost')
+                                ->numeric()
+                                ->placeholder('e.g., 100')
+                                ->required(),
+                        ])
+                        ->visible(fn(Get $get): bool => $get('is_paid')) // Show only if "Paid Event" is selected
+                        ->minItems(1)
+                        ->columns(2)
+                        ->collapsible(),
                     Forms\Components\TextInput::make('address')
                         ->maxLength(191)
                         ->string()

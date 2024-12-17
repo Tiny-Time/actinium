@@ -16,7 +16,11 @@
                         Global
                         Events Near You</h1>
                     <p class="max-w-3xl m-0 text-sm font-medium md:text-base">
-                        Explore a world of possibilities with our event search tool. Whether you're seeking concerts, workshops, or cultural festivals, find the perfect event near you or in your desired location. Discover trending happenings and refine your search by <span class="text-pink-600">event date and time, check-in time, location, guestbook availability, or RSVP requirements</span>. Plan your next memorable experience effortlessly with these powerful filters. Start exploring now!
+                        Explore a world of possibilities with our event search tool. Whether you're seeking concerts,
+                        workshops, or cultural festivals, find the perfect event near you or in your desired location.
+                        Discover trending happenings and refine your search by <span class="text-pink-600">event date and
+                            time, check-in time, location, guestbook availability, or RSVP requirements</span>. Plan your
+                        next memorable experience effortlessly with these powerful filters. Start exploring now!
                     </p>
                     <form method="POST" wire:submit="search"
                         class="h-12 md:w-[350px] lg:w-[500px] flex rounded-full items-center bg-white overflow-clip w-full">
@@ -60,15 +64,29 @@
                     </form>
                 </div>
             </section>
-            <section id="filter" class="flex justify-end mt-8">
+            <section id="filter" class="mt-8">
                 {{-- Filters --}}
                 <form class="w-full">
                     {{ $this->form }}
                 </form>
 
-                <x-filament-actions::modals />
+                <div class="mt-3">
+                    <button wire:click="resetFilters" class="font-semibold text-red-400">Reset filters</button>
+                    <svg class="w-5 h-5 animate-spin" wire:loading wire:target="resetFilters" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                            stroke-width="4">
+                        </circle>
+                        <path class="opacity-75" fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                        </path>
+                    </svg>
+                </div>
             </section>
             <section id="results" class="mt-8">
+                <div class="mb-3 text-center loader" wire:loading>
+                    Loading...
+                </div>
                 <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 content-stretch">
                     @foreach ($events as $event)
                         @if ($event->template)
