@@ -57,7 +57,7 @@ class Event extends Model
         'date_time' => 'datetime',
         'check_in_time' => 'datetime',
         'event_end_time' => 'datetime',
-        // 'ticket_levels' => 'array',
+        'ticket_levels' => 'array',
     ];
 
     /**
@@ -155,5 +155,10 @@ class Event extends Model
         }
 
         return $query;
+    }
+
+    public function setTicketLevelsAttribute($value)
+    {
+        $this->attributes['ticket_levels'] = json_encode(array_values($value));
     }
 }
