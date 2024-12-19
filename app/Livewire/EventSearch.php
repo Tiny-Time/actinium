@@ -191,16 +191,23 @@ class EventSearch extends Component implements HasForms
         // Apply Min and Max Cost Filters for Ticket Levels
         if (!empty($min) || !empty($max)) {
             $query->where(function ($q) use ($min, $max) {
-                if (!empty($min) && (int) $min > 0) {
-                    // Apply min filter only when min > 0 and is_paid is true
-                    $q->where(function ($subQuery) use ($min, $max) {
-                        $subQuery->where('is_paid', true)
-                            ->whereNotNull('ticket_levels')
-                            ->whereRaw("JSON_EXTRACT(ticket_levels, '$[*].cost') >= ?", [(int) $min])
-                            // Handle max filter
-                            ->whereRaw("JSON_EXTRACT(ticket_levels, '$[*].cost') <= ?", [(int) $max]);
-                    });
-                }
+                $q->where('is_paid', true) // Ensure 'is_paid' is true
+                    ->whereNotNull('ticket_levels'); // Ensure 'ticket_levels' is not null
+
+                // Apply filters based on min and max
+                $q->whereRaw("
+            EXISTS (
+                SELECT 1
+                FROM JSON_TABLE(ticket_levels, '$[*]' COLUMNS (
+                    cost INT PATH '$.cost'
+                )) AS jt
+                WHERE (:min IS NULL OR jt.cost >= :min)
+                AND (:max IS NULL OR jt.cost <= :max)
+            )
+        ", [
+                    'min' => !empty($min) ? (int) $min : null,
+                    'max' => !empty($max) ? (int) $max : null,
+                ]);
             });
         }
 
