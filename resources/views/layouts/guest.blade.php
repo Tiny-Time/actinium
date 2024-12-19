@@ -60,28 +60,24 @@
     @stack('css')
 
     <!-- Produktly -->
-    <script type="text/javascript" defer>
-        (function(w, d, f) {
-            var a = d.getElementsByTagName('head')[0];
-            var s = d.createElement('script');
-            s.async = 1;
-            s.src = f;
-            s.setAttribute('id', 'produktlyScript');
-            s.dataset.clientToken =
-                "f9ff784f510e30b48e88854c1382852adbcd4c717e283f521bb2a8ec04f66bf49eed10045feb31fda9c7484e60505a1a64b0b265ef25e2c759a8ad7485117580f2f66798afb2783450e51eb8b3e9ff680e8804063ff8426119065f2fcaf074fe84c2febe";
-            a.appendChild(s);
-        })(window, document, "https://public.produktly.com/js/main.js");
-    </script>
-    <script type="application/ld+json" defer>
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "TinyTime",
-          "alternateName": "Create and Customize an Event",
-          "url": "https://tinyti.me",
-          "logo": "https://tinyti.me/build/assets/feature%20image%202-a55a2c81.png",
-          "sameAs": "https://twitter.com/tinytime10"
-        }
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const script = document.createElement("script");
+                        script.src = "https://public.produktly.com/js/main.js";
+                        script.defer = true;
+                        script.id = "produktlyScript";
+                        script.dataset.clientToken =
+                            "f9ff784f510e30b48e88854c1382852adbcd4c717e283f521bb2a8ec04f66bf49eed10045feb31fda9c7484e60505a1a64b0b265ef25e2c759a8ad7485117580f2f66798afb2783450e51eb8b3e9ff680e8804063ff8426119065f2fcaf074fe84c2febe";
+                        document.head.appendChild(script);
+                        observer.disconnect();
+                    }
+                });
+            });
+            observer.observe(document.querySelector("#trigger-element"));
+        });
     </script>
 </head>
 
@@ -116,6 +112,9 @@
     @if (isset($footer))
         @include('layouts.footer')
     @endif
+
+    <!-- Produktly -->
+    <div id="trigger-element" style="height: 10px;"></div>
 
     <!-- Modals -->
     @if (!request()->routeIs('login') && !request()->routeIs('register') && auth()->guest())
@@ -158,6 +157,18 @@
     {!! NoCaptcha::renderJs() !!}
 
     @vite(['resources/js/main.js', 'resources/js/app.js'])
+
+    <script type="application/ld+json" defer>
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "TinyTime",
+          "alternateName": "Create and Customize an Event",
+          "url": "https://tinyti.me",
+          "logo": "https://tinyti.me/build/assets/feature%20image%202-a55a2c81.png",
+          "sameAs": "https://twitter.com/tinytime10"
+        }
+    </script>
 </body>
 
 </html>
