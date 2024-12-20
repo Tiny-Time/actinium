@@ -121,7 +121,7 @@
 
     @include('layouts.clipboard')
     {{-- Google Recaptcha --}}
-    {!! NoCaptcha::renderJs() !!}
+    <script src="https://www.google.com/recaptcha/api.js?" defer></script>
 
     @vite(['resources/js/main.js', 'resources/js/app.js'])
 
