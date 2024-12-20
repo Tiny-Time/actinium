@@ -325,7 +325,7 @@
                     {{-- Main Timer Mobile --}}
                     <div class="max-w-3xl px-4 my-4 md:hidden w-max">
                         <div
-                            class="w-full p-2 sm:p-7 bg-[url('../images/thanks-giving/bg.svg')] object-contain bg-center bg-opacity-50 rounded-xl border border-gray-200 backdrop-blur-[20.36px] flex justify-between items-center gap-4">
+                            class="w-full p-2 sm:p-7 object-contain bg-center bg-opacity-50 rounded-xl border border-gray-200 backdrop-blur-[20.36px] flex justify-between items-center gap-4">
                             <div class="flex flex-col items-start justify-start gap-4">
                                 {{-- Play --}}
                                 <div @click="$store.playBtn.toggle(); e.play(true)" x-data
