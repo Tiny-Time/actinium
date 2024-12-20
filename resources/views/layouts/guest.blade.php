@@ -42,6 +42,10 @@
     <!-- Styles -->
     @filamentStyles
 
+    {{-- Preload --}}
+    <link rel="preload" as="image" href="{{ Vite::asset('resources/images/thanks-giving/bg.webp') }}">
+    <link rel="preload" as="image" href="{{ Vite::asset('resources/images/timer-bg.webp') }}">
+
     <!-- Scripts -->
     @vite(['resources/css/app.css'])
 
@@ -120,8 +124,6 @@
     </script>
 
     @include('layouts.clipboard')
-    {{-- Google Recaptcha --}}
-    <script src="https://www.google.com/recaptcha/api.js?" defer></script>
 
     @vite(['resources/js/main.js', 'resources/js/app.js'])
 
@@ -137,23 +139,35 @@
         }
     </script>
 
-    <!-- Produktly -->
+    <!-- Produktly/Google reCAPTCHA -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const script = document.createElement("script");
-                        script.src = "https://public.produktly.com/js/main.js";
-                        script.defer = true;
-                        script.id = "produktlyScript";
-                        script.dataset.clientToken =
+                        // Add Produktly script
+                        const produktlyScript = document.createElement("script");
+                        produktlyScript.src = "https://public.produktly.com/js/main.js";
+                        produktlyScript.defer = true;
+                        produktlyScript.id = "produktlyScript";
+                        produktlyScript.dataset.clientToken =
                             "f9ff784f510e30b48e88854c1382852adbcd4c717e283f521bb2a8ec04f66bf49eed10045feb31fda9c7484e60505a1a64b0b265ef25e2c759a8ad7485117580f2f66798afb2783450e51eb8b3e9ff680e8804063ff8426119065f2fcaf074fe84c2febe";
-                        document.head.appendChild(script);
+                        document.head.appendChild(produktlyScript);
+
+                        // Add Google reCAPTCHA script
+                        const recaptchaScript = document.createElement("script");
+                        recaptchaScript.src = "https://www.google.com/recaptcha/api.js";
+                        recaptchaScript.defer = true;
+                        recaptchaScript.id = "recaptchaScript";
+                        document.head.appendChild(recaptchaScript);
+
+                        // Disconnect observer to prevent re-triggering
                         observer.disconnect();
                     }
                 });
             });
+
+            // Observe the trigger element
             observer.observe(document.querySelector("#trigger-element"));
         });
     </script>
