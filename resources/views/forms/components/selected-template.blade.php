@@ -6,7 +6,7 @@
         <div class="mt-3">
             <div class="w-full">
                 <label for="template">
-                    <img alt="{{ $template?->name }}"
+                    <img loading="lazy" alt="{{ $template?->name }}"
                         src="{{ $template?->image }}"
                         class="w-full h-64 max-w-xl mx-auto rounded-lg shadow-md md:h-96">
                 </label>

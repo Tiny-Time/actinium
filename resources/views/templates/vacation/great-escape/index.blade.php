@@ -12,7 +12,7 @@
         <!-- Days -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/great-escape/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/great-escape/images/timer_icon.svg') }}"
                 alt="timer icon" />
             <div class="toz-days">
                 <span class="text-sm md:text-lg">D</span>
@@ -23,7 +23,7 @@
         <!-- Hours -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/great-escape/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/great-escape/images/timer_icon.svg') }}"
                 alt="timer icon" />
 
             <div class="toz-hours">
@@ -35,7 +35,7 @@
         <!-- Minutes -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/great-escape/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/great-escape/images/timer_icon.svg') }}"
                 alt="timer icon" />
             <div class="toz-mins">
                 <span class="text-sm md:text-lg">M</span>
@@ -46,7 +46,7 @@
         <!-- Seconds -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/great-escape/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/great-escape/images/timer_icon.svg') }}"
                 alt="timer icon" />
             <div class="toz-secs">
                 <span class="text-sm md:text-lg">S</span>

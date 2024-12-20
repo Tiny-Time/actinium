@@ -10,6 +10,10 @@ body {
     width: 100%;
 }
 
+.thanks-giving-bg {
+    background-image: url("../../images/thanks-giving/bg.webp");
+}
+
 .toz {
     color: #e7d5ae;
     min-height: 100dvh;

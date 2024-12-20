@@ -7,7 +7,7 @@
         <div class="toz-timer">
             <!-- Days -->
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/vacation/escape-and-unwind/images/timer_icon.webp') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/escape-and-unwind/images/timer_icon.webp') }}"
                     alt="Timer icon">
                 <svg width="160" height="160">
                     <circle cx="80" cy="80" r="75" id="toz-day"></circle>
@@ -19,7 +19,7 @@
             </div>
             <!-- Hours -->
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/vacation/escape-and-unwind/images/timer_icon.webp') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/escape-and-unwind/images/timer_icon.webp') }}"
                     alt="Timer icon">
                 <svg width="160" height="160">
                     <circle cx="80" cy="80" r="75" id="toz-hr"></circle>
@@ -31,7 +31,7 @@
             </div>
             <!-- Minutes -->
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/vacation/escape-and-unwind/images/timer_icon.webp') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/escape-and-unwind/images/timer_icon.webp') }}"
                     alt="Timer icon">
                 <svg width="160" height="160">
                     <circle cx="80" cy="80" r="75" id="toz-mn"></circle>
@@ -43,7 +43,7 @@
             </div>
             <!-- Seconds -->
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/vacation/escape-and-unwind/images/timer_icon.webp') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/escape-and-unwind/images/timer_icon.webp') }}"
                     alt="Timer icon">
                 <svg width="160" height="160">
                     <circle cx="80" cy="80" r="75" id="toz-es"></circle>

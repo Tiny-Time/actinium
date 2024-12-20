@@ -8,7 +8,7 @@
     <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/birthday/another-trip-around-the-sun/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/another-trip-around-the-sun/images/timer_icon.svg') }}"
                 alt="Timer icon" />
             <div class="toz-days">
                 <span class="toz-unit">DD</span>
@@ -18,7 +18,7 @@
 
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/birthday/another-trip-around-the-sun/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/another-trip-around-the-sun/images/timer_icon.svg') }}"
                 alt="Timer icon" />
 
             <div class="toz-hours">
@@ -29,7 +29,7 @@
 
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/birthday/another-trip-around-the-sun/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/another-trip-around-the-sun/images/timer_icon.svg') }}"
                 alt="Timer icon" />
             <div class="toz-mins">
                 <span class="toz-unit">MM</span>
@@ -39,7 +39,7 @@
 
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/birthday/another-trip-around-the-sun/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/another-trip-around-the-sun/images/timer_icon.svg') }}"
                 alt="Timer icon" />
             <div class="toz-secs">
                 <span class="toz-unit">SS</span>

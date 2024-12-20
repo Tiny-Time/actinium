@@ -129,7 +129,7 @@
                                                 <!-- Template -->
                                                 <div class="w-full" x-show="selectedImage === {{ $ctemplate->id }}">
                                                     <label for="template{{ $ctemplate->id }}">
-                                                        <img alt="template{{ $ctemplate->id }}"
+                                                        <img loading="lazy" alt="template{{ $ctemplate->id }}"
                                                             src="{{ Vite::asset($ctemplate->image) }}"
                                                             class="w-full h-64 rounded-lg shadow-md">
                                                     </label>

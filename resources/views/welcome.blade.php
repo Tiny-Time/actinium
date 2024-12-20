@@ -544,7 +544,7 @@
                         class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
                         <li>
                             {{-- Streamlabs --}}
-                            <img src="{{ Vite::asset('resources/images/streamlabs.webp') }}" width="150"
+                            <img loading="lazy" src="{{ Vite::asset('resources/images/streamlabs.webp') }}" width="150"
                                 height="30" alt="Streamlabs Timer Widget">
                         </li>
                         <li>
@@ -670,7 +670,7 @@
                         aria-hidden="true">
                         <li>
                             {{-- Streamlabs --}}
-                            <img src="{{ Vite::asset('resources/images/streamlabs.webp') }}" width="150"
+                            <img loading="lazy" src="{{ Vite::asset('resources/images/streamlabs.webp') }}" width="150"
                                 height="30" alt="Streamlabs Timer Widget">
                         </li>
                         <li>
@@ -814,7 +814,7 @@
         <p class="mt-2 text-center">Unlocking the Full Potential: Discover Our Powerful Features!</p>
         {{-- Feature 1: Multiple Templates --}}
         <div class="grid gap-6 mt-6 md:grid-cols-2 md:gap-16">
-            <img src="{{ Vite::asset('resources/images/feature image 1.webp') }}" alt="Multiple Templates"
+            <img loading="lazy" src="{{ Vite::asset('resources/images/feature image 1.webp') }}" alt="Multiple Templates"
                 class="w-[550px] mx-auto">
             <div class="flex flex-col gap-4 justify-evenly">
                 <h3 class="font-bold text-3xl border-l-[6px] border-cyan-500 pl-2">Multiple Templates</h3>
@@ -849,12 +849,12 @@
                         Your Event</button>
                 </div>
             </div>
-            <img src="{{ Vite::asset('resources/images/feature image 2.webp') }}" alt="Website Integration"
+            <img loading="lazy" src="{{ Vite::asset('resources/images/feature image 2.webp') }}" alt="Website Integration"
                 class="w-[550px] mx-auto">
         </div>
         {{-- Feature 3: Customization --}}
         <div class="grid gap-6 mt-6 md:grid-cols-2 md:gap-16">
-            <img src="{{ Vite::asset('resources/images/feature image 3.webp') }}" alt="Customization"
+            <img loading="lazy" src="{{ Vite::asset('resources/images/feature image 3.webp') }}" alt="Customization"
                 class="w-[550px] mx-auto">
             <div class="flex flex-col gap-4 justify-evenly">
                 <h3 class="font-bold text-3xl border-l-[6px] border-olivine pl-2">Customization</h3>
@@ -1074,7 +1074,7 @@
                                                 </div>
                                             </div>
                                             <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
-                                                <img src="{{ Vite::asset('resources/images/profile image.webp') }}"
+                                                <img loading="lazy" src="{{ Vite::asset('resources/images/profile image.webp') }}"
                                                     alt="Profile" class="flex-shrink rounded-full max-w-[70px]">
                                                 <div>
                                                     <h4 class="text-xl font-bold">Kristin Watson</h4>
@@ -1117,7 +1117,7 @@
                                                 </div>
                                             </div>
                                             <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
-                                                <img src="{{ Vite::asset('resources/images/profile image 2.webp') }}"
+                                                <img loading="lazy" src="{{ Vite::asset('resources/images/profile image 2.webp') }}"
                                                     alt="Profile" class="flex-shrink rounded-full max-w-[70px]">
                                                 <div>
                                                     <h4 class="text-xl font-bold">Jerome Bell</h4>
@@ -1160,7 +1160,7 @@
                                                 </div>
                                             </div>
                                             <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
-                                                <img src="{{ Vite::asset('resources/images/profile image 3.webp') }}"
+                                                <img loading="lazy" src="{{ Vite::asset('resources/images/profile image 3.webp') }}"
                                                     alt="Profile" class="flex-shrink rounded-full max-w-[70px]">
                                                 <div>
                                                     <h4 class="text-xl font-bold">Jane Cooper</h4>
@@ -1204,7 +1204,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center gap-3 px-3 py-6 text-gray-100 bg-gm">
-                                                    <img src="{{ $testimonial->image ? '/storage/' . $testimonial->image : 'https://ui-avatars.com/api/?name=' . $testimonial->name . '&background=A2C376&color=fff&bold=true' }}"
+                                                    <img loading="lazy" src="{{ $testimonial->image ? '/storage/' . $testimonial->image : 'https://ui-avatars.com/api/?name=' . $testimonial->name . '&background=A2C376&color=fff&bold=true' }}"
                                                         alt="Testimonial Profile"
                                                         class="flex-shrink rounded-full h-[70px] w-[70px]">
                                                     <div>

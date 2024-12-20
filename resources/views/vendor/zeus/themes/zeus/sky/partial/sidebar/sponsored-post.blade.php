@@ -7,6 +7,6 @@
             <h3>Sponsored</h3>
             <div class="h-[2px] grow bg-black"></div>
         </div>
-        <img src="{{ '/storage/'.$imgSrc->image }}" alt="Sponsored Post" class="w-full mt-3">
+        <img loading="lazy" src="{{ '/storage/'.$imgSrc->image }}" alt="Sponsored Post" class="w-full mt-3">
     </div>
 @endif

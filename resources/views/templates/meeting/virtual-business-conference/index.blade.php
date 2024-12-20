@@ -6,7 +6,7 @@
     <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/meeting/virtual-business-conference/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/meeting/virtual-business-conference/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <svg>
                 <rect x="5" y="5" rx="15" ry="15"></rect>
@@ -20,7 +20,7 @@
 
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/meeting/virtual-business-conference/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/meeting/virtual-business-conference/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <svg>
                 <rect x="5" y="5" rx="15" ry="15"></rect>
@@ -34,7 +34,7 @@
 
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/meeting/virtual-business-conference/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/meeting/virtual-business-conference/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <svg>
                 <rect x="5" y="5" rx="15" ry="15"></rect>
@@ -48,7 +48,7 @@
 
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/meeting/virtual-business-conference/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/meeting/virtual-business-conference/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <svg>
                 <rect x="5" y="5" rx="15" ry="15"></rect>

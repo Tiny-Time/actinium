@@ -6,7 +6,7 @@
     <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/holiday/world-laughter-day/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/holiday/world-laughter-day/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div class="toz-days">
                 <span id="toz-days">365</span>
@@ -15,7 +15,7 @@
         </div>
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/holiday/world-laughter-day/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/holiday/world-laughter-day/images/timer_icon.svg') }}"
                 alt="Timer icon">
 
             <div class="toz-hours">
@@ -25,7 +25,7 @@
         </div>
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/holiday/world-laughter-day/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/holiday/world-laughter-day/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div class="toz-mins">
                 <span id="toz-mins">60</span>
@@ -34,7 +34,7 @@
         </div>
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/holiday/world-laughter-day/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/holiday/world-laughter-day/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div class="toz-secs">
                 <span id="toz-secs">60</span>

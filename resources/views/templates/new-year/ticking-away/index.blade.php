@@ -9,7 +9,7 @@
         <!-- Days -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/timer_icon.svg') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/timer_icon.svg') }}"
                     alt="Timer icon" />
                 <div class="toz-days">
                     <span id="toz-days">365</span>
@@ -21,7 +21,7 @@
         <!-- Hours -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/timer_icon2.svg') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/timer_icon2.svg') }}"
                     alt="Timer icon" />
                 <div class="toz-hours">
                     <span id="toz-hours">24</span>
@@ -33,7 +33,7 @@
         <!-- Minutes -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/timer_icon.svg') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/timer_icon.svg') }}"
                     alt="Timer icon" />
                 <div class="toz-mins">
                     <span id="toz-mins">60</span>
@@ -45,7 +45,7 @@
         <!-- Seconds -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/timer_icon2.svg') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/timer_icon2.svg') }}"
                     alt="Timer icon" />
                 <div class="toz-secs">
                     <span id="toz-secs">60</span>
@@ -56,12 +56,12 @@
     </div>
 
     <!-- Background ICons -->
-    <img src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/top1.webp') }}" alt="BG Icon"
+    <img loading="lazy" src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/top1.webp') }}" alt="BG Icon"
         class="bg-icon top1" />
-    <img src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/top2.webp') }}" alt="BG Icon"
+    <img loading="lazy" src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/top2.webp') }}" alt="BG Icon"
         class="bg-icon top2" />
-    <img src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/left.webp') }}" alt="BG Icon"
+    <img loading="lazy" src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/left.webp') }}" alt="BG Icon"
         class="bg-icon left" />
-    <img src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/right.webp') }}" alt="BG Icon"
+    <img loading="lazy" src="{{ Vite::asset('resources/views/templates/new-year/ticking-away/images/right.webp') }}" alt="BG Icon"
         class="bg-icon right" />
 </x-template>

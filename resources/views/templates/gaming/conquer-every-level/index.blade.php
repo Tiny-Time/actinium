@@ -8,7 +8,7 @@
     <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/gaming/conquer-every-level/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/gaming/conquer-every-level/images/timer_icon.svg') }}"
                 alt="Timer icon" />
             <div class="toz-days" id="toz-days">365</div>
             <span class="toz-unit">Days</span>
@@ -16,7 +16,7 @@
 
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/gaming/conquer-every-level/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/gaming/conquer-every-level/images/timer_icon.svg') }}"
                 alt="Timer icon" />
             <div class="toz-hours" id="toz-hours">24</div>
             <span class="toz-unit">Hours</span>
@@ -24,7 +24,7 @@
 
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/gaming/conquer-every-level/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/gaming/conquer-every-level/images/timer_icon.svg') }}"
                 alt="Timer icon" />
             <div class="toz-mins" id="toz-mins">60</div>
             <span class="toz-unit">Minutes</span>
@@ -32,7 +32,7 @@
 
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/gaming/conquer-every-level/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/gaming/conquer-every-level/images/timer_icon.svg') }}"
                 alt="Timer icon" />
             <div class="toz-secs" id="toz-secs">60</div>
             <span class="toz-unit">Seconds</span>

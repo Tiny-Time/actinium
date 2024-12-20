@@ -39,18 +39,6 @@
         gtag('config', 'G-PL2TQE6L2R');
     </script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="preload" as="style" onload="this.rel='stylesheet'">
-    <link href="https://fonts.googleapis.com/css2?family=Trochut:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="preload" as="style" onload="this.rel='stylesheet'">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="preload" as="style" onload="this.rel='stylesheet'">
-
     <!-- Styles -->
     @filamentStyles
 
@@ -58,27 +46,6 @@
     @vite(['resources/css/app.css'])
 
     @stack('css')
-
-    <!-- Produktly -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const script = document.createElement("script");
-                        script.src = "https://public.produktly.com/js/main.js";
-                        script.defer = true;
-                        script.id = "produktlyScript";
-                        script.dataset.clientToken =
-                            "f9ff784f510e30b48e88854c1382852adbcd4c717e283f521bb2a8ec04f66bf49eed10045feb31fda9c7484e60505a1a64b0b265ef25e2c759a8ad7485117580f2f66798afb2783450e51eb8b3e9ff680e8804063ff8426119065f2fcaf074fe84c2febe";
-                        document.head.appendChild(script);
-                        observer.disconnect();
-                    }
-                });
-            });
-            observer.observe(document.querySelector("#trigger-element"));
-        });
-    </script>
 </head>
 
 <body
@@ -168,6 +135,27 @@
           "logo": "https://tinyti.me/build/assets/feature%20image%202-a55a2c81.png",
           "sameAs": "https://twitter.com/tinytime10"
         }
+    </script>
+
+    <!-- Produktly -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const script = document.createElement("script");
+                        script.src = "https://public.produktly.com/js/main.js";
+                        script.defer = true;
+                        script.id = "produktlyScript";
+                        script.dataset.clientToken =
+                            "f9ff784f510e30b48e88854c1382852adbcd4c717e283f521bb2a8ec04f66bf49eed10045feb31fda9c7484e60505a1a64b0b265ef25e2c759a8ad7485117580f2f66798afb2783450e51eb8b3e9ff680e8804063ff8426119065f2fcaf074fe84c2febe";
+                        document.head.appendChild(script);
+                        observer.disconnect();
+                    }
+                });
+            });
+            observer.observe(document.querySelector("#trigger-element"));
+        });
     </script>
 </body>
 

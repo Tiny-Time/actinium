@@ -114,7 +114,7 @@
                                 <button type="button" class="px-4 py-2 text-sm bg-red-400 rounded text-gray-50"
                                     x-text="selectedIndex == {{ $temp['id'] }} ? 'Selected' : 'Select Template'"></button>
                             </div>
-                            <img src="{{ Vite::asset($temp['image']) }}" alt="{{ $temp['name'] }}"
+                            <img loading="lazy" src="{{ Vite::asset($temp['image']) }}" alt="{{ $temp['name'] }}"
                                 class="object-fill w-full h-40">
                             <div class="px-4 my-2">
                                 <p class="font-semibold text-md">

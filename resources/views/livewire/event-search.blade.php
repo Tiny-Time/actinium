@@ -7,9 +7,9 @@
         </x-slot>
         <div class="w-full px-4 mx-auto mt-6 max-w-7xl sm:px-6 lg:px-8">
             <section id="form" class="relative rounded-md bg-gradient-to-r from-teal-800/10 to-red-400/10 overflow-clip">
-                <img class="absolute -bottom-28 -right-14 -z-10 w-44" src="{{ Vite::asset('resources/images/time.webp') }}"
+                <img loading="lazy" class="absolute -bottom-28 -right-14 -z-10 w-44" src="{{ Vite::asset('resources/images/time.webp') }}"
                     alt="Time">
-                <img class="absolute -top-20 -left-20 -z-10 w-44" src="{{ Vite::asset('resources/images/Alarm.webp') }}"
+                <img loading="lazy" class="absolute -top-20 -left-20 -z-10 w-44" src="{{ Vite::asset('resources/images/Alarm.webp') }}"
                     alt="Alarm">
                 <div class="flex flex-col items-center gap-4 p-4 text-center md:p-8">
                     <h1 class="max-w-xl m-0 text-base font-bold md:text-2xl">Discover Exciting Events: Search for Local and
@@ -92,7 +92,7 @@
                         @if ($event->template)
                             <a href="{{ route('event.preview', $event->event_id) }}" wire:key="{{ $event->event_id }}"
                                 class="overflow-hidden bg-gray-200 rounded shadow-md" target="_blank" rel="noopener">
-                                <img src="{{ Vite::asset($event->template->image) }}" alt="{{ $event->template->name }}"
+                                <img loading="lazy" src="{{ Vite::asset($event->template->image) }}" alt="{{ $event->template->name }}"
                                     class="object-fill w-full h-40">
                                 <div class="px-4 py-3">
                                     <p class="font-semibold text-gray-900 line-clamp-3">{{ $event->title }}</p>

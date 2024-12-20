@@ -7,7 +7,7 @@
     <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/birthday/beyond-imagination/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/beyond-imagination/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div class="toz-days">
                 <span class="toz-unit">Days</span>
@@ -16,7 +16,7 @@
         </div>
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/birthday/beyond-imagination/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/beyond-imagination/images/timer_icon.svg') }}"
                 alt="Timer icon">
 
             <div class="toz-hours">
@@ -26,7 +26,7 @@
         </div>
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/birthday/beyond-imagination/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/beyond-imagination/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div class="toz-mins">
                 <span class="toz-unit">Mins</span>
@@ -35,7 +35,7 @@
         </div>
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/birthday/beyond-imagination/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/beyond-imagination/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div class="toz-secs">
                 <span class="toz-unit">Sec</span>

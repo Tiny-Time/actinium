@@ -9,7 +9,7 @@
     </x-slot>
 
     <x-slot:live>
-        <img src="{{ Vite::asset('resources/views/templates/live-stream/mind-body-wellness/images/live_icon.webp') }}"
+        <img loading="lazy" src="{{ Vite::asset('resources/views/templates/live-stream/mind-body-wellness/images/live_icon.webp') }}"
             alt="live icon" width="60" />
     </x-slot>
 
@@ -18,7 +18,7 @@
         <!-- Days -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/live-stream/mind-body-wellness/images/timer_icon.webp') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/live-stream/mind-body-wellness/images/timer_icon.webp') }}"
                 alt="timer icon" />
             <div>
                 <div class="toz-days" id="toz-days">
@@ -30,7 +30,7 @@
 
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/live-stream/mind-body-wellness/images/timer_icon.webp') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/live-stream/mind-body-wellness/images/timer_icon.webp') }}"
                 alt="timer icon" />
             <div>
                 <div class="toz-hours" id="toz-hours">
@@ -43,7 +43,7 @@
         <!-- Minutes -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/live-stream/mind-body-wellness/images/timer_icon.webp') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/live-stream/mind-body-wellness/images/timer_icon.webp') }}"
                 alt="timer icon" />
             <div>
                 <div class="toz-mins" id="toz-mins">
@@ -56,7 +56,7 @@
         <!-- Seconds -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/live-stream/mind-body-wellness/images/timer_icon.webp') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/live-stream/mind-body-wellness/images/timer_icon.webp') }}"
                 alt="timer icon" />
             <div>
                 <div class="toz-secs" id="toz-secs">

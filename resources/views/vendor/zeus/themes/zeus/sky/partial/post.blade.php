@@ -8,7 +8,7 @@
     <div class="mx-auto overflow-hidden shadow bg-slate-100 dark:bg-gray-800 rounded-xl">
         <div class="md:flex">
             <div class="md:shrink-0">
-                <img class="object-cover w-full h-48 md:h-full md:w-48"
+                <img loading="lazy" class="object-cover w-full h-48 md:h-full md:w-48"
                     src="{{ !empty($post->image()) ? $post->image() : Vite::asset('resources/images/bg.jpg') }}"
                     alt="{{ $alt ?? '' }}">
             </div>

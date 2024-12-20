@@ -8,7 +8,7 @@
             {{-- Blog Post --}}
             <div class="flex flex-col items-center gap-2 mt-2">
                 <a href="{{ route('post',$post->slug) }}" class="grid grid-cols-3 gap-2">
-                    <img class="h-48 w-full object-cover md:h-full md:w-48"
+                    <img loading="lazy" class="h-48 w-full object-cover md:h-full md:w-48"
                     src="{{ !empty($post->image()) ? $post->image() : Vite::asset('resources/images/bg.jpg') }}" alt="{!! $post->title !!}">
                     <div class="col-span-2 flex flex-col justify-center">
                         <h3 class="text-xl font-semibold line-clamp-1">{{ $post->title ?? '' }}</h3>

@@ -50,7 +50,7 @@
                         <div class="mx-auto overflow-hidden shadow bg-slate-100 rounded-xl">
                             <div class="md:flex">
                                 <div class="md:shrink-0">
-                                    <img class="object-cover w-full h-48 md:h-full md:w-48"
+                                    <img loading="lazy" class="object-cover w-full h-48 md:h-full md:w-48"
                                         src="{{ Vite::asset('resources/images/bg.jpg') }}" alt="Post">
                                 </div>
                                 <div class="p-3 md:p-8">

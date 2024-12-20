@@ -6,25 +6,25 @@
 
     <x-slot:background>
         <div class="toz-bg-svg">
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/tl.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/tl.svg') }}"
                 alt="timer icon" class="tl" /> <!-- top left svg-->
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/tr.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/tr.svg') }}"
                 alt="timer icon" class="tr" /> <!-- top right svg-->
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/rm.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/rm.svg') }}"
                 alt="timer icon" class="rm" /> <!-- right middle svg-->
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/bl.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/bl.svg') }}"
                 alt="timer icon" class="bl" /> <!-- bottom left svg-->
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/br.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/br.svg') }}"
                 alt="timer icon" class="br" /> <!-- bottom right svg-->
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/bm.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/bm.svg') }}"
                 alt="timer icon" class="bm" /> <!--bottom middle svg-->
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/floating.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/floating.svg') }}"
                 alt="timer icon" class="float-tl" /> <!-- floating top left svg-->
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/floating.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/floating.svg') }}"
                 alt="timer icon" class="float-tr" /><!-- floating top right svg-->
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/floating.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/floating.svg') }}"
                 alt="timer icon" class="float-bl" /> <!-- floating bottom left svg-->
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/floating.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/floating.svg') }}"
                 alt="timer icon" class="float-br" /> <!-- floating bottom right svg-->
         </div>
     </x-slot>
@@ -32,7 +32,7 @@
     <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-days" id="toz-days">
@@ -43,7 +43,7 @@
         </div>
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-hours" id="toz-hours">
@@ -54,7 +54,7 @@
         </div>
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-mins" id="toz-mins">
@@ -65,7 +65,7 @@
         </div>
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/birthday/unfolding-magic/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-secs" id="toz-secs">

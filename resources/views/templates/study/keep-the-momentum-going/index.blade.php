@@ -7,7 +7,7 @@
         <div class="toz-timer">
             <!-- Days -->
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/study/keep-the-momentum-going/images/timer_icon.webp') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/study/keep-the-momentum-going/images/timer_icon.webp') }}"
                     alt="Timer icon">
                 <svg width="140" height="140">
                     <circle cx="70" cy="70" r="65" id="toz-day"></circle>
@@ -19,7 +19,7 @@
             </div>
             <!-- Hours -->
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/study/keep-the-momentum-going/images/timer_icon.webp') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/study/keep-the-momentum-going/images/timer_icon.webp') }}"
                     alt="Timer icon">
                 <svg width="140" height="140">
                     <circle cx="70" cy="70" r="65" id="toz-hr"></circle>
@@ -31,7 +31,7 @@
             </div>
             <!-- Minutes -->
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/study/keep-the-momentum-going/images/timer_icon.webp') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/study/keep-the-momentum-going/images/timer_icon.webp') }}"
                     alt="Timer icon">
                 <svg width="140" height="140">
                     <circle cx="70" cy="70" r="65" id="toz-mn"></circle>
@@ -43,7 +43,7 @@
             </div>
             <!-- Seconds -->
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/study/keep-the-momentum-going/images/timer_icon.webp') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/study/keep-the-momentum-going/images/timer_icon.webp') }}"
                     alt="Timer icon">
                 <svg width="140" height="140">
                     <circle cx="70" cy="70" r="65" id="toz-es"></circle>

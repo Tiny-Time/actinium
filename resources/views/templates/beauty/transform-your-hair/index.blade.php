@@ -9,7 +9,7 @@
         <!-- Days -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/beauty/transform-your-hair/images/timer_icon.webp') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/beauty/transform-your-hair/images/timer_icon.webp') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-days" id="toz-days">
@@ -21,7 +21,7 @@
 
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/beauty/transform-your-hair/images/timer_icon.webp') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/beauty/transform-your-hair/images/timer_icon.webp') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-hours" id="toz-hours">
@@ -33,7 +33,7 @@
 
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/beauty/transform-your-hair/images/timer_icon.webp') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/beauty/transform-your-hair/images/timer_icon.webp') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-mins" id="toz-mins">
@@ -45,7 +45,7 @@
 
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/beauty/transform-your-hair/images/timer_icon.webp') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/beauty/transform-your-hair/images/timer_icon.webp') }}"
                 alt="Timer icon">
             <div>
                 <div class="toz-secs" id="toz-secs">

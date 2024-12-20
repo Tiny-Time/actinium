@@ -7,7 +7,7 @@
     <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/study/dare-to-start/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/study/dare-to-start/images/timer_icon.svg') }}"
                 alt="Timer icon" />
             <div class="toz-days">
                 <span class="toz-unit">Day</span>
@@ -17,7 +17,7 @@
 
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/study/dare-to-start/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/study/dare-to-start/images/timer_icon.svg') }}"
                 alt="Timer icon" />
             <div class="toz-hours">
                 <span class="toz-unit">Hour</span>
@@ -27,7 +27,7 @@
 
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/study/dare-to-start/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/study/dare-to-start/images/timer_icon.svg') }}"
                 alt="Timer icon" />
             <div class="toz-mins">
                 <span class="toz-unit">Minute</span>
@@ -37,7 +37,7 @@
 
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/study/dare-to-start/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/study/dare-to-start/images/timer_icon.svg') }}"
                 alt="Timer icon" />
             <div class="toz-secs">
                 <span class="toz-unit">Second</span>

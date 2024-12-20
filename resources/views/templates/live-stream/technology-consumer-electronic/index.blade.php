@@ -6,7 +6,7 @@
 
     <x-slot:live>
         <div class="mb-3">
-            <img src="{{ Vite::asset('resources/views/templates/live-stream/technology-consumer-electronic/images/live_icon.webp') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/live-stream/technology-consumer-electronic/images/live_icon.webp') }}"
                 alt="live icon" width="80" />
         </div>
     </x-slot>

@@ -9,7 +9,7 @@
         <!-- Days -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/plant/watering-effortless/images/timer_icon.webp') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/plant/watering-effortless/images/timer_icon.webp') }}"
                     alt="Timer icon" />
                 <div class="toz-days" id="toz-days">365</div>
             </div>
@@ -19,7 +19,7 @@
         <!-- Hours -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/plant/watering-effortless/images/timer_icon.webp') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/plant/watering-effortless/images/timer_icon.webp') }}"
                     alt="Timer icon" />
                 <div class="toz-hours" id="toz-hours">24</div>
             </div>
@@ -29,7 +29,7 @@
         <!-- Minutes -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/plant/watering-effortless/images/timer_icon.webp') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/plant/watering-effortless/images/timer_icon.webp') }}"
                     alt="Timer icon" />
                 <div class="toz-mins" id="toz-mins">60</div>
             </div>
@@ -39,7 +39,7 @@
         <!-- Seconds -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/plant/watering-effortless/images/timer_icon.webp') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/plant/watering-effortless/images/timer_icon.webp') }}"
                     alt="Timer icon" />
                 <div class="toz-secs" id="toz-secs">60</div>
             </div>

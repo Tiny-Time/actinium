@@ -1,6 +1,6 @@
 <div class="flex flex-col gap-8">
     {{-- Ads --}}
-    <img src="{{ Vite::asset('resources/images/bg.jpg') }}" alt="Ads Image" class="w-full">
+    <img loading="lazy" src="{{ Vite::asset('resources/images/bg.jpg') }}" alt="Ads Image" class="w-full">
     {{-- Categories --}}
     <div>
         <div class="text-xl font-bold flex gap-2 items-center">
@@ -23,7 +23,7 @@
             {{-- Blog Post --}}
             <div class="flex flex-col gap-2 mt-2">
                 <a href="#" class="grid grid-cols-3 gap-2">
-                    <img src="{{ Vite::asset('resources/images/bg.jpg') }}" alt="Post">
+                    <img loading="lazy" src="{{ Vite::asset('resources/images/bg.jpg') }}" alt="Post">
                     <div class="col-span-2">
                         <h3 class="text-xl font-semibold line-clamp-1">This is a title for a blog post</h3>
                         <p class="text-sm line-clamp-3">Lorem ipsum dolor sit amet consectetur. Integer

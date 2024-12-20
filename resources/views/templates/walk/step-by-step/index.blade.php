@@ -8,7 +8,7 @@
         <!-- Days -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/walk/step-by-step/images/timer_icon.svg') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/walk/step-by-step/images/timer_icon.svg') }}"
                     alt="Timer icon" />
                 <div class="toz-days" id="toz-days">365</div>
             </div>
@@ -18,7 +18,7 @@
         <!-- Hours -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/walk/step-by-step/images/timer_icon.svg') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/walk/step-by-step/images/timer_icon.svg') }}"
                     alt="Timer icon" />
                 <div class="toz-hours" id="toz-hours">24</div>
             </div>
@@ -28,7 +28,7 @@
         <!-- Minutes -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/walk/step-by-step/images/timer_icon.svg') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/walk/step-by-step/images/timer_icon.svg') }}"
                     alt="Timer icon" />
                 <div class="toz-mins" id="toz-mins">60</div>
             </div>
@@ -38,7 +38,7 @@
         <!-- Seconds -->
         <div class="toz-ec">
             <div class="toz-ec-d">
-                <img src="{{ Vite::asset('resources/views/templates/walk/step-by-step/images/timer_icon.svg') }}"
+                <img loading="lazy" src="{{ Vite::asset('resources/views/templates/walk/step-by-step/images/timer_icon.svg') }}"
                     alt="Timer icon" />
                 <div class="toz-secs" id="toz-secs">60</div>
             </div>

@@ -23,31 +23,31 @@
                                         <div class="py-1 group w-max">
                                             <div
                                                 class="absolute z-10 hidden bg-white group-hover:flex bottom-full drop-shadow rounded-3xl reactions">
-                                                <img src="{{ Vite::asset('resources/images/reactions/like.gif') }}"
+                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/like.gif') }}"
                                                     alt="Like emoji" title="Like" width="40" height="40"
                                                     class="cursor-pointer react-emoji" data-emoji="like"
                                                     data-post-id="{{ $guestbook->id }}">
-                                                <img src="{{ Vite::asset('resources/images/reactions/love.gif') }}"
+                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/love.gif') }}"
                                                     alt="Love emoji" title="Love" width="40" height="40"
                                                     class="cursor-pointer react-emoji" data-emoji="love"
                                                     data-post-id="{{ $guestbook->id }}">
-                                                <img src="{{ Vite::asset('resources/images/reactions/haha.gif') }}"
+                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/haha.gif') }}"
                                                     alt="Haha emoji" title="Haha" width="40" height="40"
                                                     class="cursor-pointer react-emoji" data-emoji="haha"
                                                     data-post-id="{{ $guestbook->id }}">
-                                                <img src="{{ Vite::asset('resources/images/reactions/care.gif') }}"
+                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/care.gif') }}"
                                                     alt="Care emoji" title="Care" width="30" height="27"
                                                     class="h-[27px] m-auto cursor-pointer react-emoji" data-emoji="care"
                                                     data-post-id="{{ $guestbook->id }}">
-                                                <img src="{{ Vite::asset('resources/images/reactions/wow.gif') }}"
+                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/wow.gif') }}"
                                                     alt="Wow emoji" title="Wow" width="40" height="40"
                                                     class="cursor-pointer react-emoji" data-emoji="wow"
                                                     data-post-id="{{ $guestbook->id }}">
-                                                <img src="{{ Vite::asset('resources/images/reactions/sad.gif') }}"
+                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/sad.gif') }}"
                                                     alt="Sad emoji" title="Sad" width="40" height="40"
                                                     class="cursor-pointer react-emoji" data-emoji="sad"
                                                     data-post-id="{{ $guestbook->id }}">
-                                                <img src="{{ Vite::asset('resources/images/reactions/angry.gif') }}"
+                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/angry.gif') }}"
                                                     alt="Angry emoji" title="Angry" width="40" height="40"
                                                     class="cursor-pointer react-emoji" data-emoji="angry"
                                                     data-post-id="{{ $guestbook->id }}">
@@ -56,7 +56,7 @@
                                                 class="rounded-3xl border-2 text-black flex items-center p-[1px] h-[30px]">
                                                 <span class="sr-only">Reaction</span>
                                                 @if (!empty($guestbook->reactions->where('user_ip', $userIP)->first()))
-                                                    <img id="reaction_{{ $guestbook->id }}"
+                                                    <img loading="lazy" id="reaction_{{ $guestbook->id }}"
                                                         src="{{ Vite::asset('resources/images/reactions/' . $guestbook->reactions->where('user_ip', $userIP)->first()->emoji . '.gif') }}"
                                                         alt="{{ $guestbook->reactions->where('user_ip', $userIP)->first()->emoji }} emoji"
                                                         userip = "{{ $guestbook->reactions->where('user_ip', $userIP)->first()->user_ip }}"
@@ -96,7 +96,7 @@
                                                                 <span class="font-semibold text-gray-500">
                                                                     {{ count($guestbook->reactions->where('emoji', 'like')) }}
                                                                 </span>
-                                                                <img src="{{ Vite::asset('resources/images/reactions/like.gif') }}"
+                                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/like.gif') }}"
                                                                     alt="Like emoji" width="40" height="40"
                                                                     class="">
                                                             </div>
@@ -106,7 +106,7 @@
                                                                 <span class="font-semibold text-gray-500">
                                                                     {{ count($guestbook->reactions->where('emoji', 'love')) }}
                                                                 </span>
-                                                                <img src="{{ Vite::asset('resources/images/reactions/love.gif') }}"
+                                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/love.gif') }}"
                                                                     alt="Love emoji" width="40" height="40"
                                                                     class="">
                                                             </div>
@@ -116,7 +116,7 @@
                                                                 <span class="font-semibold text-gray-500">
                                                                     {{ count($guestbook->reactions->where('emoji', 'haha')) }}
                                                                 </span>
-                                                                <img src="{{ Vite::asset('resources/images/reactions/haha.gif') }}"
+                                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/haha.gif') }}"
                                                                     alt="Haha emoji" width="40" height="40"
                                                                     class="">
                                                             </div>
@@ -126,7 +126,7 @@
                                                                 <span class="font-semibold text-gray-500">
                                                                     {{ count($guestbook->reactions->where('emoji', 'care')) }}
                                                                 </span>
-                                                                <img src="{{ Vite::asset('resources/images/reactions/care.gif') }}"
+                                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/care.gif') }}"
                                                                     alt="Care emoji" width="30" height="27"
                                                                     class="h-[27px] w-[27px] ml-[5px] ">
                                                             </div>
@@ -136,7 +136,7 @@
                                                                 <span class="font-semibold text-gray-500">
                                                                     {{ count($guestbook->reactions->where('emoji', 'wow')) }}
                                                                 </span>
-                                                                <img src="{{ Vite::asset('resources/images/reactions/wow.gif') }}"
+                                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/wow.gif') }}"
                                                                     alt="Wow emoji" width="40" height="40"
                                                                     class="">
                                                             </div>
@@ -146,7 +146,7 @@
                                                                 <span class="font-semibold text-gray-500">
                                                                     {{ count($guestbook->reactions->where('emoji', 'sad')) }}
                                                                 </span>
-                                                                <img src="{{ Vite::asset('resources/images/reactions/sad.gif') }}"
+                                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/sad.gif') }}"
                                                                     alt="Sad emoji" width="40" height="40"
                                                                     class="">
                                                             </div>
@@ -156,7 +156,7 @@
                                                                 <span class="font-semibold text-gray-500">
                                                                     {{ count($guestbook->reactions->where('emoji', 'angry')) }}
                                                                 </span>
-                                                                <img src="{{ Vite::asset('resources/images/reactions/angry.gif') }}"
+                                                                <img loading="lazy" src="{{ Vite::asset('resources/images/reactions/angry.gif') }}"
                                                                     alt="Angry emoji" width="40" height="40"
                                                                     class="">
                                                             </div>

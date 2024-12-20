@@ -12,7 +12,7 @@
         <!-- Days -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/meeting/punctual-meeting/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/meeting/punctual-meeting/images/timer_icon.svg') }}"
                 alt="Timer BG" />
             <div class="toz-days">
                 <span id="toz-days">365</span>
@@ -23,7 +23,7 @@
         <!-- Hours -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/meeting/punctual-meeting/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/meeting/punctual-meeting/images/timer_icon.svg') }}"
                 alt="Timer BG" />
 
             <div class="toz-hours">
@@ -35,7 +35,7 @@
         <!-- Minutes -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/meeting/punctual-meeting/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/meeting/punctual-meeting/images/timer_icon.svg') }}"
                 alt="Timer BG" />
             <div class="toz-mins">
                 <span id="toz-mins">60</span>
@@ -46,7 +46,7 @@
         <!-- Seconds -->
 
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/meeting/punctual-meeting/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/meeting/punctual-meeting/images/timer_icon.svg') }}"
                 alt="Timer BG" />
             <div class="toz-secs">
                 <span id="toz-secs">60</span>

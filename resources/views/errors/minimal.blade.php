@@ -54,7 +54,7 @@
             @foreach ($templates as $temp)
                 <a href="{{ route('search') }}">
                     <div class="overflow-hidden bg-gray-200 rounded">
-                        <img src="{{ Vite::asset($temp->image) }}" alt="{{ $temp->name }}"
+                        <img loading="lazy" src="{{ Vite::asset($temp->image) }}" alt="{{ $temp->name }}"
                             class="object-cover w-full h-44">
                         <p class="px-4 my-2 font-semibold text-md">{{ $temp->name }}</p>
                     </div>

@@ -8,7 +8,7 @@
             {{-- Subsection 1: Blog  --}}
             <article class="md:col-span-2">
                 {{-- Post Image --}}
-                <img src="{{ !empty($post->image()) ? $post->image() : Vite::asset('resources/images/bg.jpg') }}"
+                <img loading="lazy" src="{{ !empty($post->image()) ? $post->image() : Vite::asset('resources/images/bg.jpg') }}"
                     alt="{{ $post->title ?? '' }}" class="h-[400px] w-full object-cover">
                 {{-- Post Title --}}
                 <h1 class="px-4 mt-3 text-xl font-bold text-center sm:text-3xl">{{ $post->title ?? '' }}</h1>

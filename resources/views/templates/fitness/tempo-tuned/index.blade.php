@@ -5,7 +5,7 @@
     <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fitness/tempo-tuned/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/fitness/tempo-tuned/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <svg width="130" height="130">
                 <circle cx="65" cy="60" r="55"></circle>
@@ -20,7 +20,7 @@
         </div>
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fitness/tempo-tuned/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/fitness/tempo-tuned/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <svg width="130" height="130">
                 <circle cx="65" cy="60" r="55"></circle>
@@ -35,7 +35,7 @@
         </div>
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fitness/tempo-tuned/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/fitness/tempo-tuned/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <svg width="130" height="130">
                 <circle cx="65" cy="60" r="55"></circle>
@@ -51,7 +51,7 @@
         </div>
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fitness/tempo-tuned/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/fitness/tempo-tuned/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <svg width="130" height="130">
                 <circle cx="65" cy="60" r="55"></circle>

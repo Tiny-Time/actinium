@@ -12,7 +12,7 @@
     </x-slot>
 
     @if($post->image() !== null)
-        <img alt="{{ $post->title }}" src="{{ $post->image() }}" class="my-10 w-full aspect-video shadow-md rounded-[2rem] rounded-bl-none z-0 object-cover"/>
+        <img loading="lazy" alt="{{ $post->title }}" src="{{ $post->image() }}" class="my-10 w-full aspect-video shadow-md rounded-[2rem] rounded-bl-none z-0 object-cover"/>
     @endif
 
     <div class="bg-white dark:bg-gray-800 rounded-[2rem] rounded-tl-none shadow-md px-10 pb-6 ">
@@ -35,7 +35,7 @@
                 </p>
             </div>
             <a href="#" class="flex items-center gap-2">
-                <img src="{{ \Filament\Facades\Filament::getUserAvatarUrl($post->author) }}" alt="avatar" class="object-cover w-10 h-10 rounded-full sm:block">
+                <img loading="lazy" src="{{ \Filament\Facades\Filament::getUserAvatarUrl($post->author) }}" alt="avatar" class="object-cover w-10 h-10 rounded-full sm:block">
                 <h1 class="font-bold text-gray-700 dark:text-gray-100 hover:underline">{{ $post->author->name ?? '' }}</h1>
             </a>
         </div>

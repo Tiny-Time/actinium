@@ -6,7 +6,7 @@
     <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/a-picnic-retreat-for-one/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/a-picnic-retreat-for-one/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div class="toz-days" id="toz-days">
                 365
@@ -21,7 +21,7 @@
 
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/a-picnic-retreat-for-one/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/a-picnic-retreat-for-one/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div class="toz-hours" id="toz-hours">
                 24
@@ -36,7 +36,7 @@
 
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/a-picnic-retreat-for-one/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/a-picnic-retreat-for-one/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div class="toz-mins" id="toz-mins">
                 60
@@ -51,7 +51,7 @@
 
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/a-picnic-retreat-for-one/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/a-picnic-retreat-for-one/images/timer_icon.svg') }}"
                 alt="Timer icon">
             <div class="toz-secs" id="toz-secs">
                 60

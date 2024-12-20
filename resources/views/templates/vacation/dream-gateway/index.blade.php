@@ -8,7 +8,7 @@
     <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/dream-gateway/images/days_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/dream-gateway/images/days_icon.svg') }}"
                 alt="Days icon" />
             <div class="toz-days">
                 <span id="toz-days">365</span>
@@ -18,7 +18,7 @@
 
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/dream-gateway/images/hours_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/dream-gateway/images/hours_icon.svg') }}"
                 alt="Hours icon" />
             <div class="toz-hours">
                 <span id="toz-hours">24</span>
@@ -28,7 +28,7 @@
 
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/dream-gateway/images/minutes_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/dream-gateway/images/minutes_icon.svg') }}"
                 alt="Minutes icon" />
             <div class="toz-mins">
                 <span id="toz-mins">60</span>
@@ -38,7 +38,7 @@
 
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/vacation/dream-gateway/images/seconds_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/vacation/dream-gateway/images/seconds_icon.svg') }}"
                 alt="Seconds icon" />
             <div class="toz-secs">
                 <span id="toz-secs">60</span>

@@ -6,7 +6,7 @@
             {{-- Subsection 1: Blog  --}}
             <div class="md:col-span-2">
                 {{-- Post Image --}}
-                <img src="{{ Vite::asset('resources/images/bg.jpg') }}" alt="Post"
+                <img loading="lazy" src="{{ Vite::asset('resources/images/bg.jpg') }}" alt="Post"
                     class="h-[400px] w-full object-cover">
                 {{-- Post Title --}}
                 <h1 class="text-xl sm:text-3xl font-bold mt-3 px-4 text-center">Lorem ipsum dolor, sit amet consectetur

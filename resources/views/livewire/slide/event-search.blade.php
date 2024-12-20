@@ -34,7 +34,7 @@
                     class="block w-full overflow-hidden bg-white shadow rounded-xl">
                     <div class="flex items-stretch">
                         <div class="self-stretch shrink-0">
-                            <img src="{{ Vite::asset($event->template->image) }}" alt="{{ $event->template->name }}"
+                            <img loading="lazy" src="{{ Vite::asset($event->template->image) }}" alt="{{ $event->template->name }}"
                                 class="object-cover h-full w-36">
                         </div>
                         <div class="p-4">

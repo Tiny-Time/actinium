@@ -148,7 +148,7 @@
                                 <button type="button" class="px-4 py-2 text-sm bg-red-400 rounded text-gray-50"
                                     x-text="selectedIndex == {{ $temp['id'] }} ? 'Selected' : 'Select Template'"></button>
                             </div>
-                            <img src="{{ $temp['image'] }}" alt="TemplateName" class="object-cover w-full h-44">
+                            <img loading="lazy" src="{{ $temp['image'] }}" alt="TemplateName" class="object-cover w-full h-44">
                             <p class="px-4 my-2 font-semibold text-md">{{ $temp['name'] }}</p>
                         </div>
                     @endforeach

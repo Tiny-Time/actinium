@@ -8,7 +8,7 @@
     <div class="toz-timer">
         <!-- Days -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fitness/elevate-your-sweat-sessions/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/fitness/elevate-your-sweat-sessions/images/timer_icon.svg') }}"
                 alt="Timer Image" />
             <div class="toz-days">
                 <span class="toz-unit">Days</span>
@@ -18,7 +18,7 @@
 
         <!-- Hours -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fitness/elevate-your-sweat-sessions/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/fitness/elevate-your-sweat-sessions/images/timer_icon.svg') }}"
                 alt="Timer Image" />
 
             <div class="toz-hours">
@@ -29,7 +29,7 @@
 
         <!-- Minutes -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fitness/elevate-your-sweat-sessions/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/fitness/elevate-your-sweat-sessions/images/timer_icon.svg') }}"
                 alt="Timer Image" />
             <div class="toz-mins">
                 <span class="toz-unit">Mins</span>
@@ -39,7 +39,7 @@
 
         <!-- Seconds -->
         <div class="toz-ec-d">
-            <img src="{{ Vite::asset('resources/views/templates/fitness/elevate-your-sweat-sessions/images/timer_icon.svg') }}"
+            <img loading="lazy" src="{{ Vite::asset('resources/views/templates/fitness/elevate-your-sweat-sessions/images/timer_icon.svg') }}"
                 alt="Timer Image" />
             <div class="toz-secs">
                 <span class="toz-unit">Sec</span>
