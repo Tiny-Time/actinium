@@ -5,7 +5,7 @@
 <x-guest-layout>
     {{-- Timer Template --}}
     <div class="mx-auto max-w-7xl" x-data="{ days: 0, hours: 0, mins: 5, secs: 0 }">
-        <div class="bg-no-repeat bg-cover relative z-10 thanks-giving-bg">
+        <div class="relative z-10 bg-no-repeat bg-cover thanks-giving-bg">
             <header class="bg-transparent">
                 {{-- Desktop Nav --}}
                 <div class="hidden px-4 py-2 mx-auto max-w-7xl sm:px-6 lg:px-8 md:block">
@@ -138,7 +138,7 @@
                     {{-- Event Title --}}
                     <h1 class="text-center toz-title eventTitle"
                         contenteditable="true">
-                        Create & Customize Events for Thanksgiving
+                        Create & Customize Events for New Year
                     </h1>
                     {{-- Main Timer Desktop --}}
                     <div

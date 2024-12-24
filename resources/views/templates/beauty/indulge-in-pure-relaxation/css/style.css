@@ -9,7 +9,14 @@
 * {
     font-family: "Vesper Libre", serif;
 }
-
+body {
+    background: url("../images/bg.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 5px 0 5px;
+}
 .toz {
     color: var(--primary-color);
     min-height: 100dvh;

@@ -52,11 +52,11 @@
     @stack('css')
 </head>
 
-<body
-    class="relative font-sans antialiased @if (!request()->routeIs('homePage')) bg-gray-100 dark:bg-gray-900
-@else
-    bg-white @endif"
-    x-data="authModal"
+<body class="relative font-sans antialiased"
+    :class="!isHomepage ? 'bg-gray-100 dark:bg-gray-900' : 'bg-white dark:bg-gray-900'" x-data="{
+        ...authModal(),
+        isHomepage: '{{ request()->routeIs('homePage') ? 'true' : 'false' }}',
+    }"
     @keydown.window.escape="{ openSignUpModal: false, openLoginModal: false, openForgotPasswordModal: false }">
 
     @livewire('preloader')

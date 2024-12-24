@@ -113,3 +113,25 @@ const recaptchaElements = document.querySelectorAll(".g-recaptcha");
 recaptchaElements.forEach((element) => {
     element.style.transform = "scale(0.77)";
 });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Christmas Countdown
+    const christmasDate = new Date("January 1, 2025 00:00:00");
+
+    // Calculate the time difference in milliseconds
+    const timeDifference = christmasDate - new Date();
+
+    if (timeDifference > 0) {
+        // Get the days, hours, minutes, and seconds from timeDifference
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+        const seconds = Math.floor((timeDifference / 1000) % 60);
+
+        // Assuming e.setVal is a method to set values in your UI and e.play starts the display
+        e.setVal(days, hours, minutes, seconds);
+        e.play();
+    } else {
+        console.log("Christmas date has already passed!");
+    }
+});
