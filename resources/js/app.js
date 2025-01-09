@@ -34,7 +34,7 @@ import.meta.glob([
 
 /* Splide Slider */
 
-if ($("#splide").length > 0) {
+if ($(".splide").length > 0) {
     var splide = new Splide(".splide", {
         perPage: 3,
         focus: 0,

@@ -45,6 +45,7 @@ class Event extends Model
         'watermark',
         'is_paid',
         'ticket_levels',
+        'images',
         'deleted_at',
     ];
 
@@ -58,6 +59,7 @@ class Event extends Model
         'check_in_time' => 'datetime',
         'event_end_time' => 'datetime',
         'ticket_levels' => 'array',
+        'images' => 'array',
     ];
 
     /**
@@ -160,5 +162,10 @@ class Event extends Model
     public function setTicketLevelsAttribute($value)
     {
         $this->attributes['ticket_levels'] = json_encode(array_values($value));
+    }
+
+    public function setImagesAttribute($value)
+    {
+        $this->attributes['images'] = json_encode(array_values($value));
     }
 }

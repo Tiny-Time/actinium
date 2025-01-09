@@ -137,6 +137,11 @@
             @endif
         @endif
 
+        <!-- Event Images -->
+        @if ($event->images)
+            @include('images')
+        @endif
+
         @if ($event->is_paid)
             <div class="text-center">
                 <h3 class="mt-4 text-2xl font-bold text-white md:text-3xl title-color">Available tickets</h3>
@@ -144,7 +149,7 @@
                     $colors = ['#CC0215', '#254111'];
                 @endphp
                 <!-- Tickets -->
-                <div class="flex flex-col md:flex-row md:flex-wrap gap-3 justify-center mt-3">
+                <div class="flex flex-col justify-center gap-3 mt-3 md:flex-row md:flex-wrap">
                     @foreach ($event->ticket_levels as $index => $ticket)
                         @php
                             $color = $colors[($index + 1) % 2];

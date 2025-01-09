@@ -19,6 +19,7 @@ use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Builder;
 use App\Forms\Components\CustomDateTimePicker;
 use App\Filament\User\Resources\EventResource\Pages;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use App\Filament\User\Resources\EventResource\RelationManagers\RsvpsRelationManager;
 use App\Filament\User\Resources\EventResource\RelationManagers\CustomUrlRelationManager;
 use App\Filament\User\Resources\EventResource\RelationManagers\GuestbooksRelationManager;
@@ -252,6 +253,24 @@ class EventResource extends Resource
                         ->minItems(1)
                         ->columns(2)
                         ->collapsible(),
+                        // Images
+                    Forms\Components\FileUpload::make('images')
+                        ->label('Images - 2 tokens')
+                        ->hint('Upload images for your event. You can upload up to 5 images, each with a maximum size of 2 MB.')
+                        ->hintColor('danger')
+                        ->maxFiles(5)
+                        ->maxSize(2148) // extra 100 bytes for safety
+                        ->acceptedFileTypes(['image/*'])
+                        ->getUploadedFileNameForStorageUsing(
+                            fn (TemporaryUploadedFile $file): string => sprintf(
+                                'tinytime-%s-%s.%s',
+                                uniqid(),
+                                pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME),
+                                $file->getClientOriginalExtension()
+                            ),
+                        )
+                        ->multiple()
+                        ->columnSpanFull(),
                     Forms\Components\TextInput::make('address')
                         ->maxLength(191)
                         ->string()

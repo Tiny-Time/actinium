@@ -276,7 +276,8 @@ class EditEvent extends EditRecord
             ($original_data['guestbook'] == false && $data['guestbook'] == true) ||
             ($original_data['rsvp'] == false && $data['rsvp'] == true) ||
             (!$original_data['post_event_massage'] && $data['post_event_massage']) ||
-            ($original_data['is_paid'] == false && $data['is_paid'] == true)
+            ($original_data['is_paid'] == false && $data['is_paid'] == true) ||
+            (!$original_data['images'] && $data['images'])
         ) {
             if (
                 !$original_data['address']
@@ -292,6 +293,7 @@ class EditEvent extends EditRecord
                 && !$original_data['rsvp']
                 && !$original_data['post_event_massage']
                 && !$original_data['is_paid']
+                && !$original_data['images']
             ) {
                 $token_charge = 2;
             }
@@ -310,6 +312,10 @@ class EditEvent extends EditRecord
 
             if (!$original_data['is_paid'] && $data['is_paid']) {
                 $token_charge += 3;
+            }
+
+            if (!$original_data['images'] && $data['images']) {
+                $token_charge += 2;
             }
         }
 
