@@ -3,11 +3,9 @@
 namespace App\Livewire;
 
 use App\Models\Event;
-use Filament\Forms\Get;
 use Livewire\Component;
 use App\Models\Template;
 use Filament\Forms\Form;
-use App\Actions\CustomRange;
 use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 use Filament\Forms\Components;
@@ -15,9 +13,6 @@ use App\Forms\Components\Inline;
 use App\Forms\Components\RangeSlider;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Concerns\InteractsWithForms;
-use Rupadana\FilamentSlider\Components\InputSlider;
-use Rupadana\FilamentSlider\Components\InputSliderGroup;
-use Rupadana\FilamentSlider\Components\Concerns\InputSliderBehaviour;
 
 class EventSearch extends Component implements HasForms
 {
@@ -28,6 +23,10 @@ class EventSearch extends Component implements HasForms
 
     #[Url(as: 'q')]
     public $query = '';
+
+    #[Url(as: 'cat')]
+    public $category = '';
+
     public $templates;
 
     public $perPage = 12;
@@ -189,7 +188,7 @@ class EventSearch extends Component implements HasForms
         $max = $formState['range'][1];
 
         // Apply Min and Max Cost Filters for Ticket Levels
-        if (!empty($min) || !empty($max)) {
+        if (!empty($min) && $min > 1) {
             $query->where(function ($q) use ($min, $max) {
                 $q->where('is_paid', true)
                     ->whereNotNull('ticket_levels')
@@ -251,6 +250,14 @@ class EventSearch extends Component implements HasForms
         if (!$formState['active_all']) {
             $query->whereNot(function ($q) {
                 $q->expired();
+            });
+        }
+
+        // Apply Category filter if present
+        if (!empty($this->category)) {
+            $query->whereHas('tags', function ($q) {
+                $q->where('type', 'category')
+                    ->whereRaw("JSON_EXTRACT(slug, '$.en') = ?", [$this->category]);
             });
         }
 

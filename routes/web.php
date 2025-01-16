@@ -121,9 +121,9 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     // Homepage.
     Route::get('/', function () {
         $testimonials = Testimonial::get();
-        return view('thanks-giving', compact('testimonials'));
+        // return view('thanks-giving', compact('testimonials'));
         // Main page
-        // return view('welcome', compact('testimonials'));
+        return view('welcome', compact('testimonials'));
     })->middleware('guest')->name('homePage');
 
 

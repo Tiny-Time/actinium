@@ -8,6 +8,7 @@ use Filament\PanelProvider;
 use LaraZeus\Sky\SkyPlugin;
 use Filament\Navigation\MenuItem;
 use Filament\Navigation\NavigationItem;
+use App\Filament\Pages\HealthCheckResults;
 use Filament\Http\Middleware\Authenticate;
 use App\Filament\User\Widgets\RecentEvents;
 use Filament\SpatieLaravelTranslatablePlugin;
@@ -22,6 +23,7 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use App\Filament\User\Resources\EventResource\Widgets\EventOverview;
+use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
 
 class UserPanelProvider extends PanelProvider
 {
@@ -98,6 +100,8 @@ class UserPanelProvider extends PanelProvider
                 Authenticate::class,
                 DomainRedirectMiddleware::class,
             ])->plugins([
+                    FilamentSpatieLaravelHealthPlugin::make()
+                        ->usingPage(HealthCheckResults::class),
                     \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
                         ->gridColumns([
                             'default' => 1,

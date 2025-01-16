@@ -202,6 +202,41 @@ class EventResource extends Resource
                 ->string()
                 ->maxLength(400)
                 ->columnSpanFull(),
+            Forms\Components\SpatieTagsInput::make('tags')
+                ->label('Categories')
+                ->placeholder('Add a category')
+                ->suggestions([
+                    'Music',
+                    'Art',
+                    'Food',
+                    'Fashion',
+                    'Sports',
+                    'Tech',
+                    'Business',
+                    'Birthday',
+                    'Breaks',
+                    'Wedding',
+                    'Beauty',
+                    'Health',
+                    'Science',
+                    'Education',
+                    'Travel',
+                    'Film',
+                    'Literature',
+                    'Politics',
+                    'Pregnancy',
+                    'Religion',
+                    'History',
+                    'Meetings',
+                    'Environment',
+                    'Lifestyle',
+                    'Live Streaming',
+                    'Product Launch',
+                    'Other',
+                ])
+                ->type('category')
+                ->required()
+                ->columnSpanFull(),
             Forms\Components\Select::make('user_id')
                 ->relationship('user', 'name')
                 ->default(auth()->user()->id)
@@ -253,7 +288,7 @@ class EventResource extends Resource
                         ->minItems(1)
                         ->columns(2)
                         ->collapsible(),
-                        // Images
+                    // Images
                     Forms\Components\FileUpload::make('images')
                         ->label('Images - 2 tokens')
                         ->hint('Upload images for your event. You can upload up to 5 images, each with a maximum size of 2 MB.')
@@ -262,7 +297,7 @@ class EventResource extends Resource
                         ->maxSize(2148) // extra 100 bytes for safety
                         ->acceptedFileTypes(['image/*'])
                         ->getUploadedFileNameForStorageUsing(
-                            fn (TemporaryUploadedFile $file): string => sprintf(
+                            fn(TemporaryUploadedFile $file): string => sprintf(
                                 'tinytime-%s-%s.%s',
                                 uniqid(),
                                 pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME),

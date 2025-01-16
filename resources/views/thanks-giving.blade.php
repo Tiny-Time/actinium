@@ -138,7 +138,7 @@
                     {{-- Event Title --}}
                     <h1 class="text-center toz-title eventTitle"
                         contenteditable="true">
-                        Create & Customize Events for New Year
+                        Create & Customize Events
                     </h1>
                     {{-- Main Timer Desktop --}}
                     <div
