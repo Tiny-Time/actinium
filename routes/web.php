@@ -406,7 +406,10 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
     })->name('checkout-success');
 
     Route::get('downgrade-confirmation', function (Request $request) {
-        $plan = Plan::where('slug', $request->slug)->firstOrFail();
+        $plan = Plan::where('slug', $request->slug)->first();
+        if(empty($plan)) {
+            return redirect()->route('homePage', status: 301);
+        }
         return view('downgrade-confirmation', compact('plan'));
     })->name('downgrade-confirmation');
 

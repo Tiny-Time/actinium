@@ -38,7 +38,8 @@ class GenerateSitemap extends Command
                 return in_array('GET', $route->methods())
                     && strpos($route->uri(), '{') === false
                     && in_array('web', $route->gatherMiddleware()) // Only include routes using the 'web' middleware
-                    && $route->uri() !== 'generate-sitemap'; // Exclude generate-sitemap route
+                    && $route->uri() !== 'generate-sitemap' // Exclude generate-sitemap route
+                    && $route->uri() !== 'downgrade-confirmation'; // Exclude downgrade-confirmation route
             });
 
         foreach ($staticRoutes as $route) {
