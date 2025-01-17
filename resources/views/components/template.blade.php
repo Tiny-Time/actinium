@@ -35,7 +35,6 @@
         Str::limit('Join us for ' . strtolower($event->title) . ' happening on ' . \Carbon\Carbon::parse($event->date_time,
         $event->timezone)->format('D, M d, Y') . '.', 150, '...')))
 
-
         <!-- Main timer template -->
         <section class="px-5 py-8 text-white toz min-h-dvh">
             <div class="flex flex-col items-center gap-4 toz-main">
@@ -87,7 +86,7 @@
                 <div class="flex justify-center gap-2 mt-3 toz-sl">
                     <!-- Facebook Link -->
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('homePage') }}"
-                        rel="noopener noreferrer" target="_blank"
+                        rel="noopener noreferrer nofollow" target="_blank"
                         class="flex items-center justify-center bg-white text-[#091253] hover:text-green-600 rounded-full toz-social-link w-10 h-10">
                         <span class="sr-only">Facebook</span>
                         <svg class="w-5 h-5" width="14" height="26" viewBox="0 0 14 26" fill="none"
@@ -98,7 +97,7 @@
                         </svg>
                     </a>
                     <!-- Linkedin Link -->
-                    <a href="https://www.linkedin.com/shareArticle?url={{ route('homePage') }}" rel="noopener noreferrer"
+                    <a href="https://www.linkedin.com/shareArticle?url={{ route('homePage') }}" rel="noopener noreferrer nofollow"
                         target="_blank"
                         class="flex items-center justify-center bg-white text-[#091253] hover:text-green-600 rounded-full toz-social-link w-10 h-10">
                         <span class="sr-only">Linkedin</span>
@@ -110,7 +109,7 @@
                         </svg>
                     </a>
                     <!-- Twitter Link -->
-                    <a href="https://twitter.com/intent/tweet?url={{ route('homePage') }}" rel="noopener noreferrer"
+                    <a href="https://twitter.com/intent/tweet?url={{ route('homePage') }}" rel="noopener noreferrer nofollow"
                         target="_blank"
                         class="flex items-center justify-center bg-white text-[#091253] hover:text-green-600 rounded-full toz-social-link w-10 h-10">
                         <span class="sr-only">Twitter</span>
