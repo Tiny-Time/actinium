@@ -18,7 +18,7 @@ return [
     'uri' => [
         'post' => 'post',
         'page' => 'page',
-        'library' => 'library',
+        // 'library' => 'library',
         'faq' => 'faq',
     ],
 
