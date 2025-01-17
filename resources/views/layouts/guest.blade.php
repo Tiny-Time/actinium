@@ -10,7 +10,7 @@
     @sectionMissing('title')
         <title>{{ env('META_TITLE', 'TinyTime') }}</title>
     @else
-        <title>@yield('title') | Tinytime</title>
+        <title>@yield('title')</title>
     @endif
 
     @sectionMissing('description')

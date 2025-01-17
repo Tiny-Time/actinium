@@ -28,7 +28,7 @@
         {{ $background }}
     @endisset
 
-    @section('title', __(ucfirst(substr($event->title, 0, 29)) . ' - ' . config('app.name', 'TinyTime')))
+    @section('title', __(ucfirst(substr($event->title, 0, 29)) . ' - ' .\Carbon\Carbon::parse($event->date_time, $event->timezone)->format('D - M d, Y h:i A'). ' - ' . config('app.name', 'TinyTime')))
     @section('description', __($event->description))
 
     <!-- Main timer template -->
