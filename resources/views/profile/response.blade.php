@@ -1,4 +1,5 @@
 <x-guest-layout>
+    @section('description', __('Get verified on TinyTime and enjoy enhanced trust and credibility for your events. Join the community now at TinyTime Verified!'))
     <x-authentication-card title="Verified!">
         <x-slot name="logo">
             <x-authentication-card-logo />

@@ -407,7 +407,7 @@ Route::middleware(['domain.redirect', 'analytics'])->group(function () {
 
     Route::get('downgrade-confirmation', function (Request $request) {
         $plan = Plan::where('slug', $request->slug)->first();
-        if(empty($plan)) {
+        if (empty($plan)) {
             return redirect()->route('homePage', status: 301);
         }
         return view('downgrade-confirmation', compact('plan'));
