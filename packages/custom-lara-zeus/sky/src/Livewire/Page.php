@@ -39,7 +39,7 @@ class Page extends Component
 
     public function setSeo(): void
     {
-        $title = str($this->page->title)->limit(60, '...');
+        $title = str($this->page->title)->limit(60, '...')->toString();
         $seoTitle = $title;
 
         // Ensure the SEO title is at least 30 characters
@@ -48,7 +48,7 @@ class Page extends Component
         }
 
         // Ensure the total SEO title does not exceed 65 characters
-        $seoTitle = str($seoTitle . ' - ' . config('zeus.site_title', 'Laravel'))->limit(limit: 61, end: '...');
+        $seoTitle = str($seoTitle . ' - ' . config('zeus.site_title', 'Laravel'))->limit(limit: 61, end: '...')->toString();
 
         seo()
             ->site(config('zeus.site_title', 'Laravel'))

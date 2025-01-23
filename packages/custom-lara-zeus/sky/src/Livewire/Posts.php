@@ -42,7 +42,7 @@ class Posts extends Component
 
         seo()
             ->site(config('zeus.site_title', 'Laravel'))
-            ->title(__('Posts') . ' - ' . config('zeus.site_title'))
+            ->title(__('Explore Our Blog: Insights, Tips, and Inspiration') . ' - ' . config('zeus.site_title'))
             ->description(__('Posts') . ' - ' . config('zeus.site_description') . ' ' . config('zeus.site_title'))
             ->rawTag('favicon', '<link rel="icon" type="image/x-icon" href="' . asset('favicon/favicon.ico') . '">')
             ->rawTag('<meta name="theme-color" content="' . config('zeus.site_color') . '" />')
