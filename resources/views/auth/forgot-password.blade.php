@@ -1,6 +1,6 @@
 <x-guest-layout>
 
-    @section('title', __('Forgot Password'))
+    @section('title', __('Forgot Password? Recover Your Access QuicklyForgot Password'))
 
     @section('description', __('Forgot your password for TinyTime? Easily reset it on our user-friendly platform for
         event planning and personalization. Get back to creating events hassle-free.'))

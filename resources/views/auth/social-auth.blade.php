@@ -1,6 +1,6 @@
 <x-guest-layout>
 
-    @section('title', __('Social Authentication'))
+    @section('title', __('Social Authentication: A Smarter Way to Log In'))
 
     @section('description', __('Use TinyTime to easily plan and personalize events with TinyTime\'s user-friendly
         platform. Create unique experiences for individuals and organizations alike.'))

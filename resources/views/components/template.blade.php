@@ -28,7 +28,7 @@
         {{ $background }}
     @endisset
 
-    @section('title', __(Str::limit($event->title . 'event | ' . $event->id . ' | ' .
+    @section('title', __(Str::limit(Str::limit($event->title, '30', '...') . ' event | ' . $event->id . ' | ' .
         \Carbon\Carbon::parse($event->date_time, $event->timezone)->format('D, M d, Y h:i A'), 60, '...')))
 
     @section('description', __($event->description ? Str::limit(strip_tags($event->description), 155, '...') :
