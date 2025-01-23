@@ -28,12 +28,12 @@
         {{ $background }}
     @endisset
 
-    @section('title', __(Str::limit($event->title, 50, '...') . ' | ' . \Carbon\Carbon::parse($event->date_time,
-        $event->timezone)->format('D, M d, Y h:i A') . ' | ' . config('app.name', 'TinyTime')))
+    @section('title', __(Str::limit($event->title . 'event | ' . $event->id . ' | ' .
+        \Carbon\Carbon::parse($event->date_time, $event->timezone)->format('D, M d, Y h:i A'), 60, '...')))
 
-    @section('description', __($event->description ? Str::limit(strip_tags($event->description), 150, '...') :
+    @section('description', __($event->description ? Str::limit(strip_tags($event->description), 155, '...') :
         Str::limit('Join us for ' . strtolower($event->title) . ' happening on ' . \Carbon\Carbon::parse($event->date_time,
-        $event->timezone)->format('D, M d, Y') . '.', 150, '...')))
+        $event->timezone)->format('D, M d, Y') . '.', 155, '...')))
 
         <!-- Main timer template -->
         <section class="px-5 py-8 text-white toz min-h-dvh">
@@ -97,8 +97,8 @@
                         </svg>
                     </a>
                     <!-- Linkedin Link -->
-                    <a href="https://www.linkedin.com/shareArticle?url={{ route('homePage') }}" rel="noopener noreferrer nofollow"
-                        target="_blank"
+                    <a href="https://www.linkedin.com/shareArticle?url={{ route('homePage') }}"
+                        rel="noopener noreferrer nofollow" target="_blank"
                         class="flex items-center justify-center bg-white text-[#091253] hover:text-green-600 rounded-full toz-social-link w-10 h-10">
                         <span class="sr-only">Linkedin</span>
                         <svg class="w-5 h-5" width="26" height="26" viewBox="0 0 26 26" fill="none"
@@ -109,8 +109,8 @@
                         </svg>
                     </a>
                     <!-- Twitter Link -->
-                    <a href="https://twitter.com/intent/tweet?url={{ route('homePage') }}" rel="noopener noreferrer nofollow"
-                        target="_blank"
+                    <a href="https://twitter.com/intent/tweet?url={{ route('homePage') }}"
+                        rel="noopener noreferrer nofollow" target="_blank"
                         class="flex items-center justify-center bg-white text-[#091253] hover:text-green-600 rounded-full toz-social-link w-10 h-10">
                         <span class="sr-only">Twitter</span>
                         <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" height="1em"

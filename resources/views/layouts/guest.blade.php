@@ -16,7 +16,7 @@
     @sectionMissing('description')
         <meta name="description" content="{{ env('META_DESCRIPTION', 'TinyTime') }}">
     @else
-        <meta property="og:description" content="@yield('description')">
+        <meta name="description" content="@yield('description')">
     @endif
 
     <link rel="icon" href="{{ Vite::asset('resources/images/stopwatch.png') }}">
