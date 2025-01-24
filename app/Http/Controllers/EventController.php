@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\EventCustomUrl;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cache;
 use Filament\Notifications\Notification;
 
 class EventController extends Controller
@@ -54,20 +55,35 @@ class EventController extends Controller
      */
     public function show(string $event_id)
     {
-        $event = Event::with('guestbooks')->where('event_id', $event_id)->where('status', true)->first();
+        $event = Cache::remember("event_$event_id", 60, function () use ($event_id) {
+            return Event::with([
+                'guestbooks' => function ($query) {
+                    $query->select(
+                        'id',
+                        'name',
+                        'email',
+                        'message',
+                        'event_id'
+                    );
+                }
+            ])->where('event_id', $event_id)->where('status', true)->first();
+        });
 
-        $customUrl = EventCustomUrl::with('guestbooks')->where('custom_url', $event_id)->first();
+        $customUrl = Cache::remember("custom_url_$event_id", 60, function () use ($event_id) {
+            return EventCustomUrl::with('event')->where('custom_url', $event_id)->first();
+        });
 
         $event ??= $customUrl->event ?? null;
 
-        $userIP = $this->userIP();
+        if ($event && (!$customUrl || $customUrl->event->status)) {
+            $template = Cache::remember("template_{$event->template_id}", 60, function () use ($event) {
+                return Template::find($event->template_id);
+            });
 
-        if ($event) {
-            if (isset($customUrl->event) && !$customUrl->event->status) {
-                return redirect('404');
-            }
-            $template = Template::find($event->template_id);
-            return view((string) $template->path, compact('event', 'userIP'));
+            return view((string) $template->path, [
+                'event' => $event,
+                'userIP' => $this->userIP(),
+            ]);
         }
 
         return redirect('404');
