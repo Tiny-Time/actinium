@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title')</title>
+    <meta name="description" content="@yield('description')">
     <link rel="icon" href="{{ Vite::asset('resources/images/stopwatch.png') }}">
 
     <!-- Fonts -->

@@ -91,7 +91,7 @@ class UserPanelProvider extends PanelProvider
                     ->openUrlInNewTab(true),
                 NavigationItem::make()
                     ->label('FAQs')
-                    ->url('/faq')
+                    ->url('/frequently-asked-questions')
                     ->icon('heroicon-o-question-mark-circle')
                     ->sort(11)
                     ->openUrlInNewTab(true),

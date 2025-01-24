@@ -19,7 +19,7 @@ return [
         'post' => 'post',
         'page' => 'page',
         // 'library' => 'library',
-        'faq' => 'faq',
+        'faq' => 'frequently-asked-questions',
     ],
 
     /**
