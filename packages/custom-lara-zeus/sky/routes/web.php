@@ -16,12 +16,12 @@ $filament = app('filament');
 Route::domain(config('zeus-sky.domain'))
     ->middleware(config('zeus-sky.middleware'))
     ->group(function () {
-        if (in_array('faq', config('zeus-sky.uri'))) {
+        if (array_key_exists('faq', config('zeus-sky.uri'))) {
             Route::get(config('zeus-sky.uri.faq'), Faq::class)
                 ->name('faq');
         }
 
-        if (in_array('library', config('zeus-sky.uri'))) {
+        if (array_key_exists('library', config('zeus-sky.uri'))) {
             Route::prefix(config('zeus-sky.uri.library'))
                 ->group(function () {
                     Route::get('/', Library::class)->name('library');
