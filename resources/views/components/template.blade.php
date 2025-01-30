@@ -154,7 +154,7 @@
                     @endphp
                     <!-- Tickets -->
                     <div class="flex flex-col justify-center gap-3 mt-3 md:flex-row md:flex-wrap">
-                        @foreach ($event->ticket_levels as $index => $ticket)
+                        @foreach ($event->ticket_levels ?? [] as $index => $ticket)
                             @php
                                 $color = $colors[($index + 1) % 2];
                             @endphp
