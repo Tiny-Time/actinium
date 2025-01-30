@@ -290,7 +290,7 @@ class EventResource extends Resource
                                 ->placeholder('e.g., 100')
                                 ->required(),
                         ])
-                        ->visible(fn(Get $get): bool => $get('is_paid')) // Show only if "Paid Event" is selected
+                        ->hidden(fn(Get $get): bool => !$get('is_paid')) // Show only if "Paid Event" is selected
                         ->minItems(1)
                         ->columns(2)
                         ->collapsible(),
