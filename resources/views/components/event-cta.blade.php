@@ -16,4 +16,9 @@
                 clip-rule="evenodd"></path>
         </svg>
     </button>
+    @if ($event->url)
+        <a href="{{ $event->url }}" target="_blank" rel="noopener noreferrer"
+            class="hover:text-green-600 px-4 py-2 uppercase bg-white rounded-3xl text-sm text-[#32214d] font-bold flex items-center">Learn
+            more</a>
+    @endif
 </div>

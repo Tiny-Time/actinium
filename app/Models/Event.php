@@ -47,6 +47,7 @@ class Event extends Model
         'is_paid',
         'ticket_levels',
         'images',
+        'url',
         'deleted_at',
     ];
 

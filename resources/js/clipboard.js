@@ -46,3 +46,9 @@ function copyToClipboard(subject) {
         }
     }
 }
+
+document.querySelectorAll("input[type='datetime-local']").forEach(input => {
+    input.addEventListener("focus", function() {
+        this.showPicker();
+    });
+});

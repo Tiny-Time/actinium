@@ -8,7 +8,7 @@
     </x-slot>
 
     <!-- Event timer/counter -->
-    <div class="flex flex-col toz-timer md:flex-row">
+    <div class="flex flex-col justify-center toz-timer md:flex-row">
         <div class="flex">
             <!-- Days -->
             <div class="toz-ec-d">

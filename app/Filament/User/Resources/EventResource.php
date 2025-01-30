@@ -245,8 +245,14 @@ class EventResource extends Resource
             CustomDateTimePicker::make('date_time')
                 ->label('Event Date & Time')
                 ->required()
+                ->prefix('📅')
                 ->columnSpanFull()
                 ->live(),
+            Forms\Components\TextInput::make('url')
+                ->label('Event URL')
+                ->url()
+                ->prefix('🌐')
+                ->columnSpanFull(),
             TimeZone::make('timezone')
                 ->required()
                 ->columnSpanFull(),
@@ -362,6 +368,7 @@ class EventResource extends Resource
                         ->seconds(false)
                         ->afterOrEqual('date_time')
                         ->string()
+                        ->prefix('📅')
                         ->hint('The check in day and time for visitors.')
                         ->hintColor('danger')
                         ->columnSpanFull()
@@ -370,6 +377,7 @@ class EventResource extends Resource
                         ->seconds(false)
                         ->after('check_in_time')
                         ->string()
+                        ->prefix('📅')
                         ->hint('The event end day and time for visitors')
                         ->hintColor('danger')
                         ->columnSpanFull()
