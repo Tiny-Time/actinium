@@ -171,5 +171,37 @@
             });
         </script>
     @endpush
+
     <x-slot name="footer"></x-slot>
+
+    {{-- Ask user if they want to show events based on their current location --}}
+    <x-dialog-modal wire:model="showLocationEvents" maxWidth="sm" x-data="{ show: true }" x-init="if (sessionStorage.getItem('location_modal_shown')) {
+        show = false;
+    } else {
+        show = true;
+    }"
+        x-show="show">
+
+        <x-slot name="title">
+            {{ __('Show Events Near You') }}
+        </x-slot>
+
+        <x-slot name="content">
+            <div class="text-sm text-gray-500">
+                {{ __('Would you like to see events near your current location?') }}
+            </div>
+        </x-slot>
+
+        <x-slot name="footer" class="gap-3">
+            <x-button wire:click="dontShowEventsNearMe" wire:loading.attr="disabled" :close="true" class="ring-0 focus:ring-0 focus:outline-none"
+                @click="show = false; sessionStorage.setItem('location_modal_shown', true); $wire.set('showLocationEvents', false)">
+                {{ __('No') }}
+            </x-button>
+
+            <x-button wire:click="showEventsNearMe" wire:loading.attr="disabled" class="!bg-olivine ring-0 focus:ring-0 focus:outline-none"
+                @click="show = false; sessionStorage.setItem('location_modal_shown', true); $wire.set('showLocationEvents', false)">
+                {{ __('Yes') }}
+            </x-button>
+        </x-slot>
+    </x-dialog-modal>
 </div>

@@ -10,8 +10,10 @@ use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 use Filament\Forms\Components;
 use App\Forms\Components\Inline;
+use Illuminate\Support\Facades\Http;
 use App\Forms\Components\RangeSlider;
 use Filament\Forms\Contracts\HasForms;
+use Illuminate\Support\Facades\Session;
 use Filament\Forms\Concerns\InteractsWithForms;
 
 class EventSearch extends Component implements HasForms
@@ -33,6 +35,48 @@ class EventSearch extends Component implements HasForms
 
     protected $listeners = ['loadMore'];
 
+    public bool $showLocationEvents = true;
+
+    public function showEventsNearMe()
+    {
+        try {
+            $response = Http::get('http://ip-api.com/json/');
+            $locationData = $response->json();
+
+            if (isset($locationData['country'])) {
+                $this->data['country'] = $locationData['country'];
+            }
+
+            if (isset($locationData['city'])) {
+                $this->data['city'] = $locationData['city'];
+            }
+
+            session()->flash('success', 'Now showing events near your location.');
+
+            // Close the modal
+            $this->showLocationEvents = false;
+
+            // Store in Laravel session
+            Session::put('location_modal_shown', true);
+        } catch (\Exception $e) {
+            session()->flash('error', 'Could not fetch location. Please try again.');
+        }
+    }
+
+    public function dontShowEventsNearMe()
+    {
+        $this->data['country'] = null;
+        $this->data['city'] = null;
+
+        session()->flash('info', 'Showing all events.');
+
+        // Close the modal
+        $this->showLocationEvents = false;
+
+        // Store in Laravel session
+        Session::put('location_modal_shown', true);
+    }
+
     public function loadMore()
     {
         $this->perPage += 12;
@@ -46,6 +90,8 @@ class EventSearch extends Component implements HasForms
     public function mount(): void
     {
         $this->templates = Template::all();
+
+        $this->showLocationEvents = !Session::has('location_modal_shown');
 
         $this->form->fill();
     }
